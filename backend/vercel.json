@@ -1,0 +1,12 @@
+{
+  "crons": [
+    {
+      "path": "/api/notifications/cron?type=workout",
+      "schedule": "0 8 * * *"
+    },
+    {
+      "path": "/api/notifications/cron?type=meal",
+      "schedule": "0 12,18 * * *"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "name": "fitai-coach",
+  "version": "1.0.0",
+  "description": "Production-ready AI fitness coaching application",
+  "private": true,
+  "scripts": {
+    "dev": "concurrently \"npm run dev --workspace=backend\" \"npm run dev --workspace=frontend\"",
+    "build": "npm run build --workspace=backend && npm run build --workspace=frontend",
+    "start": "npm start --workspace=backend",
+    "type-check": "npm run type-check --workspace=backend && npm run type-check --workspace=frontend",
+    "lint": "npm run lint --workspace=backend && npm run lint --workspace=frontend"
+  },
+  "workspaces": [
+    "backend",
+    "shared"
+  ],
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "typescript": "^5.3.3"
+  }
+}

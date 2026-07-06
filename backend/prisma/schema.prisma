@@ -1,0 +1,459 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// ============================================================================
+// Authentication & Users
+// ============================================================================
+
+model User {
+  id                    String                 @id @default(cuid())
+  clerkId               String                 @unique
+  email                 String                 @unique
+  name                  String
+  avatar                String?
+  
+  // Profile Information
+  age                   Int?
+  sex                   String?                // "male" | "female" | "other"
+  height                Float?                 // always stored in cm
+  weight                Float?                 // always stored in kg
+  unitSystem            String?                @default("imperial") // "imperial" | "metric" — display preference only
+  language              String?                @default("English")
+  country               String?                @default("United States")
+  currency              String?                @default("usd")
+  
+  // Onboarding Status
+  onboardingCompleted   Boolean                @default(false)
+  onboardingStep        Int                    @default(0)
+  
+  // Relationships
+  goal                  Goal?
+  activityLevel         String?                // "sedentary" | "lightly_active" | "moderately_active" | "very_active"
+  fitnessExperience     String?                // "beginner" | "intermediate" | "advanced"
+  dietPreferences       String[]               @default([])  // ["omnivore", "vegetarian", etc.]
+  foodAllergies         String[]               @default([])
+  supplementHistory     String[]               @default([])
+  assessmentMethod      String?                // "photo" | "manual"
+
+  // Push Notifications
+  pushToken             String?                // Expo push token or FCM token
+  notificationPrefs     Json?                  // { workout_reminders, meal_nudges, progress_updates, weekly_review }
+
+  // Data relationships
+  bodyAssessments       BodyAssessment[]
+  bodyScans            BodyScan[]
+  manualMeasurements    ManualMeasurement?
+  meals                 Meal[]
+  workoutPrograms       WorkoutProgram[]
+  workoutSessions       WorkoutSession[]
+  supplements           UserSupplement[]
+  progressPhotos        ProgressPhoto[]
+  weightLogs            WeightLog[]
+  chatMessages          ChatMessage[]
+  subscription          Subscription?
+  analyticsEvents       AnalyticsEvent[]
+  
+  createdAt             DateTime               @default(now())
+  updatedAt             DateTime               @updatedAt
+}
+
+// ============================================================================
+// Goals & Preferences
+// ============================================================================
+
+model Goal {
+  id                    String                 @id @default(cuid())
+  userId                String                 @unique
+  user                  User                   @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
+  primaryGoal           String                 // "fat_loss" | "muscle_gain" | "recomposition" | "athletic_performance" | "general_health"
+  targetWeight          Float?
+  timeline              Int?                   // in weeks
+  bodyGoalFocus         String?                // e.g. "Lean & toned", "Build a bigger upper body"
+  specificFocus         String?                // free-text: specific thing they want to fix/improve
+  
+  createdAt             DateTime               @default(now())
+  updatedAt             DateTime               @updatedAt
+}
+
+// ============================================================================
+// Body Assessment System
+// ============================================================================
+
+model BodyAssessment {
+  id                    String                 @id @default(cuid())
+  userId                String
+  user                  User                   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  scanId                String?                @unique
+  scan                  BodyScan?              @relation(fields: [scanId], references: [id], onDelete: Cascade)
+
+  // Analysis Results
+  bodyComposition       Json
+  posture               Json
+  strengths             String[]
+  areasForImprovement   String[]
+  recommendations       Json
+  summary               String
+
+  createdAt             DateTime               @default(now())
+  updatedAt             DateTime               @updatedAt
+}
+
+model BodyScan {
+  id                    String                 @id @default(cuid())
+  userId                String
+  user                  User                   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  // Photos
+  frontImageUrl         String?
+  sideImageUrl          String?
+  backImageUrl          String?
+
+  analysisStatus        String                 @default("pending") // "pending" | "completed"
+
+  assessment            BodyAssessment?
+
+  createdAt             DateTime               @default(now())
+  updatedAt             DateTime               @updatedAt
+}
+
+model ManualMeasurement {
+  id                    String                 @id @default(cuid())
+  userId                String                 @unique
+  user                  User                   @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
+  // Measurements in cm
+  waist                 Float?
+  neck                  Float?
+  chest                 Float?
+  hips                  Float?
+  thighs                Float?
+  arms                  Float?
+  
+  // Calculated body fat
+  estimatedBodyFat      Float?
+  
+  createdAt             DateTime               @default(now())
+  updatedAt             DateTime               @updatedAt
+}
+
+model ProgressPhoto {
+  id                    String                 @id @default(cuid())
+  userId                String
+  user                  User                   @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
+  photoUrl              String
+  photoType             String                 // "front" | "side" | "back" | "full_body"
+  notes                 String?
+  
+  createdAt             DateTime               @default(now())
+  updatedAt             DateTime               @updatedAt
+  
+  @@index([userId, createdAt])
+}
+
+model WeightLog {
+  id        String   @id @default(cuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  weight    Float    // kg
+  note      String?
+  loggedAt  DateTime @default(now())
+
+  @@index([userId, loggedAt])
+}
+
+// ============================================================================
+// Food & Nutrition
+// ============================================================================
+
+model Meal {
+  id                    String                 @id @default(cuid())
+  userId                String
+  user                  User                   @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
+  mealType              String                 // "breakfast" | "lunch" | "dinner" | "snack"
+  
+  // Food Recognition
+  foods                 FoodItem[]
+  
+  // Totals
+  totalCalories         Float?
+  totalProtein          Float?
+  totalCarbs            Float?
+  totalFat              Float?
+  totalFiber            Float?
+  
+  notes                 String?
+  
+  createdAt             DateTime               @default(now())
+  updatedAt             DateTime               @updatedAt
+  
+  @@index([userId, createdAt])
+}
+
+model FoodItem {
+  id                    String                 @id @default(cuid())
+  mealId                String
+  meal                  Meal                   @relation(fields: [mealId], references: [id], onDelete: Cascade)
+  
+  foodName              String
+  quantity              Float                  // in grams
+  unit                  String                 // "g" | "ml" | "oz" | "cup"
+  
+  // Nutritional Info
+  calories              Float
+  protein               Float
+  carbs                 Float
+  fat                   Float
+  fiber                 Float
+
+  // Full nutrition label detail (optional — manual entry only)
+  sugar                 Float?                 // g
+  saturatedFat          Float?                 // g
+  sodium                Float?                 // mg
+  cholesterol           Float?                 // mg
+
+  // AI Recognition
+  confidenceScore       Float?
+  mealPhotoUrl          String?
+  aiProvider            String?                // "openai"
+  
+  createdAt             DateTime               @default(now())
+  updatedAt             DateTime               @updatedAt
+}
+
+model NutritionPlan {
+  id                    String                 @id @default(cuid())
+  userId                String
+  
+  // Daily Targets
+  dailyCaloricTarget    Float
+  proteinTarget         Float
+  carbsTarget           Float
+  fatsTarget            Float
+  waterTarget           Float                  // in ml
+  
+  // Timing
+  mealTimings           Json?                  // Array of meal times
+  
+  // 7-Day Plan
+  mealPlan              Json?                  // Weekly meal plan structure
+  shoppingList          Json?                  // Shopping list for the week
+  
+  createdAt             DateTime               @default(now())
+  updatedAt             DateTime               @updatedAt
+  
+  @@unique([userId])
+}
+
+// ============================================================================
+// Fitness & Workouts
+// ============================================================================
+
+model WorkoutProgram {
+  id                    String                 @id @default(cuid())
+  userId                String
+  user                  User                   @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
+  name                  String
+  duration              Int                    // in weeks (e.g., 4)
+  goal                  String                 // aligned with user goal
+  equipmentAvailable    String[]
+  coachNote             String?                // AI's personalized note on this program
+
+  // Program structure
+  weeks                 WorkoutWeek[]
+  
+  // Status
+  isActive              Boolean                @default(true)
+  startDate             DateTime
+  
+  createdAt             DateTime               @default(now())
+  updatedAt             DateTime               @updatedAt
+  
+  @@index([userId])
+}
+
+model WorkoutWeek {
+  id                    String                 @id @default(cuid())
+  programId             String
+  program               WorkoutProgram         @relation(fields: [programId], references: [id], onDelete: Cascade)
+  
+  weekNumber            Int
+  progressionStrategy   String?
+  
+  days                  WorkoutDay[]
+  
+  createdAt             DateTime               @default(now())
+}
+
+model WorkoutDay {
+  id                    String                 @id @default(cuid())
+  weekId                String
+  week                  WorkoutWeek            @relation(fields: [weekId], references: [id], onDelete: Cascade)
+  
+  dayOfWeek             Int                    // 0-6 (Monday-Sunday)
+  
+  exercises             Exercise[]
+  
+  createdAt             DateTime               @default(now())
+}
+
+model Exercise {
+  id                    String                 @id @default(cuid())
+  dayId                 String
+  day                   WorkoutDay             @relation(fields: [dayId], references: [id], onDelete: Cascade)
+  
+  exerciseName          String
+  sets                  Int
+  reps                  String                 // e.g., "8-12" for rep ranges
+  restSeconds           Int
+  notes                 String?
+  
+  // Library reference
+  libraryId             String?
+  videoUrl              String?
+  formCues              String[]
+  
+  createdAt             DateTime               @default(now())
+}
+
+model WorkoutSession {
+  id                    String                 @id @default(cuid())
+  userId                String
+  user                  User                   @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
+  exerciseName          String
+  plannedSets           Int
+  plannedReps           String
+  
+  // Actual Performance
+  completedSets         Int
+  completedReps         String
+  weight                Float?
+  durationMinutes       Int?
+  
+  // Tracking
+  notes                 String?
+  isCompleted           Boolean                @default(true)
+  
+  createdAt             DateTime               @default(now())
+  updatedAt             DateTime               @updatedAt
+  
+  @@index([userId, createdAt])
+}
+
+// ============================================================================
+// Supplements
+// ============================================================================
+
+model Supplement {
+  id                    String                 @id @default(cuid())
+  
+  name                  String
+  category              String                 // "protein_powder" | "creatine" | "electrolytes" | "fish_oil" | "vitamin_d" | "magnesium"
+  
+  benefits              String[]
+  dosageMin             String
+  dosageMax             String
+  unit                  String                 // "g" | "mg" | "ml" | "scoop"
+  
+  userSupplements       UserSupplement[]
+
+  createdAt             DateTime               @default(now())
+}
+
+model UserSupplement {
+  id                    String                 @id @default(cuid())
+  userId                String
+  user                  User                   @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
+  supplementId          String
+  supplement            Supplement             @relation(fields: [supplementId], references: [id])
+  
+  reason                String                 // Why recommended
+  dosage                String
+  frequency             String                 // "daily" | "per_workout" | etc.
+  
+  createdAt             DateTime               @default(now())
+  updatedAt             DateTime               @updatedAt
+}
+
+// ============================================================================
+// AI Coaching
+// ============================================================================
+
+model ChatMessage {
+  id                    String                 @id @default(cuid())
+  userId                String
+  user                  User                   @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
+  role                  String                 // "user" | "assistant"
+  content               String
+  
+  // Context
+  userContext           Json?                  // User profile, recent progress, etc.
+  
+  // AI Provider
+  aiProvider            String?                // "openai" | "anthropic"
+  
+  createdAt             DateTime               @default(now())
+  
+  @@index([userId, createdAt])
+}
+
+// ============================================================================
+// Subscriptions & Billing
+// ============================================================================
+
+model Subscription {
+  id                    String                 @id @default(cuid())
+  userId                String                 @unique
+  user                  User                   @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
+  stripeCustomerId      String                 @unique
+  stripeSubscriptionId  String
+  stripePriceId         String
+  
+  plan                  String                 // "free" | "premium"
+  status                String                 // "active" | "canceled" | "past_due" | "paused"
+  
+  currentPeriodStart    DateTime
+  currentPeriodEnd      DateTime
+  cancelledAt           DateTime?
+  
+  // Feature limits
+  dailyFoodScans        Int                    @default(5)  // Free tier limit
+  dailyCoachMessages    Int                    @default(10) // Free tier limit
+  
+  createdAt             DateTime               @default(now())
+  updatedAt             DateTime               @updatedAt
+}
+
+// ============================================================================
+// Analytics
+// ============================================================================
+
+model AnalyticsEvent {
+  id                    String                 @id @default(cuid())
+  userId                String
+  user                  User                   @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
+  eventName             String
+  eventProperties       Json?
+  
+  createdAt             DateTime               @default(now())
+  
+  @@index([userId, eventName, createdAt])
+}
