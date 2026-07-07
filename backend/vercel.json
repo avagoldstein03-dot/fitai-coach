@@ -6,7 +6,7 @@
     },
     {
       "path": "/api/notifications/cron?type=meal",
-      "schedule": "0 12,18 * * *"
+      "schedule": "0 12 * * *"
     }
   ]
 }
