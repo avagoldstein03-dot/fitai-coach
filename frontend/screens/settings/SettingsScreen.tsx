@@ -22,6 +22,7 @@ import i18n, { LANGUAGE_CODES } from "@/lib/i18n";
 import { formatWeight, lbsToKg } from "@/lib/units";
 import { T } from "@/lib/theme";
 import { COUNTRIES, getCountryByName } from "@/lib/currency";
+import { TERMS_URL, PRIVACY_URL } from "@/lib/legal-urls";
 
 const API_URL = process.env.EXPO_PUBLIC_API_URL;
 
@@ -287,14 +288,14 @@ export default function SettingsScreen() {
         {/* Privacy & Data */}
         <View style={s.card}>
           <Text style={s.cardTitle}>{t("settings.privacy_data")}</Text>
-          <TouchableOpacity style={[s.row, s.rowBorder]} onPress={() => Linking.openURL("https://fitaicoach.com/privacy")}>
+          <TouchableOpacity style={[s.row, s.rowBorder]} onPress={() => Linking.openURL(PRIVACY_URL)}>
             <View>
               <Text style={s.rowLabel}>{t("settings.privacy_policy")}</Text>
               <Text style={s.cardSub}>{t("settings.privacy_policy_sub")}</Text>
             </View>
             <Text style={s.arrow}>→</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={[s.row, s.rowBorder]} onPress={() => Linking.openURL("https://fitaicoach.com/terms")}>
+          <TouchableOpacity style={[s.row, s.rowBorder]} onPress={() => Linking.openURL(TERMS_URL)}>
             <View>
               <Text style={s.rowLabel}>{t("settings.terms_of_service")}</Text>
               <Text style={s.cardSub}>{t("settings.terms_of_service_sub")}</Text>

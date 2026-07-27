@@ -16,6 +16,7 @@ import * as WebBrowser from "expo-web-browser";
 import { Linking, Platform } from "react-native";
 import { useTranslation } from "react-i18next";
 import { T } from "@/lib/theme";
+import { TERMS_URL } from "@/lib/legal-urls";
 
 const API_URL = process.env.EXPO_PUBLIC_API_URL;
 
@@ -141,8 +142,8 @@ export default function SubscriptionManagementScreen() {
           </View>
         )}
 
-        {/* Billing Actions — Stripe portal only shown on Android */}
-        {Platform.OS !== "ios" && (
+        {/* Billing Actions — Stripe portal only shown on web (native platforms manage via store billing) */}
+        {Platform.OS === "web" && (
           <View style={s.card}>
             <TouchableOpacity
               onPress={() => openBillingPortal()}
@@ -180,8 +181,8 @@ export default function SubscriptionManagementScreen() {
           </View>
         )}
 
-        {/* Invoices — Android only (Apple handles receipts natively) */}
-        {Platform.OS !== "ios" && (
+        {/* Invoices — web only (Apple/Google handle receipts natively) */}
+        {Platform.OS === "web" && (
           <View style={s.card}>
             <Text style={s.cardTitle}>{t("subscription.invoices_title")}</Text>
             <Text style={s.cardSub}>
@@ -212,6 +213,17 @@ export default function SubscriptionManagementScreen() {
           </TouchableOpacity>
         )}
 
+        {/* Google Play subscription management (required for Play Store) */}
+        {Platform.OS === "android" && (
+          <TouchableOpacity
+            style={s.card}
+            onPress={() => Linking.openURL("https://play.google.com/store/account/subscriptions?package=com.fitai.coach")}
+          >
+            <Text style={s.cardTitle}>{t("subscription.manage_google")}</Text>
+            <Text style={[s.cardSub, { marginTop: 4 }]}>{t("subscription.manage_google_sub")}</Text>
+          </TouchableOpacity>
+        )}
+
         {/* Help */}
         <View style={s.card}>
           <Text style={s.cardTitle}>{t("subscription.help_title")}</Text>
@@ -221,7 +233,7 @@ export default function SubscriptionManagementScreen() {
           <TouchableOpacity style={{ marginBottom: 12 }} onPress={() => Linking.openURL("https://fitaicoach.com/faq")}>
             <Text style={s.accentText}>{t("subscription.faq_link")}</Text>
           </TouchableOpacity>
-          <TouchableOpacity onPress={() => Linking.openURL("https://fitaicoach.com/terms")}>
+          <TouchableOpacity onPress={() => Linking.openURL(TERMS_URL)}>
             <Text style={s.accentText}>{t("subscription.terms_link")}</Text>
           </TouchableOpacity>
         </View>

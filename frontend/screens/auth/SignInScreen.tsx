@@ -5,6 +5,7 @@ import { useSignIn } from "@clerk/clerk-expo";
 import { useNavigation } from "@react-navigation/native";
 import { useTranslation } from "react-i18next";
 import { T } from "@/lib/theme";
+import { TERMS_URL, PRIVACY_URL } from "@/lib/legal-urls";
 
 WebBrowser.maybeCompleteAuthSession();
 
@@ -92,9 +93,9 @@ export default function SignInScreen() {
 
         <Text style={s.legalFooter}>
           {t("auth.legal_footer")}{" "}
-          <Text style={s.legalLink} onPress={() => Linking.openURL("https://fitaicoach.com/terms")}>{t("auth.terms_link")}</Text>
+          <Text style={s.legalLink} onPress={() => Linking.openURL(TERMS_URL)}>{t("auth.terms_link")}</Text>
           {" "}{t("auth.and")}{" "}
-          <Text style={s.legalLink} onPress={() => Linking.openURL("https://fitaicoach.com/privacy")}>{t("auth.privacy_link")}</Text>
+          <Text style={s.legalLink} onPress={() => Linking.openURL(PRIVACY_URL)}>{t("auth.privacy_link")}</Text>
           .
         </Text>
       </View>

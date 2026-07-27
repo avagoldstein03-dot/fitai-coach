@@ -20,6 +20,7 @@ import { type PurchasesOffering } from "react-native-purchases";
 import { getOffering, purchasePkg, restorePurchases, isPremiumActive } from "@/lib/purchases";
 import { getCountryByName, getLocalPrice, DEFAULT_COUNTRY } from "@/lib/currency";
 import { T } from "@/lib/theme";
+import { TERMS_URL, PRIVACY_URL } from "@/lib/legal-urls";
 
 const API_URL = process.env.EXPO_PUBLIC_API_URL;
 
@@ -117,7 +118,7 @@ export default function PricingScreen({ onClose }: { onClose?: () => void } = {}
   const [offerings, setOfferings] = useState<Partial<Record<PlanTier, PurchasesOffering>>>({});
 
   useEffect(() => {
-    if (Platform.OS !== "ios") return;
+    if (Platform.OS === "web") return;
     const tiers: PlanTier[] = ["starter", "pro", "elite"];
     Promise.all(tiers.map((tier) => getOffering(tier).then((o) => [tier, o] as const))).then((results) => {
       const map: Partial<Record<PlanTier, PurchasesOffering>> = {};
@@ -207,7 +208,7 @@ export default function PricingScreen({ onClose }: { onClose?: () => void } = {}
   }
 
   const handleUpgrade = async () => {
-    if (Platform.OS === "ios") {
+    if (Platform.OS !== "web") {
       const tierOffering = offerings[selectedTier];
       const pkg =
         billing === "weekly" ? tierOffering?.weekly :
@@ -233,7 +234,7 @@ export default function PricingScreen({ onClose }: { onClose?: () => void } = {}
       }
       return;
     }
-    // Android: Stripe checkout
+    // Web: Stripe checkout (native platforms use RevenueCat/store billing above)
     const plan = PLANS[selectedTier];
     const priceId =
       billing === "weekly" ? plan.weeklyPriceId :
@@ -430,7 +431,7 @@ export default function PricingScreen({ onClose }: { onClose?: () => void } = {}
                 </>
               )}
             </TouchableOpacity>
-            {Platform.OS === "ios" && (
+            {Platform.OS !== "web" && (
               <TouchableOpacity
                 onPress={handleRestore}
                 disabled={isIAPPending}
@@ -447,11 +448,11 @@ export default function PricingScreen({ onClose }: { onClose?: () => void } = {}
 
         {/* Legal links — required by App Store */}
         <View style={s.legalRow}>
-          <TouchableOpacity onPress={() => Linking.openURL("https://fitaicoach.com/terms")}>
+          <TouchableOpacity onPress={() => Linking.openURL(TERMS_URL)}>
             <Text style={s.legalLink}>{t("pricing.terms_link")}</Text>
           </TouchableOpacity>
           <Text style={s.legalDot}>·</Text>
-          <TouchableOpacity onPress={() => Linking.openURL("https://fitaicoach.com/privacy")}>
+          <TouchableOpacity onPress={() => Linking.openURL(PRIVACY_URL)}>
             <Text style={s.legalLink}>{t("pricing.privacy_link")}</Text>
           </TouchableOpacity>
         </View>
