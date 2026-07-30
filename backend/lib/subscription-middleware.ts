@@ -10,10 +10,9 @@ export interface FeatureLimit {
   unlimitedMealPlans: boolean;
   unlimitedWorkouts: boolean;
   progressReviews: boolean;
-  bodyScan: boolean;
+  bodyScanDepth: "basic" | "full";
   supplements: boolean;
   formCheck: boolean;
-  liveBodyScan: boolean;
   advancedAnalytics: boolean;
   groceryIntegration: boolean;
 }
@@ -25,10 +24,9 @@ const TIER_LIMITS: Record<SubscriptionTier, FeatureLimit> = {
     unlimitedMealPlans: false,
     unlimitedWorkouts: false,
     progressReviews: false,
-    bodyScan: false,
+    bodyScanDepth: "basic",
     supplements: false,
     formCheck: false,
-    liveBodyScan: false,
     advancedAnalytics: false,
     groceryIntegration: false,
   },
@@ -38,10 +36,9 @@ const TIER_LIMITS: Record<SubscriptionTier, FeatureLimit> = {
     unlimitedMealPlans: true,
     unlimitedWorkouts: true,
     progressReviews: false,
-    bodyScan: false,
+    bodyScanDepth: "basic",
     supplements: false,
     formCheck: false,
-    liveBodyScan: false,
     advancedAnalytics: false,
     groceryIntegration: false,
   },
@@ -51,10 +48,9 @@ const TIER_LIMITS: Record<SubscriptionTier, FeatureLimit> = {
     unlimitedMealPlans: true,
     unlimitedWorkouts: true,
     progressReviews: true,
-    bodyScan: true,
+    bodyScanDepth: "full",
     supplements: true,
     formCheck: false,
-    liveBodyScan: false,
     advancedAnalytics: false,
     groceryIntegration: true,
   },
@@ -64,10 +60,9 @@ const TIER_LIMITS: Record<SubscriptionTier, FeatureLimit> = {
     unlimitedMealPlans: true,
     unlimitedWorkouts: true,
     progressReviews: true,
-    bodyScan: true,
+    bodyScanDepth: "full",
     supplements: true,
     formCheck: true,
-    liveBodyScan: true,
     advancedAnalytics: true,
     groceryIntegration: true,
   },
@@ -116,6 +111,7 @@ export async function getUserSubscription(req: NextApiRequest) {
             status: true,
             currentPeriodEnd: true,
             stripePriceId: true,
+            tier: true,
           },
         },
       },
@@ -130,8 +126,14 @@ export async function getUserSubscription(req: NextApiRequest) {
       user.subscription?.status === "active" &&
       new Date(user.subscription.currentPeriodEnd!) > new Date();
 
+    const explicitTier = user.subscription?.tier;
+    const isValidTier = (t: string | null | undefined): t is SubscriptionTier =>
+      t === "starter" || t === "pro" || t === "elite";
+
     const tier: SubscriptionTier = isPremium
-      ? getTierFromPriceId(user.subscription?.stripePriceId)
+      ? isValidTier(explicitTier)
+        ? explicitTier
+        : getTierFromPriceId(user.subscription?.stripePriceId)
       : "free";
 
     return {

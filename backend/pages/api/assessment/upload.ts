@@ -3,6 +3,7 @@ import { getAuth } from "@clerk/nextjs/server";
 import { prisma } from "@/lib/prisma";
 import { sendError, sendSuccess } from "@/lib/api-utils";
 import { uploadBase64ToS3 } from "@/lib/s3";
+import { checkRateLimit } from "@/lib/rate-limit";
 
 export const config = {
   api: {
@@ -38,6 +39,11 @@ export default async function handler(
 
     if (!user) {
       return sendError(res, "user_not_found", "User not found", 404);
+    }
+
+    const allowed = await checkRateLimit("assessment-upload", auth.userId, 20, "1 h");
+    if (!allowed) {
+      return sendError(res, "rate_limited", "Too many requests, please slow down", 429);
     }
 
     const { base64, position, scanId } = req.body as UploadBody;

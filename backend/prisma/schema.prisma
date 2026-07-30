@@ -422,12 +422,14 @@ model Subscription {
   userId                String                 @unique
   user                  User                   @relation(fields: [userId], references: [id], onDelete: Cascade)
   
-  stripeCustomerId      String                 @unique
-  stripeSubscriptionId  String
-  stripePriceId         String
-  
+  stripeCustomerId      String?                @unique
+  stripeSubscriptionId  String?
+  stripePriceId         String?
+
   plan                  String                 // "free" | "premium"
   status                String                 // "active" | "canceled" | "past_due" | "paused"
+  tier                  String?                // explicit tier override: "starter" | "pro" | "elite" — set directly for non-Stripe grants (e.g. comps); Stripe-driven rows leave this null and derive tier from stripePriceId
+  source                String                 @default("stripe") // "stripe" | "manual-comp"
   
   currentPeriodStart    DateTime
   currentPeriodEnd      DateTime

@@ -4,39 +4,12 @@ import { prisma } from "@/lib/prisma";
 import { sendError, sendSuccess } from "@/lib/api-utils";
 import { z } from "zod";
 import { AIProviderRegistry } from "@/services/ai-registry";
-import fs from "fs";
-import path from "path";
-
-function toDataUri(publicUrl: string): string {
-  const filePath = path.join(process.cwd(), "public", publicUrl);
-  const buffer = fs.readFileSync(filePath);
-  return `data:image/jpeg;base64,${buffer.toString("base64")}`;
-}
+import { checkRateLimit } from "@/lib/rate-limit";
+import { getUserSubscription } from "@/lib/subscription-middleware";
 
 const RequestSchema = z.object({
   scanId: z.string().cuid(),
 });
-
-interface AssessmentResult {
-  bodyComposition: {
-    estimatedBodyFat: string;
-    muscleDefinition: string;
-    estimatedBMI: string;
-  };
-  posture: {
-    spinalAlignment: string;
-    shoulderAlignment: string;
-    notes: string;
-  };
-  strengths: string[];
-  areasForImprovement: string[];
-  recommendations: {
-    exercise: string[];
-    nutrition: string[];
-    recovery: string[];
-  };
-  summary: string;
-}
 
 export default async function handler(
   req: NextApiRequest,
@@ -58,6 +31,11 @@ export default async function handler(
 
     if (!user) {
       return sendError(res, "user_not_found", "User not found", 404);
+    }
+
+    const allowed = await checkRateLimit("assessment-analyze", auth.userId, 10, "1 h");
+    if (!allowed) {
+      return sendError(res, "rate_limited", "Too many requests, please slow down", 429);
     }
 
     // Validate input
@@ -93,9 +71,9 @@ export default async function handler(
     // Analyze body with OpenAI Vision
     const analysisResult = await aiProvider.analyzeBody({
       userId: user.id,
-      frontImageUrl: toDataUri(scan.frontImageUrl),
-      sideImageUrl: toDataUri(scan.sideImageUrl),
-      backImageUrl: toDataUri(scan.backImageUrl),
+      frontImageUrl: scan.frontImageUrl,
+      sideImageUrl: scan.sideImageUrl,
+      backImageUrl: scan.backImageUrl,
       userHeight: user.height || undefined,
       userWeight: user.weight || undefined,
       userAge: user.age || undefined,
@@ -122,9 +100,25 @@ export default async function handler(
       data: { analysisStatus: "completed" },
     });
 
+    // Every tier gets a scan, but only "full" depth gets the complete breakdown —
+    // the headline summary is what carries the marketing hook for everyone else.
+    const { limits } = await getUserSubscription(req);
+    const isFullDepth = limits.bodyScanDepth === "full";
+    const bodyComposition = analysisResult.bodyComposition as Record<string, string>;
+    const [headlineKey, headlineValue] = Object.entries(bodyComposition)[0] ?? [];
+
+    const responseAssessment = isFullDepth
+      ? assessment
+      : {
+          id: assessment.id,
+          summary: assessment.summary,
+          bodyComposition: headlineKey ? { [headlineKey]: headlineValue } : {},
+          locked: true,
+        };
+
     return sendSuccess(res, {
       assessmentId: assessment.id,
-      assessment,
+      assessment: responseAssessment,
     });
   } catch (error: any) {
     console.error("Analysis error:", error);
