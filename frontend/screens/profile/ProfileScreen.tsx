@@ -207,6 +207,7 @@ export default function ProfileScreen() {
           {[
             { label: t("profile.friends"),           emoji: "🤝", screen: "Friends" },
             { label: t("profile.progress_reviews"),  emoji: "📈", screen: "Progress" },
+            { label: t("profile.advanced_analytics"), emoji: "📊", screen: "AdvancedAnalytics" },
             { label: t("profile.progress_photos"),   emoji: "🖼️", screen: "ProgressPhotos" },
             { label: t("profile.food_diary"),        emoji: "📔", screen: "FoodDiary" },
             { label: t("profile.supplement_stack"),  emoji: "💊", screen: "Supplements" },

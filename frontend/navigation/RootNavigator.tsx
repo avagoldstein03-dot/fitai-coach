@@ -40,6 +40,7 @@ import SupplementsScreen from "@/screens/supplements/SupplementsScreen";
 import ProgressScreen from "@/screens/progress/ProgressScreen";
 import ProgressPhotosScreen from "@/screens/progress/ProgressPhotosScreen";
 import WeeklyReviewScreen from "@/screens/progress/WeeklyReviewScreen";
+import AdvancedAnalyticsScreen from "@/screens/AdvancedAnalyticsScreen";
 import FriendsScreen from "@/screens/social/FriendsScreen";
 import SettingsScreen from "@/screens/settings/SettingsScreen";
 import NotificationsScreen from "@/screens/settings/NotificationsScreen";
@@ -162,6 +163,7 @@ export default function RootNavigator() {
             <Stack.Screen name="Pricing"               component={PricingScreen}               options={{ animation: "slide_from_bottom" }} />
             <Stack.Screen name="SubscriptionManagement" component={SubscriptionManagementScreen} options={{ animation: "slide_from_bottom" }} />
             <Stack.Screen name="WeeklyReview"          component={WeeklyReviewScreen}          options={{ animation: "slide_from_right" }} />
+            <Stack.Screen name="AdvancedAnalytics"     component={AdvancedAnalyticsScreen}     options={{ animation: "slide_from_right" }} />
           </Stack.Group>
         ) : (
           // Onboarding not complete — run the onboarding flow then go to Main
@@ -185,6 +187,7 @@ export default function RootNavigator() {
             <Stack.Screen name="Pricing"               component={PricingScreen}               options={{ animation: "slide_from_bottom" }} />
             <Stack.Screen name="SubscriptionManagement" component={SubscriptionManagementScreen} options={{ animation: "slide_from_bottom" }} />
             <Stack.Screen name="WeeklyReview"          component={WeeklyReviewScreen}          options={{ animation: "slide_from_right" }} />
+            <Stack.Screen name="AdvancedAnalytics"     component={AdvancedAnalyticsScreen}     options={{ animation: "slide_from_right" }} />
           </Stack.Group>
         )}
       </Stack.Navigator>
