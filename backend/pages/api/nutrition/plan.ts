@@ -5,6 +5,7 @@ import prisma from "@/lib/prisma";
 import { sendSuccess, sendError, validateRequest } from "@/lib/api-utils";
 import { AIProviderRegistry } from "@/services/ai-registry";
 import { getUserSubscription } from "@/lib/subscription-middleware";
+import { generateShoppingList, ShoppingListItem } from "@/lib/shopping-list";
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (!validateRequest(req, ["POST", "GET"])) {
@@ -44,6 +45,13 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
     if (!user) return sendError(res, "user_not_found", "User not found", 404);
 
+    // Preserve any hand-added shopping-list items (and their checked state)
+    // across a regenerate — they aren't derived from the meal plan, so
+    // wiping them every time the user regenerates would be surprising.
+    const existingPlan = await prisma.nutritionPlan.findUnique({ where: { userId: user.id } });
+    const existingItems = (existingPlan?.shoppingList as { items?: ShoppingListItem[] } | null)?.items ?? [];
+    const preservedCustomItems = existingItems.filter((item) => item.isCustom);
+
     const aiProvider = AIProviderRegistry.getProviderForTask("nutrition_planning");
 
     const mealPlanResult = await aiProvider.generateMealPlan({
@@ -54,15 +62,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       foodAllergies: user.foodAllergies || [],
     });
 
-    // Flatten into readable text for the Shopping List screen's keyword parser
-    const rawText = mealPlanResult.days
-      .map((day) => {
-        const meals = day.meals
-          .map((meal) => `${meal.name}:\n${meal.foods.join("\n")}`)
-          .join("\n\n");
-        return `${day.day}\n${meals}`;
-      })
-      .join("\n\n");
+    const shoppingListItems = [...generateShoppingList(mealPlanResult.days), ...preservedCustomItems];
 
     // Calculate targets inline
     const weight = user.weight || 70;
@@ -71,6 +71,12 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     const carbsTarget = Math.round((dailyCaloricTarget * 0.4) / 4);
     const fatsTarget = Math.round((dailyCaloricTarget * 0.25) / 9);
     const waterTarget = Math.round(weight * 35);
+
+    const mealPlanData = { days: mealPlanResult.days } as unknown as Prisma.InputJsonValue;
+    const shoppingListData = {
+      items: shoppingListItems,
+      generatedAt: new Date().toISOString(),
+    } as unknown as Prisma.InputJsonValue;
 
     const plan = await prisma.nutritionPlan.upsert({
       where: { userId: user.id },
@@ -81,7 +87,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         carbsTarget,
         fatsTarget,
         waterTarget,
-        mealPlan: { rawText, days: mealPlanResult.days } as unknown as Prisma.InputJsonValue,
+        mealPlan: mealPlanData,
+        shoppingList: shoppingListData,
       },
       update: {
         dailyCaloricTarget,
@@ -89,7 +96,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         carbsTarget,
         fatsTarget,
         waterTarget,
-        mealPlan: { rawText, days: mealPlanResult.days } as unknown as Prisma.InputJsonValue,
+        mealPlan: mealPlanData,
+        shoppingList: shoppingListData,
       },
     });
 
