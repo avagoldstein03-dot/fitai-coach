@@ -301,10 +301,7 @@ model NutritionPlan {
   carbsTarget           Float
   fatsTarget            Float
   waterTarget           Float                  // in ml
-  
-  // Timing
-  mealTimings           Json?                  // Array of meal times
-  
+
   // 7-Day Plan
   mealPlan              Json?                  // Weekly meal plan structure
   shoppingList          Json?                  // Shopping list for the week
@@ -459,10 +456,7 @@ model ChatMessage {
   
   role                  String                 // "user" | "assistant"
   content               String
-  
-  // Context
-  userContext           Json?                  // User profile, recent progress, etc.
-  
+
   // AI Provider
   aiProvider            String?                // "openai" | "anthropic"
   
