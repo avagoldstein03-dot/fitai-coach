@@ -344,7 +344,9 @@
     "action_supplements": "สแตค อาหารเสริม",
     "action_supplements_sub": "ติดตามสิ่งที่คุณรับประทาน",
     "action_advanced_analytics": "วิเคราะห์ขั้นสูง",
-    "action_advanced_analytics_sub": "แนวโน้มเชิงลึก · Elite"
+    "action_advanced_analytics_sub": "แนวโน้มเชิงลึก · Elite",
+    "action_product_scan": "สแกนสินค้า",
+    "action_product_scan_sub": "ตรวจสอบส่วนประกอบและสารเติมแต่ง"
   },
   "settings": {
     "title": "การตั้งค่า",
@@ -687,7 +689,8 @@
     "edit_title": "แก้ไขมื้ออาหาร",
     "save_changes_button": "บันทึกการเปลี่ยนแปลง",
     "updated_title": "อัปเดตแล้ว!",
-    "updated_msg": "มื้ออาหารของคุณได้รับการอัปเดตแล้ว"
+    "updated_msg": "มื้ออาหารของคุณได้รับการอัปเดตแล้ว",
+    "scan_product_label": "สแกนบาร์โค้ดสินค้า"
   },
   "food_diary": {
     "title": "สมุดบันทึกอาหาร",
@@ -1314,5 +1317,28 @@
     "body_composition": "การเปลี่ยนแปลงองค์ประกอบร่างกาย",
     "no_composition_data": "ทำการประเมินร่างกายอย่างน้อยสองครั้งเพื่อดูการเปลี่ยนแปลงเมื่อเวลาผ่านไป",
     "error": "ไม่สามารถโหลดการวิเคราะห์ของคุณได้ โปรดลองอีกครั้ง"
+  },
+  "product_scan": {
+    "permission_title": "จำเป็นต้องเข้าถึงกล้อง",
+    "permission_sub": "อนุญาตการเข้าถึงกล้องเพื่อสแกนบาร์โค้ดสินค้า",
+    "grant_permission": "อนุญาตการเข้าถึงกล้อง",
+    "frame_hint": "เнаправьกล้องของคุณไปที่บาร์โค้ด",
+    "scanning": "กำลังค้นหา...",
+    "manual_entry_label": "หรือป้อนหมายเลขบาร์โค้ดด้วยตนเอง",
+    "manual_entry_placeholder": "เช่น 0123456789012",
+    "manual_entry_submit": "ตรวจสอบ",
+    "unknown_product": "สินค้าไม่ทราบ",
+    "grade_great": "ยอดเยี่ยม",
+    "grade_good": "ดี",
+    "grade_mediocre": "ปานกลาง",
+    "grade_bad": "แย่",
+    "flagged_ingredients_title": "ส่วนประกอบที่ถูกทำเครื่องหมาย",
+    "no_flagged_ingredients": "ไม่พบส่วนประกอบที่น่าเป็นห่วง",
+    "not_found_title": "ไม่พบสินค้า",
+    "not_found_sub": "บาร์โค้ดนี้ยังไม่อยู่ในฐานข้อมูลของเรา หากเป็นอาหารเสริม ลองใช้ Supplement Stack แทน",
+    "try_supplements_cta": "ลอง Supplement Stack",
+    "scan_another": "สแกนอีกครั้ง",
+    "done": "เสร็จสิ้น",
+    "error_upstream": "ฐานข้อมูลสินค้าไม่พร้อมใช้งานชั่วคราว โปรดลองอีกครั้งในไม่ช้า"
   }
 }

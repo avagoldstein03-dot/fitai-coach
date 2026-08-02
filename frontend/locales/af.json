@@ -344,7 +344,9 @@
     "action_supplements": "Supplement-stapel",
     "action_supplements_sub": "Volg wat jy neem",
     "action_advanced_analytics": "Gevorderde Analitiek",
-    "action_advanced_analytics_sub": "Diep tendense · Elite"
+    "action_advanced_analytics_sub": "Diep tendense · Elite",
+    "action_product_scan": "Skandeer 'n Produk",
+    "action_product_scan_sub": "Kontroleer ingrediënte & byvoegstowwe"
   },
   "settings": {
     "title": "Instellings",
@@ -687,7 +689,8 @@
     "edit_title": "Wysig Maaltyd",
     "save_changes_button": "Stoor Veranderinge",
     "updated_title": "Opgedateer!",
-    "updated_msg": "Jou maaltyd is opgedateer."
+    "updated_msg": "Jou maaltyd is opgedateer.",
+    "scan_product_label": "Skandeer 'n Produk se Streepiekode"
   },
   "food_diary": {
     "title": "Voedingssdagboek",
@@ -1314,5 +1317,28 @@
     "body_composition": "Liggaamssamestelling Verandering",
     "no_composition_data": "Voltooi ten minste twee liggaamsbewerkings om veranderinge oor tyd te sien.",
     "error": "Kon nie jou analitiek laai nie. Probeer asseblief weer."
+  },
+  "product_scan": {
+    "permission_title": "Kameratoegang Nodig",
+    "permission_sub": "Gee kameratoegang toe om 'n produk se streepiekode te skandeer.",
+    "grant_permission": "Gee Kameratoegang",
+    "frame_hint": "Rig jou kamera op die streepiekode",
+    "scanning": "Hou aan om dit op te soek...",
+    "manual_entry_label": "Of voer die streepiekode nommer handmatig in",
+    "manual_entry_placeholder": "bv. 0123456789012",
+    "manual_entry_submit": "Kontroleer",
+    "unknown_product": "Onbekende Produk",
+    "grade_great": "Uitstekend",
+    "grade_good": "Goed",
+    "grade_mediocre": "Middelmatig",
+    "grade_bad": "Sleg",
+    "flagged_ingredients_title": "Gevlaggeerde Ingrediënte",
+    "no_flagged_ingredients": "Geen bekommerniswekkende ingrediënte gevind",
+    "not_found_title": "Produk Nie Gevind",
+    "not_found_sub": "Hierdie streepiekode is nog nie in ons databasis nie. As dit 'n supplement is, probeer eerder ons Supplement Stack.",
+    "try_supplements_cta": "Probeer Supplement Stack",
+    "scan_another": "Skandeer Nog Een",
+    "done": "Klaar",
+    "error_upstream": "Produktdatabasis is tydelik onbeskikbaar, probeer gou weer"
   }
 }

@@ -344,7 +344,9 @@
     "action_supplements": "Ravintolisäpino",
     "action_supplements_sub": "Seuraa mitä otat",
     "action_advanced_analytics": "Edistynyt analytiikka",
-    "action_advanced_analytics_sub": "Syvälliset trendit · Elite"
+    "action_advanced_analytics_sub": "Syvälliset trendit · Elite",
+    "action_product_scan": "Skannaa tuote",
+    "action_product_scan_sub": "Tarkista ainesosat ja lisäaineet"
   },
   "settings": {
     "title": "Asetukset",
@@ -687,7 +689,8 @@
     "edit_title": "Muokkaa ateriaa",
     "save_changes_button": "Tallenna muutokset",
     "updated_title": "Päivitetty!",
-    "updated_msg": "Ateriasi on päivitetty."
+    "updated_msg": "Ateriasi on päivitetty.",
+    "scan_product_label": "Skannaa tuotteen viivakoodi"
   },
   "food_diary": {
     "title": "Ruokapäiväkirja",
@@ -1314,5 +1317,28 @@
     "body_composition": "Kehon koostumuksen muutos",
     "no_composition_data": "Suorita vähintään kaksi kehon arviointia nähdäksesi muutokset ajan kuluessa.",
     "error": "Analytiikan lataaminen epäonnistui. Yritä uudelleen."
+  },
+  "product_scan": {
+    "permission_title": "Kameraluvan salliminen vaaditaan",
+    "permission_sub": "Salli kameraluvan käyttö tuotteen viivakoodin skannaamiseen.",
+    "grant_permission": "Salli kameraluvan käyttö",
+    "frame_hint": "Osoita kamera viivakoodiin",
+    "scanning": "Haetaan tietoja...",
+    "manual_entry_label": "Tai syötä viivakoodin numero manuaalisesti",
+    "manual_entry_placeholder": "esim. 0123456789012",
+    "manual_entry_submit": "Tarkista",
+    "unknown_product": "Tuntematon tuote",
+    "grade_great": "Erinomainen",
+    "grade_good": "Hyvä",
+    "grade_mediocre": "Tyydyttävä",
+    "grade_bad": "Huono",
+    "flagged_ingredients_title": "Merkityt ainesosat",
+    "no_flagged_ingredients": "Huolestuttavia ainesosia ei löytynyt",
+    "not_found_title": "Tuotetta ei löytynyt",
+    "not_found_sub": "Tämä viivakoodi ei ole vielä tietokannassamme. Jos tämä on ravintolisä, kokeile Supplement Stack -sovellusta.",
+    "try_supplements_cta": "Kokeile Supplement Stack",
+    "scan_another": "Skannaa toinen",
+    "done": "Valmis",
+    "error_upstream": "Tuotetietokanta on väliaikaisesti poissa käytöstä, yritä uudelleen pian"
   }
 }

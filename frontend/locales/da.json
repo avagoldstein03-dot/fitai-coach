@@ -344,7 +344,9 @@
     "action_supplements": "Supplement-stak",
     "action_supplements_sub": "Spor hvad du tager",
     "action_advanced_analytics": "Avanceret Analyse",
-    "action_advanced_analytics_sub": "Dybdegående tendenser · Elite"
+    "action_advanced_analytics_sub": "Dybdegående tendenser · Elite",
+    "action_product_scan": "Skan et produkt",
+    "action_product_scan_sub": "Tjek ingredienser og tilsætningsstoffer"
   },
   "settings": {
     "title": "Indstillinger",
@@ -687,7 +689,8 @@
     "edit_title": "Rediger måltid",
     "save_changes_button": "Gem ændringer",
     "updated_title": "Opdateret!",
-    "updated_msg": "Dit måltid er blevet opdateret."
+    "updated_msg": "Dit måltid er blevet opdateret.",
+    "scan_product_label": "Skan produktets stregkode"
   },
   "food_diary": {
     "title": "Madjournal",
@@ -1314,5 +1317,28 @@
     "body_composition": "Ændring i Kropsammensætning",
     "no_composition_data": "Gennemfør mindst to kropsvurderinger for at se ændringer over tid.",
     "error": "Kunne ikke indlæse din analyse. Prøv igen."
+  },
+  "product_scan": {
+    "permission_title": "Kameraudgang påkrævet",
+    "permission_sub": "Tillad kameraudgang for at skanne produktets stregkode.",
+    "grant_permission": "Giv kameradgang",
+    "frame_hint": "Peg dit kamera mod stregkoden",
+    "scanning": "Slår det op...",
+    "manual_entry_label": "Eller indtast stregkodenummeret manuelt",
+    "manual_entry_placeholder": "f.eks. 0123456789012",
+    "manual_entry_submit": "Tjek",
+    "unknown_product": "Ukendt produkt",
+    "grade_great": "Fremragende",
+    "grade_good": "Godt",
+    "grade_mediocre": "Acceptabelt",
+    "grade_bad": "Dårligt",
+    "flagged_ingredients_title": "Markerede ingredienser",
+    "no_flagged_ingredients": "Ingen bekymrende ingredienser fundet",
+    "not_found_title": "Produkt ikke fundet",
+    "not_found_sub": "Denne stregkode er ikke i vores database endnu. Hvis dette er et kosttilskud, skal du prøve vores Supplement Stack i stedet.",
+    "try_supplements_cta": "Prøv Supplement Stack",
+    "scan_another": "Skan et andet",
+    "done": "Færdig",
+    "error_upstream": "Produktdatabasen er midlertidigt utilgængelig, prøv igen snart"
   }
 }

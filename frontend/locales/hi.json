@@ -344,7 +344,9 @@
     "action_supplements": "सप्लीमेंट स्टैक",
     "action_supplements_sub": "आप क्या लेते हैं यह ट्रैक करें",
     "action_advanced_analytics": "उन्नत विश्लेषण",
-    "action_advanced_analytics_sub": "गहन ट्रेंड · एलीट"
+    "action_advanced_analytics_sub": "गहन ट्रेंड · एलीट",
+    "action_product_scan": "किसी उत्पाद को स्कैन करें",
+    "action_product_scan_sub": "सामग्री और योजक की जांच करें"
   },
   "settings": {
     "title": "सेटिंग्स",
@@ -687,7 +689,8 @@
     "edit_title": "भोजन संपादित करें",
     "save_changes_button": "परिवर्तन सहेजें",
     "updated_title": "अपडेट किया गया!",
-    "updated_msg": "आपका भोजन अपडेट कर दिया गया है।"
+    "updated_msg": "आपका भोजन अपडेट कर दिया गया है।",
+    "scan_product_label": "किसी उत्पाद के बारकोड को स्कैन करें"
   },
   "food_diary": {
     "title": "खाद्य डायरी",
@@ -1314,5 +1317,28 @@
     "body_composition": "शरीर संरचना परिवर्तन",
     "no_composition_data": "समय के साथ परिवर्तन देखने के लिए कम से कम दो शरीर मूल्यांकन पूरे करें।",
     "error": "आपका विश्लेषण लोड नहीं हो सका। कृपया पुनः प्रयास करें।"
+  },
+  "product_scan": {
+    "permission_title": "कैमरा एक्सेस की आवश्यकता है",
+    "permission_sub": "उत्पाद के बारकोड को स्कैन करने के लिए कैमरा एक्सेस की अनुमति दें।",
+    "grant_permission": "कैमरा एक्सेस प्रदान करें",
+    "frame_hint": "अपने कैमरे को बारकोड की ओर इंगित करें",
+    "scanning": "इसे देख रहे हैं...",
+    "manual_entry_label": "या बारकोड संख्या को मैनुअली दर्ज करें",
+    "manual_entry_placeholder": "जैसे 0123456789012",
+    "manual_entry_submit": "जांचें",
+    "unknown_product": "अज्ञात उत्पाद",
+    "grade_great": "शानदार",
+    "grade_good": "अच्छा",
+    "grade_mediocre": "औसत",
+    "grade_bad": "खराब",
+    "flagged_ingredients_title": "चिह्नित सामग्री",
+    "no_flagged_ingredients": "कोई चिंताजनक सामग्री नहीं मिली",
+    "not_found_title": "उत्पाद नहीं मिला",
+    "not_found_sub": "यह बारकोड अभी तक हमारे डेटाबेस में नहीं है। यदि यह एक सप्लीमेंट है, तो इसके बजाय हमारे सप्लीमेंट स्टैक को आजमाएं।",
+    "try_supplements_cta": "सप्लीमेंट स्टैक आजमाएं",
+    "scan_another": "दूसरा स्कैन करें",
+    "done": "पूर्ण",
+    "error_upstream": "उत्पाद डेटाबेस अस्थायी रूप से अनुपलब्ध है, कुछ समय बाद पुनः प्रयास करें"
   }
 }

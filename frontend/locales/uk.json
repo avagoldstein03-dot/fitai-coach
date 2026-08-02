@@ -344,7 +344,9 @@
     "action_supplements": "Комплекс добавок",
     "action_supplements_sub": "Стежте за тим, що ви приймаєте",
     "action_advanced_analytics": "Розширена аналітика",
-    "action_advanced_analytics_sub": "Глибокі тренди · Еліт"
+    "action_advanced_analytics_sub": "Глибокі тренди · Еліт",
+    "action_product_scan": "Сканувати товар",
+    "action_product_scan_sub": "Перевірте інгредієнти та добавки"
   },
   "settings": {
     "title": "Налаштування",
@@ -687,7 +689,8 @@
     "edit_title": "Редагувати прием їжі",
     "save_changes_button": "Зберегти зміни",
     "updated_title": "Оновлено!",
-    "updated_msg": "Ваш прием їжі було оновлено."
+    "updated_msg": "Ваш прием їжі було оновлено.",
+    "scan_product_label": "Сканувати штрих-код товару"
   },
   "food_diary": {
     "title": "Щоденник Їжи",
@@ -1314,5 +1317,28 @@
     "body_composition": "Зміна складу тіла",
     "no_composition_data": "Завершіть щонайменше два оцінювання тіла, щоб побачити зміни з часом.",
     "error": "Не вдалося завантажити вашу аналітику. Будь ласка, спробуйте ще раз."
+  },
+  "product_scan": {
+    "permission_title": "Необхідний доступ до камери",
+    "permission_sub": "Дозвольте доступ до камери для сканування штрих-кода товару.",
+    "grant_permission": "Надати доступ до камери",
+    "frame_hint": "Наведіть камеру на штрих-код",
+    "scanning": "Шукаю...",
+    "manual_entry_label": "Або введіть номер штрих-кода вручну",
+    "manual_entry_placeholder": "наприклад 0123456789012",
+    "manual_entry_submit": "Перевірити",
+    "unknown_product": "Невідомий товар",
+    "grade_great": "Чудово",
+    "grade_good": "Добре",
+    "grade_mediocre": "Задовільно",
+    "grade_bad": "Погано",
+    "flagged_ingredients_title": "Позначені інгредієнти",
+    "no_flagged_ingredients": "Небезпечних інгредієнтів не знайдено",
+    "not_found_title": "Товар не знайдений",
+    "not_found_sub": "Цей штрих-код ще не в нашій базі даних. Якщо це добавка, спробуйте замість цього наш Набір добавок.",
+    "try_supplements_cta": "Спробувати набір добавок",
+    "scan_another": "Сканувати ще один",
+    "done": "Готово",
+    "error_upstream": "База даних товарів тимчасово недоступна, спробуйте ще раз незабаром"
   }
 }

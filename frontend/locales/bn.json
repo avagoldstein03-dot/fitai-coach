@@ -344,7 +344,9 @@
     "action_supplements": "সম্পূরক স্ট্যাক",
     "action_supplements_sub": "আপনি যা নিচ্ছেন তা ট্র্যাক করুন",
     "action_advanced_analytics": "উন্নত বিশ্লেষণ",
-    "action_advanced_analytics_sub": "গভীর প্রবণতা · এলিট"
+    "action_advanced_analytics_sub": "গভীর প্রবণতা · এলিট",
+    "action_product_scan": "একটি পণ্য স্ক্যান করুন",
+    "action_product_scan_sub": "উপাদান এবং সংযোজন পরীক্ষা করুন"
   },
   "settings": {
     "title": "সেটিংস",
@@ -687,7 +689,8 @@
     "edit_title": "খাবার সম্পাদনা করুন",
     "save_changes_button": "পরিবর্তন সংরক্ষণ করুন",
     "updated_title": "আপডেট হয়েছে!",
-    "updated_msg": "আপনার খাবার আপডেট হয়েছে।"
+    "updated_msg": "আপনার খাবার আপডেট হয়েছে।",
+    "scan_product_label": "পণ্যের বারকোড স্ক্যান করুন"
   },
   "food_diary": {
     "title": "খাদ্য ডায়েরি",
@@ -1314,5 +1317,28 @@
     "body_composition": "শরীর গঠনের পরিবর্তন",
     "no_composition_data": "সময়ের সাথে পরিবর্তন দেখতে কমপক্ষে দুটি শরীর মূল্যায়ন সম্পূর্ণ করুন।",
     "error": "আপনার বিশ্লেষণ লোড করতে পারা যায়নি। অনুগ্রহ করে আবার চেষ্টা করুন।"
+  },
+  "product_scan": {
+    "permission_title": "ক্যামেরা অ্যাক্সেস প্রয়োজন",
+    "permission_sub": "পণ্যের বারকোড স্ক্যান করতে ক্যামেরা অ্যাক্সেস অনুমতি দিন।",
+    "grant_permission": "ক্যামেরা অ্যাক্সেস প্রদান করুন",
+    "frame_hint": "আপনার ক্যামেরা বারকোডের দিকে নির্দেশ করুন",
+    "scanning": "এটি খুঁজে বের করা হচ্ছে...",
+    "manual_entry_label": "অথবা বারকোড নম্বর ম্যানুয়ালি প্রবেশ করুন",
+    "manual_entry_placeholder": "যেমন 0123456789012",
+    "manual_entry_submit": "পরীক্ষা করুন",
+    "unknown_product": "অজানা পণ্য",
+    "grade_great": "দুর্দান্ত",
+    "grade_good": "ভালো",
+    "grade_mediocre": "মধ্যম",
+    "grade_bad": "খারাপ",
+    "flagged_ingredients_title": "চিহ্নিত উপাদান",
+    "no_flagged_ingredients": "কোনো উদ্বেগজনক উপাদান পাওয়া যায়নি",
+    "not_found_title": "পণ্য পাওয়া যায়নি",
+    "not_found_sub": "এই বারকোড এখনও আমাদের ডাটাবেসে নেই। যদি এটি একটি সাপ্লিমেন্ট হয়, তাহলে আমাদের সাপ্লিমেন্ট স্ট্যাক চেষ্টা করুন।",
+    "try_supplements_cta": "সাপ্লিমেন্ট স্ট্যাক চেষ্টা করুন",
+    "scan_another": "অন্যটি স্ক্যান করুন",
+    "done": "সম্পন্ন",
+    "error_upstream": "পণ্য ডাটাবেস অস্থায়ীভাবে অনুপলব্ধ, শীঘ্রই আবার চেষ্টা করুন"
   }
 }

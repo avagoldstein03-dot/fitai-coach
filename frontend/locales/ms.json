@@ -344,7 +344,9 @@
     "action_supplements": "Tindanan Suplemen",
     "action_supplements_sub": "Jejaki apa yang anda ambil",
     "action_advanced_analytics": "Analitik Lanjutan",
-    "action_advanced_analytics_sub": "Tren mendalam · Elit"
+    "action_advanced_analytics_sub": "Tren mendalam · Elit",
+    "action_product_scan": "Imbas Produk",
+    "action_product_scan_sub": "Semak bahan dan aditif"
   },
   "settings": {
     "title": "Tetapan",
@@ -687,7 +689,8 @@
     "edit_title": "Sunting Makanan",
     "save_changes_button": "Simpan Perubahan",
     "updated_title": "Dikemas kini!",
-    "updated_msg": "Makanan anda telah dikemas kini."
+    "updated_msg": "Makanan anda telah dikemas kini.",
+    "scan_product_label": "Imbas Barcode Produk"
   },
   "food_diary": {
     "title": "Diari Makanan",
@@ -1314,5 +1317,28 @@
     "body_composition": "Perubahan Komposisi Badan",
     "no_composition_data": "Lengkapkan sekurang-kurangnya dua penilaian badan untuk melihat perubahan dari semasa ke semasa.",
     "error": "Tidak dapat memuatkan analitik anda. Sila cuba lagi."
+  },
+  "product_scan": {
+    "permission_title": "Akses Kamera Diperlukan",
+    "permission_sub": "Benarkan akses kamera untuk mengimbas barcode produk.",
+    "grant_permission": "Berikan Akses Kamera",
+    "frame_hint": "Arahkan kamera anda ke barcode",
+    "scanning": "Mencari...",
+    "manual_entry_label": "Atau masukkan nombor barcode secara manual",
+    "manual_entry_placeholder": "cth. 0123456789012",
+    "manual_entry_submit": "Semak",
+    "unknown_product": "Produk Tidak Diketahui",
+    "grade_great": "Bagus",
+    "grade_good": "Baik",
+    "grade_mediocre": "Sederhana",
+    "grade_bad": "Buruk",
+    "flagged_ingredients_title": "Bahan Berbendera",
+    "no_flagged_ingredients": "Tiada bahan yang membimbangkan ditemui",
+    "not_found_title": "Produk Tidak Dijumpai",
+    "not_found_sub": "Barcode ini belum dalam pangkalan data kami. Jika ini adalah suplemen, cuba Tindanan Suplemen kami sebaliknya.",
+    "try_supplements_cta": "Cuba Tindanan Suplemen",
+    "scan_another": "Imbas Satu Lagi",
+    "done": "Selesai",
+    "error_upstream": "Pangkalan data produk sementara tidak tersedia, cuba lagi sebentar"
   }
 }

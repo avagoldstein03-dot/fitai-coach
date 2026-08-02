@@ -344,7 +344,9 @@
     "action_supplements": "חבילת תוספים",
     "action_supplements_sub": "עקוב אחרי מה שאתה לוקח",
     "action_advanced_analytics": "ניתוח מתקדם",
-    "action_advanced_analytics_sub": "מגמות עמוקות · Elite"
+    "action_advanced_analytics_sub": "מגמות עמוקות · Elite",
+    "action_product_scan": "סרוק מוצר",
+    "action_product_scan_sub": "בדוק מרכיבים וחומרים מוספים"
   },
   "settings": {
     "title": "הגדרות",
@@ -687,7 +689,8 @@
     "edit_title": "עריכת ארוחה",
     "save_changes_button": "שמור שינויים",
     "updated_title": "עודכן!",
-    "updated_msg": "הארוחה שלך עודכנה."
+    "updated_msg": "הארוחה שלך עודכנה.",
+    "scan_product_label": "סרוק ברקוד של מוצר"
   },
   "food_diary": {
     "title": "יומן מזון",
@@ -1314,5 +1317,28 @@
     "body_composition": "שינוי הרכב הגוף",
     "no_composition_data": "השלם לפחות שתי הערכות גוף כדי לראות שינויים לאורך זמן.",
     "error": "לא היתה אפשרות לטעון את הניתוחים שלך. אנא נסה שוב."
+  },
+  "product_scan": {
+    "permission_title": "נדרש גישה למצלמה",
+    "permission_sub": "אפשר גישה למצלמה כדי לסרוק ברקוד של מוצר.",
+    "grant_permission": "אפשר גישה למצלמה",
+    "frame_hint": "כוון את המצלמה שלך לברקוד",
+    "scanning": "מחפש את זה...",
+    "manual_entry_label": "או הקלד את מספר הברקוד באופן ידני",
+    "manual_entry_placeholder": "לדוגמה: 0123456789012",
+    "manual_entry_submit": "בדוק",
+    "unknown_product": "מוצר לא ידוע",
+    "grade_great": "מעולה",
+    "grade_good": "טוב",
+    "grade_mediocre": "בינוני",
+    "grade_bad": "רע",
+    "flagged_ingredients_title": "מרכיבים שסומנו",
+    "no_flagged_ingredients": "לא נמצאו מרכיבים שמעוררים דאגה",
+    "not_found_title": "מוצר לא נמצא",
+    "not_found_sub": "ברקוד זה עדיין לא נמצא במאגר שלנו. אם זה תוסף, נסה את Stack התוסף שלנו במקום זאת.",
+    "try_supplements_cta": "נסה את Supplement Stack",
+    "scan_another": "סרוק עוד אחד",
+    "done": "בוצע",
+    "error_upstream": "מאגר נתונים של מוצרים זמינה ארעית, נסה שוב בעוד מעט"
   }
 }

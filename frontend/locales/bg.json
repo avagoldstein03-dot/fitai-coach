@@ -344,7 +344,9 @@
     "action_supplements": "Стек на добавките",
     "action_supplements_sub": "Проследяване на това, което приемате",
     "action_advanced_analytics": "Разширена аналитика",
-    "action_advanced_analytics_sub": "Дълбоки тенденции · Елит"
+    "action_advanced_analytics_sub": "Дълбоки тенденции · Елит",
+    "action_product_scan": "Сканирайте продукт",
+    "action_product_scan_sub": "Проверете съставки и добавки"
   },
   "settings": {
     "title": "Настройки",
@@ -687,7 +689,8 @@
     "edit_title": "Редактиране на прием",
     "save_changes_button": "Запазване на промените",
     "updated_title": "Актуализирано!",
-    "updated_msg": "Вашият прием е актуализиран."
+    "updated_msg": "Вашият прием е актуализиран.",
+    "scan_product_label": "Сканирайте баркода на продукт"
   },
   "food_diary": {
     "title": "Хранителен дневник",
@@ -1314,5 +1317,28 @@
     "body_composition": "Промяна на телесния състав",
     "no_composition_data": "Завършете поне две оценки на тялото, за да видите промените във времето.",
     "error": "Не можах да зареша вашата аналитика. Моля, опитайте отново."
+  },
+  "product_scan": {
+    "permission_title": "Необходим е достъп до камера",
+    "permission_sub": "Разрешете достъп до камера за сканиране на баркода на продукт.",
+    "grant_permission": "Дайте достъп до камера",
+    "frame_hint": "Насочете камерата към баркода",
+    "scanning": "Търси се...",
+    "manual_entry_label": "Или въведете номера на баркода ръчно",
+    "manual_entry_placeholder": "напр. 0123456789012",
+    "manual_entry_submit": "Проверка",
+    "unknown_product": "Неизвестен продукт",
+    "grade_great": "Отлично",
+    "grade_good": "Добро",
+    "grade_mediocre": "Задоволително",
+    "grade_bad": "Лошо",
+    "flagged_ingredients_title": "Маркирани съставки",
+    "no_flagged_ingredients": "Не са намерени безпокойни съставки",
+    "not_found_title": "Продуктът не е намерен",
+    "not_found_sub": "Този баркод още не е в нашата база данни. Ако това е хранителна добавка, опитайте нашия Supplement Stack.",
+    "try_supplements_cta": "Опитайте Supplement Stack",
+    "scan_another": "Сканирайте друг",
+    "done": "Готово",
+    "error_upstream": "Базата данни с продукти временно е недостъпна, опитайте отново скоро"
   }
 }

@@ -344,7 +344,9 @@
     "action_supplements": "Supplement Stack",
     "action_supplements_sub": "Subaybayan kung ano ang iyong ginagamit",
     "action_advanced_analytics": "Advanced Analytics",
-    "action_advanced_analytics_sub": "Malalim na trends · Elite"
+    "action_advanced_analytics_sub": "Malalim na trends · Elite",
+    "action_product_scan": "Mag-scan ng Produkto",
+    "action_product_scan_sub": "Suriin ang ingredients at additives"
   },
   "settings": {
     "title": "Settings",
@@ -687,7 +689,8 @@
     "edit_title": "I-edit ang Pagkain",
     "save_changes_button": "I-save ang Mga Pagbabago",
     "updated_title": "Na-update na!",
-    "updated_msg": "Ang iyong pagkain ay na-update na."
+    "updated_msg": "Ang iyong pagkain ay na-update na.",
+    "scan_product_label": "Mag-scan ng Barcode ng Produkto"
   },
   "food_diary": {
     "title": "Food Diary",
@@ -1314,5 +1317,28 @@
     "body_composition": "Pagbabago ng Body Composition",
     "no_composition_data": "Kumpletuhin ang hindi bababa sa dalawang body assessment upang makita ang mga pagbabago sa paglipas ng panahon.",
     "error": "Hindi maaaring i-load ang iyong analytics. Mangyaring subukan ulit."
+  },
+  "product_scan": {
+    "permission_title": "Kailangan ng Access sa Camera",
+    "permission_sub": "Payagan ang access sa camera upang mag-scan ng barcode ng produkto.",
+    "grant_permission": "Bigyan ng Access sa Camera",
+    "frame_hint": "Ituro ang iyong camera sa barcode",
+    "scanning": "Hinahanap...",
+    "manual_entry_label": "O ipasok ang numero ng barcode nang manu-mano",
+    "manual_entry_placeholder": "hal. 0123456789012",
+    "manual_entry_submit": "Suriin",
+    "unknown_product": "Hindi Kilalang Produkto",
+    "grade_great": "Mahusay",
+    "grade_good": "Maganda",
+    "grade_mediocre": "Katamtaman",
+    "grade_bad": "Masama",
+    "flagged_ingredients_title": "Flagged Ingredients",
+    "no_flagged_ingredients": "Walang alalahanin na ingredients na nahanap",
+    "not_found_title": "Produkto Ay Hindi Nahanap",
+    "not_found_sub": "Ang barcode na ito ay hindi pa nasa aming database. Kung ito ay supplement, subukan ang aming Supplement Stack sa halip.",
+    "try_supplements_cta": "Subukan ang Supplement Stack",
+    "scan_another": "Mag-scan ng Iba",
+    "done": "Tapos Na",
+    "error_upstream": "Ang database ng produkto ay pansamantalang hindi available, subukan ulit sa madaling panahon"
   }
 }

@@ -344,7 +344,9 @@
     "action_supplements": "Takviye Yığını",
     "action_supplements_sub": "Aldıklarınızı takip edin",
     "action_advanced_analytics": "Gelişmiş Analitics",
-    "action_advanced_analytics_sub": "Derinlemesine trendler · Elite"
+    "action_advanced_analytics_sub": "Derinlemesine trendler · Elite",
+    "action_product_scan": "Ürün Taraması Yap",
+    "action_product_scan_sub": "İçerikleri ve katkı maddeleri kontrol et"
   },
   "settings": {
     "title": "Ayarlar",
@@ -687,7 +689,8 @@
     "edit_title": "Öğünü Düzenle",
     "save_changes_button": "Değişiklikleri Kaydet",
     "updated_title": "Güncellendi!",
-    "updated_msg": "Öğününüz güncellendi."
+    "updated_msg": "Öğününüz güncellendi.",
+    "scan_product_label": "Ürün Barkodunu Tara"
   },
   "food_diary": {
     "title": "Yemek Günlüğü",
@@ -1314,5 +1317,28 @@
     "body_composition": "Vücut Kompozisyonu Değişimi",
     "no_composition_data": "Zaman içinde değişimleri görmek için en az iki vücut değerlendirmesi tamamlayın.",
     "error": "Analitiğiniz yüklenemedi. Lütfen tekrar deneyin."
+  },
+  "product_scan": {
+    "permission_title": "Kamera Erişimi Gerekli",
+    "permission_sub": "Ürün barkodunu taramak için kamera erişimine izin verin.",
+    "grant_permission": "Kamera Erişimine İzin Ver",
+    "frame_hint": "Kameranızı barkoda doğrultun",
+    "scanning": "Sorgulanıyor...",
+    "manual_entry_label": "Veya barkod numarasını manuel olarak girin",
+    "manual_entry_placeholder": "ör. 0123456789012",
+    "manual_entry_submit": "Kontrol Et",
+    "unknown_product": "Bilinmeyen Ürün",
+    "grade_great": "Harika",
+    "grade_good": "İyi",
+    "grade_mediocre": "Orta",
+    "grade_bad": "Kötü",
+    "flagged_ingredients_title": "İşaretli İçerikler",
+    "no_flagged_ingredients": "Endişe verici içerik bulunamadı",
+    "not_found_title": "Ürün Bulunamadı",
+    "not_found_sub": "Bu barkod henüz veritabanımızda yok. Eğer bu bir takviye ürünü ise, bunun yerine Supplement Stack'i deneyin.",
+    "try_supplements_cta": "Supplement Stack'i Dene",
+    "scan_another": "Başka Bir Tarama Yap",
+    "done": "Bitti",
+    "error_upstream": "Ürün veritabanı geçici olarak kullanılamıyor, kısa süre içinde tekrar deneyin"
   }
 }

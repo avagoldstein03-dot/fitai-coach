@@ -344,7 +344,9 @@
     "action_supplements": "مكمل غذائي",
     "action_supplements_sub": "تتبع ما تتناوله",
     "action_advanced_analytics": "التحليلات المتقدمة",
-    "action_advanced_analytics_sub": "الاتجاهات العميقة · النخبة"
+    "action_advanced_analytics_sub": "الاتجاهات العميقة · النخبة",
+    "action_product_scan": "مسح منتج",
+    "action_product_scan_sub": "تحقق من المكونات والإضافات"
   },
   "settings": {
     "title": "الإعدادات",
@@ -687,7 +689,8 @@
     "edit_title": "تعديل الوجبة",
     "save_changes_button": "حفظ التغييرات",
     "updated_title": "تم التحديث!",
-    "updated_msg": "تم تحديث وجبتك."
+    "updated_msg": "تم تحديث وجبتك.",
+    "scan_product_label": "مسح رمز منتج"
   },
   "food_diary": {
     "title": "يوميات الطعام",
@@ -1314,5 +1317,28 @@
     "body_composition": "تغيير تكوين الجسم",
     "no_composition_data": "أكمل تقييمين للجسم على الأقل لرؤية التغييرات بمرور الوقت.",
     "error": "تعذر تحميل التحليلات الخاصة بك. يرجى المحاولة مرة أخرى."
+  },
+  "product_scan": {
+    "permission_title": "يلزم الوصول إلى الكاميرا",
+    "permission_sub": "السماح بالوصول إلى الكاميرا لمسح رمز منتج.",
+    "grant_permission": "منح إذن الكاميرا",
+    "frame_hint": "وجّه الكاميرا نحو الرمز الشريطي",
+    "scanning": "جاري البحث...",
+    "manual_entry_label": "أو أدخل رقم الرمز الشريطي يدويًا",
+    "manual_entry_placeholder": "مثال: 0123456789012",
+    "manual_entry_submit": "تحقق",
+    "unknown_product": "منتج غير معروف",
+    "grade_great": "ممتاز",
+    "grade_good": "جيد",
+    "grade_mediocre": "متوسط",
+    "grade_bad": "سيء",
+    "flagged_ingredients_title": "المكونات المشار إليها",
+    "no_flagged_ingredients": "لم يتم العثور على مكونات مثيرة للقلق",
+    "not_found_title": "المنتج غير موجود",
+    "not_found_sub": "هذا الرمز الشريطي غير موجود في قاعدة بيانتنا حتى الآن. إذا كان هذا ملحقًا غذائيًا، فجرّب Supplement Stack بدلاً من ذلك.",
+    "try_supplements_cta": "جرّب Supplement Stack",
+    "scan_another": "مسح آخر",
+    "done": "تم",
+    "error_upstream": "قاعدة بيانات المنتجات غير متاحة مؤقتًا، حاول لاحقًا"
   }
 }

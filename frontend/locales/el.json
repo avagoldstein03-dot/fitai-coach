@@ -344,7 +344,9 @@
     "action_supplements": "Σύνθεση Συμπληρωμάτων",
     "action_supplements_sub": "Παρακολουθήστε αυτά που λαμβάνετε",
     "action_advanced_analytics": "Προηγμένα Ανάλυτικά",
-    "action_advanced_analytics_sub": "Βαθιές τάσεις · Elite"
+    "action_advanced_analytics_sub": "Βαθιές τάσεις · Elite",
+    "action_product_scan": "Σάρωση Προϊόντος",
+    "action_product_scan_sub": "Ελέγξτε συστατικά και πρόσθετα"
   },
   "settings": {
     "title": "Ρυθμίσεις",
@@ -687,7 +689,8 @@
     "edit_title": "Επεξεργασία Γεύματος",
     "save_changes_button": "Αποθήκευση Αλλαγών",
     "updated_title": "Ενημερώθηκε!",
-    "updated_msg": "Το γεύμα σας έχει ενημερωθεί."
+    "updated_msg": "Το γεύμα σας έχει ενημερωθεί.",
+    "scan_product_label": "Σάρωση Barcode Προϊόντος"
   },
   "food_diary": {
     "title": "Ημερολόγιο Φαγητού",
@@ -1314,5 +1317,28 @@
     "body_composition": "Αλλαγή Σύστασης Σώματος",
     "no_composition_data": "Ολοκληρώστε τουλάχιστον δύο αξιολογήσεις σώματος για να δείτε τις αλλαγές με την πάροδο του χρόνου.",
     "error": "Δεν ήταν δυνατό να φορτωθούν τα ανάλυτικά σας. Παρακαλώ δοκιμάστε ξανά."
+  },
+  "product_scan": {
+    "permission_title": "Απαιτείται Πρόσβαση Κάμερας",
+    "permission_sub": "Επιτρέψτε την πρόσβαση στην κάμερα για να σαρώσετε το barcode ενός προϊόντος.",
+    "grant_permission": "Χορήγηση Πρόσβασης Κάμερας",
+    "frame_hint": "Στοχεύστε την κάμερά σας στο barcode",
+    "scanning": "Γίνεται αναζήτηση...",
+    "manual_entry_label": "Ή εισάγετε τον αριθμό barcode χειροκίνητα",
+    "manual_entry_placeholder": "π.χ. 0123456789012",
+    "manual_entry_submit": "Έλεγχος",
+    "unknown_product": "Άγνωστο Προϊόν",
+    "grade_great": "Εξαιρετικό",
+    "grade_good": "Καλό",
+    "grade_mediocre": "Μέτριο",
+    "grade_bad": "Κακό",
+    "flagged_ingredients_title": "Συστατικά Προς Προσοχή",
+    "no_flagged_ingredients": "Δεν βρέθηκαν ανησυχητικά συστατικά",
+    "not_found_title": "Το Προϊόν Δεν Βρέθηκε",
+    "not_found_sub": "Αυτό το barcode δεν υπάρχει ακόμη στη βάση δεδομένων μας. Αν πρόκειται για συμπλήρωμα, δοκιμάστε τη Στοίβα Συμπληρωμάτων μας.",
+    "try_supplements_cta": "Δοκιμάστε Στοίβα Συμπληρωμάτων",
+    "scan_another": "Σάρωση Άλλου",
+    "done": "Ολοκληρώθηκε",
+    "error_upstream": "Η βάση δεδομένων προϊόντων δεν είναι προσωρινά διαθέσιμη, δοκιμάστε ξανά σε λίγο"
   }
 }

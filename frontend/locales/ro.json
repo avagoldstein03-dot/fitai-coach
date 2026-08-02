@@ -344,7 +344,9 @@
     "action_supplements": "Pachet de Suplimente",
     "action_supplements_sub": "Urmărește ce iei",
     "action_advanced_analytics": "Analize Avansate",
-    "action_advanced_analytics_sub": "Tendințe profunde · Elite"
+    "action_advanced_analytics_sub": "Tendințe profunde · Elite",
+    "action_product_scan": "Scanează un Produs",
+    "action_product_scan_sub": "Verifică ingredientele și aditivii"
   },
   "settings": {
     "title": "Setari",
@@ -687,7 +689,8 @@
     "edit_title": "Editare Masă",
     "save_changes_button": "Salvare Modificări",
     "updated_title": "Actualizat!",
-    "updated_msg": "Masa dumneavoastră a fost actualizată."
+    "updated_msg": "Masa dumneavoastră a fost actualizată.",
+    "scan_product_label": "Scanează Codul de Bare al unui Produs"
   },
   "food_diary": {
     "title": "Jurnal Alimentar",
@@ -1314,5 +1317,28 @@
     "body_composition": "Schimbare Compoziție Corporală",
     "no_composition_data": "Completează cel puțin două evaluări corporale pentru a vedea schimbările în timp.",
     "error": "Nu am putut încărca analizele tale. Te rog încearcă din nou."
+  },
+  "product_scan": {
+    "permission_title": "Acces la Cameră Necesar",
+    "permission_sub": "Permite accesul la cameră pentru a scana codul de bare al unui produs.",
+    "grant_permission": "Acordă Acces la Cameră",
+    "frame_hint": "Îndreaptă camera spre codul de bare",
+    "scanning": "Se caută...",
+    "manual_entry_label": "Sau introdu manual numărul codului de bare",
+    "manual_entry_placeholder": "de ex. 0123456789012",
+    "manual_entry_submit": "Verifică",
+    "unknown_product": "Produs Necunoscut",
+    "grade_great": "Excelent",
+    "grade_good": "Bun",
+    "grade_mediocre": "Mediu",
+    "grade_bad": "Slab",
+    "flagged_ingredients_title": "Ingrediente Marcate",
+    "no_flagged_ingredients": "Nu au fost găsite ingrediente problematice",
+    "not_found_title": "Produs Negăsit",
+    "not_found_sub": "Acest cod de bare nu se află încă în baza noastră de date. Dacă aceasta este un supliment, încearcă Stiva noastră de Suplimente.",
+    "try_supplements_cta": "Încearcă Stiva de Suplimente",
+    "scan_another": "Scanează Altul",
+    "done": "Gata",
+    "error_upstream": "Baza de date cu produse este temporar indisponibilă, încearcă din nou în curând"
   }
 }

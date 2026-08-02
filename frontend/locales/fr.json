@@ -344,7 +344,9 @@
     "action_supplements": "Pile de suppléments",
     "action_supplements_sub": "Suivez ce que vous prenez",
     "action_advanced_analytics": "Analyses Avancées",
-    "action_advanced_analytics_sub": "Tendances approfondies · Elite"
+    "action_advanced_analytics_sub": "Tendances approfondies · Elite",
+    "action_product_scan": "Scannez un Produit",
+    "action_product_scan_sub": "Vérifiez les ingrédients et additifs"
   },
   "settings": {
     "title": "Paramètres",
@@ -687,7 +689,8 @@
     "edit_title": "Modifier le repas",
     "save_changes_button": "Enregistrer les modifications",
     "updated_title": "Mis à jour !",
-    "updated_msg": "Votre repas a été mis à jour."
+    "updated_msg": "Votre repas a été mis à jour.",
+    "scan_product_label": "Scannez le Code-Barres d'un Produit"
   },
   "food_diary": {
     "title": "Journal alimentaire",
@@ -1314,5 +1317,28 @@
     "body_composition": "Changement de Composition Corporelle",
     "no_composition_data": "Complétez au moins deux évaluations corporelles pour voir les changements au fil du temps.",
     "error": "Impossible de charger vos analyses. Veuillez réessayer."
+  },
+  "product_scan": {
+    "permission_title": "Accès à la Caméra Requis",
+    "permission_sub": "Autorisez l'accès à la caméra pour scanner le code-barres d'un produit.",
+    "grant_permission": "Autoriser l'Accès à la Caméra",
+    "frame_hint": "Pointez votre caméra vers le code-barres",
+    "scanning": "Recherche en cours...",
+    "manual_entry_label": "Ou saisissez le numéro du code-barres manuellement",
+    "manual_entry_placeholder": "p. ex. 0123456789012",
+    "manual_entry_submit": "Vérifier",
+    "unknown_product": "Produit Inconnu",
+    "grade_great": "Excellent",
+    "grade_good": "Bon",
+    "grade_mediocre": "Moyen",
+    "grade_bad": "Mauvais",
+    "flagged_ingredients_title": "Ingrédients Signalés",
+    "no_flagged_ingredients": "Aucun ingrédient préoccupant détecté",
+    "not_found_title": "Produit Non Trouvé",
+    "not_found_sub": "Ce code-barres n'est pas encore dans notre base de données. S'il s'agit d'un supplément, essayez plutôt notre Pile de Suppléments.",
+    "try_supplements_cta": "Essayer la Pile de Suppléments",
+    "scan_another": "Scanner un Autre",
+    "done": "Terminé",
+    "error_upstream": "Base de données des produits temporairement indisponible, veuillez réessayer sous peu"
   }
 }

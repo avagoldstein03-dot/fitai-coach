@@ -344,7 +344,9 @@
     "action_supplements": "サプリメントスタック",
     "action_supplements_sub": "摂取したものを追跡",
     "action_advanced_analytics": "高度な分析",
-    "action_advanced_analytics_sub": "深いトレンド · エリート"
+    "action_advanced_analytics_sub": "深いトレンド · エリート",
+    "action_product_scan": "製品をスキャン",
+    "action_product_scan_sub": "成分と添加物をチェック"
   },
   "settings": {
     "title": "設定",
@@ -687,7 +689,8 @@
     "edit_title": "食事を編集",
     "save_changes_button": "変更を保存",
     "updated_title": "更新されました!",
-    "updated_msg": "食事が更新されました。"
+    "updated_msg": "食事が更新されました。",
+    "scan_product_label": "製品のバーコードをスキャン"
   },
   "food_diary": {
     "title": "食事日記",
@@ -1314,5 +1317,28 @@
     "body_composition": "身体組成の変化",
     "no_composition_data": "時間経過による変化を確認するには、少なくとも2つのボディ評価を完了してください。",
     "error": "分析を読み込めませんでした。もう一度お試しください。"
+  },
+  "product_scan": {
+    "permission_title": "カメラアクセスが必要です",
+    "permission_sub": "製品のバーコードをスキャンするためにカメラアクセスを許可してください。",
+    "grant_permission": "カメラアクセスを許可",
+    "frame_hint": "カメラをバーコードに向けてください",
+    "scanning": "検索中...",
+    "manual_entry_label": "またはバーコード番号を手動で入力",
+    "manual_entry_placeholder": "例 0123456789012",
+    "manual_entry_submit": "チェック",
+    "unknown_product": "不明な製品",
+    "grade_great": "優秀",
+    "grade_good": "良好",
+    "grade_mediocre": "普通",
+    "grade_bad": "低い",
+    "flagged_ingredients_title": "フラグが立てられた成分",
+    "no_flagged_ingredients": "懸念される成分は見つかりませんでした",
+    "not_found_title": "製品が見つかりません",
+    "not_found_sub": "このバーコードはまだデータベースに登録されていません。サプリメントの場合は、代わりにサプリメントスタックをお試しください。",
+    "try_supplements_cta": "サプリメントスタックを試す",
+    "scan_another": "別のものをスキャン",
+    "done": "完了",
+    "error_upstream": "製品データベースは一時的に利用できません。しばらくしてからもう一度お試しください"
   }
 }

@@ -344,7 +344,9 @@
     "action_supplements": "Supplement-pakke",
     "action_supplements_sub": "Spor hva du tar",
     "action_advanced_analytics": "Avansert analyse",
-    "action_advanced_analytics_sub": "Dyptgående trender · Elite"
+    "action_advanced_analytics_sub": "Dyptgående trender · Elite",
+    "action_product_scan": "Skann et produkt",
+    "action_product_scan_sub": "Sjekk ingredienser og tilsetningsstoffer"
   },
   "settings": {
     "title": "Innstillinger",
@@ -687,7 +689,8 @@
     "edit_title": "Rediger måltid",
     "save_changes_button": "Lagre endringer",
     "updated_title": "Oppdatert!",
-    "updated_msg": "Ditt måltid har blitt oppdatert."
+    "updated_msg": "Ditt måltid har blitt oppdatert.",
+    "scan_product_label": "Skann en produkts strekkode"
   },
   "food_diary": {
     "title": "Matdagbok",
@@ -1314,5 +1317,28 @@
     "body_composition": "Endring i kroppssammensetning",
     "no_composition_data": "Fullfør minst to kroppsanalyser for å se endringer over tid.",
     "error": "Kunne ikke laste analysen din. Prøv igjen."
+  },
+  "product_scan": {
+    "permission_title": "Kameratilgang kreves",
+    "permission_sub": "Tillat kameratilgang for å skanne en produkts strekkode.",
+    "grant_permission": "Gi kameratilgang",
+    "frame_hint": "Pek kameraet ditt mot strekkoden",
+    "scanning": "Slår det opp...",
+    "manual_entry_label": "Eller skriv inn strekkodenummeret manuelt",
+    "manual_entry_placeholder": "f.eks. 0123456789012",
+    "manual_entry_submit": "Sjekk",
+    "unknown_product": "Ukjent produkt",
+    "grade_great": "Flott",
+    "grade_good": "Bra",
+    "grade_mediocre": "Middels",
+    "grade_bad": "Dårlig",
+    "flagged_ingredients_title": "Flaggede ingredienser",
+    "no_flagged_ingredients": "Ingen bekymringsfulle ingredienser funnet",
+    "not_found_title": "Produkt ikke funnet",
+    "not_found_sub": "Denne strekkoden er ikke i databasen vår ennå. Hvis dette er et supplement, prøv Supplement Stack i stedet.",
+    "try_supplements_cta": "Prøv Supplement Stack",
+    "scan_another": "Skann et annet",
+    "done": "Ferdig",
+    "error_upstream": "Produktdatabasen er midlertidig utilgjengelig, prøv igjen snart"
   }
 }

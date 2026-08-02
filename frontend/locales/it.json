@@ -344,7 +344,9 @@
     "action_supplements": "Stack di Integratori",
     "action_supplements_sub": "Monitora quello che assumi",
     "action_advanced_analytics": "Analitiche Avanzate",
-    "action_advanced_analytics_sub": "Tendenze approfondite · Elite"
+    "action_advanced_analytics_sub": "Tendenze approfondite · Elite",
+    "action_product_scan": "Scansiona un Prodotto",
+    "action_product_scan_sub": "Controlla ingredienti e additivi"
   },
   "settings": {
     "title": "Impostazioni",
@@ -687,7 +689,8 @@
     "edit_title": "Modifica Pasto",
     "save_changes_button": "Salva Modifiche",
     "updated_title": "Aggiornato!",
-    "updated_msg": "Il tuo pasto è stato aggiornato."
+    "updated_msg": "Il tuo pasto è stato aggiornato.",
+    "scan_product_label": "Scansiona il Codice a Barre di un Prodotto"
   },
   "food_diary": {
     "title": "Diario Alimentare",
@@ -1314,5 +1317,28 @@
     "body_composition": "Cambiamento della Composizione Corporea",
     "no_composition_data": "Completa almeno due valutazioni corporee per visualizzare i cambiamenti nel tempo.",
     "error": "Impossibile caricare le tue analitiche. Per favore riprova."
+  },
+  "product_scan": {
+    "permission_title": "Accesso alla Fotocamera Necessario",
+    "permission_sub": "Consenti l'accesso alla fotocamera per scansionare il codice a barre di un prodotto.",
+    "grant_permission": "Consenti Accesso alla Fotocamera",
+    "frame_hint": "Punta la fotocamera verso il codice a barre",
+    "scanning": "Ricerca in corso...",
+    "manual_entry_label": "Oppure inserisci il numero del codice a barre manualmente",
+    "manual_entry_placeholder": "es. 0123456789012",
+    "manual_entry_submit": "Verifica",
+    "unknown_product": "Prodotto Sconosciuto",
+    "grade_great": "Ottimo",
+    "grade_good": "Buono",
+    "grade_mediocre": "Medio",
+    "grade_bad": "Scarso",
+    "flagged_ingredients_title": "Ingredienti Segnalati",
+    "no_flagged_ingredients": "Nessun ingrediente preoccupante trovato",
+    "not_found_title": "Prodotto Non Trovato",
+    "not_found_sub": "Questo codice a barre non è ancora nel nostro database. Se si tratta di un integratore, prova il nostro Stack di Integratori.",
+    "try_supplements_cta": "Prova Stack di Integratori",
+    "scan_another": "Scansiona un Altro",
+    "done": "Fatto",
+    "error_upstream": "Database prodotti temporaneamente non disponibile, riprova tra poco"
   }
 }

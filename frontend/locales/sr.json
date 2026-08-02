@@ -344,7 +344,9 @@
     "action_supplements": "Stek Suplementa",
     "action_supplements_sub": "Pratite šta uzimate",
     "action_advanced_analytics": "Napredna analitika",
-    "action_advanced_analytics_sub": "Duboke tendencije · Elite"
+    "action_advanced_analytics_sub": "Duboke tendencije · Elite",
+    "action_product_scan": "Skeniraj proizvod",
+    "action_product_scan_sub": "Provjeri sastojke i aditrive"
   },
   "settings": {
     "title": "Подешавања",
@@ -687,7 +689,8 @@
     "edit_title": "Уреди Оброк",
     "save_changes_button": "Сачувај Промене",
     "updated_title": "Ажурирано!",
-    "updated_msg": "Твој оброк је ажуриран."
+    "updated_msg": "Твој оброк је ажуриран.",
+    "scan_product_label": "Skeniraj barkod proizvoda"
   },
   "food_diary": {
     "title": "Дневник Исхране",
@@ -1314,5 +1317,28 @@
     "body_composition": "Promena telesnog sastava",
     "no_composition_data": "Izvršite najmanje dve telesne ocene da vidite promene tokom vremena.",
     "error": "Nije moguće učitati vašu analitiku. Pokušajte ponovo."
+  },
+  "product_scan": {
+    "permission_title": "Potreban je pristup kameri",
+    "permission_sub": "Dozvoli pristup kameri da bi skenirao barkod proizvoda.",
+    "grant_permission": "Odobri pristup kameri",
+    "frame_hint": "Usmjeri kameru na barkod",
+    "scanning": "Traži se...",
+    "manual_entry_label": "Ili unesi broj barkoda ručno",
+    "manual_entry_placeholder": "npr. 0123456789012",
+    "manual_entry_submit": "Provjeri",
+    "unknown_product": "Nepoznat proizvod",
+    "grade_great": "Odličan",
+    "grade_good": "Dobar",
+    "grade_mediocre": "Prosječan",
+    "grade_bad": "Loš",
+    "flagged_ingredients_title": "Označeni sastojci",
+    "no_flagged_ingredients": "Nisu pronađeni alarmantni sastojci",
+    "not_found_title": "Proizvod nije pronađen",
+    "not_found_sub": "Ovaj barkod još nije u našoj bazi podataka. Ako je ovo suplement, pokušaj sa našim Supplement Stack-om umjesto toga.",
+    "try_supplements_cta": "Pokušaj Supplement Stack",
+    "scan_another": "Skeniraj još jedan",
+    "done": "Gotovo",
+    "error_upstream": "Baza podataka proizvoda je privremeno nedostupna, pokušaj ponovno za nekoliko trenutaka"
   }
 }

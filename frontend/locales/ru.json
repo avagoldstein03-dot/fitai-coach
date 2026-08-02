@@ -344,7 +344,9 @@
     "action_supplements": "Набор добавок",
     "action_supplements_sub": "Отслеживайте, что вы принимаете",
     "action_advanced_analytics": "Расширенная аналитика",
-    "action_advanced_analytics_sub": "Глубокий анализ · Премиум"
+    "action_advanced_analytics_sub": "Глубокий анализ · Премиум",
+    "action_product_scan": "Сканировать товар",
+    "action_product_scan_sub": "Проверить ингредиенты и добавки"
   },
   "settings": {
     "title": "Настройки",
@@ -687,7 +689,8 @@
     "edit_title": "Редактировать приём пищи",
     "save_changes_button": "Сохранить изменения",
     "updated_title": "Обновлено!",
-    "updated_msg": "Ваш приём пищи был обновлен."
+    "updated_msg": "Ваш приём пищи был обновлен.",
+    "scan_product_label": "Сканировать штрихкод товара"
   },
   "food_diary": {
     "title": "Дневник питания",
@@ -1314,5 +1317,28 @@
     "body_composition": "Изменение состава тела",
     "no_composition_data": "Завершите минимум две оценки состава тела, чтобы видеть изменения со временем.",
     "error": "Не удалось загрузить вашу аналитику. Пожалуйста, попробуйте снова."
+  },
+  "product_scan": {
+    "permission_title": "Требуется доступ к камере",
+    "permission_sub": "Разрешите доступ к камере для сканирования штрихкода товара.",
+    "grant_permission": "Разрешить доступ к камере",
+    "frame_hint": "Наведите камеру на штрихкод",
+    "scanning": "Поиск...",
+    "manual_entry_label": "Или введите номер штрихкода вручную",
+    "manual_entry_placeholder": "напр. 0123456789012",
+    "manual_entry_submit": "Проверить",
+    "unknown_product": "Неизвестный товар",
+    "grade_great": "Отлично",
+    "grade_good": "Хорошо",
+    "grade_mediocre": "Среднее",
+    "grade_bad": "Плохо",
+    "flagged_ingredients_title": "Выделенные ингредиенты",
+    "no_flagged_ingredients": "Опасных ингредиентов не найдено",
+    "not_found_title": "Товар не найден",
+    "not_found_sub": "Этого штрихкода еще нет в нашей базе данных. Если это добавка, попробуйте наш Набор добавок.",
+    "try_supplements_cta": "Попробовать Набор добавок",
+    "scan_another": "Сканировать еще",
+    "done": "Готово",
+    "error_upstream": "База данных товаров временно недоступна, попробуйте позже"
   }
 }

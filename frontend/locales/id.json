@@ -344,7 +344,9 @@
     "action_supplements": "Tumpukan Suplemen",
     "action_supplements_sub": "Pantau apa yang Anda konsumsi",
     "action_advanced_analytics": "Analitik Lanjutan",
-    "action_advanced_analytics_sub": "Tren mendalam · Elite"
+    "action_advanced_analytics_sub": "Tren mendalam · Elite",
+    "action_product_scan": "Pindai Produk",
+    "action_product_scan_sub": "Periksa bahan & aditif"
   },
   "settings": {
     "title": "Pengaturan",
@@ -687,7 +689,8 @@
     "edit_title": "Ubah Makanan",
     "save_changes_button": "Simpan Perubahan",
     "updated_title": "Diperbarui!",
-    "updated_msg": "Makanan Anda telah diperbarui."
+    "updated_msg": "Makanan Anda telah diperbarui.",
+    "scan_product_label": "Pindai Barcode Produk"
   },
   "food_diary": {
     "title": "Buku Harian Makanan",
@@ -1314,5 +1317,28 @@
     "body_composition": "Perubahan Komposisi Tubuh",
     "no_composition_data": "Selesaikan minimal dua penilaian tubuh untuk melihat perubahan seiring waktu.",
     "error": "Tidak dapat memuat analitik Anda. Silakan coba lagi."
+  },
+  "product_scan": {
+    "permission_title": "Akses Kamera Diperlukan",
+    "permission_sub": "Izinkan akses kamera untuk memindai barcode produk.",
+    "grant_permission": "Berikan Akses Kamera",
+    "frame_hint": "Arahkan kamera ke barcode",
+    "scanning": "Sedang mencari...",
+    "manual_entry_label": "Atau masukkan nomor barcode secara manual",
+    "manual_entry_placeholder": "mis. 0123456789012",
+    "manual_entry_submit": "Periksa",
+    "unknown_product": "Produk Tidak Dikenal",
+    "grade_great": "Sangat Baik",
+    "grade_good": "Baik",
+    "grade_mediocre": "Biasa Saja",
+    "grade_bad": "Buruk",
+    "flagged_ingredients_title": "Bahan Berbendera",
+    "no_flagged_ingredients": "Tidak ada bahan yang mencurigakan",
+    "not_found_title": "Produk Tidak Ditemukan",
+    "not_found_sub": "Barcode ini belum ada di database kami. Jika ini adalah suplemen, coba Supplement Stack kami.",
+    "try_supplements_cta": "Coba Supplement Stack",
+    "scan_another": "Pindai Lagi",
+    "done": "Selesai",
+    "error_upstream": "Database produk tidak tersedia untuk sementara, coba lagi nanti"
   }
 }

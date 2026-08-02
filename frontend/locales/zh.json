@@ -344,7 +344,9 @@
     "action_supplements": "补充剂堆栈",
     "action_supplements_sub": "追踪你的摄入",
     "action_advanced_analytics": "高级分析",
-    "action_advanced_analytics_sub": "深度趋势 · 精英版"
+    "action_advanced_analytics_sub": "深度趋势 · 精英版",
+    "action_product_scan": "扫描产品",
+    "action_product_scan_sub": "检查成分和添加剂"
   },
   "settings": {
     "title": "设置",
@@ -687,7 +689,8 @@
     "edit_title": "编辑餐食",
     "save_changes_button": "保存更改",
     "updated_title": "已更新！",
-    "updated_msg": "您的餐食已更新。"
+    "updated_msg": "您的餐食已更新。",
+    "scan_product_label": "扫描产品条形码"
   },
   "food_diary": {
     "title": "食物日记",
@@ -1314,5 +1317,28 @@
     "body_composition": "身体成分变化",
     "no_composition_data": "完成至少两次身体评估即可查看随时间推移的变化。",
     "error": "无法加载您的分析。请重试。"
+  },
+  "product_scan": {
+    "permission_title": "需要相机权限",
+    "permission_sub": "允许相机访问以扫描产品条形码。",
+    "grant_permission": "授予相机权限",
+    "frame_hint": "将相机对准条形码",
+    "scanning": "正在查找...",
+    "manual_entry_label": "或手动输入条形码",
+    "manual_entry_placeholder": "例如 0123456789012",
+    "manual_entry_submit": "检查",
+    "unknown_product": "未知产品",
+    "grade_great": "优秀",
+    "grade_good": "良好",
+    "grade_mediocre": "一般",
+    "grade_bad": "较差",
+    "flagged_ingredients_title": "标记的成分",
+    "no_flagged_ingredients": "未发现令人担忧的成分",
+    "not_found_title": "产品未找到",
+    "not_found_sub": "此条形码尚未在我们的数据库中。如果这是补剂，请尝试我们的补剂堆栈。",
+    "try_supplements_cta": "尝试补剂堆栈",
+    "scan_another": "扫描其他产品",
+    "done": "完成",
+    "error_upstream": "产品数据库暂时不可用，请稍后重试"
   }
 }

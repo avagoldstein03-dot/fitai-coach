@@ -344,7 +344,9 @@
     "action_supplements": "Kiegészítő csomag",
     "action_supplements_sub": "Követsd nyomon, amit beveszel",
     "action_advanced_analytics": "Haladó Analitika",
-    "action_advanced_analytics_sub": "Mélyreható trendek · Elite"
+    "action_advanced_analytics_sub": "Mélyreható trendek · Elite",
+    "action_product_scan": "Termék beolvasása",
+    "action_product_scan_sub": "Összetevők és adalékanyagok ellenőrzése"
   },
   "settings": {
     "title": "Beállítások",
@@ -687,7 +689,8 @@
     "edit_title": "Étkezés szerkesztése",
     "save_changes_button": "Változások mentése",
     "updated_title": "Frissítve!",
-    "updated_msg": "Az étkezésed frissítve lett."
+    "updated_msg": "Az étkezésed frissítve lett.",
+    "scan_product_label": "Termék vonalkódjának beolvasása"
   },
   "food_diary": {
     "title": "Étkezési napló",
@@ -1314,5 +1317,28 @@
     "body_composition": "Testösszetétel Változás",
     "no_composition_data": "Végezz legalább két testösszetétel-felmérést, hogy láthass változásokat az idő múlásával.",
     "error": "Nem sikerült betölteni az analitikádat. Kérlek, próbáld újra."
+  },
+  "product_scan": {
+    "permission_title": "Kamerahozzáférés szükséges",
+    "permission_sub": "Engedélyezze a kamerahozzáférést a termék vonalkódjának beolvasásához.",
+    "grant_permission": "Kamerahozzáférés engedélyezése",
+    "frame_hint": "Irányítsa a kamerát a vonalkódra",
+    "scanning": "Keresés folyamatban...",
+    "manual_entry_label": "Vagy adja meg manuálisan a vonalkód számát",
+    "manual_entry_placeholder": "pl. 0123456789012",
+    "manual_entry_submit": "Ellenőrzés",
+    "unknown_product": "Ismeretlen termék",
+    "grade_great": "Kiváló",
+    "grade_good": "Jó",
+    "grade_mediocre": "Közepes",
+    "grade_bad": "Rossz",
+    "flagged_ingredients_title": "Megjelölt összetevők",
+    "no_flagged_ingredients": "Nem találhatók aggasztó összetevők",
+    "not_found_title": "Termék nem található",
+    "not_found_sub": "Ez a vonalkód még nincs az adatbázisunkban. Ha ez egy étrend-kiegészítő, próbálja meg helyette a Supplement Stack-et.",
+    "try_supplements_cta": "Próbálja meg a Supplement Stack-et",
+    "scan_another": "Másik beolvasása",
+    "done": "Kész",
+    "error_upstream": "A termékadat-bázis átmenetileg nem elérhető, próbálja meg később"
   }
 }

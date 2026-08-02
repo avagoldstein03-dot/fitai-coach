@@ -344,7 +344,9 @@
     "action_supplements": "Tillskottsstapel",
     "action_supplements_sub": "Spåra vad du tar",
     "action_advanced_analytics": "Avancerad analys",
-    "action_advanced_analytics_sub": "Djupa trender · Elite"
+    "action_advanced_analytics_sub": "Djupa trender · Elite",
+    "action_product_scan": "Skanna en produkt",
+    "action_product_scan_sub": "Kontrollera ingredienser och tillsatser"
   },
   "settings": {
     "title": "Inställningar",
@@ -687,7 +689,8 @@
     "edit_title": "Redigera måltid",
     "save_changes_button": "Spara ändringar",
     "updated_title": "Uppdaterad!",
-    "updated_msg": "Din måltid har uppdaterats."
+    "updated_msg": "Din måltid har uppdaterats.",
+    "scan_product_label": "Skanna en produkts streckkod"
   },
   "food_diary": {
     "title": "Matdagbok",
@@ -1314,5 +1317,28 @@
     "body_composition": "Förändring av kroppssammansättning",
     "no_composition_data": "Slutför minst två kroppsanalyser för att se förändringar över tid.",
     "error": "Kunde inte ladda din analys. Försök igen."
+  },
+  "product_scan": {
+    "permission_title": "Kameraåtkomst krävs",
+    "permission_sub": "Tillåt kameraåtkomst för att skanna en produkts streckkod.",
+    "grant_permission": "Bevilja kameraåtkomst",
+    "frame_hint": "Rikta kameran mot streckkoden",
+    "scanning": "Söker...",
+    "manual_entry_label": "Eller ange streckkodenumret manuellt",
+    "manual_entry_placeholder": "t.ex. 0123456789012",
+    "manual_entry_submit": "Kontrollera",
+    "unknown_product": "Okänd produkt",
+    "grade_great": "Utmärkt",
+    "grade_good": "Bra",
+    "grade_mediocre": "Okej",
+    "grade_bad": "Dålig",
+    "flagged_ingredients_title": "Flaggade ingredienser",
+    "no_flagged_ingredients": "Inga problematiska ingredienser hittades",
+    "not_found_title": "Produkten hittades inte",
+    "not_found_sub": "Denna streckkod finns inte i vår databas ännu. Om detta är ett kosttillskott, prova vår Supplement Stack istället.",
+    "try_supplements_cta": "Prova Supplement Stack",
+    "scan_another": "Skanna en annan",
+    "done": "Klart",
+    "error_upstream": "Produktdatabasen är tillfälligt otillgänglig, försök igen inom kort"
   }
 }

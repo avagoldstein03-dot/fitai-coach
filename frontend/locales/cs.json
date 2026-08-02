@@ -344,7 +344,9 @@
     "action_supplements": "Balíček doplňků",
     "action_supplements_sub": "Sledujte, co užíváte",
     "action_advanced_analytics": "Pokročilá analytika",
-    "action_advanced_analytics_sub": "Hluboké trendy · Elite"
+    "action_advanced_analytics_sub": "Hluboké trendy · Elite",
+    "action_product_scan": "Naskenujte Produkt",
+    "action_product_scan_sub": "Zkontrolujte složení a aditivy"
   },
   "settings": {
     "title": "Nastavení",
@@ -687,7 +689,8 @@
     "edit_title": "Upravit Jídlo",
     "save_changes_button": "Uložit Změny",
     "updated_title": "Aktualizováno!",
-    "updated_msg": "Vaše jídlo bylo aktualizováno."
+    "updated_msg": "Vaše jídlo bylo aktualizováno.",
+    "scan_product_label": "Naskenujte Čárový Kód Produktu"
   },
   "food_diary": {
     "title": "Potravinářský deník",
@@ -1314,5 +1317,28 @@
     "body_composition": "Změna složení těla",
     "no_composition_data": "Dokončete alespoň dvě posouzení těla, abyste viděli změny v čase.",
     "error": "Nepodařilo se načíst vaši analytiku. Zkuste to znovu."
+  },
+  "product_scan": {
+    "permission_title": "Vyžadován Přístup ke Kameře",
+    "permission_sub": "Povolte přístup ke kameře, abyste mohli skenovat čárový kód produktu.",
+    "grant_permission": "Povolte Přístup ke Kameře",
+    "frame_hint": "Nasměrujte kameru na čárový kód",
+    "scanning": "Vyhledávání...",
+    "manual_entry_label": "Nebo zadejte čárový kód ručně",
+    "manual_entry_placeholder": "např. 0123456789012",
+    "manual_entry_submit": "Kontrola",
+    "unknown_product": "Neznámý Produkt",
+    "grade_great": "Výborný",
+    "grade_good": "Dobrý",
+    "grade_mediocre": "Průměrný",
+    "grade_bad": "Špatný",
+    "flagged_ingredients_title": "Označené Složky",
+    "no_flagged_ingredients": "Nebyly nalezeny žádné podezřelé složky",
+    "not_found_title": "Produkt Nenalezen",
+    "not_found_sub": "Tento čárový kód není v naší databázi. Pokud se jedná o doplněk stravy, zkuste místo toho naši Steek Suplementů.",
+    "try_supplements_cta": "Vyzkoušejte Stack Suplementů",
+    "scan_another": "Skenujte Další",
+    "done": "Hotovo",
+    "error_upstream": "Databáze produktů je dočasně nedostupná, zkuste to za chvíli znovu"
   }
 }

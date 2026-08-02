@@ -344,7 +344,9 @@
     "action_supplements": "補充劑堆疊",
     "action_supplements_sub": "追蹤你的補充劑",
     "action_advanced_analytics": "進階分析",
-    "action_advanced_analytics_sub": "深度趨勢 · 精英版"
+    "action_advanced_analytics_sub": "深度趨勢 · 精英版",
+    "action_product_scan": "掃描產品",
+    "action_product_scan_sub": "檢查成分和添加物"
   },
   "settings": {
     "title": "設定",
@@ -687,7 +689,8 @@
     "edit_title": "編輯餐點",
     "save_changes_button": "保存更改",
     "updated_title": "已更新！",
-    "updated_msg": "您的餐點已更新。"
+    "updated_msg": "您的餐點已更新。",
+    "scan_product_label": "掃描產品條碼"
   },
   "food_diary": {
     "title": "食物日記",
@@ -1314,5 +1317,28 @@
     "body_composition": "身體組成變化",
     "no_composition_data": "完成至少兩次身體評估以查看一段時間內的變化。",
     "error": "無法載入您的分析。請重試。"
+  },
+  "product_scan": {
+    "permission_title": "需要相機存取權限",
+    "permission_sub": "允許相機存取以掃描產品條碼。",
+    "grant_permission": "授予相機存取權限",
+    "frame_hint": "將相機對準條碼",
+    "scanning": "正在查詢...",
+    "manual_entry_label": "或手動輸入條碼號碼",
+    "manual_entry_placeholder": "例如 0123456789012",
+    "manual_entry_submit": "檢查",
+    "unknown_product": "未知產品",
+    "grade_great": "很好",
+    "grade_good": "良好",
+    "grade_mediocre": "普通",
+    "grade_bad": "不良",
+    "flagged_ingredients_title": "標記的成分",
+    "no_flagged_ingredients": "未發現令人擔憂的成分",
+    "not_found_title": "找不到產品",
+    "not_found_sub": "此條碼尚未在我們的資料庫中。如果這是補充品，請嘗試我們的補充堆棧。",
+    "try_supplements_cta": "嘗試補充堆棧",
+    "scan_another": "掃描另一個",
+    "done": "完成",
+    "error_upstream": "產品資料庫暫時無法使用，請稍後重試"
   }
 }

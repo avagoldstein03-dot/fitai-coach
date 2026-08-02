@@ -344,7 +344,9 @@
     "action_supplements": "보충제 스택",
     "action_supplements_sub": "복용 중인 보충제 추적하기",
     "action_advanced_analytics": "고급 분석",
-    "action_advanced_analytics_sub": "심화 트렌드 · 엘리트"
+    "action_advanced_analytics_sub": "심화 트렌드 · 엘리트",
+    "action_product_scan": "제품 스캔",
+    "action_product_scan_sub": "성분 및 첨가물 확인"
   },
   "settings": {
     "title": "설정",
@@ -687,7 +689,8 @@
     "edit_title": "식사 편집",
     "save_changes_button": "변경사항 저장",
     "updated_title": "업데이트됨!",
-    "updated_msg": "식사가 업데이트되었습니다."
+    "updated_msg": "식사가 업데이트되었습니다.",
+    "scan_product_label": "제품 바코드 스캔"
   },
   "food_diary": {
     "title": "식사 일기",
@@ -1314,5 +1317,28 @@
     "body_composition": "신체 구성 변화",
     "no_composition_data": "시간에 따른 변화를 보려면 최소 두 개의 신체 평가를 완료하세요.",
     "error": "분석을 로드할 수 없습니다. 다시 시도하세요."
+  },
+  "product_scan": {
+    "permission_title": "카메라 접근 필요",
+    "permission_sub": "제품 바코드를 스캔하려면 카메라 접근을 허용해주세요.",
+    "grant_permission": "카메라 접근 허용",
+    "frame_hint": "카메라를 바코드에 맞춰주세요",
+    "scanning": "조회 중...",
+    "manual_entry_label": "또는 바코드 번호를 수동으로 입력하세요",
+    "manual_entry_placeholder": "예: 0123456789012",
+    "manual_entry_submit": "확인",
+    "unknown_product": "알 수 없는 제품",
+    "grade_great": "우수",
+    "grade_good": "좋음",
+    "grade_mediocre": "보통",
+    "grade_bad": "나쁨",
+    "flagged_ingredients_title": "주의 성분",
+    "no_flagged_ingredients": "우려할 만한 성분이 없습니다",
+    "not_found_title": "제품을 찾을 수 없음",
+    "not_found_sub": "이 바코드는 아직 우리 데이터베이스에 없습니다. 이것이 보충제라면 보충제 스택을 시도해보세요.",
+    "try_supplements_cta": "보충제 스택 시도",
+    "scan_another": "다른 제품 스캔",
+    "done": "완료",
+    "error_upstream": "제품 데이터베이스를 일시적으로 사용할 수 없습니다. 잠시 후 다시 시도해주세요"
   }
 }

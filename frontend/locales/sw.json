@@ -344,7 +344,9 @@
     "action_supplements": "Kiwanja cha Virutubishi",
     "action_supplements_sub": "Fuatilia kile unachokitumia",
     "action_advanced_analytics": "Uchambuzi wa Hali ya Juu",
-    "action_advanced_analytics_sub": "Mielekeo ya kina · Kwa Wanachama wa Kiwango Cha Juu"
+    "action_advanced_analytics_sub": "Mielekeo ya kina · Kwa Wanachama wa Kiwango Cha Juu",
+    "action_product_scan": "Changia Bidhaa",
+    "action_product_scan_sub": "Angalia vijenzi na nyongeza"
   },
   "settings": {
     "title": "Mipangilio",
@@ -687,7 +689,8 @@
     "edit_title": "Hariri Chakula",
     "save_changes_button": "Hifadhi Mabadiliko",
     "updated_title": "Imebadilishwa!",
-    "updated_msg": "Chakula chako kimebadilishwa."
+    "updated_msg": "Chakula chako kimebadilishwa.",
+    "scan_product_label": "Changia Barcode ya Bidhaa"
   },
   "food_diary": {
     "title": "Karatasi ya Chakula",
@@ -1314,5 +1317,28 @@
     "body_composition": "Mabadiliko ya Muundo wa Mwili",
     "no_composition_data": "Kamata angalau tathmini mbili za mwili ili kuona mabadiliko baada ya muda.",
     "error": "Haiwezi kupakia uchambuzi wako. Tafadhali jaribu tena."
+  },
+  "product_scan": {
+    "permission_title": "Inahitajika Ufikiaji wa Kamera",
+    "permission_sub": "Ruhusu ufikiaji wa kamera ili kuchania barcode ya bidhaa.",
+    "grant_permission": "Upa Ufikiaji wa Kamera",
+    "frame_hint": "Elekeza kamera yako kwenye barcode",
+    "scanning": "Inatafuta...",
+    "manual_entry_label": "Au ingiza namba ya barcode kwa mikono",
+    "manual_entry_placeholder": "mfano 0123456789012",
+    "manual_entry_submit": "Angalia",
+    "unknown_product": "Bidhaa Isiyojulikana",
+    "grade_great": "Nzuri Sana",
+    "grade_good": "Nzuri",
+    "grade_mediocre": "Kawaida",
+    "grade_bad": "Mbaya",
+    "flagged_ingredients_title": "Vijenzi Vilivoashiriwa",
+    "no_flagged_ingredients": "Hakuna vijenzi vya wasiwasi vilvyopatikana",
+    "not_found_title": "Bidhaa Haipatikani",
+    "not_found_sub": "Barcode hii haipo katika hifadhidata yetu bado. Ikiwa hii ni kamilisho, jaribu Supplement Stack yetu badala yake.",
+    "try_supplements_cta": "Jaribu Supplement Stack",
+    "scan_another": "Changia Nyingine",
+    "done": "Imekamilika",
+    "error_upstream": "Hifadhidata ya bidhaa haipo kwa sasa, jaribu tena baada ya muda"
   }
 }

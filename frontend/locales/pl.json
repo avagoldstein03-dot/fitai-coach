@@ -344,7 +344,9 @@
     "action_supplements": "Stos Suplementów",
     "action_supplements_sub": "Śledź, co bierzesz",
     "action_advanced_analytics": "Zaawansowana Analityka",
-    "action_advanced_analytics_sub": "Głębokie trendy · Elita"
+    "action_advanced_analytics_sub": "Głębokie trendy · Elita",
+    "action_product_scan": "Skanuj Produkt",
+    "action_product_scan_sub": "Sprawdź składniki i dodatki"
   },
   "settings": {
     "title": "Ustawienia",
@@ -687,7 +689,8 @@
     "edit_title": "Edytuj Posiłek",
     "save_changes_button": "Zapisz Zmiany",
     "updated_title": "Zaktualizowano!",
-    "updated_msg": "Twój posiłek został zaktualizowany."
+    "updated_msg": "Twój posiłek został zaktualizowany.",
+    "scan_product_label": "Skanuj Kod Kreskowy Produktu"
   },
   "food_diary": {
     "title": "Dziennik żywności",
@@ -1314,5 +1317,28 @@
     "body_composition": "Zmiana Składu Ciała",
     "no_composition_data": "Ukończ co najmniej dwie oceny ciała, aby zobaczyć zmiany w czasie.",
     "error": "Nie udało się załadować Twoją analitykę. Spróbuj ponownie."
+  },
+  "product_scan": {
+    "permission_title": "Wymagany Dostęp do Kamery",
+    "permission_sub": "Zezwól na dostęp do kamery, aby skanować kod kreskowy produktu.",
+    "grant_permission": "Udziel Dostępu do Kamery",
+    "frame_hint": "Skieruj kamerę na kod kreskowy",
+    "scanning": "Wyszukuję...",
+    "manual_entry_label": "Lub wprowadź numer kodu ręcznie",
+    "manual_entry_placeholder": "np. 0123456789012",
+    "manual_entry_submit": "Sprawdź",
+    "unknown_product": "Nieznany Produkt",
+    "grade_great": "Świetny",
+    "grade_good": "Dobry",
+    "grade_mediocre": "Przeciętny",
+    "grade_bad": "Zły",
+    "flagged_ingredients_title": "Zaznaczone Składniki",
+    "no_flagged_ingredients": "Nie znaleziono niepokojących składników",
+    "not_found_title": "Produkt Nie Znaleziony",
+    "not_found_sub": "Ten kod kreskowy nie znajduje się jeszcze w naszej bazie danych. Jeśli to suplement, spróbuj naszego Zestawu Suplementów.",
+    "try_supplements_cta": "Spróbuj Zestawu Suplementów",
+    "scan_another": "Skanuj Następny",
+    "done": "Gotowe",
+    "error_upstream": "Baza danych produktów jest czasowo niedostępna, spróbuj za chwilę"
   }
 }

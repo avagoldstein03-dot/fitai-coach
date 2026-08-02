@@ -344,7 +344,9 @@
     "action_supplements": "Bộ Sưu Tập Thực Phẩm Bổ Sung",
     "action_supplements_sub": "Theo dõi những gì bạn dùng",
     "action_advanced_analytics": "Phân Tích Nâng Cao",
-    "action_advanced_analytics_sub": "Xu hướng sâu · Elite"
+    "action_advanced_analytics_sub": "Xu hướng sâu · Elite",
+    "action_product_scan": "Quét một Sản phẩm",
+    "action_product_scan_sub": "Kiểm tra thành phần & phụ gia"
   },
   "settings": {
     "title": "Cài đặt",
@@ -687,7 +689,8 @@
     "edit_title": "Chỉnh sửa Bữa ăn",
     "save_changes_button": "Lưu thay đổi",
     "updated_title": "Đã cập nhật!",
-    "updated_msg": "Bữa ăn của bạn đã được cập nhật."
+    "updated_msg": "Bữa ăn của bạn đã được cập nhật.",
+    "scan_product_label": "Quét Mã vạch Sản phẩm"
   },
   "food_diary": {
     "title": "Nhật ký thực phẩm",
@@ -1314,5 +1317,28 @@
     "body_composition": "Thay Đổi Thành Phần Cơ Thể",
     "no_composition_data": "Hoàn thành ít nhất hai bài đánh giá cơ thể để xem những thay đổi theo thời gian.",
     "error": "Không thể tải phân tích của bạn. Vui lòng thử lại."
+  },
+  "product_scan": {
+    "permission_title": "Cần Truy cập Camera",
+    "permission_sub": "Cho phép truy cập camera để quét mã vạch sản phẩm.",
+    "grant_permission": "Cấp Quyền Truy cập Camera",
+    "frame_hint": "Hướng camera của bạn vào mã vạch",
+    "scanning": "Đang tìm kiếm...",
+    "manual_entry_label": "Hoặc nhập số mã vạch thủ công",
+    "manual_entry_placeholder": "ví dụ: 0123456789012",
+    "manual_entry_submit": "Kiểm tra",
+    "unknown_product": "Sản phẩm Không xác định",
+    "grade_great": "Tuyệt vời",
+    "grade_good": "Tốt",
+    "grade_mediocre": "Bình thường",
+    "grade_bad": "Kém",
+    "flagged_ingredients_title": "Thành phần Đáng chú ý",
+    "no_flagged_ingredients": "Không tìm thấy thành phần đáng lo ngại",
+    "not_found_title": "Không Tìm thấy Sản phẩm",
+    "not_found_sub": "Mã vạch này chưa có trong cơ sở dữ liệu của chúng tôi. Nếu đây là một chất bổ sung, hãy thử Supplement Stack của chúng tôi.",
+    "try_supplements_cta": "Thử Supplement Stack",
+    "scan_another": "Quét Cái khác",
+    "done": "Hoàn tất",
+    "error_upstream": "Cơ sở dữ liệu sản phẩm tạm thời không khả dụng, hãy thử lại trong chốc lát"
   }
 }

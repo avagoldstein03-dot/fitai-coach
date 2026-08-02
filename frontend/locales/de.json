@@ -344,7 +344,9 @@
     "action_supplements": "Supplement-Stapel",
     "action_supplements_sub": "Verfolgen Sie, was Sie nehmen",
     "action_advanced_analytics": "Erweiterte Analytik",
-    "action_advanced_analytics_sub": "Tiefe Trends · Elite"
+    "action_advanced_analytics_sub": "Tiefe Trends · Elite",
+    "action_product_scan": "Produkt scannen",
+    "action_product_scan_sub": "Überprüfen Sie Zutaten und Zusatzstoffe"
   },
   "settings": {
     "title": "Einstellungen",
@@ -687,7 +689,8 @@
     "edit_title": "Mahlzeit bearbeiten",
     "save_changes_button": "Änderungen speichern",
     "updated_title": "Aktualisiert!",
-    "updated_msg": "Deine Mahlzeit wurde aktualisiert."
+    "updated_msg": "Deine Mahlzeit wurde aktualisiert.",
+    "scan_product_label": "Produktbarcode scannen"
   },
   "food_diary": {
     "title": "Ernährungstagebuch",
@@ -1314,5 +1317,28 @@
     "body_composition": "Körperzusammensetzungsveränderung",
     "no_composition_data": "Führe mindestens zwei Körperbewertungen durch, um Veränderungen im Zeitverlauf zu sehen.",
     "error": "Deine Analytik konnte nicht geladen werden. Bitte versuche es erneut."
+  },
+  "product_scan": {
+    "permission_title": "Kamerazugriff erforderlich",
+    "permission_sub": "Erlauben Sie Kamerazugriff, um einen Produktbarcode zu scannen.",
+    "grant_permission": "Kamerazugriff gewähren",
+    "frame_hint": "Richten Sie Ihre Kamera auf den Barcode",
+    "scanning": "Wird gesucht...",
+    "manual_entry_label": "Oder geben Sie die Barcodenummer manuell ein",
+    "manual_entry_placeholder": "z.B. 0123456789012",
+    "manual_entry_submit": "Überprüfen",
+    "unknown_product": "Unbekanntes Produkt",
+    "grade_great": "Ausgezeichnet",
+    "grade_good": "Gut",
+    "grade_mediocre": "Befriedigend",
+    "grade_bad": "Schlecht",
+    "flagged_ingredients_title": "Gekennzeichnete Zutaten",
+    "no_flagged_ingredients": "Keine bedenklichen Zutaten gefunden",
+    "not_found_title": "Produkt nicht gefunden",
+    "not_found_sub": "Dieser Barcode ist noch nicht in unserer Datenbank vorhanden. Wenn dies ein Supplement ist, versuchen Sie stattdessen unseren Supplement Stack.",
+    "try_supplements_cta": "Supplement Stack ausprobieren",
+    "scan_another": "Ein weiteres scannen",
+    "done": "Fertig",
+    "error_upstream": "Produktdatenbank vorübergehend nicht verfügbar, versuchen Sie es bald erneut"
   }
 }

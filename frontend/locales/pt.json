@@ -344,7 +344,9 @@
     "action_supplements": "Pilha de Suplementos",
     "action_supplements_sub": "Acompanhe o que você toma",
     "action_advanced_analytics": "Análise Avançada",
-    "action_advanced_analytics_sub": "Tendências profundas · Elite"
+    "action_advanced_analytics_sub": "Tendências profundas · Elite",
+    "action_product_scan": "Escanear um Produto",
+    "action_product_scan_sub": "Verifique ingredientes e aditivos"
   },
   "settings": {
     "title": "Configurações",
@@ -687,7 +689,8 @@
     "edit_title": "Editar Refeição",
     "save_changes_button": "Salvar Alterações",
     "updated_title": "Atualizado!",
-    "updated_msg": "Sua refeição foi atualizada."
+    "updated_msg": "Sua refeição foi atualizada.",
+    "scan_product_label": "Escanear o Código de Barras de um Produto"
   },
   "food_diary": {
     "title": "Diário de Alimentos",
@@ -1314,5 +1317,28 @@
     "body_composition": "Mudança na Composição Corporal",
     "no_composition_data": "Complete pelo menos duas avaliações corporais para ver as mudanças ao longo do tempo.",
     "error": "Não foi possível carregar sua análise. Tente novamente."
+  },
+  "product_scan": {
+    "permission_title": "Acesso à Câmera Necessário",
+    "permission_sub": "Permita o acesso à câmera para escanear o código de barras de um produto.",
+    "grant_permission": "Conceder Acesso à Câmera",
+    "frame_hint": "Aponte sua câmera para o código de barras",
+    "scanning": "Procurando...",
+    "manual_entry_label": "Ou digite o número do código de barras manualmente",
+    "manual_entry_placeholder": "ex. 0123456789012",
+    "manual_entry_submit": "Verificar",
+    "unknown_product": "Produto Desconhecido",
+    "grade_great": "Excelente",
+    "grade_good": "Bom",
+    "grade_mediocre": "Moderado",
+    "grade_bad": "Ruim",
+    "flagged_ingredients_title": "Ingredientes Sinalizados",
+    "no_flagged_ingredients": "Nenhum ingrediente preocupante encontrado",
+    "not_found_title": "Produto Não Encontrado",
+    "not_found_sub": "Este código de barras ainda não está em nosso banco de dados. Se este é um suplemento, experimente nossa Pilha de Suplementos.",
+    "try_supplements_cta": "Experimente a Pilha de Suplementos",
+    "scan_another": "Escanear Outro",
+    "done": "Concluído",
+    "error_upstream": "Banco de dados de produtos temporariamente indisponível, tente novamente em breve"
   }
 }

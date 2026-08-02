@@ -344,7 +344,9 @@
     "action_supplements": "Balík doplnkov",
     "action_supplements_sub": "Sledujte, čo užívate",
     "action_advanced_analytics": "Pokročilá analýza",
-    "action_advanced_analytics_sub": "Hlboké trendy · Elite"
+    "action_advanced_analytics_sub": "Hlboké trendy · Elite",
+    "action_product_scan": "Naskenujte Produkt",
+    "action_product_scan_sub": "Skontrolujte ingrediencie a aditíva"
   },
   "settings": {
     "title": "Nastavenia",
@@ -687,7 +689,8 @@
     "edit_title": "Upraviť jedlo",
     "save_changes_button": "Uložiť zmeny",
     "updated_title": "Aktualizované!",
-    "updated_msg": "Vaše jedlo bolo aktualizované."
+    "updated_msg": "Vaše jedlo bolo aktualizované.",
+    "scan_product_label": "Naskenujte Čiarový Kód Produktu"
   },
   "food_diary": {
     "title": "Potravinový denník",
@@ -1314,5 +1317,28 @@
     "body_composition": "Zmena telesného zloženia",
     "no_composition_data": "Absolvujte aspoň dve hodnotenia tela, aby ste videli zmeny v čase.",
     "error": "Nepodarilo sa načítať vašu analýzu. Skúste znova."
+  },
+  "product_scan": {
+    "permission_title": "Vyžaduje sa Prístup ku Kamerе",
+    "permission_sub": "Povolte prístup ku kamerе na skenovanie čiarového kódu produktu.",
+    "grant_permission": "Povoliť Prístup ku Kamerе",
+    "frame_hint": "Nasmerujte kameru na čiarový kód",
+    "scanning": "Vyhľadávam...",
+    "manual_entry_label": "Alebo zadajte čiarový kód ručne",
+    "manual_entry_placeholder": "napr. 0123456789012",
+    "manual_entry_submit": "Skontrolovať",
+    "unknown_product": "Neznámy Produkt",
+    "grade_great": "Vynikajúci",
+    "grade_good": "Dobrý",
+    "grade_mediocre": "Priemerný",
+    "grade_bad": "Zlý",
+    "flagged_ingredients_title": "Označené Ingrediencie",
+    "no_flagged_ingredients": "Nenájdené žiadne problémové ingrediencie",
+    "not_found_title": "Produkt Nenájdený",
+    "not_found_sub": "Tento čiarový kód ešte nie je v našej databáze. Ak ide o doplnok, skúste namiesto toho náš Supplement Stack.",
+    "try_supplements_cta": "Skúsiť Supplement Stack",
+    "scan_another": "Naskenujte Ďalší",
+    "done": "Hotovo",
+    "error_upstream": "Databáza produktov je dočasne nedostupná, skúste znova o chvíľu"
   }
 }

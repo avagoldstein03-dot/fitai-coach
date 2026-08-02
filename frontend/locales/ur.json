@@ -344,7 +344,9 @@
     "action_supplements": "سپلیمنٹ اسٹیک",
     "action_supplements_sub": "اپنی خوراک کا ریکارڈ رکھیں",
     "action_advanced_analytics": "اعلیٰ تجزیات",
-    "action_advanced_analytics_sub": "گہرے رجحانات · اعلیٰ"
+    "action_advanced_analytics_sub": "گہرے رجحانات · اعلیٰ",
+    "action_product_scan": "کسی مصنوعات کو سکین کریں",
+    "action_product_scan_sub": "اجزاء اور additives کی جانچ کریں"
   },
   "settings": {
     "title": "ترتیبات",
@@ -687,7 +689,8 @@
     "edit_title": "کھانے میں ترمیم کریں",
     "save_changes_button": "تبدیلیاں محفوظ کریں",
     "updated_title": "اپڈیٹ ہو گیا!",
-    "updated_msg": "آپ کا کھانا اپڈیٹ ہو گیا ہے۔"
+    "updated_msg": "آپ کا کھانا اپڈیٹ ہو گیا ہے۔",
+    "scan_product_label": "کسی مصنوعات کے بار کوڈ کو سکین کریں"
   },
   "food_diary": {
     "title": "کھانے کی ڈائری",
@@ -1314,5 +1317,28 @@
     "body_composition": "جسم کی ساخت میں تبدیلی",
     "no_composition_data": "وقت کے ساتھ تبدیلیاں دیکھنے کے لیے کم از کم دو جسمانی تشخیصات مکمل کریں۔",
     "error": "آپ کے تجزیات لوڈ نہیں ہو سکے۔ براہ مہربانی دوبارہ کوشش کریں۔"
+  },
+  "product_scan": {
+    "permission_title": "کیمرہ رسائی درکار ہے",
+    "permission_sub": "مصنوعات کے بار کوڈ کو سکین کرنے کے لیے کیمرہ رسائی کی اجازت دیں۔",
+    "grant_permission": "کیمرہ رسائی دیں",
+    "frame_hint": "بار کوڈ کی طرف اپنا کیمرہ لگائیں",
+    "scanning": "اسے تلاش کیا جا رہا ہے...",
+    "manual_entry_label": "یا بار کوڈ نمبر کو دستی طور پر درج کریں",
+    "manual_entry_placeholder": "مثال کے طور پر 0123456789012",
+    "manual_entry_submit": "جانچیں",
+    "unknown_product": "نامعلوم مصنوعات",
+    "grade_great": "بہترین",
+    "grade_good": "اچھا",
+    "grade_mediocre": "معمولی",
+    "grade_bad": "برا",
+    "flagged_ingredients_title": "نشان زد اجزاء",
+    "no_flagged_ingredients": "کوئی فکر مند اجزاء نہیں ملا",
+    "not_found_title": "مصنوعات نہیں ملا",
+    "not_found_sub": "یہ بار کوڈ ابھی ہمارے ڈیٹا بیس میں نہیں ہے۔ اگر یہ ایک supplement ہے تو اس کی بجائے ہمارے Supplement Stack کو آزمائیں۔",
+    "try_supplements_cta": "Supplement Stack آزمائیں",
+    "scan_another": "دوسرا سکین کریں",
+    "done": "مکمل",
+    "error_upstream": "مصنوعات کا ڈیٹا بیس عارضی طور پر دستیاب نہیں ہے، کچھ دیر بعد دوبارہ کوشش کریں"
   }
 }
