@@ -342,7 +342,9 @@
     "nudge_scan_update_sub": "Uplynulo 7+ dní — podívejte se, jak se změnili",
     "nudge_scan_first_sub": "Nahrajte 3 fotografie pro čtení složení těla umělou inteligencí",
     "action_supplements": "Balíček doplňků",
-    "action_supplements_sub": "Sledujte, co užíváte"
+    "action_supplements_sub": "Sledujte, co užíváte",
+    "action_advanced_analytics": "Pokročilá analytika",
+    "action_advanced_analytics_sub": "Hluboké trendy · Elite"
   },
   "settings": {
     "title": "Nastavení",
@@ -1164,7 +1166,8 @@
     "badge_stay_hydrated": "Zůstaňte hydratovaní",
     "badge_body_scan": "Body scan",
     "default_name": "Atlet",
-    "friends": "Přátelé"
+    "friends": "Přátelé",
+    "advanced_analytics": "Pokročilá analytika"
   },
   "navigation": {
     "home": "Domů",
@@ -1289,5 +1292,27 @@
     "capture_failed": "Nepodařilo se zachytit fotografii. Zkuste prosím znovu.",
     "scan_another": "Skenovat další",
     "done": "Hotovo"
+  },
+  "advanced_analytics": {
+    "title": "Pokročilá analytika",
+    "subtitle": "Dlouhodobé trendy v hmotnosti, zdraví, výživě a tréninku",
+    "range_30": "30 dní",
+    "range_90": "90 dní",
+    "weight_trend": "Trend hmotnosti",
+    "no_weight_data": "Zaznamenejte svou hmotnost několikrát, abyste viděli trend.",
+    "health_trends": "Zdravotní trendy",
+    "steps": "Kroky",
+    "sleep": "Spánek (minuty)",
+    "resting_hr": "Klidová srdeční frekvence",
+    "no_health_data": "Synchronizujte Apple Health, abyste viděli trendy kroků, spánku a srdeční frekvence.",
+    "macro_trend": "Trend rozdělení makronutrientů",
+    "no_macro_data": "Zaznamenejte několik jídel, abyste viděli vaše trendy makronutrientů.",
+    "workout_volume": "Objem tréninku",
+    "no_workout_data": "Zaznamenejte několik tréninků, abyste viděli váš tréninkový objem.",
+    "bodyweight": "tělesná hmotnost",
+    "plateau_line": "{{exercise}} zůstává stabilní na {{weight}} za {{reps}} opakování během posledních {{count}} sezení.",
+    "body_composition": "Změna složení těla",
+    "no_composition_data": "Dokončete alespoň dvě posouzení těla, abyste viděli změny v čase.",
+    "error": "Nepodařilo se načíst vaši analytiku. Zkuste to znovu."
   }
 }

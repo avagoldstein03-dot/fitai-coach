@@ -342,7 +342,9 @@
     "nudge_scan_update_sub": "7+ gün geçti — nasıl değiştiğini gör",
     "nudge_scan_first_sub": "AI vücut bileşimi okuması için 3 fotoğraf yükle",
     "action_supplements": "Takviye Yığını",
-    "action_supplements_sub": "Aldıklarınızı takip edin"
+    "action_supplements_sub": "Aldıklarınızı takip edin",
+    "action_advanced_analytics": "Gelişmiş Analitics",
+    "action_advanced_analytics_sub": "Derinlemesine trendler · Elite"
   },
   "settings": {
     "title": "Ayarlar",
@@ -1164,7 +1166,8 @@
     "badge_stay_hydrated": "Hidrasyonlu Kal",
     "badge_body_scan": "Vücut Taraması",
     "default_name": "Sporcu",
-    "friends": "Arkadaşlar"
+    "friends": "Arkadaşlar",
+    "advanced_analytics": "Gelişmiş Analitics"
   },
   "navigation": {
     "home": "Ana Sayfa",
@@ -1289,5 +1292,27 @@
     "capture_failed": "Foto çekme başarısız oldu. Lütfen tekrar deneyin.",
     "scan_another": "Başka Bir Tarama Yap",
     "done": "Bitti"
+  },
+  "advanced_analytics": {
+    "title": "Gelişmiş Analitics",
+    "subtitle": "Kilo, sağlık, beslenme ve antrenman alanında uzun vadeli trendler",
+    "range_30": "30 Gün",
+    "range_90": "90 Gün",
+    "weight_trend": "Kilo Trendi",
+    "no_weight_data": "Burada bir trend görmek için kilonuzu birkaç kez kaydedin.",
+    "health_trends": "Sağlık Trendleri",
+    "steps": "Adımlar",
+    "sleep": "Uyku (dakika)",
+    "resting_hr": "Dinlenme Kalp Atış Hızı",
+    "no_health_data": "Adımlar, uyku ve kalp atış hızı trendlerini görmek için Apple Health'i senkronize edin.",
+    "macro_trend": "Makro Dağılım Trendi",
+    "no_macro_data": "Makro trendlerinizi burada görmek için birkaç öğün kaydedin.",
+    "workout_volume": "Antrenman Hacmi",
+    "no_workout_data": "Antrenman hacminizi burada görmek için birkaç antrenman kaydedin.",
+    "bodyweight": "vücut ağırlığı",
+    "plateau_line": "{{exercise}} son {{count}} seansda {{weight}} ağırlığında {{reps}} tekrar olarak sabit kaldı.",
+    "body_composition": "Vücut Kompozisyonu Değişimi",
+    "no_composition_data": "Zaman içinde değişimleri görmek için en az iki vücut değerlendirmesi tamamlayın.",
+    "error": "Analitiğiniz yüklenemedi. Lütfen tekrar deneyin."
   }
 }

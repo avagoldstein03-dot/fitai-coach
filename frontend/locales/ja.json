@@ -342,7 +342,9 @@
     "nudge_scan_update_sub": "7日以上経過しました — 変わった様子を確認",
     "nudge_scan_first_sub": "3枚の写真をアップロードしてAIボディ成分測定を取得",
     "action_supplements": "サプリメントスタック",
-    "action_supplements_sub": "摂取したものを追跡"
+    "action_supplements_sub": "摂取したものを追跡",
+    "action_advanced_analytics": "高度な分析",
+    "action_advanced_analytics_sub": "深いトレンド · エリート"
   },
   "settings": {
     "title": "設定",
@@ -1164,7 +1166,8 @@
     "badge_stay_hydrated": "水分補給を維持",
     "badge_body_scan": "ボディスキャン",
     "default_name": "アスリート",
-    "friends": "フレンド"
+    "friends": "フレンド",
+    "advanced_analytics": "高度な分析"
   },
   "navigation": {
     "home": "ホーム",
@@ -1289,5 +1292,27 @@
     "capture_failed": "写真のキャプチャに失敗しました。もう一度お試しください。",
     "scan_another": "別のものをスキャン",
     "done": "完了"
+  },
+  "advanced_analytics": {
+    "title": "高度な分析",
+    "subtitle": "体重、健康、栄養、トレーニングの長期的なトレンド",
+    "range_30": "30日間",
+    "range_90": "90日間",
+    "weight_trend": "体重トレンド",
+    "no_weight_data": "トレンドを表示するために、数回体重をログしてください。",
+    "health_trends": "健康トレンド",
+    "steps": "ステップ数",
+    "sleep": "睡眠(分)",
+    "resting_hr": "安静時心拍数",
+    "no_health_data": "Apple Healthを同期して、ステップ数、睡眠、心拍数のトレンドを表示します。",
+    "macro_trend": "マクロ分解トレンド",
+    "no_macro_data": "いくつかの食事をログして、マクロトレンドを表示してください。",
+    "workout_volume": "ワークアウトボリューム",
+    "no_workout_data": "トレーニングボリュームを表示するために、いくつかのワークアウトをログしてください。",
+    "bodyweight": "体重",
+    "plateau_line": "{{exercise}}は過去{{count}}セッションで{{weight}}で{{reps}}レップスに安定しています。",
+    "body_composition": "身体組成の変化",
+    "no_composition_data": "時間経過による変化を確認するには、少なくとも2つのボディ評価を完了してください。",
+    "error": "分析を読み込めませんでした。もう一度お試しください。"
   }
 }

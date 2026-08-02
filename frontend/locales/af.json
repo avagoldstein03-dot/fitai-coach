@@ -342,7 +342,9 @@
     "nudge_scan_update_sub": "Dit is al 7+ dae — sien hoe jy verander het",
     "nudge_scan_first_sub": "Laai 3 foto's op vir 'n AI-liggaamssamestelling-lees",
     "action_supplements": "Supplement-stapel",
-    "action_supplements_sub": "Volg wat jy neem"
+    "action_supplements_sub": "Volg wat jy neem",
+    "action_advanced_analytics": "Gevorderde Analitiek",
+    "action_advanced_analytics_sub": "Diep tendense · Elite"
   },
   "settings": {
     "title": "Instellings",
@@ -1164,7 +1166,8 @@
     "badge_stay_hydrated": "Bly goed gevoegd",
     "badge_body_scan": "Liggaamskanning",
     "default_name": "Atleet",
-    "friends": "Vriende"
+    "friends": "Vriende",
+    "advanced_analytics": "Gevorderde Analitiek"
   },
   "navigation": {
     "home": "Tuis",
@@ -1289,5 +1292,27 @@
     "capture_failed": "Kon nie foto vasvang nie. Probeer asseblief weer.",
     "scan_another": "Skandeer Nog Een",
     "done": "Klaar"
+  },
+  "advanced_analytics": {
+    "title": "Gevorderde Analitiek",
+    "subtitle": "Lange-termyn tendense oor gewig, gesondheid, voeding en oefening",
+    "range_30": "30 Dae",
+    "range_90": "90 Dae",
+    "weight_trend": "Gewig-Tendens",
+    "no_weight_data": "Teken jou gewig 'n paar keer in om 'n tendens hier te sien.",
+    "health_trends": "Gesondheid-Tendense",
+    "steps": "Stappe",
+    "sleep": "Slaap (minute)",
+    "resting_hr": "Hartslag in Rus",
+    "no_health_data": "Sinkroniseer Apple Health om stappe-, slaap- en hartslagnormtendense te sien.",
+    "macro_trend": "Makro-Verdeling Tendens",
+    "no_macro_data": "Teken 'n paar maaltye in om jou makrotendense hier te sien.",
+    "workout_volume": "Oefenvolume",
+    "no_workout_data": "Teken 'n paar oefeningen in om jou trainingsvolume hier te sien.",
+    "bodyweight": "liggaamsgewig",
+    "plateau_line": "{{exercise}} het gelyk gebly op {{weight}} vir {{reps}} herhalings oor die laaste {{count}} sessies.",
+    "body_composition": "Liggaamssamestelling Verandering",
+    "no_composition_data": "Voltooi ten minste twee liggaamsbewerkings om veranderinge oor tyd te sien.",
+    "error": "Kon nie jou analitiek laai nie. Probeer asseblief weer."
   }
 }

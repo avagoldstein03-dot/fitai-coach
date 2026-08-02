@@ -342,7 +342,9 @@
     "nudge_scan_update_sub": "Prošlo je 7+ dana — vidi kako si se promijenio",
     "nudge_scan_first_sub": "Učitaj 3 fotografije za AI čitanje sastava tijela",
     "action_supplements": "Slaganje dodataka",
-    "action_supplements_sub": "Pratite što uzimate"
+    "action_supplements_sub": "Pratite što uzimate",
+    "action_advanced_analytics": "Napredna Analitika",
+    "action_advanced_analytics_sub": "Duboki trendovi · Elite"
   },
   "settings": {
     "title": "Postavke",
@@ -1164,7 +1166,8 @@
     "badge_stay_hydrated": "Ostani hidratiziran",
     "badge_body_scan": "Body Scan",
     "default_name": "Sportaš",
-    "friends": "Prijatelji"
+    "friends": "Prijatelji",
+    "advanced_analytics": "Napredna Analitika"
   },
   "navigation": {
     "home": "Početna",
@@ -1289,5 +1292,27 @@
     "capture_failed": "Snimanje fotografije nije uspjelo. Pokušaj ponovno.",
     "scan_another": "Skeniraj drugi",
     "done": "Gotovo"
+  },
+  "advanced_analytics": {
+    "title": "Napredna Analitika",
+    "subtitle": "Dugoročni trendovi težine, zdravlja, prehrane i treninga",
+    "range_30": "30 Dana",
+    "range_90": "90 Dana",
+    "weight_trend": "Trend Težine",
+    "no_weight_data": "Zabilježi svoju težinu nekoliko puta da vidiš trend ovdje.",
+    "health_trends": "Zdravstveni Trendovi",
+    "steps": "Koraci",
+    "sleep": "Spavanje (minute)",
+    "resting_hr": "Srčana Frekvencija u Mirovanju",
+    "no_health_data": "Sinkroniziraj Apple Health da vidiš trendove koraka, spavanja i srčane frekvencije.",
+    "macro_trend": "Trend Raspodjele Makronutrijenta",
+    "no_macro_data": "Zabilježi nekoliko obroka da vidiš svoje makro trendove ovdje.",
+    "workout_volume": "Volumen Treninga",
+    "no_workout_data": "Zabilježi nekoliko treninga da vidiš svoj volumen treninga ovdje.",
+    "bodyweight": "vlastita težina",
+    "plateau_line": "{{exercise}} je ostao stabilan na {{weight}} za {{reps}} ponavljanja tijekom zadnjih {{count}} sesija.",
+    "body_composition": "Promjena Tjelesnog Sastava",
+    "no_composition_data": "Završi najmanje dvije tjelesne procjene da vidiš promjene tijekom vremena.",
+    "error": "Nije moguće učitati tvoju analitiku. Pokušaj ponovo."
   }
 }

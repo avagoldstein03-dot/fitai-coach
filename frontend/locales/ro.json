@@ -342,7 +342,9 @@
     "nudge_scan_update_sub": "Au trecut 7+ zile — vezi cum te-ai schimbat",
     "nudge_scan_first_sub": "Încarcă 3 fotografii pentru o analiză IA a compoziției corpului",
     "action_supplements": "Pachet de Suplimente",
-    "action_supplements_sub": "Urmărește ce iei"
+    "action_supplements_sub": "Urmărește ce iei",
+    "action_advanced_analytics": "Analize Avansate",
+    "action_advanced_analytics_sub": "Tendințe profunde · Elite"
   },
   "settings": {
     "title": "Setari",
@@ -1164,7 +1166,8 @@
     "badge_stay_hydrated": "Rămâi hidratat",
     "badge_body_scan": "Body Scan",
     "default_name": "Atlet",
-    "friends": "Prieteni"
+    "friends": "Prieteni",
+    "advanced_analytics": "Analize Avansate"
   },
   "navigation": {
     "home": "Acasă",
@@ -1289,5 +1292,27 @@
     "capture_failed": "Nu s-a putut captura fotografia. Vă rugăm să încercați din nou.",
     "scan_another": "Scanați Altul",
     "done": "Gata"
+  },
+  "advanced_analytics": {
+    "title": "Analize Avansate",
+    "subtitle": "Tendințe pe termen lung privind greutatea, sănătatea, nutriția și antrenamentul",
+    "range_30": "30 de zile",
+    "range_90": "90 de zile",
+    "weight_trend": "Tendință Greutate",
+    "no_weight_data": "Înregistrează-ți greutatea de câteva ori pentru a vedea o tendință aici.",
+    "health_trends": "Tendințe Sănătate",
+    "steps": "Pași",
+    "sleep": "Somn (minute)",
+    "resting_hr": "Frecvență Cardiacă în Repaus",
+    "no_health_data": "Sincronizează Apple Health pentru a vedea tendințele de pași, somn și frecvență cardiacă.",
+    "macro_trend": "Tendință Breakdown Macronutrienți",
+    "no_macro_data": "Înregistrează câteva mese pentru a vedea tendințele tale de macronutrienți aici.",
+    "workout_volume": "Volum Antrenament",
+    "no_workout_data": "Înregistrează câteva antrenamente pentru a vedea volumul tău de antrenament aici.",
+    "bodyweight": "greutate corp",
+    "plateau_line": "{{exercise}} a rămas stabil la {{weight}} pentru {{reps}} repetări în ultimele {{count}} sesiuni.",
+    "body_composition": "Schimbare Compoziție Corporală",
+    "no_composition_data": "Completează cel puțin două evaluări corporale pentru a vedea schimbările în timp.",
+    "error": "Nu am putut încărca analizele tale. Te rog încearcă din nou."
   }
 }

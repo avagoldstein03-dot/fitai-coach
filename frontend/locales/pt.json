@@ -342,7 +342,9 @@
     "nudge_scan_update_sub": "Já faz 7+ dias — veja como você mudou",
     "nudge_scan_first_sub": "Envie 3 fotos para uma leitura de composição corporal com IA",
     "action_supplements": "Pilha de Suplementos",
-    "action_supplements_sub": "Acompanhe o que você toma"
+    "action_supplements_sub": "Acompanhe o que você toma",
+    "action_advanced_analytics": "Análise Avançada",
+    "action_advanced_analytics_sub": "Tendências profundas · Elite"
   },
   "settings": {
     "title": "Configurações",
@@ -1164,7 +1166,8 @@
     "badge_stay_hydrated": "Mantenha-se Hidratado",
     "badge_body_scan": "Leitura de Corpo",
     "default_name": "Atleta",
-    "friends": "Amigos"
+    "friends": "Amigos",
+    "advanced_analytics": "Análise Avançada"
   },
   "navigation": {
     "home": "Início",
@@ -1289,5 +1292,27 @@
     "capture_failed": "Falha ao capturar foto. Tente novamente.",
     "scan_another": "Escanear Outro",
     "done": "Concluído"
+  },
+  "advanced_analytics": {
+    "title": "Análise Avançada",
+    "subtitle": "Tendências de longo prazo em peso, saúde, nutrição e treinamento",
+    "range_30": "30 Dias",
+    "range_90": "90 Dias",
+    "weight_trend": "Tendência de Peso",
+    "no_weight_data": "Registre seu peso algumas vezes para ver uma tendência aqui.",
+    "health_trends": "Tendências de Saúde",
+    "steps": "Passos",
+    "sleep": "Sono (minutos)",
+    "resting_hr": "Frequência Cardíaca em Repouso",
+    "no_health_data": "Sincronize com Apple Health para ver tendências de passos, sono e frequência cardíaca.",
+    "macro_trend": "Tendência de Distribuição de Macros",
+    "no_macro_data": "Registre algumas refeições para ver suas tendências de macros aqui.",
+    "workout_volume": "Volume de Treino",
+    "no_workout_data": "Registre alguns treinos para ver seu volume de treinamento aqui.",
+    "bodyweight": "peso corporal",
+    "plateau_line": "{{exercise}} se manteve estável em {{weight}} para {{reps}} repetições nas últimas {{count}} sessões.",
+    "body_composition": "Mudança na Composição Corporal",
+    "no_composition_data": "Complete pelo menos duas avaliações corporais para ver as mudanças ao longo do tempo.",
+    "error": "Não foi possível carregar sua análise. Tente novamente."
   }
 }

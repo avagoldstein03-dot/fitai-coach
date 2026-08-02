@@ -342,7 +342,9 @@
     "nudge_scan_update_sub": "Od 7+ dni — zobacz, jak się zmieniłeś",
     "nudge_scan_first_sub": "Prześlij 3 zdjęcia, aby uzyskać odczyt składu ciała AI",
     "action_supplements": "Stos Suplementów",
-    "action_supplements_sub": "Śledź, co bierzesz"
+    "action_supplements_sub": "Śledź, co bierzesz",
+    "action_advanced_analytics": "Zaawansowana Analityka",
+    "action_advanced_analytics_sub": "Głębokie trendy · Elita"
   },
   "settings": {
     "title": "Ustawienia",
@@ -1164,7 +1166,8 @@
     "badge_stay_hydrated": "Pozostań nawodniony",
     "badge_body_scan": "Skanowanie ciała",
     "default_name": "Sportowiec",
-    "friends": "Znajomi"
+    "friends": "Znajomi",
+    "advanced_analytics": "Zaawansowana Analityka"
   },
   "navigation": {
     "home": "Strona główna",
@@ -1289,5 +1292,27 @@
     "capture_failed": "Nie udało się zrobić zdjęcia. Spróbuj ponownie.",
     "scan_another": "Skanuj kolejne",
     "done": "Gotowe"
+  },
+  "advanced_analytics": {
+    "title": "Zaawansowana Analityka",
+    "subtitle": "Długoterminowe trendy w zakresie wagi, zdrowia, odżywiania i treningów",
+    "range_30": "30 dni",
+    "range_90": "90 dni",
+    "weight_trend": "Trend Wagi",
+    "no_weight_data": "Zaloguj swoją wagę kilka razy, aby zobaczyć tutaj trend.",
+    "health_trends": "Trendy Zdrowotne",
+    "steps": "Kroki",
+    "sleep": "Sen (minuty)",
+    "resting_hr": "Spoczynkowa Częstość Tętna",
+    "no_health_data": "Zsynchronizuj Apple Health, aby zobaczyć trendy kroków, snu i częstości tętna.",
+    "macro_trend": "Trend Rozkładu Makroskładników",
+    "no_macro_data": "Zaloguj kilka posiłków, aby zobaczyć tutaj trendy makroskładników.",
+    "workout_volume": "Głośność Treningu",
+    "no_workout_data": "Zaloguj kilka treningów, aby zobaczyć tutaj tom treningowy.",
+    "bodyweight": "waga ciała",
+    "plateau_line": "{{exercise}} utrzymuje się na stałym poziomie {{weight}} przez {{reps}} powtórzeń w ciągu ostatnich {{count}} sesji.",
+    "body_composition": "Zmiana Składu Ciała",
+    "no_composition_data": "Ukończ co najmniej dwie oceny ciała, aby zobaczyć zmiany w czasie.",
+    "error": "Nie udało się załadować Twoją analitykę. Spróbuj ponownie."
   }
 }

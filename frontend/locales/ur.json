@@ -342,7 +342,9 @@
     "nudge_scan_update_sub": "7+ دن ہو چکے ہیں — دیکھیں کہ آپ کیسے بدلے ہیں",
     "nudge_scan_first_sub": "AI جسم کی ترکیب کی تفصیل کے لیے 3 تصویریں اپ لوڈ کریں",
     "action_supplements": "سپلیمنٹ اسٹیک",
-    "action_supplements_sub": "اپنی خوراک کا ریکارڈ رکھیں"
+    "action_supplements_sub": "اپنی خوراک کا ریکارڈ رکھیں",
+    "action_advanced_analytics": "اعلیٰ تجزیات",
+    "action_advanced_analytics_sub": "گہرے رجحانات · اعلیٰ"
   },
   "settings": {
     "title": "ترتیبات",
@@ -1164,7 +1166,8 @@
     "badge_stay_hydrated": "ہائیڈریٹڈ رہیں",
     "badge_body_scan": "جسم کا اسکین",
     "default_name": "ایتھلیٹ",
-    "friends": "دوست"
+    "friends": "دوست",
+    "advanced_analytics": "اعلیٰ تجزیات"
   },
   "navigation": {
     "home": "ہوم",
@@ -1289,5 +1292,27 @@
     "capture_failed": "فوٹو کیپچر کرنے میں ناکامی۔ براہ کرم دوبارہ کوشش کریں۔",
     "scan_another": "دوسری چیز سکین کریں",
     "done": "مکمل"
+  },
+  "advanced_analytics": {
+    "title": "اعلیٰ تجزیات",
+    "subtitle": "وزن، صحت، غذائیت اور تربیت میں طویل مدتی رجحانات",
+    "range_30": "30 دن",
+    "range_90": "90 دن",
+    "weight_trend": "وزن کا رجحان",
+    "no_weight_data": "یہاں رجحان دیکھنے کے لیے اپنا وزن کچھ بار درج کریں۔",
+    "health_trends": "صحت کے رجحانات",
+    "steps": "قدم",
+    "sleep": "نیند (منٹ)",
+    "resting_hr": "آرام میں دل کی دھڑکن",
+    "no_health_data": "قدم، نیند اور دل کی دھڑکن کے رجحانات دیکھنے کے لیے Apple Health کے ساتھ مطابقت پذیر کریں۔",
+    "macro_trend": "میکروز کے تفصیلات کا رجحان",
+    "no_macro_data": "یہاں اپنے میکروز کے رجحانات دیکھنے کے لیے کچھ کھانے درج کریں۔",
+    "workout_volume": "ورزش کا حجم",
+    "no_workout_data": "یہاں اپنی تربیت کا حجم دیکھنے کے لیے کچھ ورزشیں درج کریں۔",
+    "bodyweight": "جسم کا وزن",
+    "plateau_line": "{{exercise}} گزشتہ {{count}} سیشنز میں {{weight}} پر {{reps}} reps کے لیے مستحکم رہا ہے۔",
+    "body_composition": "جسم کی ساخت میں تبدیلی",
+    "no_composition_data": "وقت کے ساتھ تبدیلیاں دیکھنے کے لیے کم از کم دو جسمانی تشخیصات مکمل کریں۔",
+    "error": "آپ کے تجزیات لوڈ نہیں ہو سکے۔ براہ مہربانی دوبارہ کوشش کریں۔"
   }
 }

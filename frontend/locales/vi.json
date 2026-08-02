@@ -342,7 +342,9 @@
     "nudge_scan_update_sub": "Đã 7+ ngày — xem bạn đã thay đổi như thế nào",
     "nudge_scan_first_sub": "Tải lên 3 ảnh để đọc thành phần cơ thể bằng AI",
     "action_supplements": "Bộ Sưu Tập Thực Phẩm Bổ Sung",
-    "action_supplements_sub": "Theo dõi những gì bạn dùng"
+    "action_supplements_sub": "Theo dõi những gì bạn dùng",
+    "action_advanced_analytics": "Phân Tích Nâng Cao",
+    "action_advanced_analytics_sub": "Xu hướng sâu · Elite"
   },
   "settings": {
     "title": "Cài đặt",
@@ -1164,7 +1166,8 @@
     "badge_stay_hydrated": "Giữ độ ẩm",
     "badge_body_scan": "Quét cơ thể",
     "default_name": "Vận động viên",
-    "friends": "Bạn bè"
+    "friends": "Bạn bè",
+    "advanced_analytics": "Phân Tích Nâng Cao"
   },
   "navigation": {
     "home": "Trang chủ",
@@ -1289,5 +1292,27 @@
     "capture_failed": "Không thể chụp ảnh. Vui lòng thử lại.",
     "scan_another": "Quét Cái Khác",
     "done": "Xong"
+  },
+  "advanced_analytics": {
+    "title": "Phân Tích Nâng Cao",
+    "subtitle": "Xu hướng dài hạn về cân nặng, sức khỏe, dinh dưỡng và luyện tập",
+    "range_30": "30 Ngày",
+    "range_90": "90 Ngày",
+    "weight_trend": "Xu Hướng Cân Nặng",
+    "no_weight_data": "Ghi lại cân nặng của bạn một vài lần để xem xu hướng tại đây.",
+    "health_trends": "Xu Hướng Sức Khỏe",
+    "steps": "Bước",
+    "sleep": "Giấc Ngủ (phút)",
+    "resting_hr": "Nhịp Tim Khi Nghỉ",
+    "no_health_data": "Đồng bộ hóa Apple Health để xem xu hướng bước, giấc ngủ và nhịp tim.",
+    "macro_trend": "Xu Hướng Phân Tích Macro",
+    "no_macro_data": "Ghi lại một vài bữa ăn để xem xu hướng macro của bạn tại đây.",
+    "workout_volume": "Khối Lượng Luyện Tập",
+    "no_workout_data": "Ghi lại một vài buổi luyện tập để xem khối lượng luyện tập của bạn tại đây.",
+    "bodyweight": "cân nặng cơ thể",
+    "plateau_line": "{{exercise}} đã ổn định ở {{weight}} cho {{reps}} lần lặp lại trong {{count}} buổi tập gần đây.",
+    "body_composition": "Thay Đổi Thành Phần Cơ Thể",
+    "no_composition_data": "Hoàn thành ít nhất hai bài đánh giá cơ thể để xem những thay đổi theo thời gian.",
+    "error": "Không thể tải phân tích của bạn. Vui lòng thử lại."
   }
 }

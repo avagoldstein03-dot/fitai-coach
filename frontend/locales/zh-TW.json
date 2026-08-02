@@ -342,7 +342,9 @@
     "nudge_scan_update_sub": "已經 7 天以上——看看您如何變化",
     "nudge_scan_first_sub": "上傳 3 張照片以進行 AI 身體成份讀取",
     "action_supplements": "補充劑堆疊",
-    "action_supplements_sub": "追蹤你的補充劑"
+    "action_supplements_sub": "追蹤你的補充劑",
+    "action_advanced_analytics": "進階分析",
+    "action_advanced_analytics_sub": "深度趨勢 · 精英版"
   },
   "settings": {
     "title": "設定",
@@ -1164,7 +1166,8 @@
     "badge_stay_hydrated": "保持補水",
     "badge_body_scan": "身體掃描",
     "default_name": "運動員",
-    "friends": "好友"
+    "friends": "好友",
+    "advanced_analytics": "進階分析"
   },
   "navigation": {
     "home": "首頁",
@@ -1289,5 +1292,27 @@
     "capture_failed": "拍照失敗。請重試。",
     "scan_another": "掃描另一項",
     "done": "完成"
+  },
+  "advanced_analytics": {
+    "title": "進階分析",
+    "subtitle": "體重、健康、營養和訓練的長期趨勢",
+    "range_30": "30 天",
+    "range_90": "90 天",
+    "weight_trend": "體重趨勢",
+    "no_weight_data": "記錄幾次體重以查看此處的趨勢。",
+    "health_trends": "健康趨勢",
+    "steps": "步數",
+    "sleep": "睡眠（分鐘）",
+    "resting_hr": "靜息心率",
+    "no_health_data": "同步 Apple 健康以查看步數、睡眠和心率趨勢。",
+    "macro_trend": "巨量營養素分布趨勢",
+    "no_macro_data": "記錄幾餐以查看您的巨量營養素趨勢。",
+    "workout_volume": "訓練量",
+    "no_workout_data": "記錄幾個訓練以查看您的訓練量。",
+    "bodyweight": "體重",
+    "plateau_line": "{{exercise}} 在過去 {{count}} 次訓練中已穩定在 {{weight}} 的 {{reps}} 下。",
+    "body_composition": "身體組成變化",
+    "no_composition_data": "完成至少兩次身體評估以查看一段時間內的變化。",
+    "error": "無法載入您的分析。請重試。"
   }
 }

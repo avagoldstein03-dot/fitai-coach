@@ -342,7 +342,9 @@
     "nudge_scan_update_sub": "Het is 7+ dagen geleden — zie hoe je bent veranderd",
     "nudge_scan_first_sub": "Upload 3 foto's voor een AI-lichaamsamsamenstelling",
     "action_supplements": "Supplementstapel",
-    "action_supplements_sub": "Volg wat je inneemt"
+    "action_supplements_sub": "Volg wat je inneemt",
+    "action_advanced_analytics": "Geavanceerde Analytics",
+    "action_advanced_analytics_sub": "Diepgaande trends · Elite"
   },
   "settings": {
     "title": "Instellingen",
@@ -1164,7 +1166,8 @@
     "badge_stay_hydrated": "Blijf Gehydrateerd",
     "badge_body_scan": "Lichaamsscan",
     "default_name": "Atleet",
-    "friends": "Vrienden"
+    "friends": "Vrienden",
+    "advanced_analytics": "Geavanceerde Analytics"
   },
   "navigation": {
     "home": "Home",
@@ -1289,5 +1292,27 @@
     "capture_failed": "Foto maken mislukt. Probeer het opnieuw.",
     "scan_another": "Nog Een Scannen",
     "done": "Gereed"
+  },
+  "advanced_analytics": {
+    "title": "Geavanceerde Analytics",
+    "subtitle": "Langetermijntrends voor gewicht, gezondheid, voeding en training",
+    "range_30": "30 Dagen",
+    "range_90": "90 Dagen",
+    "weight_trend": "Gewichtstrend",
+    "no_weight_data": "Log je gewicht een paar keer om hier een trend te zien.",
+    "health_trends": "Gezondheidstrends",
+    "steps": "Stappen",
+    "sleep": "Slaap (minuten)",
+    "resting_hr": "Rusthartslagfrequentie",
+    "no_health_data": "Synchroniseer Apple Health om stappen-, slaap- en hartslagtrends te zien.",
+    "macro_trend": "Macro Opbouw Trend",
+    "no_macro_data": "Log een paar maaltijden om hier je macrotrends te zien.",
+    "workout_volume": "Trainingsvolume",
+    "no_workout_data": "Log een paar trainingen om je trainingsvolume hier te zien.",
+    "bodyweight": "lichaamsgewicht",
+    "plateau_line": "{{exercise}} blijft stabiel op {{weight}} voor {{reps}} herhalingen over de laatste {{count}} sessies.",
+    "body_composition": "Verandering Lichaamssamenstelling",
+    "no_composition_data": "Voltooi minstens twee lichaamsmetingen om veranderingen in de loop van de tijd te zien.",
+    "error": "Kon je analytics niet laden. Probeer het alstublieft opnieuw."
   }
 }

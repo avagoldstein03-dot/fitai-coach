@@ -342,7 +342,9 @@
     "nudge_scan_update_sub": "Sudah 7+ hari — lihat bagaimana anda telah berubah",
     "nudge_scan_first_sub": "Muat naik 3 foto untuk pembacaan komposisi badan AI",
     "action_supplements": "Tindanan Suplemen",
-    "action_supplements_sub": "Jejaki apa yang anda ambil"
+    "action_supplements_sub": "Jejaki apa yang anda ambil",
+    "action_advanced_analytics": "Analitik Lanjutan",
+    "action_advanced_analytics_sub": "Tren mendalam · Elit"
   },
   "settings": {
     "title": "Tetapan",
@@ -1164,7 +1166,8 @@
     "badge_stay_hydrated": "Kekal Terhidrat",
     "badge_body_scan": "Imbasan Badan",
     "default_name": "Atlet",
-    "friends": "Rakan"
+    "friends": "Rakan",
+    "advanced_analytics": "Analitik Lanjutan"
   },
   "navigation": {
     "home": "Halaman Utama",
@@ -1289,5 +1292,27 @@
     "capture_failed": "Gagal menangkap foto. Sila cuba lagi.",
     "scan_another": "Imbas Lagi",
     "done": "Selesai"
+  },
+  "advanced_analytics": {
+    "title": "Analitik Lanjutan",
+    "subtitle": "Tren jangka panjang merentas berat badan, kesihatan, nutrisi, dan latihan",
+    "range_30": "30 Hari",
+    "range_90": "90 Hari",
+    "weight_trend": "Tren Berat Badan",
+    "no_weight_data": "Catat berat badan anda beberapa kali untuk melihat tren di sini.",
+    "health_trends": "Tren Kesihatan",
+    "steps": "Langkah",
+    "sleep": "Tidur (minit)",
+    "resting_hr": "Kadar Denyutan Jantung Istirahat",
+    "no_health_data": "Sinkronkan Apple Health untuk melihat tren langkah, tidur, dan kadar denyutan jantung.",
+    "macro_trend": "Tren Pecahan Makro",
+    "no_macro_data": "Catat beberapa hidangan untuk melihat tren makro anda di sini.",
+    "workout_volume": "Volume Latihan",
+    "no_workout_data": "Catat beberapa latihan untuk melihat volume latihan anda di sini.",
+    "bodyweight": "berat badan",
+    "plateau_line": "{{exercise}} telah stabil di {{weight}} untuk {{reps}} ulangan merentas {{count}} sesi terakhir.",
+    "body_composition": "Perubahan Komposisi Badan",
+    "no_composition_data": "Lengkapkan sekurang-kurangnya dua penilaian badan untuk melihat perubahan dari semasa ke semasa.",
+    "error": "Tidak dapat memuatkan analitik anda. Sila cuba lagi."
   }
 }

@@ -342,7 +342,9 @@
     "nudge_scan_update_sub": "已经 7 天以上了 — 看看你的变化",
     "nudge_scan_first_sub": "上传 3 张照片以获取 AI 身体成分读数",
     "action_supplements": "补充剂堆栈",
-    "action_supplements_sub": "追踪你的摄入"
+    "action_supplements_sub": "追踪你的摄入",
+    "action_advanced_analytics": "高级分析",
+    "action_advanced_analytics_sub": "深度趋势 · 精英版"
   },
   "settings": {
     "title": "设置",
@@ -1164,7 +1166,8 @@
     "badge_stay_hydrated": "保持水分充足",
     "badge_body_scan": "身体扫描",
     "default_name": "运动员",
-    "friends": "好友"
+    "friends": "好友",
+    "advanced_analytics": "高级分析"
   },
   "navigation": {
     "home": "首页",
@@ -1289,5 +1292,27 @@
     "capture_failed": "无法拍摄照片。请重试。",
     "scan_another": "扫描另一个",
     "done": "完成"
+  },
+  "advanced_analytics": {
+    "title": "高级分析",
+    "subtitle": "体重、健康、营养和训练的长期趋势",
+    "range_30": "30 天",
+    "range_90": "90 天",
+    "weight_trend": "体重趋势",
+    "no_weight_data": "记录几次体重，就能在这里看到趋势。",
+    "health_trends": "健康趋势",
+    "steps": "步数",
+    "sleep": "睡眠（分钟）",
+    "resting_hr": "静息心率",
+    "no_health_data": "同步 Apple Health 即可查看步数、睡眠和心率趋势。",
+    "macro_trend": "宏量营养素分解趋势",
+    "no_macro_data": "记录几餐就能在这里看到您的宏量营养素趋势。",
+    "workout_volume": "训练量",
+    "no_workout_data": "记录几次训练就能在这里看到您的训练量。",
+    "bodyweight": "体重",
+    "plateau_line": "{{exercise}} 在过去 {{count}} 次训练中保持在 {{weight}} {{reps}} 次的稳定水平。",
+    "body_composition": "身体成分变化",
+    "no_composition_data": "完成至少两次身体评估即可查看随时间推移的变化。",
+    "error": "无法加载您的分析。请重试。"
   }
 }

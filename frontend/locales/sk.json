@@ -342,7 +342,9 @@
     "nudge_scan_update_sub": "Uplynulo 7+ dní — pozri, ako sa zmenil",
     "nudge_scan_first_sub": "Nahraj 3 fotky na AI analýzu tela",
     "action_supplements": "Balík doplnkov",
-    "action_supplements_sub": "Sledujte, čo užívate"
+    "action_supplements_sub": "Sledujte, čo užívate",
+    "action_advanced_analytics": "Pokročilá analýza",
+    "action_advanced_analytics_sub": "Hlboké trendy · Elite"
   },
   "settings": {
     "title": "Nastavenia",
@@ -1164,7 +1166,8 @@
     "badge_stay_hydrated": "Zostávaj hydratovaný",
     "badge_body_scan": "Body scan",
     "default_name": "Športovec",
-    "friends": "Priatelia"
+    "friends": "Priatelia",
+    "advanced_analytics": "Pokročilá analýza"
   },
   "navigation": {
     "home": "Domov",
@@ -1289,5 +1292,27 @@
     "capture_failed": "Nepodarilo sa zachytiť fotografiu. Skúste znova.",
     "scan_another": "Skenovať ďalší",
     "done": "Hotovo"
+  },
+  "advanced_analytics": {
+    "title": "Pokročilá analýza",
+    "subtitle": "Dlhodobé trendy hmotnosti, zdravia, výživy a tréningu",
+    "range_30": "30 dní",
+    "range_90": "90 dní",
+    "weight_trend": "Trend hmotnosti",
+    "no_weight_data": "Zaznamenajte si svoju hmotnosť niekoľkokrát, aby ste videli trend.",
+    "health_trends": "Trendy zdravia",
+    "steps": "Kroky",
+    "sleep": "Spánok (minúty)",
+    "resting_hr": "Kľudová tepová frekvencia",
+    "no_health_data": "Synchronizujte Apple Health, aby ste videli trendy krokov, spánku a tepu.",
+    "macro_trend": "Trend rozdelenia makronutrientov",
+    "no_macro_data": "Zaznamenajte si niekoľko jedál, aby ste videli vaše trendy makronutrientov.",
+    "workout_volume": "Objem tréningu",
+    "no_workout_data": "Zaznamenajte si niekoľko tréningov, aby ste videli váš tréninkový objem.",
+    "bodyweight": "telesná hmotnosť",
+    "plateau_line": "{{exercise}} zostal stabilný na {{weight}} pri {{reps}} opakovaní počas posledných {{count}} sedení.",
+    "body_composition": "Zmena telesného zloženia",
+    "no_composition_data": "Absolvujte aspoň dve hodnotenia tela, aby ste videli zmeny v čase.",
+    "error": "Nepodarilo sa načítať vašu analýzu. Skúste znova."
   }
 }

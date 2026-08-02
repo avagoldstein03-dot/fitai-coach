@@ -342,7 +342,9 @@
     "nudge_scan_update_sub": "Det har gått 7+ dager — se hvordan du har endret deg",
     "nudge_scan_first_sub": "Last opp 3 bilder for en AI-kropssammensetningsleses",
     "action_supplements": "Supplement-pakke",
-    "action_supplements_sub": "Spor hva du tar"
+    "action_supplements_sub": "Spor hva du tar",
+    "action_advanced_analytics": "Avansert analyse",
+    "action_advanced_analytics_sub": "Dyptgående trender · Elite"
   },
   "settings": {
     "title": "Innstillinger",
@@ -1164,7 +1166,8 @@
     "badge_stay_hydrated": "Bli hydrert",
     "badge_body_scan": "Kroppsscan",
     "default_name": "Idrettsutøver",
-    "friends": "Venner"
+    "friends": "Venner",
+    "advanced_analytics": "Avansert analyse"
   },
   "navigation": {
     "home": "Hjem",
@@ -1289,5 +1292,27 @@
     "capture_failed": "Kunne ikke ta foto. Prøv igjen.",
     "scan_another": "Skann Ett Til",
     "done": "Ferdig"
+  },
+  "advanced_analytics": {
+    "title": "Avansert analyse",
+    "subtitle": "Langsiktige trender innen vekt, helse, ernæring og trening",
+    "range_30": "30 dager",
+    "range_90": "90 dager",
+    "weight_trend": "Vekttrend",
+    "no_weight_data": "Logg vekten din noen ganger for å se en trend her.",
+    "health_trends": "Helsetrender",
+    "steps": "Skritt",
+    "sleep": "Søvn (minutter)",
+    "resting_hr": "Pulsfrekvens i hvile",
+    "no_health_data": "Synkroniser Apple Health for å se trender for skritt, søvn og pulsfrekvens.",
+    "macro_trend": "Makronæringsfordeling over tid",
+    "no_macro_data": "Logg noen måltider for å se dine makrotrender her.",
+    "workout_volume": "Treningsvolum",
+    "no_workout_data": "Logg noen treninger for å se ditt treningsvolum her.",
+    "bodyweight": "kroppsvekt",
+    "plateau_line": "{{exercise}} har holdt seg stabilt på {{weight}} for {{reps}} repetisjoner de siste {{count}} øktene.",
+    "body_composition": "Endring i kroppssammensetning",
+    "no_composition_data": "Fullfør minst to kroppsanalyser for å se endringer over tid.",
+    "error": "Kunne ikke laste analysen din. Prøv igjen."
   }
 }

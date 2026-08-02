@@ -342,7 +342,9 @@
     "nudge_scan_update_sub": "Es sind 7+ Tage vergangen – sehen Sie, wie Sie sich verändert haben",
     "nudge_scan_first_sub": "Laden Sie 3 Fotos hoch, um eine KI-Körperzusammensetzungsmessung zu erhalten",
     "action_supplements": "Supplement-Stapel",
-    "action_supplements_sub": "Verfolgen Sie, was Sie nehmen"
+    "action_supplements_sub": "Verfolgen Sie, was Sie nehmen",
+    "action_advanced_analytics": "Erweiterte Analytik",
+    "action_advanced_analytics_sub": "Tiefe Trends · Elite"
   },
   "settings": {
     "title": "Einstellungen",
@@ -1164,7 +1166,8 @@
     "badge_stay_hydrated": "Bleiben Sie hydratisiert",
     "badge_body_scan": "Body Scan",
     "default_name": "Athlet",
-    "friends": "Freunde"
+    "friends": "Freunde",
+    "advanced_analytics": "Erweiterte Analytik"
   },
   "navigation": {
     "home": "Startseite",
@@ -1289,5 +1292,27 @@
     "capture_failed": "Foto konnte nicht aufgenommen werden. Bitte versuchen Sie es erneut.",
     "scan_another": "Weiteren scannen",
     "done": "Fertig"
+  },
+  "advanced_analytics": {
+    "title": "Erweiterte Analytik",
+    "subtitle": "Langfristige Trends bei Gewicht, Gesundheit, Ernährung und Training",
+    "range_30": "30 Tage",
+    "range_90": "90 Tage",
+    "weight_trend": "Gewichtstrend",
+    "no_weight_data": "Protokolliere dein Gewicht ein paar Mal, um einen Trend hier zu sehen.",
+    "health_trends": "Gesundheitstrends",
+    "steps": "Schritte",
+    "sleep": "Schlaf (Minuten)",
+    "resting_hr": "Ruheherzfrequenz",
+    "no_health_data": "Synchronisiere Apple Health, um Trends bei Schritten, Schlaf und Herzfrequenz zu sehen.",
+    "macro_trend": "Makronährstoff-Zusammensetzungstrend",
+    "no_macro_data": "Protokolliere ein paar Mahlzeiten, um deine Makrotrends hier zu sehen.",
+    "workout_volume": "Trainingsvolumen",
+    "no_workout_data": "Protokolliere ein paar Trainingseinheiten, um dein Trainingsvolumen hier zu sehen.",
+    "bodyweight": "Körpergewicht",
+    "plateau_line": "{{exercise}} ist in den letzten {{count}} Trainingseinheiten stabil bei {{weight}} für {{reps}} Wiederholungen geblieben.",
+    "body_composition": "Körperzusammensetzungsveränderung",
+    "no_composition_data": "Führe mindestens zwei Körperbewertungen durch, um Veränderungen im Zeitverlauf zu sehen.",
+    "error": "Deine Analytik konnte nicht geladen werden. Bitte versuche es erneut."
   }
 }

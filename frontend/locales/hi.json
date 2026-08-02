@@ -342,7 +342,9 @@
     "nudge_scan_update_sub": "7+ दिन हो गए हैं — देखें कि आप कैसे बदले हैं",
     "nudge_scan_first_sub": "AI बॉडी कंपोजिशन रीड के लिए 3 फोटो अपलोड करें",
     "action_supplements": "सप्लीमेंट स्टैक",
-    "action_supplements_sub": "आप क्या लेते हैं यह ट्रैक करें"
+    "action_supplements_sub": "आप क्या लेते हैं यह ट्रैक करें",
+    "action_advanced_analytics": "उन्नत विश्लेषण",
+    "action_advanced_analytics_sub": "गहन ट्रेंड · एलीट"
   },
   "settings": {
     "title": "सेटिंग्स",
@@ -1164,7 +1166,8 @@
     "badge_stay_hydrated": "हाइड्रेटेड रहें",
     "badge_body_scan": "बॉडी स्कैन",
     "default_name": "एथलीट",
-    "friends": "दोस्त"
+    "friends": "दोस्त",
+    "advanced_analytics": "उन्नत विश्लेषण"
   },
   "navigation": {
     "home": "होम",
@@ -1289,5 +1292,27 @@
     "capture_failed": "फोटो कैप्चर करने में विफल। कृपया दोबारा प्रयास करें।",
     "scan_another": "दूसरा स्कैन करें",
     "done": "पूर्ण"
+  },
+  "advanced_analytics": {
+    "title": "उन्नत विश्लेषण",
+    "subtitle": "वजन, स्वास्थ्य, पोषण और प्रशिक्षण में दीर्घकालीन ट्रेंड",
+    "range_30": "30 दिन",
+    "range_90": "90 दिन",
+    "weight_trend": "वजन ट्रेंड",
+    "no_weight_data": "यहाँ ट्रेंड देखने के लिए अपना वजन कुछ बार लॉग करें।",
+    "health_trends": "स्वास्थ्य ट्रेंड",
+    "steps": "कदम",
+    "sleep": "नींद (मिनट)",
+    "resting_hr": "विश्राम समय हृदय गति",
+    "no_health_data": "कदम, नींद और हृदय गति ट्रेंड देखने के लिए Apple Health को सिंक करें।",
+    "macro_trend": "मैक्रो विभाजन ट्रेंड",
+    "no_macro_data": "अपने मैक्रो ट्रेंड यहाँ देखने के लिए कुछ भोजन लॉग करें।",
+    "workout_volume": "वर्कआउट वॉल्यूम",
+    "no_workout_data": "आपके प्रशिक्षण वॉल्यूम को यहाँ देखने के लिए कुछ वर्कआउट लॉग करें।",
+    "bodyweight": "शरीर का वजन",
+    "plateau_line": "{{exercise}} पिछले {{count}} सत्रों में {{weight}} पर {{reps}} रेप्स के लिए स्थिर रहा है।",
+    "body_composition": "शरीर संरचना परिवर्तन",
+    "no_composition_data": "समय के साथ परिवर्तन देखने के लिए कम से कम दो शरीर मूल्यांकन पूरे करें।",
+    "error": "आपका विश्लेषण लोड नहीं हो सका। कृपया पुनः प्रयास करें।"
   }
 }

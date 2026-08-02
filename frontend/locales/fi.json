@@ -342,7 +342,9 @@
     "nudge_scan_update_sub": "Se on ollut 7+ päivää — näe kuinka olet muuttunut",
     "nudge_scan_first_sub": "Lataa 3 valokuvaa tekoälyn kehon koostumuksen lukemiseen",
     "action_supplements": "Ravintolisäpino",
-    "action_supplements_sub": "Seuraa mitä otat"
+    "action_supplements_sub": "Seuraa mitä otat",
+    "action_advanced_analytics": "Edistynyt analytiikka",
+    "action_advanced_analytics_sub": "Syvälliset trendit · Elite"
   },
   "settings": {
     "title": "Asetukset",
@@ -1164,7 +1166,8 @@
     "badge_stay_hydrated": "Pysyä hydratoituna",
     "badge_body_scan": "Kehoskanni",
     "default_name": "Urheilija",
-    "friends": "Ystävät"
+    "friends": "Ystävät",
+    "advanced_analytics": "Edistynyt analytiikka"
   },
   "navigation": {
     "home": "Koti",
@@ -1289,5 +1292,27 @@
     "capture_failed": "Kuvan kaappaaminen epäonnistui. Yritä uudelleen.",
     "scan_another": "Skannaa seuraava",
     "done": "Valmis"
+  },
+  "advanced_analytics": {
+    "title": "Edistynyt analytiikka",
+    "subtitle": "Pitkän aikavälin trendit painon, terveyden, ravitsemuksen ja harjoittelun osalta",
+    "range_30": "30 päivää",
+    "range_90": "90 päivää",
+    "weight_trend": "Painon trendi",
+    "no_weight_data": "Kirjaa painosi muutaman kerran nähdäksesi trendin täällä.",
+    "health_trends": "Terveystrendit",
+    "steps": "Askeleet",
+    "sleep": "Uni (minuuttia)",
+    "resting_hr": "Lepo-sykke",
+    "no_health_data": "Synkronoi Apple Health nähdäksesi askeleet, unen ja sykkeentrendit.",
+    "macro_trend": "Makrojakauman trendi",
+    "no_macro_data": "Kirjaa muutama ateria nähdäksesi makrotrendisi täällä.",
+    "workout_volume": "Harjoittelun määrä",
+    "no_workout_data": "Kirjaa muutama harjoitus nähdäksesi harjoittelun määrän täällä.",
+    "bodyweight": "ruumiinpaino",
+    "plateau_line": "{{exercise}} on pysynyt tasaisena {{weight}} -tasolla {{reps}} toiston verran viimeisten {{count}} istunnon aikana.",
+    "body_composition": "Kehon koostumuksen muutos",
+    "no_composition_data": "Suorita vähintään kaksi kehon arviointia nähdäksesi muutokset ajan kuluessa.",
+    "error": "Analytiikan lataaminen epäonnistui. Yritä uudelleen."
   }
 }

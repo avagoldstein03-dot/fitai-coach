@@ -342,7 +342,9 @@
     "nudge_scan_update_sub": "مضى 7 أيام أو أكثر — شاهد كيف تغيرت",
     "nudge_scan_first_sub": "حمّل 3 صور لقراءة تركيب الجسم بالذكاء الاصطناعي",
     "action_supplements": "مكمل غذائي",
-    "action_supplements_sub": "تتبع ما تتناوله"
+    "action_supplements_sub": "تتبع ما تتناوله",
+    "action_advanced_analytics": "التحليلات المتقدمة",
+    "action_advanced_analytics_sub": "الاتجاهات العميقة · النخبة"
   },
   "settings": {
     "title": "الإعدادات",
@@ -1164,7 +1166,8 @@
     "badge_stay_hydrated": "ابقَ رطبًا",
     "badge_body_scan": "فحص الجسم",
     "default_name": "الرياضي",
-    "friends": "الأصدقاء"
+    "friends": "الأصدقاء",
+    "advanced_analytics": "التحليلات المتقدمة"
   },
   "navigation": {
     "home": "الرئيسية",
@@ -1289,5 +1292,27 @@
     "capture_failed": "فشل التقاط الصورة. يرجى المحاولة مرة أخرى.",
     "scan_another": "مسح آخر",
     "done": "تم"
+  },
+  "advanced_analytics": {
+    "title": "التحليلات المتقدمة",
+    "subtitle": "اتجاهات طويلة المدى عبر الوزن والصحة والتغذية والتدريب",
+    "range_30": "30 يوم",
+    "range_90": "90 يوم",
+    "weight_trend": "اتجاه الوزن",
+    "no_weight_data": "سجل وزنك عدة مرات لرؤية اتجاه هنا.",
+    "health_trends": "اتجاهات الصحة",
+    "steps": "الخطوات",
+    "sleep": "النوم (دقائق)",
+    "resting_hr": "معدل ضربات القلب أثناء الراحة",
+    "no_health_data": "قم بمزامنة Apple Health لرؤية اتجاهات الخطوات والنوم ومعدل ضربات القلب.",
+    "macro_trend": "اتجاه توزيع المغذيات الكبرى",
+    "no_macro_data": "سجل عدة وجبات لرؤية اتجاهات المغذيات الكبرى الخاصة بك هنا.",
+    "workout_volume": "حجم التمرين",
+    "no_workout_data": "سجل عدة تمارين لرؤية حجم التدريب الخاص بك هنا.",
+    "bodyweight": "وزن الجسم",
+    "plateau_line": "{{exercise}} ظل ثابتًا عند {{weight}} لمدة {{reps}} عدة تكرارات عبر آخر {{count}} جلسة.",
+    "body_composition": "تغيير تكوين الجسم",
+    "no_composition_data": "أكمل تقييمين للجسم على الأقل لرؤية التغييرات بمرور الوقت.",
+    "error": "تعذر تحميل التحليلات الخاصة بك. يرجى المحاولة مرة أخرى."
   }
 }

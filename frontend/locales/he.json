@@ -342,7 +342,9 @@
     "nudge_scan_update_sub": "עבר 7 ימים ומעלה — ראה כיצד השתנית",
     "nudge_scan_first_sub": "העלה 3 תמונות לקריאת קומפוזיציה גוף בAI",
     "action_supplements": "חבילת תוספים",
-    "action_supplements_sub": "עקוב אחרי מה שאתה לוקח"
+    "action_supplements_sub": "עקוב אחרי מה שאתה לוקח",
+    "action_advanced_analytics": "ניתוח מתקדם",
+    "action_advanced_analytics_sub": "מגמות עמוקות · Elite"
   },
   "settings": {
     "title": "הגדרות",
@@ -1164,7 +1166,8 @@
     "badge_stay_hydrated": "הישאר מהודר",
     "badge_body_scan": "סריקת גוף",
     "default_name": "ספורטאי",
-    "friends": "חברים"
+    "friends": "חברים",
+    "advanced_analytics": "ניתוח מתקדם"
   },
   "navigation": {
     "home": "בעמוד הבית",
@@ -1289,5 +1292,27 @@
     "capture_failed": "הצילום נכשל. אנא נסה שוב.",
     "scan_another": "סרוק עוד אחד",
     "done": "סיום"
+  },
+  "advanced_analytics": {
+    "title": "ניתוח מתקדם",
+    "subtitle": "מגמות לטווח ארוך בנושא משקל, בריאות, תזונה והכשרה",
+    "range_30": "30 ימים",
+    "range_90": "90 ימים",
+    "weight_trend": "מגמת משקל",
+    "no_weight_data": "רשום את משקלך כמה פעמים כדי לראות מגמה כאן.",
+    "health_trends": "מגמות בריאות",
+    "steps": "צעדים",
+    "sleep": "שינה (דקות)",
+    "resting_hr": "קצב הלב במנוחה",
+    "no_health_data": "סנכרן את Apple Health כדי לראות מגמות של צעדים, שינה וקצב לב.",
+    "macro_trend": "מגמת חלוקת מאקרו",
+    "no_macro_data": "רשום כמה ארוחות כדי לראות את מגמות המאקרו שלך כאן.",
+    "workout_volume": "נפח אימון",
+    "no_workout_data": "רשום כמה אימונים כדי לראות את נפח ההכשרה שלך כאן.",
+    "bodyweight": "משקל גוף",
+    "plateau_line": "{{exercise}} נשמר יציב ב-{{weight}} עבור {{reps}} חזרות על פני {{count}} הסשנים האחרונים.",
+    "body_composition": "שינוי הרכב הגוף",
+    "no_composition_data": "השלם לפחות שתי הערכות גוף כדי לראות שינויים לאורך זמן.",
+    "error": "לא היתה אפשרות לטעון את הניתוחים שלך. אנא נסה שוב."
   }
 }

@@ -342,7 +342,9 @@
     "nudge_scan_update_sub": "7+ napja — nézd meg, hogyan változtál",
     "nudge_scan_first_sub": "Töltsd fel a 3 fotót az AI testösszetétel-elemzéshez",
     "action_supplements": "Kiegészítő csomag",
-    "action_supplements_sub": "Követsd nyomon, amit beveszel"
+    "action_supplements_sub": "Követsd nyomon, amit beveszel",
+    "action_advanced_analytics": "Haladó Analitika",
+    "action_advanced_analytics_sub": "Mélyreható trendek · Elite"
   },
   "settings": {
     "title": "Beállítások",
@@ -1164,7 +1166,8 @@
     "badge_stay_hydrated": "Maradj hidratált",
     "badge_body_scan": "Body scan",
     "default_name": "Sportoló",
-    "friends": "Barátok"
+    "friends": "Barátok",
+    "advanced_analytics": "Haladó Analitika"
   },
   "navigation": {
     "home": "Kezdőlap",
@@ -1289,5 +1292,27 @@
     "capture_failed": "A fénykép rögzítése sikertelen. Kérjük, próbálja újra.",
     "scan_another": "Másik beolvasása",
     "done": "Kész"
+  },
+  "advanced_analytics": {
+    "title": "Haladó Analitika",
+    "subtitle": "Hosszú távú trendek a súly, egészség, táplálkozás és edzés területén",
+    "range_30": "30 Nap",
+    "range_90": "90 Nap",
+    "weight_trend": "Súlytrend",
+    "no_weight_data": "Rögzítsd a súlyodat néhányszor, hogy láthass itt egy trendet.",
+    "health_trends": "Egészségi Trendek",
+    "steps": "Lépések",
+    "sleep": "Alvás (percben)",
+    "resting_hr": "Nyugalmi Pulzus",
+    "no_health_data": "Szinkronizáld az Apple Health-et, hogy láthass lépés-, alvás- és pulzustrendeket.",
+    "macro_trend": "Makrotápanyag Összetétel Trend",
+    "no_macro_data": "Rögzítsd néhány étkezésedet, hogy láthass makrotrendeket itt.",
+    "workout_volume": "Edzésvolumen",
+    "no_workout_data": "Rögzítsd néhány edzésedet, hogy láthass edzésvolument itt.",
+    "bodyweight": "testsúly",
+    "plateau_line": "A(z) {{exercise}} stabil maradt {{weight}} értéken {{reps}} ismétlésnél az utolsó {{count}} edzés során.",
+    "body_composition": "Testösszetétel Változás",
+    "no_composition_data": "Végezz legalább két testösszetétel-felmérést, hogy láthass változásokat az idő múlásával.",
+    "error": "Nem sikerült betölteni az analitikádat. Kérlek, próbáld újra."
   }
 }

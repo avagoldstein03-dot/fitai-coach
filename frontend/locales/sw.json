@@ -342,7 +342,9 @@
     "nudge_scan_update_sub": "Imekuwa siku 7+ — ona jinsi unavyobadilika",
     "nudge_scan_first_sub": "Pakia picha 3 kwa ukamataji wa mwili wa AI",
     "action_supplements": "Kiwanja cha Virutubishi",
-    "action_supplements_sub": "Fuatilia kile unachokitumia"
+    "action_supplements_sub": "Fuatilia kile unachokitumia",
+    "action_advanced_analytics": "Uchambuzi wa Hali ya Juu",
+    "action_advanced_analytics_sub": "Mielekeo ya kina · Kwa Wanachama wa Kiwango Cha Juu"
   },
   "settings": {
     "title": "Mipangilio",
@@ -1164,7 +1166,8 @@
     "badge_stay_hydrated": "Kubaki Kumnynyeza",
     "badge_body_scan": "Mchakato wa Mwili",
     "default_name": "Mwanariadha",
-    "friends": "Rafiki"
+    "friends": "Rafiki",
+    "advanced_analytics": "Uchambuzi wa Hali ya Juu"
   },
   "navigation": {
     "home": "Nyumbani",
@@ -1289,5 +1292,27 @@
     "capture_failed": "Kushindwa kunasa picha. Tafadhali jaribu tena.",
     "scan_another": "Sambaza Nyingine",
     "done": "Imekamilika"
+  },
+  "advanced_analytics": {
+    "title": "Uchambuzi wa Hali ya Juu",
+    "subtitle": "Mielekeo ya muda mrefu katika uzani, afya, mlo, na mafunzo",
+    "range_30": "Siku 30",
+    "range_90": "Siku 90",
+    "weight_trend": "Mielekeo ya Uzani",
+    "no_weight_data": "Rekebisha uzani wako mara kadhaa ili kuona mielekeo hapa.",
+    "health_trends": "Mielekeo ya Afya",
+    "steps": "Hatua",
+    "sleep": "Usingizi (dakika)",
+    "resting_hr": "Kiwango cha Moyo Kilichotulia",
+    "no_health_data": "Sambaza Apple Health ili kuona mielekeo ya hatua, usingizi, na kiwango cha moyo.",
+    "macro_trend": "Mielekeo ya Mgawanyiko wa Macro",
+    "no_macro_data": "Rekebisha vyakula vichache ili kuona mielekeo yako ya macro hapa.",
+    "workout_volume": "Kiasi cha Mafunzo",
+    "no_workout_data": "Rekebisha mafunzo machache ili kuona kiasi cha mafunzo yako hapa.",
+    "bodyweight": "uzani wa mwili",
+    "plateau_line": "{{exercise}} imebaki imara katika {{weight}} kwa {{reps}} marudio katika {{count}} jumui za mwisho.",
+    "body_composition": "Mabadiliko ya Muundo wa Mwili",
+    "no_composition_data": "Kamata angalau tathmini mbili za mwili ili kuona mabadiliko baada ya muda.",
+    "error": "Haiwezi kupakia uchambuzi wako. Tafadhali jaribu tena."
   }
 }

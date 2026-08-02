@@ -342,7 +342,9 @@
     "nudge_scan_update_sub": "7일 이상 경과했습니다 — 어떻게 변했는지 보세요",
     "nudge_scan_first_sub": "신체 구성을 AI로 분석하려면 3장의 사진을 업로드하세요",
     "action_supplements": "보충제 스택",
-    "action_supplements_sub": "복용 중인 보충제 추적하기"
+    "action_supplements_sub": "복용 중인 보충제 추적하기",
+    "action_advanced_analytics": "고급 분석",
+    "action_advanced_analytics_sub": "심화 트렌드 · 엘리트"
   },
   "settings": {
     "title": "설정",
@@ -1164,7 +1166,8 @@
     "badge_stay_hydrated": "수분 섭취",
     "badge_body_scan": "신체 스캔",
     "default_name": "선수",
-    "friends": "친구"
+    "friends": "친구",
+    "advanced_analytics": "고급 분석"
   },
   "navigation": {
     "home": "홈",
@@ -1289,5 +1292,27 @@
     "capture_failed": "사진 촬영에 실패했습니다. 다시 시도하세요.",
     "scan_another": "다른 음식 스캔",
     "done": "완료"
+  },
+  "advanced_analytics": {
+    "title": "고급 분석",
+    "subtitle": "체중, 건강, 영양, 훈련 전반에 걸친 장기 트렌드",
+    "range_30": "30일",
+    "range_90": "90일",
+    "weight_trend": "체중 트렌드",
+    "no_weight_data": "여기서 트렌드를 보려면 체중을 몇 번 기록하세요.",
+    "health_trends": "건강 트렌드",
+    "steps": "걸음 수",
+    "sleep": "수면 (분)",
+    "resting_hr": "안정 시 심박수",
+    "no_health_data": "걸음 수, 수면, 심박수 트렌드를 보려면 Apple Health를 동기화하세요.",
+    "macro_trend": "매크로 분해 트렌드",
+    "no_macro_data": "여기서 매크로 트렌드를 보려면 몇 가지 식사를 기록하세요.",
+    "workout_volume": "운동 량",
+    "no_workout_data": "여기서 훈련 량을 보려면 몇 가지 운동을 기록하세요.",
+    "bodyweight": "체체중",
+    "plateau_line": "{{exercise}}은(는) 지난 {{count}}개 세션 동안 {{weight}}에서 {{reps}}회 반복으로 안정적으로 유지되었습니다.",
+    "body_composition": "신체 구성 변화",
+    "no_composition_data": "시간에 따른 변화를 보려면 최소 두 개의 신체 평가를 완료하세요.",
+    "error": "분석을 로드할 수 없습니다. 다시 시도하세요."
   }
 }

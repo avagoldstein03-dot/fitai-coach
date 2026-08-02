@@ -342,7 +342,9 @@
     "nudge_scan_update_sub": "Prošlo je 7+ dana — vidi kako si se promenio",
     "nudge_scan_first_sub": "Učitaj 3 fotografije za čitanje AI telesnog sastava",
     "action_supplements": "Stek Suplementa",
-    "action_supplements_sub": "Pratite šta uzimate"
+    "action_supplements_sub": "Pratite šta uzimate",
+    "action_advanced_analytics": "Napredna analitika",
+    "action_advanced_analytics_sub": "Duboke tendencije · Elite"
   },
   "settings": {
     "title": "Подешавања",
@@ -1164,7 +1166,8 @@
     "badge_stay_hydrated": "Ostani hidratisana",
     "badge_body_scan": "Body scan",
     "default_name": "Atlet",
-    "friends": "Prijatelji"
+    "friends": "Prijatelji",
+    "advanced_analytics": "Napredna analitika"
   },
   "navigation": {
     "home": "Početna",
@@ -1289,5 +1292,27 @@
     "capture_failed": "Neuspešno snimanje fotografije. Pokušajte ponovo.",
     "scan_another": "Skeniraj drugi",
     "done": "Gotovo"
+  },
+  "advanced_analytics": {
+    "title": "Napredna analitika",
+    "subtitle": "Dugoročne tendencije težine, zdravlja, ishrane i treninga",
+    "range_30": "30 dana",
+    "range_90": "90 dana",
+    "weight_trend": "Trend težine",
+    "no_weight_data": "Zabeležite težinu nekoliko puta da vidite trend ovde.",
+    "health_trends": "Zdravstvene tendencije",
+    "steps": "Koraci",
+    "sleep": "Spavanje (minute)",
+    "resting_hr": "Puls u mirovanju",
+    "no_health_data": "Sinhronizujte Apple Health da vidite tendencije koraka, spavanja i srčane frekvencije.",
+    "macro_trend": "Trend raspodele makronutrijenata",
+    "no_macro_data": "Zabeležite nekoliko obroka da vidite vaše makro tendencije ovde.",
+    "workout_volume": "Obim treninga",
+    "no_workout_data": "Zabeležite nekoliko treninga da vidite vaš obim treninga ovde.",
+    "bodyweight": "težina tela",
+    "plateau_line": "{{exercise}} je ostao stabilan na {{weight}} za {{reps}} ponavljanja u poslednjih {{count}} sesija.",
+    "body_composition": "Promena telesnog sastava",
+    "no_composition_data": "Izvršite najmanje dve telesne ocene da vidite promene tokom vremena.",
+    "error": "Nije moguće učitati vašu analitiku. Pokušajte ponovo."
   }
 }

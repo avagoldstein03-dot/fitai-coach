@@ -342,7 +342,9 @@
     "nudge_scan_update_sub": "Il y a 7+ jours — voyez comment vous avez changé",
     "nudge_scan_first_sub": "Téléchargez 3 photos pour une lecture de composition corporelle par IA",
     "action_supplements": "Pile de suppléments",
-    "action_supplements_sub": "Suivez ce que vous prenez"
+    "action_supplements_sub": "Suivez ce que vous prenez",
+    "action_advanced_analytics": "Analyses Avancées",
+    "action_advanced_analytics_sub": "Tendances approfondies · Elite"
   },
   "settings": {
     "title": "Paramètres",
@@ -1164,7 +1166,8 @@
     "badge_stay_hydrated": "Rester hydraté",
     "badge_body_scan": "Scan corporel",
     "default_name": "Athlète",
-    "friends": "Amis"
+    "friends": "Amis",
+    "advanced_analytics": "Analyses Avancées"
   },
   "navigation": {
     "home": "Accueil",
@@ -1289,5 +1292,27 @@
     "capture_failed": "Échec de la capture photo. Veuillez réessayer.",
     "scan_another": "Scanner un autre",
     "done": "Terminé"
+  },
+  "advanced_analytics": {
+    "title": "Analyses Avancées",
+    "subtitle": "Tendances à long terme du poids, santé, nutrition et entraînement",
+    "range_30": "30 Jours",
+    "range_90": "90 Jours",
+    "weight_trend": "Tendance du Poids",
+    "no_weight_data": "Enregistrez votre poids quelques fois pour voir une tendance ici.",
+    "health_trends": "Tendances Santé",
+    "steps": "Pas",
+    "sleep": "Sommeil (minutes)",
+    "resting_hr": "Fréquence Cardiaque au Repos",
+    "no_health_data": "Synchronisez Apple Health pour voir les tendances des pas, sommeil et fréquence cardiaque.",
+    "macro_trend": "Tendance de la Répartition des Macros",
+    "no_macro_data": "Enregistrez quelques repas pour voir vos tendances macro ici.",
+    "workout_volume": "Volume d'Entraînement",
+    "no_workout_data": "Enregistrez quelques entraînements pour voir votre volume d'entraînement ici.",
+    "bodyweight": "poids du corps",
+    "plateau_line": "{{exercise}} est resté stable à {{weight}} pour {{reps}} reps au cours des {{count}} dernières séances.",
+    "body_composition": "Changement de Composition Corporelle",
+    "no_composition_data": "Complétez au moins deux évaluations corporelles pour voir les changements au fil du temps.",
+    "error": "Impossible de charger vos analyses. Veuillez réessayer."
   }
 }

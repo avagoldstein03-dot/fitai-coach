@@ -342,7 +342,9 @@
     "nudge_scan_update_sub": "7+ araw na - tingnan kung paano ka nagbago",
     "nudge_scan_first_sub": "Mag-upload ng 3 larawan para sa AI body composition reading",
     "action_supplements": "Supplement Stack",
-    "action_supplements_sub": "Subaybayan kung ano ang iyong ginagamit"
+    "action_supplements_sub": "Subaybayan kung ano ang iyong ginagamit",
+    "action_advanced_analytics": "Advanced Analytics",
+    "action_advanced_analytics_sub": "Malalim na trends · Elite"
   },
   "settings": {
     "title": "Settings",
@@ -1164,7 +1166,8 @@
     "badge_stay_hydrated": "Stay Hydrated",
     "badge_body_scan": "Body Scan",
     "default_name": "Atleta",
-    "friends": "Mga Kaibigan"
+    "friends": "Mga Kaibigan",
+    "advanced_analytics": "Advanced Analytics"
   },
   "navigation": {
     "home": "Tahanan",
@@ -1289,5 +1292,27 @@
     "capture_failed": "Nabigo ang pagkuha ng larawan. Pakisubukan ulit.",
     "scan_another": "Mag-scan ng Iba",
     "done": "Tapos Na"
+  },
+  "advanced_analytics": {
+    "title": "Advanced Analytics",
+    "subtitle": "Pangmatagalang trends sa timbang, kalusugan, nutrisyon, at pagsasanay",
+    "range_30": "30 Araw",
+    "range_90": "90 Araw",
+    "weight_trend": "Trend ng Timbang",
+    "no_weight_data": "Itala ang iyong timbang ng ilang beses upang makita ang trend dito.",
+    "health_trends": "Mga Trend sa Kalusugan",
+    "steps": "Hakbang",
+    "sleep": "Tulog (minuto)",
+    "resting_hr": "Resting Heart Rate",
+    "no_health_data": "I-sync ang Apple Health upang makita ang mga trend sa hakbang, tulog, at heart rate.",
+    "macro_trend": "Trend ng Macro Breakdown",
+    "no_macro_data": "Itala ang ilang pagkain upang makita ang iyong macro trends dito.",
+    "workout_volume": "Dami ng Workout",
+    "no_workout_data": "Itala ang ilang workout upang makita ang iyong training volume dito.",
+    "bodyweight": "timbang ng katawan",
+    "plateau_line": "Ang {{exercise}} ay nanatiling stable sa {{weight}} para sa {{reps}} reps sa nakaraang {{count}} sessions.",
+    "body_composition": "Pagbabago ng Body Composition",
+    "no_composition_data": "Kumpletuhin ang hindi bababa sa dalawang body assessment upang makita ang mga pagbabago sa paglipas ng panahon.",
+    "error": "Hindi maaaring i-load ang iyong analytics. Mangyaring subukan ulit."
   }
 }

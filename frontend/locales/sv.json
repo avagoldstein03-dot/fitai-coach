@@ -342,7 +342,9 @@
     "nudge_scan_update_sub": "Det har gått 7+ dagar — se hur du har förändrats",
     "nudge_scan_first_sub": "Ladda upp 3 foton för en AI-läsning av kroppsammansättning",
     "action_supplements": "Tillskottsstapel",
-    "action_supplements_sub": "Spåra vad du tar"
+    "action_supplements_sub": "Spåra vad du tar",
+    "action_advanced_analytics": "Avancerad analys",
+    "action_advanced_analytics_sub": "Djupa trender · Elite"
   },
   "settings": {
     "title": "Inställningar",
@@ -1164,7 +1166,8 @@
     "badge_stay_hydrated": "Stanna väl hydrerad",
     "badge_body_scan": "Body scan",
     "default_name": "Idrottare",
-    "friends": "Vänner"
+    "friends": "Vänner",
+    "advanced_analytics": "Avancerad analys"
   },
   "navigation": {
     "home": "Hem",
@@ -1289,5 +1292,27 @@
     "capture_failed": "Det gick inte att ta foto. Försök igen.",
     "scan_another": "Scanna en annan",
     "done": "Klar"
+  },
+  "advanced_analytics": {
+    "title": "Avancerad analys",
+    "subtitle": "Långsiktiga trender för vikt, hälsa, näring och träning",
+    "range_30": "30 dagar",
+    "range_90": "90 dagar",
+    "weight_trend": "Vikttrend",
+    "no_weight_data": "Logga din vikt några gånger för att se en trend här.",
+    "health_trends": "Hälsotrender",
+    "steps": "Steg",
+    "sleep": "Sömn (minuter)",
+    "resting_hr": "Vilopuls",
+    "no_health_data": "Synkronisera Apple Health för att se trender för steg, sömn och puls.",
+    "macro_trend": "Makronäringstrend",
+    "no_macro_data": "Logga några måltider för att se dina makronäringtrender här.",
+    "workout_volume": "Träningsvolym",
+    "no_workout_data": "Logga några träningar för att se din träningsvolym här.",
+    "bodyweight": "kroppsvikt",
+    "plateau_line": "{{exercise}} har hållit sig stabil på {{weight}} för {{reps}} rep under de senaste {{count}} omgångarna.",
+    "body_composition": "Förändring av kroppssammansättning",
+    "no_composition_data": "Slutför minst två kroppsanalyser för att se förändringar över tid.",
+    "error": "Kunde inte ladda din analys. Försök igen."
   }
 }

@@ -342,7 +342,9 @@
     "nudge_scan_update_sub": "Sono passati 7+ giorni — guarda come sei cambiato",
     "nudge_scan_first_sub": "Carica 3 foto per una lettura della composizione corporea IA",
     "action_supplements": "Stack di Integratori",
-    "action_supplements_sub": "Monitora quello che assumi"
+    "action_supplements_sub": "Monitora quello che assumi",
+    "action_advanced_analytics": "Analitiche Avanzate",
+    "action_advanced_analytics_sub": "Tendenze approfondite · Elite"
   },
   "settings": {
     "title": "Impostazioni",
@@ -1164,7 +1166,8 @@
     "badge_stay_hydrated": "Rimani Idratato",
     "badge_body_scan": "Body Scan",
     "default_name": "Atleta",
-    "friends": "Amici"
+    "friends": "Amici",
+    "advanced_analytics": "Analitiche Avanzate"
   },
   "navigation": {
     "home": "Home",
@@ -1289,5 +1292,27 @@
     "capture_failed": "Impossibile acquisire la foto. Riprova.",
     "scan_another": "Scansiona un Altro",
     "done": "Fine"
+  },
+  "advanced_analytics": {
+    "title": "Analitiche Avanzate",
+    "subtitle": "Tendenze a lungo termine su peso, salute, nutrizione e allenamento",
+    "range_30": "30 Giorni",
+    "range_90": "90 Giorni",
+    "weight_trend": "Tendenza del Peso",
+    "no_weight_data": "Registra il tuo peso alcune volte per vedere una tendenza qui.",
+    "health_trends": "Tendenze di Salute",
+    "steps": "Passi",
+    "sleep": "Sonno (minuti)",
+    "resting_hr": "Frequenza Cardiaca a Riposo",
+    "no_health_data": "Sincronizza Apple Health per visualizzare le tendenze di passi, sonno e frequenza cardiaca.",
+    "macro_trend": "Tendenza Ripartizione Macro",
+    "no_macro_data": "Registra alcuni pasti per visualizzare le tue tendenze macro qui.",
+    "workout_volume": "Volume di Allenamento",
+    "no_workout_data": "Registra alcuni allenamenti per visualizzare il tuo volume di allenamento qui.",
+    "bodyweight": "peso corporeo",
+    "plateau_line": "{{exercise}} si è mantenuto stabile a {{weight}} per {{reps}} ripetizioni negli ultimi {{count}} allenamenti.",
+    "body_composition": "Cambiamento della Composizione Corporea",
+    "no_composition_data": "Completa almeno due valutazioni corporee per visualizzare i cambiamenti nel tempo.",
+    "error": "Impossibile caricare le tue analitiche. Per favore riprova."
   }
 }

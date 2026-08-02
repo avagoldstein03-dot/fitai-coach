@@ -342,7 +342,9 @@
     "nudge_scan_update_sub": "Det er mere end 7 dage siden — se hvordan du har ændret dig",
     "nudge_scan_first_sub": "Upload 3 fotos til AI kropssammensætningslæsning",
     "action_supplements": "Supplement-stak",
-    "action_supplements_sub": "Spor hvad du tager"
+    "action_supplements_sub": "Spor hvad du tager",
+    "action_advanced_analytics": "Avanceret Analyse",
+    "action_advanced_analytics_sub": "Dybdegående tendenser · Elite"
   },
   "settings": {
     "title": "Indstillinger",
@@ -1164,7 +1166,8 @@
     "badge_stay_hydrated": "Bliv hydreret",
     "badge_body_scan": "Body scan",
     "default_name": "Atlet",
-    "friends": "Venner"
+    "friends": "Venner",
+    "advanced_analytics": "Avanceret Analyse"
   },
   "navigation": {
     "home": "Hjem",
@@ -1289,5 +1292,27 @@
     "capture_failed": "Kunne ikke tage billede. Prøv igen.",
     "scan_another": "Scan et andet",
     "done": "Færdig"
+  },
+  "advanced_analytics": {
+    "title": "Avanceret Analyse",
+    "subtitle": "Langsigtede tendenser på vægt, sundhed, ernæring og træning",
+    "range_30": "30 Dage",
+    "range_90": "90 Dage",
+    "weight_trend": "Vægttendens",
+    "no_weight_data": "Log din vægt nogle få gange for at se en tendens her.",
+    "health_trends": "Sundhedstendenser",
+    "steps": "Skridt",
+    "sleep": "Søvn (minutter)",
+    "resting_hr": "Hvilepuls",
+    "no_health_data": "Synkroniser Apple Health for at se tendenser for skridt, søvn og puls.",
+    "macro_trend": "Makronæringsstoffer Nedbrydningtendens",
+    "no_macro_data": "Log nogle få måltider for at se dine makronæringstendenser her.",
+    "workout_volume": "Træningsvolumen",
+    "no_workout_data": "Log nogle få træninger for at se dine træningsvolumen her.",
+    "bodyweight": "kropsvægt",
+    "plateau_line": "{{exercise}} har været stabilt på {{weight}} for {{reps}} gentagelser gennem de seneste {{count}} sessioner.",
+    "body_composition": "Ændring i Kropsammensætning",
+    "no_composition_data": "Gennemfør mindst to kropsvurderinger for at se ændringer over tid.",
+    "error": "Kunne ikke indlæse din analyse. Prøv igen."
   }
 }
