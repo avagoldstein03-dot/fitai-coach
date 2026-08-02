@@ -91,23 +91,35 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       update: { waist, neck, hips, chest, thighs, arms, estimatedBodyFat },
     });
 
-    // Create a body assessment record so it shows up in the dashboard
-    const assessment = await prisma.bodyAssessment.create({
-      data: {
-        userId: user.id,
-        bodyComposition: {
-          build: estimatedBodyFat != null ? `${estimatedBodyFat}% body fat` : "Measurements logged",
-        },
-        posture: {},
-        strengths: [],
-        areasForImprovement: [],
-        recommendations: {},
-        summary:
-          estimatedBodyFat != null
-            ? `Estimated body fat ${estimatedBodyFat}% based on manual measurements (US Navy formula).`
-            : "Manual measurements logged. Add a neck measurement to estimate body fat percentage.",
+    // Keep a single manual-measurement-derived assessment per user in sync
+    // (scanId: null distinguishes it from photo-scan assessments) rather than
+    // creating a new orphaned row on every re-save.
+    const assessmentData = {
+      bodyComposition: {
+        build: estimatedBodyFat != null ? `${estimatedBodyFat}% body fat` : "Measurements logged",
       },
+      posture: {},
+      strengths: [],
+      areasForImprovement: [],
+      recommendations: {},
+      summary:
+        estimatedBodyFat != null
+          ? `Estimated body fat ${estimatedBodyFat}% based on manual measurements (US Navy formula).`
+          : "Manual measurements logged. Add a neck measurement to estimate body fat percentage.",
+    };
+
+    const existingAssessment = await prisma.bodyAssessment.findFirst({
+      where: { userId: user.id, scanId: null },
     });
+
+    const assessment = existingAssessment
+      ? await prisma.bodyAssessment.update({
+          where: { id: existingAssessment.id },
+          data: assessmentData,
+        })
+      : await prisma.bodyAssessment.create({
+          data: { userId: user.id, ...assessmentData },
+        });
 
     await prisma.analyticsEvent.create({
       data: {
