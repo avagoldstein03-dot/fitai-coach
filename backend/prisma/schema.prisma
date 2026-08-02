@@ -39,10 +39,12 @@ model User {
   goal                  Goal?
   activityLevel         String?                // "sedentary" | "lightly_active" | "moderately_active" | "very_active"
   fitnessExperience     String?                // "beginner" | "intermediate" | "advanced"
+  injuryHistory         String?                // free-text: past/current injuries, mobility limitations, pain points
   dietPreferences       String[]               @default([])  // ["omnivore", "vegetarian", etc.]
   foodAllergies         String[]               @default([])
   supplementHistory     String[]               @default([])
   assessmentMethod      String?                // "photo" | "manual"
+  friendCode            String?                @unique // shareable connect code, generated lazily on first Friends screen visit
 
   // Push Notifications
   pushToken             String?                // Expo push token or FCM token
@@ -58,9 +60,14 @@ model User {
   supplements           UserSupplement[]
   progressPhotos        ProgressPhoto[]
   weightLogs            WeightLog[]
+  healthMetrics         HealthMetric[]
   chatMessages          ChatMessage[]
   subscription          Subscription?
   analyticsEvents       AnalyticsEvent[]
+  friendsOf             FriendConnection[]     @relation("FriendConnectionsAsUser")
+  friendedBy            FriendConnection[]     @relation("FriendConnectionsAsFriend")
+  cheersSent            FriendCheer[]          @relation("CheersSent")
+  cheersReceived        FriendCheer[]          @relation("CheersReceived")
   
   createdAt             DateTime               @default(now())
   updatedAt             DateTime               @updatedAt
@@ -163,14 +170,65 @@ model ProgressPhoto {
 }
 
 model WeightLog {
-  id        String   @id @default(cuid())
-  userId    String
-  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
-  weight    Float    // kg
-  note      String?
-  loggedAt  DateTime @default(now())
+  id         String   @id @default(cuid())
+  userId     String
+  user       User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  weight     Float    // kg
+  note       String?
+  loggedAt   DateTime @default(now())
+  source     String   @default("manual") // "manual" | "healthkit"
+  externalId String?                     // HealthKit sample UUID, for sync dedupe
 
   @@index([userId, loggedAt])
+  @@unique([userId, externalId])
+}
+
+// One row per user per calendar day — daily aggregates synced from Apple
+// Health (read-only, v1). Fields are nullable since permission is granted
+// per-metric-type, not all-or-nothing.
+model HealthMetric {
+  id               String   @id @default(cuid())
+  userId           String
+  user             User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  date             DateTime @db.Date
+
+  steps            Int?
+  activeEnergyKcal Float?
+  sleepMinutes     Int?
+  restingHeartRate Float?   // bpm
+
+  source           String   @default("healthkit")
+
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+
+  @@unique([userId, date])
+}
+
+// Written as two rows per connection (A→B and B→A) so "list my friends" is a
+// simple one-directional query. Connecting via a shared code is instant/mutual
+// — no separate pending-request state.
+model FriendConnection {
+  id        String   @id @default(cuid())
+  userId    String
+  user      User     @relation("FriendConnectionsAsUser", fields: [userId], references: [id], onDelete: Cascade)
+  friendId  String
+  friend    User     @relation("FriendConnectionsAsFriend", fields: [friendId], references: [id], onDelete: Cascade)
+  createdAt DateTime @default(now())
+
+  @@unique([userId, friendId])
+}
+
+model FriendCheer {
+  id         String   @id @default(cuid())
+  fromUserId String
+  fromUser   User     @relation("CheersSent", fields: [fromUserId], references: [id], onDelete: Cascade)
+  toUserId   String
+  toUser     User     @relation("CheersReceived", fields: [toUserId], references: [id], onDelete: Cascade)
+  createdAt  DateTime @default(now())
+
+  @@index([toUserId, fromUserId, createdAt])
 }
 
 // ============================================================================
