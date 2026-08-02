@@ -81,6 +81,7 @@ const ACTION_KEYS = [
   { labelKey: "dashboard.action_supplements",   subKey: "dashboard.action_supplements_sub",   emoji: "💊", screen: "Supplements"  },
   { labelKey: "dashboard.action_weekly_review", subKey: "dashboard.action_weekly_review_sub", emoji: "📊", screen: "WeeklyReview" },
   { labelKey: "dashboard.action_advanced_analytics", subKey: "dashboard.action_advanced_analytics_sub", emoji: "📈", screen: "AdvancedAnalytics" },
+  { labelKey: "dashboard.action_product_scan", subKey: "dashboard.action_product_scan_sub", emoji: "🔍", screen: "ProductScan" },
 ];
 
 const dayOfYear = Math.floor((Date.now() - new Date(new Date().getFullYear(), 0, 0).getTime()) / 86400000);

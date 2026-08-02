@@ -41,6 +41,7 @@ import ProgressScreen from "@/screens/progress/ProgressScreen";
 import ProgressPhotosScreen from "@/screens/progress/ProgressPhotosScreen";
 import WeeklyReviewScreen from "@/screens/progress/WeeklyReviewScreen";
 import AdvancedAnalyticsScreen from "@/screens/AdvancedAnalyticsScreen";
+import ProductScanScreen from "@/screens/food/ProductScanScreen";
 import FriendsScreen from "@/screens/social/FriendsScreen";
 import SettingsScreen from "@/screens/settings/SettingsScreen";
 import NotificationsScreen from "@/screens/settings/NotificationsScreen";
@@ -149,6 +150,7 @@ export default function RootNavigator() {
             <Stack.Screen name="BodyScan"              component={BodyScanScreen}              options={{ animation: "slide_from_right" }} />
             <Stack.Screen name="LiveBodyScan"          component={LiveBodyScanScreen}          options={{ animation: "slide_from_right" }} />
             <Stack.Screen name="LiveFoodScan"           component={LiveFoodScanScreen}          options={{ animation: "slide_from_right" }} />
+            <Stack.Screen name="ProductScan"            component={ProductScanScreen}           options={{ animation: "slide_from_right" }} />
             <Stack.Screen name="FormCheck"              component={FormCheckScreen}              options={{ animation: "slide_from_right" }} />
             <Stack.Screen name="ManualMeasurements"    component={ManualMeasurementsScreen}    options={{ animation: "slide_from_right" }} />
             <Stack.Screen name="AssessmentResults"     component={AssessmentResultsScreen}     options={{ animation: "slide_from_right" }} />
@@ -173,6 +175,7 @@ export default function RootNavigator() {
             <Stack.Screen name="BodyScan"              component={BodyScanScreen}              options={{ animation: "slide_from_right" }} />
             <Stack.Screen name="LiveBodyScan"          component={LiveBodyScanScreen}          options={{ animation: "slide_from_right" }} />
             <Stack.Screen name="LiveFoodScan"           component={LiveFoodScanScreen}          options={{ animation: "slide_from_right" }} />
+            <Stack.Screen name="ProductScan"            component={ProductScanScreen}           options={{ animation: "slide_from_right" }} />
             <Stack.Screen name="FormCheck"              component={FormCheckScreen}              options={{ animation: "slide_from_right" }} />
             <Stack.Screen name="ManualMeasurements"    component={ManualMeasurementsScreen}    options={{ animation: "slide_from_right" }} />
             <Stack.Screen name="AssessmentResults"     component={AssessmentResultsScreen}     options={{ animation: "slide_from_right" }} />

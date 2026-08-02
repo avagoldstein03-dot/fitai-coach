@@ -24,6 +24,7 @@ export const Events = {
   FOOD_SCAN_STARTED: "food_scan_started",
   FOOD_SCAN_COMPLETED: "food_scan_completed",
   FOOD_LOGGED_MANUAL: "food_logged_manual",
+  PRODUCT_SCAN_COMPLETED: "product_scan_completed",
 
   // Workouts
   WORKOUT_GENERATED: "workout_generated",

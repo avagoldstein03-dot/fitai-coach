@@ -351,6 +351,13 @@ export default function FoodScannerScreen() {
         </TouchableOpacity>
 
         <TouchableOpacity
+          onPress={() => navigation.navigate("ProductScan")}
+          style={styles.manualEntryLink}
+        >
+          <Text style={styles.manualEntryLinkText}>{t("food_scanner.scan_product_label")}</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity
           onPress={() => { setEditingMealId(null); setManualModalVisible(true); }}
           style={styles.manualEntryLink}
         >
