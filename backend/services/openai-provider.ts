@@ -297,7 +297,9 @@ Provide insights, positive reinforcement, and recommendations.`;
               type: "text",
               text: `You are an expert personal trainer and movement coach. Analyze the exercise form shown in ${input.images.length > 1 ? "these photos" : "this photo"} of a ${input.exerciseName}.${input.userNotes ? ` User notes: ${input.userNotes}` : ""}
 
-Return ONLY valid JSON with no markdown:
+IMPORTANT: Before doing anything else, check whether a person is clearly visible actually performing the movement. If ANY of the following are true — no person is visible, the images show an empty room/wall/floor/object, the images are too dark, blurry, or low-quality to assess movement, or the person is not visibly performing the exercise — respond with ONLY this JSON and nothing else: {"error":"no_person_detected"}
+
+Only if a person clearly performing the exercise is visible, return ONLY valid JSON with no markdown:
 {
   "exerciseName": "${input.exerciseName}",
   "overallScore": <integer 1-10>,
@@ -321,22 +323,29 @@ Be specific, actionable, and encouraging. Never diagnose injuries.`,
     if (!content) throw new Error("No response from OpenAI");
     const jsonMatch = content.match(/\{[\s\S]*\}/);
     if (!jsonMatch) throw new Error("No JSON in response");
-    return JSON.parse(jsonMatch[0]);
+    const result = JSON.parse(jsonMatch[0]);
+    if (result.error === "no_person_detected") {
+      throw new Error("No person detected performing the exercise. Please make sure you're clearly visible in frame and try again.");
+    }
+    return result;
   }
 
   async chat(userMessage: string, context: ChatContext): Promise<string> {
     const tierGating = buildTierGatingPrompt(context.tier);
-    const systemPrompt = `You are FitAI Coach, a personalized fitness and nutrition coaching assistant.
+    const systemPrompt = `You are Active AI Coach, a personalized fitness and nutrition coaching assistant.
 You have access to the user's profile, recent meals, workouts, and goals. Provide personalized,
 motivating, and evidence-based coaching. Never provide medical diagnoses.
 ${tierGating}
-User Profile: ${JSON.stringify(context.userProfile)}
-Recent Goals: ${JSON.stringify(context.goals)}`;
+${context.coachingDirective ? `Coaching Adaptation Directive:\n${context.coachingDirective}\n` : ""}${context.trendsSummary ? `Longitudinal Trends:\n${context.trendsSummary}\n` : ""}${context.healthSummary ? `Recent Health Data:\n${context.healthSummary}\n` : ""}User Profile: ${JSON.stringify(context.userProfile)}
+Recent Goals: ${JSON.stringify(context.goals)}
+Recent Meals: ${JSON.stringify(context.recentMeals?.slice(0, 5))}
+Recent Workouts: ${JSON.stringify(context.recentWorkouts?.slice(0, 5))}`;
 
     const response = await openai.chat.completions.create({
       model: "gpt-4o",
       messages: [
         { role: "system", content: systemPrompt },
+        ...(context.conversationHistory ?? []),
         { role: "user", content: userMessage },
       ],
     });

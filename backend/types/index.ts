@@ -28,6 +28,7 @@ export interface OnboardingStep3Request {
 
 export interface OnboardingStep4Request {
   fitnessExperience: "beginner" | "intermediate" | "advanced";
+  injuryHistory?: string;
 }
 
 export interface OnboardingStep5Request {
@@ -59,6 +60,7 @@ export interface UserProfile {
   language?: string;
   country?: string;
   currency?: string;
+  injuryHistory?: string;
   onboardingCompleted: boolean;
   onboardingStep: number;
 }

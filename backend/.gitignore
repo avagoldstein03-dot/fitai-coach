@@ -1,0 +1,4 @@
+.vercel
+public/uploads/
+.env*
+*.tsbuildinfo

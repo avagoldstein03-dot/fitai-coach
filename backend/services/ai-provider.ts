@@ -138,6 +138,11 @@ export interface ProgressReviewInput {
   period: string; // "weekly" | "monthly"
 }
 
+export interface ChatMessageTurn {
+  role: "user" | "assistant";
+  content: string;
+}
+
 export interface ChatContext {
   userId: string;
   isPremium: boolean;
@@ -146,6 +151,34 @@ export interface ChatContext {
   recentMeals: any[];
   recentWorkouts: any[];
   goals: any[];
+  conversationHistory: ChatMessageTurn[];
+  trendsSummary?: string;
+  coachingDirective?: string;
+  healthSummary?: string;
+}
+
+// Caps history to a token-safe window and enforces the strict user/assistant
+// alternation Anthropic requires (and OpenAI tolerates fine): drops a leading
+// assistant turn, and a trailing user turn (which could otherwise happen if a
+// prior request saved the user's message but crashed before the reply saved,
+// producing two consecutive user turns once the new message is appended).
+export function sanitizeConversationHistory(
+  messages: Array<{ role: string; content: string }>,
+  maxMessages: number
+): ChatMessageTurn[] {
+  let trimmed = messages.slice(-maxMessages);
+
+  if (trimmed.length && trimmed[0].role === "assistant") {
+    trimmed = trimmed.slice(1);
+  }
+  if (trimmed.length && trimmed[trimmed.length - 1].role === "user") {
+    trimmed = trimmed.slice(0, -1);
+  }
+
+  return trimmed.map((m) => ({
+    role: m.role === "assistant" ? "assistant" : "user",
+    content: m.content,
+  }));
 }
 
 export interface FormCheckInput {
