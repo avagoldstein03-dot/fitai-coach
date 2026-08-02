@@ -20,6 +20,7 @@ import * as Haptics from "expo-haptics";
 import * as StoreReview from "expo-store-review";
 import { T } from "@/lib/theme";
 import { posthog, Events } from "@/lib/analytics";
+import { SwipeToDeleteRow } from "@/components/SwipeToDeleteRow";
 const API_URL = process.env.EXPO_PUBLIC_API_URL;
 
 interface Exercise {
@@ -33,6 +34,7 @@ interface Exercise {
 }
 
 interface WorkoutDay {
+  id: string;
   dayOfWeek: number;
   exercises: Exercise[];
 }
@@ -128,6 +130,8 @@ export default function WorkoutsScreen() {
   const [sessionVolume, setSessionVolume] = useState(0);
   const [restSecondsLeft, setRestSecondsLeft] = useState<number | null>(null);
   const [restExerciseName, setRestExerciseName] = useState("");
+  const [exerciseModal, setExerciseModal] = useState<{ mode: "add" | "replace"; exercise?: Exercise } | null>(null);
+  const [exerciseForm, setExerciseForm] = useState({ exerciseName: "", sets: "", reps: "", restSeconds: "", notes: "" });
   const timerRef    = useRef<ReturnType<typeof setInterval> | null>(null);
   const logFieldKeys = ["completedSets", "completedReps", "weight"] as const;
   const logInputRefs = useRef<Partial<Record<typeof logFieldKeys[number], TextInput | null>>>({});
@@ -271,6 +275,53 @@ export default function WorkoutsScreen() {
       }).catch(() => {});
     },
     onError: () => Alert.alert(t("common.error"), t("workouts.error_log")),
+  });
+
+  const { mutate: addExercise, isPending: isAddingExercise } = useMutation({
+    mutationFn: async (dayId: string) => {
+      await axios.post(`${API_URL}/api/workouts/exercises`, {
+        dayId,
+        exerciseName: exerciseForm.exerciseName.trim(),
+        sets: Number(exerciseForm.sets),
+        reps: exerciseForm.reps.trim(),
+        restSeconds: Number(exerciseForm.restSeconds) || 0,
+        notes: exerciseForm.notes.trim() || undefined,
+      });
+    },
+    onSuccess: () => {
+      setExerciseModal(null);
+      setExerciseForm({ exerciseName: "", sets: "", reps: "", restSeconds: "", notes: "" });
+      queryClient.invalidateQueries({ queryKey: ["workouts"] });
+    },
+    onError: (err: any) => Alert.alert(t("common.error"), err.response?.data?.message || t("workouts.error_add_exercise")),
+  });
+
+  const { mutate: replaceExercise, isPending: isReplacingExercise } = useMutation({
+    mutationFn: async (exerciseId: string) => {
+      await axios.patch(`${API_URL}/api/workouts/exercises/${exerciseId}`, {
+        exerciseName: exerciseForm.exerciseName.trim(),
+        sets: Number(exerciseForm.sets),
+        reps: exerciseForm.reps.trim(),
+        restSeconds: Number(exerciseForm.restSeconds) || 0,
+        notes: exerciseForm.notes.trim() || undefined,
+      });
+    },
+    onSuccess: () => {
+      setExerciseModal(null);
+      setExerciseForm({ exerciseName: "", sets: "", reps: "", restSeconds: "", notes: "" });
+      queryClient.invalidateQueries({ queryKey: ["workouts"] });
+    },
+    onError: (err: any) => Alert.alert(t("common.error"), err.response?.data?.message || t("workouts.error_replace_exercise")),
+  });
+
+  const { mutate: deleteExercise } = useMutation({
+    mutationFn: async (exerciseId: string) => {
+      await axios.delete(`${API_URL}/api/workouts/exercises/${exerciseId}`);
+    },
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ["workouts"] });
+    },
+    onError: () => Alert.alert(t("common.error"), t("workouts.error_delete_exercise")),
   });
 
   if (isLoading) {
@@ -426,45 +477,80 @@ export default function WorkoutsScreen() {
                 {currentDay.exercises.map((ex, i) => {
                   const done = loggedExIds.includes(ex.id);
                   return (
-                    <View key={ex.id ?? i} style={[styles.exerciseCard, done && styles.exerciseCardDone]}>
-                      <View style={[styles.exerciseNumber, done && styles.exerciseNumberDone]}>
-                        {done
-                          ? <Text style={styles.exerciseCheckmark}>✓</Text>
-                          : <Text style={styles.exerciseNumberText}>{i + 1}</Text>
-                        }
-                      </View>
-                      <View style={styles.exerciseBody}>
-                        <Text style={[styles.exerciseName, done && styles.exerciseNameDone]}>{ex.exerciseName}</Text>
-                        <Text style={styles.exerciseMeta}>
-                          {t("workouts.exercise_meta", { sets: ex.sets, reps: ex.reps, rest: ex.restSeconds })}
-                        </Text>
-                        {ex.notes ? (
-                          <Text style={styles.exerciseNotes}>{ex.notes}</Text>
-                        ) : null}
-                        <View style={styles.exerciseActions}>
-                          {done ? (
-                            <View style={styles.doneTag}>
-                              <Text style={styles.doneTagText}>{t("workouts.exercise_logged")}</Text>
-                            </View>
-                          ) : (
+                    <SwipeToDeleteRow
+                      key={ex.id ?? i}
+                      onDelete={() => deleteExercise(ex.id)}
+                      deleteLabel={t("common.delete")}
+                      borderRadius={16}
+                    >
+                      <View style={[styles.exerciseCard, styles.exerciseCardWrapper, done && styles.exerciseCardDone]}>
+                        <View style={[styles.exerciseNumber, done && styles.exerciseNumberDone]}>
+                          {done
+                            ? <Text style={styles.exerciseCheckmark}>✓</Text>
+                            : <Text style={styles.exerciseNumberText}>{i + 1}</Text>
+                          }
+                        </View>
+                        <View style={styles.exerciseBody}>
+                          <View style={styles.exerciseTitleRow}>
+                            <Text style={[styles.exerciseName, done && styles.exerciseNameDone]}>{ex.exerciseName}</Text>
                             <TouchableOpacity
-                              style={styles.logBtnPrimary}
-                              onPress={() => setLogModal(ex)}
+                              onPress={() => {
+                                setExerciseForm({
+                                  exerciseName: ex.exerciseName,
+                                  sets: String(ex.sets),
+                                  reps: ex.reps,
+                                  restSeconds: String(ex.restSeconds),
+                                  notes: ex.notes ?? "",
+                                });
+                                setExerciseModal({ mode: "replace", exercise: ex });
+                              }}
+                              style={styles.replaceBtn}
+                              accessibilityLabel={t("workouts.replace_exercise")}
+                              accessibilityRole="button"
                             >
-                              <Text style={styles.logBtnPrimaryText}>{t("workouts.log_set")}</Text>
+                              <Text style={styles.replaceBtnIcon}>⇄</Text>
                             </TouchableOpacity>
-                          )}
-                          <TouchableOpacity
-                            style={styles.checkFormBtn}
-                            onPress={() => navigation.navigate("FormCheck", { exerciseName: ex.exerciseName, formCues: ex.formCues })}
-                          >
-                            <Text style={styles.checkFormBtnText}>{t("workouts.check_form")}</Text>
-                          </TouchableOpacity>
+                          </View>
+                          <Text style={styles.exerciseMeta}>
+                            {t("workouts.exercise_meta", { sets: ex.sets, reps: ex.reps, rest: ex.restSeconds })}
+                          </Text>
+                          {ex.notes ? (
+                            <Text style={styles.exerciseNotes}>{ex.notes}</Text>
+                          ) : null}
+                          <View style={styles.exerciseActions}>
+                            {done ? (
+                              <View style={styles.doneTag}>
+                                <Text style={styles.doneTagText}>{t("workouts.exercise_logged")}</Text>
+                              </View>
+                            ) : (
+                              <TouchableOpacity
+                                style={styles.logBtnPrimary}
+                                onPress={() => setLogModal(ex)}
+                              >
+                                <Text style={styles.logBtnPrimaryText}>{t("workouts.log_set")}</Text>
+                              </TouchableOpacity>
+                            )}
+                            <TouchableOpacity
+                              style={styles.checkFormBtn}
+                              onPress={() => navigation.navigate("FormCheck", { exerciseName: ex.exerciseName, formCues: ex.formCues })}
+                            >
+                              <Text style={styles.checkFormBtnText}>{t("workouts.check_form")}</Text>
+                            </TouchableOpacity>
+                          </View>
                         </View>
                       </View>
-                    </View>
+                    </SwipeToDeleteRow>
                   );
                 })}
+                <TouchableOpacity
+                  style={styles.addExerciseBtn}
+                  onPress={() => {
+                    setExerciseForm({ exerciseName: "", sets: "", reps: "", restSeconds: "", notes: "" });
+                    setExerciseModal({ mode: "add" });
+                  }}
+                >
+                  <Text style={styles.addExerciseBtnText}>{t("workouts.add_exercise")}</Text>
+                </TouchableOpacity>
               </View>
             ) : (
               <View style={styles.restDay}>
@@ -578,6 +664,70 @@ export default function WorkoutsScreen() {
                 disabled={isLogging}
               >
                 {isLogging ? (
+                  <ActivityIndicator color="white" />
+                ) : (
+                  <Text style={styles.saveBtnText}>{t("common.save")}</Text>
+                )}
+              </TouchableOpacity>
+            </View>
+          </View>
+        </View>
+      </Modal>
+
+      {/* ── Add/Replace Exercise Modal ── */}
+      <Modal visible={!!exerciseModal} transparent animationType="slide">
+        <View style={styles.modalBackdrop}>
+          <View style={styles.modalSheet}>
+            <Text style={styles.modalTitle}>
+              {exerciseModal?.mode === "add" ? t("workouts.add_exercise_title") : t("workouts.replace_exercise_title")}
+            </Text>
+
+            {[
+              { label: t("workouts.exercise_name"), key: "exerciseName" as const, keyboardType: "default" as const },
+              { label: t("workouts.sets_label"), key: "sets" as const, keyboardType: "number-pad" as const },
+              { label: t("workouts.reps_label"), key: "reps" as const, keyboardType: "default" as const },
+              { label: t("workouts.rest_seconds_label"), key: "restSeconds" as const, keyboardType: "number-pad" as const },
+            ].map((field) => (
+              <View key={field.key} style={styles.inputGroup}>
+                <Text style={styles.inputLabel}>{field.label}</Text>
+                <TextInput
+                  style={styles.input}
+                  placeholderTextColor={T.textMuted}
+                  keyboardType={field.keyboardType}
+                  value={exerciseForm[field.key]}
+                  onChangeText={(v) => setExerciseForm((f) => ({ ...f, [field.key]: v }))}
+                />
+              </View>
+            ))}
+            <View style={styles.inputGroup}>
+              <Text style={styles.inputLabel}>{t("workouts.notes_optional")}</Text>
+              <TextInput
+                style={styles.input}
+                placeholderTextColor={T.textMuted}
+                value={exerciseForm.notes}
+                onChangeText={(v) => setExerciseForm((f) => ({ ...f, notes: v }))}
+              />
+            </View>
+
+            <View style={styles.modalActions}>
+              <TouchableOpacity style={styles.cancelBtn} onPress={() => setExerciseModal(null)}>
+                <Text style={styles.cancelBtnText}>{t("common.cancel")}</Text>
+              </TouchableOpacity>
+              <TouchableOpacity
+                style={styles.saveBtn}
+                disabled={
+                  isAddingExercise || isReplacingExercise ||
+                  !exerciseForm.exerciseName.trim() || !exerciseForm.sets || !exerciseForm.reps.trim()
+                }
+                onPress={() => {
+                  if (exerciseModal?.mode === "add") {
+                    if (currentDay) addExercise(currentDay.id);
+                  } else if (exerciseModal?.exercise) {
+                    replaceExercise(exerciseModal.exercise.id);
+                  }
+                }}
+              >
+                {isAddingExercise || isReplacingExercise ? (
                   <ActivityIndicator color="white" />
                 ) : (
                   <Text style={styles.saveBtnText}>{t("common.save")}</Text>
@@ -819,9 +969,9 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: T.border,
     padding: 16,
-    marginBottom: 10,
     gap: 14,
   },
+  exerciseCardWrapper: { marginBottom: 10 },
   exerciseCardDone: { borderColor: T.accentBorder, backgroundColor: T.accentDark },
   exerciseNumber: {
     width: 28,
@@ -837,8 +987,11 @@ const styles = StyleSheet.create({
   exerciseNumberText: { color: T.textSecondary, fontSize: 12, fontWeight: "800" },
   exerciseCheckmark: { color: "#000", fontSize: 13, fontWeight: "900" },
   exerciseBody: { flex: 1 },
-  exerciseName: { fontSize: 16, fontWeight: "700", color: T.textPrimary, marginBottom: 4 },
+  exerciseTitleRow: { flexDirection: "row", justifyContent: "space-between", alignItems: "flex-start", gap: 8 },
+  exerciseName: { fontSize: 16, fontWeight: "700", color: T.textPrimary, marginBottom: 4, flex: 1 },
   exerciseNameDone: { color: T.accentMuted },
+  replaceBtn: { padding: 4 },
+  replaceBtnIcon: { fontSize: 15, color: T.textSecondary },
   exerciseMeta: { fontSize: 13, color: T.textSecondary, marginBottom: 4 },
   exerciseNotes: { fontSize: 12, color: T.textMuted, fontStyle: "italic", marginBottom: 6 },
   exerciseActions: { flexDirection: "row", gap: 8, marginTop: 8 },
@@ -860,6 +1013,17 @@ const styles = StyleSheet.create({
     paddingVertical: 8,
   },
   checkFormBtnText: { color: T.textSecondary, fontSize: 12, fontWeight: "700" },
+  addExerciseBtn: {
+    backgroundColor: "transparent",
+    borderWidth: 1,
+    borderColor: T.border,
+    borderStyle: "dashed",
+    borderRadius: 14,
+    paddingVertical: 14,
+    alignItems: "center",
+    marginTop: 4,
+  },
+  addExerciseBtnText: { color: T.accent, fontSize: 14, fontWeight: "700" },
   doneTag: {
     backgroundColor: "transparent",
     borderRadius: 10,

@@ -1,6 +1,7 @@
 import "./global.css";
 import "@/lib/i18n";
 import * as SecureStore from "expo-secure-store";
+import { GestureHandlerRootView } from "react-native-gesture-handler";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import { ClerkProvider, useAuth } from "@clerk/clerk-expo";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
@@ -135,22 +136,24 @@ function AppShell() {
 
 export default function App() {
   return (
-    <PostHogProvider
-      apiKey={process.env.EXPO_PUBLIC_POSTHOG_KEY ?? "phc_placeholder"}
-      options={{ host: process.env.EXPO_PUBLIC_POSTHOG_HOST ?? "https://us.i.posthog.com", disabled: !process.env.EXPO_PUBLIC_POSTHOG_KEY }}
-    >
-      <ErrorBoundary>
-        <SafeAreaProvider>
-          <ClerkProvider
-            publishableKey={process.env.EXPO_PUBLIC_CLERK_PUBLISHABLE_KEY!}
-            tokenCache={tokenCache}
-          >
-            <QueryClientProvider client={queryClient}>
-              <AppShell />
-            </QueryClientProvider>
-          </ClerkProvider>
-        </SafeAreaProvider>
-      </ErrorBoundary>
-    </PostHogProvider>
+    <GestureHandlerRootView style={{ flex: 1 }}>
+      <PostHogProvider
+        apiKey={process.env.EXPO_PUBLIC_POSTHOG_KEY ?? "phc_placeholder"}
+        options={{ host: process.env.EXPO_PUBLIC_POSTHOG_HOST ?? "https://us.i.posthog.com", disabled: !process.env.EXPO_PUBLIC_POSTHOG_KEY }}
+      >
+        <ErrorBoundary>
+          <SafeAreaProvider>
+            <ClerkProvider
+              publishableKey={process.env.EXPO_PUBLIC_CLERK_PUBLISHABLE_KEY!}
+              tokenCache={tokenCache}
+            >
+              <QueryClientProvider client={queryClient}>
+                <AppShell />
+              </QueryClientProvider>
+            </ClerkProvider>
+          </SafeAreaProvider>
+        </ErrorBoundary>
+      </PostHogProvider>
+    </GestureHandlerRootView>
   );
 }
