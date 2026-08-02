@@ -78,6 +78,7 @@ const ACTION_KEYS = [
   { labelKey: "dashboard.action_workout",       subKey: "dashboard.action_workout_sub",       emoji: "💪", screen: "Workouts"     },
   { labelKey: "dashboard.action_body_scan",     subKey: "dashboard.action_body_scan_sub",     emoji: "📸", screen: "BodyScan"     },
   { labelKey: "dashboard.action_coach",         subKey: "dashboard.action_coach_sub",         emoji: "🤖", screen: "Coach"        },
+  { labelKey: "dashboard.action_supplements",   subKey: "dashboard.action_supplements_sub",   emoji: "💊", screen: "Supplements"  },
   { labelKey: "dashboard.action_weekly_review", subKey: "dashboard.action_weekly_review_sub", emoji: "📊", screen: "WeeklyReview" },
 ];
 

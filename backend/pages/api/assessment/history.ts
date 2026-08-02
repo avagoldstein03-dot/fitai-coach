@@ -2,13 +2,14 @@ import { NextApiRequest, NextApiResponse } from "next";
 import { getAuth } from "@clerk/nextjs/server";
 import { prisma } from "@/lib/prisma";
 import { sendError, sendSuccess } from "@/lib/api-utils";
+import { deleteS3Object } from "@/lib/s3";
 
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  if (req.method !== "GET") {
-    return sendError(res, "invalid_method", "GET required", 405);
+  if (!["GET", "DELETE"].includes(req.method ?? "")) {
+    return sendError(res, "invalid_method", "GET or DELETE required", 405);
   }
 
   try {
@@ -23,6 +24,26 @@ export default async function handler(
 
     if (!user) {
       return sendError(res, "user_not_found", "User not found", 404);
+    }
+
+    if (req.method === "DELETE") {
+      const { scanId } = req.query;
+      if (!scanId || typeof scanId !== "string") {
+        return sendError(res, "missing_id", "scanId is required", 400);
+      }
+
+      const scan = await prisma.bodyScan.findUnique({ where: { id: scanId } });
+      if (!scan || scan.userId !== user.id) {
+        return sendError(res, "not_found", "Scan not found", 404);
+      }
+
+      for (const url of [scan.frontImageUrl, scan.sideImageUrl, scan.backImageUrl]) {
+        if (url) await deleteS3Object(url);
+      }
+      // BodyAssessment cascades on scan delete (onDelete: Cascade in schema)
+      await prisma.bodyScan.delete({ where: { id: scanId } });
+
+      return sendSuccess(res, null, "Scan deleted");
     }
 
     // Get all scans and assessments for user

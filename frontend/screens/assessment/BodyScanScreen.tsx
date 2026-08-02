@@ -10,7 +10,7 @@ import {
   RefreshControl,
   StyleSheet,
 } from "react-native";
-import { useMutation, useQuery } from "@tanstack/react-query";
+import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import * as ImagePicker from "expo-image-picker";
 import axios from "axios";
 import { useTranslation } from "react-i18next";
@@ -41,6 +41,7 @@ const POSITIONS = [
 
 export default function BodyScanScreen() {
   const navigation = useNavigation() as any;
+  const queryClient = useQueryClient();
   const { t, i18n } = useTranslation();
   const [scanState, setScanState] = useState<ScanState>({});
   const [isAnalyzing, setIsAnalyzing] = useState(false);
@@ -54,6 +55,22 @@ export default function BodyScanScreen() {
   });
 
   const lastAssessment = assessmentData?.assessments?.[0];
+
+  const { mutate: deleteScan, isPending: isDeletingScan } = useMutation({
+    mutationFn: async (scanId: string) => {
+      await axios.delete(`${API_URL}/api/assessment/history?scanId=${scanId}`);
+    },
+    onSuccess: () => queryClient.invalidateQueries({ queryKey: ["assessments"] }),
+    onError: () => Alert.alert(t("common.error"), t("body_scan.error_delete")),
+  });
+
+  const confirmDeleteScan = () => {
+    if (!lastAssessment) return;
+    Alert.alert(t("body_scan.delete_title"), t("body_scan.delete_msg"), [
+      { text: t("common.cancel"), style: "cancel" },
+      { text: t("common.delete"), style: "destructive", onPress: () => deleteScan(lastAssessment.scanId) },
+    ]);
+  };
 
   const { mutate: uploadImage, isPending: isUploading } = useMutation({
     mutationFn: async ({
@@ -201,27 +218,38 @@ export default function BodyScanScreen() {
 
         {/* Last Assessment Banner */}
         {lastAssessment?.assessment && (
-          <TouchableOpacity
-            style={styles.lastAssessmentCard}
-            onPress={() =>
-              navigation.navigate("AssessmentResults", {
-                assessment: lastAssessment.assessment,
-                assessmentId: lastAssessment.id,
-              })
-            }
-          >
-            <View style={styles.lastAssessmentLeft}>
-              <Text style={styles.lastAssessmentTitle}>{t("body_scan.last_assessment")}</Text>
-              <Text style={styles.lastAssessmentDate}>
-                {new Date(lastAssessment.assessment.createdAt).toLocaleDateString(i18n.language, {
-                  month: "long",
-                  day: "numeric",
-                  year: "numeric",
-                })}
-              </Text>
-            </View>
-            <Text style={styles.lastAssessmentArrow}>{t("body_scan.view_last")}</Text>
-          </TouchableOpacity>
+          <View style={styles.lastAssessmentCard}>
+            <TouchableOpacity
+              style={styles.lastAssessmentTouchable}
+              onPress={() =>
+                navigation.navigate("AssessmentResults", {
+                  assessment: lastAssessment.assessment,
+                  assessmentId: lastAssessment.assessment.id,
+                })
+              }
+            >
+              <View style={styles.lastAssessmentLeft}>
+                <Text style={styles.lastAssessmentTitle}>{t("body_scan.last_assessment")}</Text>
+                <Text style={styles.lastAssessmentDate}>
+                  {new Date(lastAssessment.assessment.createdAt).toLocaleDateString(i18n.language, {
+                    month: "long",
+                    day: "numeric",
+                    year: "numeric",
+                  })}
+                </Text>
+              </View>
+              <Text style={styles.lastAssessmentArrow}>{t("body_scan.view_last")}</Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+              onPress={confirmDeleteScan}
+              disabled={isDeletingScan}
+              style={styles.deleteScanBtn}
+              accessibilityLabel={t("body_scan.delete_title")}
+              accessibilityRole="button"
+            >
+              <Text style={styles.deleteScanIcon}>🗑</Text>
+            </TouchableOpacity>
+          </View>
         )}
 
         {/* Live 360 Scan */}
@@ -368,10 +396,13 @@ const styles = StyleSheet.create({
     padding: 16,
     marginBottom: 16,
   },
+  lastAssessmentTouchable: { flex: 1, flexDirection: "row", alignItems: "center" },
   lastAssessmentLeft: { flex: 1 },
   lastAssessmentTitle: { fontSize: 14, fontWeight: "700", color: T.accentMuted, marginBottom: 2 },
   lastAssessmentDate: { fontSize: 12, color: T.accent },
   lastAssessmentArrow: { color: T.accent, fontSize: 14, fontWeight: "700" },
+  deleteScanBtn: { padding: 4, marginLeft: 10 },
+  deleteScanIcon: { fontSize: 15, color: T.accentMuted },
 
   // Live Scan
   liveScanCard: {
