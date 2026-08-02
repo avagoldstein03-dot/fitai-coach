@@ -1,4 +1,13 @@
-import { calculateStreak, detectWorkoutPlateaus, diffBodyComposition, buildTrendsSummary } from "./trends";
+import {
+  calculateStreak,
+  detectWorkoutPlateaus,
+  diffBodyComposition,
+  buildTrendsSummary,
+  buildWeightSeries,
+  aggregateHealthMetrics,
+  aggregateMacroTrend,
+  computeWorkoutVolumeTrend,
+} from "./trends";
 
 function daysAgo(n: number): Date {
   const d = new Date();
@@ -122,6 +131,109 @@ describe("diffBodyComposition", () => {
     expect(diffBodyComposition(null, { a: "1" })).toEqual([]);
     expect(diffBodyComposition({ a: "1" }, null)).toEqual([]);
     expect(diffBodyComposition(undefined, undefined)).toEqual([]);
+  });
+});
+
+describe("buildWeightSeries", () => {
+  it("returns null with fewer than 2 logs", () => {
+    expect(buildWeightSeries([])).toBeNull();
+    expect(buildWeightSeries([{ weight: 180, loggedAt: daysAgo(0) }])).toBeNull();
+  });
+
+  it("sorts by date and computes change from first to last", () => {
+    const logs = [
+      { weight: 182, loggedAt: daysAgo(0) },
+      { weight: 185, loggedAt: daysAgo(10) },
+      { weight: 180, loggedAt: daysAgo(5) },
+    ];
+    const result = buildWeightSeries(logs);
+    expect(result?.series.map((p) => p.weight)).toEqual([185, 180, 182]);
+    expect(result?.changeAbs).toBe(-3);
+  });
+
+  it("computes changePct relative to the first entry", () => {
+    const logs = [
+      { weight: 200, loggedAt: daysAgo(10) },
+      { weight: 180, loggedAt: daysAgo(0) },
+    ];
+    const result = buildWeightSeries(logs);
+    expect(result?.changeAbs).toBe(-20);
+    expect(result?.changePct).toBe(-10);
+  });
+});
+
+describe("aggregateHealthMetrics", () => {
+  it("returns null for an empty list", () => {
+    expect(aggregateHealthMetrics([])).toBeNull();
+  });
+
+  it("sorts rows by date and passes fields through", () => {
+    const rows = [
+      { date: daysAgo(0), steps: 8000, activeEnergyKcal: 400, sleepMinutes: 420, restingHeartRate: 60 },
+      { date: daysAgo(1), steps: 6000, activeEnergyKcal: 300, sleepMinutes: 400, restingHeartRate: 62 },
+    ];
+    const result = aggregateHealthMetrics(rows);
+    expect(result?.series.map((p) => p.steps)).toEqual([6000, 8000]);
+  });
+});
+
+describe("aggregateMacroTrend", () => {
+  it("returns null for an empty list", () => {
+    expect(aggregateMacroTrend([])).toBeNull();
+  });
+
+  it("sums Meal-level macros and FoodItem-level micros per day", () => {
+    const meals = [
+      {
+        createdAt: daysAgo(0),
+        totalCarbs: 50,
+        totalFat: 20,
+        totalFiber: 5,
+        foods: [{ sugar: 10, sodium: 200, cholesterol: 30 }],
+      },
+      {
+        createdAt: daysAgo(0),
+        totalCarbs: 30,
+        totalFat: 10,
+        totalFiber: 3,
+        foods: [
+          { sugar: 5, sodium: 100, cholesterol: 0 },
+          { sugar: 2, sodium: 50, cholesterol: 10 },
+        ],
+      },
+    ];
+    const result = aggregateMacroTrend(meals);
+    expect(result?.series).toHaveLength(1);
+    expect(result?.series[0]).toMatchObject({
+      carbs: 80,
+      fat: 30,
+      fiber: 8,
+      sugar: 17,
+      sodium: 350,
+      cholesterol: 40,
+    });
+  });
+});
+
+describe("computeWorkoutVolumeTrend", () => {
+  it("sums weight * reps per day, parsing completedReps", () => {
+    const sessions = [
+      { createdAt: daysAgo(0), weight: 100, completedReps: "10" },
+      { createdAt: daysAgo(0), weight: 50, completedReps: "8" },
+      { createdAt: daysAgo(1), weight: 200, completedReps: "5" },
+    ];
+    const result = computeWorkoutVolumeTrend(sessions);
+    expect(result).toHaveLength(2);
+    expect(result.find((p) => p.volume === 1400)).toBeTruthy();
+    expect(result.find((p) => p.volume === 1000)).toBeTruthy();
+  });
+
+  it("treats bodyweight (null weight) or unparseable reps as zero volume", () => {
+    const sessions = [
+      { createdAt: daysAgo(0), weight: null, completedReps: "20" },
+      { createdAt: daysAgo(0), weight: 50, completedReps: "AMRAP" },
+    ];
+    expect(computeWorkoutVolumeTrend(sessions)).toEqual([{ date: sessions[0].createdAt.toISOString().split("T")[0], volume: 0 }]);
   });
 });
 
