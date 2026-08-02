@@ -38,7 +38,16 @@
       "no_account": "Chưa có tài khoản?",
       "signup_link": "Đăng ký",
       "error_fill": "Vui lòng điền tất cả các trường",
-      "error_signin": "Đăng nhập thất bại. Vui lòng kiểm tra thông tin đăng nhập của bạn."
+      "error_signin": "Đăng nhập thất bại. Vui lòng kiểm tra thông tin đăng nhập của bạn.",
+      "verify_2fa_title": "Xác Minh Hai Yếu Tố",
+      "verify_2fa_subtitle": "Nhập mã xác minh của bạn để tiếp tục",
+      "verify_2fa_code": "Mã Xác Minh",
+      "verify_2fa_code_placeholder": "123456",
+      "verify_2fa_button": "Xác Minh",
+      "back_to_signin": "← Quay lại đăng nhập",
+      "error_2fa_unsupported": "Phương pháp xác minh hai yếu tố của tài khoản này chưa được hỗ trợ. Vui lòng liên hệ hỗ trợ.",
+      "error_verify_incomplete": "Xác minh chưa hoàn tất. Vui lòng thử lại.",
+      "error_verify": "Xác minh thất bại. Vui lòng thử lại."
     },
     "signup": {
       "title": "Tạo tài khoản",
@@ -159,7 +168,10 @@
       "beginner_desc": "Mới bắt đầu hành trình tập luyện của tôi",
       "intermediate_desc": "Tập luyện liên tục trong 1+ năm",
       "advanced_desc": "4+ năm tập luyện có cấu trúc",
-      "prompt": "Chọn mức độ kinh nghiệm của bạn"
+      "prompt": "Chọn mức độ kinh nghiệm của bạn",
+      "injury_label": "Bạn có chấn thương hoặc hạn chế về khả năng vận động?",
+      "injury_placeholder": "ví dụ: đầu gối trái yếu, đau lưng dưới — không bắt buộc",
+      "injury_helper": "Không bắt buộc — giúp huấn luyện viên AI tránh hoặc điều chỉnh các bài tập có thể làm trầm trọng thêm tình trạng này."
     },
     "step5": {
       "title": "Sở thích ăn uống",
@@ -381,7 +393,20 @@
     "privacy_policy": "Chính sách bảo mật",
     "terms_of_service": "Điều khoản dịch vụ",
     "privacy_policy_sub": "Cách chúng tôi xử lý dữ liệu của bạn",
-    "terms_of_service_sub": "Quy tắc sử dụng FitAI Coach"
+    "terms_of_service_sub": "Quy tắc sử dụng Active AI Coach",
+    "injury_history": "Chấn thương & Khả năng Vận động",
+    "injury_history_sub": "Giúp huấn luyện viên AI tránh hoặc điều chỉnh các bài tập có thể làm trầm trọng thêm tình trạng này",
+    "injury_placeholder": "ví dụ: đầu gối trái yếu, đau lưng dưới",
+    "injury_updated": "Ghi chú về chấn thương/khả năng vận động của bạn đã được cập nhật.",
+    "error_injury": "Không thể cập nhật ghi chú về chấn thương/khả năng vận động.",
+    "health_card_title": "Apple Health",
+    "health_card_sub": "Đồng bộ hóa bước chân, giấc ngủ, năng lượng hoạt động, nhịp tim và cân nặng từ Apple Health để giảm bớt việc ghi lại thủ công.",
+    "health_connect_button": "Kết nối Apple Health",
+    "health_last_synced": "Đồng bộ hóa lần cuối {{time}}",
+    "health_disconnect_button": "Ngắt kết nối",
+    "health_disconnect_title": "Ngắt kết nối Apple Health?",
+    "health_disconnect_msg": "Điều này dừng ứng dụng từ việc đồng bộ hóa dữ liệu mới, nhưng không thu hồi quyền truy cập Apple Health — bạn có thể quản lý điều đó trong iOS Settings > Health > Data Access & Devices.",
+    "error_health_connect": "Không thể kết nối với Apple Health. Vui lòng thử lại."
   },
   "notifications": {
     "title": "Thông báo",
@@ -529,7 +554,9 @@
     "error_portal": "Không thể mở cổng thanh toán.",
     "error_portal_open": "Không thể mở cổng thanh toán",
     "manage_apple": "Quản lý Đăng ký Apple",
-    "manage_apple_sub": "Xem hoặc hủy đăng ký của bạn qua Apple"
+    "manage_apple_sub": "Xem hoặc hủy đăng ký của bạn qua Apple",
+    "manage_google": "Quản lý Gói Đăng ký Google Play",
+    "manage_google_sub": "Xem hoặc hủy gói đăng ký của bạn qua Google Play"
   },
   "coach": {
     "title": "Huấn luyện viên của bạn",
@@ -768,7 +795,8 @@
     "goal_overall_strength": "Xây dựng sức mạnh & cơ bắp tổng thể",
     "goal_specific_area": "Xây dựng cơ bắp ở một khu vực cụ thể",
     "progress_done": "{{done}}/{{total}} hoàn thành",
-    "exercise_meta": "{{sets}} bộ × {{reps}} lần · {{rest}}s nghỉ"
+    "exercise_meta": "{{sets}} bộ × {{reps}} lần · {{rest}}s nghỉ",
+    "check_form": "Kiểm Tra Động Tác"
   },
   "supplements": {
     "title": "Thực phẩm bổ sung",
@@ -1033,7 +1061,15 @@
     "status_scanning": "Quay từ từ 360°...",
     "status_uploading": "Đang tải lên quét của bạn...",
     "status_analyzing": "Đang phân tích thành phần cơ thể của bạn...",
-    "error_pick": "Không thể chọn ảnh. Vui lòng thử lại."
+    "error_pick": "Không thể chọn ảnh. Vui lòng thử lại.",
+    "prep_title": "Trước Khi Bắt Đầu",
+    "prep_sub": "Chúng tôi cần toàn bộ cơ thể của bạn — từ đầu đến chân — nằm trong khung hình để quét chính xác.",
+    "prep_tip_prop": "Đặt điện thoại của bạn cách xa 6–8 feet, màn hình hướng ra xa bạn",
+    "prep_tip_height": "Chế độ dọc, đặt ở độ cao ngực",
+    "prep_tip_light": "Ánh sáng tốt, quần áo vừa vặn",
+    "prep_tip_space": "Đảm bảo bạn có không gian để quay vòng tròn đầy đủ",
+    "prep_ready_btn": "Tôi Đã Sẵn Sàng",
+    "prep_countdown_label": "Vào khung hình — quét sẽ bắt đầu trong {{count}}s"
   },
   "shopping_list": {
     "clear_title": "Xóa các mục được đánh dấu?",
@@ -1092,7 +1128,8 @@
     "badge_week_champion": "Nhà vô địch hàng tuần",
     "badge_stay_hydrated": "Giữ độ ẩm",
     "badge_body_scan": "Quét cơ thể",
-    "default_name": "Vận động viên"
+    "default_name": "Vận động viên",
+    "friends": "Bạn bè"
   },
   "navigation": {
     "home": "Trang chủ",
@@ -1129,11 +1166,11 @@
     "title": "Trước khi tiếp tục",
     "subtitle": "Vui lòng đọc thông báo quan trọng này",
     "agree": "Tôi hiểu & Đồng ý",
-    "required": "Cần thiết để sử dụng FitAI Coach",
-    "body_p1": "FitAI Coach sử dụng AI để tạo phản hồi về thể dục, dinh dưỡng và thành phần cơ thể dựa trên ảnh và thông tin bạn cung cấp.",
+    "required": "Cần thiết để sử dụng Active AI Coach",
+    "body_p1": "Active AI Coach sử dụng AI để tạo phản hồi về thể dục, dinh dưỡng và thành phần cơ thể dựa trên ảnh và thông tin bạn cung cấp.",
     "body_p2": "Nội dung này do AI tạo ra và có thể không chính xác hoặc không đầy đủ. Đây không phải là lời khuyên y tế, dinh dưỡng hoặc tập luyện chuyên nghiệp, và nó không thay thế cho việc tư vấn với bác sĩ, chuyên gia dinh dưỡng đã đăng ký hoặc huấn luyện viên được chứng chỉ.",
     "body_p3": "Luôn tư vấn với chuyên gia có trình độ trước khi bắt đầu bất kỳ chế độ ăn hoặc chương trình tập luyện mới, đặc biệt nếu bạn có bất kỳ tình trạng y tế nào. Dừng lại ngay lập tức và tìm kiếm chăm sóc y tế nếu bạn cảm thấy đau, chóng mặt hoặc khó chịu khi tập luyện.",
-    "body_p4": "Bằng cách tiếp tục, bạn thừa nhận những hạn chế này và đồng ý sử dụng FitAI Coach theo rủi ro của riêng bạn."
+    "body_p4": "Bằng cách tiếp tục, bạn thừa nhận những hạn chế này và đồng ý sử dụng Active AI Coach theo rủi ro của riêng bạn."
   },
   "muscle_diagram": {
     "active": "Hoạt động",
@@ -1154,5 +1191,58 @@
     "meals_tracked": "Bữa ăn được theo dõi",
     "cta": "Bắt đầu — Miễn phí",
     "fine_print": "Mất 2 phút · Không cần thẻ tín dụng"
+  },
+  "friends": {
+    "title": "Bạn bè",
+    "your_code": "Mã của bạn",
+    "share_code": "Chia sẻ mã",
+    "share_message": "Hãy giúp nhau có trách nhiệm trên Active AI Coach! Kết nối với tôi bằng mã {{code}}.",
+    "connect_label": "Có mã của bạn bè?",
+    "code_placeholder": "Nhập mã",
+    "connect_button": "Kết nối",
+    "your_friends": "Bạn bè của bạn",
+    "empty": "Chưa có bạn bè nào. Chia sẻ mã của bạn hoặc nhập mã của bạn bè ở trên để kết nối.",
+    "no_streak": "Không có chuỗi hoạt động",
+    "streak_days": "Chuỗi {{count}} ngày",
+    "no_workouts_yet": "Chưa tập luyện",
+    "today": "Đã tập luyện hôm nay",
+    "yesterday": "Đã tập luyện hôm qua",
+    "days_ago": "{{count}} ngày trước",
+    "cheer_button": "Cổ vũ 👋",
+    "remove_title": "Xóa bạn bè",
+    "remove_msg": "Xóa {{name}} khỏi danh sách bạn bè? Hành động này không thể hoàn tác.",
+    "remove_button": "Xóa",
+    "error_connect": "Không thể kết nối với mã này. Vui lòng kiểm tra và thử lại.",
+    "error_cheer": "Không thể gửi cổ vũ của bạn. Vui lòng thử lại.",
+    "error_remove": "Không thể xóa bạn bè này. Vui lòng thử lại."
+  },
+  "form_check": {
+    "permission_title": "Cần Truy Cập Camera",
+    "permission_sub": "Cho phép truy cập camera để kiểm tra động tác tập luyện của bạn.",
+    "grant_permission": "Cấp Quyền Truy Cập Camera",
+    "prep_sub": "Đặt điện thoại của bạn sao cho toàn bộ chuyển động của bạn hiển thị rõ, sau đó thực hiện bài tập một cách chậm và liên tục.",
+    "prep_tip_frame": "Đảm bảo toàn bộ cơ thể (hoặc phần cơ thể đang tập) nằm trong khung hình",
+    "prep_tip_light": "Ánh sáng tốt giúp AI nhìn rõ động tác của bạn",
+    "prep_tip_pace": "Di chuyển chậm và liên tục qua 1-2 lần lặp",
+    "prep_ready_btn": "Bắt Đầu",
+    "prep_countdown_label": "Chuẩn bị — quay video bắt đầu trong {{count}}s",
+    "status_capturing": "Thực hiện chuyển động ngay bây giờ...",
+    "status_analyzing": "Đang phân tích động tác của bạn...",
+    "check_failed": "Kiểm Tra Thất Bại",
+    "check_failed_msg": "Không thể phân tích động tác của bạn. Vui lòng thử lại.",
+    "score_label": "Điểm Động Tác",
+    "muscles_label": "Nhóm Cơ Được Tập",
+    "positives_label": "Những Điểm Bạn Làm Tốt",
+    "corrections_label": "Những Điều Cần Cải Thiện",
+    "cues_label": "Gợi Ý Hướng Dẫn",
+    "safety_label": "Cảnh Báo An Toàn",
+    "summary_label": "Tóm Tắt",
+    "check_again": "Kiểm Tra Lại",
+    "done": "Xong",
+    "no_frames_captured": "Không có khung hình nào được chụp. Hãy đảm bảo camera của bạn hoạt động và thử lại.",
+    "ready_hint": "Sẵn sàng vị trí, sau đó nhấn Bắt đầu Ghi hình khi bạn sẵn sàng",
+    "start_recording": "Bắt đầu Ghi hình",
+    "stop_recording": "Dừng & Phân tích",
+    "status_recording": "Đang ghi hình... {{seconds}}s — nhấn Dừng khi sẵn sàng"
   }
 }

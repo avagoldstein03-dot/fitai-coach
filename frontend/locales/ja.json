@@ -38,7 +38,16 @@
       "no_account": "アカウントをお持ちでないですか？",
       "signup_link": "サインアップ",
       "error_fill": "すべてのフィールドを入力してください",
-      "error_signin": "サインインに失敗しました。認証情報を確認してください。"
+      "error_signin": "サインインに失敗しました。認証情報を確認してください。",
+      "verify_2fa_title": "二段階認証",
+      "verify_2fa_subtitle": "認証コードを入力して続行してください",
+      "verify_2fa_code": "認証コード",
+      "verify_2fa_code_placeholder": "123456",
+      "verify_2fa_button": "認証",
+      "back_to_signin": "← サインインに戻る",
+      "error_2fa_unsupported": "このアカウントの二段階認証方法はまだサポートされていません。サポートにお問い合わせください。",
+      "error_verify_incomplete": "認証が完了していません。もう一度お試しください。",
+      "error_verify": "認証に失敗しました。もう一度お試しください。"
     },
     "signup": {
       "title": "アカウント作成",
@@ -159,7 +168,10 @@
       "beginner_desc": "フィットネスの旅を始めたばかり",
       "intermediate_desc": "1年以上継続的にトレーニング",
       "advanced_desc": "4年以上の体系的なトレーニング経験",
-      "prompt": "あなたの経験レベルを選択してください"
+      "prompt": "あなたの経験レベルを選択してください",
+      "injury_label": "ケガや可動域の制限はありますか?",
+      "injury_placeholder": "例：左膝が悪い、腰痛 — オプション",
+      "injury_helper": "オプション — AIコーチが悪化の可能性のあるエクササイズを回避または変更するのに役立ちます。"
     },
     "step5": {
       "title": "食事の好み",
@@ -381,7 +393,20 @@
     "privacy_policy": "プライバシーポリシー",
     "terms_of_service": "利用規約",
     "privacy_policy_sub": "お客様のデータの取り扱い方法",
-    "terms_of_service_sub": "FitAI Coachの使用ルール"
+    "terms_of_service_sub": "Active AI Coachの使用ルール",
+    "injury_history": "ケガと可動域",
+    "injury_history_sub": "AIコーチが悪化の可能性のあるエクササイズを回避または変更するのに役立ちます",
+    "injury_placeholder": "例：左膝が悪い、腰痛",
+    "injury_updated": "ケガ/可動域に関するメモが更新されました。",
+    "error_injury": "ケガ/可動域に関するメモの更新に失敗しました。",
+    "health_card_title": "Apple Health",
+    "health_card_sub": "Apple Healthからステップ、睡眠、アクティブエネルギー、心拍数、体重を同期して、手動ログを減らします。",
+    "health_connect_button": "Apple Healthを接続",
+    "health_last_synced": "最後に同期：{{time}}",
+    "health_disconnect_button": "接続解除",
+    "health_disconnect_title": "Apple Healthの接続を解除しますか？",
+    "health_disconnect_msg": "アプリの新しいデータ同期を停止しますが、Apple Healthへのアクセスは取り消されません。iOSの設定 > ヘルスケア > データアクセスとデバイスで管理できます。",
+    "error_health_connect": "Apple Healthに接続できませんでした。もう一度お試しください。"
   },
   "notifications": {
     "title": "通知",
@@ -529,7 +554,9 @@
     "error_portal": "請求ポータルを開くことができませんでした。",
     "error_portal_open": "請求ポータルを開くことに失敗しました",
     "manage_apple": "Apple サブスクリプションを管理",
-    "manage_apple_sub": "Appleを通じてサブスクリプションを表示またはキャンセル"
+    "manage_apple_sub": "Appleを通じてサブスクリプションを表示またはキャンセル",
+    "manage_google": "Google Playサブスクリプションを管理",
+    "manage_google_sub": "Google Playでサブスクリプションを表示またはキャンセルします"
   },
   "coach": {
     "title": "コーチ",
@@ -768,7 +795,8 @@
     "goal_overall_strength": "全体的な強さと筋肉を構築",
     "goal_specific_area": "特定の部位の筋肉を構築",
     "progress_done": "{{done}}/{{total}}完了",
-    "exercise_meta": "{{sets}}セット × {{reps}}回 · {{rest}}秒休息"
+    "exercise_meta": "{{sets}}セット × {{reps}}回 · {{rest}}秒休息",
+    "check_form": "フォームをチェック"
   },
   "supplements": {
     "title": "サプリメント",
@@ -1033,7 +1061,15 @@
     "status_scanning": "ゆっくり360°回転してください…",
     "status_uploading": "スキャンをアップロード中…",
     "status_analyzing": "ボディ成分を分析中…",
-    "error_pick": "画像の選択に失敗しました。もう一度お試しください。"
+    "error_pick": "画像の選択に失敗しました。もう一度お試しください。",
+    "prep_title": "開始する前に",
+    "prep_sub": "正確なスキャンのために、頭から足まで、全身をフレーム内に収める必要があります。",
+    "prep_tip_prop": "電話を6～8フィート離れた場所に立てかけ、画面があなたから離れた方向を向くようにする",
+    "prep_tip_height": "ポートレートモード、胸の高さに配置",
+    "prep_tip_light": "良い照明、フィット感のある衣類",
+    "prep_tip_space": "360度回転する十分なスペースがあることを確認してください",
+    "prep_ready_btn": "準備完了",
+    "prep_countdown_label": "フレーム内に入る — スキャンは{{count}}秒後に開始します"
   },
   "shopping_list": {
     "clear_title": "チェック済みのアイテムをクリアしますか？",
@@ -1092,7 +1128,8 @@
     "badge_week_champion": "週間チャンピオン",
     "badge_stay_hydrated": "水分補給を維持",
     "badge_body_scan": "ボディスキャン",
-    "default_name": "アスリート"
+    "default_name": "アスリート",
+    "friends": "フレンド"
   },
   "navigation": {
     "home": "ホーム",
@@ -1129,11 +1166,11 @@
     "title": "続行する前に",
     "subtitle": "この重要な通知をお読みください",
     "agree": "理解して同意します",
-    "required": "FitAI Coachを使用するために必要",
-    "body_p1": "FitAI Coachは、AIを使用して、提供していただいた写真と情報に基づいて、フィットネス、栄養、体組成に関するフィードバックを生成します。",
+    "required": "Active AI Coachを使用するために必要",
+    "body_p1": "Active AI Coachは、AIを使用して、提供していただいた写真と情報に基づいて、フィットネス、栄養、体組成に関するフィードバックを生成します。",
     "body_p2": "このコンテンツはAIが生成したもので、不正確または不完全である可能性があります。これは医学的、栄養学的、または専門的なフィットネスアドバイスではなく、医師、管理栄養士、または認定トレーナーへの相談に代わるものではありません。",
     "body_p3": "新しいダイエットまたはエクササイズプログラムを開始する前に、常に資格のある専門家に相談してください。特に医学的な状態がある場合はそうしてください。運動中に痛み、めまい、または不快感を感じた場合は、すぐに中止して医療を受けてください。",
-    "body_p4": "続行することで、これらの制限を認識し、FitAI Coachを自己責任で使用することに同意します。"
+    "body_p4": "続行することで、これらの制限を認識し、Active AI Coachを自己責任で使用することに同意します。"
   },
   "muscle_diagram": {
     "active": "アクティブ",
@@ -1154,5 +1191,58 @@
     "meals_tracked": "ログに記録された食事",
     "cta": "開始 — 無料",
     "fine_print": "2分で完了 · クレジットカード不要"
+  },
+  "friends": {
+    "title": "フレンド",
+    "your_code": "あなたのコード",
+    "share_code": "コードを共有",
+    "share_message": "Active AI Coachで一緒に頑張ろう！コード{{code}}で私とつながってください。",
+    "connect_label": "フレンドのコードはありますか？",
+    "code_placeholder": "コードを入力",
+    "connect_button": "つながる",
+    "your_friends": "あなたのフレンド",
+    "empty": "まだフレンドがいません。上記でコードを共有するか、フレンドのコードを入力してつながってください。",
+    "no_streak": "アクティブなストリークなし",
+    "streak_days": "{{count}}日間のストリーク",
+    "no_workouts_yet": "まだワークアウトなし",
+    "today": "今日ワークアウトしました",
+    "yesterday": "昨日ワークアウトしました",
+    "days_ago": "{{count}}日前",
+    "cheer_button": "応援する 👋",
+    "remove_title": "フレンドを削除",
+    "remove_msg": "{{name}}をフレンドから削除しますか？この操作は取り消せません。",
+    "remove_button": "削除",
+    "error_connect": "そのコードでつながることができませんでした。確認してもう一度お試しください。",
+    "error_cheer": "応援を送信できませんでした。もう一度お試しください。",
+    "error_remove": "このフレンドを削除できませんでした。もう一度お試しください。"
+  },
+  "form_check": {
+    "permission_title": "カメラアクセスが必要です",
+    "permission_sub": "エクササイズフォームをチェックするためにカメラアクセスを許可してください。",
+    "grant_permission": "カメラアクセスを許可",
+    "prep_sub": "スマートフォンを全身（または動く部位）が見えるように配置してから、ゆっくり継続的にエクササイズを行ってください。",
+    "prep_tip_frame": "全身（または動く部位）がフレーム内に収まるようにする",
+    "prep_tip_light": "十分な照明があるとAIがフォームをより正確に判断できます",
+    "prep_tip_pace": "1～2回の繰り返しをゆっくり継続的に行う",
+    "prep_ready_btn": "開始",
+    "prep_countdown_label": "準備してください — キャプチャは{{count}}秒後に開始します",
+    "status_capturing": "今から動きを行ってください...",
+    "status_analyzing": "フォームを分析中...",
+    "check_failed": "チェック失敗",
+    "check_failed_msg": "フォームの分析に失敗しました。もう一度お試しください。",
+    "score_label": "フォームスコア",
+    "muscles_label": "使用筋肉",
+    "positives_label": "良好な動き",
+    "corrections_label": "改善点",
+    "cues_label": "コーチングキュー",
+    "safety_label": "安全上の警告",
+    "summary_label": "サマリー",
+    "check_again": "もう一度チェック",
+    "done": "完了",
+    "no_frames_captured": "フレームがキャプチャされませんでした。カメラが正常に機能していることを確認して、もう一度お試しください。",
+    "ready_hint": "ポジションに入ってから、準備ができたら「録画を開始」をタップしてください",
+    "start_recording": "録画を開始",
+    "stop_recording": "停止して分析",
+    "status_recording": "録画中... {{seconds}}秒 — 準備ができたら「停止」をタップしてください"
   }
 }

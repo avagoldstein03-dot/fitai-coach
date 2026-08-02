@@ -38,7 +38,16 @@
       "no_account": "Nincs még fiókod?",
       "signup_link": "Regisztrálj",
       "error_fill": "Kérjük, töltsd ki az összes mezőt",
-      "error_signin": "A bejelentkezés sikertelen. Kérjük, ellenőrizd a hitelesítési adatait."
+      "error_signin": "A bejelentkezés sikertelen. Kérjük, ellenőrizd a hitelesítési adatait.",
+      "verify_2fa_title": "Kétfaktoros ellenőrzés",
+      "verify_2fa_subtitle": "Adja meg az ellenőrzési kódját a folytatáshoz",
+      "verify_2fa_code": "Ellenőrzési kód",
+      "verify_2fa_code_placeholder": "123456",
+      "verify_2fa_button": "Ellenőrzés",
+      "back_to_signin": "← Vissza a bejelentkezéshez",
+      "error_2fa_unsupported": "Ez a fiók kétfaktoros módszere még nem támogatott. Kérjük, vegye fel a kapcsolatot az ügyfélszolgálattal.",
+      "error_verify_incomplete": "Az ellenőrzés nem teljes. Kérjük, próbálja újra.",
+      "error_verify": "Az ellenőrzés sikertelen. Kérjük, próbálja újra."
     },
     "signup": {
       "title": "Fiók létrehozása",
@@ -159,7 +168,10 @@
       "beginner_desc": "Most kezdem a fitness útra",
       "intermediate_desc": "1+ éve edzek következetesen",
       "advanced_desc": "4+ év strukturált edzés",
-      "prompt": "Válassz a tapasztalati szinted"
+      "prompt": "Válassz a tapasztalati szinted",
+      "injury_label": "Van sérülése vagy mobilitási korlátozása?",
+      "injury_placeholder": "pl. rossz bal térd, alsó hátfájdalom — opcionális",
+      "injury_helper": "Opcionális — segít az AI edzőodnek elkerülni vagy módosítani azokat a gyakorlatokat, amelyek ezt súlyosbíthatnák."
     },
     "step5": {
       "title": "Étkezési preferenciák",
@@ -381,7 +393,20 @@
     "privacy_policy": "Adatvédelmi Nyilatkozat",
     "terms_of_service": "Szolgáltatási Feltételek",
     "privacy_policy_sub": "Hogyan kezeljük az adataidat",
-    "terms_of_service_sub": "A FitAI Coach használatának szabályai"
+    "terms_of_service_sub": "A Active AI Coach használatának szabályai",
+    "injury_history": "Sérülések és mobilitás",
+    "injury_history_sub": "Segít az AI edzőodnek elkerülni vagy módosítani azokat a gyakorlatokat, amelyek ezt súlyosbíthatnák",
+    "injury_placeholder": "pl. rossz bal térd, alsó hátfájdalom",
+    "injury_updated": "A sérülés- és mobilitási megjegyzéseid frissítve lettek.",
+    "error_injury": "A sérülés- és mobilitási megjegyzések frissítése sikertelen volt.",
+    "health_card_title": "Apple Health",
+    "health_card_sub": "Szinkronizáld a lépéseket, alvást, aktív energiát, szívritmusát és súlyát az Apple Health-ből, hogy csökkentsd a manuális naplózást.",
+    "health_connect_button": "Apple Health csatlakoztatása",
+    "health_last_synced": "Utoljára szinkronizálva: {{time}}",
+    "health_disconnect_button": "Lecsatlakoztatás",
+    "health_disconnect_title": "Lecsatlakoztatod az Apple Health-et?",
+    "health_disconnect_msg": "Ez leállítja az alkalmazás új adatok szinkronizálását, de nem vonják vissza az Apple Health hozzáféréseit — ezt az iOS Beállítások > Egészség > Adathozzáférés és eszközök menüpontban kezelheted.",
+    "error_health_connect": "Nem sikerült csatlakozni az Apple Health-hez. Próbáld újra."
   },
   "notifications": {
     "title": "Értesítések",
@@ -529,7 +554,9 @@
     "error_portal": "Nem sikerült megnyitni a számlázási portált.",
     "error_portal_open": "Nem sikerült megnyitni a számlázási portált",
     "manage_apple": "Apple Előfizetés Kezelése",
-    "manage_apple_sub": "Nézd meg vagy töröld az előfizetésedet az Apple-en keresztül"
+    "manage_apple_sub": "Nézd meg vagy töröld az előfizetésedet az Apple-en keresztül",
+    "manage_google": "Google Play előfizetés kezelése",
+    "manage_google_sub": "Az előfizetésed megtekintése vagy lemondása a Google Play-en keresztül"
   },
   "coach": {
     "title": "A te coachodat",
@@ -768,7 +795,8 @@
     "goal_overall_strength": "Általános erő és izom építése",
     "goal_specific_area": "Izom építése egy konkrét területen",
     "progress_done": "{{done}}/{{total}} kész",
-    "exercise_meta": "{{sets}} sorozat × {{reps}} ismétlés · {{rest}}s pihenő"
+    "exercise_meta": "{{sets}} sorozat × {{reps}} ismétlés · {{rest}}s pihenő",
+    "check_form": "Forma ellenőrzése"
   },
   "supplements": {
     "title": "Kiegészítők",
@@ -1033,7 +1061,15 @@
     "status_scanning": "Lassan forgass körbe…",
     "status_uploading": "A scannedet feltöltöm…",
     "status_analyzing": "Az testösszetételét elemzem…",
-    "error_pick": "Nem sikerült kiválasztani a képet. Próbáld újra."
+    "error_pick": "Nem sikerült kiválasztani a képet. Próbáld újra.",
+    "prep_title": "Mielőtt elkezdened",
+    "prep_sub": "A teljes tested szükséges — a fejtől a lábig — a képernyőn a pontos vizsgálathoz.",
+    "prep_tip_prop": "Támasszátok fel a telefonod 6–8 láb távolságra, a képernyő tőled elforgatva",
+    "prep_tip_height": "Portrémód, mellkas magasságban elhelyezve",
+    "prep_tip_light": "Jó megvilágítás, testhez illő ruházat",
+    "prep_tip_space": "Győződj meg arról, hogy van helyed teljes körben fordulni",
+    "prep_ready_btn": "Kész vagyok",
+    "prep_countdown_label": "Pozicionálj be — a vizsgálat {{count}}s múlva kezdődik"
   },
   "shopping_list": {
     "clear_title": "Tisztítsa meg az ellenőrzött tételeket?",
@@ -1092,7 +1128,8 @@
     "badge_week_champion": "Heti bajnok",
     "badge_stay_hydrated": "Maradj hidratált",
     "badge_body_scan": "Body scan",
-    "default_name": "Sportoló"
+    "default_name": "Sportoló",
+    "friends": "Barátok"
   },
   "navigation": {
     "home": "Kezdőlap",
@@ -1129,11 +1166,11 @@
     "title": "Mielőtt folytatnál",
     "subtitle": "Kérjük, olvass el ezt a fontos közleményt",
     "agree": "Megértettem és egyetértek",
-    "required": "A FitAI Coach használatához szükséges",
-    "body_p1": "A FitAI Coach mesterséges intelligenciát használ az edzés-, táplálkozás- és testösszetétel-elemzéshez az Ön által szolgáltatott fotók és információk alapján.",
+    "required": "A Active AI Coach használatához szükséges",
+    "body_p1": "A Active AI Coach mesterséges intelligenciát használ az edzés-, táplálkozás- és testösszetétel-elemzéshez az Ön által szolgáltatott fotók és információk alapján.",
     "body_p2": "Ez a tartalom mesterséges intelligencia által létrehozva, és lehet pontatlan vagy hiányos. Nem orvosi, táplálkozási vagy szakmai edzési tanács, és nem helyettesíti a képzett orvos, regisztrált táplálkozási szakember vagy szertifikált edzővel való konzultációt.",
     "body_p3": "Mindig konzultálj egy képzett szaksemberrel új diéta vagy edzésprogram kezdése előtt, különösen, ha bármilyen egészségügyi problémád van. Ha fájdalmat, szédülést vagy kellemetlen érzést tapasztalsz az edzés során, azonnal állj meg és kérj orvosi segítséget.",
-    "body_p4": "A folytatásával elismered ezeket a korlátozásokat, és vállalja, hogy a FitAI Coach-ot saját felelősségére használod."
+    "body_p4": "A folytatásával elismered ezeket a korlátozásokat, és vállalja, hogy a Active AI Coach-ot saját felelősségére használod."
   },
   "muscle_diagram": {
     "active": "Aktív",
@@ -1154,5 +1191,58 @@
     "meals_tracked": "Naplózott étkezések",
     "cta": "Kezdj el — ingyenes",
     "fine_print": "2 perc alatt · Nincs szükség hitelkártyára"
+  },
+  "friends": {
+    "title": "Barátok",
+    "your_code": "Az Ön kódja",
+    "share_code": "Kód megosztása",
+    "share_message": "Tartsuk számon egymást az Active AI Coach-on! Csatlakozz velem a {{code}} kóddal.",
+    "connect_label": "Van barátod kódja?",
+    "code_placeholder": "Írd be a kódot",
+    "connect_button": "Csatlakozás",
+    "your_friends": "Az Ön barátai",
+    "empty": "Még nincsenek barátok. Oszd meg a kódodat vagy írd be barátod kódját fent a csatlakozáshoz.",
+    "no_streak": "Nincs aktív sorozat",
+    "streak_days": "{{count}} napos sorozat",
+    "no_workouts_yet": "Még nincsenek edzések",
+    "today": "Ma eddzett",
+    "yesterday": "Tegnap eddzett",
+    "days_ago": "{{count}} napja",
+    "cheer_button": "Biztatás 👋",
+    "remove_title": "Barát eltávolítása",
+    "remove_msg": "Eltávolítod {{name}}-t a barátaid közül? Ez nem vonható vissza.",
+    "remove_button": "Eltávolítás",
+    "error_connect": "Nem sikerült csatlakozni ezzel a kóddal. Ellenőrizd és próbáld újra.",
+    "error_cheer": "Nem sikerült elküldeni a biztatásodat. Kérlek próbáld újra.",
+    "error_remove": "Nem sikerült eltávolítani ezt a barátot. Kérlek próbáld újra."
+  },
+  "form_check": {
+    "permission_title": "Kamerához való hozzáférés szükséges",
+    "permission_sub": "Engedélyezze a kamerához való hozzáférést a gyakorlat formájának ellenőrzéséhez.",
+    "grant_permission": "Kamerához való hozzáférés engedélyezése",
+    "prep_sub": "Helyezze a telefont úgy, hogy a teljes mozgás látható legyen, majd végezze el a gyakorlatot lassan és folyamatosan.",
+    "prep_tip_frame": "Az egész testét (vagy a dolgozó végtagot) tartsa a képkockában",
+    "prep_tip_light": "A megfelelő megvilágítás segít az MI-nak tisztán látni az Ön formáját",
+    "prep_tip_pace": "Mozogjon lassan és folyamatosan 1-2 ismétlésen keresztül",
+    "prep_ready_btn": "Kezdés",
+    "prep_countdown_label": "Készüljön fel — a rögzítés {{count}} másodperc múlva kezdődik",
+    "status_capturing": "Végezze el a mozgást most...",
+    "status_analyzing": "Az Ön formáját elemezzük...",
+    "check_failed": "Ellenőrzés sikertelen",
+    "check_failed_msg": "Nem sikerült elemezni az Ön formáját. Kérjük, próbálja újra.",
+    "score_label": "Forma pontszám",
+    "muscles_label": "Megdolgozott izmok",
+    "positives_label": "Amit jól csinál",
+    "corrections_label": "Korrekciók",
+    "cues_label": "Edzői tippek",
+    "safety_label": "Biztonsági figyelmeztetések",
+    "summary_label": "Összegzés",
+    "check_again": "Újra ellenőrzés",
+    "done": "Kész",
+    "no_frames_captured": "Nem sikerült képet rögzíteni. Győződj meg arról, hogy a kamera megfelelően működik, és próbáld újra.",
+    "ready_hint": "Займи a pozíciót, majd koppints a Felvétel indítása gombra, amikor készen állsz",
+    "start_recording": "Felvétel indítása",
+    "stop_recording": "Leállítás és elemzés",
+    "status_recording": "Felvétel folyamatban... {{seconds}}s — koppints a Leállítás gombra, amikor készen állsz"
   }
 }

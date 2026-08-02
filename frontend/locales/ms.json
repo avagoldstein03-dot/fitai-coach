@@ -38,7 +38,16 @@
       "no_account": "Belum ada akaun?",
       "signup_link": "Daftar",
       "error_fill": "Sila isi semua medan",
-      "error_signin": "Gagal daftar masuk. Sila periksa kelayakan anda."
+      "error_signin": "Gagal daftar masuk. Sila periksa kelayakan anda.",
+      "verify_2fa_title": "Pengesahan Dua Faktor",
+      "verify_2fa_subtitle": "Masukkan kod pengesahan anda untuk meneruskan",
+      "verify_2fa_code": "Kod Pengesahan",
+      "verify_2fa_code_placeholder": "123456",
+      "verify_2fa_button": "Sahkan",
+      "back_to_signin": "← Kembali ke log masuk",
+      "error_2fa_unsupported": "Kaedah dua faktor akaun ini belum disokong. Sila hubungi sokongan.",
+      "error_verify_incomplete": "Pengesahan tidak lengkap. Sila cuba semula.",
+      "error_verify": "Pengesahan gagal. Sila cuba semula."
     },
     "signup": {
       "title": "Buat Akaun",
@@ -159,7 +168,10 @@
       "beginner_desc": "Baru memulai perjalanan kecergasan saya",
       "intermediate_desc": "Berlatih konsisten selama 1+ tahun",
       "advanced_desc": "4+ tahun latihan berstruktur",
-      "prompt": "Pilih tahap pengalaman anda"
+      "prompt": "Pilih tahap pengalaman anda",
+      "injury_label": "Adakah anda mengalami kecederaan atau batasan mobiliti?",
+      "injury_placeholder": "cth. lutut kiri yang teruk, sakit belakang bawah — pilihan",
+      "injury_helper": "Pilihan — membantu jurulatih AI anda mengelakkan atau mengubah suai latihan yang mungkin memburukkan keadaan ini."
     },
     "step5": {
       "title": "Pilihan Diet",
@@ -381,7 +393,20 @@
     "privacy_policy": "Dasar Privasi",
     "terms_of_service": "Syarat Perkhidmatan",
     "privacy_policy_sub": "Bagaimana kami menangani data anda",
-    "terms_of_service_sub": "Peraturan untuk menggunakan FitAI Coach"
+    "terms_of_service_sub": "Peraturan untuk menggunakan Active AI Coach",
+    "injury_history": "Kecederaan & Mobiliti",
+    "injury_history_sub": "Membantu jurulatih AI anda mengelakkan atau mengubah suai latihan yang mungkin memburukkan keadaan ini",
+    "injury_placeholder": "cth. lutut kiri yang teruk, sakit belakang bawah",
+    "injury_updated": "Nota kecederaan/mobiliti anda telah dikemaskini.",
+    "error_injury": "Gagal mengemaskini nota kecederaan/mobiliti.",
+    "health_card_title": "Apple Health",
+    "health_card_sub": "Sinkronkan langkah, tidur, tenaga aktif, kadar jantung, dan berat badan dari Apple Health untuk mengurangi pencatatan manual.",
+    "health_connect_button": "Sambungkan Apple Health",
+    "health_last_synced": "Disinkronkan terakhir {{time}}",
+    "health_disconnect_button": "Putuskan Sambungan",
+    "health_disconnect_title": "Putuskan Sambungan Apple Health?",
+    "health_disconnect_msg": "Ini menghentikan aplikasi daripada menyinkronkan data baru, tetapi tidak membatalkan akses Apple Health — anda dapat mengurusnya dalam Tetapan iOS > Kesihatan > Akses Data & Peranti.",
+    "error_health_connect": "Tidak dapat menyambung ke Apple Health. Cuba lagi."
   },
   "notifications": {
     "title": "Pemberitahuan",
@@ -529,7 +554,9 @@
     "error_portal": "Tidak dapat membuka portal pengebilan.",
     "error_portal_open": "Gagal membuka portal pengebilan",
     "manage_apple": "Urus Langganan Apple",
-    "manage_apple_sub": "Lihat atau batalkan langganan anda melalui Apple"
+    "manage_apple_sub": "Lihat atau batalkan langganan anda melalui Apple",
+    "manage_google": "Urus Langganan Google Play",
+    "manage_google_sub": "Lihat atau batalkan langganan anda melalui Google Play"
   },
   "coach": {
     "title": "Jurulatih Anda",
@@ -768,7 +795,8 @@
     "goal_overall_strength": "Membina kekuatan keseluruhan & otot",
     "goal_specific_area": "Membina otot di kawasan tertentu",
     "progress_done": "{{done}}/{{total}} selesai",
-    "exercise_meta": "{{sets}} set × {{reps}} rep · {{rest}}s rehat"
+    "exercise_meta": "{{sets}} set × {{reps}} rep · {{rest}}s rehat",
+    "check_form": "Periksa Bentuk"
   },
   "supplements": {
     "title": "Suplemen",
@@ -1033,7 +1061,15 @@
     "status_scanning": "Perlahan-lahan putar 360°...",
     "status_uploading": "Memuat naik imbasan anda...",
     "status_analyzing": "Menganalisis komposisi badan anda...",
-    "error_pick": "Gagal memilih imej. Sila cuba lagi."
+    "error_pick": "Gagal memilih imej. Sila cuba lagi.",
+    "prep_title": "Sebelum Anda Bermula",
+    "prep_sub": "Kami memerlukan seluruh tubuh anda — dari kepala hingga kaki — dalam bingkai untuk imbasan yang tepat.",
+    "prep_tip_prop": "Sokongkan telefon anda 6–8 kaki jauhnya, skrin menghadap ke arah anda",
+    "prep_tip_height": "Mod potret, diposisikan pada ketinggian dada",
+    "prep_tip_light": "Pencahayaan yang baik, pakaian yang pas di badan",
+    "prep_tip_space": "Pastikan anda mempunyai ruang untuk berpusing satu putaran penuh",
+    "prep_ready_btn": "Saya Sudah Siap",
+    "prep_countdown_label": "Masuk dalam bingkai — imbasan bermula dalam {{count}}s"
   },
   "shopping_list": {
     "clear_title": "Padamkan item yang ditanda?",
@@ -1092,7 +1128,8 @@
     "badge_week_champion": "Juara Minggu",
     "badge_stay_hydrated": "Kekal Terhidrat",
     "badge_body_scan": "Imbasan Badan",
-    "default_name": "Atlet"
+    "default_name": "Atlet",
+    "friends": "Rakan"
   },
   "navigation": {
     "home": "Halaman Utama",
@@ -1130,10 +1167,10 @@
     "subtitle": "Sila baca notis penting ini",
     "agree": "Saya Memahami & Bersetuju",
     "required": "Diperlukan untuk menggunakan Jurulatih FitAI",
-    "body_p1": "FitAI Coach menggunakan AI untuk menghasilkan maklum balas tentang kebugaran, pemakanan, dan komposisi badan berdasarkan foto dan maklumat yang anda berikan.",
+    "body_p1": "Active AI Coach menggunakan AI untuk menghasilkan maklum balas tentang kebugaran, pemakanan, dan komposisi badan berdasarkan foto dan maklumat yang anda berikan.",
     "body_p2": "Kandungan ini dijana oleh AI dan mungkin tidak tepat atau tidak lengkap. Ia bukan nasihat perubatan, pemakanan, atau kebugaran profesional, dan ia bukan pengganti untuk perundingan dengan doktor yang berkelayakan, ahli diet berdaftar, atau jurulatih bersertifikat.",
     "body_p3": "Sentiasa dapatkan nasihat daripada profesional yang berkelayakan sebelum memulakan sebarang program diet atau senaman baharu, terutamanya jika anda mempunyai sebarang keadaan perubatan. Berhenti dengan segera dan dapatkan perhatian perubatan jika anda mengalami kesakitan, pening, atau ketidakselesaan semasa bersenam.",
-    "body_p4": "Dengan melanjutkan, anda mengakui batasan ini dan bersetuju untuk menggunakan FitAI Coach atas risiko anda sendiri."
+    "body_p4": "Dengan melanjutkan, anda mengakui batasan ini dan bersetuju untuk menggunakan Active AI Coach atas risiko anda sendiri."
   },
   "muscle_diagram": {
     "active": "Aktif",
@@ -1154,5 +1191,58 @@
     "meals_tracked": "Makanan dijejaki",
     "cta": "Mulai — Percuma",
     "fine_print": "Hanya 2 minit · Tiada kad kredit diperlukan"
+  },
+  "friends": {
+    "title": "Rakan",
+    "your_code": "Kod Anda",
+    "share_code": "Kongsi Kod",
+    "share_message": "Mari kita saling bertanggungjawab di Active AI Coach! Sambung dengan saya menggunakan kod {{code}}.",
+    "connect_label": "Ada kod rakan?",
+    "code_placeholder": "Masukkan kod",
+    "connect_button": "Sambung",
+    "your_friends": "Rakan Anda",
+    "empty": "Tiada rakan lagi. Kongsikan kod anda atau masukkan kod rakan di atas untuk sambung.",
+    "no_streak": "Tiada giliran aktif",
+    "streak_days": "Giliran {{count}} hari",
+    "no_workouts_yet": "Belum ada latihan",
+    "today": "Berlatih hari ini",
+    "yesterday": "Berlatih semalam",
+    "days_ago": "{{count}} hari yang lalu",
+    "cheer_button": "Sorak 👋",
+    "remove_title": "Buang Rakan",
+    "remove_msg": "Buang {{name}} daripada rakan anda? Ini tidak boleh dibatalkan.",
+    "remove_button": "Buang",
+    "error_connect": "Tidak dapat sambung dengan kod itu. Sila semak dan cuba lagi.",
+    "error_cheer": "Tidak dapat hantar sorak anda. Sila cuba lagi.",
+    "error_remove": "Tidak dapat buang rakan ini. Sila cuba lagi."
+  },
+  "form_check": {
+    "permission_title": "Akses Kamera Diperlukan",
+    "permission_sub": "Izinkan akses kamera untuk memeriksa bentuk latihan Anda.",
+    "grant_permission": "Berikan Akses Kamera",
+    "prep_sub": "Posisikan ponsel Anda agar gerakan penuh Anda terlihat, kemudian lakukan latihan secara perlahan dan berkelanjutan.",
+    "prep_tip_frame": "Dapatkan seluruh tubuh Anda (atau anggota badan yang bekerja) dalam bingkai",
+    "prep_tip_light": "Pencahayaan yang baik membantu AI melihat bentuk Anda dengan jelas",
+    "prep_tip_pace": "Bergeraklah secara perlahan dan berkelanjutan melalui 1-2 pengulangan",
+    "prep_ready_btn": "Mulai",
+    "prep_countdown_label": "Bersiaplah — penangkapan dimulai dalam {{count}}d",
+    "status_capturing": "Lakukan gerakan sekarang...",
+    "status_analyzing": "Menganalisis bentuk Anda...",
+    "check_failed": "Pemeriksaan Gagal",
+    "check_failed_msg": "Gagal menganalisis bentuk Anda. Silakan coba lagi.",
+    "score_label": "Skor Bentuk",
+    "muscles_label": "Otot yang Bekerja",
+    "positives_label": "Yang Anda Lakukan dengan Baik",
+    "corrections_label": "Koreksi",
+    "cues_label": "Petunjuk Pelatihan",
+    "safety_label": "Peringatan Keselamatan",
+    "summary_label": "Ringkasan",
+    "check_again": "Periksa Lagi",
+    "done": "Selesai",
+    "no_frames_captured": "Tiada bingkai yang ditangkap. Pastikan kamera anda berfungsi dan cuba semula.",
+    "ready_hint": "Ambil posisi, kemudian ketuk Mula Rakaman apabila bersedia",
+    "start_recording": "Mula Rakaman",
+    "stop_recording": "Henti & Analisis",
+    "status_recording": "Merakam... {{seconds}}s — ketuk Henti apabila bersedia"
   }
 }

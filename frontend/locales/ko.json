@@ -38,7 +38,16 @@
       "no_account": "계정이 없으신가요?",
       "signup_link": "회원가입",
       "error_fill": "모든 필드를 입력해주세요",
-      "error_signin": "로그인에 실패했습니다. 자격 증명을 확인하세요."
+      "error_signin": "로그인에 실패했습니다. 자격 증명을 확인하세요.",
+      "verify_2fa_title": "2단계 인증",
+      "verify_2fa_subtitle": "계속하려면 인증 코드를 입력하세요",
+      "verify_2fa_code": "인증 코드",
+      "verify_2fa_code_placeholder": "123456",
+      "verify_2fa_button": "인증",
+      "back_to_signin": "← 로그인으로 돌아가기",
+      "error_2fa_unsupported": "이 계정의 2단계 인증 방식은 아직 지원되지 않습니다. 지원팀에 문의하세요.",
+      "error_verify_incomplete": "인증이 완료되지 않았습니다. 다시 시도해주세요.",
+      "error_verify": "인증이 실패했습니다. 다시 시도해주세요."
     },
     "signup": {
       "title": "계정 생성",
@@ -159,7 +168,10 @@
       "beginner_desc": "피트니스 여정을 시작하는 중",
       "intermediate_desc": "1년 이상 꾸준히 훈련 중",
       "advanced_desc": "4년 이상의 체계적인 훈련 경험",
-      "prompt": "경험 수준을 선택하세요"
+      "prompt": "경험 수준을 선택하세요",
+      "injury_label": "부상이나 움직임 제한이 있으신가요?",
+      "injury_placeholder": "예: 왼쪽 무릎 통증, 허리 통증 — 선택사항",
+      "injury_helper": "선택사항 — AI 코치가 이를 악화시킬 수 있는 운동을 피하거나 수정하는 데 도움이 됩니다."
     },
     "step5": {
       "title": "식단 선호도",
@@ -381,7 +393,20 @@
     "privacy_policy": "개인정보처리방침",
     "terms_of_service": "서비스 약관",
     "privacy_policy_sub": "귀하의 데이터를 어떻게 처리하는지",
-    "terms_of_service_sub": "FitAI Coach 사용 규칙"
+    "terms_of_service_sub": "Active AI Coach 사용 규칙",
+    "injury_history": "부상 및 움직임",
+    "injury_history_sub": "AI 코치가 이를 악화시킬 수 있는 운동을 피하거나 수정하는 데 도움이 됩니다",
+    "injury_placeholder": "예: 왼쪽 무릎 통증, 허리 통증",
+    "injury_updated": "부상/움직임 관련 메모가 업데이트되었습니다.",
+    "error_injury": "부상/움직임 메모 업데이트에 실패했습니다.",
+    "health_card_title": "Apple Health",
+    "health_card_sub": "Apple Health에서 걸음 수, 수면, 활동 에너지, 심박수 및 체중을 동기화하여 수동 입력을 줄이세요.",
+    "health_connect_button": "Apple Health 연결",
+    "health_last_synced": "마지막 동기화 {{time}}",
+    "health_disconnect_button": "연결 해제",
+    "health_disconnect_title": "Apple Health 연결을 해제하시겠습니까?",
+    "health_disconnect_msg": "이렇게 하면 앱이 새 데이터 동기화를 중지하지만 Apple Health 접근 권한이 취소되지는 않습니다. iOS 설정 > 건강 > 데이터 접근 및 기기에서 관리할 수 있습니다.",
+    "error_health_connect": "Apple Health에 연결할 수 없습니다. 다시 시도하세요."
   },
   "notifications": {
     "title": "알림",
@@ -529,7 +554,9 @@
     "error_portal": "청구 포털을 열 수 없습니다.",
     "error_portal_open": "청구 포털 열기에 실패했습니다",
     "manage_apple": "Apple 구독 관리",
-    "manage_apple_sub": "Apple을 통해 구독을 확인하거나 취소하세요"
+    "manage_apple_sub": "Apple을 통해 구독을 확인하거나 취소하세요",
+    "manage_google": "Google Play 구독 관리",
+    "manage_google_sub": "Google Play를 통해 구독을 확인하거나 취소하세요"
   },
   "coach": {
     "title": "코치",
@@ -768,7 +795,8 @@
     "goal_overall_strength": "전체적인 근력 및 근육 구축",
     "goal_specific_area": "특정 부위의 근육 구축",
     "progress_done": "{{done}}/{{total}} 완료",
-    "exercise_meta": "{{sets}}세트 × {{reps}}회 · {{rest}}초 휴식"
+    "exercise_meta": "{{sets}}세트 × {{reps}}회 · {{rest}}초 휴식",
+    "check_form": "폼 확인"
   },
   "supplements": {
     "title": "보충제",
@@ -1033,7 +1061,15 @@
     "status_scanning": "천천히 360° 회전 중…",
     "status_uploading": "스캔 업로드 중…",
     "status_analyzing": "신체 구성 분석 중…",
-    "error_pick": "이미지 선택에 실패했습니다. 다시 시도해주세요."
+    "error_pick": "이미지 선택에 실패했습니다. 다시 시도해주세요.",
+    "prep_title": "시작하기 전에",
+    "prep_sub": "정확한 스캔을 위해 머리부터 발끝까지 전신이 화면에 나와야 합니다.",
+    "prep_tip_prop": "휴대폰을 6~8피트 거리에 세우고, 화면이 당신을 향하지 않도록 놓으세요",
+    "prep_tip_height": "세로 방향 모드, 가슴 높이에 맞추세요",
+    "prep_tip_light": "밝은 조명, 몸에 맞는 옷",
+    "prep_tip_space": "한 바퀴 회전할 충분한 공간이 있는지 확인하세요",
+    "prep_ready_btn": "준비 완료",
+    "prep_countdown_label": "화면에 들어가세요 — {{count}}초 후 스캔 시작됩니다"
   },
   "shopping_list": {
     "clear_title": "선택된 항목을 지우시겠습니까?",
@@ -1092,7 +1128,8 @@
     "badge_week_champion": "주간 챔피언",
     "badge_stay_hydrated": "수분 섭취",
     "badge_body_scan": "신체 스캔",
-    "default_name": "선수"
+    "default_name": "선수",
+    "friends": "친구"
   },
   "navigation": {
     "home": "홈",
@@ -1130,10 +1167,10 @@
     "subtitle": "이 중요한 공지를 읽어주세요",
     "agree": "이해하고 동의합니다",
     "required": "FitAI 코치를 사용하려면 필수입니다",
-    "body_p1": "FitAI Coach는 AI를 사용하여 제공된 사진과 정보를 기반으로 피트니스, 영양, 신체 구성 피드백을 생성합니다.",
+    "body_p1": "Active AI Coach는 AI를 사용하여 제공된 사진과 정보를 기반으로 피트니스, 영양, 신체 구성 피드백을 생성합니다.",
     "body_p2": "이 콘텐츠는 AI가 생성한 것으로 부정확하거나 불완전할 수 있습니다. 이는 의료, 영양 또는 전문 피트니스 조언이 아니며, 자격 있는 의사, 등록된 영양사 또는 공인 트레이너와의 상담을 대신할 수 없습니다.",
     "body_p3": "새로운 식단이나 운동 프로그램을 시작하기 전에 항상 자격 있는 전문가와 상담하세요. 특히 의료 조건이 있는 경우에는 더욱 그렇습니다. 운동 중 통증, 어지러움 또는 불편함을 느끼면 즉시 중단하고 의료 지원을 받으세요.",
-    "body_p4": "계속 진행하면 이러한 제한사항을 인정하고 FitAI Coach를 본인의 책임 하에 사용하기로 동의합니다."
+    "body_p4": "계속 진행하면 이러한 제한사항을 인정하고 Active AI Coach를 본인의 책임 하에 사용하기로 동의합니다."
   },
   "muscle_diagram": {
     "active": "활성",
@@ -1154,5 +1191,58 @@
     "meals_tracked": "기록된 식사",
     "cta": "시작하기 — 무료",
     "fine_print": "2분 소요 · 신용카드 불필요"
+  },
+  "friends": {
+    "title": "친구",
+    "your_code": "내 코드",
+    "share_code": "코드 공유",
+    "share_message": "Active AI Coach에서 함께 책임감 있게 운동해요! 코드 {{code}}로 저와 연결하세요.",
+    "connect_label": "친구의 코드가 있으신가요?",
+    "code_placeholder": "코드 입력",
+    "connect_button": "연결",
+    "your_friends": "내 친구",
+    "empty": "아직 친구가 없습니다. 위에서 내 코드를 공유하거나 친구의 코드를 입력하여 연결하세요.",
+    "no_streak": "활성 연속 기록 없음",
+    "streak_days": "{{count}}일 연속",
+    "no_workouts_yet": "아직 운동 기록 없음",
+    "today": "오늘 운동했습니다",
+    "yesterday": "어제 운동했습니다",
+    "days_ago": "{{count}}일 전",
+    "cheer_button": "응원하기 👋",
+    "remove_title": "친구 삭제",
+    "remove_msg": "{{name}}을(를) 친구 목록에서 삭제하시겠습니까? 이 작업은 취소할 수 없습니다.",
+    "remove_button": "삭제",
+    "error_connect": "해당 코드로 연결할 수 없습니다. 코드를 확인하고 다시 시도해주세요.",
+    "error_cheer": "응원을 보낼 수 없습니다. 다시 시도해주세요.",
+    "error_remove": "이 친구를 삭제할 수 없습니다. 다시 시도해주세요."
+  },
+  "form_check": {
+    "permission_title": "카메라 접근 필요",
+    "permission_sub": "운동 폼을 확인하기 위해 카메라 접근을 허용하세요.",
+    "grant_permission": "카메라 접근 허용",
+    "prep_sub": "전체 동작이 보이도록 휴대폰을 위치시킨 후, 천천히 그리고 연속으로 운동을 수행하세요.",
+    "prep_tip_frame": "전신(또는 운동하는 부위)이 화면에 보이도록 하세요",
+    "prep_tip_light": "좋은 조명은 AI가 당신의 폼을 명확히 볼 수 있도록 도와줍니다",
+    "prep_tip_pace": "1-2회 반복을 천천히 그리고 연속으로 움직이세요",
+    "prep_ready_btn": "시작",
+    "prep_countdown_label": "준비하세요 — 촬영이 {{count}}초 후 시작됩니다",
+    "status_capturing": "이제 동작을 수행하세요...",
+    "status_analyzing": "당신의 폼을 분석 중입니다...",
+    "check_failed": "확인 실패",
+    "check_failed_msg": "당신의 폼을 분석하지 못했습니다. 다시 시도해주세요.",
+    "score_label": "폼 점수",
+    "muscles_label": "운동한 근육",
+    "positives_label": "잘하고 있는 부분",
+    "corrections_label": "개선 사항",
+    "cues_label": "코칭 팁",
+    "safety_label": "안전 경고",
+    "summary_label": "요약",
+    "check_again": "다시 확인",
+    "done": "완료",
+    "no_frames_captured": "캡처된 프레임이 없습니다. 카메라가 정상 작동하는지 확인하고 다시 시도하세요.",
+    "ready_hint": "준비 자세를 취한 후 준비가 되면 녹화 시작을 탭하세요",
+    "start_recording": "녹화 시작",
+    "stop_recording": "중지 및 분석",
+    "status_recording": "녹화 중... {{seconds}}초 — 준비가 되면 중지를 탭하세요"
   }
 }

@@ -38,7 +38,16 @@
       "no_account": "Eikö sinulla ole tiliä?",
       "signup_link": "Rekisteröidy",
       "error_fill": "Täytä kaikki kentät",
-      "error_signin": "Kirjautuminen epäonnistui. Tarkista tunnuksesi."
+      "error_signin": "Kirjautuminen epäonnistui. Tarkista tunnuksesi.",
+      "verify_2fa_title": "Kaksivaiheinen vahvistus",
+      "verify_2fa_subtitle": "Syötä vahvistuskoodi jatkaaksesi",
+      "verify_2fa_code": "Vahvistuskoodi",
+      "verify_2fa_code_placeholder": "123456",
+      "verify_2fa_button": "Vahvista",
+      "back_to_signin": "← Takaisin kirjautumiseen",
+      "error_2fa_unsupported": "Tämän tilin kaksivaiheinen menetelmä ei ole vielä tuettu. Ota yhteyttä tukeen.",
+      "error_verify_incomplete": "Vahvistus on keskeneräinen. Yritä uudelleen.",
+      "error_verify": "Vahvistus epäonnistui. Yritä uudelleen."
     },
     "signup": {
       "title": "Luo tili",
@@ -159,7 +168,10 @@
       "beginner_desc": "Aloitan juuri kuntoiluharjoittelun",
       "intermediate_desc": "Harjoitellut säännöllisesti 1+ vuotta",
       "advanced_desc": "4+ vuotta strukturoidusta harjoittelusta",
-      "prompt": "Valitse kokemuksesi taso"
+      "prompt": "Valitse kokemuksesi taso",
+      "injury_label": "Onko sinulla loukkaantumisia tai liikkuvuusrajoituksia?",
+      "injury_placeholder": "esim. huono vasen polvi, alaselkäkipu — valinnainen",
+      "injury_helper": "Valinnainen — auttaa AI-valmentajaasi välttämään tai muokkaamaan liikkeitä, jotka voivat pahentaa tilannetta."
     },
     "step5": {
       "title": "Ruokavalion mieltymykset",
@@ -381,7 +393,20 @@
     "privacy_policy": "Tietosuojakäytäntö",
     "terms_of_service": "Käyttöehdot",
     "privacy_policy_sub": "Kuinka käsittelemme tietojasi",
-    "terms_of_service_sub": "Säännöt FitAI Coachin käyttöön"
+    "terms_of_service_sub": "Säännöt Active AI Coachin käyttöön",
+    "injury_history": "Loukkaantumiset ja liikkuvuus",
+    "injury_history_sub": "Auttaa AI-valmentajaasi välttämään tai muokkaamaan liikkeitä, jotka voivat pahentaa tilannetta",
+    "injury_placeholder": "esim. huono vasen polvi, alaselkäkipu",
+    "injury_updated": "Loukkaantumis- ja liikkuvuusmuistiinpanosi on päivitetty.",
+    "error_injury": "Loukkaantumis- ja liikkuvuusmuistiinpanojen päivittäminen epäonnistui.",
+    "health_card_title": "Apple Health",
+    "health_card_sub": "Synkronoi askelet, uni, aktiivinen energia, sydämen syke ja paino Apple Healthista vähentääksesi manuaalista kirjaamista.",
+    "health_connect_button": "Yhdistä Apple Health",
+    "health_last_synced": "Viimeksi synkronoitu {{time}}",
+    "health_disconnect_button": "Katkaise yhteys",
+    "health_disconnect_title": "Katkaise Apple Healthin yhteys?",
+    "health_disconnect_msg": "Tämä lopettaa sovelluksen uusien tietojen synkronoinnin, mutta ei poista Apple Health -käyttöoikeutta — voit hallita sitä iOS-asetuksissa > Terveydentiedot > Tietojen käyttöoikeus ja laitteet.",
+    "error_health_connect": "Apple Healthiin yhdistäminen epäonnistui. Yritä uudelleen."
   },
   "notifications": {
     "title": "Ilmoitukset",
@@ -529,7 +554,9 @@
     "error_portal": "Laskutusportaalin avaaminen epäonnistui.",
     "error_portal_open": "Laskutusportaalin avaaminen epäonnistui",
     "manage_apple": "Hallitse Apple-tilausta",
-    "manage_apple_sub": "Tarkastele tai peruuta tilauksesi Applen kautta"
+    "manage_apple_sub": "Tarkastele tai peruuta tilauksesi Applen kautta",
+    "manage_google": "Hallitse Google Play -tilausta",
+    "manage_google_sub": "Tarkastele tai peruuta tilauksesi Google Play -kaupassa"
   },
   "coach": {
     "title": "Valmentajasi",
@@ -768,7 +795,8 @@
     "goal_overall_strength": "Rakenna kokonaisvaltaista voimaa ja lihasta",
     "goal_specific_area": "Rakenna lihasta tiettyyn alueeseen",
     "progress_done": "{{done}}/{{total}} valmis",
-    "exercise_meta": "{{sets}} sarjaa × {{reps}} toistoa · {{rest}}s lepo"
+    "exercise_meta": "{{sets}} sarjaa × {{reps}} toistoa · {{rest}}s lepo",
+    "check_form": "Tarkista muoto"
   },
   "supplements": {
     "title": "Ravintolisät",
@@ -1033,7 +1061,15 @@
     "status_scanning": "Käänny hitaasti 360°...",
     "status_uploading": "Ladataan skanniaasi...",
     "status_analyzing": "Analysoidaan kehon koostumustasi...",
-    "error_pick": "Kuvan valitseminen epäonnistui. Yritä uudelleen."
+    "error_pick": "Kuvan valitseminen epäonnistui. Yritä uudelleen.",
+    "prep_title": "Ennen kuin aloitat",
+    "prep_sub": "Tarvitsemme koko ruumiistasi — päästä jalkoihin — näkyvissä tarkkaa skannausta varten.",
+    "prep_tip_prop": "Aseta puhelimesi 6–8 jalkaa etäisyydelle, näyttö poispäin sinusta",
+    "prep_tip_height": "Pystysuunta, asetettu rinnankorkeuteen",
+    "prep_tip_light": "Hyvä valaistus, muotoon istuvat vaatteet",
+    "prep_tip_space": "Varmista, että sinulla on tilaa kääntyä täydellä ympyrällä",
+    "prep_ready_btn": "Olen valmis",
+    "prep_countdown_label": "Siirry kehykseen — skannaus alkaa {{count}}s päästä"
   },
   "shopping_list": {
     "clear_title": "Tyhjennä merkityt kohteet?",
@@ -1092,7 +1128,8 @@
     "badge_week_champion": "Viikon mestari",
     "badge_stay_hydrated": "Pysyä hydratoituna",
     "badge_body_scan": "Kehoskanni",
-    "default_name": "Urheilija"
+    "default_name": "Urheilija",
+    "friends": "Ystävät"
   },
   "navigation": {
     "home": "Koti",
@@ -1129,11 +1166,11 @@
     "title": "Ennen kuin jatkat",
     "subtitle": "Lue tämä tärkeä ilmoitus",
     "agree": "Ymmärrän ja hyväksyn",
-    "required": "Vaaditaan FitAI Coachin käyttöön",
-    "body_p1": "FitAI Coach käyttää tekoälyä tuottaakseen kunto-, ravitsemus- ja kehonkoostumuspalautetta sinulle toimittamiesi kuvien ja tietojen perusteella.",
+    "required": "Vaaditaan Active AI Coachin käyttöön",
+    "body_p1": "Active AI Coach käyttää tekoälyä tuottaakseen kunto-, ravitsemus- ja kehonkoostumuspalautetta sinulle toimittamiesi kuvien ja tietojen perusteella.",
     "body_p2": "Tämä sisältö on tekoälyn tuottamaa ja voi olla epätarkkaa tai puutteellista. Se ei ole lääketieteellistä, ravitsemusneuvontaa tai ammattimaista kuntoliikuntaneuvontaa, eikä se korvaa pätevän lääkärin, rekisteröidyn ravitsemusterapeutin tai sertifioidun valmentajan neuvontaa.",
     "body_p3": "Konsultoi aina pätevää ammattilaista ennen kuin aloitat uuden ruokavalion tai liikuntaohjelman, erityisesti jos sinulla on terveysongelmia. Lopeta välittömästi ja hae sairaanhoidollista apua, jos koet kipua, huimausta tai epämukavuutta liikuntaa harjoittaessa.",
-    "body_p4": "Jatkamalla tunnustat nämä rajoitukset ja hyväksyt FitAI Coachin käytön omalla vastuullasi."
+    "body_p4": "Jatkamalla tunnustat nämä rajoitukset ja hyväksyt Active AI Coachin käytön omalla vastuullasi."
   },
   "muscle_diagram": {
     "active": "Aktiivinen",
@@ -1154,5 +1191,58 @@
     "meals_tracked": "Kirjattuja aterioita",
     "cta": "Aloita — ilmainen",
     "fine_print": "Kestää 2 minuuttia · Luottokorttia ei vaadita"
+  },
+  "friends": {
+    "title": "Ystävät",
+    "your_code": "Sinun koodi",
+    "share_code": "Jaa koodi",
+    "share_message": "Pidetään toisistamme huolta Active AI Coachilla! Muodosta yhteys kanssani koodilla {{code}}.",
+    "connect_label": "Onko sinulla ystävän koodi?",
+    "code_placeholder": "Syötä koodi",
+    "connect_button": "Muodosta yhteys",
+    "your_friends": "Sinun ystäväsi",
+    "empty": "Ei vielä ystäviä. Jaa koditasi tai syötä ystävän koodi muodostaaksesi yhteyden.",
+    "no_streak": "Ei aktiivista sarjaa",
+    "streak_days": "{{count}} päivän sarja",
+    "no_workouts_yet": "Ei vielä harjoituksia",
+    "today": "Harjoitteli tänään",
+    "yesterday": "Harjoitteli eilen",
+    "days_ago": "{{count}} päivää sitten",
+    "cheer_button": "Kannusta 👋",
+    "remove_title": "Poista ystävä",
+    "remove_msg": "Poistetaanko {{name}} ystävistäsi? Tätä ei voi kumota.",
+    "remove_button": "Poista",
+    "error_connect": "Ei voitu muodostaa yhteyttä tuolla koodilla. Tarkista se ja yritä uudelleen.",
+    "error_cheer": "Kannustusta ei voitu lähettää. Yritä uudelleen.",
+    "error_remove": "Tätä ystävää ei voitu poistaa. Yritä uudelleen."
+  },
+  "form_check": {
+    "permission_title": "Kameran käyttöoikeus vaaditaan",
+    "permission_sub": "Salli kameran käyttöoikeus harjoitusmuodon tarkistamiseksi.",
+    "grant_permission": "Myönnä kameran käyttöoikeus",
+    "prep_sub": "Aseta puhelimesi niin, että koko liikkeesi on näkyvillä, ja suorita harjoitus hitaasti ja jatkuvasti.",
+    "prep_tip_frame": "Saa koko keho (tai työskentely-raaja) kehykseen",
+    "prep_tip_light": "Hyvä valaistus auttaa tekoälyä näkemään muodon selvästi",
+    "prep_tip_pace": "Liiku hitaasti ja jatkuvasti 1-2 toiston ajan",
+    "prep_ready_btn": "Aloita",
+    "prep_countdown_label": "Valmistaudu — kappaus alkaa {{count}}s kuluttua",
+    "status_capturing": "Suorita liike nyt...",
+    "status_analyzing": "Analysoidaan muotoasi...",
+    "check_failed": "Tarkistus epäonnistui",
+    "check_failed_msg": "Muodon analysointi epäonnistui. Yritä uudelleen.",
+    "score_label": "Muotopisteet",
+    "muscles_label": "Työskentelevät lihakset",
+    "positives_label": "Mitä teet hyvin",
+    "corrections_label": "Korjaukset",
+    "cues_label": "Valmentajan vinkit",
+    "safety_label": "Turvallisuusvaroitukset",
+    "summary_label": "Yhteenveto",
+    "check_again": "Tarkista uudelleen",
+    "done": "Valmis",
+    "no_frames_captured": "Kehyksiä ei tallennettu. Varmista, että kamera toimii, ja yritä uudelleen.",
+    "ready_hint": "Siirry asemaan ja napauta Aloita tallennus kun olet valmis",
+    "start_recording": "Aloita tallennus",
+    "stop_recording": "Pysäytä ja analysoi",
+    "status_recording": "Tallennetaan... {{seconds}}s — napauta Pysäytä kun olet valmis"
   }
 }

@@ -38,7 +38,16 @@
       "no_account": "Nemaš račun?",
       "signup_link": "Registriraj se",
       "error_fill": "Molim te popuni sva polja",
-      "error_signin": "Prijava nije uspjela. Provjeri svoje podatke."
+      "error_signin": "Prijava nije uspjela. Provjeri svoje podatke.",
+      "verify_2fa_title": "Provjera Dvofaktorske Autentifikacije",
+      "verify_2fa_subtitle": "Unesite svoj kod provjere za nastavak",
+      "verify_2fa_code": "Kod Provjere",
+      "verify_2fa_code_placeholder": "123456",
+      "verify_2fa_button": "Provjeri",
+      "back_to_signin": "← Natrag na prijavu",
+      "error_2fa_unsupported": "Metoda dvofaktorske autentifikacije ovog računa još nije podržana. Molimo kontaktirajte podršku.",
+      "error_verify_incomplete": "Provjera nije dovršena. Molimo pokušajte ponovno.",
+      "error_verify": "Provjera nije uspjela. Molimo pokušajte ponovno."
     },
     "signup": {
       "title": "Kreiraj račun",
@@ -159,7 +168,10 @@
       "beginner_desc": "Tek počinjem svoju fitness avanturu",
       "intermediate_desc": "Treniram konzistentno 1+ godinu",
       "advanced_desc": "4+ godine strukturiranog treninga",
-      "prompt": "Odaberi svoju razinu iskustva"
+      "prompt": "Odaberi svoju razinu iskustva",
+      "injury_label": "Imate li kakvih ozljeda ili ograničenja mobilnosti?",
+      "injury_placeholder": "npr. loše lijevo koljeno, bol u donjem dijelu leđa — opcionalno",
+      "injury_helper": "Opcionalno — pomaže vašem AI treneru da izbjegne ili prilagodi vježbe koje bi mogле pogoršati stanje."
     },
     "step5": {
       "title": "Preferencije u prehrani",
@@ -381,7 +393,20 @@
     "privacy_policy": "Politika privatnosti",
     "terms_of_service": "Uvjeti korištenja",
     "privacy_policy_sub": "Kako postupamo s vašim podacima",
-    "terms_of_service_sub": "Pravila korištenja FitAI Coach-a"
+    "terms_of_service_sub": "Pravila korištenja Active AI Coach-a",
+    "injury_history": "Ozljede i mobilnost",
+    "injury_history_sub": "Pomaže vašem AI treneru da izbjegne ili prilagodi vježbe koje bi mogle pogoršati stanje",
+    "injury_placeholder": "npr. loše lijevo koljeno, bol u donjem dijelu leđa",
+    "injury_updated": "Vaše bilješke o ozljedama/mobilnosti su ažurirane.",
+    "error_injury": "Neuspješno ažuriranje bilješki o ozljedama/mobilnosti.",
+    "health_card_title": "Apple Health",
+    "health_card_sub": "Sinkronizirajte korake, spavanje, aktivnu energiju, brzinu pulsa i težinu iz Apple Healtha kako biste smanjili ručno bilježenje.",
+    "health_connect_button": "Povežite Apple Health",
+    "health_last_synced": "Posljednja sinkronizacija {{time}}",
+    "health_disconnect_button": "Odspoji",
+    "health_disconnect_title": "Odspojiti Apple Health?",
+    "health_disconnect_msg": "Ovo zaustavlja sinkronizaciju novih podataka, ali ne opoziva pristup Apple Healthu — možete to upravljati u iOS Postavkama > Zdravlje > Pristup podacima i uređajima.",
+    "error_health_connect": "Nije moguće povezati se s Apple Healthom. Pokušajte ponovno."
   },
   "notifications": {
     "title": "Obavijesti",
@@ -529,7 +554,9 @@
     "error_portal": "Nije moguće otvoriti portal za naplatu.",
     "error_portal_open": "Otvaranje portala za naplatu nije uspjelo",
     "manage_apple": "Upravljanje Apple pretplatom",
-    "manage_apple_sub": "Pregledajte ili otvorite svoju pretplatu putem Apple-a"
+    "manage_apple_sub": "Pregledajte ili otvorite svoju pretplatu putem Apple-a",
+    "manage_google": "Upravljanje Google Play pretplatom",
+    "manage_google_sub": "Pregledajte ili otvorite svoju pretplatu putem Google Playa"
   },
   "coach": {
     "title": "Tvoj trener",
@@ -768,7 +795,8 @@
     "goal_overall_strength": "Gradi ukupnu snagu i mišiće",
     "goal_specific_area": "Gradi mišiće u određenom području",
     "progress_done": "{{done}}/{{total}} gotovo",
-    "exercise_meta": "{{sets}} setova × {{reps}} ponavljanja · {{rest}}s odmora"
+    "exercise_meta": "{{sets}} setova × {{reps}} ponavljanja · {{rest}}s odmora",
+    "check_form": "Provjeri Tehniku"
   },
   "supplements": {
     "title": "Suplementi",
@@ -1033,7 +1061,15 @@
     "status_scanning": "Polako se okreni 360°...",
     "status_uploading": "Učitavanje tvog skena...",
     "status_analyzing": "Analiza tvoje tjelesne kompozicije...",
-    "error_pick": "Odabir slike nije uspio. Pokušaj ponovno."
+    "error_pick": "Odabir slike nije uspio. Pokušaj ponovno.",
+    "prep_title": "Prije nego što počnete",
+    "prep_sub": "Trebamo vaše cijelo tijelo — od glave do nogu — u kadru za točan rezultat skeniranja.",
+    "prep_tip_prop": "Postavite telefon na 6–8 feet udaljenosti, ekran okrenut od vas",
+    "prep_tip_height": "Portretni način, postavljen na razini prsiju",
+    "prep_tip_light": "Dobra rasvjeta, prilegajuća odjeća",
+    "prep_tip_space": "Pazite da imate dovoljno mjesta da se okrenete cijeli krug",
+    "prep_ready_btn": "Spreman/sprema sam",
+    "prep_countdown_label": "Stanite u kadar — skeniranje počinje za {{count}}s"
   },
   "shopping_list": {
     "clear_title": "Očisti označene stavke?",
@@ -1092,7 +1128,8 @@
     "badge_week_champion": "Tjedan šampion",
     "badge_stay_hydrated": "Ostani hidratiziran",
     "badge_body_scan": "Body Scan",
-    "default_name": "Sportaš"
+    "default_name": "Sportaš",
+    "friends": "Prijatelji"
   },
   "navigation": {
     "home": "Početna",
@@ -1129,11 +1166,11 @@
     "title": "Prije nego što nastaviš",
     "subtitle": "Molimo pročitaj ovu važnu obavijest",
     "agree": "Razumijem i slažem se",
-    "required": "Obavezno za korištenje FitAI Coacha",
-    "body_p1": "FitAI Coach koristi AI za generiranje povratnih informacija o fitnessу, nutritivnim savjetima i sastavu tijela na temelju fotografija i informacija koje ste dali.",
+    "required": "Obavezno za korištenje Active AI Coacha",
+    "body_p1": "Active AI Coach koristi AI za generiranje povratnih informacija o fitnessу, nutritivnim savjetima i sastavu tijela na temelju fotografija i informacija koje ste dali.",
     "body_p2": "Ovaj sadržaj je generiран AI-om i može biti netočan ili nepotpun. Nije medicinski, nutritivni ili profesionalni fitness savjet, niti zamjena za konzultaciju s kvalificiranim liječnikom, registriranim nutricionistom ili certificiranim trenerom.",
     "body_p3": "Prije nego što započnete novu dijetu ili program vježbanja, uvijek se konzultirajte s kvalificiranim stručnjakom, posebno ako imate zdravstvenih problema. Odmah prestanite i potražite medicinske savjete ako osjetite bol, vrtoglavicu ili nelagodu tijekom vježbanja.",
-    "body_p4": "Nastavljanjem potvrđujete ova ograničenja i slažete se da koristite FitAI Coach na vlastiti rizik."
+    "body_p4": "Nastavljanjem potvrđujete ova ograničenja i slažete se da koristite Active AI Coach na vlastiti rizik."
   },
   "muscle_diagram": {
     "active": "Aktivne",
@@ -1154,5 +1191,58 @@
     "meals_tracked": "Obroka bilježenih",
     "cta": "Započni — besplatno",
     "fine_print": "Traje 2 minute · Nije potrebna kreditna kartica"
+  },
+  "friends": {
+    "title": "Prijatelji",
+    "your_code": "Vaš kod",
+    "share_code": "Dijelite kod",
+    "share_message": "Hajde da budemo odgovorni jedni drugima na Active AI Coach! Povežite se sa mnom koristeći kod {{code}}.",
+    "connect_label": "Imate kod prijatelja?",
+    "code_placeholder": "Unesite kod",
+    "connect_button": "Povežite se",
+    "your_friends": "Vaši prijatelji",
+    "empty": "Nema prijatelja. Podijelite svoj kod ili unesite kod prijatelja iznad da se povežete.",
+    "no_streak": "Nema aktivnog niza",
+    "streak_days": "{{count}} dan niza",
+    "no_workouts_yet": "Nema treninga",
+    "today": "Trenirao danas",
+    "yesterday": "Trenirao jučer",
+    "days_ago": "{{count}} dana",
+    "cheer_button": "Uzvici 👋",
+    "remove_title": "Uklonite prijatelja",
+    "remove_msg": "Ukloniti {{name}} iz vaših prijatelja? Ovo se ne može vratiti.",
+    "remove_button": "Uklonite",
+    "error_connect": "Nije se moglo povežati s tim kodom. Molimo provjerite ga i pokušajte ponovno.",
+    "error_cheer": "Nije se mogao poslati vaš uzvika. Molimo pokušajte ponovno.",
+    "error_remove": "Nije se mogao ukloniti ovaj prijatelj. Molimo pokušajte ponovno."
+  },
+  "form_check": {
+    "permission_title": "Potreban Pristup Kameri",
+    "permission_sub": "Dozvoli pristup kameri kako bi provjerio tehniku izvođenja vježbe.",
+    "grant_permission": "Odobri Pristup Kameri",
+    "prep_sub": "Postavi telefon tako da je vidljiv cijeli pokret, zatim vježbu izvršavaj polako i kontinuirano.",
+    "prep_tip_frame": "Cijelo tijelo (ili aktivnu ekstremitetu) postavi u kadru",
+    "prep_tip_light": "Dobro osvjetljenje pomaže AI-u da jasno vidi tvoju tehniku",
+    "prep_tip_pace": "Kreni polako i kontinuirano kroz 1-2 ponavljanja",
+    "prep_ready_btn": "Počni",
+    "prep_countdown_label": "Spremi se — snimanje počinje za {{count}}s",
+    "status_capturing": "Sada izvršavaj pokret...",
+    "status_analyzing": "Analiziram tvoju tehniku...",
+    "check_failed": "Provjera Neuspješna",
+    "check_failed_msg": "Nije moguće analizirati tvoju tehniku. Molimo pokušaj ponovno.",
+    "score_label": "Ocjena Tehnike",
+    "muscles_label": "Aktivirani Mišići",
+    "positives_label": "Što Radiš Dobro",
+    "corrections_label": "Ispravljanja",
+    "cues_label": "Savjeti za Treniranje",
+    "safety_label": "Upozorenja o Sigurnosti",
+    "summary_label": "Sažetak",
+    "check_again": "Provjeri Ponovno",
+    "done": "Gotovo",
+    "no_frames_captured": "Nije snimljen nijedan okvir. Provjerite je li kamera aktivna i pokušajte ponovno.",
+    "ready_hint": "Postavite se u poziciju, zatim dodirnite Započni snimanje kada ste spremni",
+    "start_recording": "Započni snimanje",
+    "stop_recording": "Zaustavi i analiziraj",
+    "status_recording": "Snimanje u tijeku... {{seconds}}s — dodirnite Zaustavi kada ste spremni"
   }
 }

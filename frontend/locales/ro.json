@@ -38,7 +38,16 @@
       "no_account": "Nu ai cont?",
       "signup_link": "Inregistrare",
       "error_fill": "Te rog completeaza toate campurile",
-      "error_signin": "Conectarea a esuat. Te rog verifica datele de conectare."
+      "error_signin": "Conectarea a esuat. Te rog verifica datele de conectare.",
+      "verify_2fa_title": "Verificare în Doi Pași",
+      "verify_2fa_subtitle": "Introduceți codul de verificare pentru a continua",
+      "verify_2fa_code": "Cod de Verificare",
+      "verify_2fa_code_placeholder": "123456",
+      "verify_2fa_button": "Verificare",
+      "back_to_signin": "← Înapoi la conectare",
+      "error_2fa_unsupported": "Metoda de autentificare în doi pași a acestui cont nu este încă suportată. Vă rugăm să contactați echipa de suport.",
+      "error_verify_incomplete": "Verificarea incompletă. Vă rugăm să încercați din nou.",
+      "error_verify": "Verificarea a eșuat. Vă rugăm să încercați din nou."
     },
     "signup": {
       "title": "Creeaza Cont",
@@ -159,7 +168,10 @@
       "beginner_desc": "Tocmai îmi încep călătoria fitness",
       "intermediate_desc": "Antrenez constant de 1+ ani",
       "advanced_desc": "4+ ani de antrenament structurat",
-      "prompt": "Selectează-ți nivelul de experiență"
+      "prompt": "Selectează-ți nivelul de experiență",
+      "injury_label": "Avezi vreo vânătăi sau limitări de mobilitate?",
+      "injury_placeholder": "ex. genunchi stâng slab, dureri de spate — opțional",
+      "injury_helper": "Opțional — ajută antrenorul tău AI să evite sau să modifice exercițiile care ar putea agrava aceasta."
     },
     "step5": {
       "title": "Preferinte Alimentare",
@@ -381,7 +393,20 @@
     "privacy_policy": "Politica de Confidențialitate",
     "terms_of_service": "Termenii de Utilizare",
     "privacy_policy_sub": "Cum ne protejăm datele dvs.",
-    "terms_of_service_sub": "Reguli pentru utilizarea FitAI Coach"
+    "terms_of_service_sub": "Reguli pentru utilizarea Active AI Coach",
+    "injury_history": "Vânătăi și mobilitate",
+    "injury_history_sub": "Ajută antrenorul tău AI să evite sau să modifice exercițiile care ar putea agrava aceasta",
+    "injury_placeholder": "ex. genunchi stâng slab, dureri de spate",
+    "injury_updated": "Notele tale despre vânătăi/mobilitate au fost actualizate.",
+    "error_injury": "Actualizarea notelor despre vânătăi/mobilitate a eșuat.",
+    "health_card_title": "Apple Health",
+    "health_card_sub": "Sincronizează pașii, somnul, energia activă, rata inimii și greutatea din Apple Health pentru a reduce înregistrarea manuală.",
+    "health_connect_button": "Conectează Apple Health",
+    "health_last_synced": "Ultima sincronizare {{time}}",
+    "health_disconnect_button": "Deconectează",
+    "health_disconnect_title": "Deconectezi Apple Health?",
+    "health_disconnect_msg": "Aceasta oprește sincronizarea datelor noi în aplicație, dar nu revocă accesul la Apple Health — poți gestiona asta în Setări iOS > Sănătate > Acces la date și dispozitive.",
+    "error_health_connect": "Nu s-a putut conecta la Apple Health. Încearcă din nou."
   },
   "notifications": {
     "title": "Notificari",
@@ -529,7 +554,9 @@
     "error_portal": "Nu s-a putut deschide portalul de facturare.",
     "error_portal_open": "Nu s-a putut deschide portalul de facturare",
     "manage_apple": "Gestionați Abonamentul Apple",
-    "manage_apple_sub": "Vizualizați sau anulați abonamentul prin Apple"
+    "manage_apple_sub": "Vizualizați sau anulați abonamentul prin Apple",
+    "manage_google": "Gestionează abonamentul Google Play",
+    "manage_google_sub": "Vizualizează sau anulează abonamentul tău prin Google Play"
   },
   "coach": {
     "title": "Antrenorul",
@@ -768,7 +795,8 @@
     "goal_overall_strength": "Construiește putere și masă musculară generală",
     "goal_specific_area": "Construiește masă musculară într-o anumită zonă",
     "progress_done": "{{done}}/{{total}} făcut",
-    "exercise_meta": "{{sets}} seturi × {{reps}} repetiții · {{rest}}s odihnă"
+    "exercise_meta": "{{sets}} seturi × {{reps}} repetiții · {{rest}}s odihnă",
+    "check_form": "Verifică Forma"
   },
   "supplements": {
     "title": "Suplimente",
@@ -1033,7 +1061,15 @@
     "status_scanning": "Întoarce-te încet 360°...",
     "status_uploading": "Se încarcă scanarea...",
     "status_analyzing": "Se analizează compoziția corpului...",
-    "error_pick": "Nu s-a putut selecta imaginea. Te rugăm încearcă din nou."
+    "error_pick": "Nu s-a putut selecta imaginea. Te rugăm încearcă din nou.",
+    "prep_title": "Înainte să începi",
+    "prep_sub": "Avem nevoie de întregul tău corp — de la cap la picioare — în cadru pentru o scanare precisă.",
+    "prep_tip_prop": "Sprijină telefonul la 6–8 picioare distanță, ecranul cu fața în cealaltă parte",
+    "prep_tip_height": "Mod portret, pozitionat la înălțimea pieptului",
+    "prep_tip_light": "Iluminare bună, îmbrăcăminte ajustată",
+    "prep_tip_space": "Asigură-te că ai spațiu pentru a te întoarce într-un cerc complet",
+    "prep_ready_btn": "Sunt gata",
+    "prep_countdown_label": "Intră în cadru — scanarea începe în {{count}}s"
   },
   "shopping_list": {
     "clear_title": "Sterge articolele bifate?",
@@ -1092,7 +1128,8 @@
     "badge_week_champion": "Campion al săptămânii",
     "badge_stay_hydrated": "Rămâi hidratat",
     "badge_body_scan": "Body Scan",
-    "default_name": "Atlet"
+    "default_name": "Atlet",
+    "friends": "Prieteni"
   },
   "navigation": {
     "home": "Acasă",
@@ -1129,11 +1166,11 @@
     "title": "Înainte să continui",
     "subtitle": "Te rugăm citește această notificare importantă",
     "agree": "Înțeleg și sunt de acord",
-    "required": "Necesar pentru a folosi FitAI Coach",
-    "body_p1": "FitAI Coach utilizează AI pentru a genera feedback despre fitness, nutriție și compoziția corporală pe baza fotografiilor și informațiilor pe care le furnizați.",
+    "required": "Necesar pentru a folosi Active AI Coach",
+    "body_p1": "Active AI Coach utilizează AI pentru a genera feedback despre fitness, nutriție și compoziția corporală pe baza fotografiilor și informațiilor pe care le furnizați.",
     "body_p2": "Acest conținut este generat de AI și poate fi inexact sau incomplet. Nu constituie sfaturi medicale, nutriționale sau profesionale de fitness și nu înlocuiește consultația cu un medic calificat, dietetician înregistrat sau antrenor certificat.",
     "body_p3": "Întotdeauna consultați un profesionist calificat înainte de a începe orice nouă diană sau program de exerciții, mai ales dacă aveți condiții medicale. Opriți imediat și solicitați asistență medicală dacă resimțiți durere, ameață sau disconfort în timpul exercițiului.",
-    "body_p4": "Continuând, recunoașteți aceste limitări și acceptați să utilizați FitAI Coach pe propria răspundere."
+    "body_p4": "Continuând, recunoașteți aceste limitări și acceptați să utilizați Active AI Coach pe propria răspundere."
   },
   "muscle_diagram": {
     "active": "Activ",
@@ -1154,5 +1191,58 @@
     "meals_tracked": "Mese urmărite",
     "cta": "Primeiros passos — Gratuit",
     "fine_print": "Durează 2 minute · Nicio carte de credit necesară"
+  },
+  "friends": {
+    "title": "Prieteni",
+    "your_code": "Codul Tău",
+    "share_code": "Partajează Codul",
+    "share_message": "Să ne responsabilizăm reciproc pe Active AI Coach! Conectează-te cu mine folosind codul {{code}}.",
+    "connect_label": "Ai codul unui prieten?",
+    "code_placeholder": "Introdu codul",
+    "connect_button": "Conectează",
+    "your_friends": "Prietenii Tăi",
+    "empty": "Niciun prieten încă. Partajează-ți codul sau introdu codul unui prieten mai sus pentru a te conecta.",
+    "no_streak": "Nicio serie activă",
+    "streak_days": "Serie de {{count}} zile",
+    "no_workouts_yet": "Niciun antrenament încă",
+    "today": "A antrenat astazi",
+    "yesterday": "A antrenat ieri",
+    "days_ago": "acum {{count}} zile",
+    "cheer_button": "Încurajează 👋",
+    "remove_title": "Șterge Prieten",
+    "remove_msg": "Ștergi {{name}} din prietenii tăi? Aceasta nu poate fi anulată.",
+    "remove_button": "Șterge",
+    "error_connect": "Nu s-a putut conecta cu acel cod. Te rog să-l verifici și încearcă din nou.",
+    "error_cheer": "Nu s-a putut trimite încurajarea ta. Te rog încearcă din nou.",
+    "error_remove": "Nu s-a putut șterge acest prieten. Te rog încearcă din nou."
+  },
+  "form_check": {
+    "permission_title": "Acces la Cameră Necesar",
+    "permission_sub": "Permite accesul la cameră pentru a verifica forma exercițiului tău.",
+    "grant_permission": "Acordă Acces la Cameră",
+    "prep_sub": "Poziționează telefonul astfel încât întregul tău mișcare să fie vizibil, apoi execută exercițiul lent și continuu.",
+    "prep_tip_frame": "Încadrează întregul corp (sau membrul care lucrează)",
+    "prep_tip_light": "O iluminare bună ajută AI-ul să-ți vadă forma clar",
+    "prep_tip_pace": "Mișcă-te lent și continuu pe parcursul a 1-2 repetări",
+    "prep_ready_btn": "Început",
+    "prep_countdown_label": "Pregătește-te — captura începe în {{count}}s",
+    "status_capturing": "Execută mișcarea acum...",
+    "status_analyzing": "Analizez forma ta...",
+    "check_failed": "Verificare Eșuată",
+    "check_failed_msg": "Nu am putut analiza forma ta. Te rog încearcă din nou.",
+    "score_label": "Scor Formă",
+    "muscles_label": "Mușchi Antrenați",
+    "positives_label": "Ce Faci Bine",
+    "corrections_label": "Corecții",
+    "cues_label": "Indicații de Antrenament",
+    "safety_label": "Avertismente de Siguranță",
+    "summary_label": "Rezumat",
+    "check_again": "Verifică Din Nou",
+    "done": "Gata",
+    "no_frames_captured": "Nu au fost capturate cadre. Asigurați-vă că camera dvs. funcționează și încercați din nou.",
+    "ready_hint": "Ia poziția corectă, apoi apasă Începe Înregistrarea când ești gata",
+    "start_recording": "Începe Înregistrarea",
+    "stop_recording": "Oprește & Analizează",
+    "status_recording": "Se înregistrează... {{seconds}}s — apasă Oprește când ești gata"
   }
 }

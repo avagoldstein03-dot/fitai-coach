@@ -38,7 +38,16 @@
       "no_account": "Nemáte účet?",
       "signup_link": "Zaregistrovat se",
       "error_fill": "Prosím vyplňte všechna pole",
-      "error_signin": "Přihlášení selhalo. Zkontrolujte prosím své přihlašovací údaje."
+      "error_signin": "Přihlášení selhalo. Zkontrolujte prosím své přihlašovací údaje.",
+      "verify_2fa_title": "Dvoustupňové ověření",
+      "verify_2fa_subtitle": "Zadejte svůj ověřovací kód a pokračujte",
+      "verify_2fa_code": "Ověřovací kód",
+      "verify_2fa_code_placeholder": "123456",
+      "verify_2fa_button": "Ověřit",
+      "back_to_signin": "← Zpět na přihlášení",
+      "error_2fa_unsupported": "Metoda dvoustupňového ověření tohoto účtu není zatím podporována. Kontaktujte prosím podporu.",
+      "error_verify_incomplete": "Ověření bylo neúplné. Zkuste to prosím znovu.",
+      "error_verify": "Ověření se nezdařilo. Zkuste to prosím znovu."
     },
     "signup": {
       "title": "Vytvořit účet",
@@ -159,7 +168,10 @@
       "beginner_desc": "Právě jsem začínal se svojí fitness cestou",
       "intermediate_desc": "Trénuji konzistentně 1+ rok",
       "advanced_desc": "4+ let strukturovaného tréninku",
-      "prompt": "Vyberte svou úroveň zkušeností"
+      "prompt": "Vyberte svou úroveň zkušeností",
+      "injury_label": "Máte nějaké zranění nebo omezení mobility?",
+      "injury_placeholder": "např. špatné levé koleno, bolest v dolní části zad — volitelné",
+      "injury_helper": "Volitelné — pomáhá vašemu AI trenérovi vyhnout se nebo upravit cvičení, která by mohla toto zhoršit."
     },
     "step5": {
       "title": "Preference v jídle",
@@ -381,7 +393,20 @@
     "privacy_policy": "Zásady ochrany osobních údajů",
     "terms_of_service": "Podmínky služby",
     "privacy_policy_sub": "Jak zacházíme s vašimi daty",
-    "terms_of_service_sub": "Pravidla pro používání aplikace FitAI Coach"
+    "terms_of_service_sub": "Pravidla pro používání aplikace Active AI Coach",
+    "injury_history": "Zranění a mobilita",
+    "injury_history_sub": "Pomáhá vašemu AI trenérovi vyhnout se nebo upravit cvičení, která by mohla toto zhoršit",
+    "injury_placeholder": "např. špatné levé koleno, bolest v dolní části zad",
+    "injury_updated": "Vaše poznámky o zraněních/mobilitě byly aktualizovány.",
+    "error_injury": "Nepodařilo se aktualizovat poznámky o zraněních/mobilitě.",
+    "health_card_title": "Apple Health",
+    "health_card_sub": "Synchronizujte kroky, spánek, aktivní energii, srdeční tep a váhu z aplikace Apple Health, abyste snížili ruční zaznamenávání.",
+    "health_connect_button": "Připojit Apple Health",
+    "health_last_synced": "Poslední synchronizace {{time}}",
+    "health_disconnect_button": "Odpojit",
+    "health_disconnect_title": "Odpojit Apple Health?",
+    "health_disconnect_msg": "Aplikace přestane synchronizovat nová data, ale neodvolá přístup k Apple Health — můžete to spravovat v Nastavení iOS > Zdraví > Přístup k datům a zařízením.",
+    "error_health_connect": "Nepodařilo se připojit k Apple Health. Zkuste to znovu."
   },
   "notifications": {
     "title": "Oznámení",
@@ -529,7 +554,9 @@
     "error_portal": "Nelze otevřít portál pro fakturaci.",
     "error_portal_open": "Selhalo otevření portálu pro fakturaci",
     "manage_apple": "Spravovat předplatné Apple",
-    "manage_apple_sub": "Zobrazit nebo zrušit vaše předplatné přes Apple"
+    "manage_apple_sub": "Zobrazit nebo zrušit vaše předplatné přes Apple",
+    "manage_google": "Spravovat předplatné Google Play",
+    "manage_google_sub": "Zobrazte nebo zrušte své předplatné prostřednictvím Google Play"
   },
   "coach": {
     "title": "Váš kouč",
@@ -768,7 +795,8 @@
     "goal_overall_strength": "Budujte celkovou sílu a svaly",
     "goal_specific_area": "Budujte svaly v konkrétní oblasti",
     "progress_done": "{{done}}/{{total}} hotovo",
-    "exercise_meta": "{{sets}} sady × {{reps}} opakování · {{rest}}s odpočinek"
+    "exercise_meta": "{{sets}} sady × {{reps}} opakování · {{rest}}s odpočinek",
+    "check_form": "Zkontrolovat techniku"
   },
   "supplements": {
     "title": "Doplňky",
@@ -1033,7 +1061,15 @@
     "status_scanning": "Pomalu se otočte o 360°...",
     "status_uploading": "Nahrávání vašeho skenu…",
     "status_analyzing": "Analýza vašeho složení těla…",
-    "error_pick": "Selhalo výběr obrázku. Zkuste to prosím znovu."
+    "error_pick": "Selhalo výběr obrázku. Zkuste to prosím znovu.",
+    "prep_title": "Než začnete",
+    "prep_sub": "Potřebujeme vaše celé tělo — od hlavy k nohám — v záběru pro přesné skenování.",
+    "prep_tip_prop": "Postavte si telefon 2–2,5 metru daleko, obrazovkou od sebe",
+    "prep_tip_height": "Režim na výšku, umístěno ve výšce hrudníku",
+    "prep_tip_light": "Dobré osvětlení, přiléhavé oblečení",
+    "prep_tip_space": "Ujistěte se, že máte prostor pro úplné otočení",
+    "prep_ready_btn": "Jsem připraven(a)",
+    "prep_countdown_label": "Dostáníte se do záběru — skenování začíná za {{count}}s"
   },
   "shopping_list": {
     "clear_title": "Vymazat zaškrtnuté položky?",
@@ -1092,7 +1128,8 @@
     "badge_week_champion": "Mistr týdne",
     "badge_stay_hydrated": "Zůstaňte hydratovaní",
     "badge_body_scan": "Body scan",
-    "default_name": "Atlet"
+    "default_name": "Atlet",
+    "friends": "Přátelé"
   },
   "navigation": {
     "home": "Domů",
@@ -1129,11 +1166,11 @@
     "title": "Než budete pokračovat",
     "subtitle": "Prosím přečtěte si toto důležité upozornění",
     "agree": "Rozumím a souhlasím",
-    "required": "Vyžadováno pro použití FitAI Coach",
-    "body_p1": "FitAI Coach využívá AI k vytváření zpětné vazby o fitness, výživě a složení těla na základě fotek a informací, které poskytnete.",
+    "required": "Vyžadováno pro použití Active AI Coach",
+    "body_p1": "Active AI Coach využívá AI k vytváření zpětné vazby o fitness, výživě a složení těla na základě fotek a informací, které poskytnete.",
     "body_p2": "Tento obsah je generován umělou inteligencí a může být nepřesný nebo neúplný. Nejedná se o lékařskou, nutriční ani odbornou fitness radu a není náhradou za konzultaci s kvalifikovaným lékařem, registrovaným nutriční terapeautem nebo certifikovaným trenérem.",
     "body_p3": "Vždy se před zahájením jakéhokoliv nového dietního nebo cvičebního programu poraďte s kvalifikovaným odborníkem, zejména pokud máte nějaké zdravotní potíže. Pokud během cvičení pociťujete bolest, závratě nebo diskomfort, okamžitě přestaňte a vyhledejte lékařskou pomoc.",
-    "body_p4": "Pokračováním potvrzujete tato omezení a souhlasíte s používáním aplikace FitAI Coach na vlastní nebezpečí."
+    "body_p4": "Pokračováním potvrzujete tato omezení a souhlasíte s používáním aplikace Active AI Coach na vlastní nebezpečí."
   },
   "muscle_diagram": {
     "active": "Aktivní",
@@ -1154,5 +1191,58 @@
     "meals_tracked": "Zaznamenáná jídla",
     "cta": "Začínáme — zdarma",
     "fine_print": "Trvá 2 minuty · Není vyžadována kreditní karta"
+  },
+  "friends": {
+    "title": "Přátelé",
+    "your_code": "Váš kód",
+    "share_code": "Sdílet kód",
+    "share_message": "Pojďme se navzájem kontrolovat v Active AI Coach! Připoj se ke mně pomocí kódu {{code}}.",
+    "connect_label": "Máš kód od přítele?",
+    "code_placeholder": "Zadej kód",
+    "connect_button": "Připojit",
+    "your_friends": "Vaši přátelé",
+    "empty": "Zatím žádní přátelé. Sdílej svůj kód nebo zadej kód přítele výše pro připojení.",
+    "no_streak": "Žádná aktivní série",
+    "streak_days": "{{count}} denní série",
+    "no_workouts_yet": "Zatím žádné tréninky",
+    "today": "Trénoval dnes",
+    "yesterday": "Trénoval včera",
+    "days_ago": "Před {{count}} dny",
+    "cheer_button": "Povzbudit 👋",
+    "remove_title": "Odstranit přítele",
+    "remove_msg": "Odstranit {{name}} z tvých přátel? Tuto akci nelze vrátit zpět.",
+    "remove_button": "Odstranit",
+    "error_connect": "Nelze se připojit s tímto kódem. Prosím zkontroluj jej a zkus znovu.",
+    "error_cheer": "Nelze poslat tvé povzbuzení. Prosím zkus znovu.",
+    "error_remove": "Nelze odstranit tohoto přítele. Prosím zkus znovu."
+  },
+  "form_check": {
+    "permission_title": "Je potřeba přístup k fotoaparátu",
+    "permission_sub": "Povolte přístup k fotoaparátu, abyste mohli zkontrolovat svou techniku cvičení.",
+    "grant_permission": "Povolit přístup k fotoaparátu",
+    "prep_sub": "Umístěte telefon tak, aby byl viditelný váš celý pohyb, pak cvičení proveďte pomalu a plynule.",
+    "prep_tip_frame": "Zajistěte, aby bylo vidět vaše celé tělo (nebo pracující končetina)",
+    "prep_tip_light": "Dobré osvětlení pomáhá AI jasně vidět vaši techniku",
+    "prep_tip_pace": "Pohybujte se pomalu a plynule během 1-2 opakování",
+    "prep_ready_btn": "Spustit",
+    "prep_countdown_label": "Připravte se — záznám začne za {{count}}s",
+    "status_capturing": "Proveďte pohyb nyní...",
+    "status_analyzing": "Analyzuji vaši techniku...",
+    "check_failed": "Kontrola selhala",
+    "check_failed_msg": "Nepodařilo se analyzovat vaši techniku. Zkuste to prosím znovu.",
+    "score_label": "Skóre techniky",
+    "muscles_label": "Zapojené svaly",
+    "positives_label": "Co děláte dobře",
+    "corrections_label": "Opravy",
+    "cues_label": "Pokyny pro trénink",
+    "safety_label": "Bezpečnostní upozornění",
+    "summary_label": "Shrnutí",
+    "check_again": "Zkontrolovat znovu",
+    "done": "Hotovo",
+    "no_frames_captured": "Nebyly zachyceny žádné snímky. Ujistěte se, že vaše kamera funguje, a zkuste to znovu.",
+    "ready_hint": "Zaujměte pozici, poté klepněte na Spustit záznam, když jste připraveni",
+    "start_recording": "Spustit záznam",
+    "stop_recording": "Zastavit a analyzovat",
+    "status_recording": "Záznam probíhá... {{seconds}}s — klepněte na Zastavit, když jste připraveni"
   }
 }

@@ -38,7 +38,16 @@
       "no_account": "Hesabınız yok mu?",
       "signup_link": "Kaydol",
       "error_fill": "Lütfen tüm alanları doldurun",
-      "error_signin": "Giriş yapılamadı. Lütfen kimlik bilgilerinizi kontrol edin."
+      "error_signin": "Giriş yapılamadı. Lütfen kimlik bilgilerinizi kontrol edin.",
+      "verify_2fa_title": "İki Faktörlü Doğrulama",
+      "verify_2fa_subtitle": "Devam etmek için doğrulama kodunuzu girin",
+      "verify_2fa_code": "Doğrulama Kodu",
+      "verify_2fa_code_placeholder": "123456",
+      "verify_2fa_button": "Doğrula",
+      "back_to_signin": "← Oturum açma sayfasına dön",
+      "error_2fa_unsupported": "Bu hesabın iki faktörlü yöntemi henüz desteklenmiyor. Lütfen desteğe başvurun.",
+      "error_verify_incomplete": "Doğrulama tamamlanmadı. Lütfen tekrar deneyin.",
+      "error_verify": "Doğrulama başarısız oldu. Lütfen tekrar deneyin."
     },
     "signup": {
       "title": "Hesap Oluştur",
@@ -159,7 +168,10 @@
       "beginner_desc": "Fitness yolculuğuma yeni başlıyorum",
       "intermediate_desc": "1+ yıldır düzenli olarak antrenman yapıyorum",
       "advanced_desc": "4+ yıl yapılandırılmış antrenman",
-      "prompt": "Deneyim seviyeni seç"
+      "prompt": "Deneyim seviyeni seç",
+      "injury_label": "Herhangi bir yaralanma veya hareket kısıtlaması var mı?",
+      "injury_placeholder": "örn. sol diz ağrısı, bel ağrısı — isteğe bağlı",
+      "injury_helper": "İsteğe bağlı — yapay zeka antrenörünüzün bu sorunu ağırlaştırabilecek egzersizleri önlemesine veya değiştirmesine yardımcı olur."
     },
     "step5": {
       "title": "Diyet Tercihleri",
@@ -381,7 +393,20 @@
     "privacy_policy": "Gizlilik Politikası",
     "terms_of_service": "Hizmet Şartları",
     "privacy_policy_sub": "Verilerinizi nasıl işlediğimiz",
-    "terms_of_service_sub": "FitAI Coach kullanım kuralları"
+    "terms_of_service_sub": "Active AI Coach kullanım kuralları",
+    "injury_history": "Yaralanmalar & Hareket Kabiliyeti",
+    "injury_history_sub": "Yapay zeka antrenörünüzün bu sorunu ağırlaştırabilecek egzersizleri önlemesine veya değiştirmesine yardımcı olur",
+    "injury_placeholder": "örn. sol diz ağrısı, bel ağrısı",
+    "injury_updated": "Yaralanma/hareket kabiliyeti notlarınız güncellendi.",
+    "error_injury": "Yaralanma/hareket kabiliyeti notları güncellenemedi.",
+    "health_card_title": "Apple Health",
+    "health_card_sub": "Apple Health'ten adımları, uyku, aktif enerjisi, kalp atış hızını ve kilonuzu senkronize ederek manuel giriş yapmanız gerekmez.",
+    "health_connect_button": "Apple Health'i Bağla",
+    "health_last_synced": "Son senkronizasyon {{time}}",
+    "health_disconnect_button": "Bağlantıyı Kes",
+    "health_disconnect_title": "Apple Health bağlantısı kesilsin mi?",
+    "health_disconnect_msg": "Bu, uygulamanın yeni veri senkronize etmesini durdurur, ancak Apple Health erişimini iptal etmez — bunu iOS Ayarları > Sağlık > Veri Erişimi ve Cihazlar kısmından yönetebilirsiniz.",
+    "error_health_connect": "Apple Health'e bağlanılamadı. Lütfen tekrar deneyin."
   },
   "notifications": {
     "title": "Bildirimler",
@@ -529,7 +554,9 @@
     "error_portal": "Ödeme portalı açılamadı.",
     "error_portal_open": "Ödeme portalı açılamadı",
     "manage_apple": "Apple Aboneliğini Yönet",
-    "manage_apple_sub": "Aboneliğinizi Apple üzerinden görüntüleyin veya iptal edin"
+    "manage_apple_sub": "Aboneliğinizi Apple üzerinden görüntüleyin veya iptal edin",
+    "manage_google": "Google Play Aboneliğini Yönet",
+    "manage_google_sub": "Google Play aracılığıyla aboneliğinizi görüntüleyin veya iptal edin"
   },
   "coach": {
     "title": "Antrenöreniz",
@@ -768,7 +795,8 @@
     "goal_overall_strength": "Genel kuvvet ve kas inşa et",
     "goal_specific_area": "Belirli bir alanda kas inşa et",
     "progress_done": "{{done}}/{{total}} bitti",
-    "exercise_meta": "{{sets}} set × {{reps}} tekrar · {{rest}}s dinlenme"
+    "exercise_meta": "{{sets}} set × {{reps}} tekrar · {{rest}}s dinlenme",
+    "check_form": "Form Kontrolü"
   },
   "supplements": {
     "title": "Takviyeler",
@@ -1033,7 +1061,15 @@
     "status_scanning": "Yavaşça 360° dönetim…",
     "status_uploading": "Taramanız yükleniyor…",
     "status_analyzing": "Vücut bileşiminiz analiz ediliyor…",
-    "error_pick": "Resim seçilemedi. Lütfen tekrar deneyin."
+    "error_pick": "Resim seçilemedi. Lütfen tekrar deneyin.",
+    "prep_title": "Başlamadan Önce",
+    "prep_sub": "Doğru bir tarama için baş ila ayaklar arası vücudunuzun tamamının kamerada görünmesi gerekir.",
+    "prep_tip_prop": "Telefonunuzu 2-2,5 metre uzağa yerleştirin, ekran sizden uzağa bakacak şekilde",
+    "prep_tip_height": "Dikey mod, göğüs yüksekliğinde konumlandırılmış",
+    "prep_tip_light": "İyi aydınlatma, vücuda oturan kıyafetler",
+    "prep_tip_space": "Tam bir daire dönenecek kadar alan olduğundan emin olun",
+    "prep_ready_btn": "Hazırım",
+    "prep_countdown_label": "Kameranın içine girin — tarama {{count}}s içinde başlayacak"
   },
   "shopping_list": {
     "clear_title": "İşaretlenen öğeler temizlensin mi?",
@@ -1092,7 +1128,8 @@
     "badge_week_champion": "Hafta Şampiyonu",
     "badge_stay_hydrated": "Hidrasyonlu Kal",
     "badge_body_scan": "Vücut Taraması",
-    "default_name": "Sporcu"
+    "default_name": "Sporcu",
+    "friends": "Arkadaşlar"
   },
   "navigation": {
     "home": "Ana Sayfa",
@@ -1129,11 +1166,11 @@
     "title": "Devam Etmeden Önce",
     "subtitle": "Lütfen bu önemli bildirimi okuyun",
     "agree": "Anlıyorum ve Kabul Ediyorum",
-    "required": "FitAI Coach kullanmak için gerekli",
-    "body_p1": "FitAI Coach, sağladığınız fotoğraf ve bilgilere dayalı olarak fitness, beslenme ve beden kompozisyonu hakkında geribildirim oluşturmak için yapay zekayı kullanır.",
+    "required": "Active AI Coach kullanmak için gerekli",
+    "body_p1": "Active AI Coach, sağladığınız fotoğraf ve bilgilere dayalı olarak fitness, beslenme ve beden kompozisyonu hakkında geribildirim oluşturmak için yapay zekayı kullanır.",
     "body_p2": "Bu içerik yapay zeka tarafından oluşturulmuş olup yanlış veya eksik olabilir. Tıbbi, beslenme veya profesyonel fitness tavsiyesi değildir ve nitelikli bir doktor, kayıtlı diyetisyen veya sertifikalı antrenör ile danışmanın yerine geçmez.",
     "body_p3": "Özellikle tıbbi koşullarınız varsa, herhangi bir yeni diyet veya egzersiz programına başlamadan önce her zaman nitelikli bir profesyonelle danışın. Egzersiz sırasında ağrı, başdönmesi veya rahatsızlık hissederseniz hemen durdurun ve tıbbi yardım alın.",
-    "body_p4": "Devam ederek, bu sınırlamaları kabul etmiş olursunuz ve FitAI Coach'u kendi sorumluluğunuzda kullanmayı kabul edersiniz."
+    "body_p4": "Devam ederek, bu sınırlamaları kabul etmiş olursunuz ve Active AI Coach'u kendi sorumluluğunuzda kullanmayı kabul edersiniz."
   },
   "muscle_diagram": {
     "active": "Aktif",
@@ -1154,5 +1191,58 @@
     "meals_tracked": "Takip edilen öğünler",
     "cta": "Başla — Ücretsiz",
     "fine_print": "2 dakika alır · Kredi kartı gerekmez"
+  },
+  "friends": {
+    "title": "Arkadaşlar",
+    "your_code": "Kodunuz",
+    "share_code": "Kodu Paylaş",
+    "share_message": "Active AI Coach'ta birbirimizi motive edelim! {{code}} kodunu kullanarak benimle bağlan.",
+    "connect_label": "Bir arkadaşının kodu var mı?",
+    "code_placeholder": "Kodu girin",
+    "connect_button": "Bağlan",
+    "your_friends": "Arkadaşlarınız",
+    "empty": "Henüz arkadaş yok. Kodunuzu paylaşın veya bağlanmak için yukarıda bir arkadaşının kodunu girin.",
+    "no_streak": "Aktif seri yok",
+    "streak_days": "{{count}} günlük seri",
+    "no_workouts_yet": "Henüz antrenman yok",
+    "today": "Bugün antrenman yaptı",
+    "yesterday": "Dün antrenman yaptı",
+    "days_ago": "{{count}} gün önce",
+    "cheer_button": "Alkış 👋",
+    "remove_title": "Arkadaşı Kaldır",
+    "remove_msg": "{{name}} arkadaşlarından kaldırılsın mı? Bu işlem geri alınamaz.",
+    "remove_button": "Kaldır",
+    "error_connect": "Bu kodla bağlanılamadı. Lütfen kontrol edin ve tekrar deneyin.",
+    "error_cheer": "Alkışınız gönderilemedi. Lütfen tekrar deneyin.",
+    "error_remove": "Bu arkadaş kaldırılamadı. Lütfen tekrar deneyin."
+  },
+  "form_check": {
+    "permission_title": "Kamera Erişimi Gerekli",
+    "permission_sub": "Egzersiz formunuzu kontrol etmek için kamera erişimine izin verin.",
+    "grant_permission": "Kamera Erişimine İzin Ver",
+    "prep_sub": "Telefonunuzu tüm hareketin görünür olması için konumlandırın, ardından egzersizi yavaş ve kesintisiz şekilde gerçekleştirin.",
+    "prep_tip_frame": "Tüm vücudunuzu (veya çalışan bölgenizi) çerçeveye alın",
+    "prep_tip_light": "İyi aydınlatma yapay zekanın formunuzu net görmesine yardımcı olur",
+    "prep_tip_pace": "1-2 tekrarı yavaş ve kesintisiz şekilde yapın",
+    "prep_ready_btn": "Başla",
+    "prep_countdown_label": "Hazırlanın — kayıt {{count}}s içinde başlayacak",
+    "status_capturing": "Hareketi şimdi yapın...",
+    "status_analyzing": "Formunuz analiz ediliyor...",
+    "check_failed": "Kontrol Başarısız",
+    "check_failed_msg": "Formunuz analiz edilemedi. Lütfen tekrar deneyin.",
+    "score_label": "Form Puanı",
+    "muscles_label": "Çalışan Kaslar",
+    "positives_label": "İyi Yaptıklarınız",
+    "corrections_label": "Düzeltmeler",
+    "cues_label": "Antrenörlük İpuçları",
+    "safety_label": "Güvenlik Uyarıları",
+    "summary_label": "Özet",
+    "check_again": "Tekrar Kontrol Et",
+    "done": "Bitti",
+    "no_frames_captured": "Hiçbir görüntü yakalanmadı. Kameranızın çalıştığından emin olun ve tekrar deneyin.",
+    "ready_hint": "Pozisyon al, sonra hazırsan Kaydı Başlat'a dokunun",
+    "start_recording": "Kaydı Başlat",
+    "stop_recording": "Durdur ve Analiz Et",
+    "status_recording": "Kaydediliyor... {{seconds}}s — hazırsan Durdur'a dokunun"
   }
 }

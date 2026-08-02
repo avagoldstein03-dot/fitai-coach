@@ -38,7 +38,16 @@
       "no_account": "Har du inget konto?",
       "signup_link": "Skapa konto",
       "error_fill": "Vänligen fyll i alla fält",
-      "error_signin": "Misslyckades att logga in. Kontrollera dina uppgifter."
+      "error_signin": "Misslyckades att logga in. Kontrollera dina uppgifter.",
+      "verify_2fa_title": "Tvåfaktorsverifiering",
+      "verify_2fa_subtitle": "Ange din verifieringskod för att fortsätta",
+      "verify_2fa_code": "Verifieringskod",
+      "verify_2fa_code_placeholder": "123456",
+      "verify_2fa_button": "Verifiera",
+      "back_to_signin": "← Tillbaka till inloggning",
+      "error_2fa_unsupported": "Denna kontots tvåfaktorsmetod stöds inte ännu. Kontakta supporten.",
+      "error_verify_incomplete": "Verifieringen är ofullständig. Försök igen.",
+      "error_verify": "Verifieringen misslyckades. Försök igen."
     },
     "signup": {
       "title": "Skapa konto",
@@ -159,7 +168,10 @@
       "beginner_desc": "Börjar min träningsjourney",
       "intermediate_desc": "Tränat konsekvent i 1+ år",
       "advanced_desc": "4+ år av strukturerad träning",
-      "prompt": "Välj din erfarenhetsnivå"
+      "prompt": "Välj din erfarenhetsnivå",
+      "injury_label": "Några skador eller rörelseproblematik?",
+      "injury_placeholder": "t.ex. dåligt vänster knä, lägre ryggsmärta — valfritt",
+      "injury_helper": "Valfritt — hjälper din AI-coach att undvika eller modifiera övningar som kan förvärra detta."
     },
     "step5": {
       "title": "Kostinställningar",
@@ -381,7 +393,20 @@
     "privacy_policy": "Integritetspolicy",
     "terms_of_service": "Användarvillkor",
     "privacy_policy_sub": "Hur vi hanterar dina data",
-    "terms_of_service_sub": "Regler för att använda FitAI Coach"
+    "terms_of_service_sub": "Regler för att använda Active AI Coach",
+    "injury_history": "Skador & Rörlighet",
+    "injury_history_sub": "Hjälper din AI-coach att undvika eller modifiera övningar som kan förvärra detta",
+    "injury_placeholder": "t.ex. dåligt vänster knä, lägre ryggsmärta",
+    "injury_updated": "Dina anteckningar om skador/rörlighet har uppdaterats.",
+    "error_injury": "Det gick inte att uppdatera anteckningar om skador/rörlighet.",
+    "health_card_title": "Apple Health",
+    "health_card_sub": "Synkronisera steg, sömn, aktiv energi, hjärtfrekvens och vikt från Apple Health för att minska manuell loggning.",
+    "health_connect_button": "Anslut Apple Health",
+    "health_last_synced": "Senast synkroniserad {{time}}",
+    "health_disconnect_button": "Koppla från",
+    "health_disconnect_title": "Koppla från Apple Health?",
+    "health_disconnect_msg": "Detta stoppar appen från att synkronisera nya data, men återkallar inte Apple Health-åtkomsten — du kan hantera det i iOS Inställningar > Hälsa > Dataåtkomst & enheter.",
+    "error_health_connect": "Kunde inte ansluta till Apple Health. Försök igen."
   },
   "notifications": {
     "title": "Meddelanden",
@@ -529,7 +554,9 @@
     "error_portal": "Kunde inte öppna faktureringportal.",
     "error_portal_open": "Misslyckades att öppna faktureringportal",
     "manage_apple": "Hantera Apple-prenumeration",
-    "manage_apple_sub": "Visa eller avbryt din prenumeration via Apple"
+    "manage_apple_sub": "Visa eller avbryt din prenumeration via Apple",
+    "manage_google": "Hantera Google Play-prenumeration",
+    "manage_google_sub": "Visa eller avbryt din prenumeration via Google Play"
   },
   "coach": {
     "title": "Din coach",
@@ -768,7 +795,8 @@
     "goal_overall_strength": "Bygga övergripande styrka och muskler",
     "goal_specific_area": "Bygga muskler i ett specifikt område",
     "progress_done": "{{done}}/{{total}} klart",
-    "exercise_meta": "{{sets}} set × {{reps}} rep · {{rest}}s vila"
+    "exercise_meta": "{{sets}} set × {{reps}} rep · {{rest}}s vila",
+    "check_form": "Kontrollera Form"
   },
   "supplements": {
     "title": "Kosttillskott",
@@ -1033,7 +1061,15 @@
     "status_scanning": "Vrid dig långsamt 360°…",
     "status_uploading": "Laddar upp ditt scan…",
     "status_analyzing": "Analyserar din kroppsammansättning…",
-    "error_pick": "Misslyckades att välja bild. Försök igen."
+    "error_pick": "Misslyckades att välja bild. Försök igen.",
+    "prep_title": "Innan Du Börjar",
+    "prep_sub": "Vi behöver din hela kropp — från huvud till tår — i bild för en korrekt skanning.",
+    "prep_tip_prop": "Ställ upp din telefon 6–8 fot bort, skärmen vänd bort från dig",
+    "prep_tip_height": "Porträttläge, positionerad på brösthöjd",
+    "prep_tip_light": "Bra belysning, tajt passande kläder",
+    "prep_tip_space": "Se till att du har plats att vända dig helt runt",
+    "prep_ready_btn": "Jag är Redo",
+    "prep_countdown_label": "Ställ dig i bild — skanningen börjar om {{count}}s"
   },
   "shopping_list": {
     "clear_title": "Rensa markerade objekt?",
@@ -1092,7 +1128,8 @@
     "badge_week_champion": "Veckokampioen",
     "badge_stay_hydrated": "Stanna väl hydrerad",
     "badge_body_scan": "Body scan",
-    "default_name": "Idrottare"
+    "default_name": "Idrottare",
+    "friends": "Vänner"
   },
   "navigation": {
     "home": "Hem",
@@ -1129,11 +1166,11 @@
     "title": "Innan du fortsätter",
     "subtitle": "Läs denna viktiga notis",
     "agree": "Jag förstår och accepterar",
-    "required": "Krävs för att använda FitAI Coach",
-    "body_p1": "FitAI Coach använder AI för att generera feedback om träning, näring och kroppssammansättning baserat på foton och information du tillhandahåller.",
+    "required": "Krävs för att använda Active AI Coach",
+    "body_p1": "Active AI Coach använder AI för att generera feedback om träning, näring och kroppssammansättning baserat på foton och information du tillhandahåller.",
     "body_p2": "Detta innehål är AI-genererat och kan vara felaktigt eller ofullständigt. Det är inte medicinsk, näringsmässig eller professionell träningsrådgivning, och det är inte en ersättning för konsultation med en kvalificerad läkare, registrerad dietist eller certifierad tränare.",
     "body_p3": "Konsultera alltid en kvalificerad professionell innan du påbörjar något nytt diet- eller träningsprogram, särskilt om du har några medicinska tillstånd. Sluta omedelbar och söka medicinsk vård om du upplever smärta, yrsel eller obehag under träning.",
-    "body_p4": "Genom att fortsätta bekräftar du dessa begränsningar och godkänner att använda FitAI Coach på egen risk."
+    "body_p4": "Genom att fortsätta bekräftar du dessa begränsningar och godkänner att använda Active AI Coach på egen risk."
   },
   "muscle_diagram": {
     "active": "Aktiv",
@@ -1154,5 +1191,58 @@
     "meals_tracked": "Måltider spårade",
     "cta": "Kom igång — gratis",
     "fine_print": "Tar 2 minuter · Inget kreditkort krävs"
+  },
+  "friends": {
+    "title": "Vänner",
+    "your_code": "Din kod",
+    "share_code": "Dela kod",
+    "share_message": "Låt oss hålla varandra ansvariga på Active AI Coach! Anslut till mig med koden {{code}}.",
+    "connect_label": "Har du en väns kod?",
+    "code_placeholder": "Ange kod",
+    "connect_button": "Anslut",
+    "your_friends": "Dina vänner",
+    "empty": "Inga vänner ännu. Dela din kod eller ange en väns kod ovan för att ansluta.",
+    "no_streak": "Ingen aktiv streak",
+    "streak_days": "{{count}} dagars streak",
+    "no_workouts_yet": "Inga träningar ännu",
+    "today": "Tränade idag",
+    "yesterday": "Tränade igår",
+    "days_ago": "{{count}} dagar sedan",
+    "cheer_button": "Heja 👋",
+    "remove_title": "Ta bort vän",
+    "remove_msg": "Ta bort {{name}} från dina vänner? Det kan inte ångras.",
+    "remove_button": "Ta bort",
+    "error_connect": "Kunde inte ansluta med den koden. Kontrollera den och försök igen.",
+    "error_cheer": "Kunde inte skicka din heja. Försök igen.",
+    "error_remove": "Kunde inte ta bort denna vän. Försök igen."
+  },
+  "form_check": {
+    "permission_title": "Kameraåtkomst Krävs",
+    "permission_sub": "Tillåt kameraåtkomst för att kontrollera din träningsform.",
+    "grant_permission": "Ge Kameraåtkomst",
+    "prep_sub": "Positionera din telefon så att hela din rörelse är synlig, och utför sedan övningen långsamt och utan avbrott.",
+    "prep_tip_frame": "Få in hela kroppen (eller den arbetande delen) i bild",
+    "prep_tip_light": "Bra belysning hjälper AI:n att se din form tydligt",
+    "prep_tip_pace": "Röra dig långsamt och kontinuerligt genom 1-2 repetitioner",
+    "prep_ready_btn": "Starta",
+    "prep_countdown_label": "Gör dig redo — inspelningen börjar om {{count}}s",
+    "status_capturing": "Utför rörelsen nu...",
+    "status_analyzing": "Analyserar din form...",
+    "check_failed": "Kontrollen Misslyckades",
+    "check_failed_msg": "Kunde inte analysera din form. Försök igen.",
+    "score_label": "Formpoäng",
+    "muscles_label": "Arbetsade Muskler",
+    "positives_label": "Det Du Gör Bra",
+    "corrections_label": "Korrigeringar",
+    "cues_label": "Träningsips",
+    "safety_label": "Säkerhetsvarnningar",
+    "summary_label": "Sammanfattning",
+    "check_again": "Kontrollera Igen",
+    "done": "Klart",
+    "no_frames_captured": "Inga bildrutor kunde fångas. Se till att din kamera fungerar och försök igen.",
+    "ready_hint": "Ställ dig i position och tryck på Starta inspelning när du är klar",
+    "start_recording": "Starta inspelning",
+    "stop_recording": "Stoppa och analysera",
+    "status_recording": "Inspelning pågår... {{seconds}}s — tryck Stoppa när du är klar"
   }
 }

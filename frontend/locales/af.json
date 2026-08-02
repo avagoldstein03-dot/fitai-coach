@@ -38,7 +38,16 @@
       "no_account": "Het jy geen rekening nie?",
       "signup_link": "Teken aan",
       "error_fill": "Vul asseblief alle velde in",
-      "error_signin": "Aanmelding het misluk. Kontroleer asseblief jou inloggegewens."
+      "error_signin": "Aanmelding het misluk. Kontroleer asseblief jou inloggegewens.",
+      "verify_2fa_title": "Twee-Faktor Verifikasie",
+      "verify_2fa_subtitle": "Voer jou verifikasiekode in om voort te gaan",
+      "verify_2fa_code": "Verifikasiekode",
+      "verify_2fa_code_placeholder": "123456",
+      "verify_2fa_button": "Verifieer",
+      "back_to_signin": "← Terug na aanmelding",
+      "error_2fa_unsupported": "Hierdie rekening se twee-faktor-metode word nog nie ondersteun nie. Neem asseblief kontak op met ondersteuning.",
+      "error_verify_incomplete": "Verifikasie onvolledig. Probeer asseblief weer.",
+      "error_verify": "Verifikasie het misluk. Probeer asseblief weer."
     },
     "signup": {
       "title": "Skep Rekening",
@@ -159,7 +168,10 @@
       "beginner_desc": "Ek begin nou my fitnessreis",
       "intermediate_desc": "Traineer konsekwent vir 1+ jaar",
       "advanced_desc": "4+ jaar van gestruktureerde training",
-      "prompt": "Kies jou ervaringsvlak"
+      "prompt": "Kies jou ervaringsvlak",
+      "injury_label": "Enige beserings of mobiliteitsbeperkings?",
+      "injury_placeholder": "bv. swak linker knie, onderrugpyn — opsioneel",
+      "injury_helper": "Opsioneel — help jou AI-afrigter oefeninge wat dit kan vererger vermy of wysig."
     },
     "step5": {
       "title": "Dieetvoorkeure",
@@ -381,7 +393,20 @@
     "privacy_policy": "Privacybeleid",
     "terms_of_service": "Diensvoorwaardes",
     "privacy_policy_sub": "Hoe ons jou data hanteer",
-    "terms_of_service_sub": "Reëls vir die gebruik van FitAI Coach"
+    "terms_of_service_sub": "Reëls vir die gebruik van Active AI Coach",
+    "injury_history": "Beserings & Mobiliteit",
+    "injury_history_sub": "Help jou AI-afrigter oefeninge wat dit kan vererger vermy of wysig",
+    "injury_placeholder": "bv. swak linker knie, onderrugpyn",
+    "injury_updated": "Jou beserings-/mobiliteitsnote is opgedateer.",
+    "error_injury": "Kon nie beserings-/mobiliteitsnote opdateer nie.",
+    "health_card_title": "Apple Health",
+    "health_card_sub": "Sinkroniseer stappe, slaap, aktiewe energie, hartklop en gewig vanaf Apple Health om handmatige invoer te verminder.",
+    "health_connect_button": "Koppel Apple Health",
+    "health_last_synced": "Laas sinkroniseer {{time}}",
+    "health_disconnect_button": "Ontkoppel",
+    "health_disconnect_title": "Ontkoppel Apple Health?",
+    "health_disconnect_msg": "Dit stop die app van sinkronisering van nuwe data, maar trek nie Apple Health-toegang in nie — jy kan dit bestuur in iOS-instellings > Gesondheid > Data-toegang & Toestelle.",
+    "error_health_connect": "Kon nie aan Apple Health koppel nie. Probeer weer."
   },
   "notifications": {
     "title": "Kennisgewings",
@@ -529,7 +554,9 @@
     "error_portal": "Kon nie faktureringportaal oopmaak nie.",
     "error_portal_open": "Kon nie faktureringportaal oopmaak nie",
     "manage_apple": "Bestuur Apple-intekening",
-    "manage_apple_sub": "Bekyk of kanselleer jou intekening deur Apple"
+    "manage_apple_sub": "Bekyk of kanselleer jou intekening deur Apple",
+    "manage_google": "Bestuur Google Play-inskripsie",
+    "manage_google_sub": "Bekyk of kanselleer jou inskripsie deur Google Play"
   },
   "coach": {
     "title": "Jou Afrigter",
@@ -768,7 +795,8 @@
     "goal_overall_strength": "Bou algehele krag en spier",
     "goal_specific_area": "Bou spier in 'n spesifieke area",
     "progress_done": "{{done}}/{{total}} gedoen",
-    "exercise_meta": "{{sets}} stelle × {{reps}} herhalings · {{rest}}s rus"
+    "exercise_meta": "{{sets}} stelle × {{reps}} herhalings · {{rest}}s rus",
+    "check_form": "Kontroleer Vorm"
   },
   "supplements": {
     "title": "Byvoegings",
@@ -1033,7 +1061,15 @@
     "status_scanning": "Draai stadig 360°…",
     "status_uploading": "Laai jou kanning op…",
     "status_analyzing": "Ontleed jou liggaamssamestelling…",
-    "error_pick": "Kon nie beeld kies nie. Probeer asseblief weer."
+    "error_pick": "Kon nie beeld kies nie. Probeer asseblief weer.",
+    "prep_title": "Voor Jy Begin",
+    "prep_sub": "Ons het jou volle liggaam — kop tot voete — in beeld nodig vir 'n akkurate skandering.",
+    "prep_tip_prop": "Steun jou foon 6–8 voet weg, skerm weg van jou af",
+    "prep_tip_height": "Portretmodus, geposisioneer op borsthoogte",
+    "prep_tip_light": "Goeie verligting, noue klere",
+    "prep_tip_space": "Maak seker jy het plek om 'n volle sirkel te draai",
+    "prep_ready_btn": "Ek is Gereed",
+    "prep_countdown_label": "Kom in beeld — skandering begin oor {{count}}s"
   },
   "shopping_list": {
     "clear_title": "Maak gekontroleerde items skoon?",
@@ -1092,7 +1128,8 @@
     "badge_week_champion": "Week kampioen",
     "badge_stay_hydrated": "Bly goed gevoegd",
     "badge_body_scan": "Liggaamskanning",
-    "default_name": "Atleet"
+    "default_name": "Atleet",
+    "friends": "Vriende"
   },
   "navigation": {
     "home": "Tuis",
@@ -1129,11 +1166,11 @@
     "title": "Voordat jy voortgaan",
     "subtitle": "Lees asseblief hierdie belangrike opmerking",
     "agree": "Ek verstaan en stem saam",
-    "required": "Vereist om FitAI Coach te gebruik",
-    "body_p1": "FitAI Coach gebruik AI om fiksheid-, voeding- en liggaamsamestelling-terugvoer te genereer op grond van foto's en inligting wat jy verskaf.",
+    "required": "Vereist om Active AI Coach te gebruik",
+    "body_p1": "Active AI Coach gebruik AI om fiksheid-, voeding- en liggaamsamestelling-terugvoer te genereer op grond van foto's en inligting wat jy verskaf.",
     "body_p2": "Hierdie inhoud word deur AI gegenereer en kan onakkuraat of onvolledig wees. Dit is nie mediese, voedings- of professionele fiksheidsadvies nie, en dit is nie 'n plaasvervanger vir konsultasie met 'n gekwalifiseerde dokter, geregistreerde diëtisyn of gesertifiseerde afrigter nie.",
     "body_p3": "Raadpleeg altyd 'n gekwalifiseerde professioneel voordat jy enige nuwe dieet- of oefenprogram begin, veral as jy enige mediese toestande het. Stop onmiddellik en soek mediese hulp as jy pyn, duiseligheid of ongemak tydens oefening ondervind.",
-    "body_p4": "Deur voort te gaan, erken jy hierdie beperkings en stem in om FitAI Coach op jou eie risiko te gebruik."
+    "body_p4": "Deur voort te gaan, erken jy hierdie beperkings en stem in om Active AI Coach op jou eie risiko te gebruik."
   },
   "muscle_diagram": {
     "active": "Aktief",
@@ -1154,5 +1191,58 @@
     "meals_tracked": "Maaltyde verfolgde",
     "cta": "Kom aan die gang — gratis",
     "fine_print": "Neem 2 minute · Geen kredietkaart vereist"
+  },
+  "friends": {
+    "title": "Vriende",
+    "your_code": "Jou Kode",
+    "share_code": "Deel Kode",
+    "share_message": "Laat ons mekaar aanspreeklik hou op Active AI Coach! Koppel met my deur kode {{code}} te gebruik.",
+    "connect_label": "Het jy 'n vriend se kode?",
+    "code_placeholder": "Voer kode in",
+    "connect_button": "Koppel",
+    "your_friends": "Jou Vriende",
+    "empty": "Nog geen vriende. Deel jou kode of voer 'n vriend se kode hierbo in om te koppel.",
+    "no_streak": "Geen aktiewe reeks",
+    "streak_days": "{{count}} dag reeks",
+    "no_workouts_yet": "Nog geen oefeninge",
+    "today": "Het vandag geoefen",
+    "yesterday": "Het gister geoefen",
+    "days_ago": "{{count}} dae gelede",
+    "cheer_button": "Juig 👋",
+    "remove_title": "Vriend Verwyder",
+    "remove_msg": "Verwyder {{name}} van jou vriende? Dit kan nie ongedaan gemaak word nie.",
+    "remove_button": "Verwyder",
+    "error_connect": "Kon nie met daardie kode koppel nie. Kontroleer dit en probeer weer.",
+    "error_cheer": "Kon nie jou juig stuur nie. Probeer asseblief weer.",
+    "error_remove": "Kon nie hierdie vriend verwyder nie. Probeer asseblief weer."
+  },
+  "form_check": {
+    "permission_title": "Kameratoes Nodig",
+    "permission_sub": "Verleen kameratoes om jou oefenvorm te kontroleer.",
+    "grant_permission": "Verleen Kameratoes",
+    "prep_sub": "Posisioneer jou telefoon sodat jou volle beweging sigbaar is, voer dan die oefening stadig en deurlopend uit.",
+    "prep_tip_frame": "Kry jou hele liggaam (of die werkende ledemate) in die raam",
+    "prep_tip_light": "Goeie verligting help die AI om jou vorm duidelik te sien",
+    "prep_tip_pace": "Beweeg stadig en deurlopend deur 1-2 herhalings",
+    "prep_ready_btn": "Begin",
+    "prep_countdown_label": "Maak gereed — opname begin oor {{count}}s",
+    "status_capturing": "Voer nou die beweging uit...",
+    "status_analyzing": "Jou vorm word ontleed...",
+    "check_failed": "Kontrole Misluk",
+    "check_failed_msg": "Kon jou vorm nie ontleed nie. Probeer asseblief weer.",
+    "score_label": "Vormtelstelling",
+    "muscles_label": "Spiere Wat Bewerk Word",
+    "positives_label": "Wat Jy Goed Doen",
+    "corrections_label": "Regstellings",
+    "cues_label": "Afrigtingskewings",
+    "safety_label": "Veiligheidswaarskuwings",
+    "summary_label": "Opsomming",
+    "check_again": "Kontroleer Weer",
+    "done": "Klaar",
+    "no_frames_captured": "GeenFrame is opgeneem nie. Maak seker dat jou kamera werk en probeer weer.",
+    "ready_hint": "Gaan in posisie, tik dan Begin Opname wanneer gereed",
+    "start_recording": "Begin Opname",
+    "stop_recording": "Stop & Ontleed",
+    "status_recording": "Opname tans aan... {{seconds}}s — tik Stop wanneer gereed"
   }
 }

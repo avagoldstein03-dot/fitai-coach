@@ -38,7 +38,16 @@
       "no_account": "Walang account pa?",
       "signup_link": "Mag-sign up",
       "error_fill": "Mangyaring punan ang lahat ng mga field",
-      "error_signin": "Nabigo ang pag-sign in. Mangyaring suriin ang iyong mga credentials."
+      "error_signin": "Nabigo ang pag-sign in. Mangyaring suriin ang iyong mga credentials.",
+      "verify_2fa_title": "Verification ng Dalawang Salik",
+      "verify_2fa_subtitle": "Ipasok ang iyong verification code upang magpatuloy",
+      "verify_2fa_code": "Verification Code",
+      "verify_2fa_code_placeholder": "123456",
+      "verify_2fa_button": "I-verify",
+      "back_to_signin": "← Bumalik sa pag-sign in",
+      "error_2fa_unsupported": "Ang two-factor method ng account na ito ay hindi pa sinusuportahan. Mangyaring makipag-ugnayan sa support.",
+      "error_verify_incomplete": "Hindi kumpleto ang verification. Mangyaring subukan ulit.",
+      "error_verify": "Nabigong verification. Mangyaring subukan ulit."
     },
     "signup": {
       "title": "Lumikha ng Account",
@@ -159,7 +168,10 @@
       "beginner_desc": "Nagsisimula pa lamang ako ng aking fitness journey",
       "intermediate_desc": "Nagsasanay nang tuluy-tuloy sa loob ng 1+ taon",
       "advanced_desc": "4+ taong structured training",
-      "prompt": "Piliin ang iyong antas ng karanasan"
+      "prompt": "Piliin ang iyong antas ng karanasan",
+      "injury_label": "May mga pinsala o limitasyon sa galaw?",
+      "injury_placeholder": "hal. masama ang kaliwang tuhod, sakit ng ibabang likod — opsyonal",
+      "injury_helper": "Opsyonal — tumutulong sa iyong AI coach na iwasan o baguhin ang mga ehersisyo na maaaring lumala dito."
     },
     "step5": {
       "title": "Diet Preferences",
@@ -381,7 +393,20 @@
     "privacy_policy": "Patakaran sa Privacy",
     "terms_of_service": "Mga Kondisyon ng Serbisyo",
     "privacy_policy_sub": "Paano namin pinangangalagaan ang iyong data",
-    "terms_of_service_sub": "Mga patakaran para sa paggamit ng FitAI Coach"
+    "terms_of_service_sub": "Mga patakaran para sa paggamit ng Active AI Coach",
+    "injury_history": "Pinsala & Mobilidad",
+    "injury_history_sub": "Tumutulong sa iyong AI coach na iwasan o baguhin ang mga ehersisyo na maaaring lumala dito",
+    "injury_placeholder": "hal. masama ang kaliwang tuhod, sakit ng ibabang likod",
+    "injury_updated": "Ang iyong mga tala tungkol sa pinsala/mobilidad ay na-update na.",
+    "error_injury": "Nabigong i-update ang mga tala tungkol sa pinsala/mobilidad.",
+    "health_card_title": "Apple Health",
+    "health_card_sub": "I-sync ang mga hakbang, tulog, aktibong enerhiya, heart rate, at timbang mula sa Apple Health upang mabawasan ang manual na pag-log.",
+    "health_connect_button": "Ikonekta ang Apple Health",
+    "health_last_synced": "Huling na-sync {{time}}",
+    "health_disconnect_button": "Idiskonekta",
+    "health_disconnect_title": "Idiskonekta ang Apple Health?",
+    "health_disconnect_msg": "Titigil nito ang pag-sync ng app sa mga bagong datos, ngunit hindi ire-revoke ang Apple Health access — maaari mong pamahalaan ito sa iOS Settings > Health > Data Access & Devices.",
+    "error_health_connect": "Hindi maaaring kumonekta sa Apple Health. Subukan muli."
   },
   "notifications": {
     "title": "Notifications",
@@ -529,7 +554,9 @@
     "error_portal": "Hindi makabuksan ang billing portal.",
     "error_portal_open": "Nabigo ang pagbubukas ng billing portal",
     "manage_apple": "Pamahalaan ang Apple Subscription",
-    "manage_apple_sub": "Tingnan o kanselahin ang iyong subscription sa pamamagitan ng Apple"
+    "manage_apple_sub": "Tingnan o kanselahin ang iyong subscription sa pamamagitan ng Apple",
+    "manage_google": "Pamahalaan ang Google Play Subscription",
+    "manage_google_sub": "Tingnan o kanselahin ang iyong subscription sa pamamagitan ng Google Play"
   },
   "coach": {
     "title": "Ang Iyong Coach",
@@ -768,7 +795,8 @@
     "goal_overall_strength": "Bumuo ng pangkalahatang lakas & kalamig",
     "goal_specific_area": "Bumuo ng kalamig sa isang tukoy na lugar",
     "progress_done": "{{done}}/{{total}} tapos na",
-    "exercise_meta": "{{sets}} sets × {{reps}} reps · {{rest}}s rest"
+    "exercise_meta": "{{sets}} sets × {{reps}} reps · {{rest}}s rest",
+    "check_form": "Suriin ang Form"
   },
   "supplements": {
     "title": "Supplements",
@@ -1033,7 +1061,15 @@
     "status_scanning": "Lumiko nang dahan-dahang 360°...",
     "status_uploading": "Nag-upload ng iyong scan...",
     "status_analyzing": "Sinusuri ang iyong body composition...",
-    "error_pick": "Nabigo ang pagpili ng larawan. Mangyaring subukan ulit."
+    "error_pick": "Nabigo ang pagpili ng larawan. Mangyaring subukan ulit.",
+    "prep_title": "Bago Ka Magsimula",
+    "prep_sub": "Kailangan namin ng iyong buong katawan — mula ulo hanggang paa — sa frame para sa tumpak na scan.",
+    "prep_tip_prop": "Itakda ang iyong telepono 6–8 talampakan ang layo, screen na nakaharap palayo sa iyo",
+    "prep_tip_height": "Portrait mode, nakaposisyon sa taas ng dibdib",
+    "prep_tip_light": "Magandang liwanag, damit na umaabot sa katawan",
+    "prep_tip_space": "Siguraduhin na mayroon kang espasyo upang lumipat ng buong bilog",
+    "prep_ready_btn": "Handa Na Ako",
+    "prep_countdown_label": "Pumasok sa frame — magsisimula ang scan sa {{count}}s"
   },
   "shopping_list": {
     "clear_title": "I-clear ang checked items?",
@@ -1092,7 +1128,8 @@
     "badge_week_champion": "Week Champion",
     "badge_stay_hydrated": "Stay Hydrated",
     "badge_body_scan": "Body Scan",
-    "default_name": "Atleta"
+    "default_name": "Atleta",
+    "friends": "Mga Kaibigan"
   },
   "navigation": {
     "home": "Tahanan",
@@ -1129,11 +1166,11 @@
     "title": "Bago Kang Magpatuloy",
     "subtitle": "Mangyaring basahin ang mahalagang abiso na ito",
     "agree": "Nauunawaan Ko at Sumasang-ayon",
-    "required": "Kinakailangan upang gamitin ang FitAI Coach",
-    "body_p1": "Gumagamit ang FitAI Coach ng AI upang lumikha ng feedback sa fitness, nutrition, at body composition batay sa mga larawan at impormasyon na iyong ibinibigay.",
+    "required": "Kinakailangan upang gamitin ang Active AI Coach",
+    "body_p1": "Gumagamit ang Active AI Coach ng AI upang lumikha ng feedback sa fitness, nutrition, at body composition batay sa mga larawan at impormasyon na iyong ibinibigay.",
     "body_p2": "Ang content na ito ay AI-generated at maaaring maging hindi tumpak o hindi kumpleto. Hindi ito medikal, nutritional, o propesyonal na payo sa fitness, at hindi ito kapalit ng konsultasyon sa isang qualified na doktor, registered dietitian, o certified trainer.",
     "body_p3": "Laging kumunsulta sa isang qualified na propesyonal bago magsimula ng anumang bagong diet o exercise program, lalo na kung mayroon kang anumang medikal na kondisyon. Huminto kaagad at maghanap ng medikal na atensyon kung nakaranas ka ng sakit, dizziness, o discomfort sa panahon ng ehersisyo.",
-    "body_p4": "Sa pagpapatuloy, kinikilala mo ang mga limitasyong ito at sumasang-ayon na gamitin ang FitAI Coach sa iyong sariling peligro."
+    "body_p4": "Sa pagpapatuloy, kinikilala mo ang mga limitasyong ito at sumasang-ayon na gamitin ang Active AI Coach sa iyong sariling peligro."
   },
   "muscle_diagram": {
     "active": "Active",
@@ -1154,5 +1191,58 @@
     "meals_tracked": "Meals tracked",
     "cta": "Magsimula — Libre",
     "fine_print": "Tumatagal ng 2 minuto · Walang credit card na kailangan"
+  },
+  "friends": {
+    "title": "Mga Kaibigan",
+    "your_code": "Ang Iyong Kod",
+    "share_code": "Ibahagi ang Kod",
+    "share_message": "Panatilihin nating accountable ang isa't isa sa Active AI Coach! Kumonekta sa akin gamit ang kod {{code}}.",
+    "connect_label": "Mayroon ka bang kod ng kaibigan?",
+    "code_placeholder": "Ipasok ang kod",
+    "connect_button": "Kumonekta",
+    "your_friends": "Ang Iyong Mga Kaibigan",
+    "empty": "Walang kaibigan pa. Ibahagi ang iyong kod o ipasok ang kod ng kaibigan sa itaas upang kumonekta.",
+    "no_streak": "Walang aktibong streak",
+    "streak_days": "{{count}} araw na streak",
+    "no_workouts_yet": "Walang workout pa",
+    "today": "Nag-workout ngayong araw",
+    "yesterday": "Nag-workout kahapon",
+    "days_ago": "{{count}} araw na ang nakakaraan",
+    "cheer_button": "Magpalakas ng loob 👋",
+    "remove_title": "Alisin ang Kaibigan",
+    "remove_msg": "Alisin si {{name}} mula sa iyong mga kaibigan? Hindi na ito mababawi.",
+    "remove_button": "Alisin",
+    "error_connect": "Hindi nakakonekta gamit ang kodong iyan. Mangyaring tingnan ito at subukan ulit.",
+    "error_cheer": "Hindi maipadala ang iyong pagpapalakas ng loob. Mangyaring subukan ulit.",
+    "error_remove": "Hindi maalis ang kaibigang ito. Mangyaring subukan ulit."
+  },
+  "form_check": {
+    "permission_title": "Kailangan ang Access sa Camera",
+    "permission_sub": "Payagan ang camera access upang suriin ang iyong exercise form.",
+    "grant_permission": "Bigyan ng Access sa Camera",
+    "prep_sub": "Iposisyon ang iyong phone upang makita ang iyong buong galaw, pagkatapos isagawa ang exercise nang mabagal at patuloy.",
+    "prep_tip_frame": "Ilagay ang iyong buong katawan (o ang gumagalaw na limb) sa frame",
+    "prep_tip_light": "Ang magandang liwanag ay tumutulong sa AI na makita ang iyong form nang malinaw",
+    "prep_tip_pace": "Gumalaw nang mabagal at patuloy sa loob ng 1-2 reps",
+    "prep_ready_btn": "Magsimula",
+    "prep_countdown_label": "Maghanda — ang capture ay magsisimula sa {{count}}s",
+    "status_capturing": "Gawin ang galaw ngayon...",
+    "status_analyzing": "Sinusuri ang iyong form...",
+    "check_failed": "Nabigo ang Pagsusuri",
+    "check_failed_msg": "Nabigo na suriin ang iyong form. Subukan ulit.",
+    "score_label": "Form Score",
+    "muscles_label": "Muscles na Nagtratrabaho",
+    "positives_label": "Ang Iyong Ginagawa Nang Maayos",
+    "corrections_label": "Mga Pagwawasto",
+    "cues_label": "Coaching Cues",
+    "safety_label": "Safety Warnings",
+    "summary_label": "Buod",
+    "check_again": "Suriin Muli",
+    "done": "Tapos Na",
+    "no_frames_captured": "Walang frame na nakuha. Siguraduhin na gumagana ang iyong camera at subukan ulit.",
+    "ready_hint": "Kumuha ng posisyon, pagkatapos i-tap ang Start Recording kapag handa na",
+    "start_recording": "Simulan ang Pag-record",
+    "stop_recording": "Itigil & Suriin",
+    "status_recording": "Nag-record... {{seconds}}s — i-tap ang Itigil kapag handa na"
   }
 }

@@ -38,7 +38,16 @@
       "no_account": "Har du ikke en konto?",
       "signup_link": "Opprett konto",
       "error_fill": "Vennligst fyll inn alle feltene",
-      "error_signin": "Kunne ikke logge inn. Sjekk legitimasjonen din."
+      "error_signin": "Kunne ikke logge inn. Sjekk legitimasjonen din.",
+      "verify_2fa_title": "Tofattorverifisering",
+      "verify_2fa_subtitle": "Skriv inn verifikasjonskoden din for å fortsette",
+      "verify_2fa_code": "Verifikasjonskode",
+      "verify_2fa_code_placeholder": "123456",
+      "verify_2fa_button": "Verifiser",
+      "back_to_signin": "← Tilbake til pålogging",
+      "error_2fa_unsupported": "Denne kontoen sin tofattormetode støttes ikke ennå. Vennligst kontakt support.",
+      "error_verify_incomplete": "Verifikasjon ufullstendig. Vennligst prøv igjen.",
+      "error_verify": "Verifikasjon mislyktes. Vennligst prøv igjen."
     },
     "signup": {
       "title": "Opprett konto",
@@ -159,7 +168,10 @@
       "beginner_desc": "Jeg starter akkurat min treningsreise",
       "intermediate_desc": "Trener konsekvent i 1+ år",
       "advanced_desc": "4+ år med strukturert trening",
-      "prompt": "Velg ditt erfaringsnivå"
+      "prompt": "Velg ditt erfaringsnivå",
+      "injury_label": "Har du noen skader eller mobilitetsbenesninger?",
+      "injury_placeholder": "f.eks. dårlig venstre kne, vondt i nedre rygg — valgfritt",
+      "injury_helper": "Valgfritt — hjelper din AI-trener med å unngå eller tilpasse øvelser som kan forverre dette."
     },
     "step5": {
       "title": "Kostvaner",
@@ -381,7 +393,20 @@
     "privacy_policy": "Personvernretningslinjer",
     "terms_of_service": "Vilkår for bruk",
     "privacy_policy_sub": "Hvordan vi håndterer dine data",
-    "terms_of_service_sub": "Regler for bruk av FitAI Coach"
+    "terms_of_service_sub": "Regler for bruk av Active AI Coach",
+    "injury_history": "Skader og mobilitet",
+    "injury_history_sub": "Hjelper din AI-trener med å unngå eller tilpasse øvelser som kan forverre dette",
+    "injury_placeholder": "f.eks. dårlig venstre kne, vondt i nedre rygg",
+    "injury_updated": "Dine notater om skader/mobilitet er oppdatert.",
+    "error_injury": "Klarte ikke å oppdatere notater om skader/mobilitet.",
+    "health_card_title": "Apple Health",
+    "health_card_sub": "Synkroniser skritt, søvn, aktiv energi, pulsfrekvens og vekt fra Apple Health for å redusere manuell registrering.",
+    "health_connect_button": "Koble til Apple Health",
+    "health_last_synced": "Sist synkronisert {{time}}",
+    "health_disconnect_button": "Koble fra",
+    "health_disconnect_title": "Koble fra Apple Health?",
+    "health_disconnect_msg": "Dette stopper appen fra å synkronisere nye data, men tilbakekaller ikke Apple Health-tilgang — du kan administrere det i iOS Innstillinger > Helse > Datatilgang og enheter.",
+    "error_health_connect": "Kunne ikke koble til Apple Health. Prøv igjen."
   },
   "notifications": {
     "title": "Varslinger",
@@ -529,7 +554,9 @@
     "error_portal": "Kunne ikke åpne faktureringsportal.",
     "error_portal_open": "Kunne ikke åpne faktureringsportal",
     "manage_apple": "Administrer Apple-abonnement",
-    "manage_apple_sub": "Se eller avbryt abonnementet ditt gjennom Apple"
+    "manage_apple_sub": "Se eller avbryt abonnementet ditt gjennom Apple",
+    "manage_google": "Administrer Google Play-abonnement",
+    "manage_google_sub": "Vis eller avbryt abonnementet ditt gjennom Google Play"
   },
   "coach": {
     "title": "Din trener",
@@ -768,7 +795,8 @@
     "goal_overall_strength": "Bygg generell styrke og muskler",
     "goal_specific_area": "Bygg muskler på et bestemt område",
     "progress_done": "{{done}}/{{total}} ferdig",
-    "exercise_meta": "{{sets}} sett × {{reps}} repetisjoner · {{rest}}s hvil"
+    "exercise_meta": "{{sets}} sett × {{reps}} repetisjoner · {{rest}}s hvil",
+    "check_form": "Sjekk Form"
   },
   "supplements": {
     "title": "Kosttilskudd",
@@ -1033,7 +1061,15 @@
     "status_scanning": "Snu deg sakte 360°...",
     "status_uploading": "Laster opp scannet ditt...",
     "status_analyzing": "Analyserer kropssammensetningen din...",
-    "error_pick": "Kunne ikke velge bilde. Prøv igjen."
+    "error_pick": "Kunne ikke velge bilde. Prøv igjen.",
+    "prep_title": "Før du starter",
+    "prep_sub": "Vi trenger hele kroppen din — fra hodet til tærne — i bildet for en nøyaktig skanning.",
+    "prep_tip_prop": "Fest telefonen 6–8 meter unna, skjermen vendt bort fra deg",
+    "prep_tip_height": "Portrettmodus, plassert i brysthøyde",
+    "prep_tip_light": "God belysning, tett-sittende klær",
+    "prep_tip_space": "Sørg for at du har plass til å snu deg rundt i en full sirkel",
+    "prep_ready_btn": "Jeg er klar",
+    "prep_countdown_label": "Kom inn i bildet — skanningen starter om {{count}}s"
   },
   "shopping_list": {
     "clear_title": "Tøm avmerkede elementer?",
@@ -1092,7 +1128,8 @@
     "badge_week_champion": "Ukkempeion",
     "badge_stay_hydrated": "Bli hydrert",
     "badge_body_scan": "Kroppsscan",
-    "default_name": "Idrettsutøver"
+    "default_name": "Idrettsutøver",
+    "friends": "Venner"
   },
   "navigation": {
     "home": "Hjem",
@@ -1129,11 +1166,11 @@
     "title": "Før du fortsetter",
     "subtitle": "Vennligst les denne viktige notisen",
     "agree": "Jeg forstår og godtar",
-    "required": "Kreves for å bruke FitAI Coach",
-    "body_p1": "FitAI Coach bruker kunstig intelligens til å generere tilbakemelding om trening, ernæring og kroppssammensetning basert på foto og informasjon du gir.",
+    "required": "Kreves for å bruke Active AI Coach",
+    "body_p1": "Active AI Coach bruker kunstig intelligens til å generere tilbakemelding om trening, ernæring og kroppssammensetning basert på foto og informasjon du gir.",
     "body_p2": "Dette innholdet er AI-generert og kan være unøyaktig eller ufullstendig. Det er ikke medisinsk, ernæringsmessig eller profesjonell treningsråd, og det er ikke en erstatning for konsultasjon med en kvalifisert lege, registrert ernæringsfysiolog eller sertifisert trener.",
     "body_p3": "Konsulter alltid en kvalifisert fagperson før du starter med ny diett eller treningsprogram, spesielt hvis du har noen medisinske tilstander. Stopp umiddelbart og søk medisinsk hjelp hvis du opplever smerte, svimmelhet eller ubehag under trening.",
-    "body_p4": "Ved å fortsette erkjenner du disse begrensningene og godtar å bruke FitAI Coach på eget ansvar."
+    "body_p4": "Ved å fortsette erkjenner du disse begrensningene og godtar å bruke Active AI Coach på eget ansvar."
   },
   "muscle_diagram": {
     "active": "Aktiv",
@@ -1154,5 +1191,58 @@
     "meals_tracked": "Måltider sporet",
     "cta": "Kom i gang — gratis",
     "fine_print": "Tar 2 minutter · Ingen kredittkort kreves"
+  },
+  "friends": {
+    "title": "Venner",
+    "your_code": "Din kode",
+    "share_code": "Del kode",
+    "share_message": "La oss holde hverandre ansvarlige på Active AI Coach! Koble til meg med koden {{code}}.",
+    "connect_label": "Har du en venns kode?",
+    "code_placeholder": "Skriv inn kode",
+    "connect_button": "Koble til",
+    "your_friends": "Dine venner",
+    "empty": "Ingen venner ennå. Del koden din eller skriv inn en venns kode ovenfor for å koble til.",
+    "no_streak": "Ingen aktiv serie",
+    "streak_days": "{{count}} dagers serie",
+    "no_workouts_yet": "Ingen treninger ennå",
+    "today": "Trente i dag",
+    "yesterday": "Trente i går",
+    "days_ago": "{{count}} dager siden",
+    "cheer_button": "Heiarop 👋",
+    "remove_title": "Fjern venn",
+    "remove_msg": "Fjerne {{name}} fra vennene dine? Dette kan ikke angres.",
+    "remove_button": "Fjern",
+    "error_connect": "Kunne ikke koble til med den koden. Kontroller den og prøv igjen.",
+    "error_cheer": "Kunne ikke sende heiarapet ditt. Prøv igjen.",
+    "error_remove": "Kunne ikke fjerne denne vennen. Prøv igjen."
+  },
+  "form_check": {
+    "permission_title": "Kamerautgang Nødvendig",
+    "permission_sub": "Tillat kamerautgang for å sjekke treningsformen din.",
+    "grant_permission": "Gi Kamerautgang",
+    "prep_sub": "Posisjonér telefonen slik at hele bevegelsen er synlig, og utfør deretter øvelsen langsomt og kontinuerlig.",
+    "prep_tip_frame": "Få hele kroppen (eller arbeidsekstremiteten) i bildet",
+    "prep_tip_light": "God belysning hjelper AI-en med å se formen din tydelig",
+    "prep_tip_pace": "Beveg deg langsomt og kontinuerlig gjennom 1-2 repetisjoner",
+    "prep_ready_btn": "Start",
+    "prep_countdown_label": "Gjør deg klar — opptak starter om {{count}}s",
+    "status_capturing": "Utfør bevegelsen nå...",
+    "status_analyzing": "Analyserer formen din...",
+    "check_failed": "Sjekk Mislyktes",
+    "check_failed_msg": "Kunne ikke analysere formen din. Vær så god og prøv igjen.",
+    "score_label": "Formscore",
+    "muscles_label": "Muskler som Aktiveres",
+    "positives_label": "Det Du Gjør Bra",
+    "corrections_label": "Rettelser",
+    "cues_label": "Treningstips",
+    "safety_label": "Sikkerhetsadvarsler",
+    "summary_label": "Sammendrag",
+    "check_again": "Sjekk Igjen",
+    "done": "Ferdig",
+    "no_frames_captured": "Ingen bilder ble fanget opp. Kontroller at kameraet fungerer og prøv igjen.",
+    "ready_hint": "Få deg i posisjon, og trykk Start opptak når du er klar",
+    "start_recording": "Start opptak",
+    "stop_recording": "Stopp og analyser",
+    "status_recording": "Opptak pågår... {{seconds}}s — trykk Stopp når du er klar"
   }
 }

@@ -38,7 +38,16 @@
       "no_account": "Huna akaunti?",
       "signup_link": "Jisajili",
       "error_fill": "Tafadhali jaza sehemu zote",
-      "error_signin": "Kuingia kukashindwa. Tafadhali angalia sakafu zako."
+      "error_signin": "Kuingia kukashindwa. Tafadhali angalia sakafu zako.",
+      "verify_2fa_title": "Uthibitisho wa Sababu Mbili",
+      "verify_2fa_subtitle": "Ingiza nambari yako ya uthibitisho ili kuendelea",
+      "verify_2fa_code": "Nambari ya Uthibitisho",
+      "verify_2fa_code_placeholder": "123456",
+      "verify_2fa_button": "Thibitisha",
+      "back_to_signin": "← Rudi kwenye kuingia",
+      "error_2fa_unsupported": "Njia ya sababu mbili ya akaunti hii haijatumikiwa bado. Tafadhali wasiliana na timu ya msaada.",
+      "error_verify_incomplete": "Uthibitisho haujakamilika. Tafadhali jaribu tena.",
+      "error_verify": "Uthibitisho halikufaulu. Tafadhali jaribu tena."
     },
     "signup": {
       "title": "Fungua Akaunti",
@@ -159,7 +168,10 @@
       "beginner_desc": "Kuanza tu safari yangu ya utendaji wa kawaida",
       "intermediate_desc": "Kufanya mazoezi kwa ujumbe kwa miaka 1+",
       "advanced_desc": "Miaka 4+ ya mafunzo yaliyoonganiwa",
-      "prompt": "Chagua ngazi yako ya uzoefu"
+      "prompt": "Chagua ngazi yako ya uzoefu",
+      "injury_label": "Je na jeraha au vizuizi vya uhamaji?",
+      "injury_placeholder": "k.m. kiwiko kibovu, maumivu ya mgongo — si lazima",
+      "injury_helper": "Si lazima — husaidia kocha yako wa AI kuepuka au kurekebishwa mazoezi ambayo yanaweza kudhuru hili."
     },
     "step5": {
       "title": "Mapenzi ya Chakula",
@@ -381,7 +393,20 @@
     "privacy_policy": "Sera ya Faragha",
     "terms_of_service": "Masharti ya Huduma",
     "privacy_policy_sub": "Jinsi tunavyohifadhi data yako",
-    "terms_of_service_sub": "Sheria za kutumia FitAI Coach"
+    "terms_of_service_sub": "Sheria za kutumia Active AI Coach",
+    "injury_history": "Jeraha & Uhamaji",
+    "injury_history_sub": "Husaidia kocha yako wa AI kuepuka au kurekebishwa mazoezi ambayo yanaweza kudhuru hili",
+    "injury_placeholder": "k.m. kiwiko kibovu, maumivu ya mgongo",
+    "injury_updated": "Maelezo yako ya jeraha/uhamaji yamesasishwa.",
+    "error_injury": "Kusasisha maelezo ya jeraha/uhamaji kumeshindwa.",
+    "health_card_title": "Apple Health",
+    "health_card_sub": "Sambaza hatua, usingizi, nishati inayotumika, kiwango cha moyo, na uzani kutoka Apple Health ili kupunguza kuingia kwa mikono.",
+    "health_connect_button": "Unganisha Apple Health",
+    "health_last_synced": "Ilibadilishwa mwisho {{time}}",
+    "health_disconnect_button": "Katiza Unganisho",
+    "health_disconnect_title": "Kukatiza Apple Health?",
+    "health_disconnect_msg": "Hii inasimamisha programu isambaze data mpya, lakini haibatili upatikanaji wa Apple Health — unaweza kuisimamia katika iOS Settings > Health > Data Access & Devices.",
+    "error_health_connect": "Haiwezi kuunganisha na Apple Health. Jaribu tena."
   },
   "notifications": {
     "title": "Arifa",
@@ -529,7 +554,9 @@
     "error_portal": "Haikuweza kufungua portal ya malipo.",
     "error_portal_open": "Haikuweza kufungua portal ya malipo",
     "manage_apple": "Dhibiti Usajili wa Apple",
-    "manage_apple_sub": "Angalia au ghairi usajili wako kupitia Apple"
+    "manage_apple_sub": "Angalia au ghairi usajili wako kupitia Apple",
+    "manage_google": "Dhibiti Usajili wa Google Play",
+    "manage_google_sub": "Angalia au ghairi usajili wako kupitia Google Play"
   },
   "coach": {
     "title": "Kocha Yako",
@@ -768,7 +795,8 @@
     "goal_overall_strength": "Jenga nguvu & misuli ya jumla",
     "goal_specific_area": "Jenga misuli katika eneo mahususi",
     "progress_done": "{{done}}/{{total}} imekamilika",
-    "exercise_meta": "{{sets}} kuweka × {{reps}} kurudia · {{rest}}s kupumzika"
+    "exercise_meta": "{{sets}} kuweka × {{reps}} kurudia · {{rest}}s kupumzika",
+    "check_form": "Angalia Fomu"
   },
   "supplements": {
     "title": "Virutubishi",
@@ -1033,7 +1061,15 @@
     "status_scanning": "Geuka polepole 360°...",
     "status_uploading": "Inakupakia mchakato wako...",
     "status_analyzing": "Kuchanganua mwili wako...",
-    "error_pick": "Haikuweza kuchagua picha. Tafadhali jaribu tena."
+    "error_pick": "Haikuweza kuchagua picha. Tafadhali jaribu tena.",
+    "prep_title": "Kabla Kuanza",
+    "prep_sub": "Tunahitaji mwili wako kamili — kichwa hadi miguu — kwenye sura kwa uchimbaji sahihi.",
+    "prep_tip_prop": "Simamia simu yako kwa umbali wa futi 6–8, skrini ikikabali na wewe",
+    "prep_tip_height": "Njia ya kuzunguka, iliyowekwa kwa urefu wa kifua",
+    "prep_tip_light": "Mwanga mzuri, nguo inayofaa vizuri",
+    "prep_tip_space": "Hakikisha kuwa na nafasi ya kuzunguka duara kamili",
+    "prep_ready_btn": "Niko Tayari",
+    "prep_countdown_label": "Ingia kwenye sura — uchimbaji unaanza katika {{count}}s"
   },
   "shopping_list": {
     "clear_title": "Futa vipengele vimevingiliwa?",
@@ -1092,7 +1128,8 @@
     "badge_week_champion": "Changamano cha Wiki",
     "badge_stay_hydrated": "Kubaki Kumnynyeza",
     "badge_body_scan": "Mchakato wa Mwili",
-    "default_name": "Mwanariadha"
+    "default_name": "Mwanariadha",
+    "friends": "Rafiki"
   },
   "navigation": {
     "home": "Nyumbani",
@@ -1129,11 +1166,11 @@
     "title": "Kabla ya Kuendelea",
     "subtitle": "Tafadhali soma ilani hii muhimu",
     "agree": "Ninaelewa & Kukubali",
-    "required": "Inayohitajika ili kutumia FitAI Coach",
-    "body_p1": "FitAI Coach hutumia AI kutoa maoni kuhusu fitness, elimu ya kufa, na utungaji wa mwili kulingana na picha na taarifa unazotoa.",
+    "required": "Inayohitajika ili kutumia Active AI Coach",
+    "body_p1": "Active AI Coach hutumia AI kutoa maoni kuhusu fitness, elimu ya kufa, na utungaji wa mwili kulingana na picha na taarifa unazotoa.",
     "body_p2": "Maudhui haya yanazalishwa na AI na yanaweza kuwa ya kupotosha au ya kutofautiana. Si ushauri wa kimatibabu, wa kufa, au wa kitaaluma wa fitness, kwa hiyo sio badala ya ushauri kutoka kwa dakitari mwenye ujuzi, mgawaji wa chakula aliyesajiliwa, au mfundishi aliyeidhinisha.",
     "body_p3": "Kamata muongoze mwenye ujuzi kabla ya kuanza mpango wowote mpya wa mlo au zoezi, haswa ikiwa una matatizo yoyote ya kimatibabu. Acha haraka na tafuta msaada wa haraka wa kimatibabu ikiwa unakabiliwa na maumivu, mzunguko, au utamabudu wakati wa zoezi.",
-    "body_p4": "Kwa kuendelea, unakubali vizuizi hivi na kukubaliana na kutumia FitAI Coach kwa hatari yako mwenyewe."
+    "body_p4": "Kwa kuendelea, unakubali vizuizi hivi na kukubaliana na kutumia Active AI Coach kwa hatari yako mwenyewe."
   },
   "muscle_diagram": {
     "active": "Inayotendea",
@@ -1154,5 +1191,58 @@
     "meals_tracked": "Chakula kilichofuatiliwa",
     "cta": "Kuanza — Bure",
     "fine_print": "Inachukua dakika 2 · Hakuna kadi ya mkopo inayohitajika"
+  },
+  "friends": {
+    "title": "Rafiki",
+    "your_code": "Nambari Yako",
+    "share_code": "Shiriki Nambari",
+    "share_message": "Tuendelee kumkumbuka kila mmoja juu ya Active AI Coach! Unganisha nami kwa kutumia nambari {{code}}.",
+    "connect_label": "Una nambari ya rafiki?",
+    "code_placeholder": "Ingiza nambari",
+    "connect_button": "Unganisha",
+    "your_friends": "Rafiki Zako",
+    "empty": "Hakuna rafiki bado. Shiriki nambari yako au ingiza nambari ya rafiki hapo juu kuunganisha.",
+    "no_streak": "Hakuna mfululizo wenye nguvu",
+    "streak_days": "Mfululizo wa siku {{count}}",
+    "no_workouts_yet": "Hakuna zoezi bado",
+    "today": "Alifanya zoezi leo",
+    "yesterday": "Alifanya zoezi jana",
+    "days_ago": "Siku {{count}} zilizopita",
+    "cheer_button": "Jipige kelele 👋",
+    "remove_title": "Ondoa Rafiki",
+    "remove_msg": "Ondoa {{name}} kutoka kwa rafiki zako? Hii haiwezi kurudishwa.",
+    "remove_button": "Ondoa",
+    "error_connect": "Hakuwezi kuunganisha na nambari hiyo. Tafadhali angalia na jaribu tena.",
+    "error_cheer": "Hakuwezi kutuma kelele yako. Tafadhali jaribu tena.",
+    "error_remove": "Hakuwezi kuondoa rafiki huyu. Tafadhali jaribu tena."
+  },
+  "form_check": {
+    "permission_title": "Idhini ya Kamera Inahitajika",
+    "permission_sub": "Ruhusu ufikaji wa kamera ili kuangalia fomu yako ya zoezi.",
+    "grant_permission": "Toa Idhini ya Kamera",
+    "prep_sub": "Weka simu yako ili harakati yako nzima ionekane, kisha fanya zoezi kwa polepole na bila kuacha.",
+    "prep_tip_frame": "Weka mwili wako mzima (au mwanzo unaofanya kazi) kwenye sura",
+    "prep_tip_light": "Mwanga mzuri unasaidia AI kuona fomu yako vizuri",
+    "prep_tip_pace": "Haraka kwa polepole na bila kuacha kupitia 1-2 marudio",
+    "prep_ready_btn": "Anza",
+    "prep_countdown_label": "Kujiandaa — kunasa kuanza katika {{count}}s",
+    "status_capturing": "Fanya harakati sasa...",
+    "status_analyzing": "Kuchanganua fomu yako...",
+    "check_failed": "Ukaguzi Umeshindwa",
+    "check_failed_msg": "Imeshindwa kuchanganua fomu yako. Tafadhali jaribu tena.",
+    "score_label": "Alama ya Fomu",
+    "muscles_label": "Misuli Iliyofanya Kazi",
+    "positives_label": "Unachofanya Vizuri",
+    "corrections_label": "Marekebishaji",
+    "cues_label": "Kidokezo cha Mafunzo",
+    "safety_label": "Onyo za Usalama",
+    "summary_label": "Muhtasari",
+    "check_again": "Angalia Tena",
+    "done": "Kumalizia",
+    "no_frames_captured": "Hakuna fremu zilizokuwa zimechukuliwa. Hakikisha kwamba kamera yako inafanya kazi na jaribu tena.",
+    "ready_hint": "Jiweke katika nafasi, kisha gusa Anza Kurekodi wakati umepokea",
+    "start_recording": "Anza Kurekodi",
+    "stop_recording": "Acha & Changanua",
+    "status_recording": "Kurekodi... {{seconds}}s — gusa Acha wakati umepokea"
   }
 }

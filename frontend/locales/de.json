@@ -38,7 +38,16 @@
       "no_account": "Haben Sie kein Konto?",
       "signup_link": "Registrieren",
       "error_fill": "Bitte füllen Sie alle Felder aus",
-      "error_signin": "Anmeldung fehlgeschlagen. Bitte überprüfen Sie Ihre Anmeldedaten."
+      "error_signin": "Anmeldung fehlgeschlagen. Bitte überprüfen Sie Ihre Anmeldedaten.",
+      "verify_2fa_title": "Zwei-Faktor-Verifizierung",
+      "verify_2fa_subtitle": "Geben Sie Ihren Verifizierungscode ein, um fortzufahren",
+      "verify_2fa_code": "Verifizierungscode",
+      "verify_2fa_code_placeholder": "123456",
+      "verify_2fa_button": "Verifizieren",
+      "back_to_signin": "← Zurück zur Anmeldung",
+      "error_2fa_unsupported": "Die Zwei-Faktor-Methode dieses Kontos wird noch nicht unterstützt. Bitte kontaktieren Sie den Support.",
+      "error_verify_incomplete": "Verifizierung unvollständig. Bitte versuchen Sie es erneut.",
+      "error_verify": "Verifizierung fehlgeschlagen. Bitte versuchen Sie es erneut."
     },
     "signup": {
       "title": "Konto erstellen",
@@ -159,7 +168,10 @@
       "beginner_desc": "Ich beginne gerade meine Fitness-Reise",
       "intermediate_desc": "Trainiere seit 1+ Jahren regelmäßig",
       "advanced_desc": "4+ Jahre strukturiertes Training",
-      "prompt": "Wählen Sie Ihr Erfahrungsniveau"
+      "prompt": "Wählen Sie Ihr Erfahrungsniveau",
+      "injury_label": "Hast du Verletzungen oder Mobilitätseinschränkungen?",
+      "injury_placeholder": "z.B. schlechtes linkes Knie, Kreuzschmerzen — optional",
+      "injury_helper": "Optional — hilft deinem KI-Coach, Übungen zu vermeiden oder anzupassen, die dies verschlimmern könnten."
     },
     "step5": {
       "title": "Ernährungspräferenzen",
@@ -381,7 +393,20 @@
     "privacy_policy": "Datenschutzrichtlinie",
     "terms_of_service": "Nutzungsbedingungen",
     "privacy_policy_sub": "Wie wir Ihre Daten verarbeiten",
-    "terms_of_service_sub": "Regeln für die Nutzung von FitAI Coach"
+    "terms_of_service_sub": "Regeln für die Nutzung von Active AI Coach",
+    "injury_history": "Verletzungen & Mobilität",
+    "injury_history_sub": "Hilft deinem KI-Coach, Übungen zu vermeiden oder anzupassen, die dies verschlimmern könnten",
+    "injury_placeholder": "z.B. schlechtes linkes Knie, Kreuzschmerzen",
+    "injury_updated": "Deine Notizen zu Verletzungen/Mobilität wurden aktualisiert.",
+    "error_injury": "Aktualisierung der Notizen zu Verletzungen/Mobilität fehlgeschlagen.",
+    "health_card_title": "Apple Health",
+    "health_card_sub": "Synchronisiere Schritte, Schlaf, aktive Energie, Herzfrequenz und Gewicht von Apple Health, um manuelle Einträge zu reduzieren.",
+    "health_connect_button": "Apple Health verbinden",
+    "health_last_synced": "Zuletzt synchronisiert {{time}}",
+    "health_disconnect_button": "Verbindung trennen",
+    "health_disconnect_title": "Apple Health trennen?",
+    "health_disconnect_msg": "Dies stoppt die Synchronisierung neuer Daten, widerruft aber nicht den Apple-Health-Zugriff — du kannst dies in iOS-Einstellungen > Health > Datenzugriff & Geräte verwalten.",
+    "error_health_connect": "Konnte keine Verbindung zu Apple Health herstellen. Versuche es erneut."
   },
   "notifications": {
     "title": "Benachrichtigungen",
@@ -529,7 +554,9 @@
     "error_portal": "Abrechnungsportal konnte nicht geöffnet werden.",
     "error_portal_open": "Abrechnungsportal konnte nicht geöffnet werden",
     "manage_apple": "Apple-Abonnement verwalten",
-    "manage_apple_sub": "Zeigen Sie Ihr Abonnement an oder kündigen Sie es über Apple"
+    "manage_apple_sub": "Zeigen Sie Ihr Abonnement an oder kündigen Sie es über Apple",
+    "manage_google": "Google Play-Abonnement verwalten",
+    "manage_google_sub": "Sehe dein Abonnement in Google Play ein oder kündige es"
   },
   "coach": {
     "title": "Ihr Coach",
@@ -768,7 +795,8 @@
     "goal_overall_strength": "Bauen Sie Gesamtkraft und Muskulatur auf",
     "goal_specific_area": "Bauen Sie Muskeln in einem bestimmten Bereich auf",
     "progress_done": "{{done}}/{{total}} erledigt",
-    "exercise_meta": "{{sets}} Sätze × {{reps}} Wiederholungen · {{rest}}s Pause"
+    "exercise_meta": "{{sets}} Sätze × {{reps}} Wiederholungen · {{rest}}s Pause",
+    "check_form": "Form überprüfen"
   },
   "supplements": {
     "title": "Supplemente",
@@ -1033,7 +1061,15 @@
     "status_scanning": "Drehen Sie sich langsam 360°...",
     "status_uploading": "Laden Sie Ihren Scan hoch...",
     "status_analyzing": "Analysiere Ihre Körperzusammensetzung...",
-    "error_pick": "Bild konnte nicht ausgewählt werden. Bitte versuchen Sie es erneut."
+    "error_pick": "Bild konnte nicht ausgewählt werden. Bitte versuchen Sie es erneut.",
+    "prep_title": "Bevor du startest",
+    "prep_sub": "Wir benötigen deinen ganzen Körper — von Kopf bis Fuß — im Bild für einen genauen Scan.",
+    "prep_tip_prop": "Stelle dein Handy 6–8 Fuß entfernt auf, Bildschirm von dir weg",
+    "prep_tip_height": "Hochformatmodus, auf Brusthöhe positioniert",
+    "prep_tip_light": "Gute Beleuchtung, enganliegende Kleidung",
+    "prep_tip_space": "Stelle sicher, dass du Platz hast, dich vollständig umzudrehen",
+    "prep_ready_btn": "Ich bin bereit",
+    "prep_countdown_label": "Positioniere dich — Scan startet in {{count}}s"
   },
   "shopping_list": {
     "clear_title": "Aktivierte Artikel löschen?",
@@ -1092,7 +1128,8 @@
     "badge_week_champion": "Wochenmeister",
     "badge_stay_hydrated": "Bleiben Sie hydratisiert",
     "badge_body_scan": "Body Scan",
-    "default_name": "Athlet"
+    "default_name": "Athlet",
+    "friends": "Freunde"
   },
   "navigation": {
     "home": "Startseite",
@@ -1129,11 +1166,11 @@
     "title": "Bevor Sie fortfahren",
     "subtitle": "Bitte lesen Sie diesen wichtigen Hinweis",
     "agree": "Ich verstehe und stimme zu",
-    "required": "Erforderlich zur Nutzung von FitAI Coach",
-    "body_p1": "FitAI Coach nutzt KI, um Fitness-, Ernährungs- und Körperzusammensetzungs-Feedback basierend auf Fotos und Informationen zu generieren, die Sie bereitstellen.",
+    "required": "Erforderlich zur Nutzung von Active AI Coach",
+    "body_p1": "Active AI Coach nutzt KI, um Fitness-, Ernährungs- und Körperzusammensetzungs-Feedback basierend auf Fotos und Informationen zu generieren, die Sie bereitstellen.",
     "body_p2": "Dieser Inhalt wird von KI generiert und kann ungenau oder unvollständig sein. Es ist keine medizinische, ernährungsphysiologische oder professionelle Fitnessberatung und kein Ersatz für eine Konsultation mit einem qualifizierten Arzt, registrierten Ernährungsberater oder zertifizierten Trainer.",
     "body_p3": "Konsultieren Sie immer einen qualifizierten Fachmann, bevor Sie ein neues Ernährungs- oder Trainingsprogramm beginnen, besonders wenn Sie medizinische Erkrankungen haben. Hören Sie sofort auf und suchen Sie medizinische Hilfe, wenn Sie während des Trainings Schmerzen, Schwindel oder Unbehagen verspüren.",
-    "body_p4": "Durch Fortfahren bestätigen Sie diese Einschränkungen und stimmen zu, FitAI Coach auf eigenes Risiko zu nutzen."
+    "body_p4": "Durch Fortfahren bestätigen Sie diese Einschränkungen und stimmen zu, Active AI Coach auf eigenes Risiko zu nutzen."
   },
   "muscle_diagram": {
     "active": "Aktiv",
@@ -1154,5 +1191,58 @@
     "meals_tracked": "Mahlzeiten protokolliert",
     "cta": "Los geht's – Kostenlos",
     "fine_print": "Dauert 2 Minuten · Keine Kreditkarte erforderlich"
+  },
+  "friends": {
+    "title": "Freunde",
+    "your_code": "Dein Code",
+    "share_code": "Code teilen",
+    "share_message": "Lass uns uns gegenseitig bei Active AI Coach motivieren! Verbinde dich mit mir mit dem Code {{code}}.",
+    "connect_label": "Hast du einen Code von einem Freund?",
+    "code_placeholder": "Code eingeben",
+    "connect_button": "Verbinden",
+    "your_friends": "Deine Freunde",
+    "empty": "Noch keine Freunde. Teile deinen Code oder gebe den Code eines Freundes oben ein, um dich zu verbinden.",
+    "no_streak": "Keine aktive Serie",
+    "streak_days": "{{count}} Tage Serie",
+    "no_workouts_yet": "Noch keine Trainings",
+    "today": "Heute trainiert",
+    "yesterday": "Gestern trainiert",
+    "days_ago": "vor {{count}} Tagen trainiert",
+    "cheer_button": "Anfeuern 👋",
+    "remove_title": "Freund entfernen",
+    "remove_msg": "{{name}} aus deinen Freunden entfernen? Das kann nicht rückgängig gemacht werden.",
+    "remove_button": "Entfernen",
+    "error_connect": "Konnte mit diesem Code nicht verbunden werden. Bitte überprüfe ihn und versuche es erneut.",
+    "error_cheer": "Dein Anfeuern konnte nicht gesendet werden. Bitte versuche es erneut.",
+    "error_remove": "Dieser Freund konnte nicht entfernt werden. Bitte versuche es erneut."
+  },
+  "form_check": {
+    "permission_title": "Kamerazugriff erforderlich",
+    "permission_sub": "Ermöglichen Sie Kamerazugriff, um Ihre Trainingsform zu überprüfen.",
+    "grant_permission": "Kamerazugriff gewähren",
+    "prep_sub": "Positionieren Sie Ihr Telefon so, dass Ihre gesamte Bewegung sichtbar ist, und führen Sie die Übung langsam und kontinuierlich aus.",
+    "prep_tip_frame": "Halten Sie Ihren gesamten Körper (oder die arbeitende Extremität) im Bild fest",
+    "prep_tip_light": "Gute Beleuchtung hilft der KI, Ihre Form klar zu erkennen",
+    "prep_tip_pace": "Führen Sie die Bewegung langsam und kontinuierlich durch 1–2 Wiederholungen aus",
+    "prep_ready_btn": "Start",
+    "prep_countdown_label": "Machen Sie sich bereit – Aufnahme beginnt in {{count}}s",
+    "status_capturing": "Führen Sie die Bewegung jetzt aus...",
+    "status_analyzing": "Analysiere deine Form...",
+    "check_failed": "Überprüfung fehlgeschlagen",
+    "check_failed_msg": "Analyse Ihrer Form fehlgeschlagen. Bitte versuchen Sie es erneut.",
+    "score_label": "Formbewertung",
+    "muscles_label": "Beanspruchte Muskeln",
+    "positives_label": "Das machst du gut",
+    "corrections_label": "Korrektionen",
+    "cues_label": "Trainingstipps",
+    "safety_label": "Sicherheitswarnungen",
+    "summary_label": "Zusammenfassung",
+    "check_again": "Erneut überprüfen",
+    "done": "Fertig",
+    "no_frames_captured": "Es wurden keine Bilder aufgenommen. Stellen Sie sicher, dass Ihre Kamera funktioniert, und versuchen Sie es erneut.",
+    "ready_hint": "Positioniere dich, dann tippe auf Aufnahme starten, wenn du bereit bist",
+    "start_recording": "Aufnahme starten",
+    "stop_recording": "Stopp & Analyse",
+    "status_recording": "Wird aufgenommen... {{seconds}}s — tippe auf Stopp, wenn du bereit bist"
   }
 }

@@ -38,7 +38,16 @@
       "no_account": "אין לך חשבון?",
       "signup_link": "הירשם",
       "error_fill": "אנא מלא את כל השדות",
-      "error_signin": "ההתחברות נכשלה. בדוק את פרטיך."
+      "error_signin": "ההתחברות נכשלה. בדוק את פרטיך.",
+      "verify_2fa_title": "אימות דו-שלבי",
+      "verify_2fa_subtitle": "הזן את קוד האימות שלך כדי להמשיך",
+      "verify_2fa_code": "קוד אימות",
+      "verify_2fa_code_placeholder": "123456",
+      "verify_2fa_button": "אימות",
+      "back_to_signin": "← חזרה להתחברות",
+      "error_2fa_unsupported": "שיטת האימות הדו-שלבית של חשבון זה עדיין אינה נתמכת. אנא צור קשר עם התמיכה.",
+      "error_verify_incomplete": "האימות לא הושלם. אנא נסה שוב.",
+      "error_verify": "האימות נכשל. אנא נסה שוב."
     },
     "signup": {
       "title": "צור חשבון",
@@ -159,7 +168,10 @@
       "beginner_desc": "בדיוק מתחיל את המסע הכושר שלי",
       "intermediate_desc": "אימון עקבי כ-1 שנה או יותר",
       "advanced_desc": "4+ שנים של אימון מובנה",
-      "prompt": "בחר את רמת ההתנסות שלך"
+      "prompt": "בחר את רמת ההתנסות שלך",
+      "injury_label": "האם יש לך כניעות או הגבלות ניידות?",
+      "injury_placeholder": "לדוגמה: ברך שמאלית חלשה, כאבי גב תחתון — אופציונלי",
+      "injury_helper": "אופציונלי — עוזר למאמן ה-AI שלך להימנע משינוי תרגילים שעלולים להחמיר זאת."
     },
     "step5": {
       "title": "העדפות תזונה",
@@ -381,7 +393,20 @@
     "privacy_policy": "מדיניות הפרטיות",
     "terms_of_service": "תנאי השירות",
     "privacy_policy_sub": "כיצד אנו מטפלים בנתונים שלך",
-    "terms_of_service_sub": "כללים לשימוש ב-FitAI Coach"
+    "terms_of_service_sub": "כללים לשימוש ב-Active AI Coach",
+    "injury_history": "כניעות וניידות",
+    "injury_history_sub": "עוזר למאמן ה-AI שלך להימנע משינוי תרגילים שעלולים להחמיר זאת",
+    "injury_placeholder": "לדוגמה: ברך שמאלית חלשה, כאבי גב תחתון",
+    "injury_updated": "הערות הכניעה/ניידות שלך עודכנו.",
+    "error_injury": "עדכון הערות הכניעה/ניידות נכשל.",
+    "health_card_title": "Apple Health",
+    "health_card_sub": "סנכרן צעדים, שינה, אנרגיה פעילה, קצב הלב ומשקל מ-Apple Health כדי להפחית רישום ידני.",
+    "health_connect_button": "חבר את Apple Health",
+    "health_last_synced": "סנכרון אחרון {{time}}",
+    "health_disconnect_button": "נתק",
+    "health_disconnect_title": "נתק את Apple Health?",
+    "health_disconnect_msg": "פעולה זו עוצרת את סנכרון הנתונים החדשים באפליקציה, אך לא מבטלת את הגישה ל-Apple Health — באפשרותך לנהל זאת בהגדרות iOS > Health > Data Access & Devices.",
+    "error_health_connect": "לא היה ניתן להתחבר ל-Apple Health. נסה שוב."
   },
   "notifications": {
     "title": "התראות",
@@ -529,7 +554,9 @@
     "error_portal": "לא הצלחנו לפתוח את פורטל החיוב.",
     "error_portal_open": "נכשל בפתיחת פורטל החיוב",
     "manage_apple": "ניהול מנוי Apple",
-    "manage_apple_sub": "הצג או בטל את המנוי שלך דרך Apple"
+    "manage_apple_sub": "הצג או בטל את המנוי שלך דרך Apple",
+    "manage_google": "ניהול מנוי Google Play",
+    "manage_google_sub": "צפה או בטל את המנוי שלך דרך Google Play"
   },
   "coach": {
     "title": "המאמן שלך",
@@ -768,7 +795,8 @@
     "goal_overall_strength": "בנו כוח כללי ושריר",
     "goal_specific_area": "בנו שריר בתחום ספציפי",
     "progress_done": "{{done}}/{{total}} בוצע",
-    "exercise_meta": "{{sets}} סטים × {{reps}} חזרות · {{rest}}s מנוחה"
+    "exercise_meta": "{{sets}} סטים × {{reps}} חזרות · {{rest}}s מנוחה",
+    "check_form": "בדוק טכניקה"
   },
   "supplements": {
     "title": "תוספים",
@@ -1033,7 +1061,15 @@
     "status_scanning": "סובב לאט 360°...",
     "status_uploading": "העלה את הסריקה שלך...",
     "status_analyzing": "ניתוח קומפוזיציה הגוף שלך...",
-    "error_pick": "נכשל בבחירת תמונה. בואו נסו שוב."
+    "error_pick": "נכשל בבחירת תמונה. בואו נסו שוב.",
+    "prep_title": "לפני שתתחיל",
+    "prep_sub": "אנחנו זקוקים לגופך המלא — מהראש ועד הרגליים — בתמונה לסריקה מדויקת.",
+    "prep_tip_prop": "תמוך בטלפון שלך במרחק של 6-8 מטרים, המסך פונה משם",
+    "prep_tip_height": "מצב דיוקן, ממוצע בגובה החזה",
+    "prep_tip_light": "תאורה טובה, ביגוד צמוד",
+    "prep_tip_space": "וודא שיש לך מקום להסתובב מעגל מלא",
+    "prep_ready_btn": "אני מוכן",
+    "prep_countdown_label": "היכנס לתמונה — הסריקה מתחילה בעוד {{count}}s"
   },
   "shopping_list": {
     "clear_title": "נקה פריטים מסומנים?",
@@ -1092,7 +1128,8 @@
     "badge_week_champion": "אלוף השבוע",
     "badge_stay_hydrated": "הישאר מהודר",
     "badge_body_scan": "סריקת גוף",
-    "default_name": "ספורטאי"
+    "default_name": "ספורטאי",
+    "friends": "חברים"
   },
   "navigation": {
     "home": "בעמוד הבית",
@@ -1129,11 +1166,11 @@
     "title": "לפני שתמשיך",
     "subtitle": "בואו קרא הודעה חשובה זו",
     "agree": "אני מבין ומסכים",
-    "required": "נדרש כדי להשתמש בFitAI Coach",
-    "body_p1": "FitAI Coach משתמש בבינה מלאכותית ליצירת משוב כושר גופני, תזונה והרכב גוף על בסיס תמונות ומידע שאתה מספק.",
+    "required": "נדרש כדי להשתמש בActive AI Coach",
+    "body_p1": "Active AI Coach משתמש בבינה מלאכותית ליצירת משוב כושר גופני, תזונה והרכב גוף על בסיס תמונות ומידע שאתה מספק.",
     "body_p2": "תוכן זה נוצר על ידי AI וייתכן שיהיה לא מדויק או לא שלם. זה אינו עצה רפואית, תזונתית או מקצועית בכושר גופני, והוא אינו תחליף להתייעצות עם רופא מורשה, דיאטנית רשומה או מאמן מוסמך.",
     "body_p3": "הייעץ תמיד עם איש מקצוע מוסמך לפני תחילת כל תוכנית דיאטה או תרגול חדשה, במיוחד אם יש לך מצבים רפואיים כלשהם. עצור מיד וחפש עזרה רפואית אם אתה חוקה כאב, סחרחורת או אי-נוחות במהלך התרגיל.",
-    "body_p4": "בהמשך, אתה מכיר בהגבלות אלה ומסכים להשתמש ב-FitAI Coach על אחריותך שלך."
+    "body_p4": "בהמשך, אתה מכיר בהגבלות אלה ומסכים להשתמש ב-Active AI Coach על אחריותך שלך."
   },
   "muscle_diagram": {
     "active": "פעיל",
@@ -1154,5 +1191,58 @@
     "meals_tracked": "ארוחות עקודות",
     "cta": "התחל בחינם",
     "fine_print": "לוקח דקה — אין צורך בכרטיס אשראי"
+  },
+  "friends": {
+    "title": "חברים",
+    "your_code": "הקוד שלך",
+    "share_code": "שתף קוד",
+    "share_message": "בואו נשמור אחד על השני ב-Active AI Coach! התחבר אליי באמצעות הקוד {{code}}.",
+    "connect_label": "יש לך קוד של חבר?",
+    "code_placeholder": "הכנס קוד",
+    "connect_button": "התחבר",
+    "your_friends": "החברים שלך",
+    "empty": "עדיין אין חברים. שתף את הקוד שלך או הכנס קוד של חבר למעלה כדי להתחבר.",
+    "no_streak": "אין סדרה פעילה",
+    "streak_days": "סדרה של {{count}} ימים",
+    "no_workouts_yet": "עדיין אין אימונים",
+    "today": "התאמן היום",
+    "yesterday": "התאמן אתמול",
+    "days_ago": "לפני {{count}} ימים",
+    "cheer_button": "תמוך 👋",
+    "remove_title": "הסר חבר",
+    "remove_msg": "להסיר את {{name}} מהחברים שלך? לא ניתן לבטל זאת.",
+    "remove_button": "הסר",
+    "error_connect": "לא היתה אפשרות להתחבר עם הקוד הזה. בדוק אותו ונסה שוב.",
+    "error_cheer": "לא היתה אפשרות לשלוח את התמיכה שלך. אנא נסה שוב.",
+    "error_remove": "לא היתה אפשרות להסיר חבר זה. אנא נסה שוב."
+  },
+  "form_check": {
+    "permission_title": "נדרש גישה למצלמה",
+    "permission_sub": "אפשר גישה למצלמה כדי לבדוק את טכניקת התרגיל שלך.",
+    "grant_permission": "אפשר גישה למצלמה",
+    "prep_sub": "מקם את הטלפון שלך כך שתנועתך כולה תהיה גלויה, ואז בצע את התרגיל לאט ובאופן רציף.",
+    "prep_tip_frame": "הכנס את כל הגוף שלך (או את הגפה העובדת) לתמונה",
+    "prep_tip_light": "תאורה טובה עוזרת לבינה מלאכותית לראות את הטכניקה שלך בבירור",
+    "prep_tip_pace": "זוז לאט וברציפות דרך 1-2 חזרות",
+    "prep_ready_btn": "התחל",
+    "prep_countdown_label": "התכונן — הקלטה מתחילה בעוד {{count}}s",
+    "status_capturing": "בצע את התנועה עכשיו...",
+    "status_analyzing": "מנתח את הטכניקה שלך...",
+    "check_failed": "הבדיקה נכשלה",
+    "check_failed_msg": "נכשל לנתח את הטכניקה שלך. אנא נסה שוב.",
+    "score_label": "ניקוד טכניקה",
+    "muscles_label": "שרירים שעובדים",
+    "positives_label": "מה אתה עושה טוב",
+    "corrections_label": "תיקונים",
+    "cues_label": "עצות הדרכה",
+    "safety_label": "אזהרות בטיחות",
+    "summary_label": "סיכום",
+    "check_again": "בדוק שוב",
+    "done": "סיום",
+    "no_frames_captured": "לא נתפסו כל תמונות. ודא שהמצלמה שלך פועלת ונסה שוב.",
+    "ready_hint": "התייצבו בתנוחה הנכונה, ואז הקישו על התחל הקלטה כאשר אתם מוכנים",
+    "start_recording": "התחל הקלטה",
+    "stop_recording": "עצור וניתח",
+    "status_recording": "מקליט... {{seconds}}s — הקישו על עצור כאשר אתם מוכנים"
   }
 }

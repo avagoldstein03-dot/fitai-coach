@@ -38,7 +38,16 @@
       "no_account": "沒有帳戶？",
       "signup_link": "註冊",
       "error_fill": "請填寫所有欄位",
-      "error_signin": "登入失敗。請檢查您的認證資訊。"
+      "error_signin": "登入失敗。請檢查您的認證資訊。",
+      "verify_2fa_title": "雙因素驗證",
+      "verify_2fa_subtitle": "輸入驗證碼以繼續",
+      "verify_2fa_code": "驗證碼",
+      "verify_2fa_code_placeholder": "123456",
+      "verify_2fa_button": "驗證",
+      "back_to_signin": "← 返回登入",
+      "error_2fa_unsupported": "此帳號的雙因素驗證方法暫不支援。請聯絡支援團隊。",
+      "error_verify_incomplete": "驗證未完成。請重試。",
+      "error_verify": "驗證失敗。請重試。"
     },
     "signup": {
       "title": "建立帳戶",
@@ -159,7 +168,10 @@
       "beginner_desc": "剛開始我的健身之旅",
       "intermediate_desc": "堅持訓練超過 1 年",
       "advanced_desc": "4 年以上的結構化訓練",
-      "prompt": "選擇您的經驗水準"
+      "prompt": "選擇您的經驗水準",
+      "injury_label": "有任何傷害或活動能力限制嗎？",
+      "injury_placeholder": "例如：左膝蓋疼痛、下背部疼痛 — 可選",
+      "injury_helper": "可選 — 幫助您的 AI 教練避免或修改可能加重症狀的運動。"
     },
     "step5": {
       "title": "飲食偏好",
@@ -381,7 +393,20 @@
     "privacy_policy": "隱私政策",
     "terms_of_service": "服務條款",
     "privacy_policy_sub": "我們如何處理您的數據",
-    "terms_of_service_sub": "使用 FitAI Coach 的規則"
+    "terms_of_service_sub": "使用 Active AI Coach 的規則",
+    "injury_history": "傷害與活動能力",
+    "injury_history_sub": "幫助您的 AI 教練避免或修改可能加重症狀的運動",
+    "injury_placeholder": "例如：左膝蓋疼痛、下背部疼痛",
+    "injury_updated": "您的傷害/活動能力備註已更新。",
+    "error_injury": "更新傷害/活動能力備註失敗。",
+    "health_card_title": "Apple Health",
+    "health_card_sub": "從 Apple Health 同步步數、睡眠、活動能量、心率和體重，減少手動記錄。",
+    "health_connect_button": "連接 Apple Health",
+    "health_last_synced": "最後同步於 {{time}}",
+    "health_disconnect_button": "斷開連接",
+    "health_disconnect_title": "斷開 Apple Health 連接？",
+    "health_disconnect_msg": "這會停止應用程式同步新數據，但不會撤銷 Apple Health 存取權限 — 您可以在 iOS 設定 > Health > 資料存取與裝置中進行管理。",
+    "error_health_connect": "無法連接至 Apple Health。請重試。"
   },
   "notifications": {
     "title": "通知",
@@ -529,7 +554,9 @@
     "error_portal": "無法開啟帳單入口。",
     "error_portal_open": "無法開啟帳單入口",
     "manage_apple": "管理 Apple 訂閱",
-    "manage_apple_sub": "通過 Apple 查看或取消您的訂閱"
+    "manage_apple_sub": "通過 Apple 查看或取消您的訂閱",
+    "manage_google": "管理 Google Play 訂閱",
+    "manage_google_sub": "透過 Google Play 查看或取消您的訂閱"
   },
   "coach": {
     "title": "您的教練",
@@ -768,7 +795,8 @@
     "goal_overall_strength": "建立整體力量和肌肉",
     "goal_specific_area": "在特定區域建立肌肉",
     "progress_done": "{{done}}/{{total}} 已完成",
-    "exercise_meta": "{{sets}} 組 × {{reps}} 次 · {{rest}}s 休息"
+    "exercise_meta": "{{sets}} 組 × {{reps}} 次 · {{rest}}s 休息",
+    "check_form": "檢查姿勢"
   },
   "supplements": {
     "title": "補充品",
@@ -1033,7 +1061,15 @@
     "status_scanning": "緩慢轉身 360°...",
     "status_uploading": "上傳您的掃描...",
     "status_analyzing": "分析您的身體成份...",
-    "error_pick": "無法選擇圖片。請重試。"
+    "error_pick": "無法選擇圖片。請重試。",
+    "prep_title": "開始前準備",
+    "prep_sub": "我們需要您從頭到腳的完整身體在畫面內，以進行準確的掃描。",
+    "prep_tip_prop": "將手機放在距離 6–8 英尺遠的地方，螢幕面向遠離您的方向",
+    "prep_tip_height": "豎屏模式，位置在胸部高度",
+    "prep_tip_light": "光線良好，貼身衣物",
+    "prep_tip_space": "確保您有足夠的空間轉過整個圓圈",
+    "prep_ready_btn": "我準備好了",
+    "prep_countdown_label": "進入畫面 — 掃描將在 {{count}} 秒後開始"
   },
   "shopping_list": {
     "clear_title": "清除已勾選的項目？",
@@ -1092,7 +1128,8 @@
     "badge_week_champion": "週冠軍",
     "badge_stay_hydrated": "保持補水",
     "badge_body_scan": "身體掃描",
-    "default_name": "運動員"
+    "default_name": "運動員",
+    "friends": "好友"
   },
   "navigation": {
     "home": "首頁",
@@ -1129,11 +1166,11 @@
     "title": "繼續之前",
     "subtitle": "請閱讀此重要通知",
     "agree": "我理解並同意",
-    "required": "使用 FitAI Coach 需要",
-    "body_p1": "FitAI Coach 使用 AI 根據您提供的照片和信息生成健身、營養和身體成分反饋。",
+    "required": "使用 Active AI Coach 需要",
+    "body_p1": "Active AI Coach 使用 AI 根據您提供的照片和信息生成健身、營養和身體成分反饋。",
     "body_p2": "此內容由 AI 生成，可能不準確或不完整。它不是醫學、營養或專業健身建議，也不能替代與合格醫生、註冊營養師或認證教練的諮詢。",
     "body_p3": "在開始任何新飲食或運動計劃前，請務必諮詢合格的專業人士，特別是如果您有任何醫學狀況。如果在運動過程中感到疼痛、頭暈或不適，請立即停止並尋求醫療幫助。",
-    "body_p4": "繼續使用即表示您承認這些限制，並同意自行承擔風險使用 FitAI Coach。"
+    "body_p4": "繼續使用即表示您承認這些限制，並同意自行承擔風險使用 Active AI Coach。"
   },
   "muscle_diagram": {
     "active": "活躍",
@@ -1154,5 +1191,58 @@
     "meals_tracked": "已追蹤餐點",
     "cta": "開始——免費",
     "fine_print": "只需 2 分鐘 · 無需信用卡"
+  },
+  "friends": {
+    "title": "好友",
+    "your_code": "您的代碼",
+    "share_code": "分享代碼",
+    "share_message": "讓我們在 Active AI Coach 上互相督促！使用代碼 {{code}} 與我連接。",
+    "connect_label": "有朋友的代碼？",
+    "code_placeholder": "輸入代碼",
+    "connect_button": "連接",
+    "your_friends": "您的好友",
+    "empty": "還沒有好友。分享您的代碼或輸入朋友的代碼以連接。",
+    "no_streak": "沒有活躍連勝紀錄",
+    "streak_days": "{{count}} 天連勝",
+    "no_workouts_yet": "還沒有運動記錄",
+    "today": "今天已運動",
+    "yesterday": "昨天已運動",
+    "days_ago": "{{count}} 天前",
+    "cheer_button": "加油 👋",
+    "remove_title": "移除好友",
+    "remove_msg": "從好友中移除 {{name}}？此操作無法撤銷。",
+    "remove_button": "移除",
+    "error_connect": "無法使用該代碼連接。請檢查並重試。",
+    "error_cheer": "無法發送加油。請重試。",
+    "error_remove": "無法移除此好友。請重試。"
+  },
+  "form_check": {
+    "permission_title": "需要相機存取權限",
+    "permission_sub": "允許相機存取以檢查您的運動姿勢。",
+    "grant_permission": "授予相機存取權限",
+    "prep_sub": "調整您的手機位置，使整個動作都能看到，然後緩慢、連續地執行運動。",
+    "prep_tip_frame": "將整個身體（或鍛鍊的肢體）放入畫面中",
+    "prep_tip_light": "良好的光線有助於 AI 清楚地看到您的姿勢",
+    "prep_tip_pace": "緩慢、連續地完成 1-2 次重複",
+    "prep_ready_btn": "開始",
+    "prep_countdown_label": "準備好——錄製將在 {{count}} 秒後開始",
+    "status_capturing": "現在執行動作...",
+    "status_analyzing": "正在分析您的姿勢...",
+    "check_failed": "檢查失敗",
+    "check_failed_msg": "無法分析您的姿勢。請重試。",
+    "score_label": "姿勢評分",
+    "muscles_label": "運動肌肉",
+    "positives_label": "您做得很好的地方",
+    "corrections_label": "改進建議",
+    "cues_label": "教練提示",
+    "safety_label": "安全警告",
+    "summary_label": "總結",
+    "check_again": "再檢查一次",
+    "done": "完成",
+    "no_frames_captured": "未捕捉到任何畫面。請確保您的相機正常運作，然後重試。",
+    "ready_hint": "準備好姿勢後，點擊開始錄製",
+    "start_recording": "開始錄製",
+    "stop_recording": "停止並分析",
+    "status_recording": "錄製中... {{seconds}}s — 準備好時點擊停止"
   }
 }

@@ -38,7 +38,16 @@
       "no_account": "Não tem uma conta?",
       "signup_link": "Registre-se",
       "error_fill": "Por favor preencha todos os campos",
-      "error_signin": "Falha ao iniciar sessão. Verifique suas credenciais."
+      "error_signin": "Falha ao iniciar sessão. Verifique suas credenciais.",
+      "verify_2fa_title": "Verificação de Dois Fatores",
+      "verify_2fa_subtitle": "Digite seu código de verificação para continuar",
+      "verify_2fa_code": "Código de Verificação",
+      "verify_2fa_code_placeholder": "123456",
+      "verify_2fa_button": "Verificar",
+      "back_to_signin": "← Voltar para entrar",
+      "error_2fa_unsupported": "O método de dois fatores desta conta ainda não é suportado. Entre em contato com o suporte.",
+      "error_verify_incomplete": "Verificação incompleta. Tente novamente.",
+      "error_verify": "Falha na verificação. Tente novamente."
     },
     "signup": {
       "title": "Criar Conta",
@@ -159,7 +168,10 @@
       "beginner_desc": "Estou começando minha jornada de fitness",
       "intermediate_desc": "Treino consistentemente há 1+ anos",
       "advanced_desc": "4+ anos de treinamento estruturado",
-      "prompt": "Selecione seu nível de experiência"
+      "prompt": "Selecione seu nível de experiência",
+      "injury_label": "Alguma lesão ou limitação de mobilidade?",
+      "injury_placeholder": "ex. joelho esquerdo ruim, dor nas costas — opcional",
+      "injury_helper": "Opcional — ajuda seu treinador de IA a evitar ou modificar exercícios que possam agravar isso."
     },
     "step5": {
       "title": "Preferências Dietéticas",
@@ -381,7 +393,20 @@
     "privacy_policy": "Política de Privacidade",
     "terms_of_service": "Termos de Serviço",
     "privacy_policy_sub": "Como tratamos seus dados",
-    "terms_of_service_sub": "Regras para usar o FitAI Coach"
+    "terms_of_service_sub": "Regras para usar o Active AI Coach",
+    "injury_history": "Lesões e Mobilidade",
+    "injury_history_sub": "Ajuda seu treinador de IA a evitar ou modificar exercícios que possam agravar isso",
+    "injury_placeholder": "ex. joelho esquerdo ruim, dor nas costas",
+    "injury_updated": "Suas anotações de lesão/mobilidade foram atualizadas.",
+    "error_injury": "Falha ao atualizar anotações de lesão/mobilidade.",
+    "health_card_title": "Apple Health",
+    "health_card_sub": "Sincronize passos, sono, energia ativa, frequência cardíaca e peso do Apple Health para reduzir registros manuais.",
+    "health_connect_button": "Conectar Apple Health",
+    "health_last_synced": "Última sincronização {{time}}",
+    "health_disconnect_button": "Desconectar",
+    "health_disconnect_title": "Desconectar Apple Health?",
+    "health_disconnect_msg": "Isso interrompe a sincronização de novos dados no aplicativo, mas não revoga o acesso ao Apple Health — você pode gerenciar isso em Configurações do iOS > Saúde > Acesso a Dados e Dispositivos.",
+    "error_health_connect": "Não foi possível conectar ao Apple Health. Tente novamente."
   },
   "notifications": {
     "title": "Notificações",
@@ -529,7 +554,9 @@
     "error_portal": "Não foi possível abrir o portal de cobrança.",
     "error_portal_open": "Falha ao abrir portal de cobrança",
     "manage_apple": "Gerenciar Assinatura Apple",
-    "manage_apple_sub": "Visualize ou cancele sua assinatura através da Apple"
+    "manage_apple_sub": "Visualize ou cancele sua assinatura através da Apple",
+    "manage_google": "Gerenciar Assinatura do Google Play",
+    "manage_google_sub": "Veja ou cancele sua assinatura através do Google Play"
   },
   "coach": {
     "title": "Seu Coach",
@@ -768,7 +795,8 @@
     "goal_overall_strength": "Construir força e músculo geral",
     "goal_specific_area": "Construir músculo em uma área específica",
     "progress_done": "{{done}}/{{total}} concluído",
-    "exercise_meta": "{{sets}} séries × {{reps}} repetições · {{rest}}s descanso"
+    "exercise_meta": "{{sets}} séries × {{reps}} repetições · {{rest}}s descanso",
+    "check_form": "Verificar Forma"
   },
   "supplements": {
     "title": "Suplementos",
@@ -1033,7 +1061,15 @@
     "status_scanning": "Vire-se lentamente 360°...",
     "status_uploading": "Enviando sua leitura...",
     "status_analyzing": "Analisando sua composição corporal...",
-    "error_pick": "Falha ao selecionar imagem. Por favor, tente novamente."
+    "error_pick": "Falha ao selecionar imagem. Por favor, tente novamente.",
+    "prep_title": "Antes de Começar",
+    "prep_sub": "Precisamos de seu corpo inteiro — da cabeça aos pés — enquadrado para uma leitura precisa.",
+    "prep_tip_prop": "Apoie seu telefone a 6–8 metros de distância, tela voltada para longe de você",
+    "prep_tip_height": "Modo retrato, posicionado na altura do peito",
+    "prep_tip_light": "Boa iluminação e roupas justas",
+    "prep_tip_space": "Certifique-se de que tem espaço para virar um círculo completo",
+    "prep_ready_btn": "Estou Pronto",
+    "prep_countdown_label": "Entre no enquadramento — a leitura começa em {{count}}s"
   },
   "shopping_list": {
     "clear_title": "Limpar itens marcados?",
@@ -1092,7 +1128,8 @@
     "badge_week_champion": "Campeão da Semana",
     "badge_stay_hydrated": "Mantenha-se Hidratado",
     "badge_body_scan": "Leitura de Corpo",
-    "default_name": "Atleta"
+    "default_name": "Atleta",
+    "friends": "Amigos"
   },
   "navigation": {
     "home": "Início",
@@ -1129,11 +1166,11 @@
     "title": "Antes de Continuar",
     "subtitle": "Por favor, leia este aviso importante",
     "agree": "Compreendo e Concordo",
-    "required": "Obrigatório para usar FitAI Coach",
-    "body_p1": "O FitAI Coach usa IA para gerar feedback sobre fitness, nutrição e composição corporal baseado em fotos e informações que você fornece.",
+    "required": "Obrigatório para usar Active AI Coach",
+    "body_p1": "O Active AI Coach usa IA para gerar feedback sobre fitness, nutrição e composição corporal baseado em fotos e informações que você fornece.",
     "body_p2": "Este conteúdo é gerado por IA e pode ser impreciso ou incompleto. Não constitui aconselhamento médico, nutricional ou profissional de fitness, e não substitui uma consulta com um médico qualificado, nutricionista registrado ou treinador certificado.",
     "body_p3": "Sempre consulte um profissional qualificado antes de iniciar qualquer nova dieta ou programa de exercícios, especialmente se tiver alguma condição médica. Pare imediatamente e procure atendimento médico se sentir dor, tontura ou desconforto durante o exercício.",
-    "body_p4": "Ao continuar, você reconhece essas limitações e concorda em usar o FitAI Coach por sua própria conta e risco."
+    "body_p4": "Ao continuar, você reconhece essas limitações e concorda em usar o Active AI Coach por sua própria conta e risco."
   },
   "muscle_diagram": {
     "active": "Ativo",
@@ -1154,5 +1191,58 @@
     "meals_tracked": "Refeições rastreadas",
     "cta": "Comece — Grátis",
     "fine_print": "Leva 2 minutos · Nenhum cartão de crédito necessário"
+  },
+  "friends": {
+    "title": "Amigos",
+    "your_code": "Seu Código",
+    "share_code": "Compartilhar Código",
+    "share_message": "Vamos nos manter motivados no Active AI Coach! Conecte-se comigo usando o código {{code}}.",
+    "connect_label": "Tem o código de um amigo?",
+    "code_placeholder": "Digite o código",
+    "connect_button": "Conectar",
+    "your_friends": "Seus Amigos",
+    "empty": "Sem amigos ainda. Compartilhe seu código ou digite o código de um amigo acima para conectar.",
+    "no_streak": "Sem sequência ativa",
+    "streak_days": "Sequência de {{count}} dias",
+    "no_workouts_yet": "Sem treinos ainda",
+    "today": "Treinou hoje",
+    "yesterday": "Treinou ontem",
+    "days_ago": "Há {{count}} dias",
+    "cheer_button": "Vibrar 👋",
+    "remove_title": "Remover Amigo",
+    "remove_msg": "Remover {{name}} dos seus amigos? Isso não pode ser desfeito.",
+    "remove_button": "Remover",
+    "error_connect": "Não foi possível conectar com esse código. Verifique-o e tente novamente.",
+    "error_cheer": "Não foi possível enviar sua vibração. Tente novamente.",
+    "error_remove": "Não foi possível remover este amigo. Tente novamente."
+  },
+  "form_check": {
+    "permission_title": "Acesso à Câmera Necessário",
+    "permission_sub": "Permita o acesso à câmera para verificar sua forma de exercício.",
+    "grant_permission": "Conceder Acesso à Câmera",
+    "prep_sub": "Posicione seu telefone para que todo o seu movimento seja visível, depois execute o exercício lentamente e continuamente.",
+    "prep_tip_frame": "Coloque todo o seu corpo (ou o membro trabalhado) no enquadramento",
+    "prep_tip_light": "Uma boa iluminação ajuda a IA a ver sua forma com clareza",
+    "prep_tip_pace": "Mova-se lentamente e continuamente durante 1-2 repetições",
+    "prep_ready_btn": "Iniciar",
+    "prep_countdown_label": "Prepare-se — captura começa em {{count}}s",
+    "status_capturing": "Execute o movimento agora...",
+    "status_analyzing": "Analisando sua forma...",
+    "check_failed": "Verificação Falhou",
+    "check_failed_msg": "Falha ao analisar sua forma. Por favor, tente novamente.",
+    "score_label": "Pontuação de Forma",
+    "muscles_label": "Músculos Trabalhados",
+    "positives_label": "O Que Você Está Fazendo Bem",
+    "corrections_label": "Correções",
+    "cues_label": "Dicas de Treinamento",
+    "safety_label": "Avisos de Segurança",
+    "summary_label": "Resumo",
+    "check_again": "Verificar Novamente",
+    "done": "Concluído",
+    "no_frames_captured": "Nenhum quadro foi capturado. Certifique-se de que sua câmera está funcionando e tente novamente.",
+    "ready_hint": "Coloque-se em posição e toque em Iniciar Gravação quando estiver pronto",
+    "start_recording": "Iniciar Gravação",
+    "stop_recording": "Parar e Analisar",
+    "status_recording": "Gravando... {{seconds}}s — toque em Parar quando estiver pronto"
   }
 }
