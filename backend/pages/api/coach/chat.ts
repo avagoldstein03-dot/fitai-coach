@@ -10,8 +10,6 @@ import { detectWorkoutPlateaus, diffBodyComposition, buildTrendsSummary } from "
 import { buildCoachingDirective } from "@/lib/coach-context";
 import { buildHealthSummary } from "@/lib/health-summary";
 
-const FREE_DAILY_LIMIT = 5;
-
 // Tier-aware keyword detection — reliable fallback that doesn't depend on the AI emitting a marker
 function detectUpgradeNeeded(message: string, tier: SubscriptionTier): { needed: boolean; upgradeTo: string | null } {
   if (tier === "elite") return { needed: false, upgradeTo: null };
@@ -55,9 +53,10 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       return sendError(res, "validation_error", "message is required", 400);
     }
 
-    // Enforce free-tier daily message limit
+    // Enforce the tier's daily message limit (Infinity for unlimited tiers)
     const subscription = await getUserSubscription(req);
-    if (!subscription.isPremium) {
+    const dailyLimit = subscription.limits.dailyCoachMessages;
+    if (Number.isFinite(dailyLimit)) {
       const todayStart = new Date();
       todayStart.setHours(0, 0, 0, 0);
 
@@ -69,11 +68,11 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         },
       });
 
-      if (messagesCount >= FREE_DAILY_LIMIT) {
+      if (messagesCount >= dailyLimit) {
         return sendError(
           res,
           "daily_limit_reached",
-          `Free tier allows ${FREE_DAILY_LIMIT} messages per day. Upgrade to Premium for unlimited coaching.`,
+          `Free tier allows ${dailyLimit} messages per day. Upgrade to Premium for unlimited coaching.`,
           403
         );
       }

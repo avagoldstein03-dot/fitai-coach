@@ -66,7 +66,11 @@ describe("coach/chat handler", () => {
     jest.clearAllMocks();
     (getAuth as jest.Mock).mockReturnValue({ userId: "clerk_1" });
     (checkRateLimit as jest.Mock).mockResolvedValue(true);
-    (getUserSubscription as jest.Mock).mockResolvedValue({ isPremium: true, tier: "elite" });
+    (getUserSubscription as jest.Mock).mockResolvedValue({
+      isPremium: true,
+      tier: "elite",
+      limits: { dailyCoachMessages: Infinity },
+    });
     (prisma.user.findUnique as jest.Mock).mockResolvedValue(baseUser);
     (prisma.chatMessage.findMany as jest.Mock).mockResolvedValue([]);
     (prisma.chatMessage.count as jest.Mock).mockResolvedValue(0);
@@ -124,7 +128,11 @@ describe("coach/chat handler", () => {
   });
 
   it("still enforces the free-tier daily message limit", async () => {
-    (getUserSubscription as jest.Mock).mockResolvedValue({ isPremium: false, tier: "free" });
+    (getUserSubscription as jest.Mock).mockResolvedValue({
+      isPremium: false,
+      tier: "free",
+      limits: { dailyCoachMessages: 5 },
+    });
     (prisma.chatMessage.count as jest.Mock).mockResolvedValue(5);
 
     const { req, res } = mockReqRes({ message: "hi" });
@@ -134,8 +142,38 @@ describe("coach/chat handler", () => {
     expect(mockChat).not.toHaveBeenCalled();
   });
 
+  it("reads the daily limit from subscription.limits rather than a hardcoded value", async () => {
+    (getUserSubscription as jest.Mock).mockResolvedValue({
+      isPremium: false,
+      tier: "free",
+      limits: { dailyCoachMessages: 3 },
+    });
+    (prisma.chatMessage.count as jest.Mock).mockResolvedValue(3);
+
+    const { req, res } = mockReqRes({ message: "hi" });
+    await handler(req, res);
+
+    expect(res.status).toHaveBeenCalledWith(403);
+    const responseBody = res.json.mock.calls[0][0];
+    expect(responseBody.message).toContain("3 messages per day");
+  });
+
+  it("never enforces a daily limit when the tier's limit is Infinity", async () => {
+    (prisma.chatMessage.count as jest.Mock).mockResolvedValue(9999);
+
+    const { req, res } = mockReqRes({ message: "hi" });
+    await handler(req, res);
+
+    expect(res.status).not.toHaveBeenCalledWith(403);
+    expect(mockChat).toHaveBeenCalled();
+  });
+
   it("still detects an upgrade-worthy keyword for free-tier users", async () => {
-    (getUserSubscription as jest.Mock).mockResolvedValue({ isPremium: false, tier: "free" });
+    (getUserSubscription as jest.Mock).mockResolvedValue({
+      isPremium: false,
+      tier: "free",
+      limits: { dailyCoachMessages: 5 },
+    });
 
     const { req, res } = mockReqRes({ message: "can you make me a workout plan?" });
     await handler(req, res);
