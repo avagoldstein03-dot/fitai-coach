@@ -340,7 +340,9 @@
     "pct_of_goal": "{{pct}}% av mål",
     "nudge_scan_update": "Oppdater kroppsscannet ditt",
     "nudge_scan_update_sub": "Det har gått 7+ dager — se hvordan du har endret deg",
-    "nudge_scan_first_sub": "Last opp 3 bilder for en AI-kropssammensetningsleses"
+    "nudge_scan_first_sub": "Last opp 3 bilder for en AI-kropssammensetningsleses",
+    "action_supplements": "Supplement-pakke",
+    "action_supplements_sub": "Spor hva du tar"
   },
   "settings": {
     "title": "Innstillinger",
@@ -1099,7 +1101,10 @@
     "prep_tip_light": "God belysning, tett-sittende klær",
     "prep_tip_space": "Sørg for at du har plass til å snu deg rundt i en full sirkel",
     "prep_ready_btn": "Jeg er klar",
-    "prep_countdown_label": "Kom inn i bildet — skanningen starter om {{count}}s"
+    "prep_countdown_label": "Kom inn i bildet — skanningen starter om {{count}}s",
+    "delete_title": "Slett skan",
+    "delete_msg": "Fjern denne kroppsskanning og vurderingen? Dette kan ikke angres.",
+    "error_delete": "Kunne ikke slette skan"
   },
   "shopping_list": {
     "clear_title": "Tøm avmerkede elementer?",

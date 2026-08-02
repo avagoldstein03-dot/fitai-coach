@@ -340,7 +340,9 @@
     "pct_of_goal": "{{pct}}% mục tiêu",
     "nudge_scan_update": "Cập nhật quét cơ thể",
     "nudge_scan_update_sub": "Đã 7+ ngày — xem bạn đã thay đổi như thế nào",
-    "nudge_scan_first_sub": "Tải lên 3 ảnh để đọc thành phần cơ thể bằng AI"
+    "nudge_scan_first_sub": "Tải lên 3 ảnh để đọc thành phần cơ thể bằng AI",
+    "action_supplements": "Bộ Sưu Tập Thực Phẩm Bổ Sung",
+    "action_supplements_sub": "Theo dõi những gì bạn dùng"
   },
   "settings": {
     "title": "Cài đặt",
@@ -1099,7 +1101,10 @@
     "prep_tip_light": "Ánh sáng tốt, quần áo vừa vặn",
     "prep_tip_space": "Đảm bảo bạn có không gian để quay vòng tròn đầy đủ",
     "prep_ready_btn": "Tôi Đã Sẵn Sàng",
-    "prep_countdown_label": "Vào khung hình — quét sẽ bắt đầu trong {{count}}s"
+    "prep_countdown_label": "Vào khung hình — quét sẽ bắt đầu trong {{count}}s",
+    "delete_title": "Xóa Quét Cơ Thể",
+    "delete_msg": "Xóa quét cơ thể này và đánh giá của nó? Hành động này không thể hoàn tác.",
+    "error_delete": "Không thể xóa quét cơ thể"
   },
   "shopping_list": {
     "clear_title": "Xóa các mục được đánh dấu?",

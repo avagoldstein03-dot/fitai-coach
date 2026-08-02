@@ -340,7 +340,9 @@
     "pct_of_goal": "{{pct}}% ng layunin",
     "nudge_scan_update": "I-update ang iyong body scan",
     "nudge_scan_update_sub": "7+ araw na - tingnan kung paano ka nagbago",
-    "nudge_scan_first_sub": "Mag-upload ng 3 larawan para sa AI body composition reading"
+    "nudge_scan_first_sub": "Mag-upload ng 3 larawan para sa AI body composition reading",
+    "action_supplements": "Supplement Stack",
+    "action_supplements_sub": "Subaybayan kung ano ang iyong ginagamit"
   },
   "settings": {
     "title": "Settings",
@@ -1099,7 +1101,10 @@
     "prep_tip_light": "Magandang liwanag, damit na umaabot sa katawan",
     "prep_tip_space": "Siguraduhin na mayroon kang espasyo upang lumipat ng buong bilog",
     "prep_ready_btn": "Handa Na Ako",
-    "prep_countdown_label": "Pumasok sa frame — magsisimula ang scan sa {{count}}s"
+    "prep_countdown_label": "Pumasok sa frame — magsisimula ang scan sa {{count}}s",
+    "delete_title": "Tanggalin ang Scan",
+    "delete_msg": "Alisin ang body scan na ito at ang assessment nito? Hindi na ito maaaring ibalik.",
+    "error_delete": "Nabigo ang pagbura ng scan"
   },
   "shopping_list": {
     "clear_title": "I-clear ang checked items?",

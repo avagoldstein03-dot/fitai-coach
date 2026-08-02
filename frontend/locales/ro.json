@@ -340,7 +340,9 @@
     "pct_of_goal": "{{pct}}% din obiectiv",
     "nudge_scan_update": "Actualizează-ți body scan-ul",
     "nudge_scan_update_sub": "Au trecut 7+ zile — vezi cum te-ai schimbat",
-    "nudge_scan_first_sub": "Încarcă 3 fotografii pentru o analiză IA a compoziției corpului"
+    "nudge_scan_first_sub": "Încarcă 3 fotografii pentru o analiză IA a compoziției corpului",
+    "action_supplements": "Pachet de Suplimente",
+    "action_supplements_sub": "Urmărește ce iei"
   },
   "settings": {
     "title": "Setari",
@@ -1099,7 +1101,10 @@
     "prep_tip_light": "Iluminare bună, îmbrăcăminte ajustată",
     "prep_tip_space": "Asigură-te că ai spațiu pentru a te întoarce într-un cerc complet",
     "prep_ready_btn": "Sunt gata",
-    "prep_countdown_label": "Intră în cadru — scanarea începe în {{count}}s"
+    "prep_countdown_label": "Intră în cadru — scanarea începe în {{count}}s",
+    "delete_title": "Șterge Scanarea",
+    "delete_msg": "Elimini această scanare corporală și evaluarea acesteia? Aceasta nu poate fi anulată.",
+    "error_delete": "Nu s-a putut șterge scanarea"
   },
   "shopping_list": {
     "clear_title": "Sterge articolele bifate?",

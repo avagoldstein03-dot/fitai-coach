@@ -340,7 +340,9 @@
     "pct_of_goal": "{{pct}}% a cél",
     "nudge_scan_update": "Frissítsd a body scan-t",
     "nudge_scan_update_sub": "7+ napja — nézd meg, hogyan változtál",
-    "nudge_scan_first_sub": "Töltsd fel a 3 fotót az AI testösszetétel-elemzéshez"
+    "nudge_scan_first_sub": "Töltsd fel a 3 fotót az AI testösszetétel-elemzéshez",
+    "action_supplements": "Kiegészítő csomag",
+    "action_supplements_sub": "Követsd nyomon, amit beveszel"
   },
   "settings": {
     "title": "Beállítások",
@@ -1099,7 +1101,10 @@
     "prep_tip_light": "Jó megvilágítás, testhez illő ruházat",
     "prep_tip_space": "Győződj meg arról, hogy van helyed teljes körben fordulni",
     "prep_ready_btn": "Kész vagyok",
-    "prep_countdown_label": "Pozicionálj be — a vizsgálat {{count}}s múlva kezdődik"
+    "prep_countdown_label": "Pozicionálj be — a vizsgálat {{count}}s múlva kezdődik",
+    "delete_title": "Testscan törlése",
+    "delete_msg": "Eltávolítod ezt a testscannet és az értékelését? Ez nem vonható vissza.",
+    "error_delete": "A scan törlése sikertelen"
   },
   "shopping_list": {
     "clear_title": "Tisztítsa meg az ellenőrzött tételeket?",

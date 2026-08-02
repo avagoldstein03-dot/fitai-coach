@@ -340,7 +340,9 @@
     "pct_of_goal": "{{pct}}% da meta",
     "nudge_scan_update": "Atualize sua leitura de corpo",
     "nudge_scan_update_sub": "Já faz 7+ dias — veja como você mudou",
-    "nudge_scan_first_sub": "Envie 3 fotos para uma leitura de composição corporal com IA"
+    "nudge_scan_first_sub": "Envie 3 fotos para uma leitura de composição corporal com IA",
+    "action_supplements": "Pilha de Suplementos",
+    "action_supplements_sub": "Acompanhe o que você toma"
   },
   "settings": {
     "title": "Configurações",
@@ -1099,7 +1101,10 @@
     "prep_tip_light": "Boa iluminação e roupas justas",
     "prep_tip_space": "Certifique-se de que tem espaço para virar um círculo completo",
     "prep_ready_btn": "Estou Pronto",
-    "prep_countdown_label": "Entre no enquadramento — a leitura começa em {{count}}s"
+    "prep_countdown_label": "Entre no enquadramento — a leitura começa em {{count}}s",
+    "delete_title": "Excluir Análise",
+    "delete_msg": "Remover esta análise corporal e sua avaliação? Esta ação não pode ser desfeita.",
+    "error_delete": "Falha ao excluir análise"
   },
   "shopping_list": {
     "clear_title": "Limpar itens marcados?",

@@ -340,7 +340,9 @@
     "pct_of_goal": "{{pct}}% de l'objectif",
     "nudge_scan_update": "Mettez à jour votre scan corporel",
     "nudge_scan_update_sub": "Il y a 7+ jours — voyez comment vous avez changé",
-    "nudge_scan_first_sub": "Téléchargez 3 photos pour une lecture de composition corporelle par IA"
+    "nudge_scan_first_sub": "Téléchargez 3 photos pour une lecture de composition corporelle par IA",
+    "action_supplements": "Pile de suppléments",
+    "action_supplements_sub": "Suivez ce que vous prenez"
   },
   "settings": {
     "title": "Paramètres",
@@ -1099,7 +1101,10 @@
     "prep_tip_light": "Bon éclairage, vêtements ajustés",
     "prep_tip_space": "Assurez-vous d'avoir de la place pour faire un tour complet",
     "prep_ready_btn": "Je suis prêt",
-    "prep_countdown_label": "Placez-vous dans le cadre — le scan commence dans {{count}}s"
+    "prep_countdown_label": "Placez-vous dans le cadre — le scan commence dans {{count}}s",
+    "delete_title": "Supprimer l'analyse",
+    "delete_msg": "Supprimer cette analyse corporelle et son évaluation ? Cette action ne peut pas être annulée.",
+    "error_delete": "Échec de la suppression de l'analyse"
   },
   "shopping_list": {
     "clear_title": "Effacer les articles cochés?",

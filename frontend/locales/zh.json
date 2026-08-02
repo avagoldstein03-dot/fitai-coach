@@ -340,7 +340,9 @@
     "pct_of_goal": "目标的 {{pct}}%",
     "nudge_scan_update": "更新你的身体扫描",
     "nudge_scan_update_sub": "已经 7 天以上了 — 看看你的变化",
-    "nudge_scan_first_sub": "上传 3 张照片以获取 AI 身体成分读数"
+    "nudge_scan_first_sub": "上传 3 张照片以获取 AI 身体成分读数",
+    "action_supplements": "补充剂堆栈",
+    "action_supplements_sub": "追踪你的摄入"
   },
   "settings": {
     "title": "设置",
@@ -1099,7 +1101,10 @@
     "prep_tip_light": "光线充足，穿着贴身衣物",
     "prep_tip_space": "确保有足够空间转过一整圈",
     "prep_ready_btn": "我已准备好",
-    "prep_countdown_label": "请进入画面——扫描将在{{count}}秒后开始"
+    "prep_countdown_label": "请进入画面——扫描将在{{count}}秒后开始",
+    "delete_title": "删除扫描",
+    "delete_msg": "移除此身体扫描及其评估？此操作无法撤销。",
+    "error_delete": "删除扫描失败"
   },
   "shopping_list": {
     "clear_title": "清除已选中的项目?",

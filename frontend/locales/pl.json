@@ -340,7 +340,9 @@
     "pct_of_goal": "{{pct}}% celu",
     "nudge_scan_update": "Zaktualizuj swoje skanowanie ciała",
     "nudge_scan_update_sub": "Od 7+ dni — zobacz, jak się zmieniłeś",
-    "nudge_scan_first_sub": "Prześlij 3 zdjęcia, aby uzyskać odczyt składu ciała AI"
+    "nudge_scan_first_sub": "Prześlij 3 zdjęcia, aby uzyskać odczyt składu ciała AI",
+    "action_supplements": "Stos Suplementów",
+    "action_supplements_sub": "Śledź, co bierzesz"
   },
   "settings": {
     "title": "Ustawienia",
@@ -1099,7 +1101,10 @@
     "prep_tip_light": "Dobre oświetlenie, dopasowana odzież",
     "prep_tip_space": "Upewnij się, że masz miejsce na pełny obrót",
     "prep_ready_btn": "Jestem gotów/a",
-    "prep_countdown_label": "Wejdź w kadr — skanowanie starts za {{count}}s"
+    "prep_countdown_label": "Wejdź w kadr — skanowanie starts za {{count}}s",
+    "delete_title": "Usuń skan",
+    "delete_msg": "Usunąć ten skan ciała i jego ocenę? Tej czynności nie można cofnąć.",
+    "error_delete": "Nie udało się usunąć skanu"
   },
   "shopping_list": {
     "clear_title": "Wyczyścić zaznaczone pozycje?",

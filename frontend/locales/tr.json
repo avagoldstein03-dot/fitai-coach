@@ -340,7 +340,9 @@
     "pct_of_goal": "Hedefin {{pct}}%",
     "nudge_scan_update": "Vücut taramasını güncelle",
     "nudge_scan_update_sub": "7+ gün geçti — nasıl değiştiğini gör",
-    "nudge_scan_first_sub": "AI vücut bileşimi okuması için 3 fotoğraf yükle"
+    "nudge_scan_first_sub": "AI vücut bileşimi okuması için 3 fotoğraf yükle",
+    "action_supplements": "Takviye Yığını",
+    "action_supplements_sub": "Aldıklarınızı takip edin"
   },
   "settings": {
     "title": "Ayarlar",
@@ -1099,7 +1101,10 @@
     "prep_tip_light": "İyi aydınlatma, vücuda oturan kıyafetler",
     "prep_tip_space": "Tam bir daire dönenecek kadar alan olduğundan emin olun",
     "prep_ready_btn": "Hazırım",
-    "prep_countdown_label": "Kameranın içine girin — tarama {{count}}s içinde başlayacak"
+    "prep_countdown_label": "Kameranın içine girin — tarama {{count}}s içinde başlayacak",
+    "delete_title": "Taraması Sil",
+    "delete_msg": "Bu vücut taramasını ve değerlendirmesini kaldırmak istiyor musunuz? Bu işlem geri alınamaz.",
+    "error_delete": "Tarama silinirken hata oluştu"
   },
   "shopping_list": {
     "clear_title": "İşaretlenen öğeler temizlensin mi?",

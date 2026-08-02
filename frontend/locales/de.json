@@ -340,7 +340,9 @@
     "pct_of_goal": "{{pct}}% des Ziels",
     "nudge_scan_update": "Aktualisieren Sie Ihren Body-Scan",
     "nudge_scan_update_sub": "Es sind 7+ Tage vergangen – sehen Sie, wie Sie sich verändert haben",
-    "nudge_scan_first_sub": "Laden Sie 3 Fotos hoch, um eine KI-Körperzusammensetzungsmessung zu erhalten"
+    "nudge_scan_first_sub": "Laden Sie 3 Fotos hoch, um eine KI-Körperzusammensetzungsmessung zu erhalten",
+    "action_supplements": "Supplement-Stapel",
+    "action_supplements_sub": "Verfolgen Sie, was Sie nehmen"
   },
   "settings": {
     "title": "Einstellungen",
@@ -1099,7 +1101,10 @@
     "prep_tip_light": "Gute Beleuchtung, enganliegende Kleidung",
     "prep_tip_space": "Stelle sicher, dass du Platz hast, dich vollständig umzudrehen",
     "prep_ready_btn": "Ich bin bereit",
-    "prep_countdown_label": "Positioniere dich — Scan startet in {{count}}s"
+    "prep_countdown_label": "Positioniere dich — Scan startet in {{count}}s",
+    "delete_title": "Scan löschen",
+    "delete_msg": "Diesen Körperscan und seine Bewertung entfernen? Dies kann nicht rückgängig gemacht werden.",
+    "error_delete": "Scan konnte nicht gelöscht werden"
   },
   "shopping_list": {
     "clear_title": "Aktivierte Artikel löschen?",

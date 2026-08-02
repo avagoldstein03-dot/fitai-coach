@@ -340,7 +340,9 @@
     "pct_of_goal": "{{pct}}% من الهدف",
     "nudge_scan_update": "تحديث فحص جسدك",
     "nudge_scan_update_sub": "مضى 7 أيام أو أكثر — شاهد كيف تغيرت",
-    "nudge_scan_first_sub": "حمّل 3 صور لقراءة تركيب الجسم بالذكاء الاصطناعي"
+    "nudge_scan_first_sub": "حمّل 3 صور لقراءة تركيب الجسم بالذكاء الاصطناعي",
+    "action_supplements": "مكمل غذائي",
+    "action_supplements_sub": "تتبع ما تتناوله"
   },
   "settings": {
     "title": "الإعدادات",
@@ -1099,7 +1101,10 @@
     "prep_tip_light": "إضاءة جيدة، ملابس ضيقة الملاءمة",
     "prep_tip_space": "تأكد من وجود مساحة كافية لك للالتفاف دورة كاملة",
     "prep_ready_btn": "أنا مستعد",
-    "prep_countdown_label": "ادخل في الإطار — سيبدأ المسح في {{count}}ث"
+    "prep_countdown_label": "ادخل في الإطار — سيبدأ المسح في {{count}}ث",
+    "delete_title": "حذف الفحص",
+    "delete_msg": "إزالة فحص الجسم هذا وتقييمه؟ لا يمكن التراجع عن هذا الإجراء.",
+    "error_delete": "فشل حذف الفحص"
   },
   "shopping_list": {
     "clear_title": "مسح العناصر المكتملة؟",

@@ -340,7 +340,9 @@
     "pct_of_goal": "{{pct}}% ya lengo",
     "nudge_scan_update": "Sasisha mchakato wa mwili wako",
     "nudge_scan_update_sub": "Imekuwa siku 7+ — ona jinsi unavyobadilika",
-    "nudge_scan_first_sub": "Pakia picha 3 kwa ukamataji wa mwili wa AI"
+    "nudge_scan_first_sub": "Pakia picha 3 kwa ukamataji wa mwili wa AI",
+    "action_supplements": "Kiwanja cha Virutubishi",
+    "action_supplements_sub": "Fuatilia kile unachokitumia"
   },
   "settings": {
     "title": "Mipangilio",
@@ -1099,7 +1101,10 @@
     "prep_tip_light": "Mwanga mzuri, nguo inayofaa vizuri",
     "prep_tip_space": "Hakikisha kuwa na nafasi ya kuzunguka duara kamili",
     "prep_ready_btn": "Niko Tayari",
-    "prep_countdown_label": "Ingia kwenye sura — uchimbaji unaanza katika {{count}}s"
+    "prep_countdown_label": "Ingia kwenye sura — uchimbaji unaanza katika {{count}}s",
+    "delete_title": "Futa Uchunguzi",
+    "delete_msg": "Ondoa uchunguzi huu wa mwili na tathmini yake? Hii haiwezi kubadilishwa.",
+    "error_delete": "Imeshindwa kufuta uchunguzi"
   },
   "shopping_list": {
     "clear_title": "Futa vipengele vimevingiliwa?",

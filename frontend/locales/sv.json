@@ -340,7 +340,9 @@
     "pct_of_goal": "{{pct}}% av målvärde",
     "nudge_scan_update": "Uppdatera din body scan",
     "nudge_scan_update_sub": "Det har gått 7+ dagar — se hur du har förändrats",
-    "nudge_scan_first_sub": "Ladda upp 3 foton för en AI-läsning av kroppsammansättning"
+    "nudge_scan_first_sub": "Ladda upp 3 foton för en AI-läsning av kroppsammansättning",
+    "action_supplements": "Tillskottsstapel",
+    "action_supplements_sub": "Spåra vad du tar"
   },
   "settings": {
     "title": "Inställningar",
@@ -1099,7 +1101,10 @@
     "prep_tip_light": "Bra belysning, tajt passande kläder",
     "prep_tip_space": "Se till att du har plats att vända dig helt runt",
     "prep_ready_btn": "Jag är Redo",
-    "prep_countdown_label": "Ställ dig i bild — skanningen börjar om {{count}}s"
+    "prep_countdown_label": "Ställ dig i bild — skanningen börjar om {{count}}s",
+    "delete_title": "Ta bort skanning",
+    "delete_msg": "Ta bort denna kroppsskanning och dess bedömning? Det går inte att ångra.",
+    "error_delete": "Det gick inte att ta bort skanningen"
   },
   "shopping_list": {
     "clear_title": "Rensa markerade objekt?",

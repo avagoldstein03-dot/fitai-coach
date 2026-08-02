@@ -340,7 +340,9 @@
     "pct_of_goal": "목표의 {{pct}}%",
     "nudge_scan_update": "신체 스캔 업데이트",
     "nudge_scan_update_sub": "7일 이상 경과했습니다 — 어떻게 변했는지 보세요",
-    "nudge_scan_first_sub": "신체 구성을 AI로 분석하려면 3장의 사진을 업로드하세요"
+    "nudge_scan_first_sub": "신체 구성을 AI로 분석하려면 3장의 사진을 업로드하세요",
+    "action_supplements": "보충제 스택",
+    "action_supplements_sub": "복용 중인 보충제 추적하기"
   },
   "settings": {
     "title": "설정",
@@ -1099,7 +1101,10 @@
     "prep_tip_light": "밝은 조명, 몸에 맞는 옷",
     "prep_tip_space": "한 바퀴 회전할 충분한 공간이 있는지 확인하세요",
     "prep_ready_btn": "준비 완료",
-    "prep_countdown_label": "화면에 들어가세요 — {{count}}초 후 스캔 시작됩니다"
+    "prep_countdown_label": "화면에 들어가세요 — {{count}}초 후 스캔 시작됩니다",
+    "delete_title": "스캔 삭제",
+    "delete_msg": "이 신체 스캔과 평가를 삭제하시겠습니까? 이 작업은 취소할 수 없습니다.",
+    "error_delete": "스캔 삭제에 실패했습니다"
   },
   "shopping_list": {
     "clear_title": "선택된 항목을 지우시겠습니까?",

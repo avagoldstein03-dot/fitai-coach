@@ -340,7 +340,9 @@
     "pct_of_goal": "{{pct}}% dell'obiettivo",
     "nudge_scan_update": "Aggiorna il tuo body scan",
     "nudge_scan_update_sub": "Sono passati 7+ giorni — guarda come sei cambiato",
-    "nudge_scan_first_sub": "Carica 3 foto per una lettura della composizione corporea IA"
+    "nudge_scan_first_sub": "Carica 3 foto per una lettura della composizione corporea IA",
+    "action_supplements": "Stack di Integratori",
+    "action_supplements_sub": "Monitora quello che assumi"
   },
   "settings": {
     "title": "Impostazioni",
@@ -1099,7 +1101,10 @@
     "prep_tip_light": "Buona illuminazione, abbigliamento aderente",
     "prep_tip_space": "Assicurati di avere spazio per fare un giro completo",
     "prep_ready_btn": "Sono Pronto",
-    "prep_countdown_label": "Posizionati nell'inquadratura — la scansione inizia tra {{count}}s"
+    "prep_countdown_label": "Posizionati nell'inquadratura — la scansione inizia tra {{count}}s",
+    "delete_title": "Elimina Scansione",
+    "delete_msg": "Rimuovere questa scansione del corpo e la sua valutazione? Questa azione non può essere annullata.",
+    "error_delete": "Impossibile eliminare la scansione"
   },
   "shopping_list": {
     "clear_title": "Cancellare gli articoli selezionati?",

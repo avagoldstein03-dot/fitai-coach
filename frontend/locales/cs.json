@@ -340,7 +340,9 @@
     "pct_of_goal": "{{pct}}% cíle",
     "nudge_scan_update": "Aktualizujte svůj body scan",
     "nudge_scan_update_sub": "Uplynulo 7+ dní — podívejte se, jak se změnili",
-    "nudge_scan_first_sub": "Nahrajte 3 fotografie pro čtení složení těla umělou inteligencí"
+    "nudge_scan_first_sub": "Nahrajte 3 fotografie pro čtení složení těla umělou inteligencí",
+    "action_supplements": "Balíček doplňků",
+    "action_supplements_sub": "Sledujte, co užíváte"
   },
   "settings": {
     "title": "Nastavení",
@@ -1099,7 +1101,10 @@
     "prep_tip_light": "Dobré osvětlení, přiléhavé oblečení",
     "prep_tip_space": "Ujistěte se, že máte prostor pro úplné otočení",
     "prep_ready_btn": "Jsem připraven(a)",
-    "prep_countdown_label": "Dostáníte se do záběru — skenování začíná za {{count}}s"
+    "prep_countdown_label": "Dostáníte se do záběru — skenování začíná za {{count}}s",
+    "delete_title": "Odstranit skenování",
+    "delete_msg": "Odebrat toto skenování těla a jeho vyhodnocení? Tuto akci nelze vrátit zpět.",
+    "error_delete": "Nepodařilo se odstranit skenování"
   },
   "shopping_list": {
     "clear_title": "Vymazat zaškrtnuté položky?",

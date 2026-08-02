@@ -340,7 +340,9 @@
     "pct_of_goal": "目標の{{pct}}%",
     "nudge_scan_update": "ボディスキャンを更新",
     "nudge_scan_update_sub": "7日以上経過しました — 変わった様子を確認",
-    "nudge_scan_first_sub": "3枚の写真をアップロードしてAIボディ成分測定を取得"
+    "nudge_scan_first_sub": "3枚の写真をアップロードしてAIボディ成分測定を取得",
+    "action_supplements": "サプリメントスタック",
+    "action_supplements_sub": "摂取したものを追跡"
   },
   "settings": {
     "title": "設定",
@@ -1099,7 +1101,10 @@
     "prep_tip_light": "良い照明、フィット感のある衣類",
     "prep_tip_space": "360度回転する十分なスペースがあることを確認してください",
     "prep_ready_btn": "準備完了",
-    "prep_countdown_label": "フレーム内に入る — スキャンは{{count}}秒後に開始します"
+    "prep_countdown_label": "フレーム内に入る — スキャンは{{count}}秒後に開始します",
+    "delete_title": "スキャンを削除",
+    "delete_msg": "このボディスキャンとその評価を削除してもよろしいですか？この操作は取り消せません。",
+    "error_delete": "スキャンの削除に失敗しました"
   },
   "shopping_list": {
     "clear_title": "チェック済みのアイテムをクリアしますか？",

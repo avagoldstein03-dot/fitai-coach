@@ -340,7 +340,9 @@
     "pct_of_goal": "{{pct}}% od cilja",
     "nudge_scan_update": "Ažuriraj svoj body scan",
     "nudge_scan_update_sub": "Prošlo je 7+ dana — vidi kako si se promenio",
-    "nudge_scan_first_sub": "Učitaj 3 fotografije za čitanje AI telesnog sastava"
+    "nudge_scan_first_sub": "Učitaj 3 fotografije za čitanje AI telesnog sastava",
+    "action_supplements": "Stek Suplementa",
+    "action_supplements_sub": "Pratite šta uzimate"
   },
   "settings": {
     "title": "Подешавања",
@@ -1099,7 +1101,10 @@
     "prep_tip_light": "Добра осветљеност, прилегајућа одећа",
     "prep_tip_space": "Уверите се да имате место да направите пун круг",
     "prep_ready_btn": "Спреман/а сам",
-    "prep_countdown_label": "Дођите у кадар — скен почиње за {{count}}с"
+    "prep_countdown_label": "Дођите у кадар — скен почиње за {{count}}с",
+    "delete_title": "Obriši pregled",
+    "delete_msg": "Ukloniti ovaj pregled tela i njegovu procenu? Ovo se ne može poništiti.",
+    "error_delete": "Neuspelo brisanje pregleda"
   },
   "shopping_list": {
     "clear_title": "Очисти означене ставке?",

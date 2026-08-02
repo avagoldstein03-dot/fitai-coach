@@ -340,7 +340,9 @@
     "pct_of_goal": "{{pct}}% van doel",
     "nudge_scan_update": "Werk je lichaamsscan bij",
     "nudge_scan_update_sub": "Het is 7+ dagen geleden — zie hoe je bent veranderd",
-    "nudge_scan_first_sub": "Upload 3 foto's voor een AI-lichaamsamsamenstelling"
+    "nudge_scan_first_sub": "Upload 3 foto's voor een AI-lichaamsamsamenstelling",
+    "action_supplements": "Supplementstapel",
+    "action_supplements_sub": "Volg wat je inneemt"
   },
   "settings": {
     "title": "Instellingen",
@@ -1099,7 +1101,10 @@
     "prep_tip_light": "Goed licht, strakke kleding",
     "prep_tip_space": "Zorg ervoor dat je genoeg ruimte hebt om je volledig om te draaien",
     "prep_ready_btn": "Ik ben klaar",
-    "prep_countdown_label": "Zet jezelf in beeld — scan begint over {{count}}s"
+    "prep_countdown_label": "Zet jezelf in beeld — scan begint over {{count}}s",
+    "delete_title": "Scan verwijderen",
+    "delete_msg": "Deze lichaamsscan en beoordeling verwijderen? Dit kan niet ongedaan gemaakt worden.",
+    "error_delete": "Scan verwijderen is mislukt"
   },
   "shopping_list": {
     "clear_title": "Afgevinkte items wissen?",

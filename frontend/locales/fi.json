@@ -340,7 +340,9 @@
     "pct_of_goal": "{{pct}}% tavoitteesta",
     "nudge_scan_update": "Päivitä kehoskaaniasi",
     "nudge_scan_update_sub": "Se on ollut 7+ päivää — näe kuinka olet muuttunut",
-    "nudge_scan_first_sub": "Lataa 3 valokuvaa tekoälyn kehon koostumuksen lukemiseen"
+    "nudge_scan_first_sub": "Lataa 3 valokuvaa tekoälyn kehon koostumuksen lukemiseen",
+    "action_supplements": "Ravintolisäpino",
+    "action_supplements_sub": "Seuraa mitä otat"
   },
   "settings": {
     "title": "Asetukset",
@@ -1099,7 +1101,10 @@
     "prep_tip_light": "Hyvä valaistus, muotoon istuvat vaatteet",
     "prep_tip_space": "Varmista, että sinulla on tilaa kääntyä täydellä ympyrällä",
     "prep_ready_btn": "Olen valmis",
-    "prep_countdown_label": "Siirry kehykseen — skannaus alkaa {{count}}s päästä"
+    "prep_countdown_label": "Siirry kehykseen — skannaus alkaa {{count}}s päästä",
+    "delete_title": "Poista skannaus",
+    "delete_msg": "Poistetaanko tämä kehoskannaus ja sen arviointi? Tätä ei voi kumota.",
+    "error_delete": "Skannauksen poistaminen epäonnistui"
   },
   "shopping_list": {
     "clear_title": "Tyhjennä merkityt kohteet?",

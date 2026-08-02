@@ -340,7 +340,9 @@
     "pct_of_goal": "{{pct}}% daripada objektif",
     "nudge_scan_update": "Kemas kini imbasan badan anda",
     "nudge_scan_update_sub": "Sudah 7+ hari — lihat bagaimana anda telah berubah",
-    "nudge_scan_first_sub": "Muat naik 3 foto untuk pembacaan komposisi badan AI"
+    "nudge_scan_first_sub": "Muat naik 3 foto untuk pembacaan komposisi badan AI",
+    "action_supplements": "Tindanan Suplemen",
+    "action_supplements_sub": "Jejaki apa yang anda ambil"
   },
   "settings": {
     "title": "Tetapan",
@@ -1099,7 +1101,10 @@
     "prep_tip_light": "Pencahayaan yang baik, pakaian yang pas di badan",
     "prep_tip_space": "Pastikan anda mempunyai ruang untuk berpusing satu putaran penuh",
     "prep_ready_btn": "Saya Sudah Siap",
-    "prep_countdown_label": "Masuk dalam bingkai — imbasan bermula dalam {{count}}s"
+    "prep_countdown_label": "Masuk dalam bingkai — imbasan bermula dalam {{count}}s",
+    "delete_title": "Padam Imbasan",
+    "delete_msg": "Buang imbasan badan ini dan penilaiannya? Tindakan ini tidak boleh dibatalkan.",
+    "error_delete": "Gagal memadamkan imbasan"
   },
   "shopping_list": {
     "clear_title": "Padamkan item yang ditanda?",

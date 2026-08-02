@@ -340,7 +340,9 @@
     "pct_of_goal": "लक्ष्य का {{pct}}%",
     "nudge_scan_update": "अपनी बॉडी स्कैन अपडेट करें",
     "nudge_scan_update_sub": "7+ दिन हो गए हैं — देखें कि आप कैसे बदले हैं",
-    "nudge_scan_first_sub": "AI बॉडी कंपोजिशन रीड के लिए 3 फोटो अपलोड करें"
+    "nudge_scan_first_sub": "AI बॉडी कंपोजिशन रीड के लिए 3 फोटो अपलोड करें",
+    "action_supplements": "सप्लीमेंट स्टैक",
+    "action_supplements_sub": "आप क्या लेते हैं यह ट्रैक करें"
   },
   "settings": {
     "title": "सेटिंग्स",
@@ -1099,7 +1101,10 @@
     "prep_tip_light": "अच्छी रोशनी, फिट कपड़े",
     "prep_tip_space": "सुनिश्चित करें कि आपके पास पूरी तरह से घूमने के लिए जगह है",
     "prep_ready_btn": "मैं तैयार हूँ",
-    "prep_countdown_label": "फ्रेम में आ जाएं — स्कैन {{count}}s में शुरू होता है"
+    "prep_countdown_label": "फ्रेम में आ जाएं — स्कैन {{count}}s में शुरू होता है",
+    "delete_title": "स्कैन हटाएं",
+    "delete_msg": "इस बॉडी स्कैन और इसके मूल्यांकन को हटा दें? यह पूर्ववत नहीं किया जा सकता।",
+    "error_delete": "स्कैन हटाने में विफल"
   },
   "shopping_list": {
     "clear_title": "चेक किए गए आइटम को साफ करें?",

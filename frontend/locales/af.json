@@ -340,7 +340,9 @@
     "pct_of_goal": "{{pct}}% van doelstelling",
     "nudge_scan_update": "Dateer jou liggaamskanning",
     "nudge_scan_update_sub": "Dit is al 7+ dae — sien hoe jy verander het",
-    "nudge_scan_first_sub": "Laai 3 foto's op vir 'n AI-liggaamssamestelling-lees"
+    "nudge_scan_first_sub": "Laai 3 foto's op vir 'n AI-liggaamssamestelling-lees",
+    "action_supplements": "Supplement-stapel",
+    "action_supplements_sub": "Volg wat jy neem"
   },
   "settings": {
     "title": "Instellings",
@@ -1099,7 +1101,10 @@
     "prep_tip_light": "Goeie verligting, noue klere",
     "prep_tip_space": "Maak seker jy het plek om 'n volle sirkel te draai",
     "prep_ready_btn": "Ek is Gereed",
-    "prep_countdown_label": "Kom in beeld — skandering begin oor {{count}}s"
+    "prep_countdown_label": "Kom in beeld — skandering begin oor {{count}}s",
+    "delete_title": "Verwyder Skandering",
+    "delete_msg": "Verwyder hierdie liggaamsskandering en sy evaluering? Dit kan nie ongedaan gemaak word nie.",
+    "error_delete": "Skandering kon nie verwyder word nie"
   },
   "shopping_list": {
     "clear_title": "Maak gekontroleerde items skoon?",

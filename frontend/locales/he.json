@@ -340,7 +340,9 @@
     "pct_of_goal": "{{pct}}% מהמטרה",
     "nudge_scan_update": "עדכן את סריקת הגוף שלך",
     "nudge_scan_update_sub": "עבר 7 ימים ומעלה — ראה כיצד השתנית",
-    "nudge_scan_first_sub": "העלה 3 תמונות לקריאת קומפוזיציה גוף בAI"
+    "nudge_scan_first_sub": "העלה 3 תמונות לקריאת קומפוזיציה גוף בAI",
+    "action_supplements": "חבילת תוספים",
+    "action_supplements_sub": "עקוב אחרי מה שאתה לוקח"
   },
   "settings": {
     "title": "הגדרות",
@@ -1099,7 +1101,10 @@
     "prep_tip_light": "תאורה טובה, ביגוד צמוד",
     "prep_tip_space": "וודא שיש לך מקום להסתובב מעגל מלא",
     "prep_ready_btn": "אני מוכן",
-    "prep_countdown_label": "היכנס לתמונה — הסריקה מתחילה בעוד {{count}}s"
+    "prep_countdown_label": "היכנס לתמונה — הסריקה מתחילה בעוד {{count}}s",
+    "delete_title": "מחיקת סריקה",
+    "delete_msg": "הסר סריקת גוף זו והערכתה? לא ניתן לבטל פעולה זו.",
+    "error_delete": "נכשלה מחיקת הסריקה"
   },
   "shopping_list": {
     "clear_title": "נקה פריטים מסומנים?",

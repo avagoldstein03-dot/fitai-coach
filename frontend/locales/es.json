@@ -340,7 +340,9 @@
     "pct_of_goal": "{{pct}}% del objetivo",
     "nudge_scan_update": "Actualiza tu escaneo corporal",
     "nudge_scan_update_sub": "Han pasado 7+ días — ve cómo has cambiado",
-    "nudge_scan_first_sub": "Sube 3 fotos para una lectura de composición corporal por IA"
+    "nudge_scan_first_sub": "Sube 3 fotos para una lectura de composición corporal por IA",
+    "action_supplements": "Pila de Suplementos",
+    "action_supplements_sub": "Registra lo que tomas"
   },
   "settings": {
     "title": "Configuración",
@@ -1099,7 +1101,10 @@
     "prep_tip_light": "Buena iluminación, ropa ajustada",
     "prep_tip_space": "Asegúrate de tener espacio para girar en círculo completo",
     "prep_ready_btn": "Estoy Listo",
-    "prep_countdown_label": "Entra en el encuadre — el escaneo comienza en {{count}}s"
+    "prep_countdown_label": "Entra en el encuadre — el escaneo comienza en {{count}}s",
+    "delete_title": "Eliminar Escaneo",
+    "delete_msg": "¿Eliminar este escaneo corporal y su evaluación? Esta acción no se puede deshacer.",
+    "error_delete": "Error al eliminar el escaneo"
   },
   "shopping_list": {
     "clear_title": "¿Limpiar artículos marcados?",

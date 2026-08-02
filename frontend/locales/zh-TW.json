@@ -340,7 +340,9 @@
     "pct_of_goal": "目標的 {{pct}}%",
     "nudge_scan_update": "更新您的身體掃描",
     "nudge_scan_update_sub": "已經 7 天以上——看看您如何變化",
-    "nudge_scan_first_sub": "上傳 3 張照片以進行 AI 身體成份讀取"
+    "nudge_scan_first_sub": "上傳 3 張照片以進行 AI 身體成份讀取",
+    "action_supplements": "補充劑堆疊",
+    "action_supplements_sub": "追蹤你的補充劑"
   },
   "settings": {
     "title": "設定",
@@ -1099,7 +1101,10 @@
     "prep_tip_light": "光線良好，貼身衣物",
     "prep_tip_space": "確保您有足夠的空間轉過整個圓圈",
     "prep_ready_btn": "我準備好了",
-    "prep_countdown_label": "進入畫面 — 掃描將在 {{count}} 秒後開始"
+    "prep_countdown_label": "進入畫面 — 掃描將在 {{count}} 秒後開始",
+    "delete_title": "刪除掃描",
+    "delete_msg": "移除此身體掃描及其評估？此操作無法復原。",
+    "error_delete": "刪除掃描失敗"
   },
   "shopping_list": {
     "clear_title": "清除已勾選的項目？",

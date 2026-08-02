@@ -340,7 +340,9 @@
     "pct_of_goal": "{{pct}}% dari tujuan",
     "nudge_scan_update": "Perbarui pemindaian tubuh Anda",
     "nudge_scan_update_sub": "Sudah 7+ hari — lihat bagaimana Anda berubah",
-    "nudge_scan_first_sub": "Unggah 3 foto untuk pembacaan komposisi tubuh AI"
+    "nudge_scan_first_sub": "Unggah 3 foto untuk pembacaan komposisi tubuh AI",
+    "action_supplements": "Tumpukan Suplemen",
+    "action_supplements_sub": "Pantau apa yang Anda konsumsi"
   },
   "settings": {
     "title": "Pengaturan",
@@ -1099,7 +1101,10 @@
     "prep_tip_light": "Pencahayaan yang baik, pakaian yang pas di badan",
     "prep_tip_space": "Pastikan Anda memiliki ruang untuk berputar penuh",
     "prep_ready_btn": "Saya Siap",
-    "prep_countdown_label": "Masuk ke bingkai — pemindaian dimulai dalam {{count}}d"
+    "prep_countdown_label": "Masuk ke bingkai — pemindaian dimulai dalam {{count}}d",
+    "delete_title": "Hapus Pemindaian",
+    "delete_msg": "Hapus pemindaian tubuh ini dan penilaiannya? Tindakan ini tidak dapat dibatalkan.",
+    "error_delete": "Gagal menghapus pemindaian"
   },
   "shopping_list": {
     "clear_title": "Hapus item yang dicentang?",

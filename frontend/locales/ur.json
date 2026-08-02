@@ -340,7 +340,9 @@
     "pct_of_goal": "مقصد کا {{pct}}%",
     "nudge_scan_update": "اپنا جسم کا اسکین اپ ڈیٹ کریں",
     "nudge_scan_update_sub": "7+ دن ہو چکے ہیں — دیکھیں کہ آپ کیسے بدلے ہیں",
-    "nudge_scan_first_sub": "AI جسم کی ترکیب کی تفصیل کے لیے 3 تصویریں اپ لوڈ کریں"
+    "nudge_scan_first_sub": "AI جسم کی ترکیب کی تفصیل کے لیے 3 تصویریں اپ لوڈ کریں",
+    "action_supplements": "سپلیمنٹ اسٹیک",
+    "action_supplements_sub": "اپنی خوراک کا ریکارڈ رکھیں"
   },
   "settings": {
     "title": "ترتیبات",
@@ -1099,7 +1101,10 @@
     "prep_tip_light": "اچھی روشنی، تنگ فٹنگ والے کپڑے",
     "prep_tip_space": "یقینی بنائیں کہ آپ کے پاس مکمل دائرہ گھومنے کی جگہ ہے",
     "prep_ready_btn": "میں تیار ہوں",
-    "prep_countdown_label": "فریم میں آئیں — اسکین {{count}}s میں شروع ہوگی"
+    "prep_countdown_label": "فریم میں آئیں — اسکین {{count}}s میں شروع ہوگی",
+    "delete_title": "اسکین حذف کریں",
+    "delete_msg": "یہ جسم کی اسکین اور اس کی تشخیص کو ہٹا دیں؟ یہ کام واپس نہیں ہو سکتا۔",
+    "error_delete": "اسکین حذف کرنے میں ناکام"
   },
   "shopping_list": {
     "clear_title": "معلومات شدہ اشیاء کو صاف کریں؟",
