@@ -23,7 +23,8 @@
     "upgrade_unlock": "⚡ アップグレードして解除",
     "dismiss": "閉じる",
     "error_boundary_title": "何か問題が発生しました",
-    "error_boundary_msg": "予期しないエラーが発生しました。"
+    "error_boundary_msg": "予期しないエラーが発生しました。",
+    "edit": "編集"
   },
   "auth": {
     "signin": {
@@ -678,7 +679,11 @@
     "add_item": "アイテムを追加",
     "add_recent": "+ 追加",
     "log_next_meal": "次の食事をログ →",
-    "cal_protein": "{{cal}}kcal · {{p}}gプロテイン"
+    "cal_protein": "{{cal}}kcal · {{p}}gプロテイン",
+    "edit_title": "食事を編集",
+    "save_changes_button": "変更を保存",
+    "updated_title": "更新されました!",
+    "updated_msg": "食事が更新されました。"
   },
   "food_diary": {
     "title": "食事日記",
@@ -796,7 +801,19 @@
     "goal_specific_area": "特定の部位の筋肉を構築",
     "progress_done": "{{done}}/{{total}}完了",
     "exercise_meta": "{{sets}}セット × {{reps}}回 · {{rest}}秒休息",
-    "check_form": "フォームをチェック"
+    "check_form": "フォームをチェック",
+    "replace_exercise": "エクササイズを置き換える",
+    "replace_exercise_title": "エクササイズを置き換える",
+    "add_exercise": "+ エクササイズを追加",
+    "add_exercise_title": "エクササイズを追加",
+    "exercise_name": "エクササイズ名",
+    "sets_label": "セット数",
+    "reps_label": "回数",
+    "rest_seconds_label": "休息（秒）",
+    "notes_optional": "メモ（オプション）",
+    "error_add_exercise": "エクササイズの追加に失敗しました",
+    "error_replace_exercise": "エクササイズの置き換えに失敗しました",
+    "error_delete_exercise": "エクササイズの削除に失敗しました"
   },
   "supplements": {
     "title": "サプリメント",
@@ -1244,5 +1261,15 @@
     "start_recording": "録画を開始",
     "stop_recording": "停止して分析",
     "status_recording": "録画中... {{seconds}}秒 — 準備ができたら「停止」をタップしてください"
+  },
+  "live_food_scan": {
+    "permission_title": "カメラへのアクセスが必要です",
+    "permission_sub": "食事をスキャンするためにカメラへのアクセスを許可してください。",
+    "grant_permission": "カメラアクセスを許可",
+    "frame_hint": "カメラを食事に向けてください",
+    "upload_instead": "代わりに写真をアップロード",
+    "capture_failed": "写真のキャプチャに失敗しました。もう一度お試しください。",
+    "scan_another": "別のものをスキャン",
+    "done": "完了"
   }
 }

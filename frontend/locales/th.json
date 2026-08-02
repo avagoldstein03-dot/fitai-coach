@@ -23,7 +23,8 @@
     "upgrade_unlock": "⚡ อัปเกรดเพื่อปลดล็อก",
     "dismiss": "ปิด",
     "error_boundary_title": "มีบางอย่างผิดพลาด",
-    "error_boundary_msg": "เกิดข้อผิดพลาดที่ไม่คาดคิด"
+    "error_boundary_msg": "เกิดข้อผิดพลาดที่ไม่คาดคิด",
+    "edit": "แก้ไข"
   },
   "auth": {
     "signin": {
@@ -678,7 +679,11 @@
     "add_item": "เพิ่มรายการ",
     "add_recent": "+ เพิ่ม",
     "log_next_meal": "บันทึกมื้ออาหารถัดไป →",
-    "cal_protein": "{{cal}} แคลอรี่ · {{p}}g โปรตีน"
+    "cal_protein": "{{cal}} แคลอรี่ · {{p}}g โปรตีน",
+    "edit_title": "แก้ไขมื้ออาหาร",
+    "save_changes_button": "บันทึกการเปลี่ยนแปลง",
+    "updated_title": "อัปเดตแล้ว!",
+    "updated_msg": "มื้ออาหารของคุณได้รับการอัปเดตแล้ว"
   },
   "food_diary": {
     "title": "สมุดบันทึกอาหาร",
@@ -796,7 +801,19 @@
     "goal_specific_area": "สร้างกล้ามเนื้อในพื้นที่เฉพาะ",
     "progress_done": "{{done}}/{{total}} เสร็จสิ้น",
     "exercise_meta": "{{sets}} ชุด × {{reps}} ครั้ง · {{rest}}s พักผ่อน",
-    "check_form": "ตรวจสอบท่า"
+    "check_form": "ตรวจสอบท่า",
+    "replace_exercise": "แทนที่การออกกำลัง",
+    "replace_exercise_title": "แทนที่การออกกำลัง",
+    "add_exercise": "+ เพิ่มการออกกำลัง",
+    "add_exercise_title": "เพิ่มการออกกำลัง",
+    "exercise_name": "ชื่อการออกกำลัง",
+    "sets_label": "ชุด",
+    "reps_label": "ครั้ง",
+    "rest_seconds_label": "พักผ่อน (วินาที)",
+    "notes_optional": "หมายเหตุ (ไม่บังคับ)",
+    "error_add_exercise": "ไม่สามารถเพิ่มการออกกำลังได้",
+    "error_replace_exercise": "ไม่สามารถแทนที่การออกกำลังได้",
+    "error_delete_exercise": "ไม่สามารถลบการออกกำลังได้"
   },
   "supplements": {
     "title": "สารเสริม",
@@ -1244,5 +1261,15 @@
     "start_recording": "เริ่มบันทึก",
     "stop_recording": "หยุด & วิเคราะห์",
     "status_recording": "กำลังบันทึก... {{seconds}}s — แตะ Stop เมื่อพร้อม"
+  },
+  "live_food_scan": {
+    "permission_title": "ต้องได้รับสิทธิ์เข้าถึงกล้อง",
+    "permission_sub": "อนุญาตการเข้าถึงกล้องเพื่อสแกนอาหารของคุณ",
+    "grant_permission": "อนุญาตการเข้าถึงกล้อง",
+    "frame_hint": "ชี้กล้องของคุณไปที่อาหารของคุณ",
+    "upload_instead": "อัปโหลดรูปภาพแทน",
+    "capture_failed": "ไม่สามารถถ่ายภาพได้ โปรดลองอีกครั้ง",
+    "scan_another": "สแกนอื่น",
+    "done": "เสร็จสิ้น"
   }
 }

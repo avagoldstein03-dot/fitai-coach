@@ -23,7 +23,8 @@
     "upgrade_unlock": "⚡ Kilidini Açmak için Yükselt",
     "dismiss": "Kapat",
     "error_boundary_title": "Bir sorun oluştu",
-    "error_boundary_msg": "Beklenmeyen bir hata meydana geldi."
+    "error_boundary_msg": "Beklenmeyen bir hata meydana geldi.",
+    "edit": "Düzenle"
   },
   "auth": {
     "signin": {
@@ -678,7 +679,11 @@
     "add_item": "Ürün Ekle",
     "add_recent": "+ Ekle",
     "log_next_meal": "Sonraki öğünü kaydet →",
-    "cal_protein": "{{cal}} kcal · {{p}}g protein"
+    "cal_protein": "{{cal}} kcal · {{p}}g protein",
+    "edit_title": "Öğünü Düzenle",
+    "save_changes_button": "Değişiklikleri Kaydet",
+    "updated_title": "Güncellendi!",
+    "updated_msg": "Öğününüz güncellendi."
   },
   "food_diary": {
     "title": "Yemek Günlüğü",
@@ -796,7 +801,19 @@
     "goal_specific_area": "Belirli bir alanda kas inşa et",
     "progress_done": "{{done}}/{{total}} bitti",
     "exercise_meta": "{{sets}} set × {{reps}} tekrar · {{rest}}s dinlenme",
-    "check_form": "Form Kontrolü"
+    "check_form": "Form Kontrolü",
+    "replace_exercise": "Egzersizi Değiştir",
+    "replace_exercise_title": "Egzersizi Değiştir",
+    "add_exercise": "+ Egzersiz Ekle",
+    "add_exercise_title": "Egzersiz Ekle",
+    "exercise_name": "Egzersiz Adı",
+    "sets_label": "Set",
+    "reps_label": "Tekrar",
+    "rest_seconds_label": "Dinlenme (saniye)",
+    "notes_optional": "Notlar (isteğe bağlı)",
+    "error_add_exercise": "Egzersiz eklenemedi",
+    "error_replace_exercise": "Egzersiz değiştirilemedi",
+    "error_delete_exercise": "Egzersiz silinemedi"
   },
   "supplements": {
     "title": "Takviyeler",
@@ -1244,5 +1261,15 @@
     "start_recording": "Kaydı Başlat",
     "stop_recording": "Durdur ve Analiz Et",
     "status_recording": "Kaydediliyor... {{seconds}}s — hazırsan Durdur'a dokunun"
+  },
+  "live_food_scan": {
+    "permission_title": "Kamera Erişimi Gerekli",
+    "permission_sub": "Öğününüzü taramak için kamera erişimine izin verin.",
+    "grant_permission": "Kamera Erişimi Ver",
+    "frame_hint": "Kameranızı öğününüze yönlendirin",
+    "upload_instead": "Bunun yerine bir foto yükleyin",
+    "capture_failed": "Foto çekme başarısız oldu. Lütfen tekrar deneyin.",
+    "scan_another": "Başka Bir Tarama Yap",
+    "done": "Bitti"
   }
 }

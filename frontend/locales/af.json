@@ -23,7 +23,8 @@
     "upgrade_unlock": "⚡ Upgrade om te ontsluit",
     "dismiss": "Sluit",
     "error_boundary_title": "Iets het fout gegaan",
-    "error_boundary_msg": "Onverwachte fout het voorgekom."
+    "error_boundary_msg": "Onverwachte fout het voorgekom.",
+    "edit": "Wysig"
   },
   "auth": {
     "signin": {
@@ -678,7 +679,11 @@
     "add_item": "Voeg item by",
     "add_recent": "+ Voeg by",
     "log_next_meal": "Teken volgende maaltyd aan →",
-    "cal_protein": "{{cal}} kcal · {{p}}g proteïen"
+    "cal_protein": "{{cal}} kcal · {{p}}g proteïen",
+    "edit_title": "Wysig Maaltyd",
+    "save_changes_button": "Stoor Veranderinge",
+    "updated_title": "Opgedateer!",
+    "updated_msg": "Jou maaltyd is opgedateer."
   },
   "food_diary": {
     "title": "Voedingssdagboek",
@@ -796,7 +801,19 @@
     "goal_specific_area": "Bou spier in 'n spesifieke area",
     "progress_done": "{{done}}/{{total}} gedoen",
     "exercise_meta": "{{sets}} stelle × {{reps}} herhalings · {{rest}}s rus",
-    "check_form": "Kontroleer Vorm"
+    "check_form": "Kontroleer Vorm",
+    "replace_exercise": "Vervang Oefening",
+    "replace_exercise_title": "Vervang Oefening",
+    "add_exercise": "+ Voeg Oefening Toe",
+    "add_exercise_title": "Voeg Oefening Toe",
+    "exercise_name": "Oefeningnaam",
+    "sets_label": "Stelle",
+    "reps_label": "Herhalings",
+    "rest_seconds_label": "Rus (sekondes)",
+    "notes_optional": "Notas (opsioneel)",
+    "error_add_exercise": "Kon nie oefening byvoeg nie",
+    "error_replace_exercise": "Kon nie oefening vervang nie",
+    "error_delete_exercise": "Kon nie oefening verwyder nie"
   },
   "supplements": {
     "title": "Byvoegings",
@@ -1244,5 +1261,15 @@
     "start_recording": "Begin Opname",
     "stop_recording": "Stop & Ontleed",
     "status_recording": "Opname tans aan... {{seconds}}s — tik Stop wanneer gereed"
+  },
+  "live_food_scan": {
+    "permission_title": "Kameraksès Nodig",
+    "permission_sub": "Laat kameraksès toe om jou maaltyd te skandeer.",
+    "grant_permission": "Ken Kameraksès",
+    "frame_hint": "Rig jou kamera na jou maaltyd",
+    "upload_instead": "Laai liewer 'n foto op",
+    "capture_failed": "Kon nie foto vasvang nie. Probeer asseblief weer.",
+    "scan_another": "Skandeer Nog Een",
+    "done": "Klaar"
   }
 }

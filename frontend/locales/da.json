@@ -23,7 +23,8 @@
     "upgrade_unlock": "⚡ Opgrader for at låse op",
     "dismiss": "Afvis",
     "error_boundary_title": "Der gik noget galt",
-    "error_boundary_msg": "En uventet fejl opstod."
+    "error_boundary_msg": "En uventet fejl opstod.",
+    "edit": "Rediger"
   },
   "auth": {
     "signin": {
@@ -678,7 +679,11 @@
     "add_item": "Tilføj vare",
     "add_recent": "+ Tilføj",
     "log_next_meal": "Log næste måltid →",
-    "cal_protein": "{{cal}} kcal · {{p}}g protein"
+    "cal_protein": "{{cal}} kcal · {{p}}g protein",
+    "edit_title": "Rediger måltid",
+    "save_changes_button": "Gem ændringer",
+    "updated_title": "Opdateret!",
+    "updated_msg": "Dit måltid er blevet opdateret."
   },
   "food_diary": {
     "title": "Madjournal",
@@ -796,7 +801,19 @@
     "goal_specific_area": "Byg muskler i et specifikt område",
     "progress_done": "{{done}}/{{total}} færdig",
     "exercise_meta": "{{sets}} sæt × {{reps}} gentagelser · {{rest}}s hvil",
-    "check_form": "Tjek Form"
+    "check_form": "Tjek Form",
+    "replace_exercise": "Erstat øvelse",
+    "replace_exercise_title": "Erstat øvelse",
+    "add_exercise": "+ Tilføj øvelse",
+    "add_exercise_title": "Tilføj øvelse",
+    "exercise_name": "Øvelsenavn",
+    "sets_label": "Sæt",
+    "reps_label": "Gentagelser",
+    "rest_seconds_label": "Pause (sekunder)",
+    "notes_optional": "Noter (valgfrit)",
+    "error_add_exercise": "Kunne ikke tilføje øvelse",
+    "error_replace_exercise": "Kunne ikke erstatte øvelse",
+    "error_delete_exercise": "Kunne ikke slette øvelse"
   },
   "supplements": {
     "title": "Tilskud",
@@ -1244,5 +1261,15 @@
     "start_recording": "Start Optagelse",
     "stop_recording": "Stop & Analyser",
     "status_recording": "Optager... {{seconds}}s — tryk Stop når du er klar"
+  },
+  "live_food_scan": {
+    "permission_title": "Kameraadgang påkrævet",
+    "permission_sub": "Tillad kameraadgang for at scanne dit måltid.",
+    "grant_permission": "Giv kameraadgang",
+    "frame_hint": "Peg med dit kamera på dit måltid",
+    "upload_instead": "Upload et foto i stedet",
+    "capture_failed": "Kunne ikke tage billede. Prøv igen.",
+    "scan_another": "Scan et andet",
+    "done": "Færdig"
   }
 }

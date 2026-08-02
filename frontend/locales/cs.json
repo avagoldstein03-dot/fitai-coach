@@ -23,7 +23,8 @@
     "upgrade_unlock": "⚡ Upgradujte pro odemčení",
     "dismiss": "Zavřít",
     "error_boundary_title": "Něco se pokazilo",
-    "error_boundary_msg": "Došlo k neočekávané chybě."
+    "error_boundary_msg": "Došlo k neočekávané chybě.",
+    "edit": "Upravit"
   },
   "auth": {
     "signin": {
@@ -678,7 +679,11 @@
     "add_item": "Přidat položku",
     "add_recent": "+ Přidat",
     "log_next_meal": "Zaznamenat další jídlo →",
-    "cal_protein": "{{cal}} kcal · {{p}}g proteinu"
+    "cal_protein": "{{cal}} kcal · {{p}}g proteinu",
+    "edit_title": "Upravit Jídlo",
+    "save_changes_button": "Uložit Změny",
+    "updated_title": "Aktualizováno!",
+    "updated_msg": "Vaše jídlo bylo aktualizováno."
   },
   "food_diary": {
     "title": "Potravinářský deník",
@@ -796,7 +801,19 @@
     "goal_specific_area": "Budujte svaly v konkrétní oblasti",
     "progress_done": "{{done}}/{{total}} hotovo",
     "exercise_meta": "{{sets}} sady × {{reps}} opakování · {{rest}}s odpočinek",
-    "check_form": "Zkontrolovat techniku"
+    "check_form": "Zkontrolovat techniku",
+    "replace_exercise": "Nahradit cvičení",
+    "replace_exercise_title": "Nahradit cvičení",
+    "add_exercise": "+ Přidat cvičení",
+    "add_exercise_title": "Přidat cvičení",
+    "exercise_name": "Název cvičení",
+    "sets_label": "Série",
+    "reps_label": "Opakování",
+    "rest_seconds_label": "Odpočinek (sekundy)",
+    "notes_optional": "Poznámky (volitelně)",
+    "error_add_exercise": "Přidání cvičení se nezdařilo",
+    "error_replace_exercise": "Nahrazení cvičení se nezdařilo",
+    "error_delete_exercise": "Odstranění cvičení se nezdařilo"
   },
   "supplements": {
     "title": "Doplňky",
@@ -1244,5 +1261,15 @@
     "start_recording": "Spustit záznam",
     "stop_recording": "Zastavit a analyzovat",
     "status_recording": "Záznam probíhá... {{seconds}}s — klepněte na Zastavit, když jste připraveni"
+  },
+  "live_food_scan": {
+    "permission_title": "Přístup k fotoaparátu vyžadován",
+    "permission_sub": "Povolit přístup k fotoaparátu pro skenování vašeho jídla.",
+    "grant_permission": "Poskytnout přístup k fotoaparátu",
+    "frame_hint": "Nasměrujte fotoaparát na vaše jídlo",
+    "upload_instead": "Nahrát fotku místo toho",
+    "capture_failed": "Nepodařilo se zachytit fotografii. Zkuste prosím znovu.",
+    "scan_another": "Skenovat další",
+    "done": "Hotovo"
   }
 }

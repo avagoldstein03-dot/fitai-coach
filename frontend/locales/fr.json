@@ -23,7 +23,8 @@
     "upgrade_unlock": "⚡ Passer à la version premium pour déverrouiller",
     "dismiss": "Fermer",
     "error_boundary_title": "Une erreur s'est produite",
-    "error_boundary_msg": "Une erreur inattendue s'est produite."
+    "error_boundary_msg": "Une erreur inattendue s'est produite.",
+    "edit": "Modifier"
   },
   "auth": {
     "signin": {
@@ -678,7 +679,11 @@
     "add_item": "Ajouter un élément",
     "add_recent": "+ Ajouter",
     "log_next_meal": "Enregistrer le prochain repas →",
-    "cal_protein": "{{cal}} kcal · {{p}}g protéines"
+    "cal_protein": "{{cal}} kcal · {{p}}g protéines",
+    "edit_title": "Modifier le repas",
+    "save_changes_button": "Enregistrer les modifications",
+    "updated_title": "Mis à jour !",
+    "updated_msg": "Votre repas a été mis à jour."
   },
   "food_diary": {
     "title": "Journal alimentaire",
@@ -796,7 +801,19 @@
     "goal_specific_area": "Développer la masse musculaire dans une zone spécifique",
     "progress_done": "{{done}}/{{total}} effectués",
     "exercise_meta": "{{sets}} séries × {{reps}} répétitions · {{rest}}s repos",
-    "check_form": "Vérifier la Forme"
+    "check_form": "Vérifier la Forme",
+    "replace_exercise": "Remplacer l'exercice",
+    "replace_exercise_title": "Remplacer l'exercice",
+    "add_exercise": "+ Ajouter un exercice",
+    "add_exercise_title": "Ajouter un exercice",
+    "exercise_name": "Nom de l'exercice",
+    "sets_label": "Séries",
+    "reps_label": "Répétitions",
+    "rest_seconds_label": "Repos (secondes)",
+    "notes_optional": "Notes (facultatif)",
+    "error_add_exercise": "Impossible d'ajouter l'exercice",
+    "error_replace_exercise": "Impossible de remplacer l'exercice",
+    "error_delete_exercise": "Impossible de supprimer l'exercice"
   },
   "supplements": {
     "title": "Suppléments",
@@ -1244,5 +1261,15 @@
     "start_recording": "Commencer l'enregistrement",
     "stop_recording": "Arrêter et analyser",
     "status_recording": "Enregistrement en cours... {{seconds}}s — appuyez sur Arrêter quand vous êtes prêt"
+  },
+  "live_food_scan": {
+    "permission_title": "Accès à la caméra requis",
+    "permission_sub": "Autorisez l'accès à la caméra pour scanner votre repas.",
+    "grant_permission": "Autoriser l'accès à la caméra",
+    "frame_hint": "Pointez votre caméra vers votre repas",
+    "upload_instead": "Télécharger une photo à la place",
+    "capture_failed": "Échec de la capture photo. Veuillez réessayer.",
+    "scan_another": "Scanner un autre",
+    "done": "Terminé"
   }
 }

@@ -23,7 +23,8 @@
     "upgrade_unlock": "⚡ Upgrade para Desbloquear",
     "dismiss": "Descartar",
     "error_boundary_title": "Algo deu errado",
-    "error_boundary_msg": "Um erro inesperado ocorreu."
+    "error_boundary_msg": "Um erro inesperado ocorreu.",
+    "edit": "Editar"
   },
   "auth": {
     "signin": {
@@ -678,7 +679,11 @@
     "add_item": "Adicionar Item",
     "add_recent": "+ Adicionar",
     "log_next_meal": "Registre a próxima refeição →",
-    "cal_protein": "{{cal}} kcal · {{p}}g de proteína"
+    "cal_protein": "{{cal}} kcal · {{p}}g de proteína",
+    "edit_title": "Editar Refeição",
+    "save_changes_button": "Salvar Alterações",
+    "updated_title": "Atualizado!",
+    "updated_msg": "Sua refeição foi atualizada."
   },
   "food_diary": {
     "title": "Diário de Alimentos",
@@ -796,7 +801,19 @@
     "goal_specific_area": "Construir músculo em uma área específica",
     "progress_done": "{{done}}/{{total}} concluído",
     "exercise_meta": "{{sets}} séries × {{reps}} repetições · {{rest}}s descanso",
-    "check_form": "Verificar Forma"
+    "check_form": "Verificar Forma",
+    "replace_exercise": "Substituir Exercício",
+    "replace_exercise_title": "Substituir Exercício",
+    "add_exercise": "+ Adicionar Exercício",
+    "add_exercise_title": "Adicionar Exercício",
+    "exercise_name": "Nome do Exercício",
+    "sets_label": "Séries",
+    "reps_label": "Repetições",
+    "rest_seconds_label": "Descanso (segundos)",
+    "notes_optional": "Notas (opcional)",
+    "error_add_exercise": "Falha ao adicionar exercício",
+    "error_replace_exercise": "Falha ao substituir exercício",
+    "error_delete_exercise": "Falha ao deletar exercício"
   },
   "supplements": {
     "title": "Suplementos",
@@ -1244,5 +1261,15 @@
     "start_recording": "Iniciar Gravação",
     "stop_recording": "Parar e Analisar",
     "status_recording": "Gravando... {{seconds}}s — toque em Parar quando estiver pronto"
+  },
+  "live_food_scan": {
+    "permission_title": "Acesso à Câmera Necessário",
+    "permission_sub": "Permita o acesso à câmera para escanear sua refeição.",
+    "grant_permission": "Conceder Acesso à Câmera",
+    "frame_hint": "Aponte sua câmera para sua refeição",
+    "upload_instead": "Enviar uma foto em vez disso",
+    "capture_failed": "Falha ao capturar foto. Tente novamente.",
+    "scan_another": "Escanear Outro",
+    "done": "Concluído"
   }
 }

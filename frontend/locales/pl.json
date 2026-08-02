@@ -23,7 +23,8 @@
     "upgrade_unlock": "⚡ Ulepsz, aby odblokować",
     "dismiss": "Zamknij",
     "error_boundary_title": "Coś poszło nie tak",
-    "error_boundary_msg": "Wystąpił nieoczekiwany błąd."
+    "error_boundary_msg": "Wystąpił nieoczekiwany błąd.",
+    "edit": "Edytuj"
   },
   "auth": {
     "signin": {
@@ -678,7 +679,11 @@
     "add_item": "Dodaj element",
     "add_recent": "+ Dodaj",
     "log_next_meal": "Zaloguj następny posiłek →",
-    "cal_protein": "{{cal}} kcal · {{p}}g proteinu"
+    "cal_protein": "{{cal}} kcal · {{p}}g proteinu",
+    "edit_title": "Edytuj Posiłek",
+    "save_changes_button": "Zapisz Zmiany",
+    "updated_title": "Zaktualizowano!",
+    "updated_msg": "Twój posiłek został zaktualizowany."
   },
   "food_diary": {
     "title": "Dziennik żywności",
@@ -796,7 +801,19 @@
     "goal_specific_area": "Zbuduj mięśnie w konkretnym obszarze",
     "progress_done": "{{done}}/{{total}} gotowe",
     "exercise_meta": "{{sets}} setów × {{reps}} powtórzeń · {{rest}}s odpoczynku",
-    "check_form": "Sprawdź Formę"
+    "check_form": "Sprawdź Formę",
+    "replace_exercise": "Zamień Ćwiczenie",
+    "replace_exercise_title": "Zamień Ćwiczenie",
+    "add_exercise": "+ Dodaj Ćwiczenie",
+    "add_exercise_title": "Dodaj Ćwiczenie",
+    "exercise_name": "Nazwa Ćwiczenia",
+    "sets_label": "Serie",
+    "reps_label": "Powtórzenia",
+    "rest_seconds_label": "Przerwa (sekundy)",
+    "notes_optional": "Notatki (opcjonalne)",
+    "error_add_exercise": "Nie udało się dodać ćwiczenia",
+    "error_replace_exercise": "Nie udało się zamienić ćwiczenia",
+    "error_delete_exercise": "Nie udało się usunąć ćwiczenia"
   },
   "supplements": {
     "title": "Suplementy",
@@ -1244,5 +1261,15 @@
     "start_recording": "Rozpocznij nagrywanie",
     "stop_recording": "Zatrzymaj i analizuj",
     "status_recording": "Nagrywanie... {{seconds}}s — naciśnij Zatrzymaj, gdy będziesz gotowy"
+  },
+  "live_food_scan": {
+    "permission_title": "Wymagany dostęp do kamery",
+    "permission_sub": "Zezwól na dostęp do kamery, aby zeskanować swój posiłek.",
+    "grant_permission": "Przyznaj dostęp do kamery",
+    "frame_hint": "Skieruj kamerę na swój posiłek",
+    "upload_instead": "Zamiast tego prześlij zdjęcie",
+    "capture_failed": "Nie udało się zrobić zdjęcia. Spróbuj ponownie.",
+    "scan_another": "Skanuj kolejne",
+    "done": "Gotowe"
   }
 }

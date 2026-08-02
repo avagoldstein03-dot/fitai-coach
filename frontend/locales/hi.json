@@ -23,7 +23,8 @@
     "upgrade_unlock": "⚡ अनलॉक करने के लिए अपग्रेड करें",
     "dismiss": "खारिज करें",
     "error_boundary_title": "कुछ गलत हो गया",
-    "error_boundary_msg": "एक अप्रत्याशित त्रुटि हुई।"
+    "error_boundary_msg": "एक अप्रत्याशित त्रुटि हुई।",
+    "edit": "संपादित करें"
   },
   "auth": {
     "signin": {
@@ -678,7 +679,11 @@
     "add_item": "आइटम जोड़ें",
     "add_recent": "+ जोड़ें",
     "log_next_meal": "अगला भोजन दर्ज करें →",
-    "cal_protein": "{{cal}} kcal · {{p}}g प्रोटीन"
+    "cal_protein": "{{cal}} kcal · {{p}}g प्रोटीन",
+    "edit_title": "भोजन संपादित करें",
+    "save_changes_button": "परिवर्तन सहेजें",
+    "updated_title": "अपडेट किया गया!",
+    "updated_msg": "आपका भोजन अपडेट कर दिया गया है।"
   },
   "food_diary": {
     "title": "खाद्य डायरी",
@@ -796,7 +801,19 @@
     "goal_specific_area": "एक विशिष्ट क्षेत्र में मांसपेशी बनाएं",
     "progress_done": "{{done}}/{{total}} पूर्ण",
     "exercise_meta": "{{sets}} सेट × {{reps}} रेप्स · {{rest}}s आराम",
-    "check_form": "फॉर्म जांचें"
+    "check_form": "फॉर्म जांचें",
+    "replace_exercise": "व्यायाम बदलें",
+    "replace_exercise_title": "व्यायाम बदलें",
+    "add_exercise": "+ व्यायाम जोड़ें",
+    "add_exercise_title": "व्यायाम जोड़ें",
+    "exercise_name": "व्यायाम का नाम",
+    "sets_label": "सेट",
+    "reps_label": "रिपीटिशन",
+    "rest_seconds_label": "आराम (सेकंड)",
+    "notes_optional": "नोट्स (वैकल्पिक)",
+    "error_add_exercise": "व्यायाम जोड़ने में विफल",
+    "error_replace_exercise": "व्यायाम बदलने में विफल",
+    "error_delete_exercise": "व्यायाम हटाने में विफल"
   },
   "supplements": {
     "title": "पूरक",
@@ -1244,5 +1261,15 @@
     "start_recording": "रिकॉर्डिंग शुरू करें",
     "stop_recording": "रोकें और विश्लेषण करें",
     "status_recording": "रिकॉर्ड हो रहा है... {{seconds}}s — तैयार होने पर रोकें पर टैप करें"
+  },
+  "live_food_scan": {
+    "permission_title": "कैमरा एक्सेस की आवश्यकता है",
+    "permission_sub": "अपने भोजन को स्कैन करने के लिए कैमरा एक्सेस की अनुमति दें।",
+    "grant_permission": "कैमरा एक्सेस दें",
+    "frame_hint": "अपने भोजन की ओर कैमरा इशारा करें",
+    "upload_instead": "इसके बजाय एक फोटो अपलोड करें",
+    "capture_failed": "फोटो कैप्चर करने में विफल। कृपया दोबारा प्रयास करें।",
+    "scan_another": "दूसरा स्कैन करें",
+    "done": "पूर्ण"
   }
 }

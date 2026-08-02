@@ -23,7 +23,8 @@
     "upgrade_unlock": "⚡ Tingkatkan untuk Membuka",
     "dismiss": "Tutup",
     "error_boundary_title": "Sesuatu tidak kena",
-    "error_boundary_msg": "Ralat yang tidak dijangka telah berlaku."
+    "error_boundary_msg": "Ralat yang tidak dijangka telah berlaku.",
+    "edit": "Sunting"
   },
   "auth": {
     "signin": {
@@ -678,7 +679,11 @@
     "add_item": "Tambah Item",
     "add_recent": "+ Tambah",
     "log_next_meal": "Catat makanan seterusnya →",
-    "cal_protein": "{{cal}} kcal · {{p}}g protein"
+    "cal_protein": "{{cal}} kcal · {{p}}g protein",
+    "edit_title": "Sunting Makanan",
+    "save_changes_button": "Simpan Perubahan",
+    "updated_title": "Dikemas kini!",
+    "updated_msg": "Makanan anda telah dikemas kini."
   },
   "food_diary": {
     "title": "Diari Makanan",
@@ -796,7 +801,19 @@
     "goal_specific_area": "Membina otot di kawasan tertentu",
     "progress_done": "{{done}}/{{total}} selesai",
     "exercise_meta": "{{sets}} set × {{reps}} rep · {{rest}}s rehat",
-    "check_form": "Periksa Bentuk"
+    "check_form": "Periksa Bentuk",
+    "replace_exercise": "Ganti Latihan",
+    "replace_exercise_title": "Ganti Latihan",
+    "add_exercise": "+ Tambah Latihan",
+    "add_exercise_title": "Tambah Latihan",
+    "exercise_name": "Nama Latihan",
+    "sets_label": "Set",
+    "reps_label": "Ulangan",
+    "rest_seconds_label": "Istirahat (saat)",
+    "notes_optional": "Catatan (pilihan)",
+    "error_add_exercise": "Gagal menambah latihan",
+    "error_replace_exercise": "Gagal mengganti latihan",
+    "error_delete_exercise": "Gagal menghapus latihan"
   },
   "supplements": {
     "title": "Suplemen",
@@ -1244,5 +1261,15 @@
     "start_recording": "Mula Rakaman",
     "stop_recording": "Henti & Analisis",
     "status_recording": "Merakam... {{seconds}}s — ketuk Henti apabila bersedia"
+  },
+  "live_food_scan": {
+    "permission_title": "Akses Kamera Diperlukan",
+    "permission_sub": "Izinkan akses kamera untuk mengimbas makanan anda.",
+    "grant_permission": "Berikan Akses Kamera",
+    "frame_hint": "Arahkan kamera anda ke makanan anda",
+    "upload_instead": "Muat naik foto sebaliknya",
+    "capture_failed": "Gagal menangkap foto. Sila cuba lagi.",
+    "scan_another": "Imbas Lagi",
+    "done": "Selesai"
   }
 }

@@ -23,7 +23,8 @@
     "upgrade_unlock": "⚡ Upgrade zum Freischalten",
     "dismiss": "Schließen",
     "error_boundary_title": "Etwas ist schief gelaufen",
-    "error_boundary_msg": "Ein unerwarteter Fehler ist aufgetreten."
+    "error_boundary_msg": "Ein unerwarteter Fehler ist aufgetreten.",
+    "edit": "Bearbeiten"
   },
   "auth": {
     "signin": {
@@ -678,7 +679,11 @@
     "add_item": "Element hinzufügen",
     "add_recent": "+ Hinzufügen",
     "log_next_meal": "Nächste Mahlzeit protokollieren →",
-    "cal_protein": "{{cal}} kcal · {{p}}g Protein"
+    "cal_protein": "{{cal}} kcal · {{p}}g Protein",
+    "edit_title": "Mahlzeit bearbeiten",
+    "save_changes_button": "Änderungen speichern",
+    "updated_title": "Aktualisiert!",
+    "updated_msg": "Deine Mahlzeit wurde aktualisiert."
   },
   "food_diary": {
     "title": "Ernährungstagebuch",
@@ -796,7 +801,19 @@
     "goal_specific_area": "Bauen Sie Muskeln in einem bestimmten Bereich auf",
     "progress_done": "{{done}}/{{total}} erledigt",
     "exercise_meta": "{{sets}} Sätze × {{reps}} Wiederholungen · {{rest}}s Pause",
-    "check_form": "Form überprüfen"
+    "check_form": "Form überprüfen",
+    "replace_exercise": "Übung ersetzen",
+    "replace_exercise_title": "Übung ersetzen",
+    "add_exercise": "+ Übung hinzufügen",
+    "add_exercise_title": "Übung hinzufügen",
+    "exercise_name": "Name der Übung",
+    "sets_label": "Sätze",
+    "reps_label": "Wiederholungen",
+    "rest_seconds_label": "Pause (Sekunden)",
+    "notes_optional": "Notizen (optional)",
+    "error_add_exercise": "Übung konnte nicht hinzugefügt werden",
+    "error_replace_exercise": "Übung konnte nicht ersetzt werden",
+    "error_delete_exercise": "Übung konnte nicht gelöscht werden"
   },
   "supplements": {
     "title": "Supplemente",
@@ -1244,5 +1261,15 @@
     "start_recording": "Aufnahme starten",
     "stop_recording": "Stopp & Analyse",
     "status_recording": "Wird aufgenommen... {{seconds}}s — tippe auf Stopp, wenn du bereit bist"
+  },
+  "live_food_scan": {
+    "permission_title": "Kamerazugriff erforderlich",
+    "permission_sub": "Erlauben Sie den Kamerazugriff, um Ihre Mahlzeit zu scannen.",
+    "grant_permission": "Kamerazugriff gewähren",
+    "frame_hint": "Richten Sie Ihre Kamera auf Ihre Mahlzeit",
+    "upload_instead": "Laden Sie stattdessen ein Foto hoch",
+    "capture_failed": "Foto konnte nicht aufgenommen werden. Bitte versuchen Sie es erneut.",
+    "scan_another": "Weiteren scannen",
+    "done": "Fertig"
   }
 }

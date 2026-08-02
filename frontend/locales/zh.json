@@ -23,7 +23,8 @@
     "upgrade_unlock": "⚡ 升级解锁",
     "dismiss": "关闭",
     "error_boundary_title": "出错了",
-    "error_boundary_msg": "发生了意外错误。"
+    "error_boundary_msg": "发生了意外错误。",
+    "edit": "编辑"
   },
   "auth": {
     "signin": {
@@ -678,7 +679,11 @@
     "add_item": "添加项目",
     "add_recent": "+ 添加",
     "log_next_meal": "记录下一餐 →",
-    "cal_protein": "{{cal}} 千卡 · {{p}}g 蛋白质"
+    "cal_protein": "{{cal}} 千卡 · {{p}}g 蛋白质",
+    "edit_title": "编辑餐食",
+    "save_changes_button": "保存更改",
+    "updated_title": "已更新！",
+    "updated_msg": "您的餐食已更新。"
   },
   "food_diary": {
     "title": "食物日记",
@@ -796,7 +801,19 @@
     "goal_specific_area": "在特定区域增加肌肉",
     "progress_done": "已完成 {{done}}/{{total}}",
     "exercise_meta": "{{sets}} 组 × {{reps}} 次 · {{rest}}s 休息",
-    "check_form": "检查姿态"
+    "check_form": "检查姿态",
+    "replace_exercise": "替换练习",
+    "replace_exercise_title": "替换练习",
+    "add_exercise": "+ 添加练习",
+    "add_exercise_title": "添加练习",
+    "exercise_name": "练习名称",
+    "sets_label": "组数",
+    "reps_label": "次数",
+    "rest_seconds_label": "休息（秒）",
+    "notes_optional": "备注（可选）",
+    "error_add_exercise": "添加练习失败",
+    "error_replace_exercise": "替换练习失败",
+    "error_delete_exercise": "删除练习失败"
   },
   "supplements": {
     "title": "补充剂",
@@ -1244,5 +1261,15 @@
     "start_recording": "开始录制",
     "stop_recording": "停止并分析",
     "status_recording": "录制中... {{seconds}}秒 — 准备好时点击停止"
+  },
+  "live_food_scan": {
+    "permission_title": "需要相机权限",
+    "permission_sub": "允许相机访问以扫描您的餐食。",
+    "grant_permission": "授予相机权限",
+    "frame_hint": "将相机指向您的餐食",
+    "upload_instead": "改为上传照片",
+    "capture_failed": "无法拍摄照片。请重试。",
+    "scan_another": "扫描另一个",
+    "done": "完成"
   }
 }

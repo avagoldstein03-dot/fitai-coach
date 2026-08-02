@@ -23,7 +23,8 @@
     "upgrade_unlock": "⚡ Boresha ili Kufungua",
     "dismiss": "Ondoa",
     "error_boundary_title": "Kitu kilibadilika",
-    "error_boundary_msg": "Hitilafu isiyotarajiwa ilitokea."
+    "error_boundary_msg": "Hitilafu isiyotarajiwa ilitokea.",
+    "edit": "Hariri"
   },
   "auth": {
     "signin": {
@@ -678,7 +679,11 @@
     "add_item": "Ongeza Kitu",
     "add_recent": "+ Ongeza",
     "log_next_meal": "Rekodi chakula kinachofuata →",
-    "cal_protein": "{{cal}} kcal · {{p}}g protini"
+    "cal_protein": "{{cal}} kcal · {{p}}g protini",
+    "edit_title": "Hariri Chakula",
+    "save_changes_button": "Hifadhi Mabadiliko",
+    "updated_title": "Imebadilishwa!",
+    "updated_msg": "Chakula chako kimebadilishwa."
   },
   "food_diary": {
     "title": "Karatasi ya Chakula",
@@ -796,7 +801,19 @@
     "goal_specific_area": "Jenga misuli katika eneo mahususi",
     "progress_done": "{{done}}/{{total}} imekamilika",
     "exercise_meta": "{{sets}} kuweka × {{reps}} kurudia · {{rest}}s kupumzika",
-    "check_form": "Angalia Fomu"
+    "check_form": "Angalia Fomu",
+    "replace_exercise": "Badilisha Zoezi",
+    "replace_exercise_title": "Badilisha Zoezi",
+    "add_exercise": "+ Ongeza Zoezi",
+    "add_exercise_title": "Ongeza Zoezi",
+    "exercise_name": "Jina la Zoezi",
+    "sets_label": "Seti",
+    "reps_label": "Marudio",
+    "rest_seconds_label": "Pumzika (sekunde)",
+    "notes_optional": "Maelezo (chaguo)",
+    "error_add_exercise": "Imeshindwa kuongeza zoezi",
+    "error_replace_exercise": "Imeshindwa kubadilisha zoezi",
+    "error_delete_exercise": "Imeshindwa kufuta zoezi"
   },
   "supplements": {
     "title": "Virutubishi",
@@ -1244,5 +1261,15 @@
     "start_recording": "Anza Kurekodi",
     "stop_recording": "Acha & Changanua",
     "status_recording": "Kurekodi... {{seconds}}s — gusa Acha wakati umepokea"
+  },
+  "live_food_scan": {
+    "permission_title": "Inahitaji Ufikiaji wa Kamera",
+    "permission_sub": "Ruhusu ufikiaji wa kamera ili kusambaza chakula chako.",
+    "grant_permission": "Baridi Ufikiaji wa Kamera",
+    "frame_hint": "Elekeza kamera yako kwa chakula chako",
+    "upload_instead": "Pakia picha badala yake",
+    "capture_failed": "Kushindwa kunasa picha. Tafadhali jaribu tena.",
+    "scan_another": "Sambaza Nyingine",
+    "done": "Imekamilika"
   }
 }

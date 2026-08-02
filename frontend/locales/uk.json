@@ -23,7 +23,8 @@
     "upgrade_unlock": "⚡ Оновіть, щоб розблокувати",
     "dismiss": "Закрити",
     "error_boundary_title": "Щось пішло не так",
-    "error_boundary_msg": "Сталася неочікувана помилка."
+    "error_boundary_msg": "Сталася неочікувана помилка.",
+    "edit": "Редагувати"
   },
   "auth": {
     "signin": {
@@ -678,7 +679,11 @@
     "add_item": "Додати товар",
     "add_recent": "+ Додати",
     "log_next_meal": "Запишіть наступний прием їжі →",
-    "cal_protein": "{{cal}} ккал · {{p}}г білка"
+    "cal_protein": "{{cal}} ккал · {{p}}г білка",
+    "edit_title": "Редагувати прием їжі",
+    "save_changes_button": "Зберегти зміни",
+    "updated_title": "Оновлено!",
+    "updated_msg": "Ваш прием їжі було оновлено."
   },
   "food_diary": {
     "title": "Щоденник Їжи",
@@ -796,7 +801,19 @@
     "goal_specific_area": "Будуйте м'язи в конкретній області",
     "progress_done": "{{done}}/{{total}} готово",
     "exercise_meta": "{{sets}} підходів × {{reps}} повторень · {{rest}}s відпочинку",
-    "check_form": "Перевірити техніку"
+    "check_form": "Перевірити техніку",
+    "replace_exercise": "Замінити вправу",
+    "replace_exercise_title": "Замінити вправу",
+    "add_exercise": "+ Додати вправу",
+    "add_exercise_title": "Додати вправу",
+    "exercise_name": "Назва вправи",
+    "sets_label": "Серії",
+    "reps_label": "Повторення",
+    "rest_seconds_label": "Відпочинок (секунди)",
+    "notes_optional": "Примітки (не обов'язково)",
+    "error_add_exercise": "Не вдалося додати вправу",
+    "error_replace_exercise": "Не вдалося замінити вправу",
+    "error_delete_exercise": "Не вдалося видалити вправу"
   },
   "supplements": {
     "title": "Добавки",
@@ -1244,5 +1261,15 @@
     "start_recording": "Почати запис",
     "stop_recording": "Зупинити й аналізувати",
     "status_recording": "Запис... {{seconds}}s — натисніть Зупинити, коли будете готові"
+  },
+  "live_food_scan": {
+    "permission_title": "Потрібен доступ до камери",
+    "permission_sub": "Дозвольте доступ до камери для сканування вашого прийому їжі.",
+    "grant_permission": "Надати доступ до камери",
+    "frame_hint": "Спрямуйте камеру на вашу їжу",
+    "upload_instead": "Замість цього завантажте фото",
+    "capture_failed": "Не вдалося зробити фото. Будь ласка, спробуйте ще раз.",
+    "scan_another": "Сканувати ще",
+    "done": "Готово"
   }
 }

@@ -23,7 +23,8 @@
     "upgrade_unlock": "⚡ Uppgradera för att låsa upp",
     "dismiss": "Stäng",
     "error_boundary_title": "Något gick fel",
-    "error_boundary_msg": "Ett oväntat fel uppstod."
+    "error_boundary_msg": "Ett oväntat fel uppstod.",
+    "edit": "Redigera"
   },
   "auth": {
     "signin": {
@@ -678,7 +679,11 @@
     "add_item": "Lägg till objekt",
     "add_recent": "+ Lägg till",
     "log_next_meal": "Logga nästa måltid →",
-    "cal_protein": "{{cal}} kcal · {{p}}g protein"
+    "cal_protein": "{{cal}} kcal · {{p}}g protein",
+    "edit_title": "Redigera måltid",
+    "save_changes_button": "Spara ändringar",
+    "updated_title": "Uppdaterad!",
+    "updated_msg": "Din måltid har uppdaterats."
   },
   "food_diary": {
     "title": "Matdagbok",
@@ -796,7 +801,19 @@
     "goal_specific_area": "Bygga muskler i ett specifikt område",
     "progress_done": "{{done}}/{{total}} klart",
     "exercise_meta": "{{sets}} set × {{reps}} rep · {{rest}}s vila",
-    "check_form": "Kontrollera Form"
+    "check_form": "Kontrollera Form",
+    "replace_exercise": "Byt övning",
+    "replace_exercise_title": "Byt övning",
+    "add_exercise": "+ Lägg till övning",
+    "add_exercise_title": "Lägg till övning",
+    "exercise_name": "Övningsnamn",
+    "sets_label": "Serier",
+    "reps_label": "Repetitioner",
+    "rest_seconds_label": "Vila (sekunder)",
+    "notes_optional": "Anteckningar (valfritt)",
+    "error_add_exercise": "Det gick inte att lägga till övningen",
+    "error_replace_exercise": "Det gick inte att byta övningen",
+    "error_delete_exercise": "Det gick inte att ta bort övningen"
   },
   "supplements": {
     "title": "Kosttillskott",
@@ -1244,5 +1261,15 @@
     "start_recording": "Starta inspelning",
     "stop_recording": "Stoppa och analysera",
     "status_recording": "Inspelning pågår... {{seconds}}s — tryck Stoppa när du är klar"
+  },
+  "live_food_scan": {
+    "permission_title": "Kameraåtkomst krävs",
+    "permission_sub": "Tillåt kameraåtkomst för att scanna din måltid.",
+    "grant_permission": "Ge kameraåtkomst",
+    "frame_hint": "Rikta kameran mot din måltid",
+    "upload_instead": "Ladda upp ett foto istället",
+    "capture_failed": "Det gick inte att ta foto. Försök igen.",
+    "scan_another": "Scanna en annan",
+    "done": "Klar"
   }
 }

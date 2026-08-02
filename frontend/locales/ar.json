@@ -23,7 +23,8 @@
     "upgrade_unlock": "⚡ ترقية لفتح الميزة",
     "dismiss": "إغلاق",
     "error_boundary_title": "حدث خطأ ما",
-    "error_boundary_msg": "حدث خطأ غير متوقع."
+    "error_boundary_msg": "حدث خطأ غير متوقع.",
+    "edit": "تعديل"
   },
   "auth": {
     "signin": {
@@ -678,7 +679,11 @@
     "add_item": "إضافة عنصر",
     "add_recent": "+ إضافة",
     "log_next_meal": "سجّل الوجبة التالية →",
-    "cal_protein": "{{cal}} سعر حراري · {{p}} غرام بروتين"
+    "cal_protein": "{{cal}} سعر حراري · {{p}} غرام بروتين",
+    "edit_title": "تعديل الوجبة",
+    "save_changes_button": "حفظ التغييرات",
+    "updated_title": "تم التحديث!",
+    "updated_msg": "تم تحديث وجبتك."
   },
   "food_diary": {
     "title": "يوميات الطعام",
@@ -796,7 +801,19 @@
     "goal_specific_area": "بناء عضلات في منطقة معينة",
     "progress_done": "{{done}}/{{total}} مكتملة",
     "exercise_meta": "{{sets}} مجموعات × {{reps}} تكرار · {{rest}} ثانية راحة",
-    "check_form": "تحقق من الشكل"
+    "check_form": "تحقق من الشكل",
+    "replace_exercise": "استبدال التمرين",
+    "replace_exercise_title": "استبدال التمرين",
+    "add_exercise": "+ إضافة تمرين",
+    "add_exercise_title": "إضافة تمرين",
+    "exercise_name": "اسم التمرين",
+    "sets_label": "المجموعات",
+    "reps_label": "التكرارات",
+    "rest_seconds_label": "الراحة (ثواني)",
+    "notes_optional": "ملاحظات (اختياري)",
+    "error_add_exercise": "فشل إضافة التمرين",
+    "error_replace_exercise": "فشل استبدال التمرين",
+    "error_delete_exercise": "فشل حذف التمرين"
   },
   "supplements": {
     "title": "المكملات",
@@ -1244,5 +1261,15 @@
     "start_recording": "ابدأ التسجيل",
     "stop_recording": "إيقاف وتحليل",
     "status_recording": "جارٍ التسجيل... {{seconds}}ث — اضغط على إيقاف عندما تكون جاهزًا"
+  },
+  "live_food_scan": {
+    "permission_title": "الوصول إلى الكاميرا مطلوب",
+    "permission_sub": "السماح بالوصول إلى الكاميرا لمسح وجبتك.",
+    "grant_permission": "منح إذن الوصول إلى الكاميرا",
+    "frame_hint": "وجّه الكاميرا نحو وجبتك",
+    "upload_instead": "رفع صورة بدلاً من ذلك",
+    "capture_failed": "فشل التقاط الصورة. يرجى المحاولة مرة أخرى.",
+    "scan_another": "مسح آخر",
+    "done": "تم"
   }
 }

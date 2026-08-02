@@ -23,7 +23,8 @@
     "upgrade_unlock": "⚡ I-upgrade upang Buksan",
     "dismiss": "Palampasin",
     "error_boundary_title": "May hindi tama",
-    "error_boundary_msg": "Nagkaroong hindi inaasahang error."
+    "error_boundary_msg": "Nagkaroong hindi inaasahang error.",
+    "edit": "I-edit"
   },
   "auth": {
     "signin": {
@@ -678,7 +679,11 @@
     "add_item": "Magdagdag ng Item",
     "add_recent": "+ Magdagdag",
     "log_next_meal": "I-log ang susunod na pagkain →",
-    "cal_protein": "{{cal}} kcal · {{p}}g protein"
+    "cal_protein": "{{cal}} kcal · {{p}}g protein",
+    "edit_title": "I-edit ang Pagkain",
+    "save_changes_button": "I-save ang Mga Pagbabago",
+    "updated_title": "Na-update na!",
+    "updated_msg": "Ang iyong pagkain ay na-update na."
   },
   "food_diary": {
     "title": "Food Diary",
@@ -796,7 +801,19 @@
     "goal_specific_area": "Bumuo ng kalamig sa isang tukoy na lugar",
     "progress_done": "{{done}}/{{total}} tapos na",
     "exercise_meta": "{{sets}} sets × {{reps}} reps · {{rest}}s rest",
-    "check_form": "Suriin ang Form"
+    "check_form": "Suriin ang Form",
+    "replace_exercise": "Palitan ang Exercise",
+    "replace_exercise_title": "Palitan ang Exercise",
+    "add_exercise": "+ Magdagdag ng Exercise",
+    "add_exercise_title": "Magdagdag ng Exercise",
+    "exercise_name": "Pangalan ng Exercise",
+    "sets_label": "Sets",
+    "reps_label": "Reps",
+    "rest_seconds_label": "Pahinga (segundo)",
+    "notes_optional": "Mga Tala (opsyonal)",
+    "error_add_exercise": "Nabigong magdagdag ng exercise",
+    "error_replace_exercise": "Nabigong palitan ang exercise",
+    "error_delete_exercise": "Nabigong tanggalin ang exercise"
   },
   "supplements": {
     "title": "Supplements",
@@ -1244,5 +1261,15 @@
     "start_recording": "Simulan ang Pag-record",
     "stop_recording": "Itigil & Suriin",
     "status_recording": "Nag-record... {{seconds}}s — i-tap ang Itigil kapag handa na"
+  },
+  "live_food_scan": {
+    "permission_title": "Kailangan ng Access sa Camera",
+    "permission_sub": "Payagan ang access sa camera upang i-scan ang iyong pagkain.",
+    "grant_permission": "Bigyan ng Access sa Camera",
+    "frame_hint": "Ituro ang iyong camera sa iyong pagkain",
+    "upload_instead": "Magupload ng larawan sa halip",
+    "capture_failed": "Nabigo ang pagkuha ng larawan. Pakisubukan ulit.",
+    "scan_another": "Mag-scan ng Iba",
+    "done": "Tapos Na"
   }
 }

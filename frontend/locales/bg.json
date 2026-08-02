@@ -23,7 +23,8 @@
     "upgrade_unlock": "⚡ Надстрой, за да отключиш",
     "dismiss": "Затвори",
     "error_boundary_title": "Нещо се случи",
-    "error_boundary_msg": "Възникна неочаквана грешка."
+    "error_boundary_msg": "Възникна неочаквана грешка.",
+    "edit": "Редактиране"
   },
   "auth": {
     "signin": {
@@ -678,7 +679,11 @@
     "add_item": "Добави елемент",
     "add_recent": "+ Добави",
     "log_next_meal": "Логирай следващ прием храна →",
-    "cal_protein": "{{cal}} kcal · {{p}}g протеин"
+    "cal_protein": "{{cal}} kcal · {{p}}g протеин",
+    "edit_title": "Редактиране на прием",
+    "save_changes_button": "Запазване на промените",
+    "updated_title": "Актуализирано!",
+    "updated_msg": "Вашият прием е актуализиран."
   },
   "food_diary": {
     "title": "Хранителен дневник",
@@ -796,7 +801,19 @@
     "goal_specific_area": "Изградете мускулна маса в определена област",
     "progress_done": "{{done}}/{{total}} готови",
     "exercise_meta": "{{sets}} серии × {{reps}} повторения · {{rest}}s отдих",
-    "check_form": "Проверка на формата"
+    "check_form": "Проверка на формата",
+    "replace_exercise": "Замени Упражнение",
+    "replace_exercise_title": "Замени Упражнение",
+    "add_exercise": "+ Добави Упражнение",
+    "add_exercise_title": "Добави Упражнение",
+    "exercise_name": "Име на Упражнение",
+    "sets_label": "Серии",
+    "reps_label": "Повторения",
+    "rest_seconds_label": "Почивка (секунди)",
+    "notes_optional": "Бележки (по избор)",
+    "error_add_exercise": "Неуспешно добавяне на упражнение",
+    "error_replace_exercise": "Неуспешна замяна на упражнение",
+    "error_delete_exercise": "Неуспешно изтриване на упражнение"
   },
   "supplements": {
     "title": "Суплементи",
@@ -1244,5 +1261,15 @@
     "start_recording": "Начало на запис",
     "stop_recording": "Стоп и анализ",
     "status_recording": "Запис... {{seconds}}s — докоснете Стоп когато сте готови"
+  },
+  "live_food_scan": {
+    "permission_title": "Необходим е достъп до камерата",
+    "permission_sub": "Позволете достъп до камерата, за да сканирате вашето хранене.",
+    "grant_permission": "Дайте достъп до камерата",
+    "frame_hint": "Насочете камерата към вашето хранене",
+    "upload_instead": "Качете снимка вместо това",
+    "capture_failed": "Неуспешно снимане на снимка. Опитайте отново.",
+    "scan_another": "Сканирайте друго",
+    "done": "Готово"
   }
 }

@@ -23,7 +23,8 @@
     "upgrade_unlock": "⚡ Upgrade per Sbloccare",
     "dismiss": "Ignora",
     "error_boundary_title": "Qualcosa è andato storto",
-    "error_boundary_msg": "Si è verificato un errore inaspettato."
+    "error_boundary_msg": "Si è verificato un errore inaspettato.",
+    "edit": "Modifica"
   },
   "auth": {
     "signin": {
@@ -678,7 +679,11 @@
     "add_item": "Aggiungi Elemento",
     "add_recent": "+ Aggiungi",
     "log_next_meal": "Registra prossimo pasto →",
-    "cal_protein": "{{cal}} kcal · {{p}}g proteine"
+    "cal_protein": "{{cal}} kcal · {{p}}g proteine",
+    "edit_title": "Modifica Pasto",
+    "save_changes_button": "Salva Modifiche",
+    "updated_title": "Aggiornato!",
+    "updated_msg": "Il tuo pasto è stato aggiornato."
   },
   "food_diary": {
     "title": "Diario Alimentare",
@@ -796,7 +801,19 @@
     "goal_specific_area": "Costruisci muscolo in un'area specifica",
     "progress_done": "{{done}}/{{total}} completati",
     "exercise_meta": "{{sets}} serie × {{reps}} ripetizioni · {{rest}}s riposo",
-    "check_form": "Controlla Forma"
+    "check_form": "Controlla Forma",
+    "replace_exercise": "Sostituisci Esercizio",
+    "replace_exercise_title": "Sostituisci Esercizio",
+    "add_exercise": "+ Aggiungi Esercizio",
+    "add_exercise_title": "Aggiungi Esercizio",
+    "exercise_name": "Nome Esercizio",
+    "sets_label": "Serie",
+    "reps_label": "Ripetizioni",
+    "rest_seconds_label": "Riposo (secondi)",
+    "notes_optional": "Note (opzionale)",
+    "error_add_exercise": "Impossibile aggiungere l'esercizio",
+    "error_replace_exercise": "Impossibile sostituire l'esercizio",
+    "error_delete_exercise": "Impossibile eliminare l'esercizio"
   },
   "supplements": {
     "title": "Integratori",
@@ -1244,5 +1261,15 @@
     "start_recording": "Avvia Registrazione",
     "stop_recording": "Ferma e Analizza",
     "status_recording": "Registrazione in corso... {{seconds}}s — tocca Ferma quando sei pronto"
+  },
+  "live_food_scan": {
+    "permission_title": "Accesso alla Fotocamera Necessario",
+    "permission_sub": "Consenti l'accesso alla fotocamera per scansionare il tuo pasto.",
+    "grant_permission": "Consenti Accesso alla Fotocamera",
+    "frame_hint": "Punta la fotocamera verso il tuo pasto",
+    "upload_instead": "Carica una foto invece",
+    "capture_failed": "Impossibile acquisire la foto. Riprova.",
+    "scan_another": "Scansiona un Altro",
+    "done": "Fine"
   }
 }

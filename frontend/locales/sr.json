@@ -23,7 +23,8 @@
     "upgrade_unlock": "⚡ Nadogradi da otključaš",
     "dismiss": "Odbaci",
     "error_boundary_title": "Nešto je pошло naopako",
-    "error_boundary_msg": "Desila se neočekivana greška."
+    "error_boundary_msg": "Desila se neočekivana greška.",
+    "edit": "Уреди"
   },
   "auth": {
     "signin": {
@@ -678,7 +679,11 @@
     "add_item": "Dodaj stavku",
     "add_recent": "+ Dodaj",
     "log_next_meal": "Zabeleži sledeći obrok →",
-    "cal_protein": "{{cal}} kcal · {{p}}g proteina"
+    "cal_protein": "{{cal}} kcal · {{p}}g proteina",
+    "edit_title": "Уреди Оброк",
+    "save_changes_button": "Сачувај Промене",
+    "updated_title": "Ажурирано!",
+    "updated_msg": "Твој оброк је ажуриран."
   },
   "food_diary": {
     "title": "Дневник Исхране",
@@ -796,7 +801,19 @@
     "goal_specific_area": "Gradi mišiće u specifičnom području",
     "progress_done": "{{done}}/{{total}} gotovo",
     "exercise_meta": "{{sets}} serija × {{reps}} ponavljanja · {{rest}}s odmor",
-    "check_form": "Проверити форму"
+    "check_form": "Проверити форму",
+    "replace_exercise": "Zameni vežbu",
+    "replace_exercise_title": "Zameni vežbu",
+    "add_exercise": "+ Dodaj vežbu",
+    "add_exercise_title": "Dodaj vežbu",
+    "exercise_name": "Naziv vežbe",
+    "sets_label": "Setovi",
+    "reps_label": "Ponavljanja",
+    "rest_seconds_label": "Odmor (sekunde)",
+    "notes_optional": "Napomene (opciono)",
+    "error_add_exercise": "Neuspešno dodavanje vežbe",
+    "error_replace_exercise": "Neuspešna zamena vežbe",
+    "error_delete_exercise": "Neuspešno brisanje vežbe"
   },
   "supplements": {
     "title": "Суплементи",
@@ -1244,5 +1261,15 @@
     "start_recording": "Почни снимање",
     "stop_recording": "Стани и анализирај",
     "status_recording": "Снимање... {{seconds}}s — додирните Стани када сте спремни"
+  },
+  "live_food_scan": {
+    "permission_title": "Potreban je pristup kameri",
+    "permission_sub": "Dozvolite pristup kameri da bi skenirali obrok.",
+    "grant_permission": "Odobri pristup kameri",
+    "frame_hint": "Usmerite kameru prema obroku",
+    "upload_instead": "Umesto toga, učitajte fotografiju",
+    "capture_failed": "Neuspešno snimanje fotografije. Pokušajte ponovo.",
+    "scan_another": "Skeniraj drugi",
+    "done": "Gotovo"
   }
 }

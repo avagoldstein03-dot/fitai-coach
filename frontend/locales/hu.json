@@ -23,7 +23,8 @@
     "upgrade_unlock": "⚡ Frissítés a feloldáshoz",
     "dismiss": "Bezárás",
     "error_boundary_title": "Valami hiba történt",
-    "error_boundary_msg": "Váratlan hiba lépett fel."
+    "error_boundary_msg": "Váratlan hiba lépett fel.",
+    "edit": "Szerkesztés"
   },
   "auth": {
     "signin": {
@@ -678,7 +679,11 @@
     "add_item": "Tétel hozzáadása",
     "add_recent": "+ Hozzáadás",
     "log_next_meal": "Következő étkezés naplózása →",
-    "cal_protein": "{{cal}} kcal · {{p}}g protein"
+    "cal_protein": "{{cal}} kcal · {{p}}g protein",
+    "edit_title": "Étkezés szerkesztése",
+    "save_changes_button": "Változások mentése",
+    "updated_title": "Frissítve!",
+    "updated_msg": "Az étkezésed frissítve lett."
   },
   "food_diary": {
     "title": "Étkezési napló",
@@ -796,7 +801,19 @@
     "goal_specific_area": "Izom építése egy konkrét területen",
     "progress_done": "{{done}}/{{total}} kész",
     "exercise_meta": "{{sets}} sorozat × {{reps}} ismétlés · {{rest}}s pihenő",
-    "check_form": "Forma ellenőrzése"
+    "check_form": "Forma ellenőrzése",
+    "replace_exercise": "Gyakorlat cseréje",
+    "replace_exercise_title": "Gyakorlat cseréje",
+    "add_exercise": "+ Gyakorlat hozzáadása",
+    "add_exercise_title": "Gyakorlat hozzáadása",
+    "exercise_name": "Gyakorlat neve",
+    "sets_label": "Sorozatok",
+    "reps_label": "Ismétlések",
+    "rest_seconds_label": "Pihenő (másodperc)",
+    "notes_optional": "Megjegyzések (opcionális)",
+    "error_add_exercise": "Nem sikerült a gyakorlatot hozzáadni",
+    "error_replace_exercise": "Nem sikerült a gyakorlatot cserélni",
+    "error_delete_exercise": "Nem sikerült a gyakorlatot törölni"
   },
   "supplements": {
     "title": "Kiegészítők",
@@ -1244,5 +1261,15 @@
     "start_recording": "Felvétel indítása",
     "stop_recording": "Leállítás és elemzés",
     "status_recording": "Felvétel folyamatban... {{seconds}}s — koppints a Leállítás gombra, amikor készen állsz"
+  },
+  "live_food_scan": {
+    "permission_title": "Kamerához való hozzáférés szükséges",
+    "permission_sub": "Engedélyezze a kamera-hozzáférést az étele beolvasásához.",
+    "grant_permission": "Kamera-hozzáférés engedélyezése",
+    "frame_hint": "Irányítsa a kameráját az étele felé",
+    "upload_instead": "Fotó feltöltése helyette",
+    "capture_failed": "A fénykép rögzítése sikertelen. Kérjük, próbálja újra.",
+    "scan_another": "Másik beolvasása",
+    "done": "Kész"
   }
 }

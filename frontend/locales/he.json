@@ -23,7 +23,8 @@
     "upgrade_unlock": "⚡ שדרג לפתיחה",
     "dismiss": "סגור",
     "error_boundary_title": "משהו השתבש",
-    "error_boundary_msg": "אירעה שגיאה בלתי צפויה."
+    "error_boundary_msg": "אירעה שגיאה בלתי צפויה.",
+    "edit": "עריכה"
   },
   "auth": {
     "signin": {
@@ -678,7 +679,11 @@
     "add_item": "הוסף פריט",
     "add_recent": "+ הוסף",
     "log_next_meal": "רשום ארוחה הבאה →",
-    "cal_protein": "{{cal}} kcal · {{p}}g חלבון"
+    "cal_protein": "{{cal}} kcal · {{p}}g חלבון",
+    "edit_title": "עריכת ארוחה",
+    "save_changes_button": "שמור שינויים",
+    "updated_title": "עודכן!",
+    "updated_msg": "הארוחה שלך עודכנה."
   },
   "food_diary": {
     "title": "יומן מזון",
@@ -796,7 +801,19 @@
     "goal_specific_area": "בנו שריר בתחום ספציפי",
     "progress_done": "{{done}}/{{total}} בוצע",
     "exercise_meta": "{{sets}} סטים × {{reps}} חזרות · {{rest}}s מנוחה",
-    "check_form": "בדוק טכניקה"
+    "check_form": "בדוק טכניקה",
+    "replace_exercise": "החלף תרגיל",
+    "replace_exercise_title": "החלף תרגיל",
+    "add_exercise": "+ הוסף תרגיל",
+    "add_exercise_title": "הוסף תרגיל",
+    "exercise_name": "שם התרגיל",
+    "sets_label": "סטים",
+    "reps_label": "חזרות",
+    "rest_seconds_label": "מנוחה (שניות)",
+    "notes_optional": "הערות (אופציונלי)",
+    "error_add_exercise": "הוספת התרגיל נכשלה",
+    "error_replace_exercise": "החלפת התרגיל נכשלה",
+    "error_delete_exercise": "מחיקת התרגיל נכשלה"
   },
   "supplements": {
     "title": "תוספים",
@@ -1244,5 +1261,15 @@
     "start_recording": "התחל הקלטה",
     "stop_recording": "עצור וניתח",
     "status_recording": "מקליט... {{seconds}}s — הקישו על עצור כאשר אתם מוכנים"
+  },
+  "live_food_scan": {
+    "permission_title": "נדרש גישה למצלמה",
+    "permission_sub": "אפשר גישה למצלמה כדי לסרוק את הארוחה שלך.",
+    "grant_permission": "אפשר גישה למצלמה",
+    "frame_hint": "כוונן את המצלמה שלך לעבר הארוחה שלך",
+    "upload_instead": "העלה תמונה במקום זאת",
+    "capture_failed": "הצילום נכשל. אנא נסה שוב.",
+    "scan_another": "סרוק עוד אחד",
+    "done": "סיום"
   }
 }

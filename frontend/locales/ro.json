@@ -23,7 +23,8 @@
     "upgrade_unlock": "⚡ Upgrade pentru a debloca",
     "dismiss": "Închide",
     "error_boundary_title": "Ceva nu a mers bine",
-    "error_boundary_msg": "A apărut o eroare neașteptată."
+    "error_boundary_msg": "A apărut o eroare neașteptată.",
+    "edit": "Editare"
   },
   "auth": {
     "signin": {
@@ -678,7 +679,11 @@
     "add_item": "Adaugă articol",
     "add_recent": "+ Adaugă",
     "log_next_meal": "Înregistrează următoarea masă →",
-    "cal_protein": "{{cal}} kcal · {{p}}g proteine"
+    "cal_protein": "{{cal}} kcal · {{p}}g proteine",
+    "edit_title": "Editare Masă",
+    "save_changes_button": "Salvare Modificări",
+    "updated_title": "Actualizat!",
+    "updated_msg": "Masa dumneavoastră a fost actualizată."
   },
   "food_diary": {
     "title": "Jurnal Alimentar",
@@ -796,7 +801,19 @@
     "goal_specific_area": "Construiește masă musculară într-o anumită zonă",
     "progress_done": "{{done}}/{{total}} făcut",
     "exercise_meta": "{{sets}} seturi × {{reps}} repetiții · {{rest}}s odihnă",
-    "check_form": "Verifică Forma"
+    "check_form": "Verifică Forma",
+    "replace_exercise": "Înlocuiți Exercițiul",
+    "replace_exercise_title": "Înlocuiți Exercițiul",
+    "add_exercise": "+ Adăugați Exercițiu",
+    "add_exercise_title": "Adăugați Exercițiu",
+    "exercise_name": "Numele Exercițiului",
+    "sets_label": "Serii",
+    "reps_label": "Repetări",
+    "rest_seconds_label": "Pauză (secunde)",
+    "notes_optional": "Note (opțional)",
+    "error_add_exercise": "Adăugarea exercițiului a eșuat",
+    "error_replace_exercise": "Înlocuirea exercițiului a eșuat",
+    "error_delete_exercise": "Ștergerea exercițiului a eșuat"
   },
   "supplements": {
     "title": "Suplimente",
@@ -1244,5 +1261,15 @@
     "start_recording": "Începe Înregistrarea",
     "stop_recording": "Oprește & Analizează",
     "status_recording": "Se înregistrează... {{seconds}}s — apasă Oprește când ești gata"
+  },
+  "live_food_scan": {
+    "permission_title": "Acces la Cameră Necesar",
+    "permission_sub": "Permiteți accesul la cameră pentru a scaniza masa dvs.",
+    "grant_permission": "Acordați Acces la Cameră",
+    "frame_hint": "Îndreptați camera spre masa dvs.",
+    "upload_instead": "Încărcați o fotografie în schimb",
+    "capture_failed": "Nu s-a putut captura fotografia. Vă rugăm să încercați din nou.",
+    "scan_another": "Scanați Altul",
+    "done": "Gata"
   }
 }

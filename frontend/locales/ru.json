@@ -23,7 +23,8 @@
     "upgrade_unlock": "⚡ Обновитесь, чтобы разблокировать",
     "dismiss": "Закрыть",
     "error_boundary_title": "Что-то пошло не так",
-    "error_boundary_msg": "Произошла непредвиденная ошибка."
+    "error_boundary_msg": "Произошла непредвиденная ошибка.",
+    "edit": "Редактировать"
   },
   "auth": {
     "signin": {
@@ -678,7 +679,11 @@
     "add_item": "Добавить продукт",
     "add_recent": "+ Добавить",
     "log_next_meal": "Запишите следующий прием пищи →",
-    "cal_protein": "{{cal}} ккал · {{p}}г белка"
+    "cal_protein": "{{cal}} ккал · {{p}}г белка",
+    "edit_title": "Редактировать приём пищи",
+    "save_changes_button": "Сохранить изменения",
+    "updated_title": "Обновлено!",
+    "updated_msg": "Ваш приём пищи был обновлен."
   },
   "food_diary": {
     "title": "Дневник питания",
@@ -796,7 +801,19 @@
     "goal_specific_area": "Нарастить мышцы в конкретной области",
     "progress_done": "{{done}}/{{total}} выполнено",
     "exercise_meta": "{{sets}} подходов × {{reps}} повторений · {{rest}}с отдыха",
-    "check_form": "Проверить технику"
+    "check_form": "Проверить технику",
+    "replace_exercise": "Заменить упражнение",
+    "replace_exercise_title": "Заменить упражнение",
+    "add_exercise": "+ Добавить упражнение",
+    "add_exercise_title": "Добавить упражнение",
+    "exercise_name": "Название упражнения",
+    "sets_label": "Подходы",
+    "reps_label": "Повторения",
+    "rest_seconds_label": "Отдых (секунды)",
+    "notes_optional": "Заметки (опционально)",
+    "error_add_exercise": "Не удалось добавить упражнение",
+    "error_replace_exercise": "Не удалось заменить упражнение",
+    "error_delete_exercise": "Не удалось удалить упражнение"
   },
   "supplements": {
     "title": "Добавки",
@@ -1244,5 +1261,15 @@
     "start_recording": "Начать запись",
     "stop_recording": "Остановить и анализировать",
     "status_recording": "Запись... {{seconds}}с — нажмите «Остановить» когда будете готовы"
+  },
+  "live_food_scan": {
+    "permission_title": "Требуется доступ к камере",
+    "permission_sub": "Разрешите доступ к камере для сканирования вашего блюда.",
+    "grant_permission": "Предоставить доступ к камере",
+    "frame_hint": "Направьте камеру на ваше блюдо",
+    "upload_instead": "Загрузить фото вместо этого",
+    "capture_failed": "Не удалось сделать фото. Пожалуйста, попробуйте еще раз.",
+    "scan_another": "Сканировать еще",
+    "done": "Готово"
   }
 }

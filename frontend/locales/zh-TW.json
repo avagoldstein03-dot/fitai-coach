@@ -23,7 +23,8 @@
     "upgrade_unlock": "⚡ 升級以解鎖",
     "dismiss": "關閉",
     "error_boundary_title": "出錯了",
-    "error_boundary_msg": "發生了意外錯誤。"
+    "error_boundary_msg": "發生了意外錯誤。",
+    "edit": "編輯"
   },
   "auth": {
     "signin": {
@@ -678,7 +679,11 @@
     "add_item": "新增項目",
     "add_recent": "+ 新增",
     "log_next_meal": "記錄下一餐 →",
-    "cal_protein": "{{cal}} 卡 · {{p}}g 蛋白質"
+    "cal_protein": "{{cal}} 卡 · {{p}}g 蛋白質",
+    "edit_title": "編輯餐點",
+    "save_changes_button": "保存更改",
+    "updated_title": "已更新！",
+    "updated_msg": "您的餐點已更新。"
   },
   "food_diary": {
     "title": "食物日記",
@@ -796,7 +801,19 @@
     "goal_specific_area": "在特定區域建立肌肉",
     "progress_done": "{{done}}/{{total}} 已完成",
     "exercise_meta": "{{sets}} 組 × {{reps}} 次 · {{rest}}s 休息",
-    "check_form": "檢查姿勢"
+    "check_form": "檢查姿勢",
+    "replace_exercise": "更換運動",
+    "replace_exercise_title": "更換運動",
+    "add_exercise": "+ 新增運動",
+    "add_exercise_title": "新增運動",
+    "exercise_name": "運動名稱",
+    "sets_label": "組數",
+    "reps_label": "重複次數",
+    "rest_seconds_label": "休息（秒）",
+    "notes_optional": "備註（選填）",
+    "error_add_exercise": "新增運動失敗",
+    "error_replace_exercise": "更換運動失敗",
+    "error_delete_exercise": "刪除運動失敗"
   },
   "supplements": {
     "title": "補充品",
@@ -1244,5 +1261,15 @@
     "start_recording": "開始錄製",
     "stop_recording": "停止並分析",
     "status_recording": "錄製中... {{seconds}}s — 準備好時點擊停止"
+  },
+  "live_food_scan": {
+    "permission_title": "需要相機存取權限",
+    "permission_sub": "允許相機存取以掃描您的餐食。",
+    "grant_permission": "授予相機存取權限",
+    "frame_hint": "將您的相機指向您的餐食",
+    "upload_instead": "改為上傳照片",
+    "capture_failed": "拍照失敗。請重試。",
+    "scan_another": "掃描另一項",
+    "done": "完成"
   }
 }

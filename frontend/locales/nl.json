@@ -23,7 +23,8 @@
     "upgrade_unlock": "⚡ Upgrade voor Ontgrendeling",
     "dismiss": "Sluiten",
     "error_boundary_title": "Er is iets misgegaan",
-    "error_boundary_msg": "Er is een onverwachte fout opgetreden."
+    "error_boundary_msg": "Er is een onverwachte fout opgetreden.",
+    "edit": "Bewerken"
   },
   "auth": {
     "signin": {
@@ -678,7 +679,11 @@
     "add_item": "Item Toevoegen",
     "add_recent": "+ Toevoegen",
     "log_next_meal": "Registreer volgende maaltijd →",
-    "cal_protein": "{{cal}} kcal · {{p}}g eiwit"
+    "cal_protein": "{{cal}} kcal · {{p}}g eiwit",
+    "edit_title": "Maaltijd bewerken",
+    "save_changes_button": "Wijzigingen opslaan",
+    "updated_title": "Bijgewerkt!",
+    "updated_msg": "Uw maaltijd is bijgewerkt."
   },
   "food_diary": {
     "title": "Voedingsdagboek",
@@ -796,7 +801,19 @@
     "goal_specific_area": "Bouw spier in een specifiek gebied",
     "progress_done": "{{done}}/{{total}} klaar",
     "exercise_meta": "{{sets}} sets × {{reps}} reps · {{rest}}s rust",
-    "check_form": "Vorm controleren"
+    "check_form": "Vorm controleren",
+    "replace_exercise": "Oefening vervangen",
+    "replace_exercise_title": "Oefening vervangen",
+    "add_exercise": "+ Oefening toevoegen",
+    "add_exercise_title": "Oefening toevoegen",
+    "exercise_name": "Naam oefening",
+    "sets_label": "Series",
+    "reps_label": "Herhalingen",
+    "rest_seconds_label": "Rust (seconden)",
+    "notes_optional": "Notities (optioneel)",
+    "error_add_exercise": "Oefening toevoegen mislukt",
+    "error_replace_exercise": "Oefening vervangen mislukt",
+    "error_delete_exercise": "Oefening verwijderen mislukt"
   },
   "supplements": {
     "title": "Supplementen",
@@ -1244,5 +1261,15 @@
     "start_recording": "Opname starten",
     "stop_recording": "Stoppen & analyseren",
     "status_recording": "Opname bezig... {{seconds}}s — tik op Stoppen wanneer je klaar bent"
+  },
+  "live_food_scan": {
+    "permission_title": "Cameratoegang Nodig",
+    "permission_sub": "Sta cameratoegang toe om je maaltijd in te scannen.",
+    "grant_permission": "Cameratoegang Verlenen",
+    "frame_hint": "Richt je camera op je maaltijd",
+    "upload_instead": "Upload in plaats daarvan een foto",
+    "capture_failed": "Foto maken mislukt. Probeer het opnieuw.",
+    "scan_another": "Nog Een Scannen",
+    "done": "Gereed"
   }
 }

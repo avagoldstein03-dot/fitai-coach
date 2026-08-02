@@ -23,7 +23,8 @@
     "upgrade_unlock": "⚡ Αναβάθμιση για ξεκλείδωμα",
     "dismiss": "Απόρριψη",
     "error_boundary_title": "Κάτι πήγε στραβά",
-    "error_boundary_msg": "Προέκυψε ένα απρόβλεπτο σφάλμα."
+    "error_boundary_msg": "Προέκυψε ένα απρόβλεπτο σφάλμα.",
+    "edit": "Επεξεργασία"
   },
   "auth": {
     "signin": {
@@ -678,7 +679,11 @@
     "add_item": "Προσθήκη Στοιχείου",
     "add_recent": "+ Προσθήκη",
     "log_next_meal": "Καταγράψτε το επόμενο γεύμα →",
-    "cal_protein": "{{cal}} kcal · {{p}}g πρωτεΐνης"
+    "cal_protein": "{{cal}} kcal · {{p}}g πρωτεΐνης",
+    "edit_title": "Επεξεργασία Γεύματος",
+    "save_changes_button": "Αποθήκευση Αλλαγών",
+    "updated_title": "Ενημερώθηκε!",
+    "updated_msg": "Το γεύμα σας έχει ενημερωθεί."
   },
   "food_diary": {
     "title": "Ημερολόγιο Φαγητού",
@@ -796,7 +801,19 @@
     "goal_specific_area": "Χτίστε μυ σε ένα συγκεκριμένο τομέα",
     "progress_done": "{{done}}/{{total}} ολοκληρωμένα",
     "exercise_meta": "{{sets}} σετ × {{reps}} επαναλήψεις · {{rest}}s ανάπαυση",
-    "check_form": "Έλεγχος Τεχνικής"
+    "check_form": "Έλεγχος Τεχνικής",
+    "replace_exercise": "Αντικατάσταση Άσκησης",
+    "replace_exercise_title": "Αντικατάσταση Άσκησης",
+    "add_exercise": "+ Προσθήκη Άσκησης",
+    "add_exercise_title": "Προσθήκη Άσκησης",
+    "exercise_name": "Όνομα Άσκησης",
+    "sets_label": "Σετ",
+    "reps_label": "Επαναλήψεις",
+    "rest_seconds_label": "Ανάπαυση (δευτερόλεπτα)",
+    "notes_optional": "Σημειώσεις (προαιρετικό)",
+    "error_add_exercise": "Αποτυχία προσθήκης άσκησης",
+    "error_replace_exercise": "Αποτυχία αντικατάστασης άσκησης",
+    "error_delete_exercise": "Αποτυχία διαγραφής άσκησης"
   },
   "supplements": {
     "title": "Συμπληρώματα",
@@ -1244,5 +1261,15 @@
     "start_recording": "Έναρξη Εγγραφής",
     "stop_recording": "Διακοπή & Ανάλυση",
     "status_recording": "Εγγραφή... {{seconds}}s — πατήστε Διακοπή όταν είστε έτοιμοι"
+  },
+  "live_food_scan": {
+    "permission_title": "Απαιτείται Πρόσβαση στη Κάμερα",
+    "permission_sub": "Επιτρέψτε την πρόσβαση στη κάμερα για σάρωση του γεύματός σας.",
+    "grant_permission": "Εκχώρηση Πρόσβασης Κάμερας",
+    "frame_hint": "Στοχεύστε την κάμερά σας στο γεύμα",
+    "upload_instead": "Ανεβάστε μια φωτογραφία αντí",
+    "capture_failed": "Αποτυχία λήψης φωτογραφίας. Παρακαλώ δοκιμάστε ξανά.",
+    "scan_another": "Σάρωση Άλλου",
+    "done": "Ολοκληρώθηκε"
   }
 }

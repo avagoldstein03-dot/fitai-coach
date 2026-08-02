@@ -23,7 +23,8 @@
     "upgrade_unlock": "⚡ Nâng cấp để mở khóa",
     "dismiss": "Bỏ qua",
     "error_boundary_title": "Đã xảy ra lỗi",
-    "error_boundary_msg": "Có lỗi không mong muốn xảy ra."
+    "error_boundary_msg": "Có lỗi không mong muốn xảy ra.",
+    "edit": "Chỉnh sửa"
   },
   "auth": {
     "signin": {
@@ -678,7 +679,11 @@
     "add_item": "Thêm mục",
     "add_recent": "+ Thêm",
     "log_next_meal": "Ghi bữa ăn tiếp theo →",
-    "cal_protein": "{{cal}} kcal · {{p}}g protein"
+    "cal_protein": "{{cal}} kcal · {{p}}g protein",
+    "edit_title": "Chỉnh sửa Bữa ăn",
+    "save_changes_button": "Lưu thay đổi",
+    "updated_title": "Đã cập nhật!",
+    "updated_msg": "Bữa ăn của bạn đã được cập nhật."
   },
   "food_diary": {
     "title": "Nhật ký thực phẩm",
@@ -796,7 +801,19 @@
     "goal_specific_area": "Xây dựng cơ bắp ở một khu vực cụ thể",
     "progress_done": "{{done}}/{{total}} hoàn thành",
     "exercise_meta": "{{sets}} bộ × {{reps}} lần · {{rest}}s nghỉ",
-    "check_form": "Kiểm Tra Động Tác"
+    "check_form": "Kiểm Tra Động Tác",
+    "replace_exercise": "Thay Thế Bài Tập",
+    "replace_exercise_title": "Thay Thế Bài Tập",
+    "add_exercise": "+ Thêm Bài Tập",
+    "add_exercise_title": "Thêm Bài Tập",
+    "exercise_name": "Tên Bài Tập",
+    "sets_label": "Hiệp",
+    "reps_label": "Lần Lặp",
+    "rest_seconds_label": "Nghỉ (giây)",
+    "notes_optional": "Ghi Chú (tùy chọn)",
+    "error_add_exercise": "Không thể thêm bài tập",
+    "error_replace_exercise": "Không thể thay thế bài tập",
+    "error_delete_exercise": "Không thể xóa bài tập"
   },
   "supplements": {
     "title": "Thực phẩm bổ sung",
@@ -1244,5 +1261,15 @@
     "start_recording": "Bắt đầu Ghi hình",
     "stop_recording": "Dừng & Phân tích",
     "status_recording": "Đang ghi hình... {{seconds}}s — nhấn Dừng khi sẵn sàng"
+  },
+  "live_food_scan": {
+    "permission_title": "Cần Quyền Truy Cập Camera",
+    "permission_sub": "Cho phép truy cập camera để quét bữa ăn của bạn.",
+    "grant_permission": "Cấp Quyền Truy Cập Camera",
+    "frame_hint": "Hướng camera của bạn vào bữa ăn",
+    "upload_instead": "Tải lên ảnh thay thế",
+    "capture_failed": "Không thể chụp ảnh. Vui lòng thử lại.",
+    "scan_another": "Quét Cái Khác",
+    "done": "Xong"
   }
 }

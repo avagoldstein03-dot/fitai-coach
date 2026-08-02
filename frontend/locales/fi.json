@@ -23,7 +23,8 @@
     "upgrade_unlock": "⚡ Päivitä avataksesi",
     "dismiss": "Hylkää",
     "error_boundary_title": "Jotain meni pieleen",
-    "error_boundary_msg": "Tapahtui odottamaton virhe."
+    "error_boundary_msg": "Tapahtui odottamaton virhe.",
+    "edit": "Muokkaa"
   },
   "auth": {
     "signin": {
@@ -678,7 +679,11 @@
     "add_item": "Lisää tuote",
     "add_recent": "+ Lisää",
     "log_next_meal": "Kirjaa seuraava ateria →",
-    "cal_protein": "{{cal}} kcal · {{p}}g proteiinia"
+    "cal_protein": "{{cal}} kcal · {{p}}g proteiinia",
+    "edit_title": "Muokkaa ateriaa",
+    "save_changes_button": "Tallenna muutokset",
+    "updated_title": "Päivitetty!",
+    "updated_msg": "Ateriasi on päivitetty."
   },
   "food_diary": {
     "title": "Ruokapäiväkirja",
@@ -796,7 +801,19 @@
     "goal_specific_area": "Rakenna lihasta tiettyyn alueeseen",
     "progress_done": "{{done}}/{{total}} valmis",
     "exercise_meta": "{{sets}} sarjaa × {{reps}} toistoa · {{rest}}s lepo",
-    "check_form": "Tarkista muoto"
+    "check_form": "Tarkista muoto",
+    "replace_exercise": "Korvaa Harjoitus",
+    "replace_exercise_title": "Korvaa Harjoitus",
+    "add_exercise": "+ Lisää Harjoitus",
+    "add_exercise_title": "Lisää Harjoitus",
+    "exercise_name": "Harjoituksen Nimi",
+    "sets_label": "Sarjat",
+    "reps_label": "Toistot",
+    "rest_seconds_label": "Lepo (sekuntia)",
+    "notes_optional": "Muistiinpanot (valinnainen)",
+    "error_add_exercise": "Harjoituksen lisääminen epäonnistui",
+    "error_replace_exercise": "Harjoituksen korvaaminen epäonnistui",
+    "error_delete_exercise": "Harjoituksen poistaminen epäonnistui"
   },
   "supplements": {
     "title": "Ravintolisät",
@@ -1244,5 +1261,15 @@
     "start_recording": "Aloita tallennus",
     "stop_recording": "Pysäytä ja analysoi",
     "status_recording": "Tallennetaan... {{seconds}}s — napauta Pysäytä kun olet valmis"
+  },
+  "live_food_scan": {
+    "permission_title": "Kameran käyttöoikeus vaaditaan",
+    "permission_sub": "Salli kameran käyttö ateriasi skannaamiseksi.",
+    "grant_permission": "Myönnä kameran käyttöoikeus",
+    "frame_hint": "Osoita kameraasi ateriallesi",
+    "upload_instead": "Lataa kuva sen sijaan",
+    "capture_failed": "Kuvan kaappaaminen epäonnistui. Yritä uudelleen.",
+    "scan_another": "Skannaa seuraava",
+    "done": "Valmis"
   }
 }

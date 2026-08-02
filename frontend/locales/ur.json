@@ -23,7 +23,8 @@
     "upgrade_unlock": "⚡ انلاک کرنے کے لیے اپ گریڈ کریں",
     "dismiss": "برخاست کریں",
     "error_boundary_title": "کچھ غلط ہوگیا",
-    "error_boundary_msg": "ایک غیر متوقع خرابی واقع ہوئی۔"
+    "error_boundary_msg": "ایک غیر متوقع خرابی واقع ہوئی۔",
+    "edit": "ترمیم کریں"
   },
   "auth": {
     "signin": {
@@ -678,7 +679,11 @@
     "add_item": "چیز شامل کریں",
     "add_recent": "+ شامل کریں",
     "log_next_meal": "اگلا کھانا لاگ کریں →",
-    "cal_protein": "{{cal}} kcal · {{p}}g پروٹین"
+    "cal_protein": "{{cal}} kcal · {{p}}g پروٹین",
+    "edit_title": "کھانے میں ترمیم کریں",
+    "save_changes_button": "تبدیلیاں محفوظ کریں",
+    "updated_title": "اپڈیٹ ہو گیا!",
+    "updated_msg": "آپ کا کھانا اپڈیٹ ہو گیا ہے۔"
   },
   "food_diary": {
     "title": "کھانے کی ڈائری",
@@ -796,7 +801,19 @@
     "goal_specific_area": "کسی خاص علاقے میں پٹھے بنائیں",
     "progress_done": "{{done}}/{{total}} مکمل",
     "exercise_meta": "{{sets}} سیٹس × {{reps}} reps · {{rest}}s آرام",
-    "check_form": "فارم چیک کریں"
+    "check_form": "فارم چیک کریں",
+    "replace_exercise": "ورزش کو بدلیں",
+    "replace_exercise_title": "ورزش کو بدلیں",
+    "add_exercise": "+ ورزش شامل کریں",
+    "add_exercise_title": "ورزش شامل کریں",
+    "exercise_name": "ورزش کا نام",
+    "sets_label": "سیٹس",
+    "reps_label": "دہرائیں",
+    "rest_seconds_label": "آرام (سیکنڈ)",
+    "notes_optional": "نوٹس (اختیاری)",
+    "error_add_exercise": "ورزش شامل کرنے میں ناکام",
+    "error_replace_exercise": "ورزش کو بدلنے میں ناکام",
+    "error_delete_exercise": "ورزش کو حذف کرنے میں ناکام"
   },
   "supplements": {
     "title": "سپلیمنٹس",
@@ -1244,5 +1261,15 @@
     "start_recording": "ریکارڈنگ شروع کریں",
     "stop_recording": "رکیں اور تجزیہ کریں",
     "status_recording": "ریکارڈنگ جاری ہے... {{seconds}}s — تیار ہوں تو Stop پر ٹیپ کریں"
+  },
+  "live_food_scan": {
+    "permission_title": "کیمرے تک رسائی درکار ہے",
+    "permission_sub": "اپنی کھانے کی چیز کو سکین کرنے کے لیے کیمرے تک رسائی کی اجازت دیں۔",
+    "grant_permission": "کیمرے تک رسائی دیں",
+    "frame_hint": "اپنے کیمرے کو اپنی کھانے کی چیز کی طرف پوائنٹ کریں",
+    "upload_instead": "اس کی بجائے فوٹو اپ لوڈ کریں",
+    "capture_failed": "فوٹو کیپچر کرنے میں ناکامی۔ براہ کرم دوبارہ کوشش کریں۔",
+    "scan_another": "دوسری چیز سکین کریں",
+    "done": "مکمل"
   }
 }

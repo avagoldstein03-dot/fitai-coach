@@ -23,7 +23,8 @@
     "upgrade_unlock": "⚡ Oppgrader for å låse opp",
     "dismiss": "Avvis",
     "error_boundary_title": "Noe gikk galt",
-    "error_boundary_msg": "En uventet feil oppstod."
+    "error_boundary_msg": "En uventet feil oppstod.",
+    "edit": "Rediger"
   },
   "auth": {
     "signin": {
@@ -678,7 +679,11 @@
     "add_item": "Legg til vare",
     "add_recent": "+ Legg til",
     "log_next_meal": "Logg neste måltid →",
-    "cal_protein": "{{cal}} kcal · {{p}}g protein"
+    "cal_protein": "{{cal}} kcal · {{p}}g protein",
+    "edit_title": "Rediger måltid",
+    "save_changes_button": "Lagre endringer",
+    "updated_title": "Oppdatert!",
+    "updated_msg": "Ditt måltid har blitt oppdatert."
   },
   "food_diary": {
     "title": "Matdagbok",
@@ -796,7 +801,19 @@
     "goal_specific_area": "Bygg muskler på et bestemt område",
     "progress_done": "{{done}}/{{total}} ferdig",
     "exercise_meta": "{{sets}} sett × {{reps}} repetisjoner · {{rest}}s hvil",
-    "check_form": "Sjekk Form"
+    "check_form": "Sjekk Form",
+    "replace_exercise": "Erstatt øvelse",
+    "replace_exercise_title": "Erstatt øvelse",
+    "add_exercise": "+ Legg til øvelse",
+    "add_exercise_title": "Legg til øvelse",
+    "exercise_name": "Navn på øvelse",
+    "sets_label": "Sett",
+    "reps_label": "Repetisjoner",
+    "rest_seconds_label": "Hvile (sekunder)",
+    "notes_optional": "Notater (valgfritt)",
+    "error_add_exercise": "Kunne ikke legge til øvelse",
+    "error_replace_exercise": "Kunne ikke erstatte øvelse",
+    "error_delete_exercise": "Kunne ikke slette øvelse"
   },
   "supplements": {
     "title": "Kosttilskudd",
@@ -1244,5 +1261,15 @@
     "start_recording": "Start opptak",
     "stop_recording": "Stopp og analyser",
     "status_recording": "Opptak pågår... {{seconds}}s — trykk Stopp når du er klar"
+  },
+  "live_food_scan": {
+    "permission_title": "Kameratilgang Nødvendig",
+    "permission_sub": "Tillat kameratilgang for å skanne måltidet ditt.",
+    "grant_permission": "Gi Kameratilgang",
+    "frame_hint": "Pek kameraet ditt mot måltidet",
+    "upload_instead": "Last opp et foto i stedet",
+    "capture_failed": "Kunne ikke ta foto. Prøv igjen.",
+    "scan_another": "Skann Ett Til",
+    "done": "Ferdig"
   }
 }
