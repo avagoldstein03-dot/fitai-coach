@@ -1,4 +1,4 @@
-# FitAI Coach
+# Active AI Coach
 
 Production-ready mobile fitness coaching application powered by AI.
 
@@ -66,41 +66,45 @@ npm run dev
 - User profile setup
 - **Status: Complete**
 
-### Phase 2: Body Assessment
-- Photo-based body scan with OpenAI vision
+### Phase 2: Body Assessment ✅
+- Photo-based body scan with OpenAI vision (images stored in S3)
 - Manual measurement entry
 - Body assessment reports
+- **Status: Complete**
 
-### Phase 3: Food Scanner
+### Phase 3: Food Scanner ✅
 - Food photo recognition
 - Nutritional analysis
 - Meal history tracking
+- **Status: Complete**
 
-### Phase 4: Workout Generation
+### Phase 4: Workout Generation ✅
 - AI-powered workout program creation
-- Exercise library with videos
+- Exercise library
 - Progressive overload tracking
+- **Status: Complete**
 
-### Phase 5: Nutrition Planning
+### Phase 5: Nutrition Planning ✅
 - Personalized meal plans
 - Calorie & macro calculations
 - Shopping list generation
+- **Status: Complete**
 
-### Phase 6: AI Coach
+### Phase 6: AI Coach ✅
 - Chat assistant with context awareness
 - Progress analysis
 - Behavioral coaching
+- **Status: Complete**
 
 ### Phase 7: Subscriptions & Payments ✅
-- Stripe subscription integration
+- Stripe subscription integration (web/Android) + RevenueCat/StoreKit (iOS)
 - Free and Premium tiers
 - Feature gating based on subscription
 - **Status: Complete**
 
-### Phase 8: Analytics & Scaling
-- PostHog event tracking
-- Admin dashboard
-- Performance optimization
+### Phase 8: Analytics & Scaling (partial)
+- PostHog event tracking, admin dashboard, push notifications: done
+- **Still open: automated tests/CI, performance/caching work**
 
 ## Key Features
 
@@ -135,10 +139,12 @@ See [SUBSCRIPTIONS.md](./SUBSCRIPTIONS.md) for complete implementation details.
 
 ## Security
 
-- GDPR compliant
-- Encrypted health data
-- Account deletion support
-- Data export functionality
+- Account deletion purges DB records (cascade) and S3-hosted photos
+- Self-serve data export endpoint
+- Security headers (HSTS, CSP, X-Frame-Options, etc.) on all API routes
+- Per-user rate limiting (Upstash) on AI/cost-sensitive endpoints
+- Health/body data relies on Postgres-at-rest + TLS-in-transit encryption; no application-level field encryption yet
+- Not yet done: automated tests/CI
 
 ## Documentation
 
@@ -162,4 +168,4 @@ STRIPE_WEBHOOK_SECRET=whsec_...
 
 ## License
 
-Proprietary - FitAI Coach
+Proprietary - Active AI Coach

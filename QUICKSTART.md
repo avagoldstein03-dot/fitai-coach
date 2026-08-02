@@ -1,4 +1,4 @@
-# FitAI Coach - Quick Reference Guide
+# Active AI Coach - Quick Reference Guide
 
 ## 📱 Project Overview
 

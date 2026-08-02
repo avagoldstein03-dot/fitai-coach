@@ -1,9 +1,9 @@
 {
   "expo": {
-    "name": "FitAI Coach",
-    "slug": "fitai-coach",
+    "name": "Active AI Coach",
+    "slug": "active-ai-coach",
     "version": "1.0.0",
-    "scheme": "fitai",
+    "scheme": "activeai",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "dark",
@@ -17,12 +17,12 @@
     ],
     "ios": {
       "supportsTabletMode": true,
-      "bundleIdentifier": "com.fitai.coach",
+      "bundleIdentifier": "com.activeai.coach",
       "buildNumber": "1",
       "infoPlist": {
-        "NSCameraUsageDescription": "FitAI Coach uses your camera to capture body scan photos for AI-powered body composition analysis.",
-        "NSPhotoLibraryUsageDescription": "FitAI Coach accesses your photo library to upload progress photos and body scan images.",
-        "NSPhotoLibraryAddUsageDescription": "FitAI Coach saves progress photos to your photo library.",
+        "NSCameraUsageDescription": "Active AI Coach uses your camera to capture body scan photos for AI-powered body composition analysis.",
+        "NSPhotoLibraryUsageDescription": "Active AI Coach accesses your photo library to upload progress photos and body scan images.",
+        "NSPhotoLibraryAddUsageDescription": "Active AI Coach saves progress photos to your photo library.",
         "ITSAppUsesNonExemptEncryption": false
       }
     },
@@ -31,17 +31,19 @@
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#000000"
       },
-      "package": "com.fitai.coach",
+      "package": "com.activeai.coach",
       "versionCode": 1,
       "permissions": [
         "android.permission.CAMERA",
         "android.permission.READ_MEDIA_IMAGES",
-        "android.permission.READ_EXTERNAL_STORAGE"
+        "android.permission.READ_EXTERNAL_STORAGE",
+        "android.permission.RECORD_AUDIO"
       ]
     },
     "web": {
       "favicon": "./assets/favicon.png"
     },
+    "owner": "fitai-coach",
     "plugins": [
       [
         "expo-image-picker",
@@ -54,18 +56,27 @@
       [
         "@stripe/stripe-react-native",
         {
-          "merchantIdentifier": "merchant.com.fitai.coach",
+          "merchantIdentifier": "merchant.com.activeai.coach",
           "enableGooglePay": false
         }
       ],
       "expo-secure-store",
       "expo-splash-screen",
       "expo-status-bar",
-      "expo-sharing"
+      "expo-sharing",
+      "expo-localization",
+      [
+        "@kingstinct/react-native-healthkit",
+        {
+          "NSHealthShareUsageDescription": "Active AI Coach reads your steps, sleep, active energy, heart rate, and weight from Apple Health to reduce manual logging and give your AI coach fuller context on your progress.",
+          "NSHealthUpdateUsageDescription": false,
+          "background": false
+        }
+      ]
     ],
     "extra": {
       "eas": {
-        "projectId": "fitai-coach"
+        "projectId": "9a8700ee-5d49-43d2-a62b-7398690dc159"
       }
     }
   }

@@ -1,4 +1,4 @@
-# FitAI Coach - Subscription & Pricing Implementation
+# Active AI Coach - Subscription & Pricing Implementation
 
 Complete implementation of Free and Premium tier subscription system with Stripe integration.
 
@@ -231,7 +231,7 @@ Available features:
 **In Stripe Dashboard:**
 
 1. **Products** → Create Product
-   - Name: "FitAI Coach Premium"
+   - Name: "Active AI Coach Premium"
    - Type: Service
    - Save
 

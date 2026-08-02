@@ -1,4 +1,4 @@
-# FitAI Coach Backend
+# Active AI Coach Backend
 
 Next.js API backend with PostgreSQL and Prisma ORM.
 

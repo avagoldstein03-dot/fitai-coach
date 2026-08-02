@@ -4,9 +4,11 @@
   <dict>
     <key>aps-environment</key>
     <string>development</string>
+    <key>com.apple.developer.healthkit</key>
+    <true/>
     <key>com.apple.developer.in-app-payments</key>
     <array>
-      <string>merchant.com.fitai.coach</string>
+      <string>merchant.com.activeai.coach</string>
     </array>
   </dict>
 </plist>

@@ -1,4 +1,4 @@
-# FitAI Coach - Deployment Guide
+# Active AI Coach - Deployment Guide
 
 ## Deployment Architecture
 

@@ -1,5 +1,5 @@
 #!/bin/bash
-# API Testing Guide for FitAI Coach Subscriptions
+# API Testing Guide for Active AI Coach Subscriptions
 # 
 # This script provides example curl commands for testing all subscription endpoints
 # Update BASE_URL and TOKEN variables before running
@@ -13,7 +13,7 @@ GREEN='\033[0;32m'
 BLUE='\033[0;34m'
 NC='\033[0m' # No Color
 
-echo -e "${BLUE}=== FitAI Coach API Testing Guide ===${NC}\n"
+echo -e "${BLUE}=== Active AI Coach API Testing Guide ===${NC}\n"
 
 # 1. Get Subscription Status
 echo -e "${GREEN}1. GET /api/subscriptions/status${NC}"

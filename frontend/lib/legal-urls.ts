@@ -1,5 +1,5 @@
-// Hosted on GitHub Pages (from the repo's docs/ folder) until fitaicoach.com is
-// registered — swap BASE_URL to "https://fitaicoach.com" once the domain is live
+// Hosted on GitHub Pages (from the repo's docs/ folder) until activeaicoach.com is
+// registered — swap BASE_URL to "https://activeaicoach.com" once the domain is live
 // and DNS is pointed at GitHub Pages.
 const BASE_URL = "https://avagoldstein03-dot.github.io/fitai-coach";
 
