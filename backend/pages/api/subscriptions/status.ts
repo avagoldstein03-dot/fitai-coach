@@ -2,7 +2,6 @@ import type { NextApiRequest, NextApiResponse } from "next";
 import { getAuth } from "@clerk/nextjs/server";
 import prisma from "@/lib/prisma";
 import { sendSuccess, sendError } from "@/lib/api-utils";
-import stripe from "@/services/stripe-service";
 
 export default async function handler(
   req: NextApiRequest,

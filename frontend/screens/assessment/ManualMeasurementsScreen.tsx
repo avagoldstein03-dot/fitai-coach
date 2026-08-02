@@ -107,6 +107,8 @@ export default function ManualMeasurementsScreen() {
     if (m) {
       const toDisplay = (cm: number | null) =>
         cm == null ? "" : String(Math.round((unitSystem === "metric" ? cm : cmToInches(cm)) * 10) / 10);
+      // Hydrates editable form state once the server measurement finishes loading — not derived state.
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setMeasurements({
         waist:  toDisplay(m.waist),
         neck:   toDisplay(m.neck),

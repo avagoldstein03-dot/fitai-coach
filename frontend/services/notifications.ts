@@ -29,7 +29,7 @@ export async function registerForPushNotifications(): Promise<string | null> {
   // Android requires a notification channel
   if (Platform.OS === "android") {
     await Notifications.setNotificationChannelAsync("default", {
-      name: "FitAI Coach",
+      name: "Active AI Coach",
       importance: Notifications.AndroidImportance.MAX,
       vibrationPattern: [0, 250, 250, 250],
       lightColor: T.green,
@@ -77,6 +77,7 @@ export type NotifPrefs = {
   meal_nudges:       boolean;
   progress_updates:  boolean;
   weekly_review:     boolean;
+  social_nudges:     boolean;
 };
 
 export async function getNotificationPrefs(): Promise<NotifPrefs | null> {

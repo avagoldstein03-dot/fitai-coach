@@ -6,7 +6,6 @@ import {
   ScrollView,
   ActivityIndicator,
   Alert,
-  Linking,
   Platform,
   StyleSheet,
 } from "react-native";
@@ -21,6 +20,7 @@ import { getOffering, purchasePkg, restorePurchases, isPremiumActive } from "@/l
 import { getCountryByName, getLocalPrice, DEFAULT_COUNTRY } from "@/lib/currency";
 import { T } from "@/lib/theme";
 import { TERMS_URL, PRIVACY_URL } from "@/lib/legal-urls";
+import { LegalWebViewModal } from "@/components/LegalWebViewModal";
 
 const API_URL = process.env.EXPO_PUBLIC_API_URL;
 
@@ -115,6 +115,7 @@ export default function PricingScreen({ onClose }: { onClose?: () => void } = {}
   const [billing, setBilling] = useState<BillingPeriod>("monthly");
   const [selectedTier, setSelectedTier] = useState<PlanTier>("pro");
   const [isIAPPending, setIsIAPPending] = useState(false);
+  const [legalModal, setLegalModal] = useState<"terms" | "privacy" | null>(null);
   const [offerings, setOfferings] = useState<Partial<Record<PlanTier, PurchasesOffering>>>({});
 
   useEffect(() => {
@@ -162,15 +163,15 @@ export default function PricingScreen({ onClose }: { onClose?: () => void } = {}
     mutationFn: async (priceId: string) => {
       const res = await axios.post(`${API_URL}/api/subscriptions/create-checkout`, {
         priceId,
-        successUrl: "fitai://subscription/success",
-        cancelUrl: "fitai://subscription/cancel",
+        successUrl: "activeai://subscription/success",
+        cancelUrl: "activeai://subscription/cancel",
       });
       return res.data;
     },
     onSuccess: async (data) => {
       const checkoutUrl = data?.data?.checkoutUrl;
       if (!checkoutUrl) { Alert.alert(t("common.error"), t("pricing.error_no_url")); return; }
-      const result = await WebBrowser.openAuthSessionAsync(checkoutUrl, "fitai://subscription/success");
+      const result = await WebBrowser.openAuthSessionAsync(checkoutUrl, "activeai://subscription/success");
       if (result.type === "success") {
         queryClient.invalidateQueries({ queryKey: ["subscription"] });
         Alert.alert(t("pricing.premium"), t("pricing.success_active"));
@@ -448,14 +449,21 @@ export default function PricingScreen({ onClose }: { onClose?: () => void } = {}
 
         {/* Legal links — required by App Store */}
         <View style={s.legalRow}>
-          <TouchableOpacity onPress={() => Linking.openURL(TERMS_URL)}>
+          <TouchableOpacity onPress={() => setLegalModal("terms")}>
             <Text style={s.legalLink}>{t("pricing.terms_link")}</Text>
           </TouchableOpacity>
           <Text style={s.legalDot}>·</Text>
-          <TouchableOpacity onPress={() => Linking.openURL(PRIVACY_URL)}>
+          <TouchableOpacity onPress={() => setLegalModal("privacy")}>
             <Text style={s.legalLink}>{t("pricing.privacy_link")}</Text>
           </TouchableOpacity>
         </View>
+
+        <LegalWebViewModal
+          visible={legalModal !== null}
+          title={legalModal === "terms" ? "Terms of Service" : "Privacy Policy"}
+          url={legalModal === "terms" ? TERMS_URL : legalModal === "privacy" ? PRIVACY_URL : null}
+          onClose={() => setLegalModal(null)}
+        />
 
         {/* FAQ */}
         <Text style={s.faqTitle}>{t("pricing.faq_title")}</Text>

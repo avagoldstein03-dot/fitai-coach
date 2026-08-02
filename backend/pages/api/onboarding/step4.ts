@@ -7,6 +7,7 @@ import { z } from "zod";
 
 const step4Schema = z.object({
   fitnessExperience: z.enum(["beginner", "intermediate", "advanced"]),
+  injuryHistory: z.string().trim().max(500).optional(),
 });
 
 export default async function handler(
@@ -43,6 +44,7 @@ export default async function handler(
       where: { clerkId: userId },
       data: {
         fitnessExperience: data.fitnessExperience,
+        injuryHistory: data.injuryHistory || undefined,
         onboardingStep: 4,
       },
     });

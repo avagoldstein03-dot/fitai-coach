@@ -45,7 +45,7 @@ export async function getSubscription(subscriptionId: string) {
 }
 
 export async function cancelSubscription(subscriptionId: string) {
-  return await stripe.subscriptions.del(subscriptionId);
+  return await stripe.subscriptions.cancel(subscriptionId);
 }
 
 export async function getCustomerSubscriptions(customerId: string) {

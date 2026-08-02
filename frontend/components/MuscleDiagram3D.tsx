@@ -121,8 +121,7 @@ export default function MuscleDiagram3D({ muscles, exerciseName }: Props) {
       };
       animate();
     },
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    [muscles.join(",")]
+    [muscles]
   );
 
   return (

@@ -10,6 +10,7 @@ const patchSchema = z.object({
   meal_nudges:       z.boolean().optional(),
   progress_updates:  z.boolean().optional(),
   weekly_review:     z.boolean().optional(),
+  social_nudges:     z.boolean().optional(),
 });
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {

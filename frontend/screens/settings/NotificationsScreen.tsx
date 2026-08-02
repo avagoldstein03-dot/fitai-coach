@@ -29,6 +29,7 @@ const PREF_ROW_KEYS: Array<{ key: keyof NotifPrefs; labelKey: string; descKey: s
   { key: "meal_nudges",       labelKey: "notifications.meal_nudges",       descKey: "notifications.meal_nudges_desc",       icon: "🍽️" },
   { key: "progress_updates",  labelKey: "notifications.progress_updates",  descKey: "notifications.progress_updates_desc",  icon: "📈" },
   { key: "weekly_review",     labelKey: "notifications.weekly_review",     descKey: "notifications.weekly_review_desc",     icon: "✨" },
+  { key: "social_nudges",     labelKey: "notifications.social_nudges",     descKey: "notifications.social_nudges_desc",     icon: "👋" },
 ];
 
 export default function NotificationsScreen() {

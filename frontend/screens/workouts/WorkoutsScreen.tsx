@@ -12,6 +12,7 @@ import {
   StyleSheet,
 } from "react-native";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
+import { useNavigation } from "@react-navigation/native";
 import axios from "axios";
 import { useUpgradeGate, isPremiumRequiredError } from "@/contexts/UpgradeGateContext";
 import { useTranslation } from "react-i18next";
@@ -28,6 +29,7 @@ interface Exercise {
   reps: string;
   restSeconds: number;
   notes?: string;
+  formCues?: string[];
 }
 
 interface WorkoutDay {
@@ -90,6 +92,7 @@ const BODY_GOAL_OPTIONS: Record<string, string[]> = {
 };
 
 export default function WorkoutsScreen() {
+  const navigation = useNavigation() as any;
   const queryClient = useQueryClient();
   const { t, i18n } = useTranslation();
   const { presentUpgrade } = useUpgradeGate();
@@ -133,6 +136,8 @@ export default function WorkoutsScreen() {
     if (restSecondsLeft === null) return;
     if (restSecondsLeft === 0) {
       Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success);
+      // Rest-timer countdown reaching zero — an interval-driven external-system effect.
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setRestSecondsLeft(null);
       return;
     }
@@ -171,6 +176,8 @@ export default function WorkoutsScreen() {
     if (!program) return;
     const msSinceStart = Date.now() - new Date(program.startDate).getTime();
     const weekIdx = Math.min(Math.max(0, Math.floor(msSinceStart / (7 * 24 * 60 * 60 * 1000))), program.weeks.length - 1);
+    // Auto-selects today's week/day once the active program finishes loading — not derived state.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setSelectedWeek(weekIdx);
     const todayIdx = (new Date().getDay() + 6) % 7;
     const dayIdx = program.weeks[weekIdx]?.days?.findIndex((d) => d.dayOfWeek === todayIdx) ?? -1;
@@ -178,6 +185,9 @@ export default function WorkoutsScreen() {
   }, [data?.activeProgram?.id]);
 
   useEffect(() => {
+    // Resets logged-exercise tracking when the user switches week/day — reacting to a prop
+    // change, not deriving it.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setLoggedExIds([]);
     setSessionVolume(0);
   }, [selectedWeek, selectedDay]);
@@ -444,6 +454,12 @@ export default function WorkoutsScreen() {
                               <Text style={styles.logBtnPrimaryText}>{t("workouts.log_set")}</Text>
                             </TouchableOpacity>
                           )}
+                          <TouchableOpacity
+                            style={styles.checkFormBtn}
+                            onPress={() => navigation.navigate("FormCheck", { exerciseName: ex.exerciseName, formCues: ex.formCues })}
+                          >
+                            <Text style={styles.checkFormBtnText}>{t("workouts.check_form")}</Text>
+                          </TouchableOpacity>
                         </View>
                       </View>
                     </View>
@@ -835,6 +851,15 @@ const styles = StyleSheet.create({
     paddingVertical: 8,
   },
   logBtnPrimaryText: { color: T.accent, fontSize: 12, fontWeight: "700" },
+  checkFormBtn: {
+    backgroundColor: "transparent",
+    borderWidth: 1,
+    borderColor: T.border,
+    borderRadius: 10,
+    paddingHorizontal: 14,
+    paddingVertical: 8,
+  },
+  checkFormBtnText: { color: T.textSecondary, fontSize: 12, fontWeight: "700" },
   doneTag: {
     backgroundColor: "transparent",
     borderRadius: 10,

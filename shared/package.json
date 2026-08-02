@@ -1,8 +1,8 @@
 {
-  "name": "@fitai-coach/shared",
+  "name": "@active-ai-coach/shared",
   "version": "1.0.0",
   "private": true,
-  "description": "Shared types and utilities for FitAI Coach",
+  "description": "Shared types and utilities for Active AI Coach",
   "main": "index.ts",
   "scripts": {
     "type-check": "tsc --noEmit"

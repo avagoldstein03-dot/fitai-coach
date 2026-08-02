@@ -25,6 +25,7 @@ import FoodScannerScreen from "@/screens/food/FoodScannerScreen";
 import BodyScanScreen from "@/screens/assessment/BodyScanScreen";
 import LiveBodyScanScreen from "@/screens/assessment/LiveBodyScanScreen";
 import WorkoutsScreen from "@/screens/workouts/WorkoutsScreen";
+import FormCheckScreen from "@/screens/workouts/FormCheckScreen";
 import NutritionScreen from "@/screens/nutrition/NutritionScreen";
 import CoachChatScreen from "@/screens/coach/CoachChatScreen";
 import ProfileScreen from "@/screens/profile/ProfileScreen";
@@ -38,6 +39,7 @@ import SupplementsScreen from "@/screens/supplements/SupplementsScreen";
 import ProgressScreen from "@/screens/progress/ProgressScreen";
 import ProgressPhotosScreen from "@/screens/progress/ProgressPhotosScreen";
 import WeeklyReviewScreen from "@/screens/progress/WeeklyReviewScreen";
+import FriendsScreen from "@/screens/social/FriendsScreen";
 import SettingsScreen from "@/screens/settings/SettingsScreen";
 import NotificationsScreen from "@/screens/settings/NotificationsScreen";
 import PricingScreen from "@/screens/subscription/PricingScreen";
@@ -98,6 +100,8 @@ export default function RootNavigator() {
   // Once signed in, check whether the user has already completed onboarding
   useEffect(() => {
     if (!isSignedIn) {
+      // Resets local state in response to an external auth-state change — not derived state.
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setOnboardingCompleted(null);
       return;
     }
@@ -131,20 +135,22 @@ export default function RootNavigator() {
       <UpgradeGateProvider>
         <Stack.Navigator screenOptions={{ headerShown: false }}>
         {!isSignedIn ? (
-          <Stack.Group screenOptions={{ animationEnabled: false }}>
+          <Stack.Group screenOptions={{ animation: "none" }}>
             <Stack.Screen name="SignIn"          component={SignInScreen}          />
             <Stack.Screen name="SignUp"          component={SignUpScreen}          />
             <Stack.Screen name="ForgotPassword"  component={ForgotPasswordScreen}  options={{ animation: "slide_from_right" }} />
           </Stack.Group>
         ) : onboardingCompleted ? (
           // User has completed onboarding — go straight to the main app
-          <Stack.Group screenOptions={{ animationEnabled: false }}>
+          <Stack.Group screenOptions={{ animation: "none" }}>
             <Stack.Screen name="Main"                  component={DashboardTabs}               />
             <Stack.Screen name="BodyScan"              component={BodyScanScreen}              options={{ animation: "slide_from_right" }} />
             <Stack.Screen name="LiveBodyScan"          component={LiveBodyScanScreen}          options={{ animation: "slide_from_right" }} />
+            <Stack.Screen name="FormCheck"              component={FormCheckScreen}              options={{ animation: "slide_from_right" }} />
             <Stack.Screen name="ManualMeasurements"    component={ManualMeasurementsScreen}    options={{ animation: "slide_from_right" }} />
             <Stack.Screen name="AssessmentResults"     component={AssessmentResultsScreen}     options={{ animation: "slide_from_right" }} />
             <Stack.Screen name="Supplements"           component={SupplementsScreen}           options={{ animation: "slide_from_right" }} />
+            <Stack.Screen name="Friends"               component={FriendsScreen}               options={{ animation: "slide_from_right" }} />
             <Stack.Screen name="Progress"              component={ProgressScreen}              options={{ animation: "slide_from_right" }} />
             <Stack.Screen name="ProgressPhotos"       component={ProgressPhotosScreen}        options={{ animation: "slide_from_right" }} />
             <Stack.Screen name="FoodDiary"            component={FoodDiaryScreen}             options={{ animation: "slide_from_right" }} />
@@ -157,14 +163,16 @@ export default function RootNavigator() {
           </Stack.Group>
         ) : (
           // Onboarding not complete — run the onboarding flow then go to Main
-          <Stack.Group screenOptions={{ animationEnabled: false }}>
+          <Stack.Group screenOptions={{ animation: "none" }}>
             <Stack.Screen name="Onboarding"            component={OnboardingNavigator} />
             <Stack.Screen name="Main"                  component={DashboardTabs}               />
             <Stack.Screen name="BodyScan"              component={BodyScanScreen}              options={{ animation: "slide_from_right" }} />
             <Stack.Screen name="LiveBodyScan"          component={LiveBodyScanScreen}          options={{ animation: "slide_from_right" }} />
+            <Stack.Screen name="FormCheck"              component={FormCheckScreen}              options={{ animation: "slide_from_right" }} />
             <Stack.Screen name="ManualMeasurements"    component={ManualMeasurementsScreen}    options={{ animation: "slide_from_right" }} />
             <Stack.Screen name="AssessmentResults"     component={AssessmentResultsScreen}     options={{ animation: "slide_from_right" }} />
             <Stack.Screen name="Supplements"           component={SupplementsScreen}           options={{ animation: "slide_from_right" }} />
+            <Stack.Screen name="Friends"               component={FriendsScreen}               options={{ animation: "slide_from_right" }} />
             <Stack.Screen name="Progress"              component={ProgressScreen}              options={{ animation: "slide_from_right" }} />
             <Stack.Screen name="ProgressPhotos"       component={ProgressPhotosScreen}        options={{ animation: "slide_from_right" }} />
             <Stack.Screen name="FoodDiary"            component={FoodDiaryScreen}             options={{ animation: "slide_from_right" }} />

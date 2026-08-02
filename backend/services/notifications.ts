@@ -5,13 +5,15 @@ export type NotificationPref =
   | "workout_reminders"
   | "meal_nudges"
   | "progress_updates"
-  | "weekly_review";
+  | "weekly_review"
+  | "social_nudges";
 
 interface NotifPrefs {
   workout_reminders: boolean;
   meal_nudges: boolean;
   progress_updates: boolean;
   weekly_review: boolean;
+  social_nudges: boolean;
 }
 
 function defaultPrefs(): NotifPrefs {
@@ -20,6 +22,7 @@ function defaultPrefs(): NotifPrefs {
     meal_nudges:       true,
     progress_updates:  true,
     weekly_review:     true,
+    social_nudges:     true,
   };
 }
 
@@ -31,6 +34,7 @@ export function parsePrefs(raw: unknown): NotifPrefs {
     meal_nudges:       p.meal_nudges       !== false,
     progress_updates:  p.progress_updates  !== false,
     weekly_review:     p.weekly_review     !== false,
+    social_nudges:     p.social_nudges     !== false,
   };
 }
 
@@ -118,6 +122,28 @@ export async function notifyWeeklyReview(userId: string): Promise<boolean> {
     title: "Weekly review ready ✨",
     body:  `${firstName}, your AI progress review for this week is ready. Tap to see how you did!`,
     data:  { screen: "Progress" },
+  });
+
+  return true;
+}
+
+export async function notifyCheer(userId: string, fromUserName: string): Promise<boolean> {
+  const user = await prisma.user.findUnique({
+    where: { id: userId },
+    select: { pushToken: true, notificationPrefs: true },
+  });
+
+  if (!user?.pushToken) return false;
+
+  const prefs = parsePrefs(user.notificationPrefs);
+  if (!prefs.social_nudges) return false;
+
+  const firstName = fromUserName?.split(" ")[0] ?? "A friend";
+
+  await sendPushNotification(user.pushToken, {
+    title: "You got a cheer! 👋",
+    body: `${firstName} is cheering you on — keep it up!`,
+    data: { screen: "Friends" },
   });
 
   return true;

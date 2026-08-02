@@ -23,6 +23,9 @@ export function OfflineBanner() {
   };
 
   useEffect(() => {
+    // Initial poll on mount, then interval + AppState subscription — a standard
+    // "subscribe to an external system" effect, not a derived-state anti-pattern.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     poll();
     intervalRef.current = setInterval(poll, 15_000);
     const sub = AppState.addEventListener("change", (state: AppStateStatus) => {

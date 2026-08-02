@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { View, Text, ScrollView, TouchableOpacity, ActivityIndicator, StyleSheet } from "react-native";
+import { View, Text, ScrollView, TextInput, TouchableOpacity, ActivityIndicator, StyleSheet } from "react-native";
 import { useMutation } from "@tanstack/react-query";
 import axios from "axios";
 import { useNavigation } from "@react-navigation/native";
@@ -20,10 +20,14 @@ export default function OnboardingStep4() {
   const navigation = useNavigation() as any;
   const { t } = useTranslation();
   const [selected, setSelected] = useState<string>("");
+  const [injuryHistory, setInjuryHistory] = useState<string>("");
 
   const { mutate: submit, isPending } = useMutation({
     mutationFn: async () => {
-      await axios.post(`${API_URL}/api/onboarding/step4`, { fitnessExperience: selected });
+      await axios.post(`${API_URL}/api/onboarding/step4`, {
+        fitnessExperience: selected,
+        injuryHistory: injuryHistory.trim() || undefined,
+      });
     },
     onSuccess: () => navigation.navigate("Step5"),
   });
@@ -61,6 +65,18 @@ export default function OnboardingStep4() {
             );
           })}
         </View>
+
+        <Text style={s.injuryLabel}>{t("onboarding.step4.injury_label")}</Text>
+        <TextInput
+          placeholder={t("onboarding.step4.injury_placeholder")}
+          placeholderTextColor={T.textMuted}
+          style={s.textArea}
+          multiline
+          numberOfLines={3}
+          value={injuryHistory}
+          onChangeText={setInjuryHistory}
+        />
+        <Text style={s.injuryHelper}>{t("onboarding.step4.injury_helper")}</Text>
 
         <TouchableOpacity
           onPress={() => submit()}
@@ -120,6 +136,20 @@ const s = StyleSheet.create({
     flexShrink: 0,
   },
   checkMark: { color: "#000", fontSize: 11, fontWeight: "800" },
+  injuryLabel: { fontSize: 14, fontWeight: "700", color: T.textPrimary, marginBottom: 8 },
+  textArea: {
+    backgroundColor: T.surface,
+    borderWidth: 1,
+    borderColor: T.border,
+    borderRadius: 12,
+    paddingHorizontal: 16,
+    paddingVertical: 13,
+    color: T.textPrimary,
+    fontSize: 15,
+    minHeight: 80,
+    textAlignVertical: "top",
+  },
+  injuryHelper: { fontSize: 12, color: T.textMuted, marginTop: 6, marginBottom: 32 },
   primaryBtn: { backgroundColor: T.accent, borderRadius: 14, paddingVertical: 16, alignItems: "center" },
   primaryBtnDisabled: { backgroundColor: T.surface },
   primaryBtnText: { color: "#000", fontSize: 16, fontWeight: "700" },

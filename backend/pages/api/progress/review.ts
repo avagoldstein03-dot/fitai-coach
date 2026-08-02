@@ -35,7 +35,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
     if (!user) return sendError(res, "user_not_found", "User not found", 404);
 
-    const [meals, sessions, assessments] = await Promise.all([
+    const [meals, sessions] = await Promise.all([
       prisma.meal.findMany({
         where: { userId: user.id, createdAt: { gte: since } },
         select: { totalCalories: true, totalProtein: true },
@@ -44,21 +44,12 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         where: { userId: user.id, createdAt: { gte: since } },
         select: { exerciseName: true, completedSets: true, weight: true },
       }),
-      prisma.bodyAssessment.findMany({
-        where: { userId: user.id, createdAt: { gte: since } },
-        select: { estimatedBodyFatLow: true, estimatedBodyFatHigh: true },
-        orderBy: { createdAt: "desc" },
-        take: 2,
-      }),
     ]);
 
+    // Body assessments no longer produce a numeric body-fat estimate (qualitative-only,
+    // see backend/services/openai-provider.ts's analyzeBody prompt), so there's no
+    // per-user numeric metric to surface here anymore.
     const bodyMetrics: Record<string, number> = {};
-    if (assessments[0]) {
-      bodyMetrics.latestBodyFat = assessments[0].estimatedBodyFatLow || 0;
-    }
-    if (assessments[1]) {
-      bodyMetrics.previousBodyFat = assessments[1].estimatedBodyFatLow || 0;
-    }
 
     const aiProvider = AIProviderRegistry.getProviderForTask("progress_review");
 

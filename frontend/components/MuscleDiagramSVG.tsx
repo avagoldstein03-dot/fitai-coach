@@ -196,7 +196,13 @@ function Glow({ active, ac, pulse, ox, oy }: {
 
 // ── Main export ───────────────────────────────────────────────────────────────
 export default function MuscleDiagramSVG({ muscles }: Props) {
-  const pulse = useRef(new Animated.Value(1)).current;
+  const pulseRef = useRef<Animated.Value | null>(null);
+  if (pulseRef.current === null) pulseRef.current = new Animated.Value(1);
+  // Animated.Value is a stable, native-driven handle meant to be read during render and
+  // passed into style props (e.g. `opacity={pulse}` below) — it has none of the staleness
+  // concerns react-hooks/refs otherwise guards against.
+  // eslint-disable-next-line react-hooks/refs
+  const pulse = pulseRef.current;
   const { front, back } = resolveActive(muscles);
 
   useEffect(() => {
@@ -209,7 +215,7 @@ export default function MuscleDiagramSVG({ muscles }: Props) {
     );
     loop.start();
     return () => loop.stop();
-  }, [muscles.join(",")]);
+  }, [muscles, pulse]);
 
   return (
     <View style={ui.container}>

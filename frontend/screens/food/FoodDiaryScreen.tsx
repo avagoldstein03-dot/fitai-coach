@@ -117,7 +117,9 @@ export default function FoodDiaryScreen() {
   const allDays = data?.dailyData ?? [];
   const dayData = allDays.find((d) => d.date === selectedDate);
 
+  // Date.now() is intentional — builds a display-only list of the last 14 calendar dates.
   const dateOptions = Array.from({ length: 14 }, (_, i) => {
+    // eslint-disable-next-line react-hooks/purity
     const d = new Date(Date.now() - i * 86400_000);
     return formatDate(d);
   });

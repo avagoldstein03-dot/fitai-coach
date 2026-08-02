@@ -17,6 +17,7 @@ import { Linking, Platform } from "react-native";
 import { useTranslation } from "react-i18next";
 import { T } from "@/lib/theme";
 import { TERMS_URL } from "@/lib/legal-urls";
+import { LegalWebViewModal } from "@/components/LegalWebViewModal";
 
 const API_URL = process.env.EXPO_PUBLIC_API_URL;
 
@@ -34,6 +35,7 @@ export default function SubscriptionManagementScreen() {
   const navigation = useNavigation() as any;
   const { t, i18n } = useTranslation();
   const queryClient = useQueryClient();
+  const [showTerms, setShowTerms] = React.useState(false);
 
   const { data: subscriptionData, isLoading, refetch, isRefetching } = useQuery({
     queryKey: ["subscription"],
@@ -51,7 +53,7 @@ export default function SubscriptionManagementScreen() {
     mutationFn: async () => {
       const response = await axios.post(
         `${API_URL}/api/subscriptions/billing-portal`,
-        { returnUrl: "fitai://subscription/management" }
+        { returnUrl: "activeai://subscription/management" }
       );
       return response.data;
     },
@@ -61,7 +63,7 @@ export default function SubscriptionManagementScreen() {
         Alert.alert(t("common.error"), t("subscription.error_portal"));
         return;
       }
-      await WebBrowser.openAuthSessionAsync(url, "fitai://subscription/management");
+      await WebBrowser.openAuthSessionAsync(url, "activeai://subscription/management");
       queryClient.invalidateQueries({ queryKey: ["subscription"] });
     },
     onError: () => {
@@ -233,11 +235,18 @@ export default function SubscriptionManagementScreen() {
           <TouchableOpacity style={{ marginBottom: 12 }} onPress={() => Linking.openURL("https://fitaicoach.com/faq")}>
             <Text style={s.accentText}>{t("subscription.faq_link")}</Text>
           </TouchableOpacity>
-          <TouchableOpacity onPress={() => Linking.openURL(TERMS_URL)}>
+          <TouchableOpacity onPress={() => setShowTerms(true)}>
             <Text style={s.accentText}>{t("subscription.terms_link")}</Text>
           </TouchableOpacity>
         </View>
       </View>
+
+      <LegalWebViewModal
+        visible={showTerms}
+        title="Terms of Service"
+        url={TERMS_URL}
+        onClose={() => setShowTerms(false)}
+      />
     </ScrollView>
   );
 }

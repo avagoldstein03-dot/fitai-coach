@@ -28,27 +28,27 @@ export function DisclaimerGate({ children }: { children: React.ReactNode }) {
   return (
     <>
       {children}
-      <Modal visible={!accepted} animationType="fade">
-        <View style={s.screen}>
-          <View style={s.header}>
-            <Text style={s.emoji}>⚠️</Text>
-            <Text style={s.title}>{t("disclaimer.title")}</Text>
-            <Text style={s.subtitle}>{t("disclaimer.subtitle")}</Text>
-          </View>
+      <Modal visible={!accepted} transparent animationType="fade">
+        <View style={s.backdrop}>
+          <View style={s.card}>
+            <View style={s.header}>
+              <Text style={s.emoji}>⚠️</Text>
+              <Text style={s.title}>{t("disclaimer.title")}</Text>
+              <Text style={s.subtitle}>{t("disclaimer.subtitle")}</Text>
+            </View>
 
-          <ScrollView style={s.scroll} showsVerticalScrollIndicator={false}>
-            <View style={s.textCard}>
+            <ScrollView style={s.scroll} showsVerticalScrollIndicator={false}>
               {BODY_KEYS.map((key) => (
                 <Text key={key} style={s.para}>{t(key)}</Text>
               ))}
-            </View>
-          </ScrollView>
+            </ScrollView>
 
-          <View style={s.footer}>
-            <TouchableOpacity onPress={accept} style={s.agreeBtn} activeOpacity={0.85}>
-              <Text style={s.agreeBtnText}>{t("disclaimer.agree")}</Text>
-            </TouchableOpacity>
-            <Text style={s.finePrint}>{t("disclaimer.required")}</Text>
+            <View style={s.footer}>
+              <TouchableOpacity onPress={accept} style={s.agreeBtn} activeOpacity={0.85}>
+                <Text style={s.agreeBtnText}>{t("disclaimer.agree")}</Text>
+              </TouchableOpacity>
+              <Text style={s.finePrint}>{t("disclaimer.required")}</Text>
+            </View>
           </View>
         </View>
       </Modal>
@@ -57,35 +57,36 @@ export function DisclaimerGate({ children }: { children: React.ReactNode }) {
 }
 
 const s = StyleSheet.create({
-  screen: {
+  backdrop: {
     flex: 1,
-    backgroundColor: T.bg,
+    backgroundColor: "rgba(0,0,0,0.7)",
+    justifyContent: "center",
+    alignItems: "center",
     paddingHorizontal: 24,
-    paddingTop: 64,
-    paddingBottom: 40,
   },
-  header: { alignItems: "center", marginBottom: 28 },
-  emoji: { fontSize: 44, marginBottom: 16 },
-  title: { fontSize: 26, fontWeight: "800", color: T.textPrimary, marginBottom: 6, textAlign: "center" },
-  subtitle: { fontSize: 14, color: T.textSecondary, textAlign: "center" },
-  scroll: { flex: 1 },
-  textCard: {
+  card: {
+    width: "100%",
+    maxWidth: 420,
+    maxHeight: "80%",
     backgroundColor: T.surface,
-    borderRadius: 16,
+    borderRadius: 20,
     borderWidth: 1,
     borderColor: T.border,
-    padding: 20,
-    gap: 14,
-    marginBottom: 24,
+    padding: 24,
   },
-  para: { fontSize: 14, color: T.textSecondary, lineHeight: 22 },
-  footer: { gap: 12 },
+  header: { alignItems: "center", marginBottom: 16 },
+  emoji: { fontSize: 36, marginBottom: 10 },
+  title: { fontSize: 20, fontWeight: "800", color: T.textPrimary, marginBottom: 4, textAlign: "center" },
+  subtitle: { fontSize: 13, color: T.textSecondary, textAlign: "center" },
+  scroll: { marginBottom: 20 },
+  para: { fontSize: 13.5, color: T.textSecondary, lineHeight: 20, marginBottom: 12 },
+  footer: { gap: 10 },
   agreeBtn: {
     backgroundColor: T.accent,
-    borderRadius: 16,
-    paddingVertical: 18,
+    borderRadius: 14,
+    paddingVertical: 16,
     alignItems: "center",
   },
-  agreeBtnText: { color: "#000", fontWeight: "800", fontSize: 17 },
-  finePrint: { fontSize: 12, color: T.textMuted, textAlign: "center" },
+  agreeBtnText: { color: "#000", fontWeight: "800", fontSize: 16 },
+  finePrint: { fontSize: 11, color: T.textMuted, textAlign: "center" },
 });

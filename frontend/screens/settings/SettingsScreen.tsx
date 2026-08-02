@@ -10,7 +10,7 @@ import {
   Alert,
   Modal,
   FlatList,
-  Linking,
+  Platform,
   StyleSheet,
 } from "react-native";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
@@ -18,11 +18,14 @@ import { useAuth } from "@clerk/clerk-expo";
 import { useNavigation } from "@react-navigation/native";
 import axios from "axios";
 import { useTranslation } from "react-i18next";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 import i18n, { LANGUAGE_CODES } from "@/lib/i18n";
 import { formatWeight, lbsToKg } from "@/lib/units";
 import { T } from "@/lib/theme";
 import { COUNTRIES, getCountryByName } from "@/lib/currency";
 import { TERMS_URL, PRIVACY_URL } from "@/lib/legal-urls";
+import { LegalWebViewModal } from "@/components/LegalWebViewModal";
+import { isHealthKitAvailable, requestHealthPermissions, syncHealthData } from "@/lib/health";
 
 const API_URL = process.env.EXPO_PUBLIC_API_URL;
 
@@ -42,8 +45,11 @@ export default function SettingsScreen() {
   const { t } = useTranslation();
   const queryClient = useQueryClient();
   const [newWeight, setNewWeight] = useState("");
+  const [injuryHistory, setInjuryHistory] = useState("");
+  const [syncedInjuryHistory, setSyncedInjuryHistory] = useState<string | undefined>(undefined);
   const [langModalVisible, setLangModalVisible] = useState(false);
   const [countryModalVisible, setCountryModalVisible] = useState(false);
+  const [legalModal, setLegalModal] = useState<"terms" | "privacy" | null>(null);
 
   const { data: profile, refetch: refetchProfile, isRefetching } = useQuery({
     queryKey: ["profile"],
@@ -56,6 +62,13 @@ export default function SettingsScreen() {
 
   const unitSystem = profile?.unitSystem ?? "imperial";
   const currentLanguage = profile?.language ?? "English";
+
+  // Seed the editable field once the profile loads, without fighting the user's
+  // in-progress edits on later re-renders (adjusting state during render, not in an effect).
+  if (profile?.injuryHistory !== undefined && profile.injuryHistory !== syncedInjuryHistory) {
+    setSyncedInjuryHistory(profile.injuryHistory);
+    setInjuryHistory(profile.injuryHistory ?? "");
+  }
 
   const { mutate: updateWeight, isPending: isUpdating } = useMutation({
     mutationFn: async (weightInDisplayUnit: number) => {
@@ -70,6 +83,55 @@ export default function SettingsScreen() {
     },
     onError: () => Alert.alert(t("common.error"), t("settings.error_weight")),
   });
+
+  const { mutate: updateInjuryHistory, isPending: isSavingInjury } = useMutation({
+    mutationFn: async (text: string) => {
+      await axios.patch(`${API_URL}/api/auth/profile`, { injuryHistory: text.trim() });
+    },
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ["profile"] });
+      Alert.alert(t("settings.updated"), t("settings.injury_updated"));
+    },
+    onError: () => Alert.alert(t("common.error"), t("settings.error_injury")),
+  });
+
+  const [isConnectingHealth, setIsConnectingHealth] = useState(false);
+
+  const { data: healthStatus, refetch: refetchHealthStatus } = useQuery({
+    queryKey: ["health-sync-status"],
+    queryFn: async () => {
+      const res = await axios.get(`${API_URL}/api/health/sync`);
+      return res.data.data as { lastSyncedAt: string | null };
+    },
+    enabled: Platform.OS === "ios",
+  });
+
+  const isHealthConnected = !!healthStatus?.lastSyncedAt;
+
+  const connectHealth = async () => {
+    setIsConnectingHealth(true);
+    try {
+      await requestHealthPermissions();
+      await syncHealthData();
+      await AsyncStorage.setItem("health_connected", "1");
+      await refetchHealthStatus();
+    } catch {
+      Alert.alert(t("common.error"), t("settings.error_health_connect"));
+    } finally {
+      setIsConnectingHealth(false);
+    }
+  };
+
+  const disconnectHealth = () => {
+    Alert.alert(t("settings.health_disconnect_title"), t("settings.health_disconnect_msg"), [
+      { text: t("common.cancel"), style: "cancel" },
+      {
+        text: t("settings.health_disconnect_button"),
+        style: "destructive",
+        onPress: () => AsyncStorage.removeItem("health_connected"),
+      },
+    ]);
+  };
 
   const { mutate: updateUnitSystem, isPending: isSavingUnit } = useMutation({
     mutationFn: async (newUnitSystem: "imperial" | "metric") => {
@@ -276,6 +338,64 @@ export default function SettingsScreen() {
           </View>
         </View>
 
+        {/* Injuries & Mobility */}
+        <View style={s.card}>
+          <Text style={s.cardTitle}>{t("settings.injury_history")}</Text>
+          <Text style={s.cardSub}>{t("settings.injury_history_sub")}</Text>
+          <TextInput
+            style={s.injuryInput}
+            placeholder={t("settings.injury_placeholder")}
+            placeholderTextColor={T.textMuted}
+            multiline
+            numberOfLines={3}
+            value={injuryHistory}
+            onChangeText={setInjuryHistory}
+          />
+          <TouchableOpacity
+            style={[s.weightSaveBtn, s.injurySaveBtn, isSavingInjury && s.weightSaveBtnDisabled]}
+            onPress={() => updateInjuryHistory(injuryHistory)}
+            disabled={isSavingInjury}
+          >
+            {isSavingInjury ? (
+              <ActivityIndicator color="#000" size="small" />
+            ) : (
+              <Text style={s.weightSaveBtnText}>{t("common.save")}</Text>
+            )}
+          </TouchableOpacity>
+        </View>
+
+        {/* Apple Health */}
+        {Platform.OS === "ios" && (
+          <View style={s.card}>
+            <Text style={s.cardTitle}>{t("settings.health_card_title")}</Text>
+            <Text style={s.cardSub}>{t("settings.health_card_sub")}</Text>
+            {isHealthConnected ? (
+              <>
+                <Text style={s.healthSyncedText}>
+                  {t("settings.health_last_synced", {
+                    time: new Date(healthStatus!.lastSyncedAt!).toLocaleString(),
+                  })}
+                </Text>
+                <TouchableOpacity style={s.healthDisconnectBtn} onPress={disconnectHealth}>
+                  <Text style={s.healthDisconnectBtnText}>{t("settings.health_disconnect_button")}</Text>
+                </TouchableOpacity>
+              </>
+            ) : (
+              <TouchableOpacity
+                style={[s.weightSaveBtn, s.injurySaveBtn, isConnectingHealth && s.weightSaveBtnDisabled]}
+                onPress={connectHealth}
+                disabled={isConnectingHealth || !isHealthKitAvailable()}
+              >
+                {isConnectingHealth ? (
+                  <ActivityIndicator color="#000" size="small" />
+                ) : (
+                  <Text style={s.weightSaveBtnText}>{t("settings.health_connect_button")}</Text>
+                )}
+              </TouchableOpacity>
+            )}
+          </View>
+        )}
+
         {/* Notifications */}
         <TouchableOpacity style={[s.card, s.rowCard]} onPress={() => navigation.navigate("Notifications")}>
           <View>
@@ -288,14 +408,14 @@ export default function SettingsScreen() {
         {/* Privacy & Data */}
         <View style={s.card}>
           <Text style={s.cardTitle}>{t("settings.privacy_data")}</Text>
-          <TouchableOpacity style={[s.row, s.rowBorder]} onPress={() => Linking.openURL(PRIVACY_URL)}>
+          <TouchableOpacity style={[s.row, s.rowBorder]} onPress={() => setLegalModal("privacy")}>
             <View>
               <Text style={s.rowLabel}>{t("settings.privacy_policy")}</Text>
               <Text style={s.cardSub}>{t("settings.privacy_policy_sub")}</Text>
             </View>
             <Text style={s.arrow}>→</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={[s.row, s.rowBorder]} onPress={() => Linking.openURL(TERMS_URL)}>
+          <TouchableOpacity style={[s.row, s.rowBorder]} onPress={() => setLegalModal("terms")}>
             <View>
               <Text style={s.rowLabel}>{t("settings.terms_of_service")}</Text>
               <Text style={s.cardSub}>{t("settings.terms_of_service_sub")}</Text>
@@ -417,6 +537,13 @@ export default function SettingsScreen() {
           </View>
         </View>
       </Modal>
+
+      <LegalWebViewModal
+        visible={legalModal !== null}
+        title={legalModal === "terms" ? "Terms of Service" : "Privacy Policy"}
+        url={legalModal === "terms" ? TERMS_URL : legalModal === "privacy" ? PRIVACY_URL : null}
+        onClose={() => setLegalModal(null)}
+      />
     </ScrollView>
   );
 }
@@ -480,6 +607,23 @@ const s = StyleSheet.create({
   weightSaveBtn: { backgroundColor: T.accent, borderRadius: 10, paddingHorizontal: 18, justifyContent: "center" },
   weightSaveBtnDisabled: { backgroundColor: T.surface2 },
   weightSaveBtnText: { color: "#000", fontWeight: "700" },
+  injuryInput: {
+    backgroundColor: T.surface2,
+    borderWidth: 1,
+    borderColor: T.border,
+    borderRadius: 10,
+    paddingHorizontal: 14,
+    paddingVertical: 12,
+    color: T.textPrimary,
+    fontSize: 14,
+    minHeight: 70,
+    textAlignVertical: "top",
+    marginTop: 10,
+  },
+  injurySaveBtn: { marginTop: 10, paddingVertical: 12 },
+  healthSyncedText: { fontSize: 13, color: T.accentMuted, marginTop: 10 },
+  healthDisconnectBtn: { marginTop: 10, alignItems: "center", paddingVertical: 4 },
+  healthDisconnectBtnText: { color: T.red, fontWeight: "600", fontSize: 14 },
 
   arrow: { fontSize: 18, color: T.textMuted },
 

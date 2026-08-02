@@ -90,6 +90,9 @@ export default function WeeklyReviewScreen() {
   });
 
   useEffect(() => {
+    // Resets/cycles a loading-message index in response to query loading state — an
+    // interval-based "subscribe to an external system" effect, not derived state.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     if (!isLoading && !isFetching) { setLoadingMsgIdx(0); return; }
     const id = setInterval(() => setLoadingMsgIdx((i) => (i + 1) % LOADING_MSGS.length), 2200);
     return () => clearInterval(id);

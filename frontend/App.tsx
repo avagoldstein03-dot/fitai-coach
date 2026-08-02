@@ -112,8 +112,8 @@ function AppShell() {
       (response) => {
         const data = response.notification.request.content.data as Record<string, string>;
         const screen = data?.screen;
-        if (screen && navigationRef.isReady()) {
-          navigationRef.navigate(screen as never);
+        if (screen && navigationRef.current?.isReady()) {
+          navigationRef.current.navigate(screen as never);
         }
       }
     );

@@ -1,5 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import { getAuth } from "@clerk/nextjs/server";
+import { Prisma } from "@prisma/client";
 import prisma from "@/lib/prisma";
 import { sendSuccess, sendError, validateRequest } from "@/lib/api-utils";
 import { AIProviderRegistry } from "@/services/ai-registry";
@@ -80,7 +81,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         carbsTarget,
         fatsTarget,
         waterTarget,
-        mealPlan: { rawText, days: mealPlanResult.days },
+        mealPlan: { rawText, days: mealPlanResult.days } as unknown as Prisma.InputJsonValue,
       },
       update: {
         dailyCaloricTarget,
@@ -88,7 +89,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         carbsTarget,
         fatsTarget,
         waterTarget,
-        mealPlan: { rawText, days: mealPlanResult.days },
+        mealPlan: { rawText, days: mealPlanResult.days } as unknown as Prisma.InputJsonValue,
       },
     });
 

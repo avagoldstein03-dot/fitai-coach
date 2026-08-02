@@ -48,7 +48,7 @@ export default function OnboardingStep1() {
     heightCm: "0",
     weightLbs: "0",
     weightKg: "0",
-    language: "English",
+    language: Object.keys(LANGUAGE_CODES).find((name) => LANGUAGE_CODES[name] === i18n.language) ?? "English",
   });
 
   const ageRef       = useRef<TextInput>(null);

@@ -117,11 +117,15 @@ function UpgradeCard({ upgradeTo, onPress }: { upgradeTo: string; onPress: () =>
 }
 
 function TypingIndicator() {
-  const dots = useRef([
-    new Animated.Value(0),
-    new Animated.Value(0),
-    new Animated.Value(0),
-  ]).current;
+  const dotsRef = useRef<Animated.Value[] | null>(null);
+  if (dotsRef.current === null) {
+    dotsRef.current = [new Animated.Value(0), new Animated.Value(0), new Animated.Value(0)];
+  }
+  // Animated.Value is a stable, native-driven handle meant to be read during render
+  // (mapped into transforms below) — it has none of the staleness concerns
+  // react-hooks/refs otherwise guards against.
+  // eslint-disable-next-line react-hooks/refs
+  const dots = dotsRef.current;
 
   useEffect(() => {
     const makeSeq = (dot: Animated.Value) =>
@@ -148,6 +152,7 @@ function TypingIndicator() {
         <Text style={cs.coachMiniAvatarText}>AI</Text>
       </View>
       <View style={cs.typingBubble}>
+        {/* eslint-disable-next-line react-hooks/refs -- see justification at dotsRef above */}
         {dots.map((dot, i) => (
           <Animated.View key={i} style={[cs.dot, { transform: [{ translateY: dot }] }]} />
         ))}
@@ -258,6 +263,8 @@ export default function CoachChatScreen() {
 
   useEffect(() => {
     if (historyData?.messages) {
+      // Hydrates local chat state once history finishes loading — not derived state.
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setLocalMessages(historyData.messages);
     }
   }, [historyData]);

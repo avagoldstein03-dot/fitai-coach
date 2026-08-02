@@ -5,6 +5,7 @@ import { sendError, sendSuccess } from "@/lib/api-utils";
 import { z } from "zod";
 import { AIProviderRegistry } from "@/services/ai-registry";
 import { getUserSubscription } from "@/lib/subscription-middleware";
+import { checkRateLimit } from "@/lib/rate-limit";
 
 const RequestSchema = z.object({
   base64: z.string(),
@@ -30,6 +31,11 @@ export default async function handler(
 
     if (!user) {
       return sendError(res, "user_not_found", "User not found", 404);
+    }
+
+    const allowed = await checkRateLimit("food-scan", auth.userId, 30, "1 h");
+    if (!allowed) {
+      return sendError(res, "rate_limited", "Too many requests, please slow down", 429);
     }
 
     // Check subscription limits

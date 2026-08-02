@@ -216,7 +216,7 @@ export default function FoodScannerScreen() {
       return response.data;
     },
     onSuccess: (data) => {
-      posthog.capture(Events.FOOD_SCAN_COMPLETED, { itemCount: data?.detectedItems?.length ?? 0 });
+      posthog.capture(Events.FOOD_SCAN_COMPLETED, { itemCount: data?.foodAnalysis?.items?.length ?? 0 });
       setJustLogged(data);
       refetchHistory();
     },

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState, useEffect, useCallback, useMemo } from "react";
 import {
   View,
   Text,
@@ -18,6 +18,7 @@ import { formatWeight } from "@/lib/units";
 import { useTranslation } from "react-i18next";
 import * as Haptics from "expo-haptics";
 import { T } from "@/lib/theme";
+import { syncHealthData } from "@/lib/health";
 
 const API_URL = process.env.EXPO_PUBLIC_API_URL;
 const W = Dimensions.get("window").width;
@@ -102,6 +103,10 @@ export default function DashboardScreen() {
     AsyncStorage.getItem("onboarding_dismissed").then((v) => {
       if (v) setOnboardingDismissed(true);
     });
+    // Best-effort — a failed health sync should never block the dashboard.
+    AsyncStorage.getItem("health_connected").then((connected) => {
+      if (connected) syncHealthData().catch(() => {});
+    });
   }, []);
 
   const dismissOnboarding = useCallback(() => {
@@ -124,6 +129,10 @@ export default function DashboardScreen() {
     },
     staleTime: 60_000,
   });
+
+  const handleRefresh = useCallback(async () => {
+    await Promise.all([refetch(), syncHealthData().catch(() => {})]);
+  }, [refetch]);
 
   const { data: profile } = useQuery({
     queryKey: ["profile"],
@@ -148,6 +157,28 @@ export default function DashboardScreen() {
     },
     staleTime: 300_000,
   });
+
+  // Hoisted out of JSX so this recomputes once per relevant data change, not once per render.
+  // Date.now() is intentional — this derives a display-only "which week/day is today" and
+  // "how stale is the last scan" indicator, not something requiring pure/idempotent output.
+  const activeProgram = workoutData?.activeProgram;
+  const todayWorkout = useMemo(() => {
+    if (!activeProgram) return null;
+    // eslint-disable-next-line react-hooks/purity
+    const msSinceStart = Date.now() - new Date(activeProgram.startDate).getTime();
+    const weekIndex = Math.min(
+      Math.max(0, Math.floor(msSinceStart / (7 * 24 * 60 * 60 * 1000))),
+      activeProgram.weeks.length - 1
+    );
+    const todayIndex = (new Date().getDay() + 6) % 7; // Mon=0…Sun=6
+    return { weekIndex, todayIndex };
+  }, [activeProgram]);
+
+  const isAssessmentStale = useMemo(() => {
+    const last = data?.lastAssessmentDate;
+    // eslint-disable-next-line react-hooks/purity
+    return !last || Date.now() - new Date(last).getTime() > 7 * 24 * 60 * 60 * 1000;
+  }, [data?.lastAssessmentDate]);
 
   const { data: targets } = useQuery<{ dailyCaloricTarget: number; proteinTarget: number }>({
     queryKey: ["nutritionTargets"],
@@ -201,7 +232,7 @@ export default function DashboardScreen() {
       contentContainerStyle={s.content}
       showsVerticalScrollIndicator={false}
       refreshControl={
-        <RefreshControl refreshing={isRefetching} onRefresh={refetch} tintColor={T.accent} />
+        <RefreshControl refreshing={isRefetching} onRefresh={handleRefresh} tintColor={T.accent} />
       }
     >
       {/* ── Header ── */}
@@ -220,136 +251,6 @@ export default function DashboardScreen() {
           <View style={s.premiumBadge}>
             <Text style={s.premiumBadgeText}>{t("dashboard.premium_badge")}</Text>
           </View>
-        )}
-      </View>
-
-      {/* ── Streak Banner ── */}
-      {(() => {
-        const ws = data?.streaks?.workouts ?? 0;
-        const ms = data?.streaks?.meals ?? 0;
-        const best = Math.max(ws, ms);
-        if (best === 0) return (
-          <View style={s.streakEmpty}>
-            <Text style={s.streakEmptyTitle}>{t("streak.start")}</Text>
-            <Text style={s.streakEmptySub}>{t("streak.start_sub")}</Text>
-          </View>
-        );
-        return (
-          <View style={s.streakCard}>
-            <View style={s.streakLeft}>
-              <Text style={s.streakNumber}>{best}</Text>
-              <Text style={s.streakDayLabel}>{t("dashboard.streak_days", { count: best })}</Text>
-            </View>
-            <View style={s.streakDivider} />
-            <View style={s.streakRight}>
-              <View style={s.streakRow}>
-                <Text style={s.streakDot}>💪</Text>
-                <Text style={s.streakStat}>{t("streak.workouts")}</Text>
-                <Text style={[s.streakVal, ws > 0 ? s.streakValActive : s.streakValZero]}>{ws}d</Text>
-              </View>
-              <View style={s.streakRow}>
-                <Text style={s.streakDot}>🍽️</Text>
-                <Text style={s.streakStat}>{t("streak.meals")}</Text>
-                <Text style={[s.streakVal, ms > 0 ? s.streakValActive : s.streakValZero]}>{ms}d</Text>
-              </View>
-            </View>
-          </View>
-        );
-      })()}
-
-      {/* ── Getting Started ── */}
-      {!onboardingDismissed && data && (() => {
-        const tasks = [
-          { label: t("dashboard.task_first_meal"),  emoji: "🍽", screen: "FoodScanner", done: (data.thisWeek.mealsLogged    ?? 0) > 0 },
-          { label: t("dashboard.task_workout"),     emoji: "💪", screen: "Workouts",    done: (data.thisWeek.workoutsCompleted ?? 0) > 0 },
-          { label: t("dashboard.task_weight"),      emoji: "⚖️", screen: "Settings",    done: !!data.currentWeight },
-          { label: t("dashboard.task_body_scan"),   emoji: "📸", screen: "BodyScan",    done: !!data.lastAssessmentDate },
-        ];
-        const completedCount = tasks.filter((task) => task.done).length;
-        if (completedCount === tasks.length) return null;
-        const pct = Math.round((completedCount / tasks.length) * 100);
-        return (
-          <View style={s.onboardCard}>
-            <View style={s.onboardHeader}>
-              <Text style={s.onboardTitle}>{t("dashboard.getting_started")}</Text>
-              <View style={s.onboardBadge}>
-                <Text style={s.onboardBadgeText}>{completedCount}/{tasks.length}</Text>
-              </View>
-              <TouchableOpacity onPress={dismissOnboarding} style={s.onboardClose} hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }} accessibilityLabel={t("common.dismiss")} accessibilityRole="button">
-                <Text style={s.onboardCloseText}>×</Text>
-              </TouchableOpacity>
-            </View>
-            <View style={s.onboardTrack}>
-              <View style={[s.onboardFill, { width: `${pct}%` as any }]} />
-            </View>
-            {tasks.map((task, i) => (
-              <TouchableOpacity
-                key={i}
-                style={[s.onboardTask, i < tasks.length - 1 && s.onboardTaskBorder]}
-                onPress={() => !task.done && navigation.navigate(task.screen)}
-                activeOpacity={task.done ? 1 : 0.7}
-              >
-                <View style={[s.onboardCheck, task.done && s.onboardCheckDone]}>
-                  {task.done && <Text style={s.onboardCheckMark}>✓</Text>}
-                </View>
-                <Text style={s.onboardTaskEmoji}>{task.emoji}</Text>
-                <Text style={[s.onboardTaskLabel, task.done && s.onboardTaskLabelDone]}>{task.label}</Text>
-                {!task.done && <Text style={s.onboardArrow}>›</Text>}
-              </TouchableOpacity>
-            ))}
-          </View>
-        );
-      })()}
-
-      {/* ── Today's Workout ── */}
-      {workoutData?.activeProgram && (() => {
-        const program = workoutData.activeProgram;
-        const msSinceStart = Date.now() - new Date(program.startDate).getTime();
-        const weekIndex = Math.min(
-          Math.max(0, Math.floor(msSinceStart / (7 * 24 * 60 * 60 * 1000))),
-          program.weeks.length - 1
-        );
-        const currentWeek = program.weeks[weekIndex];
-        const todayIndex = (new Date().getDay() + 6) % 7; // Mon=0…Sun=6
-        const todayDay = currentWeek?.days?.find((d) => d.dayOfWeek === todayIndex);
-        if (!todayDay || todayDay.exercises.length === 0) return (
-          <View style={s.todayCard}>
-            <Text style={s.todayTitle}>{t("dashboard.rest_day")}</Text>
-            <Text style={s.todaySub}>{t("dashboard.rest_day_sub")}</Text>
-          </View>
-        );
-        const preview = todayDay.exercises.slice(0, 3);
-        const extra = todayDay.exercises.length - preview.length;
-        return (
-          <TouchableOpacity style={s.todayCard} onPress={() => navigation.navigate("Workouts")} activeOpacity={0.85}>
-            <View style={s.todayHeader}>
-              <Text style={s.todayTitle}>{t("dashboard.today_workout")}</Text>
-              <Text style={s.todayBadge}>{t("dashboard.exercises_count", { count: todayDay.exercises.length })}</Text>
-            </View>
-            {preview.map((ex, i) => (
-              <Text key={i} style={s.todayEx}>· {ex.exerciseName} — {ex.sets}×{ex.reps}</Text>
-            ))}
-            {extra > 0 && <Text style={s.todayMore}>{t("dashboard.exercises_more", { count: extra })}</Text>}
-            <View style={s.todayBtn}><Text style={s.todayBtnText}>{t("dashboard.start_workout")}</Text></View>
-          </TouchableOpacity>
-        );
-      })()}
-
-      {/* ── Water Intake ── */}
-      <View style={s.waterCard}>
-        <View style={s.waterHeader}>
-          <Text style={s.waterTitle}>💧 {t("dashboard.water")}</Text>
-          <Text style={s.waterCount}>{waterGlasses} / {WATER_GOAL}</Text>
-        </View>
-        <View style={s.waterGlasses}>
-          {Array.from({ length: WATER_GOAL }).map((_, i) => (
-            <TouchableOpacity key={i} onPress={() => setWater(i < waterGlasses ? i : i + 1)} style={s.waterGlass} accessibilityLabel={t("dashboard.water_glass_label", { n: i + 1 })} accessibilityRole="button">
-              <Text style={{ fontSize: 22, opacity: i < waterGlasses ? 1 : 0.2 }}>💧</Text>
-            </TouchableOpacity>
-          ))}
-        </View>
-        {waterGlasses >= WATER_GOAL && (
-          <Text style={s.waterComplete}>{t("dashboard.water_goal_reached")}</Text>
         )}
       </View>
 
@@ -441,6 +342,130 @@ export default function DashboardScreen() {
         ))}
       </View>
 
+      {/* ── Streak Banner ── */}
+      {(() => {
+        const ws = data?.streaks?.workouts ?? 0;
+        const ms = data?.streaks?.meals ?? 0;
+        const best = Math.max(ws, ms);
+        if (best === 0) return (
+          <View style={s.streakEmpty}>
+            <Text style={s.streakEmptyTitle}>{t("streak.start")}</Text>
+            <Text style={s.streakEmptySub}>{t("streak.start_sub")}</Text>
+          </View>
+        );
+        return (
+          <View style={s.streakCard}>
+            <View style={s.streakLeft}>
+              <Text style={s.streakNumber}>{best}</Text>
+              <Text style={s.streakDayLabel}>{t("dashboard.streak_days", { count: best })}</Text>
+            </View>
+            <View style={s.streakDivider} />
+            <View style={s.streakRight}>
+              <View style={s.streakRow}>
+                <Text style={s.streakDot}>💪</Text>
+                <Text style={s.streakStat}>{t("streak.workouts")}</Text>
+                <Text style={[s.streakVal, ws > 0 ? s.streakValActive : s.streakValZero]}>{ws}d</Text>
+              </View>
+              <View style={s.streakRow}>
+                <Text style={s.streakDot}>🍽️</Text>
+                <Text style={s.streakStat}>{t("streak.meals")}</Text>
+                <Text style={[s.streakVal, ms > 0 ? s.streakValActive : s.streakValZero]}>{ms}d</Text>
+              </View>
+            </View>
+          </View>
+        );
+      })()}
+
+      {/* ── Getting Started ── */}
+      {!onboardingDismissed && data && (() => {
+        const tasks = [
+          { label: t("dashboard.task_first_meal"),  emoji: "🍽", screen: "FoodScanner", done: (data.thisWeek.mealsLogged    ?? 0) > 0 },
+          { label: t("dashboard.task_workout"),     emoji: "💪", screen: "Workouts",    done: (data.thisWeek.workoutsCompleted ?? 0) > 0 },
+          { label: t("dashboard.task_weight"),      emoji: "⚖️", screen: "Settings",    done: !!data.currentWeight },
+          { label: t("dashboard.task_body_scan"),   emoji: "📸", screen: "BodyScan",    done: !!data.lastAssessmentDate },
+        ];
+        const completedCount = tasks.filter((task) => task.done).length;
+        if (completedCount === tasks.length) return null;
+        const pct = Math.round((completedCount / tasks.length) * 100);
+        return (
+          <View style={s.onboardCard}>
+            <View style={s.onboardHeader}>
+              <Text style={s.onboardTitle}>{t("dashboard.getting_started")}</Text>
+              <View style={s.onboardBadge}>
+                <Text style={s.onboardBadgeText}>{completedCount}/{tasks.length}</Text>
+              </View>
+              <TouchableOpacity onPress={dismissOnboarding} style={s.onboardClose} hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }} accessibilityLabel={t("common.dismiss")} accessibilityRole="button">
+                <Text style={s.onboardCloseText}>×</Text>
+              </TouchableOpacity>
+            </View>
+            <View style={s.onboardTrack}>
+              <View style={[s.onboardFill, { width: `${pct}%` as any }]} />
+            </View>
+            {tasks.map((task, i) => (
+              <TouchableOpacity
+                key={i}
+                style={[s.onboardTask, i < tasks.length - 1 && s.onboardTaskBorder]}
+                onPress={() => !task.done && navigation.navigate(task.screen)}
+                activeOpacity={task.done ? 1 : 0.7}
+              >
+                <View style={[s.onboardCheck, task.done && s.onboardCheckDone]}>
+                  {task.done && <Text style={s.onboardCheckMark}>✓</Text>}
+                </View>
+                <Text style={s.onboardTaskEmoji}>{task.emoji}</Text>
+                <Text style={[s.onboardTaskLabel, task.done && s.onboardTaskLabelDone]}>{task.label}</Text>
+                {!task.done && <Text style={s.onboardArrow}>›</Text>}
+              </TouchableOpacity>
+            ))}
+          </View>
+        );
+      })()}
+
+      {/* ── Today's Workout ── */}
+      {activeProgram && todayWorkout && (() => {
+        const program = activeProgram;
+        const currentWeek = program.weeks[todayWorkout.weekIndex];
+        const todayDay = currentWeek?.days?.find((d) => d.dayOfWeek === todayWorkout.todayIndex);
+        if (!todayDay || todayDay.exercises.length === 0) return (
+          <View style={s.todayCard}>
+            <Text style={s.todayTitle}>{t("dashboard.rest_day")}</Text>
+            <Text style={s.todaySub}>{t("dashboard.rest_day_sub")}</Text>
+          </View>
+        );
+        const preview = todayDay.exercises.slice(0, 3);
+        const extra = todayDay.exercises.length - preview.length;
+        return (
+          <TouchableOpacity style={s.todayCard} onPress={() => navigation.navigate("Workouts")} activeOpacity={0.85}>
+            <View style={s.todayHeader}>
+              <Text style={s.todayTitle}>{t("dashboard.today_workout")}</Text>
+              <Text style={s.todayBadge}>{t("dashboard.exercises_count", { count: todayDay.exercises.length })}</Text>
+            </View>
+            {preview.map((ex, i) => (
+              <Text key={i} style={s.todayEx}>· {ex.exerciseName} — {ex.sets}×{ex.reps}</Text>
+            ))}
+            {extra > 0 && <Text style={s.todayMore}>{t("dashboard.exercises_more", { count: extra })}</Text>}
+            <View style={s.todayBtn}><Text style={s.todayBtnText}>{t("dashboard.start_workout")}</Text></View>
+          </TouchableOpacity>
+        );
+      })()}
+
+      {/* ── Water Intake ── */}
+      <View style={s.waterCard}>
+        <View style={s.waterHeader}>
+          <Text style={s.waterTitle}>💧 {t("dashboard.water")}</Text>
+          <Text style={s.waterCount}>{waterGlasses} / {WATER_GOAL}</Text>
+        </View>
+        <View style={s.waterGlasses}>
+          {Array.from({ length: WATER_GOAL }).map((_, i) => (
+            <TouchableOpacity key={i} onPress={() => setWater(i < waterGlasses ? i : i + 1)} style={s.waterGlass} accessibilityLabel={t("dashboard.water_glass_label", { n: i + 1 })} accessibilityRole="button">
+              <Text style={{ fontSize: 22, opacity: i < waterGlasses ? 1 : 0.2 }}>💧</Text>
+            </TouchableOpacity>
+          ))}
+        </View>
+        {waterGlasses >= WATER_GOAL && (
+          <Text style={s.waterComplete}>{t("dashboard.water_goal_reached")}</Text>
+        )}
+      </View>
+
       {/* ── Weight / Physique Row ── */}
       {(data?.currentWeight || data?.physiqueNote) && (
         <View style={s.bodyRow}>
@@ -490,8 +515,7 @@ export default function DashboardScreen() {
       {/* ── Body scan nudge ── */}
       {(() => {
         const last = data?.lastAssessmentDate;
-        const isStale = !last || (Date.now() - new Date(last).getTime() > 7 * 24 * 60 * 60 * 1000);
-        if (!isStale) return null;
+        if (!isAssessmentStale) return null;
         return (
           <TouchableOpacity
             style={s.nudgeCard}

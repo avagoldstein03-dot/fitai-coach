@@ -2,6 +2,7 @@ import type { NextApiRequest, NextApiResponse } from "next";
 import { getAuth } from "@clerk/nextjs/server";
 import prisma from "@/lib/prisma";
 import { sendSuccess, sendError, validateRequest } from "@/lib/api-utils";
+import { calculateStreak } from "@/lib/trends";
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (!validateRequest(req, ["GET"])) {
@@ -100,8 +101,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       return { date: dateStr, calories: dayCalories, protein: Math.round(dayProtein) };
     }).reverse();
 
-    const workoutStreak = calcStreak(recentWorkoutSessions);
-    const mealStreak = calcStreak(recentMeals);
+    const workoutStreak = calculateStreak(recentWorkoutSessions);
+    const mealStreak = calculateStreak(recentMeals);
 
     sendSuccess(res, {
       currentWeight: user.weight,
@@ -126,23 +127,4 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     console.error("Dashboard analytics error:", error);
     sendError(res, "server_error", "Failed to fetch dashboard data", 500);
   }
-}
-
-function calcStreak(records: Array<{ createdAt: Date }>): number {
-  if (!records.length) return 0;
-  const days = [...new Set(
-    records.map((r) => r.createdAt.toISOString().split("T")[0])
-  )].sort((a, b) => b.localeCompare(a));
-
-  let streak = 0;
-  let cursor = new Date();
-  cursor.setHours(0, 0, 0, 0);
-
-  for (const day of days) {
-    const d = new Date(day);
-    const diff = Math.round((cursor.getTime() - d.getTime()) / 86_400_000);
-    if (diff <= 1) { streak++; cursor = d; }
-    else break;
-  }
-  return streak;
 }

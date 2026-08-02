@@ -4,6 +4,11 @@ import prisma from "@/lib/prisma";
 import { sendSuccess, sendError, validateRequest } from "@/lib/api-utils";
 import { AIProviderRegistry } from "@/services/ai-registry";
 import { getUserSubscription, type SubscriptionTier } from "@/lib/subscription-middleware";
+import { checkRateLimit } from "@/lib/rate-limit";
+import { sanitizeConversationHistory } from "@/services/ai-provider";
+import { detectWorkoutPlateaus, diffBodyComposition, buildTrendsSummary } from "@/lib/trends";
+import { buildCoachingDirective } from "@/lib/coach-context";
+import { buildHealthSummary } from "@/lib/health-summary";
 
 const FREE_DAILY_LIMIT = 5;
 
@@ -39,6 +44,11 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   try {
     const { userId } = getAuth(req);
     if (!userId) return sendError(res, "unauthorized", "Unauthorized", 401);
+
+    const allowed = await checkRateLimit("coach-chat", userId, 30, "1 h");
+    if (!allowed) {
+      return sendError(res, "rate_limited", "Too many requests, please slow down", 429);
+    }
 
     const { message } = req.body;
     if (!message?.trim()) {
@@ -85,19 +95,49 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         },
         bodyAssessments: {
           orderBy: { createdAt: "desc" },
-          take: 1,
+          take: 2,
         },
       },
     });
 
     if (!user) return sendError(res, "user_not_found", "User not found", 404);
 
-    // Load last 10 messages for conversation history
+    // Load last 20 messages for conversation history
     const recentMessages = await prisma.chatMessage.findMany({
       where: { user: { clerkId: userId } },
       orderBy: { createdAt: "asc" },
       take: 20,
     });
+
+    // Wider window than `recentWorkouts` needs, purely for plateau detection
+    const workoutSessionsForTrends = await prisma.workoutSession.findMany({
+      where: { user: { clerkId: userId } },
+      orderBy: { createdAt: "desc" },
+      take: 30,
+      select: { exerciseName: true, weight: true, completedReps: true, createdAt: true },
+    });
+
+    const trendsSummary = buildTrendsSummary({
+      plateaus: detectWorkoutPlateaus(workoutSessionsForTrends),
+      compositionDiffs: diffBodyComposition(
+        user.bodyAssessments[0]?.bodyComposition as Record<string, unknown> | undefined,
+        user.bodyAssessments[1]?.bodyComposition as Record<string, unknown> | undefined
+      ),
+    });
+
+    const coachingDirective = buildCoachingDirective({
+      age: user.age,
+      fitnessExperience: user.fitnessExperience,
+      injuryHistory: user.injuryHistory,
+    });
+
+    const healthMetrics = await prisma.healthMetric.findMany({
+      where: { user: { clerkId: userId } },
+      orderBy: { date: "desc" },
+      take: 7,
+      select: { date: true, steps: true, activeEnergyKcal: true, sleepMinutes: true, restingHeartRate: true },
+    });
+    const healthSummary = buildHealthSummary(healthMetrics);
 
     // Save user message
     await prisma.chatMessage.create({
@@ -129,6 +169,10 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       recentMeals: user.meals,
       recentWorkouts: user.workoutSessions,
       goals: user.goal ? [user.goal] : [],
+      conversationHistory: sanitizeConversationHistory(recentMessages, 10),
+      trendsSummary,
+      coachingDirective,
+      healthSummary,
     });
 
     // Strip any [UPGRADE:tier] marker the AI may have emitted

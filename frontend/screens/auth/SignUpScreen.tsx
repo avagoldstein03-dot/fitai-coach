@@ -1,10 +1,11 @@
 import React, { useRef } from "react";
-import { View, Text, TouchableOpacity, ScrollView, TextInput, ActivityIndicator, Alert, StyleSheet, KeyboardAvoidingView, Platform, Linking } from "react-native";
+import { View, Text, TouchableOpacity, ScrollView, TextInput, ActivityIndicator, Alert, StyleSheet, KeyboardAvoidingView, Platform } from "react-native";
 import { useSignUp } from "@clerk/clerk-expo";
 import { useNavigation } from "@react-navigation/native";
 import { useTranslation } from "react-i18next";
 import { T } from "@/lib/theme";
 import { TERMS_URL, PRIVACY_URL } from "@/lib/legal-urls";
+import { LegalWebViewModal } from "@/components/LegalWebViewModal";
 
 export default function SignUpScreen() {
   const { signUp, setActive } = useSignUp();
@@ -14,6 +15,7 @@ export default function SignUpScreen() {
   const [email, setEmail] = React.useState("");
   const [password, setPassword] = React.useState("");
   const [confirmPassword, setConfirmPassword] = React.useState("");
+  const [legalModal, setLegalModal] = React.useState<"terms" | "privacy" | null>(null);
   const passwordRef = useRef<TextInput>(null);
   const confirmRef = useRef<TextInput>(null);
   const [loading, setLoading] = React.useState(false);
@@ -168,12 +170,19 @@ export default function SignUpScreen() {
 
         <Text style={s.legalFooter}>
           {t("auth.legal_footer")}{" "}
-          <Text style={s.legalLink} onPress={() => Linking.openURL(TERMS_URL)}>{t("auth.terms_link")}</Text>
+          <Text style={s.legalLink} onPress={() => setLegalModal("terms")}>{t("auth.terms_link")}</Text>
           {" "}{t("auth.and")}{" "}
-          <Text style={s.legalLink} onPress={() => Linking.openURL(PRIVACY_URL)}>{t("auth.privacy_link")}</Text>
+          <Text style={s.legalLink} onPress={() => setLegalModal("privacy")}>{t("auth.privacy_link")}</Text>
           .
         </Text>
       </View>
+
+      <LegalWebViewModal
+        visible={legalModal !== null}
+        title={legalModal === "terms" ? "Terms of Service" : "Privacy Policy"}
+        url={legalModal === "terms" ? TERMS_URL : legalModal === "privacy" ? PRIVACY_URL : null}
+        onClose={() => setLegalModal(null)}
+      />
     </ScrollView>
     </KeyboardAvoidingView>
   );

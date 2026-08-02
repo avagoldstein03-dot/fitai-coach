@@ -205,6 +205,7 @@ export default function ProfileScreen() {
         <Text style={s.sectionTitle}>{t("profile.more")}</Text>
         <View style={s.navList}>
           {[
+            { label: t("profile.friends"),           emoji: "🤝", screen: "Friends" },
             { label: t("profile.progress_reviews"),  emoji: "📈", screen: "Progress" },
             { label: t("profile.progress_photos"),   emoji: "🖼️", screen: "ProgressPhotos" },
             { label: t("profile.food_diary"),        emoji: "📔", screen: "FoodDiary" },

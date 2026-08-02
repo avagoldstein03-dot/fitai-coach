@@ -2,6 +2,7 @@ import type { NextApiRequest, NextApiResponse } from "next";
 import { getAuth, clerkClient } from "@clerk/nextjs/server";
 import prisma from "@/lib/prisma";
 import { sendSuccess, sendError, validateRequest } from "@/lib/api-utils";
+import { deleteS3Object } from "@/lib/s3";
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (!validateRequest(req, ["DELETE", "GET"])) {
@@ -23,6 +24,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
           workoutSessions: true,
           chatMessages: { select: { role: true, content: true, createdAt: true } },
           progressPhotos: true,
+          weightLogs: true,
         },
       });
 
@@ -45,6 +47,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         workouts: user.workoutSessions,
         assessments: user.bodyAssessments,
         chatHistory: user.chatMessages,
+        progressPhotos: user.progressPhotos,
+        weightLogs: user.weightLogs,
       }, "Data export ready");
     } catch (error) {
       console.error("Data export error:", error);
@@ -55,8 +59,18 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
   // DELETE: delete account
   try {
-    const user = await prisma.user.findUnique({ where: { clerkId: userId } });
+    const user = await prisma.user.findUnique({
+      where: { clerkId: userId },
+      include: { progressPhotos: true, bodyScans: true },
+    });
     if (!user) return sendError(res, "user_not_found", "User not found", 404);
+
+    // Purge S3-hosted photos before the DB rows (and their URLs) are gone
+    const photoUrls = [
+      ...user.progressPhotos.map((p) => p.photoUrl),
+      ...user.bodyScans.flatMap((s) => [s.frontImageUrl, s.sideImageUrl, s.backImageUrl]),
+    ].filter((url): url is string => !!url);
+    await Promise.all(photoUrls.map((url) => deleteS3Object(url)));
 
     // Delete all user data in Prisma (cascade handles related records)
     await prisma.user.delete({ where: { clerkId: userId } });

@@ -2,6 +2,7 @@ import type { NextApiRequest, NextApiResponse } from "next";
 import { getAuth } from "@clerk/nextjs/server";
 import prisma from "@/lib/prisma";
 import { sendSuccess, sendError, validateRequest } from "@/lib/api-utils";
+import { calculateStreak } from "@/lib/trends";
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (!validateRequest(req, ["GET"])) {
@@ -56,31 +57,4 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     console.error("Workout history error:", error);
     sendError(res, "server_error", "Failed to fetch workout history", 500);
   }
-}
-
-function calculateStreak(sessions: Array<{ createdAt: Date }>): number {
-  if (!sessions.length) return 0;
-
-  const dates = sessions
-    .map((s) => new Date(s.createdAt).toDateString())
-    .filter((v, i, a) => a.indexOf(v) === i)
-    .sort((a, b) => new Date(b).getTime() - new Date(a).getTime());
-
-  let streak = 0;
-  let current = new Date();
-
-  for (const dateStr of dates) {
-    const date = new Date(dateStr);
-    const diff = Math.floor(
-      (current.getTime() - date.getTime()) / (1000 * 60 * 60 * 24)
-    );
-    if (diff <= 1) {
-      streak++;
-      current = date;
-    } else {
-      break;
-    }
-  }
-
-  return streak;
 }

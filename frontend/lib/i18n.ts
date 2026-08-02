@@ -1,5 +1,6 @@
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
+import * as Localization from "expo-localization";
 import en from "../locales/en.json";
 import es from "../locales/es.json";
 import fr from "../locales/fr.json";
@@ -82,6 +83,26 @@ export const LANGUAGE_CODES: Record<string, string> = {
   "Bulgarian": "bg",
 };
 
+const SUPPORTED_CODES = new Set(Object.values(LANGUAGE_CODES));
+
+// Picks the device's preferred language if we have a translation for it, else falls back to English.
+function detectInitialLanguage(): string {
+  for (const locale of Localization.getLocales()) {
+    // Chinese needs script/region disambiguation since the device reports a bare "zh"
+    // languageCode for both variants.
+    if (locale.languageCode === "zh") {
+      const isTraditional =
+        locale.languageScriptCode === "Hant" ||
+        (!locale.languageScriptCode && ["TW", "HK", "MO"].includes(locale.regionCode ?? ""));
+      return isTraditional ? "zh-TW" : "zh";
+    }
+    if (locale.languageCode && SUPPORTED_CODES.has(locale.languageCode)) {
+      return locale.languageCode;
+    }
+  }
+  return "en";
+}
+
 i18n.use(initReactI18next).init({
   resources: {
     "en": { translation: en },
@@ -124,7 +145,7 @@ i18n.use(initReactI18next).init({
     "sr": { translation: sr },
     "bg": { translation: bg },
   },
-  lng: "en",
+  lng: detectInitialLanguage(),
   fallbackLng: "en",
   interpolation: { escapeValue: false },
   compatibilityJSON: "v4",
