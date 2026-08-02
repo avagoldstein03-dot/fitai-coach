@@ -1131,7 +1131,19 @@
     "cat_grains": "Bijirin & Karbohydrat",
     "cat_dairy": "Produk Tenusu & Telur",
     "cat_pantry": "Pantri & Penutup",
-    "share_heading": "🛒 Senarai Beli-belah Saya"
+    "share_heading": "🛒 Senarai Beli-belah Saya",
+    "cat_other": "Lain-lain",
+    "premium_title": "Senarai Belanja, Diselesaikan",
+    "premium_sub": "Naik taraf untuk menjana senarai belanja bercategori secara automatik daripada rancangan makanan anda dan pesannya dalam talian.",
+    "add_custom_item": "+ Tambah Item Tersuai",
+    "add_custom_name_placeholder": "Nama item",
+    "add_custom_qty_placeholder": "Kuantiti (pilihan)",
+    "add_custom_unit_placeholder": "Unit, cth. lb, cawan (pilihan)",
+    "add_custom_save": "Tambah",
+    "add_custom_cancel": "Batal",
+    "error_add": "Tidak dapat menambah item itu. Sila cuba lagi.",
+    "error_remove": "Tidak dapat mengeluarkan item itu. Sila cuba lagi.",
+    "error_toggle": "Tidak dapat mengemas kini item itu. Sila cuba lagi."
   },
   "profile": {
     "title": "Profil",

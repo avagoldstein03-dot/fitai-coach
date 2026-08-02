@@ -1131,7 +1131,19 @@
     "cat_grains": "Korn og karbohydrater",
     "cat_dairy": "Meierivarer og egg",
     "cat_pantry": "Kjøkkenskapet og krydder",
-    "share_heading": "🛒 Handlelisten min"
+    "share_heading": "🛒 Handlelisten min",
+    "cat_other": "Annet",
+    "premium_title": "Handleliste, håndtert",
+    "premium_sub": "Oppgrader for å auto-generere en kategorisert handleliste fra måltidenplanen din og bestille den på nett.",
+    "add_custom_item": "+ Legg til egendefinert vare",
+    "add_custom_name_placeholder": "Varenavn",
+    "add_custom_qty_placeholder": "Mengde (valgfritt)",
+    "add_custom_unit_placeholder": "Enhet, f.eks. kg, kopp (valgfritt)",
+    "add_custom_save": "Legg til",
+    "add_custom_cancel": "Avbryt",
+    "error_add": "Kunne ikke legge til varen. Prøv igjen.",
+    "error_remove": "Kunne ikke fjerne varen. Prøv igjen.",
+    "error_toggle": "Kunne ikke oppdatere varen. Prøv igjen."
   },
   "profile": {
     "title": "Profil",

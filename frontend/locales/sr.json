@@ -1131,7 +1131,19 @@
     "cat_grains": "Žitarice i ugljeni hidrati",
     "cat_dairy": "Mlekovni i jaja",
     "cat_pantry": "Pantry i umeci",
-    "share_heading": "🛒 Moja lista kupovine"
+    "share_heading": "🛒 Moja lista kupovine",
+    "cat_other": "Ostalo",
+    "premium_title": "Lista Za Kupovinu, Rešena",
+    "premium_sub": "Nadogradi se na automatsku generisanje kategorizovane liste za kupovinu iz tvog plana ishrane i poruči je onlajn.",
+    "add_custom_item": "+ Dodaj Prilagođenu Stavku",
+    "add_custom_name_placeholder": "Naziv stavke",
+    "add_custom_qty_placeholder": "Količina (opciono)",
+    "add_custom_unit_placeholder": "Jedinica, npr. kg, šolja (opciono)",
+    "add_custom_save": "Dodaj",
+    "add_custom_cancel": "Otkaži",
+    "error_add": "Nisam mogao da dodam tu stavku. Molim te pokušaj ponovo.",
+    "error_remove": "Nisam mogao da uklonim tu stavku. Molim te pokušaj ponovo.",
+    "error_toggle": "Nisam mogao da ažuriram tu stavku. Molim te pokušaj ponovo."
   },
   "profile": {
     "title": "Профил",

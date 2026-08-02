@@ -1131,7 +1131,19 @@
     "cat_grains": "Granos y Carbohidratos",
     "cat_dairy": "Lácteos y Huevos",
     "cat_pantry": "Despensa y Condimentos",
-    "share_heading": "🛒 Mi Lista de Compras"
+    "share_heading": "🛒 Mi Lista de Compras",
+    "cat_other": "Otro",
+    "premium_title": "Lista de Compras, Resuelta",
+    "premium_sub": "Mejora tu plan para generar automáticamente una lista de compras categorizada desde tu plan de comidas y ordenarla en línea.",
+    "add_custom_item": "+ Agregar Artículo Personalizado",
+    "add_custom_name_placeholder": "Nombre del artículo",
+    "add_custom_qty_placeholder": "Cantidad (opcional)",
+    "add_custom_unit_placeholder": "Unidad, p. ej. kg, taza (opcional)",
+    "add_custom_save": "Agregar",
+    "add_custom_cancel": "Cancelar",
+    "error_add": "No se pudo agregar ese artículo. Por favor, intenta de nuevo.",
+    "error_remove": "No se pudo eliminar ese artículo. Por favor, intenta de nuevo.",
+    "error_toggle": "No se pudo actualizar ese artículo. Por favor, intenta de nuevo."
   },
   "profile": {
     "title": "Perfil",

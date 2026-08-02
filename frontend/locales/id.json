@@ -1131,7 +1131,19 @@
     "cat_grains": "Biji-bijian & Karbohidrat",
     "cat_dairy": "Produk Susu & Telur",
     "cat_pantry": "Pantry & Bumbu",
-    "share_heading": "🛒 Daftar Belanja Saya"
+    "share_heading": "🛒 Daftar Belanja Saya",
+    "cat_other": "Lainnya",
+    "premium_title": "Daftar Belanja, Terselesaikan",
+    "premium_sub": "Upgrade untuk secara otomatis menghasilkan daftar belanja yang dikategorikan dari rencana makan Anda dan memesan secara online.",
+    "add_custom_item": "+ Tambah Item Khusus",
+    "add_custom_name_placeholder": "Nama item",
+    "add_custom_qty_placeholder": "Jumlah (opsional)",
+    "add_custom_unit_placeholder": "Satuan, mis. kg, cangkir (opsional)",
+    "add_custom_save": "Tambah",
+    "add_custom_cancel": "Batal",
+    "error_add": "Tidak dapat menambahkan item tersebut. Silakan coba lagi.",
+    "error_remove": "Tidak dapat menghapus item tersebut. Silakan coba lagi.",
+    "error_toggle": "Tidak dapat memperbarui item tersebut. Silakan coba lagi."
   },
   "profile": {
     "title": "Profil",

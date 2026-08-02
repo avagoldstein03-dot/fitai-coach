@@ -1131,7 +1131,19 @@
     "cat_grains": "穀物和碳水化合物",
     "cat_dairy": "乳製品和雞蛋",
     "cat_pantry": "食品儲藏室和調料",
-    "share_heading": "🛒 我的購物清單"
+    "share_heading": "🛒 我的購物清單",
+    "cat_other": "其他",
+    "premium_title": "購物清單，輕鬆搞定",
+    "premium_sub": "升級以自動從您的餐點計畫生成分類購物清單，並在線訂購。",
+    "add_custom_item": "+ 新增自訂項目",
+    "add_custom_name_placeholder": "項目名稱",
+    "add_custom_qty_placeholder": "數量（選填）",
+    "add_custom_unit_placeholder": "單位，例如 lb、cup（選填）",
+    "add_custom_save": "新增",
+    "add_custom_cancel": "取消",
+    "error_add": "無法新增該項目。請重試。",
+    "error_remove": "無法刪除該項目。請重試。",
+    "error_toggle": "無法更新該項目。請重試。"
   },
   "profile": {
     "title": "檔案",

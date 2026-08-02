@@ -1131,7 +1131,19 @@
     "cat_grains": "Spannmål och kolhydrater",
     "cat_dairy": "Mejeriprodukter och ägg",
     "cat_pantry": "Skafferi och kryddor",
-    "share_heading": "🛒 Min inköpslista"
+    "share_heading": "🛒 Min inköpslista",
+    "cat_other": "Övrigt",
+    "premium_title": "Inköpslista, löst",
+    "premium_sub": "Uppgradera för att automatiskt generera en kategoriserad inköpslista från din måltidsplan och beställ den online.",
+    "add_custom_item": "+ Lägg till anpassad vara",
+    "add_custom_name_placeholder": "Varunamn",
+    "add_custom_qty_placeholder": "Mängd (valfritt)",
+    "add_custom_unit_placeholder": "Enhet, t.ex. kg, dl (valfritt)",
+    "add_custom_save": "Lägg till",
+    "add_custom_cancel": "Avbryt",
+    "error_add": "Kunde inte lägga till den varan. Försök igen.",
+    "error_remove": "Kunde inte ta bort den varan. Försök igen.",
+    "error_toggle": "Kunde inte uppdatera den varan. Försök igen."
   },
   "profile": {
     "title": "Profil",

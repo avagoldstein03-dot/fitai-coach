@@ -1131,7 +1131,19 @@
     "cat_grains": "Cereali e Carboidrati",
     "cat_dairy": "Latticini e Uova",
     "cat_pantry": "Dispensa e Condimenti",
-    "share_heading": "🛒 La Mia Lista della Spesa"
+    "share_heading": "🛒 La Mia Lista della Spesa",
+    "cat_other": "Altro",
+    "premium_title": "Lista della Spesa, Gestita",
+    "premium_sub": "Passa alla versione premium per generare automaticamente una lista della spesa categorizzata dal tuo piano alimentare e ordinarla online.",
+    "add_custom_item": "+ Aggiungi Articolo Personalizzato",
+    "add_custom_name_placeholder": "Nome articolo",
+    "add_custom_qty_placeholder": "Quantità (facoltativo)",
+    "add_custom_unit_placeholder": "Unità, ad es. kg, tazza (facoltativo)",
+    "add_custom_save": "Aggiungi",
+    "add_custom_cancel": "Annulla",
+    "error_add": "Impossibile aggiungere quell'articolo. Riprova.",
+    "error_remove": "Impossibile rimuovere quell'articolo. Riprova.",
+    "error_toggle": "Impossibile aggiornare quell'articolo. Riprova."
   },
   "profile": {
     "title": "Profilo",

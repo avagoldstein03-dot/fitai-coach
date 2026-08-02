@@ -1131,7 +1131,19 @@
     "cat_grains": "Gabonák és szénhidrátok",
     "cat_dairy": "Tejtermékek és tojás",
     "cat_pantry": "Spájz és szószok",
-    "share_heading": "🛒 Az én vásárlási listám"
+    "share_heading": "🛒 Az én vásárlási listám",
+    "cat_other": "Egyéb",
+    "premium_title": "Bevásárlólista, Megoldva",
+    "premium_sub": "Frissítsen a prémium verzióra, hogy automatikusan generáljon kategorikus bevásárlólistát az étterv alapján és rendelje meg online.",
+    "add_custom_item": "+ Egyéni tétel hozzáadása",
+    "add_custom_name_placeholder": "Tétel neve",
+    "add_custom_qty_placeholder": "Mennyiség (opcionális)",
+    "add_custom_unit_placeholder": "Egység, pl. kg, csésze (opcionális)",
+    "add_custom_save": "Hozzáadás",
+    "add_custom_cancel": "Mégsem",
+    "error_add": "Az elem nem adható hozzá. Kérjük, próbálja újra.",
+    "error_remove": "Az elem nem távolítható el. Kérjük, próbálja újra.",
+    "error_toggle": "Az elem nem frissíthető. Kérjük, próbálja újra."
   },
   "profile": {
     "title": "Profil",

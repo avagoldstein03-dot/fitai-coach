@@ -1131,7 +1131,19 @@
     "cat_grains": "Cereale și carbohidrați",
     "cat_dairy": "Lactate și ouă",
     "cat_pantry": "Alimentare și condimente",
-    "share_heading": "🛒 Lista mea de cumpărături"
+    "share_heading": "🛒 Lista mea de cumpărături",
+    "cat_other": "Altele",
+    "premium_title": "Lista de cumpărături, Rezolvată",
+    "premium_sub": "Upgrade pentru a genera automat o listă de cumpărături categorisată din planul tău de mese și comandă-o online.",
+    "add_custom_item": "+ Adaugă Articol Personalizat",
+    "add_custom_name_placeholder": "Numele articolului",
+    "add_custom_qty_placeholder": "Cantitate (opțional)",
+    "add_custom_unit_placeholder": "Unitate, ex. kg, cană (opțional)",
+    "add_custom_save": "Adaugă",
+    "add_custom_cancel": "Anulează",
+    "error_add": "Nu am putut adăuga acel articol. Te rog încearcă din nou.",
+    "error_remove": "Nu am putut șterge acel articol. Te rog încearcă din nou.",
+    "error_toggle": "Nu am putut actualiza acel articol. Te rog încearcă din nou."
   },
   "profile": {
     "title": "Profil",

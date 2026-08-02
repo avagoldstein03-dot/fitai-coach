@@ -1131,7 +1131,19 @@
     "cat_grains": "Nafaka & Carbs",
     "cat_dairy": "Maziwa & Mayai",
     "cat_pantry": "Pantry & Condiments",
-    "share_heading": "🛒 Orodha Yangu ya Ununuzi"
+    "share_heading": "🛒 Orodha Yangu ya Ununuzi",
+    "cat_other": "Nyingine",
+    "premium_title": "Orodha ya Bidhaa, Iliyosimamishwa",
+    "premium_sub": "Boreshwa ili kutengeneza otomatiki orodha ya bidhaa iliyobainishwa kutoka kwa mpango wako wa chakula na kuagiza mtandaoni.",
+    "add_custom_item": "+ Ongeza Bidhaa Maalum",
+    "add_custom_name_placeholder": "Jina la bidhaa",
+    "add_custom_qty_placeholder": "Kiasi (opsiyonal)",
+    "add_custom_unit_placeholder": "Kipimo, k.m. lb, kikombe (opsiyonal)",
+    "add_custom_save": "Ongeza",
+    "add_custom_cancel": "Ghairi",
+    "error_add": "Sikuweza kuongeza bidhaa hiyo. Tafadhali jaribu tena.",
+    "error_remove": "Sikuweza kuondoa bidhaa hiyo. Tafadhali jaribu tena.",
+    "error_toggle": "Sikuweza kusasisha bidhaa hiyo. Tafadhali jaribu tena."
   },
   "profile": {
     "title": "Wasifu",

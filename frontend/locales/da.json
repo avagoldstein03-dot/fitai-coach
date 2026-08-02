@@ -1131,7 +1131,19 @@
     "cat_grains": "Korn og kulhydrater",
     "cat_dairy": "Mælkeprodukter og æg",
     "cat_pantry": "Skafferi og krydderier",
-    "share_heading": "🛒 Min indkøbsliste"
+    "share_heading": "🛒 Min indkøbsliste",
+    "cat_other": "Øvrigt",
+    "premium_title": "Indkøbsliste, løst",
+    "premium_sub": "Opgrader for at generere automatisk en kategoriseret indkøbsliste ud fra dine måltidsplaner og bestil den online.",
+    "add_custom_item": "+ Tilføj brugerdefineret vare",
+    "add_custom_name_placeholder": "Varenavn",
+    "add_custom_qty_placeholder": "Mængde (valgfrit)",
+    "add_custom_unit_placeholder": "Enhed, f.eks. kg, kop (valgfrit)",
+    "add_custom_save": "Tilføj",
+    "add_custom_cancel": "Annuller",
+    "error_add": "Kunne ikke tilføje denne vare. Prøv igen.",
+    "error_remove": "Kunne ikke fjerne denne vare. Prøv igen.",
+    "error_toggle": "Kunne ikke opdatere denne vare. Prøv igen."
   },
   "profile": {
     "title": "Profil",

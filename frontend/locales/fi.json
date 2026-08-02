@@ -1131,7 +1131,19 @@
     "cat_grains": "Viljat ja hiilihydraatit",
     "cat_dairy": "Maitotuotteet ja munat",
     "cat_pantry": "Pantry ja kastikkeet",
-    "share_heading": "🛒 Minun ostoslistani"
+    "share_heading": "🛒 Minun ostoslistani",
+    "cat_other": "Muu",
+    "premium_title": "Ostoslista hallinnassa",
+    "premium_sub": "Päivitä premium-versioon ja luo automaattisesti kategorioitu ostoslista ateriapäiväsi perusteella ja tilaa se verkossa.",
+    "add_custom_item": "+ Lisää mukautettu tuote",
+    "add_custom_name_placeholder": "Tuotteen nimi",
+    "add_custom_qty_placeholder": "Määrä (valinnainen)",
+    "add_custom_unit_placeholder": "Yksikkö, esim. kg, kuppi (valinnainen)",
+    "add_custom_save": "Lisää",
+    "add_custom_cancel": "Peruuta",
+    "error_add": "Tuotteen lisääminen epäonnistui. Yritä uudelleen.",
+    "error_remove": "Tuotteen poistaminen epäonnistui. Yritä uudelleen.",
+    "error_toggle": "Tuotteen päivittäminen epäonnistui. Yritä uudelleen."
   },
   "profile": {
     "title": "Profiili",

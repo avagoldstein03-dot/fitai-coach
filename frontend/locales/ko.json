@@ -1131,7 +1131,19 @@
     "cat_grains": "곡물 & 탄수화물",
     "cat_dairy": "유제품 & 계란",
     "cat_pantry": "식료품 저장실 & 조미료",
-    "share_heading": "🛒 내 쇼핑 리스트"
+    "share_heading": "🛒 내 쇼핑 리스트",
+    "cat_other": "기타",
+    "premium_title": "장보기 목록, 완벽하게",
+    "premium_sub": "프리미엄으로 업그레이드하여 식단 계획에서 분류된 장보기 목록을 자동 생성하고 온라인으로 주문하세요.",
+    "add_custom_item": "+ 항목 추가",
+    "add_custom_name_placeholder": "항목명",
+    "add_custom_qty_placeholder": "수량 (선택사항)",
+    "add_custom_unit_placeholder": "단위, 예: lb, cup (선택사항)",
+    "add_custom_save": "추가",
+    "add_custom_cancel": "취소",
+    "error_add": "항목을 추가할 수 없습니다. 다시 시도해주세요.",
+    "error_remove": "항목을 제거할 수 없습니다. 다시 시도해주세요.",
+    "error_toggle": "항목을 업데이트할 수 없습니다. 다시 시도해주세요."
   },
   "profile": {
     "title": "프로필",

@@ -1131,7 +1131,19 @@
     "cat_grains": "穀物と炭水化物",
     "cat_dairy": "乳製品と卵",
     "cat_pantry": "パントリーと調味料",
-    "share_heading": "🛒 私のショッピングリスト"
+    "share_heading": "🛒 私のショッピングリスト",
+    "cat_other": "その他",
+    "premium_title": "買い物リスト、完璧に管理",
+    "premium_sub": "アップグレードして、ミールプランから分類された買い物リストを自動生成し、オンラインで注文できます。",
+    "add_custom_item": "+ カスタムアイテムを追加",
+    "add_custom_name_placeholder": "アイテム名",
+    "add_custom_qty_placeholder": "数量（オプション）",
+    "add_custom_unit_placeholder": "単位、例：lb、cup（オプション）",
+    "add_custom_save": "追加",
+    "add_custom_cancel": "キャンセル",
+    "error_add": "そのアイテムを追加できませんでした。もう一度お試しください。",
+    "error_remove": "そのアイテムを削除できませんでした。もう一度お試しください。",
+    "error_toggle": "そのアイテムを更新できませんでした。もう一度お試しください。"
   },
   "profile": {
     "title": "プロフィール",

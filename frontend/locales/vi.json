@@ -1131,7 +1131,19 @@
     "cat_grains": "Ngũ cốc & Carbs",
     "cat_dairy": "Sữa & Trứng",
     "cat_pantry": "Thực phẩm và gia vị",
-    "share_heading": "🛒 Danh sách mua sắm của tôi"
+    "share_heading": "🛒 Danh sách mua sắm của tôi",
+    "cat_other": "Khác",
+    "premium_title": "Danh Sách Mua Sắm, Dễ Dàng",
+    "premium_sub": "Nâng cấp để tự động tạo danh sách mua sắm được phân loại từ kế hoạch ăn uống của bạn và đặt hàng trực tuyến.",
+    "add_custom_item": "+ Thêm Mục Tùy Chỉnh",
+    "add_custom_name_placeholder": "Tên mục",
+    "add_custom_qty_placeholder": "Số lượng (tùy chọn)",
+    "add_custom_unit_placeholder": "Đơn vị, ví dụ: lb, cup (tùy chọn)",
+    "add_custom_save": "Thêm",
+    "add_custom_cancel": "Hủy",
+    "error_add": "Không thể thêm mục đó. Vui lòng thử lại.",
+    "error_remove": "Không thể xóa mục đó. Vui lòng thử lại.",
+    "error_toggle": "Không thể cập nhật mục đó. Vui lòng thử lại."
   },
   "profile": {
     "title": "Hồ sơ",

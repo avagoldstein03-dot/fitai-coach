@@ -1131,7 +1131,19 @@
     "cat_grains": "Grains & Carbs",
     "cat_dairy": "Dairy & Eggs",
     "cat_pantry": "Pantry & Condiments",
-    "share_heading": "🛒 Aking Shopping List"
+    "share_heading": "🛒 Aking Shopping List",
+    "cat_other": "Iba",
+    "premium_title": "Grocery List, Alagaan",
+    "premium_sub": "I-upgrade upang awtomatikong lumikha ng kategorisadong shopping list mula sa iyong meal plan at mag-order online.",
+    "add_custom_item": "+ Magdagdag ng Custom Item",
+    "add_custom_name_placeholder": "Pangalan ng item",
+    "add_custom_qty_placeholder": "Dami (opsyonal)",
+    "add_custom_unit_placeholder": "Unit, hal. lb, cup (opsyonal)",
+    "add_custom_save": "Idagdag",
+    "add_custom_cancel": "Kanselahin",
+    "error_add": "Hindi maadagdag ang item na iyon. Mangyaring subukan ulit.",
+    "error_remove": "Hindi maalis ang item na iyon. Mangyaring subukan ulit.",
+    "error_toggle": "Hindi maupdate ang item na iyon. Mangyaring subukan ulit."
   },
   "profile": {
     "title": "Profile",

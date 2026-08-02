@@ -1131,7 +1131,19 @@
     "cat_grains": "谷物和碳水",
     "cat_dairy": "乳制品和鸡蛋",
     "cat_pantry": "食品储藏室和调料",
-    "share_heading": "🛒 我的购物清单"
+    "share_heading": "🛒 我的购物清单",
+    "cat_other": "其他",
+    "premium_title": "购物清单已处理",
+    "premium_sub": "升级以从您的餐计划自动生成分类购物清单并在线订购。",
+    "add_custom_item": "+ 添加自定义项目",
+    "add_custom_name_placeholder": "项目名称",
+    "add_custom_qty_placeholder": "数量（可选）",
+    "add_custom_unit_placeholder": "单位，例如 lb、cup（可选）",
+    "add_custom_save": "添加",
+    "add_custom_cancel": "取消",
+    "error_add": "无法添加该项目。请重试。",
+    "error_remove": "无法删除该项目。请重试。",
+    "error_toggle": "无法更新该项目。请重试。"
   },
   "profile": {
     "title": "个人资料",

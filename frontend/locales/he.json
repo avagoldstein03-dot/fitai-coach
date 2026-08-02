@@ -1131,7 +1131,19 @@
     "cat_grains": "דגנים ופחמימות",
     "cat_dairy": "חלב וביצים",
     "cat_pantry": "מטבח ורטבים",
-    "share_heading": "🛒 רשימת הקניות שלי"
+    "share_heading": "🛒 רשימת הקניות שלי",
+    "cat_other": "אחר",
+    "premium_title": "רשימת קניות, מסודרת",
+    "premium_sub": "שדרג כדי ליצור אוטומטית רשימת קניות מסווגת מתוכנית הארוחות שלך והזמן אותה באינטרנט.",
+    "add_custom_item": "+ הוסף פריט מותאם אישית",
+    "add_custom_name_placeholder": "שם הפריט",
+    "add_custom_qty_placeholder": "כמות (אופציונלי)",
+    "add_custom_unit_placeholder": "יחידת מידה, לדוגמה ק״ג, כוס (אופציונלי)",
+    "add_custom_save": "הוסף",
+    "add_custom_cancel": "ביטול",
+    "error_add": "לא היתה אפשרות להוסיף את הפריט. אנא נסה שוב.",
+    "error_remove": "לא היתה אפשרות להסיר את הפריט. אנא נסה שוב.",
+    "error_toggle": "לא היתה אפשרות לעדכן את הפריט. אנא נסה שוב."
   },
   "profile": {
     "title": "פרופיל",

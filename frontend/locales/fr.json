@@ -1131,7 +1131,19 @@
     "cat_grains": "Grains et glucides",
     "cat_dairy": "Produits laitiers et œufs",
     "cat_pantry": "Garde-manger et condiments",
-    "share_heading": "🛒 Ma liste de courses"
+    "share_heading": "🛒 Ma liste de courses",
+    "cat_other": "Autre",
+    "premium_title": "Liste d'épicerie, Gérée",
+    "premium_sub": "Passez à la version premium pour générer automatiquement une liste d'épicerie catégorisée à partir de votre plan de repas et la commander en ligne.",
+    "add_custom_item": "+ Ajouter un article personnalisé",
+    "add_custom_name_placeholder": "Nom de l'article",
+    "add_custom_qty_placeholder": "Quantité (facultatif)",
+    "add_custom_unit_placeholder": "Unité, ex. kg, tasse (facultatif)",
+    "add_custom_save": "Ajouter",
+    "add_custom_cancel": "Annuler",
+    "error_add": "Impossible d'ajouter cet article. Veuillez réessayer.",
+    "error_remove": "Impossible de supprimer cet article. Veuillez réessayer.",
+    "error_toggle": "Impossible de mettre à jour cet article. Veuillez réessayer."
   },
   "profile": {
     "title": "Profil",

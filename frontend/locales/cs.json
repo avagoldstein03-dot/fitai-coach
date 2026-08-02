@@ -1131,7 +1131,19 @@
     "cat_grains": "Obilí a sacharidy",
     "cat_dairy": "Mléčné výrobky a vejce",
     "cat_pantry": "Pantry a koření",
-    "share_heading": "🛒 Můj nákupní seznam"
+    "share_heading": "🛒 Můj nákupní seznam",
+    "cat_other": "Ostatní",
+    "premium_title": "Nákupní seznam na dosah",
+    "premium_sub": "Upgradujte a automaticky generujte kategorizovaný nákupní seznam z vašeho plánu jídel a objednejte si jej online.",
+    "add_custom_item": "+ Přidat vlastní položku",
+    "add_custom_name_placeholder": "Název položky",
+    "add_custom_qty_placeholder": "Množství (volitelné)",
+    "add_custom_unit_placeholder": "Jednotka, např. kg, šálek (volitelné)",
+    "add_custom_save": "Přidat",
+    "add_custom_cancel": "Zrušit",
+    "error_add": "Nepodařilo se přidat tuto položku. Zkuste to znovu.",
+    "error_remove": "Nepodařilo se odstranit tuto položku. Zkuste to znovu.",
+    "error_toggle": "Nepodařilo se aktualizovat tuto položku. Zkuste to znovu."
   },
   "profile": {
     "title": "Profil",

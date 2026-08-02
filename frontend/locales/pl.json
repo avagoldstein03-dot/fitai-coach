@@ -1131,7 +1131,19 @@
     "cat_grains": "Zboża i węglowodany",
     "cat_dairy": "Mleczne i jaja",
     "cat_pantry": "Spiżarnia i przyprawy",
-    "share_heading": "🛒 Moja lista zakupów"
+    "share_heading": "🛒 Moja lista zakupów",
+    "cat_other": "Inne",
+    "premium_title": "Lista zakupów, Rozwiązana",
+    "premium_sub": "Uaktualnij do automatycznego generowania podzielonej na kategorie listy zakupów z Twojego planu posiłków i zamawiania online.",
+    "add_custom_item": "+ Dodaj Custom Przedmiot",
+    "add_custom_name_placeholder": "Nazwa przedmiotu",
+    "add_custom_qty_placeholder": "Ilość (opcjonalnie)",
+    "add_custom_unit_placeholder": "Jednostka, np. kg, szklanka (opcjonalnie)",
+    "add_custom_save": "Dodaj",
+    "add_custom_cancel": "Anuluj",
+    "error_add": "Nie udało się dodać tego przedmiotu. Spróbuj ponownie.",
+    "error_remove": "Nie udało się usunąć tego przedmiotu. Spróbuj ponownie.",
+    "error_toggle": "Nie udało się zaktualizować tego przedmiotu. Spróbuj ponownie."
   },
   "profile": {
     "title": "Profil",

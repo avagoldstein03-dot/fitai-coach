@@ -1131,7 +1131,19 @@
     "cat_grains": "Obilniny a uhľohydráty",
     "cat_dairy": "Mliečne produkty a vajcia",
     "cat_pantry": "Pantry a koreniny",
-    "share_heading": "🛒 Môj zoznam nákupov"
+    "share_heading": "🛒 Môj zoznam nákupov",
+    "cat_other": "Iné",
+    "premium_title": "Nákupný zoznam, Vyriešený",
+    "premium_sub": "Upgradujte a automaticky vytvárajte kategorizovaný nákupný zoznam z vášho plánu jedál a objednajte si ho online.",
+    "add_custom_item": "+ Pridať vlastnú položku",
+    "add_custom_name_placeholder": "Názov položky",
+    "add_custom_qty_placeholder": "Množstvo (voliteľné)",
+    "add_custom_unit_placeholder": "Jednotka, napr. kg, šálka (voliteľné)",
+    "add_custom_save": "Pridať",
+    "add_custom_cancel": "Zrušiť",
+    "error_add": "Túto položku sa nepodarilo pridať. Skúste to prosím znova.",
+    "error_remove": "Túto položku sa nepodarilo odstrániť. Skúste to prosím znova.",
+    "error_toggle": "Túto položku sa nepodarilo aktualizovať. Skúste to prosím znova."
   },
   "profile": {
     "title": "Profil",

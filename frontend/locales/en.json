@@ -1244,7 +1244,19 @@
     "cat_grains": "Grains & Carbs",
     "cat_dairy": "Dairy & Eggs",
     "cat_pantry": "Pantry & Condiments",
-    "share_heading": "🛒 My Shopping List"
+    "cat_other": "Other",
+    "share_heading": "🛒 My Shopping List",
+    "premium_title": "Grocery List, Handled",
+    "premium_sub": "Upgrade to auto-generate a categorized shopping list from your meal plan and order it online.",
+    "add_custom_item": "+ Add Custom Item",
+    "add_custom_name_placeholder": "Item name",
+    "add_custom_qty_placeholder": "Quantity (optional)",
+    "add_custom_unit_placeholder": "Unit, e.g. lb, cup (optional)",
+    "add_custom_save": "Add",
+    "add_custom_cancel": "Cancel",
+    "error_add": "Couldn't add that item. Please try again.",
+    "error_remove": "Couldn't remove that item. Please try again.",
+    "error_toggle": "Couldn't update that item. Please try again."
   },
   "profile": {
     "title": "Profile",

@@ -1131,7 +1131,19 @@
     "cat_grains": "Tahıllar ve Karbonhidratlar",
     "cat_dairy": "Süt Ürünleri ve Yumurtalar",
     "cat_pantry": "Kiler ve Soslar",
-    "share_heading": "🛒 Alışveriş Listem"
+    "share_heading": "🛒 Alışveriş Listem",
+    "cat_other": "Diğer",
+    "premium_title": "Alışveriş Listesi, Hazır",
+    "premium_sub": "Yemek planınızdan otomatik olarak kategorize edilmiş bir alışveriş listesi oluşturmak ve çevrimiçi sipariş vermek için yükseltme yapın.",
+    "add_custom_item": "+ Özel Ürün Ekle",
+    "add_custom_name_placeholder": "Ürün adı",
+    "add_custom_qty_placeholder": "Miktar (isteğe bağlı)",
+    "add_custom_unit_placeholder": "Birim, örn. kg, bardak (isteğe bağlı)",
+    "add_custom_save": "Ekle",
+    "add_custom_cancel": "İptal",
+    "error_add": "Bu ürün eklenemedi. Lütfen tekrar deneyin.",
+    "error_remove": "Bu ürün kaldırılamadı. Lütfen tekrar deneyin.",
+    "error_toggle": "Bu ürün güncellenemedi. Lütfen tekrar deneyin."
   },
   "profile": {
     "title": "Profil",

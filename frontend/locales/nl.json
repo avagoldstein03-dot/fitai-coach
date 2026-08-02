@@ -1131,7 +1131,19 @@
     "cat_grains": "Granen & Koolhydraten",
     "cat_dairy": "Zuivel & Eieren",
     "cat_pantry": "Voorraadkast & Kruiderijen",
-    "share_heading": "🛒 Mijn Boodschappenlijst"
+    "share_heading": "🛒 Mijn Boodschappenlijst",
+    "cat_other": "Overig",
+    "premium_title": "Boodschappenlijst, Geregeld",
+    "premium_sub": "Upgrade naar automatisch gegenereerde gecategoriseerde boodschappenlijst van uw maaltijdplan en bestel online.",
+    "add_custom_item": "+ Aangepast artikel toevoegen",
+    "add_custom_name_placeholder": "Artikelnaam",
+    "add_custom_qty_placeholder": "Hoeveelheid (optioneel)",
+    "add_custom_unit_placeholder": "Eenheid, bijv. kg, kopje (optioneel)",
+    "add_custom_save": "Toevoegen",
+    "add_custom_cancel": "Annuleren",
+    "error_add": "Kon dat artikel niet toevoegen. Probeer alstublieft opnieuw.",
+    "error_remove": "Kon dat artikel niet verwijderen. Probeer alstublieft opnieuw.",
+    "error_toggle": "Kon dat artikel niet bijwerken. Probeer alstublieft opnieuw."
   },
   "profile": {
     "title": "Profiel",

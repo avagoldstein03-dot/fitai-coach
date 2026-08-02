@@ -1131,7 +1131,19 @@
     "cat_grains": "Getreide & Kohlenhydrate",
     "cat_dairy": "Milchprodukte & Eier",
     "cat_pantry": "Speisekammer & Würzmittel",
-    "share_heading": "🛒 Meine Einkaufsliste"
+    "share_heading": "🛒 Meine Einkaufsliste",
+    "cat_other": "Sonstiges",
+    "premium_title": "Einkaufsliste, verwaltet",
+    "premium_sub": "Upgrade durchführen, um automatisch eine kategorisierte Einkaufsliste aus Ihrem Mahlzeitenplan zu erstellen und online zu bestellen.",
+    "add_custom_item": "+ Benutzerdefiniertes Element hinzufügen",
+    "add_custom_name_placeholder": "Artikelname",
+    "add_custom_qty_placeholder": "Menge (optional)",
+    "add_custom_unit_placeholder": "Einheit, z. B. kg, Tasse (optional)",
+    "add_custom_save": "Hinzufügen",
+    "add_custom_cancel": "Abbrechen",
+    "error_add": "Artikel konnte nicht hinzugefügt werden. Bitte versuchen Sie es erneut.",
+    "error_remove": "Artikel konnte nicht entfernt werden. Bitte versuchen Sie es erneut.",
+    "error_toggle": "Artikel konnte nicht aktualisiert werden. Bitte versuchen Sie es erneut."
   },
   "profile": {
     "title": "Profil",

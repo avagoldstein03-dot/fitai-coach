@@ -1131,7 +1131,19 @@
     "cat_grains": "Grãos e Carboidratos",
     "cat_dairy": "Laticínios e Ovos",
     "cat_pantry": "Despensa e Condimentos",
-    "share_heading": "🛒 Minha Lista de Compras"
+    "share_heading": "🛒 Minha Lista de Compras",
+    "cat_other": "Outro",
+    "premium_title": "Lista de Compras, Resolvida",
+    "premium_sub": "Atualize para gerar automaticamente uma lista de compras categorizada a partir do seu plano de refeições e peça online.",
+    "add_custom_item": "+ Adicionar Item Personalizado",
+    "add_custom_name_placeholder": "Nome do item",
+    "add_custom_qty_placeholder": "Quantidade (opcional)",
+    "add_custom_unit_placeholder": "Unidade, ex: kg, xícara (opcional)",
+    "add_custom_save": "Adicionar",
+    "add_custom_cancel": "Cancelar",
+    "error_add": "Não foi possível adicionar esse item. Tente novamente.",
+    "error_remove": "Não foi possível remover esse item. Tente novamente.",
+    "error_toggle": "Não foi possível atualizar esse item. Tente novamente."
   },
   "profile": {
     "title": "Perfil",

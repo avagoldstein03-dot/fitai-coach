@@ -1131,7 +1131,19 @@
     "cat_grains": "Graan en koolhidrate",
     "cat_dairy": "Suiwelings- en eierproduk",
     "cat_pantry": "Pantry en kruideringe",
-    "share_heading": "🛒 My inkopslyste"
+    "share_heading": "🛒 My inkopslyste",
+    "cat_other": "Ander",
+    "premium_title": "Inkopielys, Hanteer",
+    "premium_sub": "Opgradeer om outomaties 'n gekategoriseerde inkopielys van jou maaltydplan te genereer en dit aanlyn te bestel.",
+    "add_custom_item": "+ Voeg Aangepaste Item By",
+    "add_custom_name_placeholder": "Itemnaam",
+    "add_custom_qty_placeholder": "Hoeveelheid (opsioneel)",
+    "add_custom_unit_placeholder": "Eenheid, bv. kg, koppie (opsioneel)",
+    "add_custom_save": "Voeg By",
+    "add_custom_cancel": "Kanselleer",
+    "error_add": "Kon daardie item nie byvoeg nie. Probeer asseblief weer.",
+    "error_remove": "Kon daardie item nie verwyder nie. Probeer asseblief weer.",
+    "error_toggle": "Kon daardie item nie opdateer nie. Probeer asseblief weer."
   },
   "profile": {
     "title": "Profiel",
