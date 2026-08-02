@@ -825,7 +825,20 @@
     "dosage": "劑量",
     "when": "何時",
     "shop_amazon": "在 Amazon 購物",
-    "error_amazon": "無法開啟 Amazon。"
+    "error_amazon": "無法開啟 Amazon。",
+    "my_stack_title": "我的組合",
+    "my_stack_empty": "您還沒有添加任何補充劑。從下面的建議中選擇一個，或添加您自己的。",
+    "add_to_stack": "+ 添加到組合",
+    "add_custom": "+ 添加自訂補充劑",
+    "add_custom_title": "添加自訂補充劑",
+    "recommendations_title": "推薦",
+    "name_label": "名稱",
+    "dosage_label": "劑量",
+    "frequency_label": "頻率",
+    "reason_optional": "備註（可選）",
+    "error_add": "添加補充劑失敗",
+    "error_edit": "更新補充劑失敗",
+    "error_delete": "移除補充劑失敗"
   },
   "nutrition": {
     "title": "營養",

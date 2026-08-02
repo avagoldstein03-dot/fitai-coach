@@ -825,7 +825,20 @@
     "dosage": "Dosaggio",
     "when": "Quando",
     "shop_amazon": "Acquista su Amazon",
-    "error_amazon": "Impossibile aprire Amazon."
+    "error_amazon": "Impossibile aprire Amazon.",
+    "my_stack_title": "Il Mio Stack",
+    "my_stack_empty": "Non hai ancora aggiunto nessun integratore. Aggiungine uno dalle raccomandazioni qui sotto o crea il tuo.",
+    "add_to_stack": "+ Aggiungi allo Stack",
+    "add_custom": "+ Aggiungi Integratore Personalizzato",
+    "add_custom_title": "Aggiungi Integratore Personalizzato",
+    "recommendations_title": "Raccomandazioni",
+    "name_label": "Nome",
+    "dosage_label": "Dosaggio",
+    "frequency_label": "Frequenza",
+    "reason_optional": "Note (opzionale)",
+    "error_add": "Impossibile aggiungere l'integratore",
+    "error_edit": "Impossibile aggiornare l'integratore",
+    "error_delete": "Impossibile rimuovere l'integratore"
   },
   "nutrition": {
     "title": "Nutrizione",

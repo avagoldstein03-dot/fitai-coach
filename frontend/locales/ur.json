@@ -825,7 +825,20 @@
     "dosage": "خوراک",
     "when": "کب",
     "shop_amazon": "Amazon پر خریدیں",
-    "error_amazon": "Amazon نہیں کھول سکا۔"
+    "error_amazon": "Amazon نہیں کھول سکا۔",
+    "my_stack_title": "میرا اسٹیک",
+    "my_stack_empty": "آپ نے ابھی کوئی سپلیمنٹ شامل نہیں کیا۔ نیچے دی گئی تجاویز سے کوئی شامل کریں، یا اپنا خود شامل کریں۔",
+    "add_to_stack": "+ اسٹیک میں شامل کریں",
+    "add_custom": "+ کسٹم سپلیمنٹ شامل کریں",
+    "add_custom_title": "کسٹم سپلیمنٹ شامل کریں",
+    "recommendations_title": "تجاویز",
+    "name_label": "نام",
+    "dosage_label": "خوراک",
+    "frequency_label": "تعدد",
+    "reason_optional": "نوٹس (اختیاری)",
+    "error_add": "سپلیمنٹ شامل کرنے میں ناکام",
+    "error_edit": "سپلیمنٹ میں ترمیم کرنے میں ناکام",
+    "error_delete": "سپلیمنٹ ہٹانے میں ناکام"
   },
   "nutrition": {
     "title": "غذائیت",

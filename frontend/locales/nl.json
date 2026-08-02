@@ -825,7 +825,20 @@
     "dosage": "Dosering",
     "when": "Wanneer",
     "shop_amazon": "Koop op Amazon",
-    "error_amazon": "Kon Amazon niet openen."
+    "error_amazon": "Kon Amazon niet openen.",
+    "my_stack_title": "Mijn Stack",
+    "my_stack_empty": "Je hebt nog geen supplementen toegevoegd. Voeg er een toe uit de aanbevelingen hieronder, of voeg je eigen toe.",
+    "add_to_stack": "+ Toevoegen aan Stack",
+    "add_custom": "+ Aangepast Supplement Toevoegen",
+    "add_custom_title": "Aangepast Supplement Toevoegen",
+    "recommendations_title": "Aanbevelingen",
+    "name_label": "Naam",
+    "dosage_label": "Dosering",
+    "frequency_label": "Frequentie",
+    "reason_optional": "Opmerkingen (optioneel)",
+    "error_add": "Supplement kon niet worden toegevoegd",
+    "error_edit": "Supplement kon niet worden bijgewerkt",
+    "error_delete": "Supplement kon niet worden verwijderd"
   },
   "nutrition": {
     "title": "Voeding",

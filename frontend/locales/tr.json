@@ -825,7 +825,20 @@
     "dosage": "Doz",
     "when": "Ne Zaman",
     "shop_amazon": "Amazon'da Satın Al",
-    "error_amazon": "Amazon açılamadı."
+    "error_amazon": "Amazon açılamadı.",
+    "my_stack_title": "Benim Takviyelerim",
+    "my_stack_empty": "Henüz hiç takviye eklemediniz. Aşağıdaki önerilerden birini ekleyin veya kendi takviyenizi ekleyin.",
+    "add_to_stack": "+ Takviye Ekle",
+    "add_custom": "+ Özel Takviye Ekle",
+    "add_custom_title": "Özel Takviye Ekle",
+    "recommendations_title": "Öneriler",
+    "name_label": "Ad",
+    "dosage_label": "Doz",
+    "frequency_label": "Sıklık",
+    "reason_optional": "Notlar (isteğe bağlı)",
+    "error_add": "Takviye eklenemedi",
+    "error_edit": "Takviye güncellenemedi",
+    "error_delete": "Takviye kaldırılamadı"
   },
   "nutrition": {
     "title": "Beslenme",

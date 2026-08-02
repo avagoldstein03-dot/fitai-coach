@@ -825,7 +825,20 @@
     "dosage": "用量",
     "when": "何时",
     "shop_amazon": "在亚马逊购买",
-    "error_amazon": "无法打开亚马逊。"
+    "error_amazon": "无法打开亚马逊。",
+    "my_stack_title": "我的补剂栈",
+    "my_stack_empty": "你还没有添加任何补剂。从下面的推荐中选择一个，或添加你自己的补剂。",
+    "add_to_stack": "+ 添加到补剂栈",
+    "add_custom": "+ 添加自定义补剂",
+    "add_custom_title": "添加自定义补剂",
+    "recommendations_title": "推荐",
+    "name_label": "名称",
+    "dosage_label": "剂量",
+    "frequency_label": "频率",
+    "reason_optional": "备注（可选）",
+    "error_add": "添加补剂失败",
+    "error_edit": "更新补剂失败",
+    "error_delete": "删除补剂失败"
   },
   "nutrition": {
     "title": "营养",

@@ -825,7 +825,20 @@
     "dosage": "Dosering",
     "when": "När",
     "shop_amazon": "Handla på Amazon",
-    "error_amazon": "Kunde inte öppna Amazon."
+    "error_amazon": "Kunde inte öppna Amazon.",
+    "my_stack_title": "Min stack",
+    "my_stack_empty": "Du har inte lagt till några tillskott ännu. Lägg till ett från rekommendationerna nedan, eller lägg till ditt eget.",
+    "add_to_stack": "+ Lägg till i stack",
+    "add_custom": "+ Lägg till eget tillskott",
+    "add_custom_title": "Lägg till eget tillskott",
+    "recommendations_title": "Rekommendationer",
+    "name_label": "Namn",
+    "dosage_label": "Dos",
+    "frequency_label": "Frekvens",
+    "reason_optional": "Anteckningar (valfritt)",
+    "error_add": "Kunde inte lägga till tillskott",
+    "error_edit": "Kunde inte uppdatera tillskott",
+    "error_delete": "Kunde inte ta bort tillskott"
   },
   "nutrition": {
     "title": "Nutrition",

@@ -825,7 +825,20 @@
     "dosage": "Дозирање",
     "when": "Када",
     "shop_amazon": "Куповање на Амазону",
-    "error_amazon": "Nije moguće otvoriti Amazon."
+    "error_amazon": "Nije moguće otvoriti Amazon.",
+    "my_stack_title": "Moj Stack",
+    "my_stack_empty": "Niste još dodali nikakve suplementa. Dodajte jedan od preporuka ispod ili dodajte vlastiti.",
+    "add_to_stack": "+ Dodaj u Stack",
+    "add_custom": "+ Dodaj Prilagođeni Suplement",
+    "add_custom_title": "Dodaj Prilagođeni Suplement",
+    "recommendations_title": "Preporuke",
+    "name_label": "Naziv",
+    "dosage_label": "Doza",
+    "frequency_label": "Učestalost",
+    "reason_optional": "Napomene (izbjeglivo)",
+    "error_add": "Neuspješno dodavanje suplementa",
+    "error_edit": "Neuspješna ažuriranja suplementa",
+    "error_delete": "Neuspješno uklanjanje suplementa"
   },
   "nutrition": {
     "title": "Нутриција",

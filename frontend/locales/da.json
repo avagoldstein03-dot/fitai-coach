@@ -825,7 +825,20 @@
     "dosage": "Dosering",
     "when": "Hvornår",
     "shop_amazon": "Shop på Amazon",
-    "error_amazon": "Kunne ikke åbne Amazon."
+    "error_amazon": "Kunne ikke åbne Amazon.",
+    "my_stack_title": "Mit Stack",
+    "my_stack_empty": "Du har ikke tilføjet nogen kosttilskud endnu. Tilføj et fra anbefalingerne nedenfor, eller tilføj dit eget.",
+    "add_to_stack": "+ Tilføj til Stack",
+    "add_custom": "+ Tilføj brugerdefineret kosttilskud",
+    "add_custom_title": "Tilføj brugerdefineret kosttilskud",
+    "recommendations_title": "Anbefalinger",
+    "name_label": "Navn",
+    "dosage_label": "Dosis",
+    "frequency_label": "Hyppighed",
+    "reason_optional": "Noter (valgfrit)",
+    "error_add": "Kunne ikke tilføje kosttilskud",
+    "error_edit": "Kunne ikke opdatere kosttilskud",
+    "error_delete": "Kunne ikke fjerne kosttilskud"
   },
   "nutrition": {
     "title": "Ernæring",

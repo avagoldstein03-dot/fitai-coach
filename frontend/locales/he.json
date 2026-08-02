@@ -825,7 +825,20 @@
     "dosage": "מינון",
     "when": "מתי",
     "shop_amazon": "קנה ב-Amazon",
-    "error_amazon": "לא הצלחנו לפתוח את אמזון."
+    "error_amazon": "לא הצלחנו לפתוח את אמזון.",
+    "my_stack_title": "הערמה שלי",
+    "my_stack_empty": "עדיין לא הוספת תוספים. הוסף אחד מההמלצות להלן, או הוסף שלך.",
+    "add_to_stack": "+ הוסף להערמה",
+    "add_custom": "+ הוסף תוסף מותאם אישית",
+    "add_custom_title": "הוספת תוסף מותאם אישית",
+    "recommendations_title": "המלצות",
+    "name_label": "שם",
+    "dosage_label": "מינון",
+    "frequency_label": "תדירות",
+    "reason_optional": "הערות (אופציונלי)",
+    "error_add": "הוספת התוסף נכשלה",
+    "error_edit": "עדכון התוסף נכשל",
+    "error_delete": "הסרת התוסף נכשלה"
   },
   "nutrition": {
     "title": "תזונה",

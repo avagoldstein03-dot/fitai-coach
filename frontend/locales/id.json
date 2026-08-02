@@ -825,7 +825,20 @@
     "dosage": "Dosis",
     "when": "Kapan",
     "shop_amazon": "Belanja di Amazon",
-    "error_amazon": "Tidak dapat membuka Amazon."
+    "error_amazon": "Tidak dapat membuka Amazon.",
+    "my_stack_title": "Stack Saya",
+    "my_stack_empty": "Anda belum menambahkan suplemen apa pun. Tambahkan dari rekomendasi di bawah, atau tambahkan suplemen Anda sendiri.",
+    "add_to_stack": "+ Tambah ke Stack",
+    "add_custom": "+ Tambah Suplemen Khusus",
+    "add_custom_title": "Tambah Suplemen Khusus",
+    "recommendations_title": "Rekomendasi",
+    "name_label": "Nama",
+    "dosage_label": "Dosis",
+    "frequency_label": "Frekuensi",
+    "reason_optional": "Catatan (opsional)",
+    "error_add": "Gagal menambahkan suplemen",
+    "error_edit": "Gagal memperbarui suplemen",
+    "error_delete": "Gagal menghapus suplemen"
   },
   "nutrition": {
     "title": "Nutrisi",

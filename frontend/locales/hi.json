@@ -825,7 +825,20 @@
     "dosage": "खुराक",
     "when": "कब",
     "shop_amazon": "Amazon पर खरीदारी करें",
-    "error_amazon": "Amazon खोल नहीं सकते।"
+    "error_amazon": "Amazon खोल नहीं सकते।",
+    "my_stack_title": "मेरा स्टैक",
+    "my_stack_empty": "आपने अभी कोई सप्लीमेंट नहीं जोड़ा है। नीचे दिए गए सुझावों में से एक जोड़ें, या अपना स्वयं का जोड़ें।",
+    "add_to_stack": "+ स्टैक में जोड़ें",
+    "add_custom": "+ कस्टम सप्लीमेंट जोड़ें",
+    "add_custom_title": "कस्टम सप्लीमेंट जोड़ें",
+    "recommendations_title": "सुझाव",
+    "name_label": "नाम",
+    "dosage_label": "खुराक",
+    "frequency_label": "आवृत्ति",
+    "reason_optional": "नोट्स (वैकल्पिक)",
+    "error_add": "सप्लीमेंट जोड़ने में विफल",
+    "error_edit": "सप्लीमेंट अपडेट करने में विफल",
+    "error_delete": "सप्लीमेंट हटाने में विफल"
   },
   "nutrition": {
     "title": "पोषण",

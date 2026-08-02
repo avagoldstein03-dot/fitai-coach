@@ -825,7 +825,20 @@
     "dosage": "Dosering",
     "when": "Wanneer",
     "shop_amazon": "Koop op Amazon",
-    "error_amazon": "Kon nie Amazon oopmaak nie."
+    "error_amazon": "Kon nie Amazon oopmaak nie.",
+    "my_stack_title": "My Stack",
+    "my_stack_empty": "Jy het nog geen aanvullings bygevoeg nie. Voeg een by vanaf die aanbevelings hieronder, of voeg jou eie by.",
+    "add_to_stack": "+ Voeg by Stack",
+    "add_custom": "+ Voeg Pasgemaakte Aanvulling by",
+    "add_custom_title": "Voeg Pasgemaakte Aanvulling by",
+    "recommendations_title": "Aanbevelings",
+    "name_label": "Naam",
+    "dosage_label": "Dosis",
+    "frequency_label": "Frekwensie",
+    "reason_optional": "Notas (opsioneel)",
+    "error_add": "Kon nie aanvulling bygevoeg nie",
+    "error_edit": "Kon nie aanvulling opdateer nie",
+    "error_delete": "Kon nie aanvulling verwyder nie"
   },
   "nutrition": {
     "title": "Voeding",

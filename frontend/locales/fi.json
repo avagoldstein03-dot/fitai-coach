@@ -825,7 +825,20 @@
     "dosage": "Annostus",
     "when": "Milloin",
     "shop_amazon": "Osta Amazonissa",
-    "error_amazon": "Amazon-linkistä avaaminen epäonnistui."
+    "error_amazon": "Amazon-linkistä avaaminen epäonnistui.",
+    "my_stack_title": "Minun Stackini",
+    "my_stack_empty": "Et ole vielä lisännyt mitään lisäravinteita. Lisää jokin alla olevista suosituksista tai lisää omasi.",
+    "add_to_stack": "+ Lisää Stackiin",
+    "add_custom": "+ Lisää Oma Lisäravinne",
+    "add_custom_title": "Lisää Oma Lisäravinne",
+    "recommendations_title": "Suositukset",
+    "name_label": "Nimi",
+    "dosage_label": "Annostus",
+    "frequency_label": "Toistuvuus",
+    "reason_optional": "Muistiinpanot (valinnainen)",
+    "error_add": "Lisäravinnon lisääminen epäonnistui",
+    "error_edit": "Lisäravinnon päivittäminen epäonnistui",
+    "error_delete": "Lisäravinnon poistaminen epäonnistui"
   },
   "nutrition": {
     "title": "Ravitsemus",

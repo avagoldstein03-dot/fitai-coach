@@ -825,7 +825,20 @@
     "dosage": "Dosage",
     "when": "Kailan",
     "shop_amazon": "Mamili sa Amazon",
-    "error_amazon": "Hindi makabuksan ang Amazon."
+    "error_amazon": "Hindi makabuksan ang Amazon.",
+    "my_stack_title": "Ang Aking Stack",
+    "my_stack_empty": "Wala kang naidagdag na supplements pa. Magdagdag ng isa mula sa mga rekomendasyon sa ibaba, o magdagdag ng iyong sarili.",
+    "add_to_stack": "+ Idagdag sa Stack",
+    "add_custom": "+ Magdagdag ng Custom Supplement",
+    "add_custom_title": "Magdagdag ng Custom Supplement",
+    "recommendations_title": "Mga Rekomendasyon",
+    "name_label": "Pangalan",
+    "dosage_label": "Dosage",
+    "frequency_label": "Frequency",
+    "reason_optional": "Mga Tala (opsyonal)",
+    "error_add": "Nabigong magdagdag ng supplement",
+    "error_edit": "Nabigong i-update ang supplement",
+    "error_delete": "Nabigong alisin ang supplement"
   },
   "nutrition": {
     "title": "Nutrition",

@@ -825,7 +825,20 @@
     "dosage": "Dos",
     "when": "Bila",
     "shop_amazon": "Beli di Amazon",
-    "error_amazon": "Tidak dapat membuka Amazon."
+    "error_amazon": "Tidak dapat membuka Amazon.",
+    "my_stack_title": "Tindanan Saya",
+    "my_stack_empty": "Anda belum menambahkan sebarang suplemen. Tambahkan satu daripada cadangan di bawah, atau tambahkan suplemen anda sendiri.",
+    "add_to_stack": "+ Tambah ke Tindanan",
+    "add_custom": "+ Tambah Suplemen Tersuai",
+    "add_custom_title": "Tambah Suplemen Tersuai",
+    "recommendations_title": "Cadangan",
+    "name_label": "Nama",
+    "dosage_label": "Dos",
+    "frequency_label": "Kekerapan",
+    "reason_optional": "Nota (pilihan)",
+    "error_add": "Gagal menambahkan suplemen",
+    "error_edit": "Gagal mengemaskini suplemen",
+    "error_delete": "Gagal membuang suplemen"
   },
   "nutrition": {
     "title": "Nutrisi",

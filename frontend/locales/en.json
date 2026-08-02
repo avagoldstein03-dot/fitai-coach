@@ -856,7 +856,20 @@
     "dosage": "Dosage",
     "when": "When",
     "shop_amazon": "Shop on Amazon",
-    "error_amazon": "Could not open Amazon."
+    "error_amazon": "Could not open Amazon.",
+    "my_stack_title": "My Stack",
+    "my_stack_empty": "You haven't added any supplements yet. Add one from the recommendations below, or add your own.",
+    "add_to_stack": "+ Add to Stack",
+    "add_custom": "+ Add Custom Supplement",
+    "add_custom_title": "Add Custom Supplement",
+    "recommendations_title": "Recommendations",
+    "name_label": "Name",
+    "dosage_label": "Dosage",
+    "frequency_label": "Frequency",
+    "reason_optional": "Notes (optional)",
+    "error_add": "Failed to add supplement",
+    "error_edit": "Failed to update supplement",
+    "error_delete": "Failed to remove supplement"
   },
   "nutrition": {
     "title": "Nutrition",

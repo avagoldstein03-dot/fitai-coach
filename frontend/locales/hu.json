@@ -825,7 +825,20 @@
     "dosage": "Dózis",
     "when": "Mikor",
     "shop_amazon": "Vásárlás az Amazonon",
-    "error_amazon": "Nem sikerült megnyitni az Amazont."
+    "error_amazon": "Nem sikerült megnyitni az Amazont.",
+    "my_stack_title": "Saját kiegészítők",
+    "my_stack_empty": "Még nem adtál hozzá semmilyen kiegészítőt. Adj hozzá egyet az alábbi ajánlások közül, vagy adj hozzá sajátat.",
+    "add_to_stack": "+ Hozzáadás a kiegészítőkhöz",
+    "add_custom": "+ Egyéni kiegészítő hozzáadása",
+    "add_custom_title": "Egyéni kiegészítő hozzáadása",
+    "recommendations_title": "Ajánlások",
+    "name_label": "Név",
+    "dosage_label": "Adagolás",
+    "frequency_label": "Gyakoriság",
+    "reason_optional": "Megjegyzések (nem kötelező)",
+    "error_add": "Nem sikerült a kiegészítő hozzáadása",
+    "error_edit": "Nem sikerült a kiegészítő frissítése",
+    "error_delete": "Nem sikerült a kiegészítő eltávolítása"
   },
   "nutrition": {
     "title": "Táplálkozás",

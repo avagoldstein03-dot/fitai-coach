@@ -825,7 +825,20 @@
     "dosage": "ডোজ",
     "when": "কখন",
     "shop_amazon": "Amazon এ কিনুন",
-    "error_amazon": "অ্যামাজন খুলতে পারেনি।"
+    "error_amazon": "অ্যামাজন খুলতে পারেনি।",
+    "my_stack_title": "আমার স্ট্যাক",
+    "my_stack_empty": "আপনি এখনও কোনো সাপ্লিমেন্ট যোগ করেননি। নীচের সুপারিশগুলি থেকে একটি যোগ করুন, বা আপনার নিজস্ব যোগ করুন।",
+    "add_to_stack": "+ স্ট্যাকে যোগ করুন",
+    "add_custom": "+ কাস্টম সাপ্লিমেন্ট যোগ করুন",
+    "add_custom_title": "কাস্টম সাপ্লিমেন্ট যোগ করুন",
+    "recommendations_title": "সুপারিশ",
+    "name_label": "নাম",
+    "dosage_label": "ডোজ",
+    "frequency_label": "ফ্রিকোয়েন্সি",
+    "reason_optional": "নোট (ঐচ্ছিক)",
+    "error_add": "সাপ্লিমেন্ট যোগ করতে ব্যর্থ",
+    "error_edit": "সাপ্লিমেন্ট আপডেট করতে ব্যর্থ",
+    "error_delete": "সাপ্লিমেন্ট সরাতে ব্যর্থ"
   },
   "nutrition": {
     "title": "পুষ্টি",

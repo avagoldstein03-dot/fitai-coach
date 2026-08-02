@@ -825,7 +825,20 @@
     "dosage": "Dawkowanie",
     "when": "Kiedy",
     "shop_amazon": "Kupuj na Amazonie",
-    "error_amazon": "Nie udało się otworzyć Amazon."
+    "error_amazon": "Nie udało się otworzyć Amazon.",
+    "my_stack_title": "Mój zestaw",
+    "my_stack_empty": "Nie dodałeś jeszcze żadnych suplementów. Dodaj jeden z poniższych rekomendacji lub dodaj własny.",
+    "add_to_stack": "+ Dodaj do zestawu",
+    "add_custom": "+ Dodaj niestandardowy suplement",
+    "add_custom_title": "Dodaj niestandardowy suplement",
+    "recommendations_title": "Rekomendacje",
+    "name_label": "Nazwa",
+    "dosage_label": "Dawka",
+    "frequency_label": "Częstotliwość",
+    "reason_optional": "Notatki (opcjonalnie)",
+    "error_add": "Nie udało się dodać suplementu",
+    "error_edit": "Nie udało się zaktualizować suplementu",
+    "error_delete": "Nie udało się usunąć suplementu"
   },
   "nutrition": {
     "title": "Odżywianie",

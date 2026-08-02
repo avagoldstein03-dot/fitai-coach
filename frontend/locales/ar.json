@@ -825,7 +825,20 @@
     "dosage": "الجرعة",
     "when": "متى",
     "shop_amazon": "تسوق على أمازون",
-    "error_amazon": "لم يتمكن من فتح Amazon."
+    "error_amazon": "لم يتمكن من فتح Amazon.",
+    "my_stack_title": "مكدسي",
+    "my_stack_empty": "لم تضف أي مكملات بعد. أضف واحدة من التوصيات أدناه، أو أضف الخاص بك.",
+    "add_to_stack": "+ إضافة إلى المكدس",
+    "add_custom": "+ إضافة مكمل مخصص",
+    "add_custom_title": "إضافة مكمل مخصص",
+    "recommendations_title": "التوصيات",
+    "name_label": "الاسم",
+    "dosage_label": "الجرعة",
+    "frequency_label": "التكرار",
+    "reason_optional": "ملاحظات (اختياري)",
+    "error_add": "فشل في إضافة المكمل",
+    "error_edit": "فشل في تحديث المكمل",
+    "error_delete": "فشل في إزالة المكمل"
   },
   "nutrition": {
     "title": "التغذية",

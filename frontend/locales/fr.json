@@ -825,7 +825,20 @@
     "dosage": "Dosage",
     "when": "Quand",
     "shop_amazon": "Acheter sur Amazon",
-    "error_amazon": "Impossible d'ouvrir Amazon."
+    "error_amazon": "Impossible d'ouvrir Amazon.",
+    "my_stack_title": "Ma Stack",
+    "my_stack_empty": "Vous n'avez pas encore ajouté de suppléments. Ajoutez-en un parmi les recommandations ci-dessous, ou ajoutez le vôtre.",
+    "add_to_stack": "+ Ajouter à la Stack",
+    "add_custom": "+ Ajouter un Supplément Personnalisé",
+    "add_custom_title": "Ajouter un Supplément Personnalisé",
+    "recommendations_title": "Recommandations",
+    "name_label": "Nom",
+    "dosage_label": "Dosage",
+    "frequency_label": "Fréquence",
+    "reason_optional": "Notes (facultatif)",
+    "error_add": "Impossible d'ajouter le supplément",
+    "error_edit": "Impossible de mettre à jour le supplément",
+    "error_delete": "Impossible de supprimer le supplément"
   },
   "nutrition": {
     "title": "Nutrition",

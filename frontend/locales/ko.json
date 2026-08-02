@@ -825,7 +825,20 @@
     "dosage": "용량",
     "when": "시기",
     "shop_amazon": "Amazon에서 구매",
-    "error_amazon": "Amazon을 열 수 없습니다."
+    "error_amazon": "Amazon을 열 수 없습니다.",
+    "my_stack_title": "내 스택",
+    "my_stack_empty": "아직 추가한 보충제가 없습니다. 아래 추천 목록에서 추가하거나 직접 추가하세요.",
+    "add_to_stack": "+ 스택에 추가",
+    "add_custom": "+ 커스텀 보충제 추가",
+    "add_custom_title": "커스텀 보충제 추가",
+    "recommendations_title": "추천",
+    "name_label": "이름",
+    "dosage_label": "용량",
+    "frequency_label": "빈도",
+    "reason_optional": "메모 (선택사항)",
+    "error_add": "보충제 추가에 실패했습니다",
+    "error_edit": "보충제 업데이트에 실패했습니다",
+    "error_delete": "보충제 제거에 실패했습니다"
   },
   "nutrition": {
     "title": "영양",

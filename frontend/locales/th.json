@@ -825,7 +825,20 @@
     "dosage": "ปริมาณ",
     "when": "เมื่อไร",
     "shop_amazon": "ซื้อบน Amazon",
-    "error_amazon": "ไม่สามารถเปิด Amazon"
+    "error_amazon": "ไม่สามารถเปิด Amazon",
+    "my_stack_title": "สแต็กของฉัน",
+    "my_stack_empty": "คุณยังไม่ได้เพิ่มซัพพลิเมนต์ใดๆ เลือกจากคำแนะนำด้านล่าง หรือเพิ่มซัพพลิเมนต์ของคุณเอง",
+    "add_to_stack": "+ เพิ่มลงในสแต็ก",
+    "add_custom": "+ เพิ่มซัพพลิเมนต์ที่กำหนดเอง",
+    "add_custom_title": "เพิ่มซัพพลิเมนต์ที่กำหนดเอง",
+    "recommendations_title": "คำแนะนำ",
+    "name_label": "ชื่อ",
+    "dosage_label": "ปริมาณ",
+    "frequency_label": "ความถี่",
+    "reason_optional": "หมายเหตุ (ไม่บังคับ)",
+    "error_add": "ไม่สามารถเพิ่มซัพพลิเมนต์ได้",
+    "error_edit": "ไม่สามารถอัปเดตซัพพลิเมนต์ได้",
+    "error_delete": "ไม่สามารถลบซัพพลิเมนต์ได้"
   },
   "nutrition": {
     "title": "โภาคนา",

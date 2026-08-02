@@ -825,7 +825,20 @@
     "dosage": "Дозування",
     "when": "Коли",
     "shop_amazon": "Купити на Amazon",
-    "error_amazon": "Не вдалося відкрити Amazon."
+    "error_amazon": "Не вдалося відкрити Amazon.",
+    "my_stack_title": "Мій набір",
+    "my_stack_empty": "Ви ще не додали жодних добавок. Додайте одну з рекомендацій нижче або додайте свою власну.",
+    "add_to_stack": "+ Додати до набору",
+    "add_custom": "+ Додати власну добавку",
+    "add_custom_title": "Додати власну добавку",
+    "recommendations_title": "Рекомендації",
+    "name_label": "Назва",
+    "dosage_label": "Дозування",
+    "frequency_label": "Частота",
+    "reason_optional": "Примітки (необов'язково)",
+    "error_add": "Не вдалося додати добавку",
+    "error_edit": "Не вдалося оновити добавку",
+    "error_delete": "Не вдалося видалити добавку"
   },
   "nutrition": {
     "title": "Харчування",

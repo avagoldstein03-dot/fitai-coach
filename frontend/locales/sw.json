@@ -825,7 +825,20 @@
     "dosage": "Kiwango cha Matumizi",
     "when": "Lini",
     "shop_amazon": "Nunua kwenye Amazon",
-    "error_amazon": "Haikuweza kufungua Amazon."
+    "error_amazon": "Haikuweza kufungua Amazon.",
+    "my_stack_title": "Virutubishi Yangu",
+    "my_stack_empty": "Haujumlishi virutubishi vyovyote bado. Jumlisha moja kutoka kwenye mapendekezo yaliyopo, au jumlisha yako mwenyewe.",
+    "add_to_stack": "+ Jumlisha kwenye Virutubishi",
+    "add_custom": "+ Jumlisha Virutubishi Maalum",
+    "add_custom_title": "Jumlisha Virutubishi Maalum",
+    "recommendations_title": "Mapendekezo",
+    "name_label": "Jina",
+    "dosage_label": "Kiwango cha Dozi",
+    "frequency_label": "Mzunguko",
+    "reason_optional": "Maelezo (si lazima)",
+    "error_add": "Kukamatia virutubishi kumeshindwa",
+    "error_edit": "Kusasisha virutubishi kumeshindwa",
+    "error_delete": "Kuondoa virutubishi kumeshindwa"
   },
   "nutrition": {
     "title": "Nutirenda",

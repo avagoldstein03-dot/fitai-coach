@@ -825,7 +825,20 @@
     "dosage": "Liều lượng",
     "when": "Khi nào",
     "shop_amazon": "Mua trên Amazon",
-    "error_amazon": "Không thể mở Amazon."
+    "error_amazon": "Không thể mở Amazon.",
+    "my_stack_title": "Stack của tôi",
+    "my_stack_empty": "Bạn chưa thêm bất kỳ chất bổ sung nào. Thêm một từ các đề xuất dưới đây, hoặc thêm của riêng bạn.",
+    "add_to_stack": "+ Thêm vào Stack",
+    "add_custom": "+ Thêm chất bổ sung tùy chỉnh",
+    "add_custom_title": "Thêm chất bổ sung tùy chỉnh",
+    "recommendations_title": "Đề xuất",
+    "name_label": "Tên",
+    "dosage_label": "Liều lượng",
+    "frequency_label": "Tần suất",
+    "reason_optional": "Ghi chú (tùy chọn)",
+    "error_add": "Không thể thêm chất bổ sung",
+    "error_edit": "Không thể cập nhật chất bổ sung",
+    "error_delete": "Không thể xóa chất bổ sung"
   },
   "nutrition": {
     "title": "Dinh dưỡng",

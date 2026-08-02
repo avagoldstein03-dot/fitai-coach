@@ -825,7 +825,20 @@
     "dosage": "用量",
     "when": "いつ",
     "shop_amazon": "Amazon で購入",
-    "error_amazon": "Amazonを開くことができませんでした。"
+    "error_amazon": "Amazonを開くことができませんでした。",
+    "my_stack_title": "マイスタック",
+    "my_stack_empty": "まだサプリメントを追加していません。以下の推奨事項から追加するか、独自のサプリメントを追加してください。",
+    "add_to_stack": "+ スタックに追加",
+    "add_custom": "+ カスタムサプリメントを追加",
+    "add_custom_title": "カスタムサプリメントを追加",
+    "recommendations_title": "推奨事項",
+    "name_label": "名前",
+    "dosage_label": "用量",
+    "frequency_label": "頻度",
+    "reason_optional": "メモ（オプション）",
+    "error_add": "サプリメントの追加に失敗しました",
+    "error_edit": "サプリメントの更新に失敗しました",
+    "error_delete": "サプリメントの削除に失敗しました"
   },
   "nutrition": {
     "title": "栄養",

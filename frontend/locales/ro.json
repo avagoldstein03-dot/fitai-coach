@@ -825,7 +825,20 @@
     "dosage": "Doza",
     "when": "Cand",
     "shop_amazon": "Cumpara pe Amazon",
-    "error_amazon": "Nu s-a putut deschide Amazon."
+    "error_amazon": "Nu s-a putut deschide Amazon.",
+    "my_stack_title": "Stackul Meu",
+    "my_stack_empty": "Nu ai adăugat încă niciun supliment. Adaugă unul din recomandările de mai jos sau adaugă-ți propriul supliment.",
+    "add_to_stack": "+ Adaugă la Stack",
+    "add_custom": "+ Adaugă Supliment Personalizat",
+    "add_custom_title": "Adaugă Supliment Personalizat",
+    "recommendations_title": "Recomandări",
+    "name_label": "Nume",
+    "dosage_label": "Doză",
+    "frequency_label": "Frecvență",
+    "reason_optional": "Note (opțional)",
+    "error_add": "Nu s-a putut adăuga suplimentul",
+    "error_edit": "Nu s-a putut actualiza suplimentul",
+    "error_delete": "Nu s-a putut elimina suplimentul"
   },
   "nutrition": {
     "title": "Nutritie",

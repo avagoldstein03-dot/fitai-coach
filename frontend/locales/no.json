@@ -825,7 +825,20 @@
     "dosage": "Dosering",
     "when": "Når",
     "shop_amazon": "Handle på Amazon",
-    "error_amazon": "Kunne ikke åpne Amazon."
+    "error_amazon": "Kunne ikke åpne Amazon.",
+    "my_stack_title": "Min stabel",
+    "my_stack_empty": "Du har ikke lagt til noen tilskudd ennå. Legg til ett fra anbefalingene nedenfor, eller legg til ditt eget.",
+    "add_to_stack": "+ Legg til stabel",
+    "add_custom": "+ Legg til egendefinert tilskudd",
+    "add_custom_title": "Legg til egendefinert tilskudd",
+    "recommendations_title": "Anbefalinger",
+    "name_label": "Navn",
+    "dosage_label": "Dosering",
+    "frequency_label": "Hyppighet",
+    "reason_optional": "Notater (valgfritt)",
+    "error_add": "Kunne ikke legge til tilskudd",
+    "error_edit": "Kunne ikke oppdatere tilskudd",
+    "error_delete": "Kunne ikke fjerne tilskudd"
   },
   "nutrition": {
     "title": "Ernæring",

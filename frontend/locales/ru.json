@@ -825,7 +825,20 @@
     "dosage": "Дозировка",
     "when": "Когда",
     "shop_amazon": "Купить на Amazon",
-    "error_amazon": "Не удалось открыть Amazon."
+    "error_amazon": "Не удалось открыть Amazon.",
+    "my_stack_title": "Мой стек",
+    "my_stack_empty": "Вы еще не добавили ни одной добавки. Добавьте одну из рекомендаций ниже или добавьте свою.",
+    "add_to_stack": "+ Добавить в стек",
+    "add_custom": "+ Добавить пользовательскую добавку",
+    "add_custom_title": "Добавить пользовательскую добавку",
+    "recommendations_title": "Рекомендации",
+    "name_label": "Название",
+    "dosage_label": "Дозировка",
+    "frequency_label": "Частота",
+    "reason_optional": "Заметки (опционально)",
+    "error_add": "Не удалось добавить добавку",
+    "error_edit": "Не удалось обновить добавку",
+    "error_delete": "Не удалось удалить добавку"
   },
   "nutrition": {
     "title": "Питание",

@@ -825,7 +825,20 @@
     "dosage": "Dávka",
     "when": "Kdy",
     "shop_amazon": "Nakupovat na Amazonu",
-    "error_amazon": "Nelze otevřít Amazon."
+    "error_amazon": "Nelze otevřít Amazon.",
+    "my_stack_title": "Můj stack",
+    "my_stack_empty": "Zatím jste nepřidali žádné doplňky. Přidejte jeden z doporučení níže nebo přidejte vlastní.",
+    "add_to_stack": "+ Přidat do stacku",
+    "add_custom": "+ Přidat vlastní doplněk",
+    "add_custom_title": "Přidat vlastní doplněk",
+    "recommendations_title": "Doporučení",
+    "name_label": "Název",
+    "dosage_label": "Dávkování",
+    "frequency_label": "Frekvence",
+    "reason_optional": "Poznámky (volitelně)",
+    "error_add": "Nepodařilo se přidat doplněk",
+    "error_edit": "Nepodařilo se aktualizovat doplněk",
+    "error_delete": "Nepodařilo se odstranit doplněk"
   },
   "nutrition": {
     "title": "Výživa",
