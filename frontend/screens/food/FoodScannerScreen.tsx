@@ -8,65 +8,18 @@ import {
   Alert,
   Modal,
   TextInput,
-  Image,
   RefreshControl,
   StyleSheet,
 } from "react-native";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
-import * as ImagePicker from "expo-image-picker";
+import { useNavigation } from "@react-navigation/native";
 import * as Haptics from "expo-haptics";
 import axios from "axios";
 import { useTranslation } from "react-i18next";
 import { T } from "@/lib/theme";
-import { posthog, Events } from "@/lib/analytics";
+import { SwipeToDeleteRow } from "@/components/SwipeToDeleteRow";
 
 const API_URL = process.env.EXPO_PUBLIC_API_URL;
-
-interface DetectedFoodItem {
-  name: string;
-  quantity: number;
-  unit: string;
-  calories: number;
-  protein: number;
-  carbs: number;
-  fat: number;
-  fiber: number;
-  x: number;
-  y: number;
-}
-
-interface FoodAnalysisResult {
-  mealId: string;
-  foodAnalysis: {
-    foodName: string;
-    quantity: number;
-    unit: string;
-    calories: number;
-    protein: number;
-    carbs: number;
-    fat: number;
-    fiber: number;
-    confidenceScore: number;
-    items: DetectedFoodItem[];
-  };
-  meal: {
-    id: string;
-    createdAt: string;
-    totalCalories: number;
-    totalProtein: number;
-    totalCarbs: number;
-    totalFat: number;
-    foods: Array<{
-      id: string;
-      name: string;
-      calories: number;
-      protein: number;
-      carbs: number;
-      fat: number;
-      fiber: number;
-    }>;
-  };
-}
 
 interface MealHistoryResponse {
   stats: {
@@ -83,8 +36,23 @@ interface MealHistoryResponse {
     date: string;
     meals: Array<{
       id: string;
+      mealType: string;
       time: string;
-      foods: Array<{ name: string; calories: number }>;
+      foods: Array<{
+        id: string;
+        name: string;
+        quantity: number;
+        unit: string;
+        calories: number;
+        protein: number;
+        carbs: number;
+        fat: number;
+        fiber: number;
+        sugar?: number;
+        saturatedFat?: number;
+        sodium?: number;
+        cholesterol?: number;
+      }>;
       calories: number;
       protein: number;
       carbs: number;
@@ -124,71 +92,12 @@ const EMPTY_ITEM: ManualFoodItem = {
   cholesterol: "",
 };
 
-// Cal AI-style annotation pin component
-function FoodPin({ item }: { item: DetectedFoodItem; index: number }) {
-  const flipX = item.x > 0.58;
-  const flipY = item.y > 0.72;
-
-  return (
-    <View
-      style={[
-        styles.pinContainer,
-        {
-          left: `${item.x * 100}%` as any,
-          top: `${item.y * 100}%` as any,
-        },
-      ]}
-    >
-      <View style={styles.pinDot} />
-      <View
-        style={[
-          styles.pinCallout,
-          flipX ? { right: 18 } : { left: 18 },
-          flipY ? { bottom: 0 } : { top: -4 },
-        ]}
-      >
-        <Text style={styles.pinName} numberOfLines={2}>
-          {item.name}
-        </Text>
-        <Text style={styles.pinCalories}>{item.calories} kcal</Text>
-        <View style={styles.pinMacros}>
-          <Text style={styles.pinProtein}>P {Math.round(item.protein)}g</Text>
-          <Text style={styles.pinCarbs}>C {Math.round(item.carbs)}g</Text>
-          <Text style={styles.pinFat}>F {Math.round(item.fat)}g</Text>
-        </View>
-      </View>
-    </View>
-  );
-}
-
-function AnnotatedFoodImage({
-  imageUri,
-  items,
-}: {
-  imageUri: string;
-  items: DetectedFoodItem[];
-}) {
-  return (
-    <View style={styles.annotationContainer}>
-      <Image
-        source={{ uri: imageUri }}
-        style={styles.annotationImage}
-        resizeMode="cover"
-      />
-      <View style={styles.annotationOverlay} />
-      {items.map((item, i) => (
-        <FoodPin key={i} item={item} index={i} />
-      ))}
-    </View>
-  );
-}
-
 export default function FoodScannerScreen() {
+  const navigation = useNavigation() as any;
   const queryClient = useQueryClient();
   const { t } = useTranslation();
-  const [justLogged, setJustLogged] = useState<FoodAnalysisResult | null>(null);
-  const [scannedImageUri, setScannedImageUri] = useState<string | null>(null);
   const [manualModalVisible, setManualModalVisible] = useState(false);
+  const [editingMealId, setEditingMealId] = useState<string | null>(null);
   const [manualMealType, setManualMealType] = useState<typeof MEAL_TYPES[number]>("snack");
   const [manualItems, setManualItems] = useState<ManualFoodItem[]>([]);
   const [currentItem, setCurrentItem] = useState<ManualFoodItem>(EMPTY_ITEM);
@@ -200,29 +109,10 @@ export default function FoodScannerScreen() {
   const { data: historyData, refetch: refetchHistory, isRefetching: isRefetchingHistory } = useQuery({
     queryKey: ["mealHistory"],
     queryFn: async () => {
-      const response = await axios.get<MealHistoryResponse>(
+      const response = await axios.get<{ data: MealHistoryResponse }>(
         `${API_URL}/api/food/history?days=7`
       );
-      return response.data;
-    },
-  });
-
-  const { mutate: scanFood, isPending: isScanning } = useMutation({
-    mutationFn: async (base64: string) => {
-      const response = await axios.post<FoodAnalysisResult>(
-        `${API_URL}/api/food/scan`,
-        { base64 }
-      );
-      return response.data;
-    },
-    onSuccess: (data) => {
-      posthog.capture(Events.FOOD_SCAN_COMPLETED, { itemCount: data?.foodAnalysis?.items?.length ?? 0 });
-      setJustLogged(data);
-      refetchHistory();
-    },
-    onError: (error: any) => {
-      const message = error.response?.data?.message || t("food_scanner.error_scan");
-      Alert.alert(t("common.error"), message);
+      return response.data.data;
     },
   });
 
@@ -252,7 +142,7 @@ export default function FoodScannerScreen() {
 
   const { mutate: logManually, isPending: isLoggingManually } = useMutation({
     mutationFn: async () => {
-      const response = await axios.post(`${API_URL}/api/food/manual`, {
+      const payload = {
         mealType: manualMealType,
         items: manualItems.map((item) => ({
           foodName: item.foodName,
@@ -266,18 +156,26 @@ export default function FoodScannerScreen() {
           sodium: item.sodium ? Number(item.sodium) : undefined,
           cholesterol: item.cholesterol ? Number(item.cholesterol) : undefined,
         })),
-      });
+      };
+      const response = editingMealId
+        ? await axios.patch(`${API_URL}/api/food/history?id=${editingMealId}`, payload)
+        : await axios.post(`${API_URL}/api/food/manual`, payload);
       return response.data;
     },
     onSuccess: () => {
       Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success);
+      const wasEditing = !!editingMealId;
       setManualModalVisible(false);
       setManualItems([]);
       setCurrentItem(EMPTY_ITEM);
+      setEditingMealId(null);
       queryClient.invalidateQueries({ queryKey: ["mealHistory"] });
       queryClient.invalidateQueries({ queryKey: ["food-history"] });
       queryClient.invalidateQueries({ queryKey: ["dashboard"] });
-      Alert.alert(t("food_scanner.logged_title"), t("food_scanner.logged_msg"));
+      Alert.alert(
+        wasEditing ? t("food_scanner.updated_title") : t("food_scanner.logged_title"),
+        wasEditing ? t("food_scanner.updated_msg") : t("food_scanner.logged_msg")
+      );
     },
     onError: (error: any) => {
       const message = error.response?.data?.message || t("food_scanner.error_log");
@@ -285,55 +183,57 @@ export default function FoodScannerScreen() {
     },
   });
 
-  const launchPicker = async (useCamera: boolean) => {
-    try {
-      if (useCamera) {
-        const { status } = await ImagePicker.requestCameraPermissionsAsync();
-        if (status !== "granted") {
-          Alert.alert(t("food_scanner.permission_required"), t("food_scanner.camera_permission"));
-          return;
-        }
-      } else {
-        const { status } = await ImagePicker.requestMediaLibraryPermissionsAsync();
-        if (status !== "granted") {
-          Alert.alert(t("food_scanner.permission_required"), t("food_scanner.library_permission"));
-          return;
-        }
-      }
+  const { mutate: deleteMeal, isPending: isDeleting } = useMutation({
+    mutationFn: async (id: string) => {
+      await axios.delete(`${API_URL}/api/food/history?id=${id}`);
+    },
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ["mealHistory"] });
+      queryClient.invalidateQueries({ queryKey: ["food-history"] });
+      queryClient.invalidateQueries({ queryKey: ["dashboard"] });
+    },
+    onError: () => Alert.alert(t("common.error"), t("food_diary.error_delete")),
+  });
 
-      const result = useCamera
-        ? await ImagePicker.launchCameraAsync({
-            mediaTypes: ["images"] as any,
-            allowsEditing: true,
-            aspect: [4, 3],
-            quality: 0.8,
-            base64: true,
-          })
-        : await ImagePicker.launchImageLibraryAsync({
-            mediaTypes: ["images"] as any,
-            allowsEditing: true,
-            aspect: [4, 3],
-            quality: 0.8,
-            base64: true,
-          });
-
-      if (!result.canceled && result.assets[0].base64) {
-        setScannedImageUri(result.assets[0].uri);
-        setJustLogged(null);
-        scanFood(result.assets[0].base64);
-      }
-    } catch (error) {
-      Alert.alert(t("common.error"), t("food_scanner.error_pick_image"));
-    }
-  };
-
-  const pickImage = () => {
-    Alert.alert(t("food_scanner.log_meal_title"), t("food_scanner.log_meal_sources"), [
-      { text: t("food_scanner.take_photo"), onPress: () => launchPicker(true) },
-      { text: t("food_scanner.choose_library"), onPress: () => launchPicker(false) },
-      { text: t("food_scanner.enter_manually"), onPress: () => setManualModalVisible(true) },
-      { text: t("common.cancel"), style: "cancel" },
-    ]);
+  const handleEditMeal = (meal: {
+    id: string;
+    mealType: string;
+    foods: Array<{
+      name: string;
+      calories: number;
+      protein: number;
+      carbs: number;
+      fat: number;
+      fiber: number;
+      sugar?: number;
+      saturatedFat?: number;
+      sodium?: number;
+      cholesterol?: number;
+    }>;
+  }) => {
+    setEditingMealId(meal.id);
+    setManualMealType(
+      (MEAL_TYPES as readonly string[]).includes(meal.mealType)
+        ? (meal.mealType as typeof MEAL_TYPES[number])
+        : "snack"
+    );
+    setManualItems(
+      meal.foods.map((f) => ({
+        foodName: f.name,
+        calories: String(f.calories ?? ""),
+        protein: String(f.protein ?? ""),
+        carbs: String(f.carbs ?? ""),
+        fat: String(f.fat ?? ""),
+        fiber: String(f.fiber ?? ""),
+        sugar: f.sugar != null ? String(f.sugar) : "",
+        saturatedFat: f.saturatedFat != null ? String(f.saturatedFat) : "",
+        sodium: f.sodium != null ? String(f.sodium) : "",
+        cholesterol: f.cholesterol != null ? String(f.cholesterol) : "",
+      }))
+    );
+    setCurrentItem(EMPTY_ITEM);
+    setShowFullDetail(false);
+    setManualModalVisible(true);
   };
 
   const recentFoods = useMemo(() => {
@@ -391,7 +291,6 @@ export default function FoodScannerScreen() {
 
   const todaysData = historyData?.dailyData?.[0];
   const stats = historyData?.stats;
-  const detectedItems = justLogged?.foodAnalysis?.items ?? [];
 
   return (
     <ScrollView
@@ -440,27 +339,26 @@ export default function FoodScannerScreen() {
 
         {/* Scan Button */}
         <TouchableOpacity
-          onPress={pickImage}
-          disabled={isScanning}
-          style={[styles.scanButton, isScanning && styles.scanButtonDisabled]}
+          onPress={() => navigation.navigate("LiveFoodScan")}
+          style={styles.scanButton}
           activeOpacity={0.85}
         >
-          {isScanning ? (
-            <View style={styles.scanningState}>
-              <ActivityIndicator color={T.accent} size="large" />
-              <Text style={styles.scanningText}>{t("food_scanner.scanning")}</Text>
-            </View>
-          ) : (
-            <View style={styles.scanIdle}>
-              <Text style={styles.scanIcon}>📸</Text>
-              <Text style={styles.scanLabel}>{t("food_scanner.scan_label")}</Text>
-              <Text style={styles.scanSublabel}>{t("food_scanner.scan_sub")}</Text>
-            </View>
-          )}
+          <View style={styles.scanIdle}>
+            <Text style={styles.scanIcon}>📸</Text>
+            <Text style={styles.scanLabel}>{t("food_scanner.scan_label")}</Text>
+            <Text style={styles.scanSublabel}>{t("food_scanner.scan_sub")}</Text>
+          </View>
+        </TouchableOpacity>
+
+        <TouchableOpacity
+          onPress={() => { setEditingMealId(null); setManualModalVisible(true); }}
+          style={styles.manualEntryLink}
+        >
+          <Text style={styles.manualEntryLinkText}>{t("food_scanner.enter_manually")}</Text>
         </TouchableOpacity>
 
         {/* Quick Re-Log */}
-        {recentFoods.length > 0 && !isScanning && (
+        {recentFoods.length > 0 && (
           <View style={styles.recentSection}>
             <Text style={styles.recentTitle}>{t("food_scanner.log_again")}</Text>
             {recentFoods.map((food, i) => (
@@ -484,49 +382,43 @@ export default function FoodScannerScreen() {
           </View>
         )}
 
-        {/* Annotated Result */}
-        {justLogged && scannedImageUri && (
-          <View style={styles.resultCard}>
-            <View style={styles.resultHeader}>
-              <View style={styles.resultBadge}>
-                <Text style={styles.resultBadgeText}>{t("food_scanner.logged")}</Text>
-              </View>
-              <Text style={styles.resultMealName}>{justLogged.foodAnalysis.foodName}</Text>
-              <Text style={styles.resultCalories}>
-                {t("food_scanner.cal_protein", { cal: justLogged.foodAnalysis.calories, p: justLogged.foodAnalysis.protein })}
-              </Text>
-            </View>
-
-            {detectedItems.length > 0 && (
-              <>
-                <Text style={styles.detectedLabel}>
-                  {t("food_scanner.items_detected", { count: detectedItems.length })}
-                </Text>
-                <AnnotatedFoodImage imageUri={scannedImageUri} items={detectedItems} />
-              </>
-            )}
-          </View>
-        )}
-
         {/* Today's Meals */}
         {todaysData && todaysData.meals.length > 0 && (
           <View style={styles.section}>
             <Text style={styles.sectionTitle}>{t("food_scanner.todays_meals")}</Text>
-            {todaysData.meals.map((meal, i) => (
-              <View key={i} style={styles.mealCard}>
-                <View style={styles.mealCardHeader}>
-                  <Text style={styles.mealTime}>{meal.time}</Text>
-                  <Text style={styles.mealCalories}>{meal.calories} kcal</Text>
+            {todaysData.meals.map((meal) => (
+              <SwipeToDeleteRow
+                key={meal.id}
+                onDelete={() => deleteMeal(meal.id)}
+                deleteLabel={t("common.delete")}
+                disabled={isDeleting}
+                borderRadius={16}
+              >
+                <View style={[styles.mealCard, styles.mealCardWrapper]}>
+                  <View style={styles.mealCardHeader}>
+                    <Text style={styles.mealTime}>{meal.time}</Text>
+                    <View style={styles.mealHeaderRight}>
+                      <Text style={styles.mealCalories}>{meal.calories} kcal</Text>
+                      <TouchableOpacity
+                        onPress={() => handleEditMeal(meal)}
+                        style={styles.mealDeleteBtn}
+                        accessibilityLabel={t("common.edit")}
+                        accessibilityRole="button"
+                      >
+                        <Text style={styles.mealDeleteIcon}>✎</Text>
+                      </TouchableOpacity>
+                    </View>
+                  </View>
+                  {meal.foods.map((food, j) => (
+                    <Text key={j} style={styles.mealFood}>· {food.name}</Text>
+                  ))}
+                  <View style={styles.mealMacros}>
+                    <Text style={styles.mealMacroText}>P {meal.protein}g</Text>
+                    <Text style={styles.mealMacroText}>C {meal.carbs}g</Text>
+                    <Text style={styles.mealMacroText}>F {meal.fat}g</Text>
+                  </View>
                 </View>
-                {meal.foods.map((food, j) => (
-                  <Text key={j} style={styles.mealFood}>· {food.name}</Text>
-                ))}
-                <View style={styles.mealMacros}>
-                  <Text style={styles.mealMacroText}>P {meal.protein}g</Text>
-                  <Text style={styles.mealMacroText}>C {meal.carbs}g</Text>
-                  <Text style={styles.mealMacroText}>F {meal.fat}g</Text>
-                </View>
-              </View>
+              </SwipeToDeleteRow>
             ))}
           </View>
         )}
@@ -577,7 +469,7 @@ export default function FoodScannerScreen() {
                   );
                 })}
               </View>
-              <TouchableOpacity style={styles.nextMealBtn} onPress={pickImage} activeOpacity={0.85}>
+              <TouchableOpacity style={styles.nextMealBtn} onPress={() => navigation.navigate("LiveFoodScan")} activeOpacity={0.85}>
                 <Text style={styles.nextMealBtnText}>{t("food_scanner.log_next_meal")}</Text>
               </TouchableOpacity>
             </View>
@@ -605,7 +497,7 @@ export default function FoodScannerScreen() {
           </View>
         )}
 
-        {!todaysData && !isScanning && (
+        {!todaysData && (
           <View style={styles.emptyState}>
             <Text style={styles.emptyIcon}>🍽</Text>
             <Text style={styles.emptyTitle}>{t("food_scanner.empty_title")}</Text>
@@ -659,7 +551,9 @@ export default function FoodScannerScreen() {
       <Modal visible={manualModalVisible} transparent animationType="slide">
         <View style={styles.modalBackdrop}>
           <View style={styles.modalSheet}>
-            <Text style={styles.modalTitle}>{t("food_scanner.manual_title")}</Text>
+            <Text style={styles.modalTitle}>
+              {editingMealId ? t("food_scanner.edit_title") : t("food_scanner.manual_title")}
+            </Text>
 
             <Text style={styles.fieldLabel}>{t("food_scanner.meal_type")}</Text>
             <View style={styles.mealTypeRow}>
@@ -810,6 +704,7 @@ export default function FoodScannerScreen() {
                   setManualItems([]);
                   setCurrentItem(EMPTY_ITEM);
                   setShowFullDetail(false);
+                  setEditingMealId(null);
                 }}
               >
                 <Text style={styles.cancelBtnText}>{t("common.cancel")}</Text>
@@ -823,9 +718,11 @@ export default function FoodScannerScreen() {
                   <ActivityIndicator color="white" />
                 ) : (
                   <Text style={styles.logBtnText}>
-                    {manualItems.length > 0
-                      ? t("food_scanner.log_meal_count", { count: manualItems.length })
-                      : t("food_scanner.log_meal_button")}
+                    {editingMealId
+                      ? t("food_scanner.save_changes_button")
+                      : manualItems.length > 0
+                        ? t("food_scanner.log_meal_count", { count: manualItems.length })
+                        : t("food_scanner.log_meal_button")}
                   </Text>
                 )}
               </TouchableOpacity>
@@ -877,88 +774,12 @@ const styles = StyleSheet.create({
     marginBottom: 16,
     alignItems: "center",
   },
-  scanButtonDisabled: { borderColor: T.border },
-  scanningState: { alignItems: "center", gap: 12 },
-  scanningText: { color: T.accent, fontSize: 15, fontWeight: "600" },
   scanIdle: { alignItems: "center" },
   scanIcon: { fontSize: 40, marginBottom: 10 },
   scanLabel: { fontSize: 18, fontWeight: "700", color: T.textPrimary, marginBottom: 4 },
   scanSublabel: { fontSize: 13, color: T.textSecondary },
-
-  // Result Card
-  resultCard: {
-    backgroundColor: T.surface,
-    borderRadius: 20,
-    borderWidth: 1,
-    borderColor: T.border,
-    padding: 16,
-    marginBottom: 16,
-    overflow: "hidden",
-  },
-  resultHeader: { marginBottom: 12 },
-  resultBadge: {
-    backgroundColor: T.greenDark,
-    borderRadius: 20,
-    paddingHorizontal: 10,
-    paddingVertical: 3,
-    alignSelf: "flex-start",
-    marginBottom: 8,
-  },
-  resultBadgeText: { color: T.green, fontSize: 12, fontWeight: "700" },
-  resultMealName: { fontSize: 17, fontWeight: "700", color: T.textPrimary, marginBottom: 2 },
-  resultCalories: { fontSize: 13, color: T.textSecondary },
-  detectedLabel: { fontSize: 12, color: T.textSecondary, marginBottom: 10, fontWeight: "600", textTransform: "uppercase", letterSpacing: 0.5 },
-
-  // Annotation
-  annotationContainer: {
-    width: "100%",
-    aspectRatio: 4 / 3,
-    borderRadius: 14,
-    overflow: "hidden",
-    position: "relative",
-  },
-  annotationImage: { width: "100%", height: "100%" },
-  annotationOverlay: {
-    position: "absolute",
-    top: 0, left: 0, right: 0, bottom: 0,
-    backgroundColor: "rgba(0,0,0,0.12)",
-  },
-
-  // Pin
-  pinContainer: {
-    position: "absolute",
-    zIndex: 10,
-    transform: [{ translateX: -6 }, { translateY: -6 }],
-  },
-  pinDot: {
-    width: 12,
-    height: 12,
-    borderRadius: 6,
-    backgroundColor: T.accent,
-    borderWidth: 2,
-    borderColor: T.white,
-    shadowColor: T.accent,
-    shadowOpacity: 0.6,
-    shadowRadius: 6,
-    elevation: 5,
-  },
-  pinCallout: {
-    position: "absolute",
-    backgroundColor: T.overlay,
-    borderRadius: 10,
-    borderWidth: 1,
-    borderColor: T.accentBorder,
-    paddingVertical: 6,
-    paddingHorizontal: 10,
-    minWidth: 95,
-    maxWidth: 145,
-  },
-  pinName: { color: T.textPrimary, fontSize: 11, fontWeight: "700", marginBottom: 2 },
-  pinCalories: { color: T.accent, fontSize: 10, marginBottom: 2 },
-  pinMacros: { flexDirection: "row", gap: 6 },
-  pinProtein: { color: T.blue, fontSize: 9 },
-  pinCarbs: { color: T.amber, fontSize: 9 },
-  pinFat: { color: T.teal, fontSize: 9 },
+  manualEntryLink: { alignItems: "center", marginBottom: 16 },
+  manualEntryLinkText: { color: T.accent, fontSize: 13, fontWeight: "600" },
 
   // Sections
   section: { marginBottom: 16 },
@@ -971,11 +792,14 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: T.border,
     padding: 16,
-    marginBottom: 8,
   },
+  mealCardWrapper: { marginBottom: 8 },
   mealCardHeader: { flexDirection: "row", justifyContent: "space-between", marginBottom: 8 },
   mealTime: { fontSize: 13, color: T.textSecondary, fontWeight: "600" },
+  mealHeaderRight: { flexDirection: "row", alignItems: "center", gap: 10 },
   mealCalories: { fontSize: 14, color: T.accent, fontWeight: "700" },
+  mealDeleteBtn: { padding: 4 },
+  mealDeleteIcon: { fontSize: 15 },
   mealFood: { fontSize: 13, color: T.textPrimary, marginBottom: 2 },
   mealMacros: { flexDirection: "row", gap: 12, marginTop: 8 },
   mealMacroText: { fontSize: 12, color: T.textMuted },

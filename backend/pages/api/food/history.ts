@@ -9,12 +9,32 @@ const QuerySchema = z.object({
   limit: z.string().optional().default("50"),
 });
 
+const FoodItemSchema = z.object({
+  foodName: z.string().min(1),
+  quantity: z.number().positive().default(1),
+  unit: z.string().default("serving"),
+  calories: z.number().min(0),
+  protein: z.number().min(0).default(0),
+  carbs: z.number().min(0).default(0),
+  fat: z.number().min(0).default(0),
+  fiber: z.number().min(0).default(0),
+  sugar: z.number().min(0).optional(),
+  saturatedFat: z.number().min(0).optional(),
+  sodium: z.number().min(0).optional(),
+  cholesterol: z.number().min(0).optional(),
+});
+
+const PatchSchema = z.object({
+  mealType: z.enum(["breakfast", "lunch", "dinner", "snack"]).default("snack"),
+  items: z.array(FoodItemSchema).min(1),
+});
+
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  if (!["GET", "DELETE"].includes(req.method ?? "")) {
-    return sendError(res, "invalid_method", "GET or DELETE required", 405);
+  if (!["GET", "DELETE", "PATCH"].includes(req.method ?? "")) {
+    return sendError(res, "invalid_method", "GET, DELETE, or PATCH required", 405);
   }
 
   // DELETE — remove a specific meal entry
@@ -41,6 +61,97 @@ export default async function handler(
     } catch (error) {
       console.error("Delete error:", error);
       return sendError(res, "delete_failed", "Failed to delete meal", 500);
+    }
+  }
+
+  // PATCH — replace a meal's food items and recompute totals
+  if (req.method === "PATCH") {
+    try {
+      const auth = getAuth(req);
+      if (!auth.userId) return sendError(res, "unauthorized", "Authentication required", 401);
+
+      const { id } = req.query;
+      if (!id || typeof id !== "string") {
+        return sendError(res, "missing_id", "Meal id required", 400);
+      }
+
+      const user = await prisma.user.findUnique({ where: { clerkId: auth.userId } });
+      if (!user) return sendError(res, "user_not_found", "User not found", 404);
+
+      const meal = await prisma.meal.findUnique({ where: { id } });
+      if (!meal || meal.userId !== user.id) {
+        return sendError(res, "not_found", "Meal not found", 404);
+      }
+
+      const parsed = PatchSchema.safeParse(req.body);
+      if (!parsed.success) {
+        return sendError(
+          res,
+          "validation_error",
+          parsed.error.issues.map((i) => `${i.path.join(".")}: ${i.message}`).join(", "),
+          400
+        );
+      }
+
+      const data = parsed.data;
+      const totals = data.items.reduce(
+        (sum, item) => ({
+          calories: sum.calories + item.calories,
+          protein: sum.protein + item.protein,
+          carbs: sum.carbs + item.carbs,
+          fat: sum.fat + item.fat,
+          fiber: sum.fiber + item.fiber,
+        }),
+        { calories: 0, protein: 0, carbs: 0, fat: 0, fiber: 0 }
+      );
+
+      const [, updatedMeal] = await prisma.$transaction([
+        prisma.foodItem.deleteMany({ where: { mealId: id } }),
+        prisma.meal.update({
+          where: { id },
+          data: {
+            mealType: data.mealType,
+            totalCalories: totals.calories,
+            totalProtein: totals.protein,
+            totalCarbs: totals.carbs,
+            totalFat: totals.fat,
+            totalFiber: totals.fiber,
+            foods: {
+              create: data.items.map((item) => ({
+                foodName: item.foodName,
+                quantity: item.quantity,
+                unit: item.unit,
+                calories: item.calories,
+                protein: item.protein,
+                carbs: item.carbs,
+                fat: item.fat,
+                fiber: item.fiber,
+                sugar: item.sugar,
+                saturatedFat: item.saturatedFat,
+                sodium: item.sodium,
+                cholesterol: item.cholesterol,
+              })),
+            },
+          },
+          include: { foods: true },
+        }),
+      ]);
+
+      return sendSuccess(res, {
+        mealId: updatedMeal.id,
+        meal: {
+          id: updatedMeal.id,
+          mealType: updatedMeal.mealType,
+          totalCalories: updatedMeal.totalCalories,
+          totalProtein: updatedMeal.totalProtein,
+          totalCarbs: updatedMeal.totalCarbs,
+          totalFat: updatedMeal.totalFat,
+          foods: updatedMeal.foods,
+        },
+      }, "Meal updated");
+    } catch (error: any) {
+      console.error("Meal update error:", error);
+      return sendError(res, "update_failed", error?.message ?? "Failed to update meal", 500);
     }
   }
 
@@ -109,6 +220,7 @@ export default async function handler(
 
       mealsByDate[date].meals.push({
         id: meal.id,
+        mealType: meal.mealType,
         time: new Date(meal.createdAt).toLocaleTimeString("en-US", {
           hour: "2-digit",
           minute: "2-digit",
