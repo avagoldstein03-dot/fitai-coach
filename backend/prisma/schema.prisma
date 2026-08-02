@@ -509,11 +509,39 @@ model AnalyticsEvent {
   id                    String                 @id @default(cuid())
   userId                String
   user                  User                   @relation(fields: [userId], references: [id], onDelete: Cascade)
-  
+
   eventName             String
   eventProperties       Json?
-  
+
   createdAt             DateTime               @default(now())
-  
+
   @@index([userId, eventName, createdAt])
+}
+
+// ============================================================================
+// Product Scanner (barcode lookup cache — global, not per-user)
+// ============================================================================
+
+model ProductScan {
+  id                    String                 @id @default(cuid())
+  barcode               String                 @unique
+
+  productName           String?
+  brand                 String?
+  imageUrl              String?
+  ingredientsText       String?                @db.Text
+  additivesTags         String[]               @default([])
+  novaGroup             Int?
+  nutriscoreGrade       String?
+
+  score                 Int
+  grade                 String                 // "great" | "good" | "mediocre" | "bad"
+  flaggedIngredients    Json                   @default("[]")
+  scoringVersion        Int                    @default(1)
+
+  lastFetchedAt         DateTime               @default(now())
+  createdAt             DateTime               @default(now())
+  updatedAt             DateTime               @updatedAt
+
+  @@index([scoringVersion])
 }
