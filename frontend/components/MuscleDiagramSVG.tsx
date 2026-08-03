@@ -190,18 +190,31 @@ function Glow({ active, ac, pulse, ox, oy }: {
 
 // ── Plain body pictogram, drawn once in the same 200×460 coordinate space as
 // the muscle paths above, so it's guaranteed to line up with the glow overlay
-// without needing any external reference image. ─────────────────────────────
+// without needing any external reference image. Limbs are two tapered
+// segments (upper/lower) with a rounded hand/foot cap, and corners use a
+// modest radius rather than rx = width/2 — a fully-rounded rect that long
+// and narrow reads as a balloon-animal capsule, not a limb.
 function Silhouette({ ox, oy }: { ox: number; oy: number }) {
   return (
-    <G transform={`translate(${ox},${oy}) scale(${SX},${SY})`} fill={T.border2}>
-      <Circle cx={100} cy={30} r={20} />
-      <Rect x={90} y={48} width={20} height={14} rx={4} />
-      <Rect x={58} y={60} width={84} height={130} rx={18} />
-      <Rect x={28} y={68} width={24} height={190} rx={12} />
-      <Rect x={148} y={68} width={24} height={190} rx={12} />
-      <Rect x={56} y={182} width={88} height={50} rx={18} />
-      <Rect x={60} y={222} width={36} height={230} rx={18} />
-      <Rect x={104} y={222} width={36} height={230} rx={18} />
+    <G transform={`translate(${ox},${oy}) scale(${SX},${SY})`} fill={T.textSecondary} opacity={0.35}>
+      <Circle cx={100} cy={26} r={18} />
+      <Rect x={92} y={42} width={16} height={10} rx={3} />
+      <Path d="M64,56 L136,56 L140,92 L126,178 L74,178 L60,92 Z" />
+      <Rect x={58} y={178} width={84} height={42} rx={12} />
+
+      <Rect x={36} y={60} width={20} height={95} rx={7} />
+      <Rect x={27} y={148} width={17} height={88} rx={7} />
+      <Circle cx={35} cy={246} r={10} />
+      <Rect x={144} y={60} width={20} height={95} rx={7} />
+      <Rect x={156} y={148} width={17} height={88} rx={7} />
+      <Circle cx={165} cy={246} r={10} />
+
+      <Rect x={64} y={220} width={32} height={135} rx={10} />
+      <Rect x={69} y={352} width={23} height={85} rx={9} />
+      <Rect x={62} y={433} width={34} height={15} rx={7} />
+      <Rect x={104} y={220} width={32} height={135} rx={10} />
+      <Rect x={108} y={352} width={23} height={85} rx={9} />
+      <Rect x={104} y={433} width={34} height={15} rx={7} />
     </G>
   );
 }
