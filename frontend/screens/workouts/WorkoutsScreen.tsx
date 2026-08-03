@@ -21,6 +21,8 @@ import * as StoreReview from "expo-store-review";
 import { T } from "@/lib/theme";
 import { posthog, Events } from "@/lib/analytics";
 import { SwipeToDeleteRow } from "@/components/SwipeToDeleteRow";
+import MuscleDiagramSVG from "@/components/MuscleDiagramSVG";
+import { getMusclesForExercise } from "@/lib/exercise-muscles";
 const API_URL = process.env.EXPO_PUBLIC_API_URL;
 
 interface Exercise {
@@ -132,6 +134,7 @@ export default function WorkoutsScreen() {
   const [restExerciseName, setRestExerciseName] = useState("");
   const [exerciseModal, setExerciseModal] = useState<{ mode: "add" | "replace"; exercise?: Exercise } | null>(null);
   const [exerciseForm, setExerciseForm] = useState({ exerciseName: "", sets: "", reps: "", restSeconds: "", notes: "" });
+  const [formCheckPreview, setFormCheckPreview] = useState<{ exerciseName: string; formCues?: string[] } | null>(null);
   const timerRef    = useRef<ReturnType<typeof setInterval> | null>(null);
   const logFieldKeys = ["completedSets", "completedReps", "weight"] as const;
   const logInputRefs = useRef<Partial<Record<typeof logFieldKeys[number], TextInput | null>>>({});
@@ -532,7 +535,7 @@ export default function WorkoutsScreen() {
                             )}
                             <TouchableOpacity
                               style={styles.checkFormBtn}
-                              onPress={() => navigation.navigate("FormCheck", { exerciseName: ex.exerciseName, formCues: ex.formCues })}
+                              onPress={() => setFormCheckPreview({ exerciseName: ex.exerciseName, formCues: ex.formCues })}
                             >
                               <Text style={styles.checkFormBtnText}>{t("workouts.check_form")}</Text>
                             </TouchableOpacity>
@@ -732,6 +735,40 @@ export default function WorkoutsScreen() {
                 ) : (
                   <Text style={styles.saveBtnText}>{t("common.save")}</Text>
                 )}
+              </TouchableOpacity>
+            </View>
+          </View>
+        </View>
+      </Modal>
+
+      {/* ── Form Check Preview Sheet ── */}
+      <Modal visible={!!formCheckPreview} transparent animationType="slide">
+        <View style={styles.modalBackdrop}>
+          <View style={styles.modalSheet}>
+            <Text style={styles.modalTitle}>{formCheckPreview?.exerciseName}</Text>
+            <Text style={styles.inputLabel}>{t("form_check.muscles_label")}</Text>
+            {formCheckPreview && (
+              <MuscleDiagramSVG
+                muscles={getMusclesForExercise(formCheckPreview.exerciseName)}
+                exerciseName={formCheckPreview.exerciseName}
+              />
+            )}
+            <View style={styles.modalActions}>
+              <TouchableOpacity style={styles.cancelBtn} onPress={() => setFormCheckPreview(null)}>
+                <Text style={styles.cancelBtnText}>{t("common.cancel")}</Text>
+              </TouchableOpacity>
+              <TouchableOpacity
+                style={styles.saveBtn}
+                onPress={() => {
+                  if (!formCheckPreview) return;
+                  navigation.navigate("FormCheck", {
+                    exerciseName: formCheckPreview.exerciseName,
+                    formCues: formCheckPreview.formCues,
+                  });
+                  setFormCheckPreview(null);
+                }}
+              >
+                <Text style={styles.saveBtnText}>{t("workouts.start_scan")}</Text>
               </TouchableOpacity>
             </View>
           </View>
