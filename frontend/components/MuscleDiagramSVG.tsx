@@ -12,6 +12,7 @@ import React, { useEffect, useRef } from "react";
 import { Animated, Image, StyleSheet, Text, View } from "react-native";
 import Svg, { G, Path } from "react-native-svg";
 import { T } from "@/lib/theme";
+import { getMovementCategory, MovementCategory } from "@/lib/exercise-movement-category";
 
 // React Native image assets are resolved by Metro at build time as opaque numbers.
 // eslint-disable-next-line @typescript-eslint/no-var-requires
@@ -191,8 +192,32 @@ function Glow({ active, ac, pulse, ox, oy }: {
   );
 }
 
+// Whole-diagram motion, keyed to the exercise's broad movement category and
+// driven by the same `pulse` value that already animates the glow (1 = bright/
+// "top" of the rep, 0.08 = dim/"bottom" of the rep) — no rigged limbs, just a
+// visual cue for the kind of motion. Categories with no obvious whole-body
+// cue (e.g. curl/pull, which mostly move the arms) get a small scale pulse;
+// null (unrecognized exercise) gets no extra motion at all.
+function getMotionTransform(category: MovementCategory | null, pulse: Animated.Value) {
+  switch (category) {
+    case "squat":
+    case "hinge":
+      return [{ translateY: pulse.interpolate({ inputRange: [0.08, 1], outputRange: [8, 0] }) }];
+    case "calf":
+      return [{ translateY: pulse.interpolate({ inputRange: [0.08, 1], outputRange: [-6, 0] }) }];
+    case "press":
+    case "pull":
+    case "curl":
+      return [{ scale: pulse.interpolate({ inputRange: [0.08, 1], outputRange: [1.035, 1] }) }];
+    case "core":
+      return [{ scaleY: pulse.interpolate({ inputRange: [0.08, 1], outputRange: [0.96, 1] }) }];
+    default:
+      return undefined;
+  }
+}
+
 // ── Main export ───────────────────────────────────────────────────────────────
-export default function MuscleDiagramSVG({ muscles }: Props) {
+export default function MuscleDiagramSVG({ muscles, exerciseName }: Props) {
   const pulseRef = useRef<Animated.Value | null>(null);
   if (pulseRef.current === null) pulseRef.current = new Animated.Value(1);
   // Animated.Value is a stable, native-driven handle meant to be read during render and
@@ -201,6 +226,7 @@ export default function MuscleDiagramSVG({ muscles }: Props) {
   // eslint-disable-next-line react-hooks/refs
   const pulse = pulseRef.current;
   const { front, back } = resolveActive(muscles);
+  const motionTransform = getMotionTransform(getMovementCategory(exerciseName), pulse);
 
   useEffect(() => {
     if (!muscles.length) { pulse.setValue(1); return; }
@@ -216,7 +242,9 @@ export default function MuscleDiagramSVG({ muscles }: Props) {
 
   return (
     <View style={ui.container}>
-      <View style={{ width: OVERLAY_W, height: OVERLAY_H }}>
+      <Animated.View
+        style={{ width: OVERLAY_W, height: OVERLAY_H, transform: motionTransform }}
+      >
         <Image
           source={IMG}
           style={{ width: OVERLAY_W, height: OVERLAY_H, borderRadius: 12 }}
@@ -234,7 +262,7 @@ export default function MuscleDiagramSVG({ muscles }: Props) {
           {/* Posterior glow (back figure) */}
           <Glow active={back}  ac={T.teal}   pulse={pulse} ox={BX} oy={BY} />
         </Svg>
-      </View>
+      </Animated.View>
 
       {/* Active muscle labels */}
       {muscles.length > 0 && (
