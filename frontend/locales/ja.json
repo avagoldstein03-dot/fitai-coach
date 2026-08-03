@@ -820,7 +820,8 @@
     "notes_optional": "メモ（オプション）",
     "error_add_exercise": "エクササイズの追加に失敗しました",
     "error_replace_exercise": "エクササイズの置き換えに失敗しました",
-    "error_delete_exercise": "エクササイズの削除に失敗しました"
+    "error_delete_exercise": "エクササイズの削除に失敗しました",
+    "start_scan": "スキャン開始"
   },
   "supplements": {
     "title": "サプリメント",

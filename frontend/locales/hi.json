@@ -820,7 +820,8 @@
     "notes_optional": "नोट्स (वैकल्पिक)",
     "error_add_exercise": "व्यायाम जोड़ने में विफल",
     "error_replace_exercise": "व्यायाम बदलने में विफल",
-    "error_delete_exercise": "व्यायाम हटाने में विफल"
+    "error_delete_exercise": "व्यायाम हटाने में विफल",
+    "start_scan": "स्कैन शुरू करें"
   },
   "supplements": {
     "title": "पूरक",

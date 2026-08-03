@@ -820,7 +820,8 @@
     "notes_optional": "메모 (선택사항)",
     "error_add_exercise": "운동 추가에 실패했습니다",
     "error_replace_exercise": "운동 교체에 실패했습니다",
-    "error_delete_exercise": "운동 삭제에 실패했습니다"
+    "error_delete_exercise": "운동 삭제에 실패했습니다",
+    "start_scan": "스캔 시작"
   },
   "supplements": {
     "title": "보충제",

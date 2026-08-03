@@ -820,7 +820,8 @@
     "notes_optional": "Napomene (opciono)",
     "error_add_exercise": "Neuspešno dodavanje vežbe",
     "error_replace_exercise": "Neuspešna zamena vežbe",
-    "error_delete_exercise": "Neuspešno brisanje vežbe"
+    "error_delete_exercise": "Neuspešno brisanje vežbe",
+    "start_scan": "Počni skeniranje"
   },
   "supplements": {
     "title": "Суплементи",

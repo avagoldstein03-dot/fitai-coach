@@ -820,7 +820,8 @@
     "notes_optional": "ملاحظات (اختياري)",
     "error_add_exercise": "فشل إضافة التمرين",
     "error_replace_exercise": "فشل استبدال التمرين",
-    "error_delete_exercise": "فشل حذف التمرين"
+    "error_delete_exercise": "فشل حذف التمرين",
+    "start_scan": "ابدأ المسح"
   },
   "supplements": {
     "title": "المكملات",

@@ -820,7 +820,8 @@
     "notes_optional": "Mga Tala (opsyonal)",
     "error_add_exercise": "Nabigong magdagdag ng exercise",
     "error_replace_exercise": "Nabigong palitan ang exercise",
-    "error_delete_exercise": "Nabigong tanggalin ang exercise"
+    "error_delete_exercise": "Nabigong tanggalin ang exercise",
+    "start_scan": "Simulan ang Pag-scan"
   },
   "supplements": {
     "title": "Supplements",

@@ -820,7 +820,8 @@
     "notes_optional": "Maelezo (chaguo)",
     "error_add_exercise": "Imeshindwa kuongeza zoezi",
     "error_replace_exercise": "Imeshindwa kubadilisha zoezi",
-    "error_delete_exercise": "Imeshindwa kufuta zoezi"
+    "error_delete_exercise": "Imeshindwa kufuta zoezi",
+    "start_scan": "Anza Utafutaji"
   },
   "supplements": {
     "title": "Virutubishi",

@@ -820,7 +820,8 @@
     "notes_optional": "Notas (opsioneel)",
     "error_add_exercise": "Kon nie oefening byvoeg nie",
     "error_replace_exercise": "Kon nie oefening vervang nie",
-    "error_delete_exercise": "Kon nie oefening verwyder nie"
+    "error_delete_exercise": "Kon nie oefening verwyder nie",
+    "start_scan": "Begin Skandering"
   },
   "supplements": {
     "title": "Byvoegings",

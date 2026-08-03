@@ -820,7 +820,8 @@
     "notes_optional": "Megjegyzések (opcionális)",
     "error_add_exercise": "Nem sikerült a gyakorlatot hozzáadni",
     "error_replace_exercise": "Nem sikerült a gyakorlatot cserélni",
-    "error_delete_exercise": "Nem sikerült a gyakorlatot törölni"
+    "error_delete_exercise": "Nem sikerült a gyakorlatot törölni",
+    "start_scan": "Szkenelés indítása"
   },
   "supplements": {
     "title": "Kiegészítők",

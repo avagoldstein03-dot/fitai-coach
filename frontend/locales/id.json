@@ -820,7 +820,8 @@
     "notes_optional": "Catatan (opsional)",
     "error_add_exercise": "Gagal menambah latihan",
     "error_replace_exercise": "Gagal mengganti latihan",
-    "error_delete_exercise": "Gagal menghapus latihan"
+    "error_delete_exercise": "Gagal menghapus latihan",
+    "start_scan": "Mulai Pemindaian"
   },
   "supplements": {
     "title": "Suplemen",

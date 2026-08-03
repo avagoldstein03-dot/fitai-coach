@@ -764,6 +764,7 @@
     "exercises_header": "{{count}} Exercises",
     "log_set": "Log Set",
     "check_form": "Check Form",
+    "start_scan": "Start Scan",
     "replace_exercise": "Replace Exercise",
     "replace_exercise_title": "Replace Exercise",
     "add_exercise": "+ Add Exercise",

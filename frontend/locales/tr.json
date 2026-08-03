@@ -820,7 +820,8 @@
     "notes_optional": "Notlar (isteğe bağlı)",
     "error_add_exercise": "Egzersiz eklenemedi",
     "error_replace_exercise": "Egzersiz değiştirilemedi",
-    "error_delete_exercise": "Egzersiz silinemedi"
+    "error_delete_exercise": "Egzersiz silinemedi",
+    "start_scan": "Taramayı Başlat"
   },
   "supplements": {
     "title": "Takviyeler",

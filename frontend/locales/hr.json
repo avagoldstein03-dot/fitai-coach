@@ -820,7 +820,8 @@
     "notes_optional": "Bilješke (opcionalno)",
     "error_add_exercise": "Nije uspjelo dodavanje vježbe",
     "error_replace_exercise": "Nije uspjela zamjena vježbe",
-    "error_delete_exercise": "Nije uspjelo brisanje vježbe"
+    "error_delete_exercise": "Nije uspjelo brisanje vježbe",
+    "start_scan": "Započni skeniranje"
   },
   "supplements": {
     "title": "Suplementi",

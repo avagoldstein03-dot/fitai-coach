@@ -820,7 +820,8 @@
     "notes_optional": "备注（可选）",
     "error_add_exercise": "添加练习失败",
     "error_replace_exercise": "替换练习失败",
-    "error_delete_exercise": "删除练习失败"
+    "error_delete_exercise": "删除练习失败",
+    "start_scan": "开始扫描"
   },
   "supplements": {
     "title": "补充剂",

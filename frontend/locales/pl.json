@@ -820,7 +820,8 @@
     "notes_optional": "Notatki (opcjonalne)",
     "error_add_exercise": "Nie udało się dodać ćwiczenia",
     "error_replace_exercise": "Nie udało się zamienić ćwiczenia",
-    "error_delete_exercise": "Nie udało się usunąć ćwiczenia"
+    "error_delete_exercise": "Nie udało się usunąć ćwiczenia",
+    "start_scan": "Rozpocznij skanowanie"
   },
   "supplements": {
     "title": "Suplementy",

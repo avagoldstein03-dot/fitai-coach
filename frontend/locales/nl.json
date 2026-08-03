@@ -820,7 +820,8 @@
     "notes_optional": "Notities (optioneel)",
     "error_add_exercise": "Oefening toevoegen mislukt",
     "error_replace_exercise": "Oefening vervangen mislukt",
-    "error_delete_exercise": "Oefening verwijderen mislukt"
+    "error_delete_exercise": "Oefening verwijderen mislukt",
+    "start_scan": "Scan Starten"
   },
   "supplements": {
     "title": "Supplementen",

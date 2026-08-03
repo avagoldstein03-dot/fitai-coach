@@ -820,7 +820,8 @@
     "notes_optional": "Note (opțional)",
     "error_add_exercise": "Adăugarea exercițiului a eșuat",
     "error_replace_exercise": "Înlocuirea exercițiului a eșuat",
-    "error_delete_exercise": "Ștergerea exercițiului a eșuat"
+    "error_delete_exercise": "Ștergerea exercițiului a eșuat",
+    "start_scan": "Începe Scanarea"
   },
   "supplements": {
     "title": "Suplimente",

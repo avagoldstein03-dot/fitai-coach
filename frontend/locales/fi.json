@@ -820,7 +820,8 @@
     "notes_optional": "Muistiinpanot (valinnainen)",
     "error_add_exercise": "Harjoituksen lisääminen epäonnistui",
     "error_replace_exercise": "Harjoituksen korvaaminen epäonnistui",
-    "error_delete_exercise": "Harjoituksen poistaminen epäonnistui"
+    "error_delete_exercise": "Harjoituksen poistaminen epäonnistui",
+    "start_scan": "Aloita skannaus"
   },
   "supplements": {
     "title": "Ravintolisät",

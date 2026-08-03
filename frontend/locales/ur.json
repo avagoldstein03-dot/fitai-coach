@@ -820,7 +820,8 @@
     "notes_optional": "نوٹس (اختیاری)",
     "error_add_exercise": "ورزش شامل کرنے میں ناکام",
     "error_replace_exercise": "ورزش کو بدلنے میں ناکام",
-    "error_delete_exercise": "ورزش کو حذف کرنے میں ناکام"
+    "error_delete_exercise": "ورزش کو حذف کرنے میں ناکام",
+    "start_scan": "اسکین شروع کریں"
   },
   "supplements": {
     "title": "سپلیمنٹس",

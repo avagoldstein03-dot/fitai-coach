@@ -820,7 +820,8 @@
     "notes_optional": "Notas (opcional)",
     "error_add_exercise": "Falha ao adicionar exercício",
     "error_replace_exercise": "Falha ao substituir exercício",
-    "error_delete_exercise": "Falha ao deletar exercício"
+    "error_delete_exercise": "Falha ao deletar exercício",
+    "start_scan": "Iniciar Escaneamento"
   },
   "supplements": {
     "title": "Suplementos",

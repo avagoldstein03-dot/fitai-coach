@@ -820,7 +820,8 @@
     "notes_optional": "Заметки (опционально)",
     "error_add_exercise": "Не удалось добавить упражнение",
     "error_replace_exercise": "Не удалось заменить упражнение",
-    "error_delete_exercise": "Не удалось удалить упражнение"
+    "error_delete_exercise": "Не удалось удалить упражнение",
+    "start_scan": "Начать сканирование"
   },
   "supplements": {
     "title": "Добавки",

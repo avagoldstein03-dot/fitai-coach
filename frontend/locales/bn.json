@@ -820,7 +820,8 @@
     "notes_optional": "নোট (ঐচ্ছিক)",
     "error_add_exercise": "ব্যায়াম যোগ করতে ব্যর্থ",
     "error_replace_exercise": "ব্যায়াম পরিবর্তন করতে ব্যর্থ",
-    "error_delete_exercise": "ব্যায়াম মুছতে ব্যর্থ"
+    "error_delete_exercise": "ব্যায়াম মুছতে ব্যর্থ",
+    "start_scan": "স্ক্যান শুরু করুন"
   },
   "supplements": {
     "title": "সাপ্লিমেন্ট",

@@ -820,7 +820,8 @@
     "notes_optional": "Notater (valgfritt)",
     "error_add_exercise": "Kunne ikke legge til øvelse",
     "error_replace_exercise": "Kunne ikke erstatte øvelse",
-    "error_delete_exercise": "Kunne ikke slette øvelse"
+    "error_delete_exercise": "Kunne ikke slette øvelse",
+    "start_scan": "Start skanning"
   },
   "supplements": {
     "title": "Kosttilskudd",

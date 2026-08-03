@@ -820,7 +820,8 @@
     "notes_optional": "Notes (facultatif)",
     "error_add_exercise": "Impossible d'ajouter l'exercice",
     "error_replace_exercise": "Impossible de remplacer l'exercice",
-    "error_delete_exercise": "Impossible de supprimer l'exercice"
+    "error_delete_exercise": "Impossible de supprimer l'exercice",
+    "start_scan": "Commencer l'analyse"
   },
   "supplements": {
     "title": "Suppléments",

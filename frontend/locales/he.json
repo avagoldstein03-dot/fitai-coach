@@ -820,7 +820,8 @@
     "notes_optional": "הערות (אופציונלי)",
     "error_add_exercise": "הוספת התרגיל נכשלה",
     "error_replace_exercise": "החלפת התרגיל נכשלה",
-    "error_delete_exercise": "מחיקת התרגיל נכשלה"
+    "error_delete_exercise": "מחיקת התרגיל נכשלה",
+    "start_scan": "התחל סריקה"
   },
   "supplements": {
     "title": "תוספים",

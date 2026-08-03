@@ -820,7 +820,8 @@
     "notes_optional": "Poznámky (volitelně)",
     "error_add_exercise": "Přidání cvičení se nezdařilo",
     "error_replace_exercise": "Nahrazení cvičení se nezdařilo",
-    "error_delete_exercise": "Odstranění cvičení se nezdařilo"
+    "error_delete_exercise": "Odstranění cvičení se nezdařilo",
+    "start_scan": "Spustit skenování"
   },
   "supplements": {
     "title": "Doplňky",

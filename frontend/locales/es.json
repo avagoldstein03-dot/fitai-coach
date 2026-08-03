@@ -820,7 +820,8 @@
     "notes_optional": "Notas (opcional)",
     "error_add_exercise": "No se pudo añadir el ejercicio",
     "error_replace_exercise": "No se pudo reemplazar el ejercicio",
-    "error_delete_exercise": "No se pudo eliminar el ejercicio"
+    "error_delete_exercise": "No se pudo eliminar el ejercicio",
+    "start_scan": "Iniciar Escaneo"
   },
   "supplements": {
     "title": "Suplementos",
