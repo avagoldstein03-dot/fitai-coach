@@ -1293,7 +1293,8 @@
     "ready_hint": "Ställ dig i position och tryck på Starta inspelning när du är klar",
     "start_recording": "Starta inspelning",
     "stop_recording": "Stoppa och analysera",
-    "status_recording": "Inspelning pågår... {{seconds}}s — tryck Stoppa när du är klar"
+    "status_recording": "Inspelning pågår... {{seconds}}s — tryck Stoppa när du är klar",
+    "movement_preview_label": "Förhandsvisning av rörelse"
   },
   "live_food_scan": {
     "permission_title": "Kameraåtkomst krävs",

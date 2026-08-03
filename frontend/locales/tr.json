@@ -1293,7 +1293,8 @@
     "ready_hint": "Pozisyon al, sonra hazırsan Kaydı Başlat'a dokunun",
     "start_recording": "Kaydı Başlat",
     "stop_recording": "Durdur ve Analiz Et",
-    "status_recording": "Kaydediliyor... {{seconds}}s — hazırsan Durdur'a dokunun"
+    "status_recording": "Kaydediliyor... {{seconds}}s — hazırsan Durdur'a dokunun",
+    "movement_preview_label": "Hareket Önizlemesi"
   },
   "live_food_scan": {
     "permission_title": "Kamera Erişimi Gerekli",

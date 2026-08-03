@@ -1293,7 +1293,8 @@
     "ready_hint": "Ga in positie en tik op 'Opname starten' wanneer je klaar bent",
     "start_recording": "Opname starten",
     "stop_recording": "Stoppen & analyseren",
-    "status_recording": "Opname bezig... {{seconds}}s — tik op Stoppen wanneer je klaar bent"
+    "status_recording": "Opname bezig... {{seconds}}s — tik op Stoppen wanneer je klaar bent",
+    "movement_preview_label": "Bewegingsvoorbeeld"
   },
   "live_food_scan": {
     "permission_title": "Cameratoegang Nodig",

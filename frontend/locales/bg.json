@@ -1293,7 +1293,8 @@
     "ready_hint": "Позиционирайте се, след това докоснете Начало на запис когато сте готови",
     "start_recording": "Начало на запис",
     "stop_recording": "Стоп и анализ",
-    "status_recording": "Запис... {{seconds}}s — докоснете Стоп когато сте готови"
+    "status_recording": "Запис... {{seconds}}s — докоснете Стоп когато сте готови",
+    "movement_preview_label": "Преглед на движението"
   },
   "live_food_scan": {
     "permission_title": "Необходим е достъп до камерата",

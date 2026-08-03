@@ -1293,7 +1293,8 @@
     "ready_hint": "Jiweke katika nafasi, kisha gusa Anza Kurekodi wakati umepokea",
     "start_recording": "Anza Kurekodi",
     "stop_recording": "Acha & Changanua",
-    "status_recording": "Kurekodi... {{seconds}}s — gusa Acha wakati umepokea"
+    "status_recording": "Kurekodi... {{seconds}}s — gusa Acha wakati umepokea",
+    "movement_preview_label": "Muonekano wa Harakati"
   },
   "live_food_scan": {
     "permission_title": "Inahitaji Ufikiaji wa Kamera",

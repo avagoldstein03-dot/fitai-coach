@@ -1293,7 +1293,8 @@
     "ready_hint": "准备好姿势，然后在准备好时点击开始录制",
     "start_recording": "开始录制",
     "stop_recording": "停止并分析",
-    "status_recording": "录制中... {{seconds}}秒 — 准备好时点击停止"
+    "status_recording": "录制中... {{seconds}}秒 — 准备好时点击停止",
+    "movement_preview_label": "动作预览"
   },
   "live_food_scan": {
     "permission_title": "需要相机权限",

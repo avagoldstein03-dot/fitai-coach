@@ -1158,6 +1158,7 @@
     "no_frames_captured": "No frames were captured. Make sure your camera is working and try again.",
     "score_label": "Form Score",
     "muscles_label": "Muscles Worked",
+    "movement_preview_label": "Movement Preview",
     "positives_label": "What You're Doing Well",
     "corrections_label": "Corrections",
     "cues_label": "Coaching Cues",

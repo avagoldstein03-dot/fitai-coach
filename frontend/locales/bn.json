@@ -1293,7 +1293,8 @@
     "ready_hint": "অবস্থানে যান, তারপর প্রস্তুত হলে রেকর্ডিং শুরু করুন ট্যাপ করুন",
     "start_recording": "রেকর্ডিং শুরু করুন",
     "stop_recording": "থামুন এবং বিশ্লেষণ করুন",
-    "status_recording": "রেকর্ডিং চলছে... {{seconds}}s — প্রস্তুত হলে থামুন ট্যাপ করুন"
+    "status_recording": "রেকর্ডিং চলছে... {{seconds}}s — প্রস্তুত হলে থামুন ট্যাপ করুন",
+    "movement_preview_label": "আন্দোলন পূর্বরূপ"
   },
   "live_food_scan": {
     "permission_title": "ক্যামেরা অ্যাক্সেস প্রয়োজন",

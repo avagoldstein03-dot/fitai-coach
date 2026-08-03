@@ -1293,7 +1293,8 @@
     "ready_hint": "ポジションに入ってから、準備ができたら「録画を開始」をタップしてください",
     "start_recording": "録画を開始",
     "stop_recording": "停止して分析",
-    "status_recording": "録画中... {{seconds}}秒 — 準備ができたら「停止」をタップしてください"
+    "status_recording": "録画中... {{seconds}}秒 — 準備ができたら「停止」をタップしてください",
+    "movement_preview_label": "動作プレビュー"
   },
   "live_food_scan": {
     "permission_title": "カメラへのアクセスが必要です",

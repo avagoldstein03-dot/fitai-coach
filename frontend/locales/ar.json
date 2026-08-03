@@ -1293,7 +1293,8 @@
     "ready_hint": "استعد للموضع، ثم اضغط على ابدأ التسجيل عندما تكون جاهزًا",
     "start_recording": "ابدأ التسجيل",
     "stop_recording": "إيقاف وتحليل",
-    "status_recording": "جارٍ التسجيل... {{seconds}}ث — اضغط على إيقاف عندما تكون جاهزًا"
+    "status_recording": "جارٍ التسجيل... {{seconds}}ث — اضغط على إيقاف عندما تكون جاهزًا",
+    "movement_preview_label": "معاينة الحركة"
   },
   "live_food_scan": {
     "permission_title": "الوصول إلى الكاميرا مطلوب",

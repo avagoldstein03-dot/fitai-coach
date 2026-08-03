@@ -1293,7 +1293,8 @@
     "ready_hint": "Zaujmite pozíciu a potom klepnite na Spustiť záznam, keď ste pripravení",
     "start_recording": "Spustiť záznam",
     "stop_recording": "Zastaviť a analyzovať",
-    "status_recording": "Nahrávanie... {{seconds}}s — klepnite na Zastaviť, keď ste pripravení"
+    "status_recording": "Nahrávanie... {{seconds}}s — klepnite na Zastaviť, keď ste pripravení",
+    "movement_preview_label": "Náhľad pohybu"
   },
   "live_food_scan": {
     "permission_title": "Potrebný prístup k fotoaparátu",

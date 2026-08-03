@@ -1293,7 +1293,8 @@
     "ready_hint": "Colócate en posición y luego toca Iniciar Grabación cuando estés listo",
     "start_recording": "Iniciar Grabación",
     "stop_recording": "Detener y Analizar",
-    "status_recording": "Grabando... {{seconds}}s — toca Detener cuando estés listo"
+    "status_recording": "Grabando... {{seconds}}s — toca Detener cuando estés listo",
+    "movement_preview_label": "Vista Previa del Movimiento"
   },
   "live_food_scan": {
     "permission_title": "Acceso a la cámara necesario",

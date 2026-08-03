@@ -1293,7 +1293,8 @@
     "ready_hint": "Få deg i posisjon, og trykk Start opptak når du er klar",
     "start_recording": "Start opptak",
     "stop_recording": "Stopp og analyser",
-    "status_recording": "Opptak pågår... {{seconds}}s — trykk Stopp når du er klar"
+    "status_recording": "Opptak pågår... {{seconds}}s — trykk Stopp når du er klar",
+    "movement_preview_label": "Bevegelsesforhåndsvisning"
   },
   "live_food_scan": {
     "permission_title": "Kameratilgang Nødvendig",

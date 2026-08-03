@@ -1293,7 +1293,8 @@
     "ready_hint": "अपनी स्थिति तैयार करें, फिर तैयार होने पर Start Recording पर टैप करें",
     "start_recording": "रिकॉर्डिंग शुरू करें",
     "stop_recording": "रोकें और विश्लेषण करें",
-    "status_recording": "रिकॉर्ड हो रहा है... {{seconds}}s — तैयार होने पर रोकें पर टैप करें"
+    "status_recording": "रिकॉर्ड हो रहा है... {{seconds}}s — तैयार होने पर रोकें पर टैप करें",
+    "movement_preview_label": "आंदोलन पूर्वावलोकन"
   },
   "live_food_scan": {
     "permission_title": "कैमरा एक्सेस की आवश्यकता है",

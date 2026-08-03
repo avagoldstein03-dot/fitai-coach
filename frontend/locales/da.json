@@ -1293,7 +1293,8 @@
     "ready_hint": "Kom i position, og tryk derefter på Start Optagelse når du er klar",
     "start_recording": "Start Optagelse",
     "stop_recording": "Stop & Analyser",
-    "status_recording": "Optager... {{seconds}}s — tryk Stop når du er klar"
+    "status_recording": "Optager... {{seconds}}s — tryk Stop når du er klar",
+    "movement_preview_label": "Bevægelsesfremvisning"
   },
   "live_food_scan": {
     "permission_title": "Kameraadgang påkrævet",

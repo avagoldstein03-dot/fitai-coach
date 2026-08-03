@@ -1293,7 +1293,8 @@
     "ready_hint": "Mettez-vous en position, puis appuyez sur Commencer l'enregistrement quand vous êtes prêt",
     "start_recording": "Commencer l'enregistrement",
     "stop_recording": "Arrêter et analyser",
-    "status_recording": "Enregistrement en cours... {{seconds}}s — appuyez sur Arrêter quand vous êtes prêt"
+    "status_recording": "Enregistrement en cours... {{seconds}}s — appuyez sur Arrêter quand vous êtes prêt",
+    "movement_preview_label": "Aperçu du Mouvement"
   },
   "live_food_scan": {
     "permission_title": "Accès à la caméra requis",

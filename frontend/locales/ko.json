@@ -1293,7 +1293,8 @@
     "ready_hint": "준비 자세를 취한 후 준비가 되면 녹화 시작을 탭하세요",
     "start_recording": "녹화 시작",
     "stop_recording": "중지 및 분석",
-    "status_recording": "녹화 중... {{seconds}}초 — 준비가 되면 중지를 탭하세요"
+    "status_recording": "녹화 중... {{seconds}}초 — 준비가 되면 중지를 탭하세요",
+    "movement_preview_label": "동작 미리보기"
   },
   "live_food_scan": {
     "permission_title": "카메라 접근 필요",

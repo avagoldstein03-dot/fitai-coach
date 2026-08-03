@@ -1293,7 +1293,8 @@
     "ready_hint": "Mettiti in posizione, quindi tocca Avvia Registrazione quando sei pronto",
     "start_recording": "Avvia Registrazione",
     "stop_recording": "Ferma e Analizza",
-    "status_recording": "Registrazione in corso... {{seconds}}s — tocca Ferma quando sei pronto"
+    "status_recording": "Registrazione in corso... {{seconds}}s — tocca Ferma quando sei pronto",
+    "movement_preview_label": "Anteprima del Movimento"
   },
   "live_food_scan": {
     "permission_title": "Accesso alla Fotocamera Necessario",

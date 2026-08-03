@@ -1293,7 +1293,8 @@
     "ready_hint": "Sẵn sàng vị trí, sau đó nhấn Bắt đầu Ghi hình khi bạn sẵn sàng",
     "start_recording": "Bắt đầu Ghi hình",
     "stop_recording": "Dừng & Phân tích",
-    "status_recording": "Đang ghi hình... {{seconds}}s — nhấn Dừng khi sẵn sàng"
+    "status_recording": "Đang ghi hình... {{seconds}}s — nhấn Dừng khi sẵn sàng",
+    "movement_preview_label": "Xem trước chuyển động"
   },
   "live_food_scan": {
     "permission_title": "Cần Quyền Truy Cập Camera",

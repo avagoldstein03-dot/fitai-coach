@@ -1293,7 +1293,8 @@
     "ready_hint": "Позиционирајте се, затим додирните Почни снимање када сте спремни",
     "start_recording": "Почни снимање",
     "stop_recording": "Стани и анализирај",
-    "status_recording": "Снимање... {{seconds}}s — додирните Стани када сте спремни"
+    "status_recording": "Снимање... {{seconds}}s — додирните Стани када сте спремни",
+    "movement_preview_label": "Pregled pokreta"
   },
   "live_food_scan": {
     "permission_title": "Potreban je pristup kameri",
