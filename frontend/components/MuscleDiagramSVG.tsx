@@ -1,17 +1,21 @@
 /**
- * Muscle diagram — a plain hand-drawn body silhouette as a base, with SVG
+ * Muscle diagram — a real front+back reference image as the base, with SVG
  * highlights overlaid on active muscles.
  *
- * Deliberately stylized rather than photorealistic/3D: it's a simple
- * pictogram (circle + rounded-rect limbs), not anatomical art, so it needs
- * no external image asset and stays visually consistent with the rest of
- * the app's flat dark UI.
+ * frontend/assets/muscle-diagram.png was generated once via
+ * scripts/generate-muscle-diagram-asset.mjs (OpenAI gpt-image-1) — a plain
+ * mannequin-style front/back figure pair, no faces/anatomy/clothing detail.
+ * It's a static asset, not a live per-request AI call.
  */
 
 import React, { useEffect, useRef } from "react";
-import { Animated, StyleSheet, Text, View } from "react-native";
-import Svg, { Circle, G, Path, Rect } from "react-native-svg";
+import { Animated, Image, StyleSheet, Text, View } from "react-native";
+import Svg, { G, Path } from "react-native-svg";
 import { T } from "@/lib/theme";
+
+// React Native image assets are resolved by Metro at build time as opaque numbers.
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const IMG = require("../assets/muscle-diagram.png") as number;
 
 interface Props { muscles: string[]; exerciseName: string; }
 const AnimatedG = Animated.createAnimatedComponent(G);
@@ -147,24 +151,23 @@ function resolveActive(muscles: string[]): { front: Set<string>; back: Set<strin
 // ─────────────────────────────────────────────────────────────────────────────
 // Display constants
 //
-// Two figures (front + back) laid out side by side, landscape ~1.37:1.
+// muscle-diagram.png is 1536×1024 (1.5:1) — OVERLAY_W/H match that ratio
+// exactly so <Image resizeMode="contain"> fills the box with no letterboxing,
+// which makes the fractional figure position in the source image map 1:1
+// onto pixel offsets here.
 //
-// OVERLAY_W / OVERLAY_H: the pixel size the SVG covers
-// FX, FY : top-left of the FRONT figure within the overlay
-// BX, BY : top-left of the BACK  figure within the overlay
-// FW, FH : rendered pixel size of each figure
-//
-// The silhouette and the glow overlay both use these same constants, so
-// they always line up regardless of what they're tuned to.
+// FX/FY/FW/FH and BX/BY below are measured directly off the generated image
+// (front figure ≈ 19–46% of width, back figure ≈ 54–81%, both ≈ 6–93% of
+// height) — re-measure these if the PNG is ever regenerated/replaced.
 // ─────────────────────────────────────────────────────────────────────────────
 const OVERLAY_W = 300;
-const OVERLAY_H = 220;        // ≈ OVERLAY_W / 1.37
-const FW = 112;               // figure render width in px
-const FH = 204;               // figure render height in px  (≈ FW * 460/200 * 0.79 to account for padding)
-const FX = 12;                // front figure left edge
-const FY = 9;                 // front figure top edge
-const BX = 176;               // back figure left edge (OVERLAY_W/2 + margin)
-const BY = 9;
+const OVERLAY_H = 200;        // = OVERLAY_W / 1.5
+const FW = 81;                // figure render width in px
+const FH = 175;               // figure render height in px
+const FX = 57;                // front figure left edge
+const FY = 12;                // front figure top edge
+const BX = 162;               // back figure left edge
+const BY = 12;
 
 // SVG path data is 200 wide × 460 tall → scale to FW × FH
 const SX = FW / 200;          // ≈ 0.56
@@ -185,37 +188,6 @@ function Glow({ active, ac, pulse, ox, oy }: {
         </G>
       ))}
     </AnimatedG>
-  );
-}
-
-// ── Plain body pictogram, drawn once in the same 200×460 coordinate space as
-// the muscle paths above, so it's guaranteed to line up with the glow overlay
-// without needing any external reference image. Limbs are two tapered
-// segments (upper/lower) with a rounded hand/foot cap, and corners use a
-// modest radius rather than rx = width/2 — a fully-rounded rect that long
-// and narrow reads as a balloon-animal capsule, not a limb.
-function Silhouette({ ox, oy }: { ox: number; oy: number }) {
-  return (
-    <G transform={`translate(${ox},${oy}) scale(${SX},${SY})`} fill={T.textSecondary} opacity={0.35}>
-      <Circle cx={100} cy={26} r={18} />
-      <Rect x={92} y={42} width={16} height={10} rx={3} />
-      <Path d="M64,56 L136,56 L140,92 L126,178 L74,178 L60,92 Z" />
-      <Rect x={58} y={178} width={84} height={42} rx={12} />
-
-      <Rect x={36} y={60} width={20} height={95} rx={7} />
-      <Rect x={27} y={148} width={17} height={88} rx={7} />
-      <Circle cx={35} cy={246} r={10} />
-      <Rect x={144} y={60} width={20} height={95} rx={7} />
-      <Rect x={156} y={148} width={17} height={88} rx={7} />
-      <Circle cx={165} cy={246} r={10} />
-
-      <Rect x={64} y={220} width={32} height={135} rx={10} />
-      <Rect x={69} y={352} width={23} height={85} rx={9} />
-      <Rect x={62} y={433} width={34} height={15} rx={7} />
-      <Rect x={104} y={220} width={32} height={135} rx={10} />
-      <Rect x={108} y={352} width={23} height={85} rx={9} />
-      <Rect x={104} y={433} width={34} height={15} rx={7} />
-    </G>
   );
 }
 
@@ -245,14 +217,21 @@ export default function MuscleDiagramSVG({ muscles }: Props) {
   return (
     <View style={ui.container}>
       <View style={{ width: OVERLAY_W, height: OVERLAY_H }}>
-        <Svg width={OVERLAY_W} height={OVERLAY_H} viewBox={`0 0 ${OVERLAY_W} ${OVERLAY_H}`}>
-          {/* Base pictogram — front and back figures side by side */}
-          <Silhouette ox={FX} oy={FY} />
-          <Silhouette ox={BX} oy={BY} />
+        <Image
+          source={IMG}
+          style={{ width: OVERLAY_W, height: OVERLAY_H, borderRadius: 12 }}
+          resizeMode="contain"
+        />
 
-          {/* Anterior glow (left figure) */}
+        {/* SVG glow overlay — pointerEvents none so it doesn't block touches */}
+        <Svg
+          style={StyleSheet.absoluteFill}
+          viewBox={`0 0 ${OVERLAY_W} ${OVERLAY_H}`}
+          pointerEvents="none"
+        >
+          {/* Anterior glow (front figure) */}
           <Glow active={front} ac={T.accent} pulse={pulse} ox={FX} oy={FY} />
-          {/* Posterior glow (right figure) */}
+          {/* Posterior glow (back figure) */}
           <Glow active={back}  ac={T.teal}   pulse={pulse} ox={BX} oy={BY} />
         </Svg>
       </View>
