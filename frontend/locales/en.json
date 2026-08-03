@@ -1331,10 +1331,6 @@
     "body_p3": "Always consult a qualified professional before starting any new diet or exercise program, especially if you have any medical conditions. Stop immediately and seek medical attention if you experience pain, dizziness, or discomfort during exercise.",
     "body_p4": "By continuing, you acknowledge these limitations and agree to use Active AI Coach at your own risk."
   },
-  "muscle_diagram": {
-    "active": "Active",
-    "resting": "Resting"
-  },
   "welcome": {
     "tagline": "Your AI-powered fitness team,\navailable 24/7",
     "feature_coach_title": "AI Personal Coach",

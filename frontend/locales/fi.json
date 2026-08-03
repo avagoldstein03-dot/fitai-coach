@@ -1225,10 +1225,6 @@
     "body_p3": "Konsultoi aina pätevää ammattilaista ennen kuin aloitat uuden ruokavalion tai liikuntaohjelman, erityisesti jos sinulla on terveysongelmia. Lopeta välittömästi ja hae sairaanhoidollista apua, jos koet kipua, huimausta tai epämukavuutta liikuntaa harjoittaessa.",
     "body_p4": "Jatkamalla tunnustat nämä rajoitukset ja hyväksyt Active AI Coachin käytön omalla vastuullasi."
   },
-  "muscle_diagram": {
-    "active": "Aktiivinen",
-    "resting": "Levossa"
-  },
   "welcome": {
     "tagline": "Sinun tekoälyjohtainen kuntoilutiimisi,\nsaatavilla 24/7",
     "feature_coach_title": "Tekoäly henkilökohtainen valmentaja",

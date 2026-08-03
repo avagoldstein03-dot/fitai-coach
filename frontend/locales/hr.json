@@ -1225,10 +1225,6 @@
     "body_p3": "Prije nego što započnete novu dijetu ili program vježbanja, uvijek se konzultirajte s kvalificiranim stručnjakom, posebno ako imate zdravstvenih problema. Odmah prestanite i potražite medicinske savjete ako osjetite bol, vrtoglavicu ili nelagodu tijekom vježbanja.",
     "body_p4": "Nastavljanjem potvrđujete ova ograničenja i slažete se da koristite Active AI Coach na vlastiti rizik."
   },
-  "muscle_diagram": {
-    "active": "Aktivne",
-    "resting": "Odmor"
-  },
   "welcome": {
     "tagline": "Tvoj AI-pokretan fitness tim,\ndostupan 24/7",
     "feature_coach_title": "AI osobni Coach",

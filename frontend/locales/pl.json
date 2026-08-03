@@ -1225,10 +1225,6 @@
     "body_p3": "Zawsze skonsultuj się z wykwalifikowanym profesjonalistą przed rozpoczęciem jakiegokolwiek nowego programu dietetycznego lub treningowego, szczególnie jeśli masz jakiekolwiek problemy zdrowotne. Jeśli odczuwasz ból, zawroty głowy lub dyskomfort podczas ćwiczeń, natychmiast przerwij i poszukaj pomocy medycznej.",
     "body_p4": "Kontynuując, potwierdzasz te ograniczenia i zgadzasz się korzystać z Active AI Coach na własne ryzyko."
   },
-  "muscle_diagram": {
-    "active": "Aktywny",
-    "resting": "Odpoczywający"
-  },
   "welcome": {
     "tagline": "Twój zespół fitness zasilany AI,\ndostępny 24/7",
     "feature_coach_title": "Trener AI",

@@ -1225,10 +1225,6 @@
     "body_p3": "Konsulter alltid en kvalifisert fagperson før du starter med ny diett eller treningsprogram, spesielt hvis du har noen medisinske tilstander. Stopp umiddelbart og søk medisinsk hjelp hvis du opplever smerte, svimmelhet eller ubehag under trening.",
     "body_p4": "Ved å fortsette erkjenner du disse begrensningene og godtar å bruke Active AI Coach på eget ansvar."
   },
-  "muscle_diagram": {
-    "active": "Aktiv",
-    "resting": "Hviler"
-  },
   "welcome": {
     "tagline": "Ditt AI-drevne fitnessteam,\ntilgjengelig 24/7",
     "feature_coach_title": "AI personlig trener",

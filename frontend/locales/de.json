@@ -1225,10 +1225,6 @@
     "body_p3": "Konsultieren Sie immer einen qualifizierten Fachmann, bevor Sie ein neues Ernährungs- oder Trainingsprogramm beginnen, besonders wenn Sie medizinische Erkrankungen haben. Hören Sie sofort auf und suchen Sie medizinische Hilfe, wenn Sie während des Trainings Schmerzen, Schwindel oder Unbehagen verspüren.",
     "body_p4": "Durch Fortfahren bestätigen Sie diese Einschränkungen und stimmen zu, Active AI Coach auf eigenes Risiko zu nutzen."
   },
-  "muscle_diagram": {
-    "active": "Aktiv",
-    "resting": "Ruhig"
-  },
   "welcome": {
     "tagline": "Ihr KI-gestütztes Fitness-Team,\nverfügbar 24/7",
     "feature_coach_title": "KI Personal Coach",

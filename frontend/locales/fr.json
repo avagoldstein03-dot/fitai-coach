@@ -1225,10 +1225,6 @@
     "body_p3": "Consultez toujours un professionnel qualifié avant de commencer un nouveau régime ou programme d'exercice, en particulier si vous avez des problèmes de santé. Arrêtez immédiatement et consultez un médecin si vous ressentez de la douleur, des étourdissements ou de l'inconfort pendant l'exercice.",
     "body_p4": "En continuant, vous reconnaissez ces limitations et acceptez d'utiliser Active AI Coach à vos propres risques."
   },
-  "muscle_diagram": {
-    "active": "Actif",
-    "resting": "Au repos"
-  },
   "welcome": {
     "tagline": "Votre équipe de fitness alimentée par l'IA,\ndisponible 24h/24, 7j/7",
     "feature_coach_title": "Coach personnel IA",

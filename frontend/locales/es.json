@@ -1225,10 +1225,6 @@
     "body_p3": "Siempre consulta a un profesional calificado antes de iniciar cualquier nueva dieta o programa de ejercicio, especialmente si tienes alguna condición médica. Detente inmediatamente y busca atención médica si experimentas dolor, mareos o molestias durante el ejercicio.",
     "body_p4": "Al continuar, reconoces estas limitaciones y aceptas usar Active AI Coach bajo tu propio riesgo."
   },
-  "muscle_diagram": {
-    "active": "Activo",
-    "resting": "Descansando"
-  },
   "welcome": {
     "tagline": "Tu equipo de fitness con IA,\ndisponible 24/7",
     "feature_coach_title": "Entrenador Personal IA",

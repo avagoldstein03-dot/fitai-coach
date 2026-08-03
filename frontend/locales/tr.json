@@ -1225,10 +1225,6 @@
     "body_p3": "Özellikle tıbbi koşullarınız varsa, herhangi bir yeni diyet veya egzersiz programına başlamadan önce her zaman nitelikli bir profesyonelle danışın. Egzersiz sırasında ağrı, başdönmesi veya rahatsızlık hissederseniz hemen durdurun ve tıbbi yardım alın.",
     "body_p4": "Devam ederek, bu sınırlamaları kabul etmiş olursunuz ve Active AI Coach'u kendi sorumluluğunuzda kullanmayı kabul edersiniz."
   },
-  "muscle_diagram": {
-    "active": "Aktif",
-    "resting": "Dinleniyor"
-  },
   "welcome": {
     "tagline": "Senin Yapay Zeka Fitness Takımın,\n7/24 kullanılabilir",
     "feature_coach_title": "Yapay Zeka Kişisel Koçu",

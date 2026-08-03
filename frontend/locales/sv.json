@@ -1225,10 +1225,6 @@
     "body_p3": "Konsultera alltid en kvalificerad professionell innan du påbörjar något nytt diet- eller träningsprogram, särskilt om du har några medicinska tillstånd. Sluta omedelbar och söka medicinsk vård om du upplever smärta, yrsel eller obehag under träning.",
     "body_p4": "Genom att fortsätta bekräftar du dessa begränsningar och godkänner att använda Active AI Coach på egen risk."
   },
-  "muscle_diagram": {
-    "active": "Aktiv",
-    "resting": "Vila"
-  },
   "welcome": {
     "tagline": "Ditt AI-drivna träningsteam,\ntillgängligt 24/7",
     "feature_coach_title": "AI-personlig tränare",

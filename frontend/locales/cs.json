@@ -1225,10 +1225,6 @@
     "body_p3": "Vždy se před zahájením jakéhokoliv nového dietního nebo cvičebního programu poraďte s kvalifikovaným odborníkem, zejména pokud máte nějaké zdravotní potíže. Pokud během cvičení pociťujete bolest, závratě nebo diskomfort, okamžitě přestaňte a vyhledejte lékařskou pomoc.",
     "body_p4": "Pokračováním potvrzujete tato omezení a souhlasíte s používáním aplikace Active AI Coach na vlastní nebezpečí."
   },
-  "muscle_diagram": {
-    "active": "Aktivní",
-    "resting": "V klidu"
-  },
   "welcome": {
     "tagline": "Váš AI-poháněný fitness tým,\ndostupný 24/7",
     "feature_coach_title": "AI osobní kouč",

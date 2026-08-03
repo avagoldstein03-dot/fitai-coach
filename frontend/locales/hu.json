@@ -1225,10 +1225,6 @@
     "body_p3": "Mindig konzultálj egy képzett szaksemberrel új diéta vagy edzésprogram kezdése előtt, különösen, ha bármilyen egészségügyi problémád van. Ha fájdalmat, szédülést vagy kellemetlen érzést tapasztalsz az edzés során, azonnal állj meg és kérj orvosi segítséget.",
     "body_p4": "A folytatásával elismered ezeket a korlátozásokat, és vállalja, hogy a Active AI Coach-ot saját felelősségére használod."
   },
-  "muscle_diagram": {
-    "active": "Aktív",
-    "resting": "Pihenő"
-  },
   "welcome": {
     "tagline": "Az AI-alapú fitness csapatod,\n24/7 elérhető",
     "feature_coach_title": "AI személyes edző",

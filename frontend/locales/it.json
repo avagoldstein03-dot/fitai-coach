@@ -1225,10 +1225,6 @@
     "body_p3": "Consulta sempre un professionista qualificato prima di iniziare qualsiasi nuovo programma dietetico o di esercizio, soprattutto se hai condizioni mediche. Interrompi immediatamente e cerca assistenza medica se avverti dolore, vertigini o disagio durante l'esercizio.",
     "body_p4": "Continuando, riconosci questi limiti e accetti di utilizzare Active AI Coach a tuo rischio."
   },
-  "muscle_diagram": {
-    "active": "Attivo",
-    "resting": "A Riposo"
-  },
   "welcome": {
     "tagline": "Il tuo team di fitness alimentato da IA,\ndisponibile 24/7",
     "feature_coach_title": "Coach Personale IA",
