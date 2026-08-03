@@ -1,5 +1,7 @@
 import { sendPushNotification, sendBulkNotifications } from "./firebase";
 import prisma from "@/lib/prisma";
+import { detectWorkoutPlateaus, diffBodyComposition, buildTrendsSummary } from "@/lib/trends";
+import { resolveTier, TIER_LIMITS } from "@/lib/subscription-middleware";
 
 export type NotificationPref =
   | "workout_reminders"
@@ -199,4 +201,98 @@ export async function broadcastMealNudges(): Promise<{ sent: number; failed: num
     body:  "Staying consistent with food tracking makes all the difference!",
     data:  { screen: "FoodScanner" },
   });
+}
+
+// Sunday-only: nudges users toward a notable workout plateau or body-composition
+// change. Skips anyone with nothing notable rather than sending an empty check-in.
+export async function broadcastProgressUpdates(): Promise<{ sent: number; failed: number }> {
+  const users = await prisma.user.findMany({
+    where: {
+      pushToken:          { not: null },
+      onboardingCompleted: true,
+    },
+    select: { id: true, pushToken: true, notificationPrefs: true },
+  });
+
+  const eligible = users.filter((u) => u.pushToken && parsePrefs(u.notificationPrefs).progress_updates);
+
+  const candidates = await Promise.all(
+    eligible.map(async (user) => {
+      const [workoutSessions, bodyAssessments] = await Promise.all([
+        prisma.workoutSession.findMany({
+          where: { userId: user.id },
+          orderBy: { createdAt: "desc" },
+          take: 30,
+          select: { exerciseName: true, weight: true, completedReps: true, createdAt: true },
+        }),
+        prisma.bodyAssessment.findMany({
+          where: { userId: user.id },
+          orderBy: { createdAt: "desc" },
+          take: 2,
+          select: { bodyComposition: true },
+        }),
+      ]);
+
+      const summary = buildTrendsSummary({
+        plateaus: detectWorkoutPlateaus(workoutSessions),
+        compositionDiffs: diffBodyComposition(
+          bodyAssessments[0]?.bodyComposition as Record<string, unknown> | undefined,
+          bodyAssessments[1]?.bodyComposition as Record<string, unknown> | undefined
+        ),
+      });
+
+      return { pushToken: user.pushToken as string, message: summary ? summary.split("\n")[0].replace(/^-\s*/, "") : null };
+    })
+  );
+
+  // Only attempt a send for users with something notable — nothing notable
+  // is a normal skip, not a failure, so it shouldn't inflate `failed`.
+  const toNotify = candidates.filter((c): c is { pushToken: string; message: string } => c.message !== null);
+
+  const results = await Promise.allSettled(
+    toNotify.map((c) =>
+      sendPushNotification(c.pushToken, {
+        title: "Progress update 📈",
+        body: c.message,
+        data: { screen: "Progress" },
+      })
+    )
+  );
+
+  const sent = results.filter((r) => r.status === "fulfilled").length;
+  const failed = results.length - sent;
+  return { sent, failed };
+}
+
+// Sunday-only, pro/elite tiers only: notifies that the weekly AI review is
+// ready to view — the review itself is generated on-demand when they open the
+// app (matches progress/review.ts's existing on-demand behavior), not
+// pre-generated here, to avoid billing for reviews nobody looks at.
+export async function broadcastWeeklyReviewReady(): Promise<{ sent: number; failed: number }> {
+  const users = await prisma.user.findMany({
+    where: {
+      pushToken:          { not: null },
+      onboardingCompleted: true,
+    },
+    select: {
+      id: true,
+      pushToken: true,
+      notificationPrefs: true,
+      subscription: {
+        select: { plan: true, status: true, currentPeriodEnd: true, stripePriceId: true, tier: true },
+      },
+    },
+  });
+
+  const eligible = users.filter((u) => {
+    if (!u.pushToken || !parsePrefs(u.notificationPrefs).weekly_review) return false;
+    const { tier } = resolveTier(u.subscription);
+    return TIER_LIMITS[tier].progressReviews;
+  });
+
+  const results = await Promise.allSettled(eligible.map((user) => notifyWeeklyReview(user.id)));
+
+  const sent = results.filter((r) => r.status === "fulfilled" && r.value === true).length;
+  const failed = results.length - sent;
+  return { sent, failed };
 }

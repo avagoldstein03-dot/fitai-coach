@@ -17,7 +17,7 @@ export interface FeatureLimit {
   groceryIntegration: boolean;
 }
 
-const TIER_LIMITS: Record<SubscriptionTier, FeatureLimit> = {
+export const TIER_LIMITS: Record<SubscriptionTier, FeatureLimit> = {
   free: {
     dailyFoodScans: 3,
     dailyCoachMessages: 5,
@@ -93,6 +93,38 @@ function getTierFromPriceId(priceId: string | null | undefined): SubscriptionTie
   return "starter"; // default any unrecognised paid plan to starter
 }
 
+export interface SubscriptionRecord {
+  plan: string | null;
+  status: string | null;
+  currentPeriodEnd: Date | null;
+  stripePriceId: string | null;
+  tier: string | null;
+}
+
+// Pure tier resolution, usable outside a request context (e.g. bulk cron jobs
+// iterating many users) where there's no NextApiRequest to call getAuth on.
+export function resolveTier(
+  subscription: SubscriptionRecord | null | undefined
+): { isPremium: boolean; tier: SubscriptionTier } {
+  const isPremium =
+    subscription?.plan === "premium" &&
+    subscription?.status === "active" &&
+    !!subscription?.currentPeriodEnd &&
+    new Date(subscription.currentPeriodEnd) > new Date();
+
+  const explicitTier = subscription?.tier;
+  const isValidTier = (t: string | null | undefined): t is SubscriptionTier =>
+    t === "starter" || t === "pro" || t === "elite";
+
+  const tier: SubscriptionTier = isPremium
+    ? isValidTier(explicitTier)
+      ? explicitTier
+      : getTierFromPriceId(subscription?.stripePriceId)
+    : "free";
+
+  return { isPremium, tier };
+}
+
 export async function getUserSubscription(req: NextApiRequest) {
   try {
     const { userId } = getAuth(req);
@@ -121,20 +153,7 @@ export async function getUserSubscription(req: NextApiRequest) {
       return { isPremium: false, tier: "free" as SubscriptionTier, limits: TIER_LIMITS.free };
     }
 
-    const isPremium =
-      user.subscription?.plan === "premium" &&
-      user.subscription?.status === "active" &&
-      new Date(user.subscription.currentPeriodEnd!) > new Date();
-
-    const explicitTier = user.subscription?.tier;
-    const isValidTier = (t: string | null | undefined): t is SubscriptionTier =>
-      t === "starter" || t === "pro" || t === "elite";
-
-    const tier: SubscriptionTier = isPremium
-      ? isValidTier(explicitTier)
-        ? explicitTier
-        : getTierFromPriceId(user.subscription?.stripePriceId)
-      : "free";
+    const { isPremium, tier } = resolveTier(user.subscription);
 
     return {
       userId: user.id,
