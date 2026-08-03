@@ -14,6 +14,7 @@ import { useSafeAreaInsets } from "react-native-safe-area-context";
 import axios from "axios";
 import { useTranslation } from "react-i18next";
 import { useUpgradeGate, isPremiumRequiredError } from "@/contexts/UpgradeGateContext";
+import MuscleDiagramSVG from "@/components/MuscleDiagramSVG";
 import { T } from "@/lib/theme";
 
 const API_URL = process.env.EXPO_PUBLIC_API_URL;
@@ -167,13 +168,7 @@ export default function FormCheckScreen() {
         {result.muscles?.length > 0 && (
           <View style={s.resultsSection}>
             <Text style={s.sectionTitle}>{t("form_check.muscles_label")}</Text>
-            <View style={s.chipRow}>
-              {result.muscles.map((m, i) => (
-                <View key={i} style={s.chip}>
-                  <Text style={s.chipText}>{m}</Text>
-                </View>
-              ))}
-            </View>
+            <MuscleDiagramSVG muscles={result.muscles} exerciseName={result.exerciseName} />
           </View>
         )}
 
@@ -398,8 +393,6 @@ const s = StyleSheet.create({
   resultsSection: { paddingHorizontal: 24, marginBottom: 20 },
   sectionTitle: { fontSize: 13, fontWeight: "700", color: T.textSecondary, marginBottom: 10, textTransform: "uppercase", letterSpacing: 0.5 },
   chipRow: { flexDirection: "row", flexWrap: "wrap", gap: 8 },
-  chip: { backgroundColor: T.surface2, borderRadius: 10, paddingHorizontal: 12, paddingVertical: 6 },
-  chipText: { color: T.textSecondary, fontSize: 13, fontWeight: "600" },
   cueChip: { backgroundColor: T.tealDark, borderWidth: 1, borderColor: T.tealBorder, borderRadius: 10, paddingHorizontal: 12, paddingVertical: 6 },
   cueChipText: { color: T.teal, fontSize: 13, fontWeight: "600" },
   card: {

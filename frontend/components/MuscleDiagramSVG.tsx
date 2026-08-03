@@ -1,23 +1,17 @@
 /**
- * Muscle diagram — real anatomy PNG as base, SVG highlights overlay active muscles.
+ * Muscle diagram — a plain hand-drawn body silhouette as a base, with SVG
+ * highlights overlaid on active muscles.
  *
- * DROP ONE FILE:
- *   frontend/assets/muscle-diagram.png
- *   → the combined front+back image on cyan background
- *   → any size is fine; recommend ≤ 1200px wide for mobile perf
- *
- * The PNG provides all the visuals. This file only draws the coloured
- * semi-transparent glow on top of whichever muscles are active.
+ * Deliberately stylized rather than photorealistic/3D: it's a simple
+ * pictogram (circle + rounded-rect limbs), not anatomical art, so it needs
+ * no external image asset and stays visually consistent with the rest of
+ * the app's flat dark UI.
  */
 
 import React, { useEffect, useRef } from "react";
-import { Animated, Image, StyleSheet, Text, View } from "react-native";
-import Svg, { G, Path } from "react-native-svg";
+import { Animated, StyleSheet, Text, View } from "react-native";
+import Svg, { Circle, G, Path, Rect } from "react-native-svg";
 import { T } from "@/lib/theme";
-
-// React Native image assets are resolved by Metro at build time as opaque numbers.
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-const IMG = require("../assets/muscle-diagram.png") as number;
 
 interface Props { muscles: string[]; exerciseName: string; }
 const AnimatedG = Animated.createAnimatedComponent(G);
@@ -153,15 +147,15 @@ function resolveActive(muscles: string[]): { front: Set<string>; back: Set<strin
 // ─────────────────────────────────────────────────────────────────────────────
 // Display constants
 //
-// The reference image is landscape ~1.37:1 (two figures side by side).
-// Each figure occupies roughly the inner 66% of its half.
+// Two figures (front + back) laid out side by side, landscape ~1.37:1.
 //
-// OVERLAY_W / OVERLAY_H: the pixel size the SVG overlay covers
+// OVERLAY_W / OVERLAY_H: the pixel size the SVG covers
 // FX, FY : top-left of the FRONT figure within the overlay
 // BX, BY : top-left of the BACK  figure within the overlay
 // FW, FH : rendered pixel size of each figure
 //
-// Tweak FX/BX/FW/FH after you drop in the actual PNG if the glow is off.
+// The silhouette and the glow overlay both use these same constants, so
+// they always line up regardless of what they're tuned to.
 // ─────────────────────────────────────────────────────────────────────────────
 const OVERLAY_W = 300;
 const OVERLAY_H = 220;        // ≈ OVERLAY_W / 1.37
@@ -194,6 +188,24 @@ function Glow({ active, ac, pulse, ox, oy }: {
   );
 }
 
+// ── Plain body pictogram, drawn once in the same 200×460 coordinate space as
+// the muscle paths above, so it's guaranteed to line up with the glow overlay
+// without needing any external reference image. ─────────────────────────────
+function Silhouette({ ox, oy }: { ox: number; oy: number }) {
+  return (
+    <G transform={`translate(${ox},${oy}) scale(${SX},${SY})`} fill={T.border2}>
+      <Circle cx={100} cy={30} r={20} />
+      <Rect x={90} y={48} width={20} height={14} rx={4} />
+      <Rect x={58} y={60} width={84} height={130} rx={18} />
+      <Rect x={28} y={68} width={24} height={190} rx={12} />
+      <Rect x={148} y={68} width={24} height={190} rx={12} />
+      <Rect x={56} y={182} width={88} height={50} rx={18} />
+      <Rect x={60} y={222} width={36} height={230} rx={18} />
+      <Rect x={104} y={222} width={36} height={230} rx={18} />
+    </G>
+  );
+}
+
 // ── Main export ───────────────────────────────────────────────────────────────
 export default function MuscleDiagramSVG({ muscles }: Props) {
   const pulseRef = useRef<Animated.Value | null>(null);
@@ -219,20 +231,12 @@ export default function MuscleDiagramSVG({ muscles }: Props) {
 
   return (
     <View style={ui.container}>
-      {/* PNG base image */}
       <View style={{ width: OVERLAY_W, height: OVERLAY_H }}>
-        <Image
-          source={IMG}
-          style={{ width: OVERLAY_W, height: OVERLAY_H, borderRadius: 12 }}
-          resizeMode="contain"
-        />
+        <Svg width={OVERLAY_W} height={OVERLAY_H} viewBox={`0 0 ${OVERLAY_W} ${OVERLAY_H}`}>
+          {/* Base pictogram — front and back figures side by side */}
+          <Silhouette ox={FX} oy={FY} />
+          <Silhouette ox={BX} oy={BY} />
 
-        {/* SVG glow overlay — pointerEvents none so it doesn't block touches */}
-        <Svg
-          style={StyleSheet.absoluteFill}
-          viewBox={`0 0 ${OVERLAY_W} ${OVERLAY_H}`}
-          pointerEvents="none"
-        >
           {/* Anterior glow (left figure) */}
           <Glow active={front} ac={T.accent} pulse={pulse} ox={FX} oy={FY} />
           {/* Posterior glow (right figure) */}
@@ -265,7 +269,9 @@ export default function MuscleDiagramSVG({ muscles }: Props) {
 const ui = StyleSheet.create({
   container: {
     alignItems: "center",
-    backgroundColor: "#1FB7FF",
+    backgroundColor: T.surface2,
+    borderWidth: 1,
+    borderColor: T.border,
     borderRadius: 18,
     paddingVertical: 12,
     paddingHorizontal: 8,
