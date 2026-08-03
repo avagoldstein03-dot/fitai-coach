@@ -1293,8 +1293,7 @@
     "ready_hint": "התייצבו בתנוחה הנכונה, ואז הקישו על התחל הקלטה כאשר אתם מוכנים",
     "start_recording": "התחל הקלטה",
     "stop_recording": "עצור וניתח",
-    "status_recording": "מקליט... {{seconds}}s — הקישו על עצור כאשר אתם מוכנים",
-    "movement_preview_label": "תצוגה מקדימה של התנועה"
+    "status_recording": "מקליט... {{seconds}}s — הקישו על עצור כאשר אתם מוכנים"
   },
   "live_food_scan": {
     "permission_title": "נדרש גישה למצלמה",

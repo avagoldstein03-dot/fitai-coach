@@ -1293,8 +1293,7 @@
     "ready_hint": "Coloque-se em posição e toque em Iniciar Gravação quando estiver pronto",
     "start_recording": "Iniciar Gravação",
     "stop_recording": "Parar e Analisar",
-    "status_recording": "Gravando... {{seconds}}s — toque em Parar quando estiver pronto",
-    "movement_preview_label": "Visualização do Movimento"
+    "status_recording": "Gravando... {{seconds}}s — toque em Parar quando estiver pronto"
   },
   "live_food_scan": {
     "permission_title": "Acesso à Câmera Necessário",

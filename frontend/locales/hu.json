@@ -1293,8 +1293,7 @@
     "ready_hint": "Займи a pozíciót, majd koppints a Felvétel indítása gombra, amikor készen állsz",
     "start_recording": "Felvétel indítása",
     "stop_recording": "Leállítás és elemzés",
-    "status_recording": "Felvétel folyamatban... {{seconds}}s — koppints a Leállítás gombra, amikor készen állsz",
-    "movement_preview_label": "Mozgás Előnézete"
+    "status_recording": "Felvétel folyamatban... {{seconds}}s — koppints a Leállítás gombra, amikor készen állsz"
   },
   "live_food_scan": {
     "permission_title": "Kamerához való hozzáférés szükséges",

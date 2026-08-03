@@ -1293,8 +1293,7 @@
     "ready_hint": "Kumuha ng posisyon, pagkatapos i-tap ang Start Recording kapag handa na",
     "start_recording": "Simulan ang Pag-record",
     "stop_recording": "Itigil & Suriin",
-    "status_recording": "Nag-record... {{seconds}}s — i-tap ang Itigil kapag handa na",
-    "movement_preview_label": "Pang-unawa ng Kilos"
+    "status_recording": "Nag-record... {{seconds}}s — i-tap ang Itigil kapag handa na"
   },
   "live_food_scan": {
     "permission_title": "Kailangan ng Access sa Camera",

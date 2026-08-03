@@ -1293,8 +1293,7 @@
     "ready_hint": "Ambil posisi, kemudian ketuk Mula Rakaman apabila bersedia",
     "start_recording": "Mula Rakaman",
     "stop_recording": "Henti & Analisis",
-    "status_recording": "Merakam... {{seconds}}s — ketuk Henti apabila bersedia",
-    "movement_preview_label": "Pratonton Pergerakan"
+    "status_recording": "Merakam... {{seconds}}s — ketuk Henti apabila bersedia"
   },
   "live_food_scan": {
     "permission_title": "Akses Kamera Diperlukan",

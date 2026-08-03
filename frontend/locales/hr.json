@@ -1293,8 +1293,7 @@
     "ready_hint": "Postavite se u poziciju, zatim dodirnite Započni snimanje kada ste spremni",
     "start_recording": "Započni snimanje",
     "stop_recording": "Zaustavi i analiziraj",
-    "status_recording": "Snimanje u tijeku... {{seconds}}s — dodirnite Zaustavi kada ste spremni",
-    "movement_preview_label": "Pregled Pokreta"
+    "status_recording": "Snimanje u tijeku... {{seconds}}s — dodirnite Zaustavi kada ste spremni"
   },
   "live_food_scan": {
     "permission_title": "Potreban pristup kameri",

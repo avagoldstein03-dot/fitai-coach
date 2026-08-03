@@ -1293,8 +1293,7 @@
     "ready_hint": "Ia poziția corectă, apoi apasă Începe Înregistrarea când ești gata",
     "start_recording": "Începe Înregistrarea",
     "stop_recording": "Oprește & Analizează",
-    "status_recording": "Se înregistrează... {{seconds}}s — apasă Oprește când ești gata",
-    "movement_preview_label": "Previzualizare Mișcare"
+    "status_recording": "Se înregistrează... {{seconds}}s — apasă Oprește când ești gata"
   },
   "live_food_scan": {
     "permission_title": "Acces la Cameră Necesar",

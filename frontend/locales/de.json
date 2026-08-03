@@ -1293,8 +1293,7 @@
     "ready_hint": "Positioniere dich, dann tippe auf Aufnahme starten, wenn du bereit bist",
     "start_recording": "Aufnahme starten",
     "stop_recording": "Stopp & Analyse",
-    "status_recording": "Wird aufgenommen... {{seconds}}s — tippe auf Stopp, wenn du bereit bist",
-    "movement_preview_label": "Bewegungsvorschau"
+    "status_recording": "Wird aufgenommen... {{seconds}}s — tippe auf Stopp, wenn du bereit bist"
   },
   "live_food_scan": {
     "permission_title": "Kamerazugriff erforderlich",

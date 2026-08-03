@@ -1293,8 +1293,7 @@
     "ready_hint": "Gaan in posisie, tik dan Begin Opname wanneer gereed",
     "start_recording": "Begin Opname",
     "stop_recording": "Stop & Ontleed",
-    "status_recording": "Opname tans aan... {{seconds}}s — tik Stop wanneer gereed",
-    "movement_preview_label": "Bewegingsvoorbeeld"
+    "status_recording": "Opname tans aan... {{seconds}}s — tik Stop wanneer gereed"
   },
   "live_food_scan": {
     "permission_title": "Kameraksès Nodig",

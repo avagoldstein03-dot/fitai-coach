@@ -1293,8 +1293,7 @@
     "ready_hint": "Przyjmij pozycję, a następnie naciśnij Rozpocznij nagrywanie, gdy będziesz gotowy",
     "start_recording": "Rozpocznij nagrywanie",
     "stop_recording": "Zatrzymaj i analizuj",
-    "status_recording": "Nagrywanie... {{seconds}}s — naciśnij Zatrzymaj, gdy będziesz gotowy",
-    "movement_preview_label": "Podgląd Ruchu"
+    "status_recording": "Nagrywanie... {{seconds}}s — naciśnij Zatrzymaj, gdy będziesz gotowy"
   },
   "live_food_scan": {
     "permission_title": "Wymagany dostęp do kamery",

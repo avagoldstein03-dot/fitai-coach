@@ -1293,8 +1293,7 @@
     "ready_hint": "اپنی پوزیشن میں آجائیں، پھر تیار ہوں تو Start Recording پر ٹیپ کریں",
     "start_recording": "ریکارڈنگ شروع کریں",
     "stop_recording": "رکیں اور تجزیہ کریں",
-    "status_recording": "ریکارڈنگ جاری ہے... {{seconds}}s — تیار ہوں تو Stop پر ٹیپ کریں",
-    "movement_preview_label": "حرکت کا پیش نظارہ"
+    "status_recording": "ریکارڈنگ جاری ہے... {{seconds}}s — تیار ہوں تو Stop پر ٹیپ کریں"
   },
   "live_food_scan": {
     "permission_title": "کیمرے تک رسائی درکار ہے",

@@ -1293,8 +1293,7 @@
     "ready_hint": "Siirry asemaan ja napauta Aloita tallennus kun olet valmis",
     "start_recording": "Aloita tallennus",
     "stop_recording": "Pysäytä ja analysoi",
-    "status_recording": "Tallennetaan... {{seconds}}s — napauta Pysäytä kun olet valmis",
-    "movement_preview_label": "Liikkeen esikatselu"
+    "status_recording": "Tallennetaan... {{seconds}}s — napauta Pysäytä kun olet valmis"
   },
   "live_food_scan": {
     "permission_title": "Kameran käyttöoikeus vaaditaan",

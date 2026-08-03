@@ -1293,8 +1293,7 @@
     "ready_hint": "เตรียมตำแหน่งให้พร้อม จากนั้นแตะ Start Recording เมื่อพร้อม",
     "start_recording": "เริ่มบันทึก",
     "stop_recording": "หยุด & วิเคราะห์",
-    "status_recording": "กำลังบันทึก... {{seconds}}s — แตะ Stop เมื่อพร้อม",
-    "movement_preview_label": "ตัวอย่างการเคลื่อนไหว"
+    "status_recording": "กำลังบันทึก... {{seconds}}s — แตะ Stop เมื่อพร้อม"
   },
   "live_food_scan": {
     "permission_title": "ต้องได้รับสิทธิ์เข้าถึงกล้อง",
