@@ -176,7 +176,7 @@ const SY = FH / 460;          // ≈ 0.44
 
 // ── Pulse overlay for one side ────────────────────────────────────────────────
 function Glow({ active, ac, pulse, ox, oy }: {
-  active: Set<string>; ac: string; pulse: Animated.Value; ox: number; oy: number;
+  active: Set<string>; ac: string; pulse: Animated.Value | Animated.AnimatedInterpolation<number>; ox: number; oy: number;
 }) {
   const keys = [...active].filter((k) => k in L);
   if (!keys.length) return null;
@@ -193,52 +193,100 @@ function Glow({ active, ac, pulse, ox, oy }: {
 }
 
 // Whole-diagram motion, keyed to the exercise's broad movement category and
-// driven by the same `pulse` value that already animates the glow (1 = bright/
-// "top" of the rep, 0.08 = dim/"bottom" of the rep) — no rigged limbs, just a
-// visual cue for the kind of motion. Categories with no obvious whole-body
-// cue (e.g. curl/pull, which mostly move the arms) get a small scale pulse;
-// null (unrecognized exercise) gets no extra motion at all.
-function getMotionTransform(category: MovementCategory | null, pulse: Animated.Value) {
+// driven by a single `progress` value (0 = top/start of the rep, 1 = bottom/
+// full contraction) on a rep-like cadence — slower on the way down, a brief
+// hold at the bottom, faster on the way up, a longer hold at the top. No
+// rigged limbs, just a whole-figure cue for the kind of motion; categories
+// get visually distinct transforms (squat/hinge sink down, press rises,
+// pull draws down, calf rises onto toes, curl/core contract in place) rather
+// than one generic bounce. Unrecognized exercises get no extra motion.
+interface MotionConfig {
+  transform: (progress: Animated.Value) => any[];
+  downMs: number;
+  holdBottomMs: number;
+  upMs: number;
+  holdTopMs: number;
+}
+
+const DEFAULT_TEMPO = { downMs: 650, holdBottomMs: 0, upMs: 650, holdTopMs: 0 };
+
+function getMotionConfig(category: MovementCategory | null): MotionConfig | null {
   switch (category) {
     case "squat":
     case "hinge":
-      return [{ translateY: pulse.interpolate({ inputRange: [0.08, 1], outputRange: [8, 0] }) }];
+      return {
+        transform: (p) => [
+          { translateY: p.interpolate({ inputRange: [0, 1], outputRange: [0, 20] }) },
+          { scaleY: p.interpolate({ inputRange: [0, 1], outputRange: [1, 0.95] }) },
+        ],
+        downMs: 750, holdBottomMs: 200, upMs: 550, holdTopMs: 400,
+      };
     case "calf":
-      return [{ translateY: pulse.interpolate({ inputRange: [0.08, 1], outputRange: [-6, 0] }) }];
+      return {
+        transform: (p) => [{ translateY: p.interpolate({ inputRange: [0, 1], outputRange: [0, -14] }) }],
+        downMs: 500, holdBottomMs: 500, upMs: 500, holdTopMs: 100,
+      };
     case "press":
+      return {
+        transform: (p) => [
+          { translateY: p.interpolate({ inputRange: [0, 1], outputRange: [10, -6] }) },
+          { scale: p.interpolate({ inputRange: [0, 1], outputRange: [0.97, 1.05] }) },
+        ],
+        downMs: 550, holdBottomMs: 250, upMs: 650, holdTopMs: 300,
+      };
     case "pull":
+      return {
+        transform: (p) => [
+          { translateY: p.interpolate({ inputRange: [0, 1], outputRange: [-6, 10] }) },
+          { scale: p.interpolate({ inputRange: [0, 1], outputRange: [1.04, 0.98] }) },
+        ],
+        downMs: 650, holdBottomMs: 300, upMs: 550, holdTopMs: 250,
+      };
     case "curl":
-      return [{ scale: pulse.interpolate({ inputRange: [0.08, 1], outputRange: [1.035, 1] }) }];
+      return {
+        transform: (p) => [{ scale: p.interpolate({ inputRange: [0, 1], outputRange: [1, 1.1] }) }],
+        downMs: 550, holdBottomMs: 250, upMs: 550, holdTopMs: 300,
+      };
     case "core":
-      return [{ scaleY: pulse.interpolate({ inputRange: [0.08, 1], outputRange: [0.96, 1] }) }];
+      return {
+        transform: (p) => [{ scaleY: p.interpolate({ inputRange: [0, 1], outputRange: [1, 0.86] }) }],
+        downMs: 550, holdBottomMs: 250, upMs: 550, holdTopMs: 300,
+      };
     default:
-      return undefined;
+      return null;
   }
 }
 
 // ── Main export ───────────────────────────────────────────────────────────────
 export default function MuscleDiagramSVG({ muscles, exerciseName }: Props) {
-  const pulseRef = useRef<Animated.Value | null>(null);
-  if (pulseRef.current === null) pulseRef.current = new Animated.Value(1);
+  const progressRef = useRef<Animated.Value | null>(null);
+  if (progressRef.current === null) progressRef.current = new Animated.Value(0);
   // Animated.Value is a stable, native-driven handle meant to be read during render and
   // passed into style props (e.g. `opacity={pulse}` below) — it has none of the staleness
   // concerns react-hooks/refs otherwise guards against.
   // eslint-disable-next-line react-hooks/refs
-  const pulse = pulseRef.current;
+  const progress = progressRef.current;
   const { front, back } = resolveActive(muscles);
-  const motionTransform = getMotionTransform(getMovementCategory(exerciseName), pulse);
+  const motionConfig = getMotionConfig(getMovementCategory(exerciseName));
+  const tempo = motionConfig ?? DEFAULT_TEMPO;
+  const motionTransform = motionConfig?.transform(progress);
+  // Bright at the top/start of the rep, dimmer at full contraction — same
+  // rhythm as the whole-body transform so glow and motion read as one thing.
+  const pulse = progress.interpolate({ inputRange: [0, 1], outputRange: [1, 0.35] });
 
   useEffect(() => {
-    if (!muscles.length) { pulse.setValue(1); return; }
+    if (!muscles.length) { progress.setValue(0); return; }
     const loop = Animated.loop(
       Animated.sequence([
-        Animated.timing(pulse, { toValue: 0.08, duration: 650, useNativeDriver: true }),
-        Animated.timing(pulse, { toValue: 1,    duration: 650, useNativeDriver: true }),
+        Animated.timing(progress, { toValue: 1, duration: tempo.downMs, useNativeDriver: true }),
+        Animated.delay(tempo.holdBottomMs),
+        Animated.timing(progress, { toValue: 0, duration: tempo.upMs, useNativeDriver: true }),
+        Animated.delay(tempo.holdTopMs),
       ])
     );
     loop.start();
     return () => loop.stop();
-  }, [muscles, pulse]);
+  }, [muscles, tempo.downMs, tempo.holdBottomMs, tempo.upMs, tempo.holdTopMs, progress]);
 
   return (
     <View style={ui.container}>
