@@ -72,7 +72,8 @@
           "NSHealthUpdateUsageDescription": false,
           "background": false
         }
-      ]
+      ],
+      "expo-video"
     ],
     "extra": {
       "eas": {

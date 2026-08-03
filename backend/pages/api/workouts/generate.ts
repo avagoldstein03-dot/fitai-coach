@@ -4,6 +4,7 @@ import prisma from "@/lib/prisma";
 import { sendSuccess, sendError, validateRequest } from "@/lib/api-utils";
 import { AIProviderRegistry } from "@/services/ai-registry";
 import { getUserSubscription } from "@/lib/subscription-middleware";
+import { getVideoForExercise } from "@/lib/exercise-video-catalog";
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (!validateRequest(req, ["POST"])) {
@@ -112,6 +113,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
                     reps: ex.reps,
                     restSeconds: ex.restSeconds,
                     notes: ex.notes,
+                    ...getVideoForExercise(ex.exerciseName),
                   })),
                 },
               })),

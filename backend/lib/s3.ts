@@ -34,6 +34,27 @@ export async function uploadBase64ToS3(
   return `https://${BUCKET}.s3.${process.env.AWS_S3_REGION}.amazonaws.com/${key}`;
 }
 
+export async function uploadBufferToS3(
+  buffer: Buffer,
+  folder: string,
+  prefix: string,
+  ext: string,
+  contentType: string
+): Promise<string> {
+  const key = `${folder}/${prefix}-${uuidv4()}.${ext}`;
+
+  await s3
+    .putObject({
+      Bucket: BUCKET,
+      Key: key,
+      Body: buffer,
+      ContentType: contentType,
+    })
+    .promise();
+
+  return `https://${BUCKET}.s3.${process.env.AWS_S3_REGION}.amazonaws.com/${key}`;
+}
+
 export async function deleteS3Object(url: string): Promise<void> {
   try {
     const urlObj = new URL(url);

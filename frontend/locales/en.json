@@ -765,6 +765,8 @@
     "log_set": "Log Set",
     "check_form": "Check Form",
     "start_scan": "Start Scan",
+    "form_video_label": "Form demo",
+    "video_disclaimer": "AI-generated demonstration for illustration only — not a substitute for professional coaching.",
     "replace_exercise": "Replace Exercise",
     "replace_exercise_title": "Replace Exercise",
     "add_exercise": "+ Add Exercise",
