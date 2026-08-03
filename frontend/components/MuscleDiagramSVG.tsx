@@ -1,9 +1,6 @@
 /**
  * Muscle diagram — a real front+back reference image as the base, with SVG
- * highlights overlaid on active muscles, and the front figure's arms/legs
- * cut into their own pieces (scripts/segment-muscle-diagram.py) so they can
- * rotate around a shoulder/hip pivot for a given exercise category — real
- * joint movement instead of the whole image bouncing as one rigid block.
+ * highlights overlaid on active muscles.
  *
  * frontend/assets/muscle-diagram.png was generated once via
  * scripts/generate-muscle-diagram-asset.mjs (OpenAI gpt-image-1) — a plain
@@ -15,20 +12,13 @@ import React, { useEffect, useRef } from "react";
 import { Animated, Image, StyleSheet, Text, View } from "react-native";
 import Svg, { G, Path } from "react-native-svg";
 import { T } from "@/lib/theme";
-import { getMovementCategory, MovementCategory } from "@/lib/exercise-movement-category";
 
 // React Native image assets are resolved by Metro at build time as opaque numbers.
-/* eslint-disable @typescript-eslint/no-var-requires */
-const IMG = require("../assets/muscle-diagram-base.png") as number;
-const LEFT_ARM_IMG = require("../assets/muscle-diagram-left-arm.png") as number;
-const RIGHT_ARM_IMG = require("../assets/muscle-diagram-right-arm.png") as number;
-const LEFT_LEG_IMG = require("../assets/muscle-diagram-left-leg.png") as number;
-const RIGHT_LEG_IMG = require("../assets/muscle-diagram-right-leg.png") as number;
-/* eslint-enable @typescript-eslint/no-var-requires */
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const IMG = require("../assets/muscle-diagram.png") as number;
 
 interface Props { muscles: string[]; exerciseName: string; }
 const AnimatedG = Animated.createAnimatedComponent(G);
-const AnimatedImage = Animated.Image;
 
 // ── Mirror x = 100 ───────────────────────────────────────────────────────────
 function mX(d: string): string {
@@ -161,7 +151,7 @@ function resolveActive(muscles: string[]): { front: Set<string>; back: Set<strin
 // ─────────────────────────────────────────────────────────────────────────────
 // Display constants
 //
-// muscle-diagram.png is 900×600 (1.5:1) — OVERLAY_W/H match that ratio
+// muscle-diagram.png is 1536×1024 (1.5:1) — OVERLAY_W/H match that ratio
 // exactly so <Image resizeMode="contain"> fills the box with no letterboxing,
 // which makes the fractional figure position in the source image map 1:1
 // onto pixel offsets here.
@@ -183,44 +173,9 @@ const BY = 12;
 const SX = FW / 200;          // ≈ 0.56
 const SY = FH / 460;          // ≈ 0.44
 
-// ─────────────────────────────────────────────────────────────────────────────
-// Limb piece geometry — measured directly off muscle-diagram.png's pixels
-// (900×600 source, scanned row-by-row for background/figure transitions —
-// see scripts/segment-muscle-diagram.py) then divided by 3 to convert to
-// this component's 300×200 display box. Each piece's pivot sits at its
-// horizontal center and top edge (shoulder for arms, hip for legs), which
-// is why rotation only needs a translateY correction, no translateX.
-// ─────────────────────────────────────────────────────────────────────────────
-interface LimbGeometry { source: number; x: number; y: number; w: number; h: number; }
-
-const LEFT_ARM: LimbGeometry  = { source: LEFT_ARM_IMG,  x: 160 / 3, y: 216 / 3, w: (235 - 160) / 3, h: (358 - 216) / 3 };
-const RIGHT_ARM: LimbGeometry = { source: RIGHT_ARM_IMG, x: 345 / 3, y: 216 / 3, w: (420 - 345) / 3, h: (358 - 216) / 3 };
-const LEFT_LEG: LimbGeometry  = { source: LEFT_LEG_IMG,  x: 235 / 3, y: 355 / 3, w: (290 - 235) / 3, h: (562 - 355) / 3 };
-const RIGHT_LEG: LimbGeometry = { source: RIGHT_LEG_IMG, x: 293 / 3, y: 355 / 3, w: (348 - 293) / 3, h: (562 - 355) / 3 };
-
-function LimbPiece({ geo, rotateDeg }: { geo: LimbGeometry; rotateDeg: Animated.AnimatedInterpolation<string> | null }) {
-  const halfH = geo.h / 2;
-  return (
-    <AnimatedImage
-      source={geo.source}
-      resizeMode="contain"
-      style={{
-        position: "absolute",
-        left: geo.x,
-        top: geo.y,
-        width: geo.w,
-        height: geo.h,
-        transform: rotateDeg
-          ? [{ translateY: -halfH }, { rotate: rotateDeg }, { translateY: halfH }]
-          : undefined,
-      }}
-    />
-  );
-}
-
 // ── Pulse overlay for one side ────────────────────────────────────────────────
 function Glow({ active, ac, pulse, ox, oy }: {
-  active: Set<string>; ac: string; pulse: Animated.Value | Animated.AnimatedInterpolation<number>; ox: number; oy: number;
+  active: Set<string>; ac: string; pulse: Animated.Value; ox: number; oy: number;
 }) {
   const keys = [...active].filter((k) => k in L);
   if (!keys.length) return null;
@@ -236,78 +191,28 @@ function Glow({ active, ac, pulse, ox, oy }: {
   );
 }
 
-// Real per-limb rotation, keyed to the exercise's broad movement category
-// and driven by a single `progress` value (0 = top/start of the rep, 1 =
-// bottom/full contraction) on a rep-like cadence — slower on the way down,
-// a brief hold at the bottom, faster on the way up, a longer hold at the
-// top. Only press/pull/curl (arms) get rotation — arm rotation tested
-// clean (verified visually via scripts/segment-muscle-diagram.py's
-// simulation), but the leg pieces showed a persistent wedge-shaped gap at
-// the hip pivot that didn't resolve across several rounds of tuning
-// (padding, background-removal tolerance, crop boundary, rotation angle),
-// so squat/hinge fall back to no motion rather than shipping a visible
-// artifact. calf/core don't map naturally onto a limb swing either, and an
-// unrecognized exercise gets no motion at all, rather than a generic guess.
-interface MotionConfig {
-  leftArmDeg?: number;
-  rightArmDeg?: number;
-  downMs: number;
-  holdBottomMs: number;
-  upMs: number;
-  holdTopMs: number;
-}
-
-const DEFAULT_TEMPO = { downMs: 650, holdBottomMs: 0, upMs: 650, holdTopMs: 0 };
-
-function getMotionConfig(category: MovementCategory | null): MotionConfig | null {
-  switch (category) {
-    case "press":
-      return { leftArmDeg: -25, rightArmDeg: 25, downMs: 550, holdBottomMs: 250, upMs: 650, holdTopMs: 300 };
-    case "pull":
-      return { leftArmDeg: 18, rightArmDeg: -18, downMs: 650, holdBottomMs: 300, upMs: 550, holdTopMs: 250 };
-    case "curl":
-      return { leftArmDeg: 15, rightArmDeg: -15, downMs: 550, holdBottomMs: 250, upMs: 550, holdTopMs: 300 };
-    default:
-      return null;
-  }
-}
-
-function rotationFor(progress: Animated.Value, deg: number | undefined) {
-  if (!deg) return null;
-  return progress.interpolate({ inputRange: [0, 1], outputRange: ["0deg", `${deg}deg`] });
-}
-
 // ── Main export ───────────────────────────────────────────────────────────────
-export default function MuscleDiagramSVG({ muscles, exerciseName }: Props) {
-  const progressRef = useRef<Animated.Value | null>(null);
-  if (progressRef.current === null) progressRef.current = new Animated.Value(0);
+export default function MuscleDiagramSVG({ muscles }: Props) {
+  const pulseRef = useRef<Animated.Value | null>(null);
+  if (pulseRef.current === null) pulseRef.current = new Animated.Value(1);
   // Animated.Value is a stable, native-driven handle meant to be read during render and
   // passed into style props (e.g. `opacity={pulse}` below) — it has none of the staleness
   // concerns react-hooks/refs otherwise guards against.
   // eslint-disable-next-line react-hooks/refs
-  const progress = progressRef.current;
+  const pulse = pulseRef.current;
   const { front, back } = resolveActive(muscles);
-  const motionConfig = getMotionConfig(getMovementCategory(exerciseName));
-  const tempo = motionConfig ?? DEFAULT_TEMPO;
-  const leftArmRotate = rotationFor(progress, motionConfig?.leftArmDeg);
-  const rightArmRotate = rotationFor(progress, motionConfig?.rightArmDeg);
-  // Bright at the top/start of the rep, dimmer at full contraction — same
-  // rhythm as the limb rotation so glow and motion read as one thing.
-  const pulse = progress.interpolate({ inputRange: [0, 1], outputRange: [1, 0.35] });
 
   useEffect(() => {
-    if (!muscles.length) { progress.setValue(0); return; }
+    if (!muscles.length) { pulse.setValue(1); return; }
     const loop = Animated.loop(
       Animated.sequence([
-        Animated.timing(progress, { toValue: 1, duration: tempo.downMs, useNativeDriver: true }),
-        Animated.delay(tempo.holdBottomMs),
-        Animated.timing(progress, { toValue: 0, duration: tempo.upMs, useNativeDriver: true }),
-        Animated.delay(tempo.holdTopMs),
+        Animated.timing(pulse, { toValue: 0.08, duration: 650, useNativeDriver: true }),
+        Animated.timing(pulse, { toValue: 1,    duration: 650, useNativeDriver: true }),
       ])
     );
     loop.start();
     return () => loop.stop();
-  }, [muscles, tempo.downMs, tempo.holdBottomMs, tempo.upMs, tempo.holdTopMs, progress]);
+  }, [muscles, pulse]);
 
   return (
     <View style={ui.container}>
@@ -317,17 +222,6 @@ export default function MuscleDiagramSVG({ muscles, exerciseName }: Props) {
           style={{ width: OVERLAY_W, height: OVERLAY_H, borderRadius: 12 }}
           resizeMode="contain"
         />
-
-        {/* Front figure's limb pieces — cut from the same source image, laid
-            back on top at their original spot, rotating around a shoulder/
-            hip pivot when the exercise category calls for it. Always
-            rendered (even with no rotation) since the base image has these
-            regions erased and needs them to look complete. */}
-        <LimbPiece geo={LEFT_ARM} rotateDeg={leftArmRotate} />
-        <LimbPiece geo={RIGHT_ARM} rotateDeg={rightArmRotate} />
-        {/* Legs never rotate — see the getMotionConfig comment above. */}
-        <LimbPiece geo={LEFT_LEG} rotateDeg={null} />
-        <LimbPiece geo={RIGHT_LEG} rotateDeg={null} />
 
         {/* SVG glow overlay — pointerEvents none so it doesn't block touches */}
         <Svg
