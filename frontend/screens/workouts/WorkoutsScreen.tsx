@@ -22,6 +22,7 @@ import { T } from "@/lib/theme";
 import { posthog, Events } from "@/lib/analytics";
 import { SwipeToDeleteRow } from "@/components/SwipeToDeleteRow";
 import MuscleDiagramSVG from "@/components/MuscleDiagramSVG";
+import ExerciseMovementPreview from "@/components/ExerciseMovementPreview";
 import { getMusclesForExercise } from "@/lib/exercise-muscles";
 const API_URL = process.env.EXPO_PUBLIC_API_URL;
 
@@ -746,6 +747,9 @@ export default function WorkoutsScreen() {
         <View style={styles.modalBackdrop}>
           <View style={styles.modalSheet}>
             <Text style={styles.modalTitle}>{formCheckPreview?.exerciseName}</Text>
+            {formCheckPreview && (
+              <ExerciseMovementPreview exerciseName={formCheckPreview.exerciseName} />
+            )}
             <Text style={styles.inputLabel}>{t("form_check.muscles_label")}</Text>
             {formCheckPreview && (
               <MuscleDiagramSVG

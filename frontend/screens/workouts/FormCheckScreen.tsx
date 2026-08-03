@@ -15,6 +15,7 @@ import axios from "axios";
 import { useTranslation } from "react-i18next";
 import { useUpgradeGate, isPremiumRequiredError } from "@/contexts/UpgradeGateContext";
 import MuscleDiagramSVG from "@/components/MuscleDiagramSVG";
+import ExerciseMovementPreview from "@/components/ExerciseMovementPreview";
 import { T } from "@/lib/theme";
 
 const API_URL = process.env.EXPO_PUBLIC_API_URL;
@@ -164,6 +165,8 @@ export default function FormCheckScreen() {
           </View>
           <Text style={s.scoreLabel}>{t("form_check.score_label")}</Text>
         </View>
+
+        <ExerciseMovementPreview exerciseName={result.exerciseName} style={s.resultsSection} />
 
         {result.muscles?.length > 0 && (
           <View style={s.resultsSection}>
