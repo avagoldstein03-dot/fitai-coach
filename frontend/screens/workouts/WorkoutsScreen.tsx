@@ -771,21 +771,23 @@ export default function WorkoutsScreen() {
       {/* ── Form Check Preview Sheet ── */}
       <Modal visible={!!formCheckPreview} transparent animationType="slide">
         <View style={styles.modalBackdrop}>
-          <View style={styles.modalSheet}>
+          <View style={[styles.modalSheet, { maxHeight: "90%" }]}>
             <Text style={styles.modalTitle}>{formCheckPreview?.exerciseName}</Text>
-            {formCheckPreview?.videoUrl && (
-              <>
-                <Text style={styles.inputLabel}>{t("workouts.form_video_label")}</Text>
-                <ExerciseFormVideo videoUrl={formCheckPreview.videoUrl} />
-              </>
-            )}
-            <Text style={styles.inputLabel}>{t("form_check.muscles_label")}</Text>
-            {formCheckPreview && (
-              <MuscleDiagramSVG
-                muscles={getMusclesForExercise(formCheckPreview.exerciseName)}
-                exerciseName={formCheckPreview.exerciseName}
-              />
-            )}
+            <ScrollView showsVerticalScrollIndicator={false}>
+              {formCheckPreview?.videoUrl && (
+                <>
+                  <Text style={styles.inputLabel}>{t("workouts.form_video_label")}</Text>
+                  <ExerciseFormVideo videoUrl={formCheckPreview.videoUrl} />
+                </>
+              )}
+              <Text style={styles.inputLabel}>{t("form_check.muscles_label")}</Text>
+              {formCheckPreview && (
+                <MuscleDiagramSVG
+                  muscles={getMusclesForExercise(formCheckPreview.exerciseName)}
+                  exerciseName={formCheckPreview.exerciseName}
+                />
+              )}
+            </ScrollView>
             <View style={styles.modalActions}>
               <TouchableOpacity style={styles.cancelBtn} onPress={() => setFormCheckPreview(null)}>
                 <Text style={styles.cancelBtnText}>{t("common.cancel")}</Text>
