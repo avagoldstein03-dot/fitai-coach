@@ -57,7 +57,7 @@ const EXERCISE_VIDEO_MAP: VideoCategory[] = [
   { keywords: ["pushdown"], libraryId: "tricepExtension", videoUrlMale: "", videoUrlFemale: "" },
   // Narrowed to just "plank" — crunch/sit-up/leg raise/russian twist/ab
   // wheel are all visually distinct movements from a plank hold.
-  { keywords: ["plank"], libraryId: "core", videoUrlMale: "https://fitai-coach-storage.s3.us-east-1.amazonaws.com/exercise-videos/core_male-a0414ebe-5206-42fb-bc18-3bea72245388.mp4", videoUrlFemale: "https://fitai-coach-storage.s3.us-east-1.amazonaws.com/exercise-videos/core-91d217f8-6619-419a-a931-0ec272308f72.mp4" },
+  { keywords: ["plank"], libraryId: "core", videoUrlMale: "https://fitai-coach-storage.s3.us-east-1.amazonaws.com/exercise-videos/core_male-a0414ebe-5206-42fb-bc18-3bea72245388.mp4", videoUrlFemale: "https://fitai-coach-storage.s3.us-east-1.amazonaws.com/exercise-videos/core_female-d8375967-0b0c-46c0-916a-f2243a0d5b1c.mp4" },
   { keywords: ["calf raise"], libraryId: "calfRaise", videoUrlMale: "", videoUrlFemale: "" },
   { keywords: ["hip thrust", "glute bridge"], libraryId: "hipThrust", videoUrlMale: "", videoUrlFemale: "https://fitai-coach-storage.s3.us-east-1.amazonaws.com/exercise-videos/hipThrust-19180df4-fc5f-4332-9b26-d0a2ea207203.mp4" },
   { keywords: ["face pull"], libraryId: "facePull", videoUrlMale: "", videoUrlFemale: "" },

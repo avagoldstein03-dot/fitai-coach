@@ -73,7 +73,9 @@ const CATEGORIES = [
   { key: "lateralRaise",     prompt: `A person performing standing dumbbell lateral raises, raising arms to shoulder height with a slight elbow bend. ${STYLE}` },
   { key: "curl",             prompt: `A person performing standing dumbbell bicep curls with strict form, no swinging. ${STYLE}` },
   { key: "tricepExtension",  prompt: `A person performing a cable triceps pushdown, elbows pinned to the sides. ${STYLE}` },
-  { key: "core",             prompt: `A person performing a controlled plank hold, then a slow abdominal crunch, straight body line. ${STYLE}` },
+  // A plank is an isometric hold, not a rep — deliberately doesn't reuse the
+  // shared STYLE's "one full repetition" language, which doesn't apply here.
+  { key: "core",             prompt: "A person performing a forearm plank hold: elbows and forearms flat on the ground directly beneath the shoulders, body forming one straight line from head to heels, core engaged, holding this exact position steadily for the entire clip without moving up or down. Realistic gym setting, clean lighting, side camera angle, no text overlays, no other people, strict correct form throughout." },
   { key: "calfRaise",        prompt: `A person performing standing calf raises on a raised platform, full stretch at the bottom and full extension at the top. ${STYLE}` },
   { key: "hipThrust",        prompt: `A person performing a barbell hip thrust with their upper back on a bench, driving the hips up to full extension. ${STYLE}` },
   { key: "facePull",         prompt: `A person performing a cable face pull with a rope attachment, pulling toward the face with elbows high. ${STYLE}` },
