@@ -13,6 +13,7 @@ import type {
   FormCheckInput,
   FormCheckResult,
   ChatContext,
+  CrossDomainSignal,
 } from "./ai-provider";
 
 const openai = new OpenAI({
@@ -278,6 +279,31 @@ Provide insights, positive reinforcement, and recommendations.`;
     });
 
     return response.choices[0].message.content || "Failed to generate progress review";
+  }
+
+  async generateCrossDomainInsights(signals: CrossDomainSignal[]): Promise<string[]> {
+    const prompt = `You are a fitness coach. Here are some notable co-occurring changes in a user's data this week, already computed:
+${signals.map((s) => `- ${s.description}`).join("\n")}
+
+Turn these into 2-4 short, specific, encouraging insight sentences a user would actually want to read on their dashboard. Don't just restate the numbers — connect them to something the user can act on. Don't claim certainty about causation, phrase them as observations worth paying attention to.
+
+Return ONLY a valid JSON array of strings, no markdown, no other text. Example: ["Your sleep dropped this week, and so did your workout volume — prioritizing rest might help your numbers bounce back.", "..."]`;
+
+    const response = await openai.chat.completions.create({
+      model: "gpt-4o",
+      messages: [{ role: "user", content: prompt }],
+    });
+
+    const content = response.choices[0].message.content;
+    if (!content) return [];
+    const jsonMatch = content.match(/\[[\s\S]*\]/);
+    if (!jsonMatch) return [];
+    try {
+      const parsed = JSON.parse(jsonMatch[0]);
+      return Array.isArray(parsed) ? parsed.filter((s) => typeof s === "string") : [];
+    } catch {
+      return [];
+    }
   }
 
   async analyzeForm(input: FormCheckInput): Promise<FormCheckResult> {

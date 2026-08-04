@@ -233,6 +233,116 @@ export function computeWorkoutVolumeTrend(
     .sort((a, b) => a.date.localeCompare(b.date));
 }
 
+export interface CrossDomainSignal {
+  description: string;
+}
+
+interface WeekSplit {
+  thisWeekAvg: number;
+  lastWeekAvg: number;
+  changePct: number;
+}
+
+// Splits date-stamped points into "most recent 7 days" vs. "the 7 days before
+// that", relative to the latest date present (not necessarily today — a user
+// might not have logged anything since yesterday). Returns null when either
+// window has no data, which is the normal case for new users and must not
+// produce a forced/noisy signal.
+function splitIntoWeeks(points: Array<{ date: string; value: number }>): WeekSplit | null {
+  if (!points.length) return null;
+
+  const sorted = [...points].sort((a, b) => a.date.localeCompare(b.date));
+  const mostRecent = new Date(sorted[sorted.length - 1].date);
+
+  const thisWeekStart = new Date(mostRecent);
+  thisWeekStart.setDate(mostRecent.getDate() - 6);
+  const lastWeekStart = new Date(mostRecent);
+  lastWeekStart.setDate(mostRecent.getDate() - 13);
+  const lastWeekEnd = new Date(mostRecent);
+  lastWeekEnd.setDate(mostRecent.getDate() - 7);
+
+  const thisWeekPoints = sorted.filter((p) => new Date(p.date) >= thisWeekStart);
+  const lastWeekPoints = sorted.filter((p) => {
+    const d = new Date(p.date);
+    return d >= lastWeekStart && d <= lastWeekEnd;
+  });
+
+  if (!thisWeekPoints.length || !lastWeekPoints.length) return null;
+
+  const avg = (pts: typeof thisWeekPoints) => pts.reduce((s, p) => s + p.value, 0) / pts.length;
+  const thisWeekAvg = avg(thisWeekPoints);
+  const lastWeekAvg = avg(lastWeekPoints);
+  if (lastWeekAvg === 0) return null;
+
+  return { thisWeekAvg, lastWeekAvg, changePct: ((thisWeekAvg - lastWeekAvg) / lastWeekAvg) * 100 };
+}
+
+const SIGNIFICANT_CHANGE_PCT = 15;
+
+// Heuristic pairings, not real statistics (no correlation coefficients) —
+// flags a pairing only when both sides move meaningfully in the same
+// direction over the same week. Deliberately small and fixed, matching the
+// heuristic style of detectWorkoutPlateaus above, not an open-ended search
+// for correlations across every possible pair of signals.
+export function detectCrossDomainSignals(input: {
+  healthSeries: HealthMetricPoint[] | null;
+  volumeSeries: WorkoutVolumePoint[];
+  weightLogs: Array<{ weight: number; loggedAt: Date }>;
+}): CrossDomainSignal[] {
+  const signals: CrossDomainSignal[] = [];
+
+  const sleepPoints = (input.healthSeries ?? [])
+    .filter((p): p is HealthMetricPoint & { sleepMinutes: number } => p.sleepMinutes != null)
+    .map((p) => ({ date: p.date, value: p.sleepMinutes }));
+  const rhrPoints = (input.healthSeries ?? [])
+    .filter((p): p is HealthMetricPoint & { restingHeartRate: number } => p.restingHeartRate != null)
+    .map((p) => ({ date: p.date, value: p.restingHeartRate }));
+  const stepsPoints = (input.healthSeries ?? [])
+    .filter((p): p is HealthMetricPoint & { steps: number } => p.steps != null)
+    .map((p) => ({ date: p.date, value: p.steps }));
+  const volumePoints = input.volumeSeries.map((p) => ({ date: p.date, value: p.volume }));
+  const weightPoints = input.weightLogs.map((log) => ({
+    date: log.loggedAt.toISOString().split("T")[0],
+    value: log.weight,
+  }));
+
+  const sleep = splitIntoWeeks(sleepPoints);
+  const rhr = splitIntoWeeks(rhrPoints);
+  const steps = splitIntoWeeks(stepsPoints);
+  const volume = splitIntoWeeks(volumePoints);
+  const weight = splitIntoWeeks(weightPoints);
+
+  const moved = (w: WeekSplit | null) => w !== null && Math.abs(w.changePct) >= SIGNIFICANT_CHANGE_PCT;
+  const pct = (w: WeekSplit) => `${w.changePct > 0 ? "+" : ""}${Math.round(w.changePct)}%`;
+  const hrs = (mins: number) => `${(mins / 60).toFixed(1)}h`;
+
+  if (moved(sleep) && moved(volume)) {
+    signals.push({
+      description: `Average sleep changed ${pct(sleep!)} this week (${hrs(sleep!.lastWeekAvg)} → ${hrs(sleep!.thisWeekAvg)}) while total workout volume changed ${pct(volume!)} (${Math.round(volume!.lastWeekAvg)} → ${Math.round(volume!.thisWeekAvg)}) in the same period.`,
+    });
+  }
+
+  if (moved(sleep) && moved(rhr)) {
+    signals.push({
+      description: `Average sleep changed ${pct(sleep!)} this week (${hrs(sleep!.lastWeekAvg)} → ${hrs(sleep!.thisWeekAvg)}) while resting heart rate changed ${pct(rhr!)} (${Math.round(rhr!.lastWeekAvg)} → ${Math.round(rhr!.thisWeekAvg)} bpm) in the same period.`,
+    });
+  }
+
+  if (moved(steps) && moved(weight)) {
+    signals.push({
+      description: `Average daily steps changed ${pct(steps!)} this week (${Math.round(steps!.lastWeekAvg)} → ${Math.round(steps!.thisWeekAvg)}) while weight changed ${pct(weight!)} (${weight!.lastWeekAvg.toFixed(1)}kg → ${weight!.thisWeekAvg.toFixed(1)}kg) in the same period.`,
+    });
+  }
+
+  if (moved(volume) && moved(weight)) {
+    signals.push({
+      description: `Total workout volume changed ${pct(volume!)} this week (${Math.round(volume!.lastWeekAvg)} → ${Math.round(volume!.thisWeekAvg)}) while weight changed ${pct(weight!)} (${weight!.lastWeekAvg.toFixed(1)}kg → ${weight!.thisWeekAvg.toFixed(1)}kg) in the same period.`,
+    });
+  }
+
+  return signals;
+}
+
 export function buildTrendsSummary(input: { plateaus: PlateauInfo[]; compositionDiffs: string[] }): string {
   const lines: string[] = [];
 

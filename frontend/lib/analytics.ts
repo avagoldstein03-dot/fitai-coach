@@ -50,4 +50,7 @@ export const Events = {
   // Onboarding
   ONBOARDING_STEP_COMPLETED: "onboarding_step_completed",
   ONBOARDING_COMPLETED: "onboarding_completed",
+
+  // Insights
+  INSIGHT_CARD_VIEWED: "insight_card_viewed",
 } as const;

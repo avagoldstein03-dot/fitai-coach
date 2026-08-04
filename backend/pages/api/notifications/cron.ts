@@ -6,6 +6,7 @@ import {
   broadcastProgressUpdates,
   broadcastWeeklyReviewReady,
 } from "@/services/notifications";
+import { generateWeeklyInsightsForAllEligibleUsers } from "@/services/insights";
 
 // Call this endpoint from a cron job (Vercel Cron, GitHub Actions, etc.)
 // Protect with a shared secret so it can't be triggered publicly.
@@ -18,9 +19,9 @@ import {
 //
 // The Vercel Hobby plan caps a project at 2 cron jobs, and both slots above
 // are already spoken for. Rather than add a 3rd entry, the weekly progress-
-// update and weekly-review notifications piggyback onto the existing daily
-// `workout` cron: on Sundays only, the `type=workout` branch below also fires
-// the two weekly broadcasts. No vercel.json changes needed.
+// update, weekly-review, and cross-domain-insight generation all piggyback
+// onto the existing daily `workout` cron: on Sundays only, the `type=workout`
+// branch below also fires them. No vercel.json changes needed.
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method !== "POST" && req.method !== "GET") {
@@ -42,13 +43,14 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
     // Sunday piggyback — see the vercel.json note above.
     if (new Date().getUTCDay() === 0) {
-      const [progressUpdates, weeklyReview] = await Promise.all([
+      const [progressUpdates, weeklyReview, weeklyInsights] = await Promise.all([
         broadcastProgressUpdates(),
         broadcastWeeklyReviewReady(),
+        generateWeeklyInsightsForAllEligibleUsers(),
       ]);
       return sendSuccess(
         res,
-        { workoutReminders: result, progressUpdates, weeklyReview },
+        { workoutReminders: result, progressUpdates, weeklyReview, weeklyInsights },
         "Workout reminders + Sunday weekly notifications sent"
       );
     }

@@ -68,7 +68,8 @@ model User {
   friendedBy            FriendConnection[]     @relation("FriendConnectionsAsFriend")
   cheersSent            FriendCheer[]          @relation("CheersSent")
   cheersReceived        FriendCheer[]          @relation("CheersReceived")
-  
+  weeklyInsights        WeeklyInsight[]
+
   createdAt             DateTime               @default(now())
   updatedAt             DateTime               @updatedAt
 }
@@ -510,6 +511,24 @@ model AnalyticsEvent {
   createdAt             DateTime               @default(now())
 
   @@index([userId, eventName, createdAt])
+}
+
+// ============================================================================
+// Weekly cross-domain insights (food/workout/sleep/body-comp correlations)
+// ============================================================================
+
+model WeeklyInsight {
+  id                    String                 @id @default(cuid())
+  userId                String
+  user                  User                   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  weekOf                DateTime               // start of the ISO week this covers
+  insights              Json                   // string[]
+
+  createdAt             DateTime               @default(now())
+
+  @@unique([userId, weekOf])
+  @@index([userId])
 }
 
 // ============================================================================

@@ -19,6 +19,8 @@ import { useTranslation } from "react-i18next";
 import * as Haptics from "expo-haptics";
 import { T } from "@/lib/theme";
 import { syncHealthData } from "@/lib/health";
+import { useUpgradeGate } from "@/contexts/UpgradeGateContext";
+import { posthog, Events } from "@/lib/analytics";
 
 const API_URL = process.env.EXPO_PUBLIC_API_URL;
 const W = Dimensions.get("window").width;
@@ -93,6 +95,7 @@ const WATER_GOAL = 8;
 export default function DashboardScreen() {
   const navigation = useNavigation() as any;
   const { t, i18n } = useTranslation();
+  const { presentUpgrade } = useUpgradeGate();
   const quotes = t("dashboard.quotes", { returnObjects: true }) as { text: string; author: string }[];
   const dailyQuote = quotes[dayOfYear % quotes.length];
   const [waterGlasses, setWaterGlasses] = useState(0);
@@ -191,6 +194,20 @@ export default function DashboardScreen() {
     },
     staleTime: 300_000,
   });
+
+  const { data: weeklyInsights, error: weeklyInsightsError } = useQuery<{
+    weekOf: string | null;
+    insights: string[] | null;
+  }>({
+    queryKey: ["weeklyInsights"],
+    queryFn: async () => {
+      const res = await axios.get(`${API_URL}/api/analytics/insights`);
+      return res.data.data;
+    },
+    staleTime: 300_000,
+    retry: false,
+  });
+  const weeklyInsightsGated = (weeklyInsightsError as any)?.response?.status === 403;
 
   useEffect(() => {
     if (!data?.streaks) return;
@@ -570,6 +587,34 @@ export default function DashboardScreen() {
         </View>
       )}
 
+      {/* ── Weekly Insights ── */}
+      {weeklyInsightsGated ? (
+        <View style={s.insightCard}>
+          <Text style={s.insightTitle}>{t("dashboard.insights_title")}</Text>
+          <Text style={s.insightLockedSub}>{t("dashboard.insights_locked_sub")}</Text>
+          <TouchableOpacity
+            onPress={() => {
+              posthog.capture(Events.INSIGHT_CARD_VIEWED, { locked: true });
+              presentUpgrade();
+            }}
+            style={s.insightUpgradeBtn}
+          >
+            <Text style={s.insightUpgradeBtnText}>{t("common.upgrade")}</Text>
+          </TouchableOpacity>
+        </View>
+      ) : (
+        weeklyInsights?.insights?.length ? (
+          <View style={s.insightCard} onLayout={() => posthog.capture(Events.INSIGHT_CARD_VIEWED, { locked: false })}>
+            <Text style={s.insightTitle}>{t("dashboard.insights_title")}</Text>
+            {weeklyInsights.insights.map((insight, i) => (
+              <Text key={i} style={s.insightLine}>
+                {insight}
+              </Text>
+            ))}
+          </View>
+        ) : null
+      )}
+
       {/* ── Quick Actions ── */}
       <Text style={s.sectionLabel}>{t("dashboard.quick_actions")}</Text>
       <View style={s.actionList}>
@@ -804,6 +849,26 @@ const s = StyleSheet.create({
     marginTop: 8,
   },
   chartLabel: { fontSize: 10, color: T.textMuted, flex: 1, textAlign: "center" },
+
+  // Weekly Insights
+  insightCard: {
+    backgroundColor: T.surface,
+    borderRadius: 18,
+    borderWidth: 1,
+    borderColor: T.border,
+    padding: 18,
+    marginBottom: 10,
+  },
+  insightTitle: { fontSize: 15, fontWeight: "700", color: T.textPrimary, marginBottom: 10 },
+  insightLine: { fontSize: 13, color: T.textPrimary, lineHeight: 19, marginBottom: 8 },
+  insightLockedSub: { fontSize: 13, color: T.textSecondary, marginBottom: 14 },
+  insightUpgradeBtn: {
+    backgroundColor: T.accent,
+    borderRadius: 12,
+    paddingVertical: 10,
+    alignItems: "center",
+  },
+  insightUpgradeBtnText: { fontSize: 14, fontWeight: "700", color: "#fff" },
 
   // Quick Actions
   sectionLabel: {

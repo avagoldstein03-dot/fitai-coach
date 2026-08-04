@@ -5,6 +5,7 @@ import {
   broadcastProgressUpdates,
   broadcastWeeklyReviewReady,
 } from "@/services/notifications";
+import { generateWeeklyInsightsForAllEligibleUsers } from "@/services/insights";
 import handler from "./cron";
 
 jest.mock("@/services/notifications", () => ({
@@ -12,6 +13,10 @@ jest.mock("@/services/notifications", () => ({
   broadcastMealNudges: jest.fn(),
   broadcastProgressUpdates: jest.fn(),
   broadcastWeeklyReviewReady: jest.fn(),
+}));
+
+jest.mock("@/services/insights", () => ({
+  generateWeeklyInsightsForAllEligibleUsers: jest.fn(),
 }));
 
 function mockReqRes(query: Record<string, unknown> = {}, headers: Record<string, unknown> = {}) {
@@ -42,6 +47,7 @@ describe("notifications/cron handler", () => {
     (broadcastMealNudges as jest.Mock).mockResolvedValue({ sent: 1, failed: 0 });
     (broadcastProgressUpdates as jest.Mock).mockResolvedValue({ sent: 1, failed: 0 });
     (broadcastWeeklyReviewReady as jest.Mock).mockResolvedValue({ sent: 1, failed: 0 });
+    (generateWeeklyInsightsForAllEligibleUsers as jest.Mock).mockResolvedValue({ attempted: 1, failed: 0 });
   });
 
   afterEach(() => {
@@ -64,9 +70,10 @@ describe("notifications/cron handler", () => {
     expect(broadcastWorkoutReminders).toHaveBeenCalledTimes(1);
     expect(broadcastProgressUpdates).not.toHaveBeenCalled();
     expect(broadcastWeeklyReviewReady).not.toHaveBeenCalled();
+    expect(generateWeeklyInsightsForAllEligibleUsers).not.toHaveBeenCalled();
   });
 
-  it("type=workout on a Sunday also runs the two weekly broadcasts", async () => {
+  it("type=workout on a Sunday also runs the weekly broadcasts and insight generation", async () => {
     mockDayOfWeek(0); // Sunday
     const { req, res } = mockReqRes({ type: "workout" });
     await handler(req, res);
@@ -74,12 +81,14 @@ describe("notifications/cron handler", () => {
     expect(broadcastWorkoutReminders).toHaveBeenCalledTimes(1);
     expect(broadcastProgressUpdates).toHaveBeenCalledTimes(1);
     expect(broadcastWeeklyReviewReady).toHaveBeenCalledTimes(1);
+    expect(generateWeeklyInsightsForAllEligibleUsers).toHaveBeenCalledTimes(1);
 
     const responseBody = res.json.mock.calls[0][0];
     expect(responseBody.data).toEqual({
       workoutReminders: { sent: 1, failed: 0 },
       progressUpdates: { sent: 1, failed: 0 },
       weeklyReview: { sent: 1, failed: 0 },
+      weeklyInsights: { attempted: 1, failed: 0 },
     });
   });
 
@@ -91,5 +100,6 @@ describe("notifications/cron handler", () => {
     expect(broadcastMealNudges).toHaveBeenCalledTimes(1);
     expect(broadcastProgressUpdates).not.toHaveBeenCalled();
     expect(broadcastWeeklyReviewReady).not.toHaveBeenCalled();
+    expect(generateWeeklyInsightsForAllEligibleUsers).not.toHaveBeenCalled();
   });
 });

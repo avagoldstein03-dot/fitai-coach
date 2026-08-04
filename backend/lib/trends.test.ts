@@ -7,6 +7,7 @@ import {
   aggregateHealthMetrics,
   aggregateMacroTrend,
   computeWorkoutVolumeTrend,
+  detectCrossDomainSignals,
 } from "./trends";
 
 function daysAgo(n: number): Date {
@@ -14,6 +15,23 @@ function daysAgo(n: number): Date {
   d.setHours(12, 0, 0, 0);
   d.setDate(d.getDate() - n);
   return d;
+}
+
+function dateStr(n: number): string {
+  return daysAgo(n).toISOString().split("T")[0];
+}
+
+// Days 0-6 = "this week", days 7-13 = "last week", matching
+// detectCrossDomainSignals' week-split logic (relative to the most recent
+// date present, not necessarily today).
+function healthPoint(n: number, overrides: Partial<{ sleepMinutes: number; restingHeartRate: number; steps: number }>) {
+  return {
+    date: dateStr(n),
+    steps: overrides.steps ?? null,
+    activeEnergyKcal: null,
+    sleepMinutes: overrides.sleepMinutes ?? null,
+    restingHeartRate: overrides.restingHeartRate ?? null,
+  };
 }
 
 describe("calculateStreak", () => {
@@ -253,5 +271,50 @@ describe("buildTrendsSummary", () => {
     const summary = buildTrendsSummary({ plateaus, compositionDiffs });
     const lines = summary.split("\n");
     expect(lines).toHaveLength(6);
+  });
+});
+
+describe("detectCrossDomainSignals", () => {
+  it("returns an empty array with no data in any domain", () => {
+    expect(detectCrossDomainSignals({ healthSeries: null, volumeSeries: [], weightLogs: [] })).toEqual([]);
+  });
+
+  it("returns an empty array when nothing moves significantly", () => {
+    const healthSeries = [0, 1, 7, 8].map((n) => healthPoint(n, { sleepMinutes: 480, restingHeartRate: 60, steps: 8000 }));
+    const volumeSeries = [dateStr(0), dateStr(7)].map((date) => ({ date, volume: 1000 }));
+    const weightLogs = [
+      { weight: 80, loggedAt: daysAgo(0) },
+      { weight: 80, loggedAt: daysAgo(7) },
+    ];
+    expect(detectCrossDomainSignals({ healthSeries, volumeSeries, weightLogs })).toEqual([]);
+  });
+
+  it("flags sleep dropping alongside workout volume dropping in the same week", () => {
+    const healthSeries = [
+      healthPoint(0, { sleepMinutes: 300 }),
+      healthPoint(1, { sleepMinutes: 300 }),
+      healthPoint(7, { sleepMinutes: 480 }),
+      healthPoint(8, { sleepMinutes: 480 }),
+    ];
+    const volumeSeries = [
+      { date: dateStr(0), volume: 1000 },
+      { date: dateStr(7), volume: 2000 },
+    ];
+    const signals = detectCrossDomainSignals({ healthSeries, volumeSeries, weightLogs: [] });
+    expect(signals.some((s) => s.description.includes("sleep") && s.description.includes("workout volume"))).toBe(true);
+  });
+
+  it("does not flag a pairing when only one side moves significantly", () => {
+    // Sleep drops sharply, but resting heart rate and volume stay flat.
+    const healthSeries = [
+      healthPoint(0, { sleepMinutes: 300, restingHeartRate: 60 }),
+      healthPoint(7, { sleepMinutes: 480, restingHeartRate: 60 }),
+    ];
+    const volumeSeries = [
+      { date: dateStr(0), volume: 1000 },
+      { date: dateStr(7), volume: 1000 },
+    ];
+    const signals = detectCrossDomainSignals({ healthSeries, volumeSeries, weightLogs: [] });
+    expect(signals).toEqual([]);
   });
 });

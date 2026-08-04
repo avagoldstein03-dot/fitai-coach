@@ -89,6 +89,11 @@ export interface AIProvider {
   generateProgressReview(userProfile: ProgressReviewInput): Promise<string>;
   analyzeForm(input: FormCheckInput): Promise<FormCheckResult>;
   chat(userMessage: string, context: ChatContext): Promise<string>;
+  generateCrossDomainInsights(signals: CrossDomainSignal[]): Promise<string[]>;
+}
+
+export interface CrossDomainSignal {
+  description: string;
 }
 
 export interface WorkoutGenerationInput {

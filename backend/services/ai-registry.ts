@@ -43,6 +43,7 @@ export class AIProviderRegistry {
       case "weekly_summary":
       case "behavioral_coaching":
       case "goal_adjustment":
+      case "cross_domain_insights":
         return this.getProvider("anthropic");
       default:
         return this.getDefaultProvider();
