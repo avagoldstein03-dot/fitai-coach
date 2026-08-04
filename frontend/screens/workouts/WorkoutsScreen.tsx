@@ -1144,7 +1144,7 @@ const styles = StyleSheet.create({
     backgroundColor: T.surface,
     marginBottom: 16,
   },
-  video: { width: "100%", aspectRatio: 9 / 16, maxHeight: 320, backgroundColor: "#000" },
+  video: { width: "100%", height: 320, backgroundColor: "#000" },
   videoDisclaimer: {
     fontSize: 11,
     color: T.textSecondary,

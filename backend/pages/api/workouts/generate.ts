@@ -113,7 +113,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
                     reps: ex.reps,
                     restSeconds: ex.restSeconds,
                     notes: ex.notes,
-                    ...getVideoForExercise(ex.exerciseName),
+                    ...getVideoForExercise(ex.exerciseName, user.sex),
                   })),
                 },
               })),

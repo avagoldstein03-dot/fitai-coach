@@ -35,7 +35,10 @@ describe("workouts/exercises (POST) handler", () => {
   beforeEach(() => {
     jest.resetAllMocks();
     (getAuth as jest.Mock).mockReturnValue({ userId: "clerk_1" });
-    (prisma.workoutDay.findFirst as jest.Mock).mockResolvedValue({ id: "day_1" });
+    (prisma.workoutDay.findFirst as jest.Mock).mockResolvedValue({
+      id: "day_1",
+      week: { program: { user: { sex: "male" } } },
+    });
     (prisma.exercise.create as jest.Mock).mockResolvedValue({ id: "ex_1", ...VALID_BODY });
   });
 
@@ -75,7 +78,7 @@ describe("workouts/exercises (POST) handler", () => {
 
     expect(prisma.workoutDay.findFirst).toHaveBeenCalledWith({
       where: { id: "day_1", week: { program: { user: { clerkId: "clerk_1" } } } },
-      select: { id: true },
+      select: { id: true, week: { select: { program: { select: { user: { select: { sex: true } } } } } } },
     });
     const createArgs = (prisma.exercise.create as jest.Mock).mock.calls[0][0];
     expect(createArgs.data).toMatchObject({

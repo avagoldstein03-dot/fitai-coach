@@ -111,11 +111,23 @@ const catalog = {};
 // Optionally regenerate just a subset, e.g. after a partial run hit a billing
 // cap or a specific clip failed review:
 //   node scripts/generate-exercise-videos.mjs dip hinge verticalPull
-const only = process.argv.slice(2);
-const categoriesToRun = only.length ? CATEGORIES.filter((c) => only.includes(c.key)) : CATEGORIES;
-if (only.length) console.log(`Running only: ${categoriesToRun.map((c) => c.key).join(", ")}`);
+// Optionally request a specific gendered variant of a category (for the
+// male/female-matched catalog) via `key:male` or `key:female`:
+//   node scripts/generate-exercise-videos.mjs squat:female hipThrust:male
+const args = process.argv.slice(2);
+const requests = args.length
+  ? args.map((arg) => {
+      const [key, gender] = arg.split(":");
+      const base = CATEGORIES.find((c) => c.key === key);
+      if (!base) throw new Error(`Unknown category "${key}"`);
+      const prompt = gender ? base.prompt.replace("A person performing", `A ${gender} person performing`) : base.prompt;
+      const outKey = gender ? `${key}_${gender}` : key;
+      return { outKey, prompt };
+    })
+  : CATEGORIES.map((c) => ({ outKey: c.key, prompt: c.prompt }));
+if (args.length) console.log(`Running only: ${requests.map((r) => r.outKey).join(", ")}`);
 
-for (const { key, prompt } of categoriesToRun) {
+for (const { outKey: key, prompt } of requests) {
   console.log(`\nGenerating "${key}"...`);
 
   const genRes = await fetch("https://api.openai.com/v1/videos", {

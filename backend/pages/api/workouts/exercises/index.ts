@@ -37,12 +37,12 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
     const day = await prisma.workoutDay.findFirst({
       where: { id: dayId, week: { program: { user: { clerkId: userId } } } },
-      select: { id: true },
+      select: { id: true, week: { select: { program: { select: { user: { select: { sex: true } } } } } } },
     });
     if (!day) return sendError(res, "not_found", "Workout day not found", 404);
 
     const exercise = await prisma.exercise.create({
-      data: { dayId, ...exerciseData, ...getVideoForExercise(exerciseData.exerciseName) },
+      data: { dayId, ...exerciseData, ...getVideoForExercise(exerciseData.exerciseName, day.week.program.user.sex) },
     });
 
     return sendSuccess(res, { exercise }, "Exercise added", 201);
