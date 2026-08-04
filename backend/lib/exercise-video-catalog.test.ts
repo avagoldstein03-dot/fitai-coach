@@ -41,6 +41,12 @@ describe("getVideoForExercise (gated on a reviewed clip actually existing)", () 
     expect(getVideoForExercise("Barbell Bench Press")).toBeNull();
   });
 
+  it("returns a video for a second reviewed category (deadlift/hinge)", () => {
+    const result = getVideoForExercise("Conventional Deadlift");
+    expect(result?.libraryId).toBe("hinge");
+    expect(result?.videoUrl).toMatch(/^https:\/\//);
+  });
+
   it("returns null for an exercise name with no matching category", () => {
     expect(getVideoForExercise("Totally Made Up Exercise Xyz")).toBeNull();
   });
