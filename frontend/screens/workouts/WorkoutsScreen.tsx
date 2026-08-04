@@ -18,7 +18,6 @@ import { useUpgradeGate, isPremiumRequiredError } from "@/contexts/UpgradeGateCo
 import { useTranslation } from "react-i18next";
 import * as Haptics from "expo-haptics";
 import * as StoreReview from "expo-store-review";
-import { VideoView, useVideoPlayer } from "expo-video";
 import { T } from "@/lib/theme";
 import { posthog, Events } from "@/lib/analytics";
 import { SwipeToDeleteRow } from "@/components/SwipeToDeleteRow";
@@ -34,7 +33,6 @@ interface Exercise {
   restSeconds: number;
   notes?: string;
   formCues?: string[];
-  videoUrl?: string;
 }
 
 interface WorkoutDay {
@@ -97,30 +95,13 @@ const BODY_GOAL_OPTIONS: Record<string, string[]> = {
   ],
 };
 
-function ExerciseFormVideo({ videoUrl }: { videoUrl: string }) {
-  const { t } = useTranslation();
-  const [isReady, setIsReady] = useState(false);
-  const player = useVideoPlayer(videoUrl, (p) => {
-    p.loop = true;
-    p.muted = true;
-    p.play();
-  });
-
-  useEffect(() => {
-    const sub = player.addListener("statusChange", ({ status }) => {
-      if (status === "readyToPlay") setIsReady(true);
-    });
-    return () => sub.remove();
-  }, [player]);
-
-  return (
-    <View style={styles.videoWrap}>
-      <VideoView player={player} style={styles.video} contentFit="cover" nativeControls={false} />
-      {!isReady && <ActivityIndicator style={StyleSheet.absoluteFill} size="large" color={T.accent} />}
-      <Text style={styles.videoDisclaimer}>{t("workouts.video_disclaimer")}</Text>
-    </View>
-  );
-}
+// Video demos temporarily disabled: only 9 of 17 movement categories have a
+// reviewed AI-generated clip (backend/lib/exercise-video-catalog.ts), and
+// showing videos for some exercises but not others read as broken/unfinished
+// rather than a deliberate partial rollout. Re-enable once the catalog has
+// full coverage — the backend still populates Exercise.videoUrl on every
+// creation, the S3 assets and matching logic are untouched, this is purely a
+// frontend on/off switch (formCheckPreview simply never carries videoUrl).
 
 export default function WorkoutsScreen() {
   const navigation = useNavigation() as any;
@@ -161,7 +142,7 @@ export default function WorkoutsScreen() {
   const [restExerciseName, setRestExerciseName] = useState("");
   const [exerciseModal, setExerciseModal] = useState<{ mode: "add" | "replace"; exercise?: Exercise } | null>(null);
   const [exerciseForm, setExerciseForm] = useState({ exerciseName: "", sets: "", reps: "", restSeconds: "", notes: "" });
-  const [formCheckPreview, setFormCheckPreview] = useState<{ exerciseName: string; formCues?: string[]; videoUrl?: string } | null>(null);
+  const [formCheckPreview, setFormCheckPreview] = useState<{ exerciseName: string; formCues?: string[] } | null>(null);
   const timerRef    = useRef<ReturnType<typeof setInterval> | null>(null);
   const logFieldKeys = ["completedSets", "completedReps", "weight"] as const;
   const logInputRefs = useRef<Partial<Record<typeof logFieldKeys[number], TextInput | null>>>({});
@@ -562,7 +543,7 @@ export default function WorkoutsScreen() {
                             )}
                             <TouchableOpacity
                               style={styles.checkFormBtn}
-                              onPress={() => setFormCheckPreview({ exerciseName: ex.exerciseName, formCues: ex.formCues, videoUrl: ex.videoUrl })}
+                              onPress={() => setFormCheckPreview({ exerciseName: ex.exerciseName, formCues: ex.formCues })}
                             >
                               <Text style={styles.checkFormBtnText}>{t("workouts.check_form")}</Text>
                             </TouchableOpacity>
@@ -774,12 +755,6 @@ export default function WorkoutsScreen() {
           <View style={[styles.modalSheet, { maxHeight: "90%" }]}>
             <Text style={styles.modalTitle}>{formCheckPreview?.exerciseName}</Text>
             <ScrollView showsVerticalScrollIndicator={false}>
-              {formCheckPreview?.videoUrl && (
-                <>
-                  <Text style={styles.inputLabel}>{t("workouts.form_video_label")}</Text>
-                  <ExerciseFormVideo videoUrl={formCheckPreview.videoUrl} />
-                </>
-              )}
               <Text style={styles.inputLabel}>{t("form_check.muscles_label")}</Text>
               {formCheckPreview && (
                 <MuscleDiagramSVG
@@ -1138,19 +1113,6 @@ const styles = StyleSheet.create({
   },
   modalTitle: { fontSize: 20, fontWeight: "800", color: T.textPrimary, marginBottom: 4 },
   modalSub: { fontSize: 13, color: T.textSecondary, marginBottom: 8 },
-  videoWrap: {
-    borderRadius: 16,
-    overflow: "hidden",
-    backgroundColor: T.surface,
-    marginBottom: 16,
-  },
-  video: { width: "100%", height: 320, backgroundColor: "#000" },
-  videoDisclaimer: {
-    fontSize: 11,
-    color: T.textSecondary,
-    padding: 10,
-    textAlign: "center",
-  },
   prevBest: { fontSize: 13, color: T.accent, fontWeight: "700", marginBottom: 16 },
 
   inputGroup: { marginBottom: 14 },

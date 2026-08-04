@@ -59,26 +59,49 @@ const STYLE =
   "smoothly through the full range of motion, and back to the starting position, ending back at the start ready to " +
   "repeat — the motion never pauses or holds still at any single position for more than an instant.";
 
+// Bare setting/camera description, no repetition-count language — used by the
+// explicit two-rep, phase-by-phase prompts below, for categories where the
+// generic STYLE's single vague "one repetition" instruction kept producing a
+// clip that just holds one static position (usually the hardest/peak-effort
+// position) for nearly the whole 8 seconds instead of actually moving.
+const SETTING =
+  "Realistic gym setting, clean lighting, side or three-quarter camera angle, no text overlays, no other people, strict textbook-correct form.";
+
+// Second attempt at the same five categories: front-facing camera instead of
+// side/three-quarter, and framed as an authentic self-recorded workout clip
+// rather than a posed photoshoot — testing whether the side-angle "hero shot"
+// framing was contributing to the model freezing at the peak-tension position.
+const SETTING_FRONT =
+  "Realistic gym setting, clean lighting, camera positioned directly in front of the person at chest height (not a side view), " +
+  "filmed like an authentic phone video someone recorded of their own workout set, not a posed photoshoot or hero shot. " +
+  "No text overlays, no other people, strict textbook-correct form.";
+
 // ── Movement-pattern categories ────────────────────────────────────────────
 // Mirrors the keyword groupings in frontend/lib/exercise-muscles.ts — one
 // clip per pattern, not per exercise name, to keep the catalog small, fixed,
 // and reviewable.
 const CATEGORIES = [
-  { key: "horizontalPress", prompt: `A person performing a barbell bench press on a flat bench. ${STYLE}` },
-  { key: "dip",              prompt: `A person performing parallel-bar triceps dips, lowering with control and pressing back up. ${STYLE}` },
+  // These five (horizontalPress, dip, verticalPull, tricepExtension,
+  // facePull) previously got stuck holding one static position — usually the
+  // hardest/peak-effort point of the lift — for nearly the whole clip despite
+  // the generic STYLE's "one full repetition" instruction. Rewritten with
+  // explicit two-rep, phase-by-phase scripts and a much more forceful
+  // never-static instruction to fight that failure mode directly.
+  { key: "horizontalPress", prompt: `A person performing two complete repetitions of a barbell bench press on a flat bench: starting with arms fully extended holding the bar above the chest, lowering the bar smoothly and under control all the way down to touch the chest, then pressing the bar back up to full arm extension — then repeating that lowering-and-pressing motion a second time. The bar and the person's arms are visibly moving up or down in nearly every frame of the clip; the person never holds a fixed position for more than half a second. ${SETTING_FRONT}` },
+  { key: "dip",              prompt: `A person performing two complete repetitions of triceps dips on a dip station with two parallel dip bars (not a cable machine, not a lat pulldown machine — the body is suspended in the air between two bars, legs bent behind): starting at the top with arms fully locked out, lowering the body smoothly and under control until the upper arms are about parallel to the ground, then pressing back up to full lockout — then repeating that lowering-and-pressing motion a second time. The body is visibly moving up or down in nearly every frame of the clip; the person never holds a fixed position for more than half a second. ${SETTING_FRONT}` },
   { key: "squat",            prompt: `A person performing a barbell back squat, descending to full depth and standing back up. ${STYLE}` },
   { key: "hinge",            prompt: `A person performing a conventional barbell deadlift with a flat back, hinging at the hips. ${STYLE}` },
-  { key: "verticalPull",     prompt: `A person performing a strict pull-up on a pull-up bar, chin clearing the bar, full arm extension at the bottom. ${STYLE}` },
+  { key: "verticalPull",     prompt: `A person performing two complete repetitions of a strict pull-up on a pull-up bar: starting at a full dead hang with arms completely straight, pulling the body upward smoothly until the chin clears the bar, then lowering back down under control to a full dead hang — then repeating that pulling-and-lowering motion a second time. The body is visibly moving up or down in nearly every frame of the clip; the person never holds a fixed position for more than half a second. ${SETTING_FRONT}` },
   { key: "overheadPress",    prompt: `A person performing a standing barbell overhead press, pressing straight up without arching the back. ${STYLE}` },
   { key: "lateralRaise",     prompt: `A person performing standing dumbbell lateral raises, raising arms to shoulder height with a slight elbow bend. ${STYLE}` },
   { key: "curl",             prompt: `A person performing standing dumbbell bicep curls with strict form, no swinging. ${STYLE}` },
-  { key: "tricepExtension",  prompt: `A person performing a cable triceps pushdown, elbows pinned to the sides. ${STYLE}` },
+  { key: "tricepExtension",  prompt: `A person performing two complete repetitions of a cable triceps pushdown with a rope attachment: starting with elbows bent about 90 degrees and hands near the chest, extending the arms smoothly down to full lockout with elbows pinned to the sides, then bending the elbows back up to the starting position — then repeating that pushing-and-returning motion a second time. The hands and forearms are visibly moving in nearly every frame of the clip; the person never holds a fixed position for more than half a second. ${SETTING_FRONT}` },
   // A plank is an isometric hold, not a rep — deliberately doesn't reuse the
   // shared STYLE's "one full repetition" language, which doesn't apply here.
   { key: "core",             prompt: "A person performing a forearm plank hold: elbows and forearms flat on the ground directly beneath the shoulders, body forming one straight line from head to heels, core engaged, holding this exact position steadily for the entire clip without moving up or down. Realistic gym setting, clean lighting, side camera angle, no text overlays, no other people, strict correct form throughout." },
   { key: "calfRaise",        prompt: `A person performing standing calf raises on a raised platform, full stretch at the bottom and full extension at the top. ${STYLE}` },
   { key: "hipThrust",        prompt: `A person performing a barbell hip thrust with their upper back on a bench, driving the hips up to full extension. ${STYLE}` },
-  { key: "facePull",         prompt: `A person performing a cable face pull with a rope attachment, pulling toward the face with elbows high. ${STYLE}` },
+  { key: "facePull",         prompt: `A person performing two complete repetitions of a cable face pull with a rope attachment: starting with arms extended forward gripping the rope, pulling the rope back toward the face smoothly with elbows high and out to the sides, then extending the arms back forward to the starting position — then repeating that pulling-and-returning motion a second time. The hands and arms are visibly moving in nearly every frame of the clip; the person never holds a fixed position for more than half a second. ${SETTING_FRONT}` },
   { key: "shrug",            prompt: `A person performing standing barbell shrugs, elevating the shoulders straight up without rolling them. ${STYLE}` },
   { key: "hamstringCurl",    prompt: `A person performing a seated hamstring curl machine exercise, curling the pad down with control. ${STYLE}` },
   { key: "legExtension",     prompt: `A person performing a seated leg extension machine exercise, extending the legs to full lockout with control. ${STYLE}` },
