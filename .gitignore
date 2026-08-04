@@ -23,11 +23,6 @@ backend/.next/
 # Legacy Xcode project
 FIT AI Coach/
 
-# Local output of scripts/generate-exercise-videos.mjs — reviewed clips get
-# their S3 URL pasted into backend/lib/exercise-video-catalog.ts by hand,
-# the raw local .mp4s themselves are never committed.
-.generated-exercise-videos/
-
 # macOS
 .DS_Store
 

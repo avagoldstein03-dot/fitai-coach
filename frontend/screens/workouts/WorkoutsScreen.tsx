@@ -95,14 +95,6 @@ const BODY_GOAL_OPTIONS: Record<string, string[]> = {
   ],
 };
 
-// Video demos temporarily disabled: only 9 of 17 movement categories have a
-// reviewed AI-generated clip (backend/lib/exercise-video-catalog.ts), and
-// showing videos for some exercises but not others read as broken/unfinished
-// rather than a deliberate partial rollout. Re-enable once the catalog has
-// full coverage — the backend still populates Exercise.videoUrl on every
-// creation, the S3 assets and matching logic are untouched, this is purely a
-// frontend on/off switch (formCheckPreview simply never carries videoUrl).
-
 export default function WorkoutsScreen() {
   const navigation = useNavigation() as any;
   const queryClient = useQueryClient();

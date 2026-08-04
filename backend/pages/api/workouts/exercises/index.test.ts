@@ -35,10 +35,7 @@ describe("workouts/exercises (POST) handler", () => {
   beforeEach(() => {
     jest.resetAllMocks();
     (getAuth as jest.Mock).mockReturnValue({ userId: "clerk_1" });
-    (prisma.workoutDay.findFirst as jest.Mock).mockResolvedValue({
-      id: "day_1",
-      week: { program: { user: { sex: "male" } } },
-    });
+    (prisma.workoutDay.findFirst as jest.Mock).mockResolvedValue({ id: "day_1" });
     (prisma.exercise.create as jest.Mock).mockResolvedValue({ id: "ex_1", ...VALID_BODY });
   });
 
@@ -78,36 +75,19 @@ describe("workouts/exercises (POST) handler", () => {
 
     expect(prisma.workoutDay.findFirst).toHaveBeenCalledWith({
       where: { id: "day_1", week: { program: { user: { clerkId: "clerk_1" } } } },
-      select: { id: true, week: { select: { program: { select: { user: { select: { sex: true } } } } } } },
+      select: { id: true },
     });
-    const createArgs = (prisma.exercise.create as jest.Mock).mock.calls[0][0];
-    expect(createArgs.data).toMatchObject({
-      dayId: "day_1",
-      exerciseName: "Bulgarian Split Squat",
-      sets: 3,
-      reps: "8-10",
-      restSeconds: 90,
+    expect(prisma.exercise.create).toHaveBeenCalledWith({
+      data: {
+        dayId: "day_1",
+        exerciseName: "Bulgarian Split Squat",
+        sets: 3,
+        reps: "8-10",
+        restSeconds: 90,
+      },
     });
     expect(res.status).toHaveBeenCalledWith(201);
     const responseBody = res.json.mock.calls[0][0];
     expect(responseBody.data.exercise.id).toBe("ex_1");
-  });
-
-  it("populates videoUrl/libraryId for an exercise name that matches the video catalog", async () => {
-    const { req, res } = mockReqRes({ ...VALID_BODY, exerciseName: "Barbell Back Squat" });
-    await handler(req, res);
-
-    const createArgs = (prisma.exercise.create as jest.Mock).mock.calls[0][0];
-    expect(createArgs.data.libraryId).toBe("squat");
-    expect(createArgs.data.videoUrl).toMatch(/^https:\/\//);
-  });
-
-  it("leaves videoUrl/libraryId unset for an exercise name with no catalog match", async () => {
-    const { req, res } = mockReqRes({ ...VALID_BODY, exerciseName: "Totally Made Up Exercise Xyz" });
-    await handler(req, res);
-
-    const createArgs = (prisma.exercise.create as jest.Mock).mock.calls[0][0];
-    expect(createArgs.data.libraryId).toBeUndefined();
-    expect(createArgs.data.videoUrl).toBeUndefined();
   });
 });

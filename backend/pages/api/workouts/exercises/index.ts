@@ -3,7 +3,6 @@ import { getAuth } from "@clerk/nextjs/server";
 import { z } from "zod";
 import { prisma } from "@/lib/prisma";
 import { sendSuccess, sendError, validateRequest } from "@/lib/api-utils";
-import { getVideoForExercise } from "@/lib/exercise-video-catalog";
 
 const AddExerciseSchema = z.object({
   dayId: z.string().min(1),
@@ -37,12 +36,12 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
     const day = await prisma.workoutDay.findFirst({
       where: { id: dayId, week: { program: { user: { clerkId: userId } } } },
-      select: { id: true, week: { select: { program: { select: { user: { select: { sex: true } } } } } } },
+      select: { id: true },
     });
     if (!day) return sendError(res, "not_found", "Workout day not found", 404);
 
     const exercise = await prisma.exercise.create({
-      data: { dayId, ...exerciseData, ...getVideoForExercise(exerciseData.exerciseName, day.week.program.user.sex) },
+      data: { dayId, ...exerciseData },
     });
 
     return sendSuccess(res, { exercise }, "Exercise added", 201);
