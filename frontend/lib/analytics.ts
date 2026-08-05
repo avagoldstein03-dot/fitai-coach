@@ -57,4 +57,7 @@ export const Events = {
   // Badges & Referral
   BADGE_EARNED: "badge_earned",
   REFERRAL_CONNECTED: "referral_connected",
+
+  // Readiness
+  READINESS_CARD_VIEWED: "readiness_card_viewed",
 } as const;

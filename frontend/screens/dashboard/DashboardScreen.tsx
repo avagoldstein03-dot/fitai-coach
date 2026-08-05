@@ -10,7 +10,7 @@ import {
   Modal,
   StyleSheet,
 } from "react-native";
-import { useQuery } from "@tanstack/react-query";
+import { useQuery, useQueryClient } from "@tanstack/react-query";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import axios from "axios";
 import { useNavigation } from "@react-navigation/native";
@@ -93,10 +93,18 @@ const TODAY = new Date().toISOString().split("T")[0];
 const WATER_KEY = `water_${TODAY}`;
 const WATER_GOAL = 8;
 
+const READINESS_STYLES: Record<string, { color: string; dark: string; border: string }> = {
+  primed: { color: T.green, dark: T.greenDark, border: T.greenBorder },
+  ready: { color: T.blue, dark: T.blueDark, border: T.blueBorder },
+  take_it_easy: { color: T.amber, dark: T.amberDark, border: T.amberBorder },
+  prioritize_recovery: { color: T.red, dark: T.redDark, border: T.redBorder },
+};
+
 export default function DashboardScreen() {
   const navigation = useNavigation() as any;
   const { t, i18n } = useTranslation();
   const { presentUpgrade } = useUpgradeGate();
+  const queryClient = useQueryClient();
   const quotes = t("dashboard.quotes", { returnObjects: true }) as { text: string; author: string }[];
   const dailyQuote = quotes[dayOfYear % quotes.length];
   const [waterGlasses, setWaterGlasses] = useState(0);
@@ -111,10 +119,18 @@ export default function DashboardScreen() {
       if (v) setOnboardingDismissed(true);
     });
     // Best-effort — a failed health sync should never block the dashboard.
+    // This runs in parallel with (not awaited by) the ["dashboard"]/
+    // ["readiness"] queries below, so on a cold app open the initial render
+    // can beat today's HealthKit sync — re-invalidate readiness once sync
+    // actually lands so the score isn't quietly stale all morning.
     AsyncStorage.getItem("health_connected").then((connected) => {
-      if (connected) syncHealthData().catch(() => {});
+      if (connected) {
+        syncHealthData()
+          .then(() => queryClient.invalidateQueries({ queryKey: ["readiness"] }))
+          .catch(() => {});
+      }
     });
-  }, []);
+  }, [queryClient]);
 
   const dismissOnboarding = useCallback(() => {
     setOnboardingDismissed(true);
@@ -137,9 +153,21 @@ export default function DashboardScreen() {
     staleTime: 60_000,
   });
 
+  const { data: readinessData } = useQuery<{
+    readiness: { score: number; label: "primed" | "ready" | "take_it_easy" | "prioritize_recovery"; factors: Array<{ name: string; impact: string; detail: string }> } | null;
+  }>({
+    queryKey: ["readiness"],
+    queryFn: async () => {
+      const res = await axios.get(`${API_URL}/api/analytics/readiness`);
+      return res.data.data;
+    },
+    staleTime: 60_000,
+  });
+
   const handleRefresh = useCallback(async () => {
     await Promise.all([refetch(), syncHealthData().catch(() => {})]);
-  }, [refetch]);
+    queryClient.invalidateQueries({ queryKey: ["readiness"] });
+  }, [refetch, queryClient]);
 
   const { data: profile } = useQuery({
     queryKey: ["profile"],
@@ -274,6 +302,33 @@ export default function DashboardScreen() {
           </View>
         )}
       </View>
+
+      {/* ── Readiness Score ── */}
+      {readinessData?.readiness ? (() => {
+        const r = readinessData.readiness!;
+        const style = READINESS_STYLES[r.label];
+        return (
+          <View
+            style={[s.readinessCard, { borderColor: style.border, backgroundColor: style.dark }]}
+            onLayout={() => posthog.capture(Events.READINESS_CARD_VIEWED, { label: r.label, score: r.score })}
+          >
+            <View style={s.readinessHeader}>
+              <Text style={s.readinessTitle}>{t("dashboard.readiness_title")}</Text>
+              <Text style={[s.readinessScore, { color: style.color }]}>{r.score}</Text>
+            </View>
+            <Text style={[s.readinessLabel, { color: style.color }]}>{t(`dashboard.readiness_label_${r.label}`)}</Text>
+            {r.factors.slice(0, 2).map((f, i) => (
+              <Text key={i} style={s.readinessFactor}>{f.detail}</Text>
+            ))}
+            <Text style={s.readinessDisclaimer}>{t("dashboard.readiness_disclaimer")}</Text>
+          </View>
+        );
+      })() : readinessData && readinessData.readiness === null ? (
+        <View style={s.readinessCard}>
+          <Text style={s.readinessTitle}>{t("dashboard.readiness_title")}</Text>
+          <Text style={s.readinessNudge}>{t("dashboard.readiness_nudge")}</Text>
+        </View>
+      ) : null}
 
       {/* ── Today's Macro Progress ── */}
       {targets && (() => {
@@ -874,6 +929,28 @@ const s = StyleSheet.create({
     alignItems: "center",
   },
   insightUpgradeBtnText: { fontSize: 14, fontWeight: "700", color: "#fff" },
+
+  // Readiness Score
+  readinessCard: {
+    backgroundColor: T.surface,
+    borderRadius: 18,
+    borderWidth: 1,
+    borderColor: T.border,
+    padding: 18,
+    marginBottom: 10,
+  },
+  readinessHeader: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "baseline",
+    marginBottom: 2,
+  },
+  readinessTitle: { fontSize: 15, fontWeight: "700", color: T.textPrimary },
+  readinessScore: { fontSize: 28, fontWeight: "800" },
+  readinessLabel: { fontSize: 13, fontWeight: "700", marginBottom: 10 },
+  readinessFactor: { fontSize: 12, color: T.textSecondary, lineHeight: 17, marginBottom: 4 },
+  readinessDisclaimer: { fontSize: 10, color: T.textMuted, marginTop: 8 },
+  readinessNudge: { fontSize: 13, color: T.textSecondary, lineHeight: 19, marginTop: 4 },
 
   // Quick Actions
   sectionLabel: {

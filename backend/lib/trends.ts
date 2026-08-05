@@ -343,6 +343,111 @@ export function detectCrossDomainSignals(input: {
   return signals;
 }
 
+export interface ReadinessFactor {
+  name: string;
+  impact: "positive" | "negative" | "neutral";
+  detail: string;
+}
+
+export interface ReadinessResult {
+  score: number;
+  label: "primed" | "ready" | "take_it_easy" | "prioritize_recovery";
+  factors: ReadinessFactor[];
+}
+
+interface BaselineComparison {
+  latest: number;
+  baselineAvg: number;
+  changePct: number;
+}
+
+// Compares the single most recent data point against the average of the
+// points before it. Requires at least `minBaseline` prior points to trust
+// the baseline — with too little history the comparison is noise, not
+// signal, so this returns null rather than a misleading result.
+function compareLatestToBaseline(
+  points: Array<{ date: string; value: number }>,
+  minBaseline = 3
+): BaselineComparison | null {
+  if (points.length < minBaseline + 1) return null;
+
+  const sorted = [...points].sort((a, b) => a.date.localeCompare(b.date));
+  const latest = sorted[sorted.length - 1].value;
+  const baseline = sorted.slice(0, -1);
+  const baselineAvg = baseline.reduce((s, p) => s + p.value, 0) / baseline.length;
+  if (baselineAvg === 0) return null;
+
+  return { latest, baselineAvg, changePct: ((latest - baselineAvg) / baselineAvg) * 100 };
+}
+
+function clamp(n: number, min: number, max: number): number {
+  return Math.max(min, Math.min(max, n));
+}
+
+// Deliberately a simple, transparent heuristic (weighted deltas from a
+// personal baseline, clamped), not a validated clinical/sports-science
+// model — the point is a trustworthy, explainable daily signal, not
+// statistical rigor. Returns null when there's not enough data for even one
+// component (new user, HealthKit never connected, no workouts logged) —
+// no forced/fake score.
+export function computeReadinessScore(input: {
+  healthRows: Array<{ date: string; sleepMinutes: number | null; restingHeartRate: number | null }>;
+  workoutSessions: Array<{ createdAt: Date; weight: number | null; completedReps: string }>;
+}): ReadinessResult | null {
+  const sleepPoints = input.healthRows
+    .filter((r): r is typeof r & { sleepMinutes: number } => r.sleepMinutes != null)
+    .map((r) => ({ date: r.date, value: r.sleepMinutes }));
+  const rhrPoints = input.healthRows
+    .filter((r): r is typeof r & { restingHeartRate: number } => r.restingHeartRate != null)
+    .map((r) => ({ date: r.date, value: r.restingHeartRate }));
+  const volumeByDate = computeWorkoutVolumeTrend(input.workoutSessions);
+
+  const sleep = compareLatestToBaseline(sleepPoints);
+  const rhr = compareLatestToBaseline(rhrPoints);
+  const load = compareLatestToBaseline(volumeByDate.map((v) => ({ date: v.date, value: v.volume })));
+
+  if (!sleep && !rhr && !load) return null;
+
+  const factors: ReadinessFactor[] = [];
+  let score = 100;
+
+  if (sleep) {
+    const delta = clamp(sleep.changePct * 0.4, -20, 20);
+    score += delta;
+    const hrs = (mins: number) => (mins / 60).toFixed(1);
+    factors.push({
+      name: "Sleep",
+      impact: delta > 2 ? "positive" : delta < -2 ? "negative" : "neutral",
+      detail: `Last night was ${hrs(sleep.latest)}h, ${Math.abs(Math.round(sleep.changePct))}% ${sleep.changePct >= 0 ? "above" : "below"} your recent average (${hrs(sleep.baselineAvg)}h).`,
+    });
+  }
+
+  if (rhr) {
+    const delta = clamp(-rhr.changePct * 0.5, -15, 15);
+    score += delta;
+    factors.push({
+      name: "Resting heart rate",
+      impact: delta > 2 ? "positive" : delta < -2 ? "negative" : "neutral",
+      detail: `Resting heart rate was ${Math.abs(Math.round(rhr.changePct))}% ${rhr.changePct > 0 ? "above" : "below"} your recent average (${Math.round(rhr.baselineAvg)} bpm).`,
+    });
+  }
+
+  if (load) {
+    const delta = clamp(-load.changePct * 0.2, -15, 15);
+    score += delta;
+    factors.push({
+      name: "Training load",
+      impact: delta > 2 ? "positive" : delta < -2 ? "negative" : "neutral",
+      detail: `Your last session's volume was ${Math.abs(Math.round(load.changePct))}% ${load.changePct > 0 ? "higher" : "lower"} than your recent average.`,
+    });
+  }
+
+  score = clamp(Math.round(score), 0, 100);
+  const label = score >= 80 ? "primed" : score >= 60 ? "ready" : score >= 40 ? "take_it_easy" : "prioritize_recovery";
+
+  return { score, label, factors };
+}
+
 export function buildTrendsSummary(input: { plateaus: PlateauInfo[]; compositionDiffs: string[] }): string {
   const lines: string[] = [];
 

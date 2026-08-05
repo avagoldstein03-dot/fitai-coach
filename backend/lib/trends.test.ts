@@ -8,6 +8,7 @@ import {
   aggregateMacroTrend,
   computeWorkoutVolumeTrend,
   detectCrossDomainSignals,
+  computeReadinessScore,
 } from "./trends";
 
 function daysAgo(n: number): Date {
@@ -316,5 +317,77 @@ describe("detectCrossDomainSignals", () => {
     ];
     const signals = detectCrossDomainSignals({ healthSeries, volumeSeries, weightLogs: [] });
     expect(signals).toEqual([]);
+  });
+});
+
+describe("computeReadinessScore", () => {
+  it("returns null with no data at all", () => {
+    expect(computeReadinessScore({ healthRows: [], workoutSessions: [] })).toBeNull();
+  });
+
+  it("scores lower and flags negative factors when sleep and RHR are worse than baseline", () => {
+    const healthRows = [
+      { date: dateStr(4), sleepMinutes: 480, restingHeartRate: 55 },
+      { date: dateStr(3), sleepMinutes: 480, restingHeartRate: 55 },
+      { date: dateStr(2), sleepMinutes: 480, restingHeartRate: 55 },
+      { date: dateStr(1), sleepMinutes: 480, restingHeartRate: 55 },
+      { date: dateStr(0), sleepMinutes: 300, restingHeartRate: 70 }, // latest — worse
+    ];
+    const result = computeReadinessScore({ healthRows, workoutSessions: [] });
+
+    expect(result).not.toBeNull();
+    expect(result!.score).toBeLessThan(100);
+    const sleepFactor = result!.factors.find((f) => f.name === "Sleep");
+    const rhrFactor = result!.factors.find((f) => f.name === "Resting heart rate");
+    expect(sleepFactor?.impact).toBe("negative");
+    expect(rhrFactor?.impact).toBe("negative");
+  });
+
+  it("scores at (or near) the max and flags positive factors when sleep and RHR beat baseline", () => {
+    const healthRows = [
+      { date: dateStr(4), sleepMinutes: 480, restingHeartRate: 55 },
+      { date: dateStr(3), sleepMinutes: 480, restingHeartRate: 55 },
+      { date: dateStr(2), sleepMinutes: 480, restingHeartRate: 55 },
+      { date: dateStr(1), sleepMinutes: 480, restingHeartRate: 55 },
+      { date: dateStr(0), sleepMinutes: 600, restingHeartRate: 45 }, // latest — better
+    ];
+    const result = computeReadinessScore({ healthRows, workoutSessions: [] });
+
+    expect(result).not.toBeNull();
+    expect(result!.score).toBe(100); // clamped
+    const sleepFactor = result!.factors.find((f) => f.name === "Sleep");
+    const rhrFactor = result!.factors.find((f) => f.name === "Resting heart rate");
+    expect(sleepFactor?.impact).toBe("positive");
+    expect(rhrFactor?.impact).toBe("positive");
+  });
+
+  it("excludes a component with an insufficient baseline instead of using it anyway", () => {
+    const healthRows = [
+      // Sleep: only 2 prior points — below the minimum baseline of 3, excluded.
+      { date: dateStr(2), sleepMinutes: 480, restingHeartRate: 55 },
+      { date: dateStr(1), sleepMinutes: 480, restingHeartRate: 55 },
+      { date: dateStr(0), sleepMinutes: 300, restingHeartRate: 55 },
+      // RHR: give it a 4th, older point so it clears the baseline minimum on its own.
+      { date: dateStr(3), sleepMinutes: null, restingHeartRate: 55 },
+    ];
+    const result = computeReadinessScore({ healthRows, workoutSessions: [] });
+
+    expect(result).not.toBeNull();
+    expect(result!.factors.find((f) => f.name === "Sleep")).toBeUndefined();
+    expect(result!.factors.find((f) => f.name === "Resting heart rate")).toBeDefined();
+  });
+
+  it("includes a training-load factor derived from real workout volume", () => {
+    const workoutSessions = [
+      { createdAt: daysAgo(4), weight: 100, completedReps: "5" },
+      { createdAt: daysAgo(3), weight: 100, completedReps: "5" },
+      { createdAt: daysAgo(2), weight: 100, completedReps: "5" },
+      { createdAt: daysAgo(0), weight: 300, completedReps: "5" }, // big recent spike
+    ];
+    const result = computeReadinessScore({ healthRows: [], workoutSessions });
+
+    expect(result).not.toBeNull();
+    const loadFactor = result!.factors.find((f) => f.name === "Training load");
+    expect(loadFactor?.impact).toBe("negative"); // a big recent spike should read as less recovered
   });
 });
