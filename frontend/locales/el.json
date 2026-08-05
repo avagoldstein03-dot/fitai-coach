@@ -346,7 +346,18 @@
     "action_advanced_analytics": "Προηγμένα Ανάλυτικά",
     "action_advanced_analytics_sub": "Βαθιές τάσεις · Elite",
     "action_product_scan": "Σάρωση Προϊόντος",
-    "action_product_scan_sub": "Ελέγξτε συστατικά και πρόσθετα"
+    "action_product_scan_sub": "Ελέγξτε συστατικά και πρόσθετα",
+    "insights_title": "Ενσights της Εβδομάδας",
+    "insights_locked_sub": "Δες πώς ο ύπνος, η προπόνηση και η διατροφή σου συνδέονται — ξεκλείδωσε εβδομαδιαία insights με το Pro.",
+    "insights_pending_sub": "Τα insights ξεκλειδώνονται όταν έχεις καταγράψει περίπου 2 εβδομάδες προπονήσεων και δεδομένων υγείας — έλεγχος σύντομα.",
+    "readiness_title": "Ετοιμότητα",
+    "readiness_label_primed": "Έτοιμος",
+    "readiness_label_ready": "Έτοιμος",
+    "readiness_label_take_it_easy": "Πάρε το Ήσυχα",
+    "readiness_label_prioritize_recovery": "Προτεραιοποίησε την Ανάρρωση",
+    "readiness_disclaimer": "Δεν είναι ιατρική συμβουλή — ένα γενικό σήμα ανάρρωσης με βάση τα πρόσφατά σου δεδομένα.",
+    "readiness_nudge": "Σύνδεσε το Apple Health και καταγράψε μερικές προπονήσεις για να ξεκλειδώσεις το σκορ ετοιμότητάς σου.",
+    "task_connect_friend": "Σύνδεση με έναν φίλο"
   },
   "settings": {
     "title": "Ρυθμίσεις",
@@ -1183,7 +1194,15 @@
     "badge_body_scan": "Σάρωση Σώματος",
     "default_name": "Αθλητής",
     "friends": "Φίλοι",
-    "advanced_analytics": "Προηγμένα Ανάλυτικά"
+    "advanced_analytics": "Προηγμένα Ανάλυτικά",
+    "badge_first_meal": "Πρώτο Γεύμα",
+    "badge_first_body_scan": "Πρώτη Σάρωση",
+    "badge_first_friend": "Έκανα έναν Φίλο",
+    "badge_streak_3": "Σερί 3 Ημερών",
+    "badge_streak_7": "Πρωταθλητής Εβδομάδας",
+    "badge_streak_14": "Σερί Δύο Εβδομάδων",
+    "badge_streak_30": "Σερί 30 Ημερών",
+    "badge_ten_workouts": "Δέκα Προπονήσεις"
   },
   "navigation": {
     "home": "Αρχική",

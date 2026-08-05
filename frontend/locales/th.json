@@ -346,7 +346,18 @@
     "action_advanced_analytics": "วิเคราะห์ขั้นสูง",
     "action_advanced_analytics_sub": "แนวโน้มเชิงลึก · Elite",
     "action_product_scan": "สแกนสินค้า",
-    "action_product_scan_sub": "ตรวจสอบส่วนประกอบและสารเติมแต่ง"
+    "action_product_scan_sub": "ตรวจสอบส่วนประกอบและสารเติมแต่ง",
+    "insights_title": "ข้อมูลเชิงลึกของสัปดาห์นี้",
+    "insights_locked_sub": "ดูว่าการนอนหลับ การฝึก และโภคนาการของคุณเชื่อมโยงกันอย่างไร — ปลดล็อกข้อมูลเชิงลึกรายสัปดาห์กับ Pro",
+    "insights_pending_sub": "ข้อมูลเชิงลึกจะปลดล็อกเมื่อคุณบันทึกการออกกำลังกายและข้อมูลสุขภาพประมาณ 2 สัปดาห์ — โปรดตรวจสอบในภายหลัง",
+    "readiness_title": "ความพร้อม",
+    "readiness_label_primed": "พร้อมแล้ว",
+    "readiness_label_ready": "พร้อม",
+    "readiness_label_take_it_easy": "หยุดพักสักครู่",
+    "readiness_label_prioritize_recovery": "จำหน่ายการฟื้นตัว",
+    "readiness_disclaimer": "ไม่ใช่คำแนะนำทางการแพทย์ — สัญญาณการฟื้นตัวทั่วไปตามข้อมูลล่าสุดของคุณ",
+    "readiness_nudge": "เชื่อมต่อ Apple Health และบันทึกการออกกำลังกายสองสามครั้งเพื่อปลดล็อกคะแนนความพร้อมของคุณ",
+    "task_connect_friend": "เชื่อมต่อกับเพื่อน"
   },
   "settings": {
     "title": "การตั้งค่า",
@@ -1183,7 +1194,15 @@
     "badge_body_scan": "สแกนร่างกาย",
     "default_name": "นักกีฬา",
     "friends": "เพื่อน",
-    "advanced_analytics": "วิเคราะห์ขั้นสูง"
+    "advanced_analytics": "วิเคราะห์ขั้นสูง",
+    "badge_first_meal": "มื้ออาหารแรก",
+    "badge_first_body_scan": "การสแกนแรก",
+    "badge_first_friend": "หาเพื่อนได้",
+    "badge_streak_3": "ชาย 3 วัน",
+    "badge_streak_7": "แชมป์ของสัปดาห์",
+    "badge_streak_14": "ชาย 2 สัปดาห์",
+    "badge_streak_30": "ชาย 30 วัน",
+    "badge_ten_workouts": "สิบครั้งของการออกกำลังกาย"
   },
   "navigation": {
     "home": "หน้าแรก",

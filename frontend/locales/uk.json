@@ -346,7 +346,18 @@
     "action_advanced_analytics": "Розширена аналітика",
     "action_advanced_analytics_sub": "Глибокі тренди · Еліт",
     "action_product_scan": "Сканувати товар",
-    "action_product_scan_sub": "Перевірте інгредієнти та добавки"
+    "action_product_scan_sub": "Перевірте інгредієнти та добавки",
+    "insights_title": "Інсайти цього тижня",
+    "insights_locked_sub": "Дивіться, як ваш сон, тренування та харчування взаємопов'язані — розблокуйте тижневі інсайти з Pro.",
+    "insights_pending_sub": "Інсайти розблокуються після того, як ви залогуєте близько 2 тижнів тренувань та даних про здоров'я — повертайтеся незабаром.",
+    "readiness_title": "Готовність",
+    "readiness_label_primed": "Підготовлено",
+    "readiness_label_ready": "Готово",
+    "readiness_label_take_it_easy": "Легше",
+    "readiness_label_prioritize_recovery": "Пріоритет відновленню",
+    "readiness_disclaimer": "Не є медичною порадою — загальний сигнал відновлення на основі ваших недавніх даних.",
+    "readiness_nudge": "Підключіть Apple Health та залогуйте кілька тренувань, щоб розблокувати оцінку готовності.",
+    "task_connect_friend": "Підключитися з другом"
   },
   "settings": {
     "title": "Налаштування",
@@ -1183,7 +1194,15 @@
     "badge_body_scan": "Скан тіла",
     "default_name": "Атлет",
     "friends": "Друзі",
-    "advanced_analytics": "Розширена аналітика"
+    "advanced_analytics": "Розширена аналітика",
+    "badge_first_meal": "Перший прием їжі",
+    "badge_first_body_scan": "Перший скан",
+    "badge_first_friend": "Завели друга",
+    "badge_streak_3": "Серія з 3 днів",
+    "badge_streak_7": "Чемпіон тижня",
+    "badge_streak_14": "Серія з двох тижнів",
+    "badge_streak_30": "Серія з 30 днів",
+    "badge_ten_workouts": "Десять тренувань"
   },
   "navigation": {
     "home": "Головна",

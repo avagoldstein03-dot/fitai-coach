@@ -346,7 +346,18 @@
     "action_advanced_analytics": "Erweiterte Analytik",
     "action_advanced_analytics_sub": "Tiefe Trends · Elite",
     "action_product_scan": "Produkt scannen",
-    "action_product_scan_sub": "Überprüfen Sie Zutaten und Zusatzstoffe"
+    "action_product_scan_sub": "Überprüfen Sie Zutaten und Zusatzstoffe",
+    "insights_title": "Erkenntnisse dieser Woche",
+    "insights_locked_sub": "Sehen Sie, wie Schlaf, Training und Ernährung zusammenhängen — schalten Sie wöchentliche Erkenntnisse mit Pro frei.",
+    "insights_pending_sub": "Erkenntnisse werden freigeschaltet, sobald Sie etwa 2 Wochen lang Trainings- und Gesundheitsdaten protokolliert haben — schauen Sie bald vorbei.",
+    "readiness_title": "Bereitschaft",
+    "readiness_label_primed": "Vorbereitet",
+    "readiness_label_ready": "Bereit",
+    "readiness_label_take_it_easy": "Nehmen Sie es leicht",
+    "readiness_label_prioritize_recovery": "Regeneration priorisieren",
+    "readiness_disclaimer": "Kein medizinischer Rat — ein allgemeines Regenerationssignal basierend auf Ihren aktuellen Daten.",
+    "readiness_nudge": "Verbinden Sie Apple Health und protokollieren Sie ein paar Trainingseinheiten, um Ihren Bereitschaftswert freizuschalten.",
+    "task_connect_friend": "Mit einem Freund verbinden"
   },
   "settings": {
     "title": "Einstellungen",
@@ -1183,7 +1194,15 @@
     "badge_body_scan": "Body Scan",
     "default_name": "Athlet",
     "friends": "Freunde",
-    "advanced_analytics": "Erweiterte Analytik"
+    "advanced_analytics": "Erweiterte Analytik",
+    "badge_first_meal": "Erste Mahlzeit",
+    "badge_first_body_scan": "Erstes Scan",
+    "badge_first_friend": "Freund gefunden",
+    "badge_streak_3": "3-Tage-Serie",
+    "badge_streak_7": "Wochenmeister",
+    "badge_streak_14": "Zwei-Wochen-Serie",
+    "badge_streak_30": "30-Tage-Serie",
+    "badge_ten_workouts": "Zehn Trainingseinheiten"
   },
   "navigation": {
     "home": "Startseite",

@@ -346,7 +346,18 @@
     "action_advanced_analytics": "Gelişmiş Analitics",
     "action_advanced_analytics_sub": "Derinlemesine trendler · Elite",
     "action_product_scan": "Ürün Taraması Yap",
-    "action_product_scan_sub": "İçerikleri ve katkı maddeleri kontrol et"
+    "action_product_scan_sub": "İçerikleri ve katkı maddeleri kontrol et",
+    "insights_title": "Bu Haftanın İçgörüleri",
+    "insights_locked_sub": "Uykunun, antrenmanının ve beslenmeninin nasıl bağlantılı olduğunu gör — Pro ile haftalık içgörülerin kilidini aç.",
+    "insights_pending_sub": "İçgörüler yaklaşık 2 haftalık antrenman ve sağlık verilerini kaydettikten sonra kilidinin açılır — yakında tekrar kontrol et.",
+    "readiness_title": "Hazırlık Durumu",
+    "readiness_label_primed": "Hazır",
+    "readiness_label_ready": "Başlamaya Hazır",
+    "readiness_label_take_it_easy": "Yavaş Git",
+    "readiness_label_prioritize_recovery": "Kurtarma Önceliklendir",
+    "readiness_disclaimer": "Tıbbi tavsiye değildir — son verilerinize dayalı genel bir kurtarma sinyali.",
+    "readiness_nudge": "Apple Health'i bağla ve hazırlık puanını açmak için birkaç antrenman kaydı yap.",
+    "task_connect_friend": "Bir arkadaşla bağlan"
   },
   "settings": {
     "title": "Ayarlar",
@@ -1183,7 +1194,15 @@
     "badge_body_scan": "Vücut Taraması",
     "default_name": "Sporcu",
     "friends": "Arkadaşlar",
-    "advanced_analytics": "Gelişmiş Analitics"
+    "advanced_analytics": "Gelişmiş Analitics",
+    "badge_first_meal": "İlk Öğün",
+    "badge_first_body_scan": "İlk Tarama",
+    "badge_first_friend": "Arkadaş Buldum",
+    "badge_streak_3": "3 Günlük Seri",
+    "badge_streak_7": "Hafta Şampiyonu",
+    "badge_streak_14": "İki Haftalık Seri",
+    "badge_streak_30": "30 Günlük Seri",
+    "badge_ten_workouts": "On Antrenman"
   },
   "navigation": {
     "home": "Ana Sayfa",

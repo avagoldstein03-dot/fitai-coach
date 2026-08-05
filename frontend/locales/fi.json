@@ -346,7 +346,18 @@
     "action_advanced_analytics": "Edistynyt analytiikka",
     "action_advanced_analytics_sub": "Syvälliset trendit · Elite",
     "action_product_scan": "Skannaa tuote",
-    "action_product_scan_sub": "Tarkista ainesosat ja lisäaineet"
+    "action_product_scan_sub": "Tarkista ainesosat ja lisäaineet",
+    "insights_title": "Tämän viikon oivallukset",
+    "insights_locked_sub": "Näe, kuinka unesi, harjoittelusi ja ruokavaliosi liittyvät toisiinsa — avaa viikottaiset oivallukset Pro-versiolla.",
+    "insights_pending_sub": "Oivallukset avautuvat, kun olet kirjannut noin 2 viikon harjoitukset ja terveystiedot — tarkista pian uudelleen.",
+    "readiness_title": "Valmiusindeksi",
+    "readiness_label_primed": "Valmis",
+    "readiness_label_ready": "Kunnossa",
+    "readiness_label_take_it_easy": "Ota helpommin",
+    "readiness_label_prioritize_recovery": "Priorisoi palautuminen",
+    "readiness_disclaimer": "Ei lääketieteellistä neuvontaa — yleinen palautumissignaali viimeaikaisten tietojesi perusteella.",
+    "readiness_nudge": "Yhdistä Apple Health ja kirjaa muutama harjoitus avataksesi valmiusindeksisi.",
+    "task_connect_friend": "Muodosta yhteys ystävään"
   },
   "settings": {
     "title": "Asetukset",
@@ -1183,7 +1194,15 @@
     "badge_body_scan": "Kehoskanni",
     "default_name": "Urheilija",
     "friends": "Ystävät",
-    "advanced_analytics": "Edistynyt analytiikka"
+    "advanced_analytics": "Edistynyt analytiikka",
+    "badge_first_meal": "Ensimmäinen ateria",
+    "badge_first_body_scan": "Ensimmäinen skannaus",
+    "badge_first_friend": "Teki ystävystyksen",
+    "badge_streak_3": "3 päivän sarja",
+    "badge_streak_7": "Viikon mestari",
+    "badge_streak_14": "Kahden viikon sarja",
+    "badge_streak_30": "30 päivän sarja",
+    "badge_ten_workouts": "Kymmenen harjoitusta"
   },
   "navigation": {
     "home": "Koti",

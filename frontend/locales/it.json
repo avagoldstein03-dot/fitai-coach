@@ -346,7 +346,18 @@
     "action_advanced_analytics": "Analitiche Avanzate",
     "action_advanced_analytics_sub": "Tendenze approfondite · Elite",
     "action_product_scan": "Scansiona un Prodotto",
-    "action_product_scan_sub": "Controlla ingredienti e additivi"
+    "action_product_scan_sub": "Controlla ingredienti e additivi",
+    "insights_title": "Insights di questa settimana",
+    "insights_locked_sub": "Scopri come il tuo sonno, allenamento e nutrizione si collegano — sblocca insights settimanali con Pro.",
+    "insights_pending_sub": "Gli insights si sbloccano dopo aver registrato circa 2 settimane di allenamenti e dati di salute — torna presto.",
+    "readiness_title": "Disponibilità",
+    "readiness_label_primed": "Preparato",
+    "readiness_label_ready": "Pronto",
+    "readiness_label_take_it_easy": "Vai Piano",
+    "readiness_label_prioritize_recovery": "Dai Priorità al Recupero",
+    "readiness_disclaimer": "Non è un consiglio medico — un segnale di recupero generale basato sui tuoi dati recenti.",
+    "readiness_nudge": "Connetti Apple Health e registra alcuni allenamenti per sbloccare il tuo punteggio di disponibilità.",
+    "task_connect_friend": "Connettiti con un amico"
   },
   "settings": {
     "title": "Impostazioni",
@@ -1183,7 +1194,15 @@
     "badge_body_scan": "Body Scan",
     "default_name": "Atleta",
     "friends": "Amici",
-    "advanced_analytics": "Analitiche Avanzate"
+    "advanced_analytics": "Analitiche Avanzate",
+    "badge_first_meal": "Primo Pasto",
+    "badge_first_body_scan": "Prima Scansione",
+    "badge_first_friend": "Ho Fatto un Amico",
+    "badge_streak_3": "Sequenza di 3 Giorni",
+    "badge_streak_7": "Campione della Settimana",
+    "badge_streak_14": "Sequenza di Due Settimane",
+    "badge_streak_30": "Sequenza di 30 Giorni",
+    "badge_ten_workouts": "Dieci Allenamenti"
   },
   "navigation": {
     "home": "Home",

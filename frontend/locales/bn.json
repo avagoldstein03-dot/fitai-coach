@@ -346,7 +346,18 @@
     "action_advanced_analytics": "উন্নত বিশ্লেষণ",
     "action_advanced_analytics_sub": "গভীর প্রবণতা · এলিট",
     "action_product_scan": "একটি পণ্য স্ক্যান করুন",
-    "action_product_scan_sub": "উপাদান এবং সংযোজন পরীক্ষা করুন"
+    "action_product_scan_sub": "উপাদান এবং সংযোজন পরীক্ষা করুন",
+    "insights_title": "এই সপ্তাহের অন্তর্দৃষ্টি",
+    "insights_locked_sub": "আপনার ঘুম, প্রশিক্ষণ এবং পুষ্টি কীভাবে সংযুক্ত তা দেখুন — Pro দিয়ে সাপ্তাহিক অন্তর্দৃষ্টি আনলক করুন।",
+    "insights_pending_sub": "আপনি প্রায় ২ সপ্তাহের ওয়ার্কআউট এবং স্বাস্থ্য ডেটা লগ করার পরে অন্তর্দৃষ্টি আনলক হয় — শীঘ্রই আবার চেক করুন।",
+    "readiness_title": "প্রস্তুতি",
+    "readiness_label_primed": "প্রস্তুত",
+    "readiness_label_ready": "প্রস্তুত",
+    "readiness_label_take_it_easy": "এটি সহজ নিন",
+    "readiness_label_prioritize_recovery": "পুনরুদ্ধারকে অগ্রাধিকার দিন",
+    "readiness_disclaimer": "চিকিৎসা পরামর্শ নয় — আপনার সম্প্রতি ডেটার উপর ভিত্তি করে একটি সাধারণ পুনরুদ্ধার সংকেত।",
+    "readiness_nudge": "Apple Health সংযুক্ত করুন এবং আপনার প্রস্তুতি স্কোর আনলক করতে কয়েকটি ওয়ার্কআউট লগ করুন।",
+    "task_connect_friend": "একজন বন্ধুর সাথে সংযোগ করুন"
   },
   "settings": {
     "title": "সেটিংস",
@@ -1183,7 +1194,15 @@
     "badge_body_scan": "বডি স্ক্যান",
     "default_name": "ক্রীড়াবিদ",
     "friends": "বন্ধুরা",
-    "advanced_analytics": "উন্নত বিশ্লেষণ"
+    "advanced_analytics": "উন্নত বিশ্লেষণ",
+    "badge_first_meal": "প্রথম খাবার",
+    "badge_first_body_scan": "প্রথম স্ক্যান",
+    "badge_first_friend": "একজন বন্ধু তৈরি করেছেন",
+    "badge_streak_3": "৩-দিনের স্ট্রিক",
+    "badge_streak_7": "সপ্তাহের চ্যাম্পিয়ন",
+    "badge_streak_14": "দুই সপ্তাহের স্ট্রিক",
+    "badge_streak_30": "৩০-দিনের স্ট্রিক",
+    "badge_ten_workouts": "দশটি ওয়ার্কআউট"
   },
   "navigation": {
     "home": "হোম",

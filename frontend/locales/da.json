@@ -346,7 +346,18 @@
     "action_advanced_analytics": "Avanceret Analyse",
     "action_advanced_analytics_sub": "Dybdegående tendenser · Elite",
     "action_product_scan": "Skan et produkt",
-    "action_product_scan_sub": "Tjek ingredienser og tilsætningsstoffer"
+    "action_product_scan_sub": "Tjek ingredienser og tilsætningsstoffer",
+    "insights_title": "Denne Uges Indsigter",
+    "insights_locked_sub": "Se hvordan din søvn, træning og ernæring hænger sammen — lås ugentlige indsigter op med Pro.",
+    "insights_pending_sub": "Indsigter låses op når du har logget omkring 2 ugers træninger og sundhedsdata — tjek tilbage snart.",
+    "readiness_title": "Parathed",
+    "readiness_label_primed": "Klar",
+    "readiness_label_ready": "Parat",
+    "readiness_label_take_it_easy": "Tag Det Let",
+    "readiness_label_prioritize_recovery": "Prioriter Restitution",
+    "readiness_disclaimer": "Ikke medicinsk rådgivning — et generelt restitutionssignal baseret på dine seneste data.",
+    "readiness_nudge": "Forbind Apple Health og log nogle få træninger for at låse din parathedsscore op.",
+    "task_connect_friend": "Forbind med en ven"
   },
   "settings": {
     "title": "Indstillinger",
@@ -1183,7 +1194,15 @@
     "badge_body_scan": "Body scan",
     "default_name": "Atlet",
     "friends": "Venner",
-    "advanced_analytics": "Avanceret Analyse"
+    "advanced_analytics": "Avanceret Analyse",
+    "badge_first_meal": "Første Måltid",
+    "badge_first_body_scan": "Første Scanning",
+    "badge_first_friend": "Lavede en Ven",
+    "badge_streak_3": "3-Dages Streak",
+    "badge_streak_7": "Ugens Mester",
+    "badge_streak_14": "To-Ugers Streak",
+    "badge_streak_30": "30-Dages Streak",
+    "badge_ten_workouts": "Ti Træninger"
   },
   "navigation": {
     "home": "Hjem",

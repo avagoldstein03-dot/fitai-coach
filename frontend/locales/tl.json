@@ -346,7 +346,18 @@
     "action_advanced_analytics": "Advanced Analytics",
     "action_advanced_analytics_sub": "Malalim na trends · Elite",
     "action_product_scan": "Mag-scan ng Produkto",
-    "action_product_scan_sub": "Suriin ang ingredients at additives"
+    "action_product_scan_sub": "Suriin ang ingredients at additives",
+    "insights_title": "Mga Insight Ngayong Linggo",
+    "insights_locked_sub": "Makita kung paano konektado ang iyong tulog, training, at nutrisyon — i-unlock ang linggong mga insight gamit ang Pro.",
+    "insights_pending_sub": "Ang mga insight ay unlockunan kapag nag-log ka na ng humigit-kumulang 2 linggo ng workouts at health data — bumalik sa lalong madaling panahon.",
+    "readiness_title": "Handa na",
+    "readiness_label_primed": "Handa na",
+    "readiness_label_ready": "Handang Gawin",
+    "readiness_label_take_it_easy": "Magpahinga",
+    "readiness_label_prioritize_recovery": "Bigyan ng Priyoridad ang Pagkakaguluhan",
+    "readiness_disclaimer": "Hindi ito medikal na payo — isang pangkalahatang recovery signal batay sa iyong nakaraang data.",
+    "readiness_nudge": "Ikonekta ang Apple Health at mag-log ng ilang workout upang i-unlock ang iyong readiness score.",
+    "task_connect_friend": "Makipag-ugnayan sa isang kaibigan"
   },
   "settings": {
     "title": "Settings",
@@ -1183,7 +1194,15 @@
     "badge_body_scan": "Body Scan",
     "default_name": "Atleta",
     "friends": "Mga Kaibigan",
-    "advanced_analytics": "Advanced Analytics"
+    "advanced_analytics": "Advanced Analytics",
+    "badge_first_meal": "Unang Pagkain",
+    "badge_first_body_scan": "Unang Scan",
+    "badge_first_friend": "Nakagawa ng Kaibigan",
+    "badge_streak_3": "3-Araw na Sunod-sunod",
+    "badge_streak_7": "Kampeon ng Linggo",
+    "badge_streak_14": "Dalawang Linggo na Sunod-sunod",
+    "badge_streak_30": "30-Araw na Sunod-sunod",
+    "badge_ten_workouts": "Sampung Workout"
   },
   "navigation": {
     "home": "Tahanan",

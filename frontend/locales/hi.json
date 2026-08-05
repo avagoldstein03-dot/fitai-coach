@@ -346,7 +346,18 @@
     "action_advanced_analytics": "उन्नत विश्लेषण",
     "action_advanced_analytics_sub": "गहन ट्रेंड · एलीट",
     "action_product_scan": "किसी उत्पाद को स्कैन करें",
-    "action_product_scan_sub": "सामग्री और योजक की जांच करें"
+    "action_product_scan_sub": "सामग्री और योजक की जांच करें",
+    "insights_title": "इस सप्ताह की अंतर्दृष्टि",
+    "insights_locked_sub": "देखें कि आपनी नींद, प्रशिक्षण और पोषण कैसे जुड़ते हैं — Pro के साथ साप्ताहिक अंतर्दृष्टि अनलॉक करें।",
+    "insights_pending_sub": "अंतर्दृष्टि तब अनलॉक होती है जब आप लगभग 2 सप्ताह के वर्कआउट और स्वास्थ्य डेटा लॉग कर लें — जल्द ही फिर से जांचें।",
+    "readiness_title": "तैयारी",
+    "readiness_label_primed": "तैयार",
+    "readiness_label_ready": "तैयार हैं",
+    "readiness_label_take_it_easy": "आसान लें",
+    "readiness_label_prioritize_recovery": "पुनरुद्धार को प्राथमिकता दें",
+    "readiness_disclaimer": "चिकित्सा सलाह नहीं — आपके हाल के डेटा के आधार पर एक सामान्य पुनरुद्धार संकेत।",
+    "readiness_nudge": "Apple Health से कनेक्ट करें और अपना तैयारी स्कोर अनलॉक करने के लिए कुछ वर्कआउट लॉग करें।",
+    "task_connect_friend": "किसी मित्र के साथ कनेक्ट करें"
   },
   "settings": {
     "title": "सेटिंग्स",
@@ -1183,7 +1194,15 @@
     "badge_body_scan": "बॉडी स्कैन",
     "default_name": "एथलीट",
     "friends": "दोस्त",
-    "advanced_analytics": "उन्नत विश्लेषण"
+    "advanced_analytics": "उन्नत विश्लेषण",
+    "badge_first_meal": "पहला भोजन",
+    "badge_first_body_scan": "पहली स्कैन",
+    "badge_first_friend": "दोस्त बनाया",
+    "badge_streak_3": "3-दिन की लकीर",
+    "badge_streak_7": "सप्ताह चैंपियन",
+    "badge_streak_14": "दो सप्ताह की लकीर",
+    "badge_streak_30": "30-दिन की लकीर",
+    "badge_ten_workouts": "दस वर्कआउट"
   },
   "navigation": {
     "home": "होम",

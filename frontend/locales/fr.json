@@ -346,7 +346,18 @@
     "action_advanced_analytics": "Analyses Avancées",
     "action_advanced_analytics_sub": "Tendances approfondies · Elite",
     "action_product_scan": "Scannez un Produit",
-    "action_product_scan_sub": "Vérifiez les ingrédients et additifs"
+    "action_product_scan_sub": "Vérifiez les ingrédients et additifs",
+    "insights_title": "Aperçus de cette semaine",
+    "insights_locked_sub": "Découvrez comment votre sommeil, entraînement et nutrition se connectent — déverrouillez les aperçus hebdomadaires avec Pro.",
+    "insights_pending_sub": "Les aperçus se déverrouillent une fois que vous avez enregistré environ 2 semaines d'entraînements et de données de santé — revenez bientôt.",
+    "readiness_title": "Préparation",
+    "readiness_label_primed": "Préparé",
+    "readiness_label_ready": "Prêt",
+    "readiness_label_take_it_easy": "Allez-y doucement",
+    "readiness_label_prioritize_recovery": "Priorisez la récupération",
+    "readiness_disclaimer": "Non un conseil médical — un signal de récupération général basé sur vos données récentes.",
+    "readiness_nudge": "Connectez Apple Health et enregistrez quelques entraînements pour déverrouiller votre score de préparation.",
+    "task_connect_friend": "Se connecter avec un ami"
   },
   "settings": {
     "title": "Paramètres",
@@ -1183,7 +1194,15 @@
     "badge_body_scan": "Scan corporel",
     "default_name": "Athlète",
     "friends": "Amis",
-    "advanced_analytics": "Analyses Avancées"
+    "advanced_analytics": "Analyses Avancées",
+    "badge_first_meal": "Premier repas",
+    "badge_first_body_scan": "Premier scan",
+    "badge_first_friend": "Ami trouvé",
+    "badge_streak_3": "Série de 3 jours",
+    "badge_streak_7": "Champion de la semaine",
+    "badge_streak_14": "Série de deux semaines",
+    "badge_streak_30": "Série de 30 jours",
+    "badge_ten_workouts": "Dix entraînements"
   },
   "navigation": {
     "home": "Accueil",

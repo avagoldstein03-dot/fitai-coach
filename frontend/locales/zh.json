@@ -346,7 +346,18 @@
     "action_advanced_analytics": "高级分析",
     "action_advanced_analytics_sub": "深度趋势 · 精英版",
     "action_product_scan": "扫描产品",
-    "action_product_scan_sub": "检查成分和添加剂"
+    "action_product_scan_sub": "检查成分和添加剂",
+    "insights_title": "本周见解",
+    "insights_locked_sub": "查看您的睡眠、训练和营养如何相互联系 — 使用 Pro 解锁每周见解。",
+    "insights_pending_sub": "记录约 2 周的训练和健康数据后即可解锁见解 — 敬请期待。",
+    "readiness_title": "准备状态",
+    "readiness_label_primed": "已准备好",
+    "readiness_label_ready": "准备完毕",
+    "readiness_label_take_it_easy": "轻松训练",
+    "readiness_label_prioritize_recovery": "优先恢复",
+    "readiness_disclaimer": "非医学建议 — 基于您最近数据的常规恢复信号。",
+    "readiness_nudge": "连接 Apple Health 并记录几项训练以解锁您的准备状态评分。",
+    "task_connect_friend": "与朋友连接"
   },
   "settings": {
     "title": "设置",
@@ -1183,7 +1194,15 @@
     "badge_body_scan": "身体扫描",
     "default_name": "运动员",
     "friends": "好友",
-    "advanced_analytics": "高级分析"
+    "advanced_analytics": "高级分析",
+    "badge_first_meal": "第一餐",
+    "badge_first_body_scan": "首次扫描",
+    "badge_first_friend": "交了朋友",
+    "badge_streak_3": "3 天连续",
+    "badge_streak_7": "周冠军",
+    "badge_streak_14": "两周连续",
+    "badge_streak_30": "30 天连续",
+    "badge_ten_workouts": "十次训练"
   },
   "navigation": {
     "home": "首页",

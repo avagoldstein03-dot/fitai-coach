@@ -346,7 +346,18 @@
     "action_advanced_analytics": "Pokročilá analýza",
     "action_advanced_analytics_sub": "Hlboké trendy · Elite",
     "action_product_scan": "Naskenujte Produkt",
-    "action_product_scan_sub": "Skontrolujte ingrediencie a aditíva"
+    "action_product_scan_sub": "Skontrolujte ingrediencie a aditíva",
+    "insights_title": "Poznatky tejto týždňa",
+    "insights_locked_sub": "Pozri si, ako spolu súvisia tvoj spánok, tréning a výživa — odomkni si týždenné poznatky s Pro.",
+    "insights_pending_sub": "Poznatky sa odomknú, keď si zaznamenáš približne 2 týždne tréningov a údajov o zdraví — vráť sa skôr.",
+    "readiness_title": "Připravenost",
+    "readiness_label_primed": "Pripravený",
+    "readiness_label_ready": "Hotový",
+    "readiness_label_take_it_easy": "Vezmi to pomaly",
+    "readiness_label_prioritize_recovery": "Prioritizuj regeneráciu",
+    "readiness_disclaimer": "Nie je lekárska rada — všeobecný signál regenerácie na základe tvojich nedávnych údajov.",
+    "readiness_nudge": "Pripoj Apple Health a zaznamenaj si niekoľko tréningov, aby si odomkol svoje skóre připravenosti.",
+    "task_connect_friend": "Spoji sa s priateľom"
   },
   "settings": {
     "title": "Nastavenia",
@@ -1183,7 +1194,15 @@
     "badge_body_scan": "Body scan",
     "default_name": "Športovec",
     "friends": "Priatelia",
-    "advanced_analytics": "Pokročilá analýza"
+    "advanced_analytics": "Pokročilá analýza",
+    "badge_first_meal": "Prvé jedlo",
+    "badge_first_body_scan": "Prvá skúška",
+    "badge_first_friend": "Získal si priateľa",
+    "badge_streak_3": "Séria 3 dní",
+    "badge_streak_7": "Majster týždňa",
+    "badge_streak_14": "Séria dvoch týždňov",
+    "badge_streak_30": "Séria 30 dní",
+    "badge_ten_workouts": "Desať tréningov"
   },
   "navigation": {
     "home": "Domov",

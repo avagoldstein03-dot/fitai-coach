@@ -346,7 +346,18 @@
     "action_advanced_analytics": "Haladó Analitika",
     "action_advanced_analytics_sub": "Mélyreható trendek · Elite",
     "action_product_scan": "Termék beolvasása",
-    "action_product_scan_sub": "Összetevők és adalékanyagok ellenőrzése"
+    "action_product_scan_sub": "Összetevők és adalékanyagok ellenőrzése",
+    "insights_title": "Ezen a héten nyert insights",
+    "insights_locked_sub": "Nézd meg, hogyan kapcsolódnak össze az alvásod, edzéseid és táplálkozásod — az insights feloldásához szükséges Pro előfizetés.",
+    "insights_pending_sub": "Az insights akkor jelennek meg, ha körülbelül 2 hete végzel edzéseket és naplózol egészségügyi adatokat — hamarosan visszatérhetsz.",
+    "readiness_title": "Felkészültség",
+    "readiness_label_primed": "Készen",
+    "readiness_label_ready": "Готов",
+    "readiness_label_take_it_easy": "Vedd könnyedén",
+    "readiness_label_prioritize_recovery": "Helyezd előtérbe a regenerációt",
+    "readiness_disclaimer": "Nem orvosi tanács — csak egy általános regenerációs jel a legutóbbi adatok alapján.",
+    "readiness_nudge": "Csatlakoztasd az Apple Health-ot és naplózz néhány edzést a felkészültségi pontszám feloldásához.",
+    "task_connect_friend": "Csatlakozz egy baráthoz"
   },
   "settings": {
     "title": "Beállítások",
@@ -1183,7 +1194,15 @@
     "badge_body_scan": "Body scan",
     "default_name": "Sportoló",
     "friends": "Barátok",
-    "advanced_analytics": "Haladó Analitika"
+    "advanced_analytics": "Haladó Analitika",
+    "badge_first_meal": "Első étkezés",
+    "badge_first_body_scan": "Első vizsgálat",
+    "badge_first_friend": "Barátságot kötöttél",
+    "badge_streak_3": "3 napos sorozat",
+    "badge_streak_7": "Heti bajnok",
+    "badge_streak_14": "Kéthetes sorozat",
+    "badge_streak_30": "30 napos sorozat",
+    "badge_ten_workouts": "Tíz edzés"
   },
   "navigation": {
     "home": "Kezdőlap",

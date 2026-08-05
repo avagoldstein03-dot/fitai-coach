@@ -346,7 +346,18 @@
     "action_advanced_analytics": "Napredna Analitika",
     "action_advanced_analytics_sub": "Duboki trendovi · Elite",
     "action_product_scan": "Skeniraj proizvod",
-    "action_product_scan_sub": "Provjeri sastojke i aditive"
+    "action_product_scan_sub": "Provjeri sastojke i aditive",
+    "insights_title": "Uvidi ovog tjedna",
+    "insights_locked_sub": "Pogledaj kako se tvoj san, trening i prehrana povezuju — otključaj tjedne uvide s Pro verzijom.",
+    "insights_pending_sub": "Uvidi se otključavaju kada zabilježiš otprilike 2 tjedna treningima i podataka o zdravlju — vrati se uskoro.",
+    "readiness_title": "Spremnost",
+    "readiness_label_primed": "Optimalno",
+    "readiness_label_ready": "Spreman/Spremna",
+    "readiness_label_take_it_easy": "Uzmi polako",
+    "readiness_label_prioritize_recovery": "Prioritiziraj oporavak",
+    "readiness_disclaimer": "Nije medicinski savjet — opći signal oporavka temeljen na tvojim nedavnim podacima.",
+    "readiness_nudge": "Poveži Apple Health i zabilježi nekoliko treningima kako bi otključao/otključala svoju ocjenu spremnosti.",
+    "task_connect_friend": "Poveži se s prijateljem"
   },
   "settings": {
     "title": "Postavke",
@@ -1183,7 +1194,15 @@
     "badge_body_scan": "Body Scan",
     "default_name": "Sportaš",
     "friends": "Prijatelji",
-    "advanced_analytics": "Napredna Analitika"
+    "advanced_analytics": "Napredna Analitika",
+    "badge_first_meal": "Prvi obrok",
+    "badge_first_body_scan": "Prvo skeniranje",
+    "badge_first_friend": "Stekao/Stekla prijatelja",
+    "badge_streak_3": "Niz od 3 dana",
+    "badge_streak_7": "Tjedan šampion",
+    "badge_streak_14": "Niz od dva tjedna",
+    "badge_streak_30": "Niz od 30 dana",
+    "badge_ten_workouts": "Deset treningima"
   },
   "navigation": {
     "home": "Početna",

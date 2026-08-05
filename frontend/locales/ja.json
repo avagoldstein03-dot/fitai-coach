@@ -346,7 +346,18 @@
     "action_advanced_analytics": "高度な分析",
     "action_advanced_analytics_sub": "深いトレンド · エリート",
     "action_product_scan": "製品をスキャン",
-    "action_product_scan_sub": "成分と添加物をチェック"
+    "action_product_scan_sub": "成分と添加物をチェック",
+    "insights_title": "今週のインサイト",
+    "insights_locked_sub": "睡眠、トレーニング、栄養の関連性を確認してください — Proで週間インサイトをアンロック。",
+    "insights_pending_sub": "約2週間のワークアウトとヘルスデータをログすると、インサイトがアンロックされます — またチェックしてください。",
+    "readiness_title": "レディネス",
+    "readiness_label_primed": "準備完了",
+    "readiness_label_ready": "準備OK",
+    "readiness_label_take_it_easy": "ゆっくり進める",
+    "readiness_label_prioritize_recovery": "リカバリーを優先する",
+    "readiness_disclaimer": "医学的アドバイスではありません — 最近のデータに基づいた一般的なリカバリーシグナルです。",
+    "readiness_nudge": "Apple Healthを接続して、いくつかのワークアウトをログして、レディネススコアをアンロックしてください。",
+    "task_connect_friend": "友達と繋がる"
   },
   "settings": {
     "title": "設定",
@@ -1183,7 +1194,15 @@
     "badge_body_scan": "ボディスキャン",
     "default_name": "アスリート",
     "friends": "フレンド",
-    "advanced_analytics": "高度な分析"
+    "advanced_analytics": "高度な分析",
+    "badge_first_meal": "最初の食事",
+    "badge_first_body_scan": "最初のスキャン",
+    "badge_first_friend": "友達を作った",
+    "badge_streak_3": "3日連続",
+    "badge_streak_7": "週間チャンピオン",
+    "badge_streak_14": "2週間連続",
+    "badge_streak_30": "30日連続",
+    "badge_ten_workouts": "10回のワークアウト"
   },
   "navigation": {
     "home": "ホーム",

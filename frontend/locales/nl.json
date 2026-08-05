@@ -346,7 +346,18 @@
     "action_advanced_analytics": "Geavanceerde Analytics",
     "action_advanced_analytics_sub": "Diepgaande trends · Elite",
     "action_product_scan": "Scan een Product",
-    "action_product_scan_sub": "Controleer ingrediënten en additieven"
+    "action_product_scan_sub": "Controleer ingrediënten en additieven",
+    "insights_title": "Inzichten van deze week",
+    "insights_locked_sub": "Zie hoe je slaap, training en voeding met elkaar verbonden zijn — ontgrendel wekelijkse inzichten met Pro.",
+    "insights_pending_sub": "Inzichten worden ontgrendeld zodra je ongeveer 2 weken aan trainingen en gezondheidsgegevens hebt geregistreerd — kom binnenkort terug.",
+    "readiness_title": "Paraatheid",
+    "readiness_label_primed": "Klaar",
+    "readiness_label_ready": "Gereed",
+    "readiness_label_take_it_easy": "Neem het Kalm Aan",
+    "readiness_label_prioritize_recovery": "Prioriteer Herstel",
+    "readiness_disclaimer": "Geen medisch advies — een algemeen herstelsignaal gebaseerd op je recente gegevens.",
+    "readiness_nudge": "Verbind Apple Health en registreer een paar trainingen om je paraatheidscore te ontgrendelen.",
+    "task_connect_friend": "Verbind met een vriend"
   },
   "settings": {
     "title": "Instellingen",
@@ -1183,7 +1194,15 @@
     "badge_body_scan": "Lichaamsscan",
     "default_name": "Atleet",
     "friends": "Vrienden",
-    "advanced_analytics": "Geavanceerde Analytics"
+    "advanced_analytics": "Geavanceerde Analytics",
+    "badge_first_meal": "Eerste Maaltijd",
+    "badge_first_body_scan": "Eerste Scan",
+    "badge_first_friend": "Vriendschap Gesloten",
+    "badge_streak_3": "3-Daagse Serie",
+    "badge_streak_7": "Weekkampioen",
+    "badge_streak_14": "Twee-Weekse Serie",
+    "badge_streak_30": "30-Daagse Serie",
+    "badge_ten_workouts": "Tien Trainingen"
   },
   "navigation": {
     "home": "Home",

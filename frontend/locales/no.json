@@ -346,7 +346,18 @@
     "action_advanced_analytics": "Avansert analyse",
     "action_advanced_analytics_sub": "Dyptgående trender · Elite",
     "action_product_scan": "Skann et produkt",
-    "action_product_scan_sub": "Sjekk ingredienser og tilsetningsstoffer"
+    "action_product_scan_sub": "Sjekk ingredienser og tilsetningsstoffer",
+    "insights_title": "Denne ukens innsikter",
+    "insights_locked_sub": "Se hvordan søvn, trening og ernæring henger sammen — lås opp ukentlige innsikter med Pro.",
+    "insights_pending_sub": "Innsikter låses opp når du har registrert omtrent 2 uker med treninger og helsdata — kom tilbake snart.",
+    "readiness_title": "Beredskap",
+    "readiness_label_primed": "Klar",
+    "readiness_label_ready": "Primed",
+    "readiness_label_take_it_easy": "Ta det med ro",
+    "readiness_label_prioritize_recovery": "Prioriter restitusjon",
+    "readiness_disclaimer": "Ikke medisinsk råd — et generelt restitusjonssignal basert på dine nylige data.",
+    "readiness_nudge": "Koble til Apple Health og logg noen få treninger for å låse opp beredskapsscore.",
+    "task_connect_friend": "Koble til en venn"
   },
   "settings": {
     "title": "Innstillinger",
@@ -1183,7 +1194,15 @@
     "badge_body_scan": "Kroppsscan",
     "default_name": "Idrettsutøver",
     "friends": "Venner",
-    "advanced_analytics": "Avansert analyse"
+    "advanced_analytics": "Avansert analyse",
+    "badge_first_meal": "Første måltid",
+    "badge_first_body_scan": "Første skan",
+    "badge_first_friend": "Gjorde en venn",
+    "badge_streak_3": "3-dagers serie",
+    "badge_streak_7": "Ukesmester",
+    "badge_streak_14": "14-dagers serie",
+    "badge_streak_30": "30-dagers serie",
+    "badge_ten_workouts": "Ti treninger"
   },
   "navigation": {
     "home": "Hjem",

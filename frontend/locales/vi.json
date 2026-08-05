@@ -346,7 +346,18 @@
     "action_advanced_analytics": "Phân Tích Nâng Cao",
     "action_advanced_analytics_sub": "Xu hướng sâu · Elite",
     "action_product_scan": "Quét một Sản phẩm",
-    "action_product_scan_sub": "Kiểm tra thành phần & phụ gia"
+    "action_product_scan_sub": "Kiểm tra thành phần & phụ gia",
+    "insights_title": "Những Hiểu Biết Tuần Này",
+    "insights_locked_sub": "Xem cách giấc ngủ, tập luyện và dinh dưỡng của bạn kết nối — mở khóa những hiểu biết hàng tuần với Pro.",
+    "insights_pending_sub": "Những hiểu biết sẽ mở khóa khi bạn đã ghi lại khoảng 2 tuần tập luyện và dữ liệu sức khỏe — quay lại sớm.",
+    "readiness_title": "Sẵn Sàng",
+    "readiness_label_primed": "Sẵn Sàng",
+    "readiness_label_ready": "Có Thể Bắt Đầu",
+    "readiness_label_take_it_easy": "Hãy Từ Từ",
+    "readiness_label_prioritize_recovery": "Ưu Tiên Phục Hồi",
+    "readiness_disclaimer": "Không phải lời khuyên y tế — một tín hiệu phục hồi chung dựa trên dữ liệu gần đây của bạn.",
+    "readiness_nudge": "Kết nối Apple Health và ghi lại một vài bài tập để mở khóa điểm sẵn sàng của bạn.",
+    "task_connect_friend": "Kết nối với một bạn bè"
   },
   "settings": {
     "title": "Cài đặt",
@@ -1183,7 +1194,15 @@
     "badge_body_scan": "Quét cơ thể",
     "default_name": "Vận động viên",
     "friends": "Bạn bè",
-    "advanced_analytics": "Phân Tích Nâng Cao"
+    "advanced_analytics": "Phân Tích Nâng Cao",
+    "badge_first_meal": "Bữa Ăn Đầu Tiên",
+    "badge_first_body_scan": "Quét Thân Thể Đầu Tiên",
+    "badge_first_friend": "Kết Bạn",
+    "badge_streak_3": "Chuỗi 3 Ngày",
+    "badge_streak_7": "Nhà Vô Địch Tuần",
+    "badge_streak_14": "Chuỗi Hai Tuần",
+    "badge_streak_30": "Chuỗi 30 Ngày",
+    "badge_ten_workouts": "Mười Bài Tập"
   },
   "navigation": {
     "home": "Trang chủ",

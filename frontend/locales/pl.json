@@ -346,7 +346,18 @@
     "action_advanced_analytics": "Zaawansowana Analityka",
     "action_advanced_analytics_sub": "Głębokie trendy · Elita",
     "action_product_scan": "Skanuj Produkt",
-    "action_product_scan_sub": "Sprawdź składniki i dodatki"
+    "action_product_scan_sub": "Sprawdź składniki i dodatki",
+    "insights_title": "Insights z tego tygodnia",
+    "insights_locked_sub": "Zobacz, jak Twój sen, trening i odżywianie się łączą — odblokuj cotygodniowe insights z Pro.",
+    "insights_pending_sub": "Insights odblokowują się po zalogowaniu około 2 tygodni treningów i danych zdrowotnych — sprawdź później.",
+    "readiness_title": "Gotowość",
+    "readiness_label_primed": "Przygotowany",
+    "readiness_label_ready": "Gotowy",
+    "readiness_label_take_it_easy": "Weź to ze spokojem",
+    "readiness_label_prioritize_recovery": "Priorytet odzyskiwania sił",
+    "readiness_disclaimer": "Nie stanowi porady medycznej — ogólny sygnał regeneracji na podstawie Twoich ostatnich danych.",
+    "readiness_nudge": "Połącz Apple Health i zaloguj kilka treningów, aby odblokować swój wynik gotowości.",
+    "task_connect_friend": "Połącz się z przyjacielem"
   },
   "settings": {
     "title": "Ustawienia",
@@ -1183,7 +1194,15 @@
     "badge_body_scan": "Skanowanie ciała",
     "default_name": "Sportowiec",
     "friends": "Znajomi",
-    "advanced_analytics": "Zaawansowana Analityka"
+    "advanced_analytics": "Zaawansowana Analityka",
+    "badge_first_meal": "Pierwszy Posiłek",
+    "badge_first_body_scan": "Pierwsze Skanowanie",
+    "badge_first_friend": "Zdobyłeś Przyjaciela",
+    "badge_streak_3": "Seria 3 dni",
+    "badge_streak_7": "Mistrz Tygodnia",
+    "badge_streak_14": "Seria 2 tygodni",
+    "badge_streak_30": "Seria 30 dni",
+    "badge_ten_workouts": "Dziesięć Treningów"
   },
   "navigation": {
     "home": "Strona główna",

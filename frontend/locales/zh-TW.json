@@ -346,7 +346,18 @@
     "action_advanced_analytics": "進階分析",
     "action_advanced_analytics_sub": "深度趨勢 · 精英版",
     "action_product_scan": "掃描產品",
-    "action_product_scan_sub": "檢查成分和添加物"
+    "action_product_scan_sub": "檢查成分和添加物",
+    "insights_title": "本週的深度分析",
+    "insights_locked_sub": "查看您的睡眠、訓練和營養如何相連——透過 Pro 版本解鎖每週深度分析。",
+    "insights_pending_sub": "在您記錄約 2 週的訓練和健康數據後，深度分析將解鎖——敬請稍後再試。",
+    "readiness_title": "準備度",
+    "readiness_label_primed": "已準備",
+    "readiness_label_ready": "準備好了",
+    "readiness_label_take_it_easy": "輕鬆訓練",
+    "readiness_label_prioritize_recovery": "優先恢復",
+    "readiness_disclaimer": "非醫療建議——根據您最近的數據提供的一般恢復信號。",
+    "readiness_nudge": "連接 Apple Health 並記錄幾次訓練以解鎖您的準備度分數。",
+    "task_connect_friend": "與朋友連接"
   },
   "settings": {
     "title": "設定",
@@ -1183,7 +1194,15 @@
     "badge_body_scan": "身體掃描",
     "default_name": "運動員",
     "friends": "好友",
-    "advanced_analytics": "進階分析"
+    "advanced_analytics": "進階分析",
+    "badge_first_meal": "首次進餐",
+    "badge_first_body_scan": "首次掃描",
+    "badge_first_friend": "交到朋友",
+    "badge_streak_3": "3 日連勝",
+    "badge_streak_7": "週冠軍",
+    "badge_streak_14": "兩週連勝",
+    "badge_streak_30": "30 日連勝",
+    "badge_ten_workouts": "十次訓練"
   },
   "navigation": {
     "home": "首頁",

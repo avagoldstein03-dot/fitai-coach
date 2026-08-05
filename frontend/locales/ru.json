@@ -346,7 +346,18 @@
     "action_advanced_analytics": "Расширенная аналитика",
     "action_advanced_analytics_sub": "Глубокий анализ · Премиум",
     "action_product_scan": "Сканировать товар",
-    "action_product_scan_sub": "Проверить ингредиенты и добавки"
+    "action_product_scan_sub": "Проверить ингредиенты и добавки",
+    "insights_title": "Insights этой недели",
+    "insights_locked_sub": "Узнайте, как связаны ваш сон, тренировки и питание — разблокируйте еженедельные insights с Pro.",
+    "insights_pending_sub": "Insights разблокируются после того, как вы залогируете примерно 2 недели тренировок и данных о здоровье — заходите позже.",
+    "readiness_title": "Готовность",
+    "readiness_label_primed": "Готовы",
+    "readiness_label_ready": "Готовы к тренировке",
+    "readiness_label_take_it_easy": "Возьмите попроще",
+    "readiness_label_prioritize_recovery": "Сосредоточьтесь на восстановлении",
+    "readiness_disclaimer": "Не является медицинским советом — общий сигнал восстановления на основе ваших недавних данных.",
+    "readiness_nudge": "Подключите Apple Health и залогируйте несколько тренировок, чтобы разблокировать оценку готовности.",
+    "task_connect_friend": "Подключитесь с другом"
   },
   "settings": {
     "title": "Настройки",
@@ -1183,7 +1194,15 @@
     "badge_body_scan": "Сканер тела",
     "default_name": "Спортсмен",
     "friends": "Друзья",
-    "advanced_analytics": "Расширенная аналитика"
+    "advanced_analytics": "Расширенная аналитика",
+    "badge_first_meal": "Первый прием пищи",
+    "badge_first_body_scan": "Первое сканирование",
+    "badge_first_friend": "Завел друга",
+    "badge_streak_3": "Серия из 3 дней",
+    "badge_streak_7": "Чемпион недели",
+    "badge_streak_14": "Двухнедельная серия",
+    "badge_streak_30": "30-дневная серия",
+    "badge_ten_workouts": "Десять тренировок"
   },
   "navigation": {
     "home": "Главная",

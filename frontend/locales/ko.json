@@ -346,7 +346,18 @@
     "action_advanced_analytics": "고급 분석",
     "action_advanced_analytics_sub": "심화 트렌드 · 엘리트",
     "action_product_scan": "제품 스캔",
-    "action_product_scan_sub": "성분 및 첨가물 확인"
+    "action_product_scan_sub": "성분 및 첨가물 확인",
+    "insights_title": "이번 주의 인사이트",
+    "insights_locked_sub": "수면, 훈련, 영양이 어떻게 연결되는지 확인하세요 — Pro로 주간 인사이트를 잠금 해제하세요.",
+    "insights_pending_sub": "약 2주간의 운동 및 건강 데이터를 기록한 후 인사이트가 잠금 해제됩니다 — 곧 다시 확인하세요.",
+    "readiness_title": "준비도",
+    "readiness_label_primed": "준비됨",
+    "readiness_label_ready": "준비 완료",
+    "readiness_label_take_it_easy": "천천히 시작하기",
+    "readiness_label_prioritize_recovery": "회복 우선하기",
+    "readiness_disclaimer": "의료 조언이 아닙니다 — 최근 데이터를 기반으로 한 일반적인 회복 신호입니다.",
+    "readiness_nudge": "Apple Health를 연결하고 몇 가지 운동을 기록하여 준비도 점수를 잠금 해제하세요.",
+    "task_connect_friend": "친구와 연결하기"
   },
   "settings": {
     "title": "설정",
@@ -1183,7 +1194,15 @@
     "badge_body_scan": "신체 스캔",
     "default_name": "선수",
     "friends": "친구",
-    "advanced_analytics": "고급 분석"
+    "advanced_analytics": "고급 분석",
+    "badge_first_meal": "첫 번째 식사",
+    "badge_first_body_scan": "첫 번째 스캔",
+    "badge_first_friend": "친구 추가",
+    "badge_streak_3": "3일 연속",
+    "badge_streak_7": "주간 챔피언",
+    "badge_streak_14": "2주 연속",
+    "badge_streak_30": "30일 연속",
+    "badge_ten_workouts": "10회 운동"
   },
   "navigation": {
     "home": "홈",
