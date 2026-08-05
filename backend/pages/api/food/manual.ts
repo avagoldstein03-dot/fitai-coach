@@ -3,6 +3,7 @@ import { getAuth } from "@clerk/nextjs/server";
 import { prisma } from "@/lib/prisma";
 import { sendError, sendSuccess } from "@/lib/api-utils";
 import { z } from "zod";
+import { checkAndAwardBadges } from "@/services/badges";
 
 const FoodItemSchema = z.object({
   foodName: z.string().min(1),
@@ -97,6 +98,8 @@ export default async function handler(
       },
       include: { foods: true },
     });
+
+    await checkAndAwardBadges(user.id).catch((err) => console.error("Badge check failed:", err));
 
     return sendSuccess(res, {
       mealId: meal.id,

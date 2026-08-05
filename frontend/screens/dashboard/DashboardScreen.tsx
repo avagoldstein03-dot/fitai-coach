@@ -36,6 +36,7 @@ interface DashboardData {
     avgDailyProtein: number;
   };
   streaks: { workouts: number; meals: number };
+  friendsConnected: number;
   charts: { daily: Array<{ date: string; calories: number; protein: number }> };
   subscription: { plan: "free" | "premium"; status: string };
 }
@@ -403,6 +404,7 @@ export default function DashboardScreen() {
           { label: t("dashboard.task_workout"),     emoji: "💪", screen: "Workouts",    done: (data.thisWeek.workoutsCompleted ?? 0) > 0 },
           { label: t("dashboard.task_weight"),      emoji: "⚖️", screen: "Settings",    done: !!data.currentWeight },
           { label: t("dashboard.task_body_scan"),   emoji: "📸", screen: "BodyScan",    done: !!data.lastAssessmentDate },
+          { label: t("dashboard.task_connect_friend"), emoji: "🤝", screen: "Friends",  done: (data.friendsConnected ?? 0) > 0 },
         ];
         const completedCount = tasks.filter((task) => task.done).length;
         if (completedCount === tasks.length) return null;

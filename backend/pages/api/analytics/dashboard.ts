@@ -33,6 +33,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       currentSubscription,
       recentWorkoutSessions,
       recentMeals,
+      friendsConnected,
     ] = await Promise.all([
       prisma.meal.count({
         where: { userId: user.id, createdAt: { gte: weekAgo } },
@@ -70,6 +71,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         select: { createdAt: true },
         orderBy: { createdAt: "desc" },
       }),
+      prisma.friendConnection.count({ where: { userId: user.id } }),
     ]);
 
     const totalCaloriesThisWeek = caloriesData.reduce(
@@ -116,6 +118,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         totalCalories: Math.round(totalCaloriesThisWeek),
       },
       streaks: { workouts: workoutStreak, meals: mealStreak },
+      friendsConnected,
       charts: { daily: dailyStats },
       subscription: {
         plan: currentSubscription?.plan || "free",

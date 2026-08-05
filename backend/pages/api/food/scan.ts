@@ -6,6 +6,7 @@ import { z } from "zod";
 import { AIProviderRegistry } from "@/services/ai-registry";
 import { getUserSubscription } from "@/lib/subscription-middleware";
 import { checkRateLimit } from "@/lib/rate-limit";
+import { checkAndAwardBadges } from "@/services/badges";
 
 const RequestSchema = z.object({
   base64: z.string(),
@@ -126,6 +127,8 @@ export default async function handler(
         foods: true,
       },
     });
+
+    await checkAndAwardBadges(user.id).catch((err) => console.error("Badge check failed:", err));
 
     return sendSuccess(res, {
       mealId: meal.id,

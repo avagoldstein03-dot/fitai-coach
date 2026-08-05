@@ -310,6 +310,7 @@
     "task_workout": "Complete a workout",
     "task_weight": "Log your weight",
     "task_body_scan": "Try your first body scan",
+    "task_connect_friend": "Connect with a friend",
     "quotes": [
       {
         "text": "The only bad workout is the one that didn't happen.",
@@ -1294,11 +1295,14 @@
     "food_diary": "Food Diary",
     "measurements": "Measurements",
     "badge_first_workout": "First Workout",
-    "badge_meal_tracker": "Meal Tracker",
-    "badge_3_day_streak": "3-Day Streak",
-    "badge_week_champion": "Week Champion",
-    "badge_stay_hydrated": "Stay Hydrated",
-    "badge_body_scan": "Body Scan",
+    "badge_first_meal": "First Meal",
+    "badge_first_body_scan": "First Scan",
+    "badge_first_friend": "Made a Friend",
+    "badge_streak_3": "3-Day Streak",
+    "badge_streak_7": "Week Champion",
+    "badge_streak_14": "Two-Week Streak",
+    "badge_streak_30": "30-Day Streak",
+    "badge_ten_workouts": "Ten Workouts",
     "default_name": "Athlete"
   },
   "friends": {

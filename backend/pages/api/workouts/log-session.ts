@@ -2,6 +2,7 @@ import type { NextApiRequest, NextApiResponse } from "next";
 import { getAuth } from "@clerk/nextjs/server";
 import prisma from "@/lib/prisma";
 import { sendSuccess, sendError, validateRequest } from "@/lib/api-utils";
+import { checkAndAwardBadges } from "@/services/badges";
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (!validateRequest(req, ["POST"])) {
@@ -49,6 +50,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         eventProperties: { exerciseName, completedSets, completedReps, weight },
       },
     });
+
+    await checkAndAwardBadges(session.userId).catch((err) => console.error("Badge check failed:", err));
 
     sendSuccess(res, { session }, "Workout session logged", 201);
   } catch (error) {

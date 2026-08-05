@@ -6,6 +6,7 @@ import { z } from "zod";
 import { AIProviderRegistry } from "@/services/ai-registry";
 import { checkRateLimit } from "@/lib/rate-limit";
 import { getUserSubscription } from "@/lib/subscription-middleware";
+import { checkAndAwardBadges } from "@/services/badges";
 
 const RequestSchema = z.object({
   scanId: z.string().cuid(),
@@ -99,6 +100,8 @@ export default async function handler(
       where: { id: scan.id },
       data: { analysisStatus: "completed" },
     });
+
+    await checkAndAwardBadges(user.id).catch((err) => console.error("Badge check failed:", err));
 
     // Every tier gets a scan, but only "full" depth gets the complete breakdown —
     // the headline summary is what carries the marketing hook for everyone else.

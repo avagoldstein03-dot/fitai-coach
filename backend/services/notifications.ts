@@ -2,6 +2,7 @@ import { sendPushNotification, sendBulkNotifications } from "./firebase";
 import prisma from "@/lib/prisma";
 import { detectWorkoutPlateaus, diffBodyComposition, buildTrendsSummary } from "@/lib/trends";
 import { resolveTier, TIER_LIMITS } from "@/lib/subscription-middleware";
+import type { BadgeDefinition } from "@/lib/badges";
 
 export type NotificationPref =
   | "workout_reminders"
@@ -146,6 +147,48 @@ export async function notifyCheer(userId: string, fromUserName: string): Promise
     title: "You got a cheer! 👋",
     body: `${firstName} is cheering you on — keep it up!`,
     data: { screen: "Friends" },
+  });
+
+  return true;
+}
+
+export async function notifyAchievementUnlocked(userId: string, badge: BadgeDefinition): Promise<boolean> {
+  const user = await prisma.user.findUnique({
+    where: { id: userId },
+    select: { pushToken: true, notificationPrefs: true },
+  });
+
+  if (!user?.pushToken) return false;
+
+  const prefs = parsePrefs(user.notificationPrefs);
+  if (!prefs.social_nudges) return false;
+
+  await sendPushNotification(user.pushToken, {
+    title: `${badge.emoji} Badge unlocked!`,
+    body: `${badge.title} — ${badge.description}`,
+    data: { screen: "Profile" },
+  });
+
+  return true;
+}
+
+export async function notifyReferralReward(userId: string, friendName: string): Promise<boolean> {
+  const user = await prisma.user.findUnique({
+    where: { id: userId },
+    select: { pushToken: true, notificationPrefs: true },
+  });
+
+  if (!user?.pushToken) return false;
+
+  const prefs = parsePrefs(user.notificationPrefs);
+  if (!prefs.social_nudges) return false;
+
+  const firstName = friendName?.split(" ")[0] ?? "Your friend";
+
+  await sendPushNotification(user.pushToken, {
+    title: "🎁 7 days of Pro, on us",
+    body: `You connected with ${firstName} — enjoy a week of Pro as a thank you.`,
+    data: { screen: "Profile" },
   });
 
   return true;

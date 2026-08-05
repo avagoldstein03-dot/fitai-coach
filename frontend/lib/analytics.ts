@@ -53,4 +53,8 @@ export const Events = {
 
   // Insights
   INSIGHT_CARD_VIEWED: "insight_card_viewed",
+
+  // Badges & Referral
+  BADGE_EARNED: "badge_earned",
+  REFERRAL_CONNECTED: "referral_connected",
 } as const;

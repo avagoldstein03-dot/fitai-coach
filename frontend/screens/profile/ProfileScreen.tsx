@@ -40,6 +40,15 @@ export default function ProfileScreen() {
     staleTime: 60_000,
   });
 
+  const { data: badgesData } = useQuery<{ badges: Array<{ key: string; emoji: string; title: string; description: string; earned: boolean; earnedAt: string | null }> }>({
+    queryKey: ["badges"],
+    queryFn: async () => {
+      const res = await axios.get(`${API_URL}/api/analytics/badges`);
+      return res.data.data;
+    },
+    staleTime: 60_000,
+  });
+
   const { data: profile, refetch: refetchProfile } = useQuery({
     queryKey: ["profile"],
     queryFn: async () => {
@@ -172,28 +181,21 @@ export default function ProfileScreen() {
           ))}
         </View>
 
-        {/* Achievements */}
-        {dashData && (() => {
-          const streak = Math.max(dashData?.streaks?.workouts ?? 0, dashData?.streaks?.meals ?? 0);
-          const totalWorkouts = dashData?.thisWeek?.workoutsCompleted ?? 0;
-          const totalMeals = dashData?.thisWeek?.mealsLogged ?? 0;
-          const badges = [
-            { emoji: "🏋️", label: t("profile.badge_first_workout"),  earned: totalWorkouts >= 1 },
-            { emoji: "🍽️", label: t("profile.badge_meal_tracker"),    earned: totalMeals >= 1 },
-            { emoji: "🔥", label: t("profile.badge_3_day_streak"),    earned: streak >= 3 },
-            { emoji: "🏆", label: t("profile.badge_week_champion"),   earned: streak >= 7 },
-            { emoji: "💧", label: t("profile.badge_stay_hydrated"),   earned: (dashData?.thisWeek?.avgDailyCalories ?? 0) > 0 },
-            { emoji: "📸", label: t("profile.badge_body_scan"),       earned: !!profile?.lastAssessmentDate },
-          ];
+        {/* Achievements — real, persisted, all-time (backend/lib/badges.ts), not
+            recomputed from this-week-only stats like the old inline version. */}
+        {badgesData && (() => {
+          const badges = badgesData.badges;
           const earned = badges.filter((b) => b.earned).length;
           return (
             <>
               <Text style={s.sectionTitle}>{t("profile.achievements", { earned, total: badges.length })}</Text>
               <View style={s.badgesRow}>
                 {badges.map((b) => (
-                  <View key={b.label} style={[s.badge, !b.earned && s.badgeLocked]}>
+                  <View key={b.key} style={[s.badge, !b.earned && s.badgeLocked]}>
                     <Text style={[s.badgeEmoji, !b.earned && s.badgeEmojiLocked]}>{b.emoji}</Text>
-                    <Text style={[s.badgeLabel, !b.earned && s.badgeLabelLocked]}>{b.label}</Text>
+                    <Text style={[s.badgeLabel, !b.earned && s.badgeLabelLocked]}>
+                      {t(`profile.badge_${b.key}`, { defaultValue: b.title })}
+                    </Text>
                   </View>
                 ))}
               </View>

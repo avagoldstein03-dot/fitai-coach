@@ -17,6 +17,7 @@ import axios from "axios";
 import { useTranslation } from "react-i18next";
 import * as Haptics from "expo-haptics";
 import { T } from "@/lib/theme";
+import { posthog, Events } from "@/lib/analytics";
 
 const API_URL = process.env.EXPO_PUBLIC_API_URL;
 
@@ -63,7 +64,11 @@ export default function FriendsScreen() {
     onSuccess: () => {
       setCode("");
       Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success);
+      posthog.capture(Events.REFERRAL_CONNECTED);
       queryClient.invalidateQueries({ queryKey: ["friends"] });
+      queryClient.invalidateQueries({ queryKey: ["dashboard"] });
+      queryClient.invalidateQueries({ queryKey: ["badges"] });
+      queryClient.invalidateQueries({ queryKey: ["subscription"] });
     },
     onError: (err: any) => {
       Alert.alert(t("common.error"), err.response?.data?.message || t("friends.error_connect"));

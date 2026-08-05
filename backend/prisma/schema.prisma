@@ -69,6 +69,7 @@ model User {
   cheersSent            FriendCheer[]          @relation("CheersSent")
   cheersReceived        FriendCheer[]          @relation("CheersReceived")
   weeklyInsights        WeeklyInsight[]
+  badges                UserBadge[]
 
   createdAt             DateTime               @default(now())
   updatedAt             DateTime               @updatedAt
@@ -528,6 +529,23 @@ model WeeklyInsight {
   createdAt             DateTime               @default(now())
 
   @@unique([userId, weekOf])
+  @@index([userId])
+}
+
+// ============================================================================
+// Persisted badges/achievements — catalog itself lives in code
+// (backend/lib/badges.ts), this just records what a user has earned.
+// ============================================================================
+
+model UserBadge {
+  id                    String                 @id @default(cuid())
+  userId                String
+  user                  User                   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  badgeKey              String
+  earnedAt              DateTime               @default(now())
+
+  @@unique([userId, badgeKey])
   @@index([userId])
 }
 
