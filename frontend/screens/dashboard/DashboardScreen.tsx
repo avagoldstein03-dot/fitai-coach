@@ -602,18 +602,21 @@ export default function DashboardScreen() {
             <Text style={s.insightUpgradeBtnText}>{t("common.upgrade")}</Text>
           </TouchableOpacity>
         </View>
-      ) : (
-        weeklyInsights?.insights?.length ? (
-          <View style={s.insightCard} onLayout={() => posthog.capture(Events.INSIGHT_CARD_VIEWED, { locked: false })}>
-            <Text style={s.insightTitle}>{t("dashboard.insights_title")}</Text>
-            {weeklyInsights.insights.map((insight, i) => (
-              <Text key={i} style={s.insightLine}>
-                {insight}
-              </Text>
-            ))}
-          </View>
-        ) : null
-      )}
+      ) : weeklyInsights?.insights?.length ? (
+        <View style={s.insightCard} onLayout={() => posthog.capture(Events.INSIGHT_CARD_VIEWED, { locked: false })}>
+          <Text style={s.insightTitle}>{t("dashboard.insights_title")}</Text>
+          {weeklyInsights.insights.map((insight, i) => (
+            <Text key={i} style={s.insightLine}>
+              {insight}
+            </Text>
+          ))}
+        </View>
+      ) : weeklyInsights && weeklyInsights.insights === null ? (
+        <View style={s.insightCard}>
+          <Text style={s.insightTitle}>{t("dashboard.insights_title")}</Text>
+          <Text style={s.insightLockedSub}>{t("dashboard.insights_pending_sub")}</Text>
+        </View>
+      ) : null}
 
       {/* ── Quick Actions ── */}
       <Text style={s.sectionLabel}>{t("dashboard.quick_actions")}</Text>
