@@ -980,7 +980,10 @@
       "جارٍ البحث عن انتصاراتك…",
       "جارٍ صياغة رؤى مخصصة…"
     ],
-    "share_msg": "📊 {{period}} مراجعتي في FitAI\n\n{{review}}"
+    "share_msg": "📊 {{period}} مراجعتي في FitAI\n\n{{review}}",
+    "highlights_title": "ما يسير على ما يرام",
+    "insight_label": "جدير بالملاحظة",
+    "adjustment_label": "جرب هذا"
   },
   "assessment": {
     "title": "نتائج التقييم",

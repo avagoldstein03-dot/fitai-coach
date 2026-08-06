@@ -980,7 +980,10 @@
       "Finde deine Siege…",
       "Erstelle personalisierte Einsichten…"
     ],
-    "share_msg": "📊 Meine {{period}} FitAI-Überprüfung\n\n{{review}}"
+    "share_msg": "📊 Meine {{period}} FitAI-Überprüfung\n\n{{review}}",
+    "highlights_title": "Was läuft gut",
+    "insight_label": "Bemerkenswert",
+    "adjustment_label": "Probier das aus"
   },
   "assessment": {
     "title": "Analyseergebnisse",

@@ -980,7 +980,10 @@
       "Finner dine gevinster…",
       "Lager personalisert innsikt…"
     ],
-    "share_msg": "📊 Min {{period}} FitAI-gjennomgang\n\n{{review}}"
+    "share_msg": "📊 Min {{period}} FitAI-gjennomgang\n\n{{review}}",
+    "highlights_title": "Det Som Går Bra",
+    "insight_label": "Verdt å Merke Seg",
+    "adjustment_label": "Prøv Dette"
   },
   "assessment": {
     "title": "Vurderingsresultater",

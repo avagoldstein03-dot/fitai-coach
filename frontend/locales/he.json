@@ -980,7 +980,10 @@
       "מצא את הניצחונות שלך…",
       "יצירת תובנות מותאמות אישית…"
     ],
-    "share_msg": "📊 {{period}} סקירה FitAI שלי\n\n{{review}}"
+    "share_msg": "📊 {{period}} סקירה FitAI שלי\n\n{{review}}",
+    "highlights_title": "מה עובד טוב",
+    "insight_label": "כדאי לשים לב",
+    "adjustment_label": "נסה את זה"
   },
   "assessment": {
     "title": "תוצאות הערכה",

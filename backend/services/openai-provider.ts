@@ -11,6 +11,7 @@ import type {
   NutritionGenerationInput,
   MealPlanResult,
   ProgressReviewInput,
+  ProgressReviewResult,
   FormCheckInput,
   FormCheckResult,
   ChatContext,
@@ -278,23 +279,47 @@ Generate exactly 7 days (Monday-Sunday). Each day must include Breakfast, Lunch,
   }
 
   // Not currently used — progress_review routes to AnthropicProvider (see ai-registry.ts).
-  // Kept in sync with that prompt's concise-review approach in case routing ever changes.
-  async generateProgressReview(userProfile: ProgressReviewInput): Promise<string> {
-    const prompt = `Create a concise, scannable ${userProfile.period} progress review for a user with:
+  // Kept in sync with that prompt's structured, wins-first approach in case routing ever changes.
+  async generateProgressReview(userProfile: ProgressReviewInput): Promise<ProgressReviewResult> {
+    const prompt = `Create a concise ${userProfile.period} progress review for a user with:
 - Meals logged: ${userProfile.mealsLogged}
 - Workouts completed: ${userProfile.workoutsCompleted}
 - Weight change: ${userProfile.weightChange} kg
 - Body metrics: ${JSON.stringify(userProfile.bodyMetrics)}
 
-Lead with the single most important takeaway in one sentence, then at most 3 short sections covering only what stands out. No filler.`;
+People want to see what they're doing well before anything else. Return ONLY valid JSON with no markdown, structured exactly like this:
+{
+  "wins": ["short, specific, genuine positive callout", "a second one if there's a real second win, otherwise omit"],
+  "insight": "one short sentence on a behavioral pattern worth noting — omit this field entirely if nothing stands out",
+  "adjustment": "one short sentence suggesting a change — omit this field entirely if nothing is warranted",
+  "closing": "one short motivating line to close on"
+}
+
+"wins" always has at least 1 entry — find something genuinely true and specific to praise even in a quiet week. Never fabricate a win, never pad with generic praise. Keep every field short.`;
 
     const response = await openai.chat.completions.create({
       model: "gpt-4o",
-      max_tokens: 600,
+      response_format: { type: "json_object" },
+      max_tokens: 700,
       messages: [{ role: "user", content: prompt }],
     });
 
-    return response.choices[0].message.content || "Failed to generate progress review";
+    const content = response.choices[0].message.content;
+    const jsonMatch = content?.match(/\{[\s\S]*\}/);
+    if (!jsonMatch) {
+      return { wins: ["You showed up this week — that's what counts."], closing: "Keep it going." };
+    }
+    try {
+      const parsed = JSON.parse(jsonMatch[0]);
+      return {
+        wins: Array.isArray(parsed.wins) && parsed.wins.length ? parsed.wins : ["You showed up this week — that's what counts."],
+        insight: typeof parsed.insight === "string" ? parsed.insight : undefined,
+        adjustment: typeof parsed.adjustment === "string" ? parsed.adjustment : undefined,
+        closing: typeof parsed.closing === "string" ? parsed.closing : "Keep it going.",
+      };
+    } catch {
+      return { wins: ["You showed up this week — that's what counts."], closing: "Keep it going." };
+    }
   }
 
   async generateCrossDomainInsights(signals: CrossDomainSignal[]): Promise<string[]> {

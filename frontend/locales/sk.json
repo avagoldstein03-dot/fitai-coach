@@ -980,7 +980,10 @@
       "Nájdem tvoje výhry…",
       "Vytváram personalizované poznatky…"
     ],
-    "share_msg": "📊 Môj {{period}} FitAI prehľad\n\n{{review}}"
+    "share_msg": "📊 Môj {{period}} FitAI prehľad\n\n{{review}}",
+    "highlights_title": "Čo ide dobre",
+    "insight_label": "Stojí za povšimnutie",
+    "adjustment_label": "Skúste toto"
   },
   "assessment": {
     "title": "Výsledky posúdenia",

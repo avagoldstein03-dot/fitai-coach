@@ -980,7 +980,10 @@
       "Pronalazim tvoje pobede…",
       "Kreiram personalizovane uvide…"
     ],
-    "share_msg": "📊 Moj {{period}} FitAI pregled\n\n{{review}}"
+    "share_msg": "📊 Moj {{period}} FitAI pregled\n\n{{review}}",
+    "highlights_title": "Šta ide dobro",
+    "insight_label": "Vredno pažnje",
+    "adjustment_label": "Pokušajte ovo"
   },
   "assessment": {
     "title": "Резултати Процене",

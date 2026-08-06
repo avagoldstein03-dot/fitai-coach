@@ -20,31 +20,64 @@ import { T } from "@/lib/theme";
 const API_URL = process.env.EXPO_PUBLIC_API_URL;
 
 
-function ReviewText({ text }: { text: string }) {
-  const paragraphs = text.split(/\n+/).filter((p) => p.trim());
+interface ReviewContent {
+  wins: string[];
+  insight?: string;
+  adjustment?: string;
+  closing: string;
+}
+
+// Always the first thing rendered — a visually distinct card so the positive
+// callouts are literally highlighted, not just first in reading order.
+function ReviewHighlights({ wins, title }: { wins: string[]; title: string }) {
   return (
-    <View style={s.reviewBody}>
-      {paragraphs.map((para, i) => {
-        const trimmed = para.trim();
-        if (/^#{1,3}\s|^\*\*[^*]+\*\*[:\s]*$/.test(trimmed)) {
-          return (
-            <Text key={i} style={s.reviewSection}>
-              {trimmed.replace(/^#{1,3}\s/, "").replace(/^\*\*|\*\*[:\s]*$/g, "")}
-            </Text>
-          );
-        }
-        if (/^[-•*]\s/.test(trimmed)) {
-          return (
-            <View key={i} style={s.reviewBulletRow}>
-              <View style={s.reviewBulletDot} />
-              <Text style={s.reviewPara}>{trimmed.replace(/^[-•*]\s/, "")}</Text>
-            </View>
-          );
-        }
-        return <Text key={i} style={i === 0 ? s.reviewLead : s.reviewPara}>{trimmed}</Text>;
-      })}
+    <View style={s.highlightCard}>
+      <View style={s.highlightHeader}>
+        <Text style={s.highlightEmoji}>🌟</Text>
+        <Text style={s.highlightTitle}>{title}</Text>
+      </View>
+      {wins.map((win, i) => (
+        <View key={i} style={s.highlightRow}>
+          <Text style={s.highlightCheck}>✓</Text>
+          <Text style={s.highlightText}>{win}</Text>
+        </View>
+      ))}
     </View>
   );
+}
+
+function ReviewDetails({ insight, adjustment, closing, insightLabel, adjustmentLabel }: {
+  insight?: string;
+  adjustment?: string;
+  closing: string;
+  insightLabel: string;
+  adjustmentLabel: string;
+}) {
+  return (
+    <View style={s.reviewBody}>
+      {insight ? (
+        <View>
+          <Text style={s.reviewSection}>{insightLabel}</Text>
+          <Text style={s.reviewPara}>{insight}</Text>
+        </View>
+      ) : null}
+      {adjustment ? (
+        <View>
+          <Text style={s.reviewSection}>{adjustmentLabel}</Text>
+          <Text style={s.reviewPara}>{adjustment}</Text>
+        </View>
+      ) : null}
+      <Text style={s.reviewLead}>{closing}</Text>
+    </View>
+  );
+}
+
+function reviewToShareText(review: ReviewContent): string {
+  const parts = [review.wins.map((w) => `✓ ${w}`).join("\n")];
+  if (review.insight) parts.push(review.insight);
+  if (review.adjustment) parts.push(review.adjustment);
+  parts.push(review.closing);
+  return parts.join("\n\n");
 }
 
 const STAT_META: Record<string, { emoji: string; color: string; bg: string }> = {
@@ -103,7 +136,7 @@ export default function WeeklyReviewScreen() {
   const shareReview = async () => {
     if (!data?.review) return;
     const period_label = period === "weekly" ? t("pricing.billing_weekly") : t("pricing.billing_monthly");
-    await Share.share({ message: t("weekly_review.share_msg", { period: period_label, review: data.review }) });
+    await Share.share({ message: t("weekly_review.share_msg", { period: period_label, review: reviewToShareText(data.review) }) });
   };
 
   return (
@@ -175,6 +208,8 @@ export default function WeeklyReviewScreen() {
             <StatCard label={t("weekly_review.avg_protein")} value={data.stats.avgDailyProtein || 0} unit="g/day" metaKey="protein" />
           </View>
 
+          <ReviewHighlights wins={data.review.wins} title={t("weekly_review.highlights_title")} />
+
           <View style={s.reviewCard}>
             <View style={s.reviewCardHeader}>
               <Text style={s.coachEmoji}>🤖</Text>
@@ -183,7 +218,13 @@ export default function WeeklyReviewScreen() {
                 <Text style={s.coachSub}>{t("weekly_review.ai_review")}</Text>
               </View>
             </View>
-            <ReviewText text={data.review} />
+            <ReviewDetails
+              insight={data.review.insight}
+              adjustment={data.review.adjustment}
+              closing={data.review.closing}
+              insightLabel={t("weekly_review.insight_label")}
+              adjustmentLabel={t("weekly_review.adjustment_label")}
+            />
           </View>
 
           <TouchableOpacity onPress={() => refetch()} style={s.regenerateBtn}>
@@ -229,8 +270,22 @@ const s = StyleSheet.create({
   reviewLead: { fontSize: 15, color: T.textPrimary, lineHeight: 24, fontWeight: "600" },
   reviewSection: { fontSize: 13, fontWeight: "800", color: T.accent, textTransform: "uppercase", letterSpacing: 0.6, marginTop: 4 },
   reviewPara: { fontSize: 14, color: T.textPrimary, lineHeight: 22, flex: 1 },
-  reviewBulletRow: { flexDirection: "row", alignItems: "flex-start", gap: 10 },
-  reviewBulletDot: { width: 6, height: 6, borderRadius: 3, backgroundColor: T.accent, marginTop: 8 },
+  highlightCard: {
+    marginHorizontal: 20,
+    marginTop: 8,
+    marginBottom: 12,
+    backgroundColor: T.greenDark,
+    borderRadius: 16,
+    borderWidth: 1,
+    borderColor: T.greenBorder,
+    padding: 20,
+  },
+  highlightHeader: { flexDirection: "row", alignItems: "center", gap: 8, marginBottom: 12 },
+  highlightEmoji: { fontSize: 18 },
+  highlightTitle: { fontSize: 13, fontWeight: "800", color: T.green, textTransform: "uppercase", letterSpacing: 0.6 },
+  highlightRow: { flexDirection: "row", alignItems: "flex-start", gap: 10, marginBottom: 8 },
+  highlightCheck: { fontSize: 14, fontWeight: "800", color: T.green, marginTop: 1 },
+  highlightText: { fontSize: 15, color: T.textPrimary, lineHeight: 22, flex: 1, fontWeight: "600" },
   errorEmoji: { fontSize: 40, marginBottom: 12 },
   errorTitle: { fontSize: 18, fontWeight: "700", color: T.textPrimary, marginBottom: 16 },
   retryBtn: { backgroundColor: T.accent, paddingHorizontal: 24, paddingVertical: 13, borderRadius: 12 },
@@ -257,7 +312,6 @@ const s = StyleSheet.create({
   coachEmoji: { fontSize: 24, marginRight: 10 },
   coachName: { fontSize: 15, fontWeight: "700", color: T.textPrimary },
   coachSub: { fontSize: 12, color: T.textMuted, marginTop: 2 },
-  reviewText: { fontSize: 14, color: T.textPrimary, lineHeight: 22 },
   regenerateBtn: {
     marginHorizontal: 20,
     borderWidth: 1,

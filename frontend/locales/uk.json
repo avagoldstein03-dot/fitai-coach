@@ -980,7 +980,10 @@
       "Знаходимо ваші перемоги…",
       "Створюємо персоналізовані інсайти…"
     ],
-    "share_msg": "📊 Мій {{period}} огляд FitAI\n\n{{review}}"
+    "share_msg": "📊 Мій {{period}} огляд FitAI\n\n{{review}}",
+    "highlights_title": "Що йде добре",
+    "insight_label": "Варто помітити",
+    "adjustment_label": "Спробуй це"
   },
   "assessment": {
     "title": "Результати Оцінки",

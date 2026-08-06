@@ -980,7 +980,10 @@
       "Hitta dina vinster…",
       "Skapar personaliserad insikt…"
     ],
-    "share_msg": "📊 Min {{period}} FitAI-granskning\n\n{{review}}"
+    "share_msg": "📊 Min {{period}} FitAI-granskning\n\n{{review}}",
+    "highlights_title": "Det går bra",
+    "insight_label": "Värt att notera",
+    "adjustment_label": "Prova detta"
   },
   "assessment": {
     "title": "Utvärderingsresultat",

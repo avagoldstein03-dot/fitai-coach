@@ -980,7 +980,10 @@
       "寻找你的成功…",
       "制作个性化见解…"
     ],
-    "share_msg": "📊 我的 {{period}} FitAI 评估\n\n{{review}}"
+    "share_msg": "📊 我的 {{period}} FitAI 评估\n\n{{review}}",
+    "highlights_title": "进展顺利",
+    "insight_label": "值得关注",
+    "adjustment_label": "尝试这个"
   },
   "assessment": {
     "title": "评估结果",

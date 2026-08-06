@@ -980,7 +980,10 @@
       "Mencari kemenangan anda…",
       "Menyediakan pandangan diri yang dipersonalisasi…"
     ],
-    "share_msg": "📊 Ulasan {{period}} FitAI Saya\n\n{{review}}"
+    "share_msg": "📊 Ulasan {{period}} FitAI Saya\n\n{{review}}",
+    "highlights_title": "Apa Yang Berjalan Baik",
+    "insight_label": "Patut Diperhatikan",
+    "adjustment_label": "Cuba Ini"
   },
   "assessment": {
     "title": "Hasil Penilaian",

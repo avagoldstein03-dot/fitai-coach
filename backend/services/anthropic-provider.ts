@@ -11,6 +11,7 @@ import type {
   NutritionGenerationInput,
   MealPlanResult,
   ProgressReviewInput,
+  ProgressReviewResult,
   FormCheckInput,
   FormCheckResult,
   ChatContext,
@@ -228,23 +229,48 @@ Generate exactly 7 days (Monday-Sunday), each with Breakfast, Lunch, Dinner, and
     return JSON.parse(jsonMatch[0]);
   }
 
-  async generateProgressReview(userProfile: ProgressReviewInput): Promise<string> {
-    const prompt = `Generate a concise, scannable ${userProfile.period} progress review for a user:
+  async generateProgressReview(userProfile: ProgressReviewInput): Promise<ProgressReviewResult> {
+    const prompt = `Generate a concise ${userProfile.period} progress review for a user:
 Meals logged: ${userProfile.mealsLogged}
 Workouts completed: ${userProfile.workoutsCompleted}
 Weight change: ${userProfile.weightChange} kg
 Body metrics: ${JSON.stringify(userProfile.bodyMetrics)}
 
-Lead with the single most important takeaway in one sentence. Then at most 3 short sections (a couple sentences each) covering only what actually stands out — a behavioral insight, one goal adjustment if warranted, and a brief motivating close. Skip anything generic or filler; if there's nothing notable for a section, leave it out entirely rather than padding it. Plain, direct language over a formal report tone.`;
+People want to see what they're doing well before anything else. Return ONLY valid JSON with no markdown, structured exactly like this:
+{
+  "wins": ["short, specific, genuine positive callout", "a second one if there's a real second win, otherwise omit"],
+  "insight": "one short sentence on a behavioral pattern worth noting — omit this field entirely if nothing stands out",
+  "adjustment": "one short sentence suggesting a change — omit this field entirely if nothing is warranted",
+  "closing": "one short motivating line to close on"
+}
+
+"wins" always has at least 1 entry — find something genuinely true and specific to praise even in a quiet week (e.g. showing up at all, one good session, consistency on one metric). Never fabricate a win that isn't supported by the numbers, and never pad with generic praise. Keep every field short — this is meant to be scanned in a few seconds, not read as a report.`;
 
     const message = await anthropic.messages.create({
       model: "claude-sonnet-4-5",
-      max_tokens: 600,
+      max_tokens: 700,
       messages: [{ role: "user", content: prompt }],
     });
 
     const content = message.content[0];
-    return content.type === "text" ? content.text : "Failed to generate progress review";
+    if (content.type !== "text") {
+      return { wins: ["You showed up this week — that's what counts."], closing: "Keep it going." };
+    }
+    const jsonMatch = content.text.match(/\{[\s\S]*\}/);
+    if (!jsonMatch) {
+      return { wins: ["You showed up this week — that's what counts."], closing: "Keep it going." };
+    }
+    try {
+      const parsed = JSON.parse(jsonMatch[0]);
+      return {
+        wins: Array.isArray(parsed.wins) && parsed.wins.length ? parsed.wins : ["You showed up this week — that's what counts."],
+        insight: typeof parsed.insight === "string" ? parsed.insight : undefined,
+        adjustment: typeof parsed.adjustment === "string" ? parsed.adjustment : undefined,
+        closing: typeof parsed.closing === "string" ? parsed.closing : "Keep it going.",
+      };
+    } catch {
+      return { wins: ["You showed up this week — that's what counts."], closing: "Keep it going." };
+    }
   }
 
   async generateCrossDomainInsights(signals: CrossDomainSignal[]): Promise<string[]> {

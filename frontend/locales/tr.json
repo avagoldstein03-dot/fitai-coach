@@ -980,7 +980,10 @@
       "Kazanımlar bulunuyor…",
       "Kişiselleştirilmiş içgörüler hazırlanıyor…"
     ],
-    "share_msg": "📊 {{period}} FitAI İncelemem\n\n{{review}}"
+    "share_msg": "📊 {{period}} FitAI İncelemem\n\n{{review}}",
+    "highlights_title": "İyi Giden Şeyler",
+    "insight_label": "Dikkat Edilesi",
+    "adjustment_label": "Bunu Deneyin"
   },
   "assessment": {
     "title": "Değerlendirme Sonuçları",

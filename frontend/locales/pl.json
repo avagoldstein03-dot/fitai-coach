@@ -980,7 +980,10 @@
       "Znajdowanie twoich zwycięstw…",
       "Tworzenie spersonalizowanych spostrzeżeń…"
     ],
-    "share_msg": "📊 Mój przegląd {{period}} FitAI\n\n{{review}}"
+    "share_msg": "📊 Mój przegląd {{period}} FitAI\n\n{{review}}",
+    "highlights_title": "Co Ci Się Udaje",
+    "insight_label": "Warte Uwagi",
+    "adjustment_label": "Spróbuj Tego"
   },
   "assessment": {
     "title": "Wyniki oceny",

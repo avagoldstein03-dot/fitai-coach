@@ -980,7 +980,10 @@
       "勝利を見つけ中…",
       "個人的な洞察を作成中…"
     ],
-    "share_msg": "📊 私の{{period}} FitAIレビュー\n\n{{review}}"
+    "share_msg": "📊 私の{{period}} FitAIレビュー\n\n{{review}}",
+    "highlights_title": "うまくいっていること",
+    "insight_label": "注目すべき点",
+    "adjustment_label": "試してみましょう"
   },
   "assessment": {
     "title": "評価結果",

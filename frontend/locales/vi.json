@@ -980,7 +980,10 @@
       "Tìm những thắng lợi của bạn…",
       "Tạo thông tin chi tiết cá nhân hóa…"
     ],
-    "share_msg": "📊 Đánh giá {{period}} FitAI của tôi\n\n{{review}}"
+    "share_msg": "📊 Đánh giá {{period}} FitAI của tôi\n\n{{review}}",
+    "highlights_title": "Điều Đang Diễn Ra Tốt",
+    "insight_label": "Đáng Chú Ý",
+    "adjustment_label": "Hãy Thử Điều Này"
   },
   "assessment": {
     "title": "Kết quả đánh giá",

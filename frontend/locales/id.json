@@ -980,7 +980,10 @@
       "Menemukan kemenangan Anda…",
       "Menyusun wawasan yang dipersonalisasi…"
     ],
-    "share_msg": "📊 Tinjauan {{period}} FitAI Saya\n\n{{review}}"
+    "share_msg": "📊 Tinjauan {{period}} FitAI Saya\n\n{{review}}",
+    "highlights_title": "Yang Berjalan Baik",
+    "insight_label": "Patut Diperhatikan",
+    "adjustment_label": "Coba Ini"
   },
   "assessment": {
     "title": "Hasil Penilaian",

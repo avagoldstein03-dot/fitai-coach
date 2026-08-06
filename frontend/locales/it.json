@@ -980,7 +980,10 @@
       "Ricerca delle tue vittorie…",
       "Creazione di intuizioni personalizzate…"
     ],
-    "share_msg": "📊 La mia {{period}} Revisione FitAI\n\n{{review}}"
+    "share_msg": "📊 La mia {{period}} Revisione FitAI\n\n{{review}}",
+    "highlights_title": "Cosa sta andando bene",
+    "insight_label": "Vale la pena notare",
+    "adjustment_label": "Prova questo"
   },
   "assessment": {
     "title": "Risultati Valutazione",

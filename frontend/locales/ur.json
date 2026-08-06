@@ -980,7 +980,10 @@
       "آپ کے جیتنے تلاش کر رہے ہیں…",
       "ذاتی نوعیت کے بصیرتیں تیار کر رہے ہیں…"
     ],
-    "share_msg": "📊 میرا {{period}} FitAI جائزہ\n\n{{review}}"
+    "share_msg": "📊 میرا {{period}} FitAI جائزہ\n\n{{review}}",
+    "highlights_title": "کیا اچھا ہو رہا ہے",
+    "insight_label": "قابلِ غور",
+    "adjustment_label": "یہ کوشش کریں"
   },
   "assessment": {
     "title": "تشخیص کے نتائج",

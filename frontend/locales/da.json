@@ -980,7 +980,10 @@
       "Finder dine sejre…",
       "Skaber personaliseret indsigt…"
     ],
-    "share_msg": "📊 Min {{period}} FitAI vurdering\n\n{{review}}"
+    "share_msg": "📊 Min {{period}} FitAI vurdering\n\n{{review}}",
+    "highlights_title": "Hvad går godt",
+    "insight_label": "Værd at bemærke",
+    "adjustment_label": "Prøv dette"
   },
   "assessment": {
     "title": "Analyseresultater",

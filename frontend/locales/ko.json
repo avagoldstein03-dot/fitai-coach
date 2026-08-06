@@ -980,7 +980,10 @@
       "당신의 성과 찾는 중…",
       "개인화된 인사이트 작성 중…"
     ],
-    "share_msg": "📊 내 {{period}} FitAI 리뷰\n\n{{review}}"
+    "share_msg": "📊 내 {{period}} FitAI 리뷰\n\n{{review}}",
+    "highlights_title": "잘 진행 중인 것",
+    "insight_label": "주목할 점",
+    "adjustment_label": "시도해 보기"
   },
   "assessment": {
     "title": "평가 결과",

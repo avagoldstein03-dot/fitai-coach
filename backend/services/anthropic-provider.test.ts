@@ -73,3 +73,79 @@ describe("anthropicProvider.chat", () => {
     expect(call.messages).toEqual([{ role: "user", content: "hi" }]);
   });
 });
+
+describe("anthropicProvider.generateProgressReview", () => {
+  const baseInput = {
+    userId: "user_1",
+    mealsLogged: 18,
+    workoutsCompleted: 4,
+    weightChange: -0.8,
+    bodyMetrics: {},
+    period: "weekly",
+  };
+
+  it("parses a well-formed structured response into wins/insight/adjustment/closing", async () => {
+    mockCreate.mockResolvedValue({
+      content: [
+        {
+          type: "text",
+          text: JSON.stringify({
+            wins: ["You logged 18 meals this week — great consistency.", "4 workouts completed."],
+            insight: "Your best days are ones you log breakfast early.",
+            adjustment: "Try logging dinner the same night instead of the next morning.",
+            closing: "Keep this pace going.",
+          }),
+        },
+      ],
+    });
+
+    const result = await anthropicProvider.generateProgressReview(baseInput);
+
+    expect(result.wins).toEqual([
+      "You logged 18 meals this week — great consistency.",
+      "4 workouts completed.",
+    ]);
+    expect(result.insight).toBe("Your best days are ones you log breakfast early.");
+    expect(result.adjustment).toBe("Try logging dinner the same night instead of the next morning.");
+    expect(result.closing).toBe("Keep this pace going.");
+  });
+
+  it("omits insight/adjustment when the model leaves them out", async () => {
+    mockCreate.mockResolvedValue({
+      content: [{ type: "text", text: JSON.stringify({ wins: ["Solid week."], closing: "Nice work." }) }],
+    });
+
+    const result = await anthropicProvider.generateProgressReview(baseInput);
+
+    expect(result.wins).toEqual(["Solid week."]);
+    expect(result.insight).toBeUndefined();
+    expect(result.adjustment).toBeUndefined();
+  });
+
+  it("always returns at least one win, even if the model returns an empty wins array", async () => {
+    mockCreate.mockResolvedValue({
+      content: [{ type: "text", text: JSON.stringify({ wins: [], closing: "Nice work." }) }],
+    });
+
+    const result = await anthropicProvider.generateProgressReview(baseInput);
+
+    expect(result.wins.length).toBeGreaterThan(0);
+  });
+
+  it("falls back to a default win instead of throwing when the response isn't valid JSON", async () => {
+    mockCreate.mockResolvedValue({ content: [{ type: "text", text: "Sorry, I can't help with that." }] });
+
+    const result = await anthropicProvider.generateProgressReview(baseInput);
+
+    expect(result.wins.length).toBeGreaterThan(0);
+    expect(typeof result.closing).toBe("string");
+  });
+
+  it("requests JSON output describing wins first in the prompt", async () => {
+    await anthropicProvider.generateProgressReview(baseInput);
+    const call = mockCreate.mock.calls[0][0];
+    const prompt = call.messages[0].content;
+    expect(prompt).toContain("what they're doing well before anything else");
+    expect(prompt).toContain('"wins"');
+  });
+});

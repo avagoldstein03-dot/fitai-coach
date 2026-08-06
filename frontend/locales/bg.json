@@ -980,7 +980,10 @@
       "Намирам твоите победи…",
       "Създавам персонализирани прозрения…"
     ],
-    "share_msg": "📊 Мой {{period}} FitAI преглед\n\n{{review}}"
+    "share_msg": "📊 Мой {{period}} FitAI преглед\n\n{{review}}",
+    "highlights_title": "Какво върви добре",
+    "insight_label": "Достойно за внимание",
+    "adjustment_label": "Опитай това"
   },
   "assessment": {
     "title": "Резултати от оценка",

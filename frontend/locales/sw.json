@@ -980,7 +980,10 @@
       "Kutafuta ushindi wako…",
       "Kutengeneza maarifa ya kibinafsi…"
     ],
-    "share_msg": "📊 {{period}} FitAI Maoni Yangu\n\n{{review}}"
+    "share_msg": "📊 {{period}} FitAI Maoni Yangu\n\n{{review}}",
+    "highlights_title": "Kile Kinachoendelea Vizuri",
+    "insight_label": "Linastahili Kuzingatiwa",
+    "adjustment_label": "Jaribu Hili"
   },
   "assessment": {
     "title": "Matokeo ya Tathmini",

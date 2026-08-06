@@ -980,7 +980,10 @@
       "Εύρεση των νικών σας…",
       "Δημιουργία προσαρμοσμένων πληροφοριών…"
     ],
-    "share_msg": "📊 Η {{period}} Αναθεώρηση FitAI Μου\n\n{{review}}"
+    "share_msg": "📊 Η {{period}} Αναθεώρηση FitAI Μου\n\n{{review}}",
+    "highlights_title": "Τι Πάει Καλά",
+    "insight_label": "Αξίζει να Σημειωθεί",
+    "adjustment_label": "Δοκίμασε Αυτό"
   },
   "assessment": {
     "title": "Αποτελέσματα Αξιολόγησης",

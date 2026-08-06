@@ -980,7 +980,10 @@
       "A győzelmeid megtalálása…",
       "Személyre szabott meglátások készítése…"
     ],
-    "share_msg": "📊 Az én {{period}} FitAI értékelésem\n\n{{review}}"
+    "share_msg": "📊 Az én {{period}} FitAI értékelésem\n\n{{review}}",
+    "highlights_title": "Mi Megy Jól",
+    "insight_label": "Érdemes Megjegyezni",
+    "adjustment_label": "Próbáld Ezt"
   },
   "assessment": {
     "title": "Értékelési eredmények",

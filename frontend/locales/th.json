@@ -980,7 +980,10 @@
       "หาชัยชนะของคุณ…",
       "สร้างข้อมูลเชิงลึกแบบจำเพาะบุคคล…"
     ],
-    "share_msg": "📊 การตรวจสอบ FitAI {{period}} ของฉัน\n\n{{review}}"
+    "share_msg": "📊 การตรวจสอบ FitAI {{period}} ของฉัน\n\n{{review}}",
+    "highlights_title": "สิ่งที่ดำเนินไปได้ดี",
+    "insight_label": "น่าสังเกต",
+    "adjustment_label": "ลองสิ่งนี้"
   },
   "assessment": {
     "title": "ผลลัพธ์การประเมิน",

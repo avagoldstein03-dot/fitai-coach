@@ -86,7 +86,7 @@ export interface AIProvider {
   analyzeBody(input: BodyAnalysisInput): Promise<BodyAnalysisResult>;
   generateWorkout(userProfile: WorkoutGenerationInput): Promise<WorkoutPlanResult>;
   generateMealPlan(userProfile: NutritionGenerationInput): Promise<MealPlanResult>;
-  generateProgressReview(userProfile: ProgressReviewInput): Promise<string>;
+  generateProgressReview(userProfile: ProgressReviewInput): Promise<ProgressReviewResult>;
   analyzeForm(input: FormCheckInput): Promise<FormCheckResult>;
   chat(userMessage: string, context: ChatContext): Promise<string>;
   generateCrossDomainInsights(signals: CrossDomainSignal[]): Promise<string[]>;
@@ -141,6 +141,13 @@ export interface ProgressReviewInput {
   weightChange: number;
   bodyMetrics: Record<string, number>;
   period: string; // "weekly" | "monthly"
+}
+
+export interface ProgressReviewResult {
+  wins: string[]; // 1-3 short positive callouts — always present, always rendered first
+  insight?: string; // a behavioral pattern worth noting, omitted if nothing stands out
+  adjustment?: string; // a suggested change, omitted if nothing warranted
+  closing: string; // one short motivating closing line
 }
 
 export interface ChatMessageTurn {

@@ -980,7 +980,10 @@
       "Găsind victoriile tale…",
       "Elaborând informații personalizate…"
     ],
-    "share_msg": "📊 Recenzia mea {{period}} FitAI\n\n{{review}}"
+    "share_msg": "📊 Recenzia mea {{period}} FitAI\n\n{{review}}",
+    "highlights_title": "Ce merge bine",
+    "insight_label": "Demn de remarcat",
+    "adjustment_label": "Încearcă asta"
   },
   "assessment": {
     "title": "Rezultate Evaluare",

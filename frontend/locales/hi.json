@@ -980,7 +980,10 @@
       "आपकी जीत खोजी जा रही है…",
       "व्यक्तिगत अंतर्दृष्टि तैयार की जा रही है…"
     ],
-    "share_msg": "📊 मेरी {{period}} FitAI समीक्षा\n\n{{review}}"
+    "share_msg": "📊 मेरी {{period}} FitAI समीक्षा\n\n{{review}}",
+    "highlights_title": "क्या अच्छा चल रहा है",
+    "insight_label": "ध्यान देने योग्य",
+    "adjustment_label": "यह आजमाएं"
   },
   "assessment": {
     "title": "मूल्यांकन परिणाम",

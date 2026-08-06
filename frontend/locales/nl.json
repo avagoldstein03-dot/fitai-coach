@@ -980,7 +980,10 @@
       "Je overwinningen vinden…",
       "Persoonlijk inzicht samenstellen…"
     ],
-    "share_msg": "📊 Mijn {{period}} FitAI Beoordeling\n\n{{review}}"
+    "share_msg": "📊 Mijn {{period}} FitAI Beoordeling\n\n{{review}}",
+    "highlights_title": "Wat Goed Gaat",
+    "insight_label": "Het Vermelden Waard",
+    "adjustment_label": "Probeer Dit"
   },
   "assessment": {
     "title": "Beoordelingsresultaten",

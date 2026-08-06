@@ -980,7 +980,10 @@
       "Hanapin ang iyong mga tagumpay…",
       "Ginawa ang personalized insights…"
     ],
-    "share_msg": "📊 Aking {{period}} FitAI Review\n\n{{review}}"
+    "share_msg": "📊 Aking {{period}} FitAI Review\n\n{{review}}",
+    "highlights_title": "Ano ang Napupuri",
+    "insight_label": "Karapat-dapat Pansinin",
+    "adjustment_label": "Subukan Ito"
   },
   "assessment": {
     "title": "Assessment Results",

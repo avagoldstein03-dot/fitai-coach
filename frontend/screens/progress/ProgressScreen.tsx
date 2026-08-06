@@ -86,7 +86,12 @@ interface ReviewData {
     avgDailyCalories: number;
     avgDailyProtein: number;
   };
-  review: string;
+  review: {
+    wins: string[];
+    insight?: string;
+    adjustment?: string;
+    closing: string;
+  };
 }
 
 interface DashboardData {
@@ -267,9 +272,18 @@ export default function ProgressScreen() {
                 ))}
               </View>
 
+              <View style={s.reviewHighlightBox}>
+                <Text style={s.reviewHighlightLabel}>🌟 {t("weekly_review.highlights_title")}</Text>
+                {review.review.wins.map((win, i) => (
+                  <Text key={i} style={s.reviewHighlightText}>✓ {win}</Text>
+                ))}
+              </View>
+
               <View style={s.reviewTextBox}>
                 <Text style={s.reviewTextLabel}>{t("weekly_review.ai_review")}</Text>
-                <Text style={s.reviewText}>{review.review}</Text>
+                {review.review.insight ? <Text style={s.reviewText}>{review.review.insight}</Text> : null}
+                {review.review.adjustment ? <Text style={s.reviewText}>{review.review.adjustment}</Text> : null}
+                <Text style={s.reviewText}>{review.review.closing}</Text>
               </View>
             </View>
           )}
@@ -379,9 +393,12 @@ const s = StyleSheet.create({
   },
   reviewStatValue: { fontSize: 14, fontWeight: "700", color: T.textPrimary },
   reviewStatLabel: { fontSize: 11, color: T.textMuted, marginTop: 2 },
-  reviewTextBox: { backgroundColor: T.bg, borderRadius: 12, padding: 16 },
-  reviewTextLabel: { fontSize: 12, fontWeight: "700", color: T.accent, marginBottom: 8 },
+  reviewTextBox: { backgroundColor: T.bg, borderRadius: 12, padding: 16, gap: 6 },
+  reviewTextLabel: { fontSize: 12, fontWeight: "700", color: T.accent, marginBottom: 2 },
   reviewText: { fontSize: 13, color: T.textPrimary, lineHeight: 20 },
+  reviewHighlightBox: { backgroundColor: T.greenDark, borderRadius: 12, borderWidth: 1, borderColor: T.greenBorder, padding: 16, marginBottom: 10, gap: 6 },
+  reviewHighlightLabel: { fontSize: 12, fontWeight: "800", color: T.green, marginBottom: 2 },
+  reviewHighlightText: { fontSize: 14, fontWeight: "600", color: T.textPrimary, lineHeight: 20 },
   heatmapCard: { backgroundColor: T.surface, borderRadius: 16, borderWidth: 1, borderColor: T.border, padding: 16, marginBottom: 16 },
   heatmapHeader: { flexDirection: "row", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 14 },
   heatmapTitle: { fontSize: 14, fontWeight: "700", color: T.textPrimary },

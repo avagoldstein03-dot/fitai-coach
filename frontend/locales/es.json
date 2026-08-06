@@ -980,7 +980,10 @@
       "Encontrando tus logros…",
       "Elaborando insights personalizados…"
     ],
-    "share_msg": "📊 Mi Revisión {{period}} de FitAI\n\n{{review}}"
+    "share_msg": "📊 Mi Revisión {{period}} de FitAI\n\n{{review}}",
+    "highlights_title": "Lo Que Va Bien",
+    "insight_label": "Digno de Notar",
+    "adjustment_label": "Prueba Esto"
   },
   "assessment": {
     "title": "Resultados de evaluación",

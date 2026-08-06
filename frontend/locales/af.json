@@ -980,7 +980,10 @@
       "Vind jou oorwinnings…",
       "Maak persoonlike insigte tuis…"
     ],
-    "share_msg": "📊 My {{period}} FitAI-Toetsing\n\n{{review}}"
+    "share_msg": "📊 My {{period}} FitAI-Toetsing\n\n{{review}}",
+    "highlights_title": "Wat Goed Gaan",
+    "insight_label": "Noemenswaardig",
+    "adjustment_label": "Probeer Dit"
   },
   "assessment": {
     "title": "Assesseringsresultate",

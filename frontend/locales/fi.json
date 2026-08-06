@@ -980,7 +980,10 @@
       "Etsitään voittojasi…",
       "Luodaan henkilökohtaisia näkemyksiä…"
     ],
-    "share_msg": "📊 {{period}} FitAI arviossani\n\n{{review}}"
+    "share_msg": "📊 {{period}} FitAI arviossani\n\n{{review}}",
+    "highlights_title": "Mikä sujuu hyvin",
+    "insight_label": "Huomioitavaa",
+    "adjustment_label": "Kokeile tätä"
   },
   "assessment": {
     "title": "Arvioinnin tulokset",
