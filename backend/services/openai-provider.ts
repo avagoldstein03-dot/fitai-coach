@@ -1,5 +1,6 @@
 import OpenAI from "openai";
 import { buildTierGatingPrompt } from "@/lib/coach-tier-prompt";
+import { expandWeekWithProgression } from "@/lib/workout-progression";
 import type {
   AIProvider,
   FoodAnalysisResult,
@@ -164,7 +165,11 @@ This is informal coaching feedback only — never present results as a medical, 
   }
 
   async generateWorkout(userProfile: WorkoutGenerationInput): Promise<WorkoutPlanResult> {
-    const prompt = `You are an experienced personal trainer designing a personalized ${userProfile.durationWeeks}-week workout program.
+    // Only week 1 is AI-authored — weeks 2+ apply progressive overload to that same
+    // week programmatically (see expandWeekWithProgression). Asking the model to
+    // hand-write every week of a multi-week program was the single biggest driver
+    // of slow generation (~40s for a 4-week plan vs. ~10s for one week).
+    const prompt = `You are an experienced personal trainer designing week 1 of a personalized ${userProfile.durationWeeks}-week workout program.
 
 Client profile:
 - Goal: ${userProfile.goal}
@@ -181,30 +186,32 @@ Use the client's stated goal/focus and body assessment notes (if provided) to de
 Return ONLY valid JSON with no markdown, structured exactly like this:
 {
   "coachNote": "2-3 sentences, written directly to the client: how this program is tailored to their stated goal and body type, and honest, encouraging guidance on whether their goal is realistic and what to focus on to get there.",
-  "weeks": [
-    {
-      "weekNumber": 1,
-      "progressionStrategy": "short description of this week's progressive overload focus",
-      "days": [
-        {
-          "dayOfWeek": 0,
-          "exercises": [
-            { "exerciseName": "Barbell Back Squat", "sets": 4, "reps": "6-8", "restSeconds": 90, "notes": "optional coaching cue" }
-          ]
-        }
-      ]
-    }
-  ]
+  "week": {
+    "weekNumber": 1,
+    "progressionStrategy": "short description of this week's progressive overload focus",
+    "days": [
+      {
+        "dayOfWeek": 0,
+        "exercises": [
+          { "exerciseName": "Barbell Back Squat", "sets": 4, "reps": "6-8", "restSeconds": 90, "notes": "optional coaching cue" }
+        ]
+      }
+    ]
+  }
 }
 
-Generate exactly ${userProfile.durationWeeks} week entries. Each week must have exactly ${userProfile.daysPerWeek} day entries (dayOfWeek values 0-6 for Monday-Sunday, spread sensibly with rest days between sessions).
+The week must have exactly ${userProfile.daysPerWeek} day entries (dayOfWeek values 0-6 for Monday-Sunday, spread sensibly with rest days between sessions).
 
-Each day must have exactly 4-5 exercises, chosen so that together they hit all the major muscle groups intended for that day's focus — prioritize balanced, non-redundant coverage and exercise selection that matches the client's stated goal over cramming in extra exercises.
+Each day must have exactly 4-5 exercises, chosen so that together they hit all the major muscle groups intended for that day's focus — prioritize balanced, non-redundant coverage and exercise selection that matches the client's stated goal over cramming in extra exercises.`;
 
-Apply progressive overload (increasing intensity/volume) across weeks.`;
+    // Sized to one week's output instead of the whole program — the main lever
+    // that makes this fast, on top of only asking for one week in the first place.
+    const workoutMaxTokens = Math.min(4000, Math.ceil(userProfile.daysPerWeek * 5 * 45 + 300));
 
     const response = await openai.chat.completions.create({
       model: "gpt-4o",
+      response_format: { type: "json_object" },
+      max_tokens: workoutMaxTokens,
       messages: [{ role: "user", content: prompt }],
     });
 
@@ -216,7 +223,11 @@ Apply progressive overload (increasing intensity/volume) across weeks.`;
       console.error("Raw OpenAI workout generation response:", content);
       throw new Error(`AI did not return JSON: "${content.slice(0, 200)}"`);
     }
-    return JSON.parse(jsonMatch[0]);
+    const parsed = JSON.parse(jsonMatch[0]) as { coachNote: string; week: WorkoutPlanResult["weeks"][0] };
+    return {
+      coachNote: parsed.coachNote,
+      weeks: expandWeekWithProgression(parsed.week, userProfile.durationWeeks),
+    };
   }
 
   async generateMealPlan(userProfile: NutritionGenerationInput): Promise<MealPlanResult> {
@@ -250,6 +261,8 @@ Generate exactly 7 days (Monday-Sunday). Each day must include Breakfast, Lunch,
 
     const response = await openai.chat.completions.create({
       model: "gpt-4o",
+      response_format: { type: "json_object" },
+      max_tokens: 3000,
       messages: [{ role: "user", content: prompt }],
     });
 
@@ -264,17 +277,20 @@ Generate exactly 7 days (Monday-Sunday). Each day must include Breakfast, Lunch,
     return JSON.parse(jsonMatch[0]);
   }
 
+  // Not currently used — progress_review routes to AnthropicProvider (see ai-registry.ts).
+  // Kept in sync with that prompt's concise-review approach in case routing ever changes.
   async generateProgressReview(userProfile: ProgressReviewInput): Promise<string> {
-    const prompt = `Create a personalized ${userProfile.period} progress review for a user with:
+    const prompt = `Create a concise, scannable ${userProfile.period} progress review for a user with:
 - Meals logged: ${userProfile.mealsLogged}
 - Workouts completed: ${userProfile.workoutsCompleted}
 - Weight change: ${userProfile.weightChange} kg
 - Body metrics: ${JSON.stringify(userProfile.bodyMetrics)}
 
-Provide insights, positive reinforcement, and recommendations.`;
+Lead with the single most important takeaway in one sentence, then at most 3 short sections covering only what stands out. No filler.`;
 
     const response = await openai.chat.completions.create({
       model: "gpt-4o",
+      max_tokens: 600,
       messages: [{ role: "user", content: prompt }],
     });
 
@@ -361,6 +377,9 @@ Be specific, actionable, and encouraging. Never diagnose injuries.`,
     const systemPrompt = `You are Active AI Coach, a personalized fitness and nutrition coaching assistant.
 You have access to the user's profile, recent meals, workouts, and goals. Provide personalized,
 motivating, and evidence-based coaching. Never provide medical diagnoses.
+Keep responses short and conversational — a few sentences to a short paragraph, like a text from a
+knowledgeable friend, not an essay. Only go longer if the user's question genuinely needs it (e.g.
+they ask for a full plan or a detailed breakdown).
 ${tierGating}
 ${context.coachingDirective ? `Coaching Adaptation Directive:\n${context.coachingDirective}\n` : ""}${context.trendsSummary ? `Longitudinal Trends:\n${context.trendsSummary}\n` : ""}${context.healthSummary ? `Recent Health Data:\n${context.healthSummary}\n` : ""}User Profile: ${JSON.stringify(context.userProfile)}
 Recent Goals: ${JSON.stringify(context.goals)}
@@ -369,6 +388,7 @@ Recent Workouts: ${JSON.stringify(context.recentWorkouts?.slice(0, 5))}`;
 
     const response = await openai.chat.completions.create({
       model: "gpt-4o",
+      max_tokens: 700,
       messages: [
         { role: "system", content: systemPrompt },
         ...(context.conversationHistory ?? []),

@@ -78,43 +78,59 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       }
     }
 
-    // Load full user context for the AI
-    const user = await prisma.user.findUnique({
-      where: { clerkId: userId },
-      include: {
-        goal: true,
-        meals: {
-          orderBy: { createdAt: "desc" },
-          take: 5,
-          include: { foods: true },
+    // These five queries are all independent of each other's results, so they run
+    // concurrently instead of as five sequential round trips — that was the main
+    // source of latency before the AI call even started.
+    const [user, recentMessages, workoutSessionsForTrends, healthMetrics] = await Promise.all([
+      prisma.user.findUnique({
+        where: { clerkId: userId },
+        include: {
+          goal: true,
+          meals: {
+            orderBy: { createdAt: "desc" },
+            take: 5,
+            include: { foods: true },
+          },
+          workoutSessions: {
+            orderBy: { createdAt: "desc" },
+            take: 5,
+          },
+          bodyAssessments: {
+            orderBy: { createdAt: "desc" },
+            take: 2,
+          },
         },
-        workoutSessions: {
-          orderBy: { createdAt: "desc" },
-          take: 5,
+      }),
+      // Load last 20 messages for conversation history
+      prisma.chatMessage.findMany({
+        where: { user: { clerkId: userId } },
+        orderBy: { createdAt: "asc" },
+        take: 20,
+      }),
+      // Wider window than `recentWorkouts` needs, purely for plateau detection
+      prisma.workoutSession.findMany({
+        where: { user: { clerkId: userId } },
+        orderBy: { createdAt: "desc" },
+        take: 30,
+        select: { exerciseName: true, weight: true, completedReps: true, createdAt: true },
+      }),
+      prisma.healthMetric.findMany({
+        where: { user: { clerkId: userId } },
+        orderBy: { date: "desc" },
+        take: 7,
+        select: { date: true, steps: true, activeEnergyKcal: true, sleepMinutes: true, restingHeartRate: true },
+      }),
+      // Save user message — only needs the clerkId, not any of the above results
+      prisma.chatMessage.create({
+        data: {
+          user: { connect: { clerkId: userId } },
+          role: "user",
+          content: message,
         },
-        bodyAssessments: {
-          orderBy: { createdAt: "desc" },
-          take: 2,
-        },
-      },
-    });
+      }),
+    ]);
 
     if (!user) return sendError(res, "user_not_found", "User not found", 404);
-
-    // Load last 20 messages for conversation history
-    const recentMessages = await prisma.chatMessage.findMany({
-      where: { user: { clerkId: userId } },
-      orderBy: { createdAt: "asc" },
-      take: 20,
-    });
-
-    // Wider window than `recentWorkouts` needs, purely for plateau detection
-    const workoutSessionsForTrends = await prisma.workoutSession.findMany({
-      where: { user: { clerkId: userId } },
-      orderBy: { createdAt: "desc" },
-      take: 30,
-      select: { exerciseName: true, weight: true, completedReps: true, createdAt: true },
-    });
 
     const trendsSummary = buildTrendsSummary({
       plateaus: detectWorkoutPlateaus(workoutSessionsForTrends),
@@ -130,22 +146,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       injuryHistory: user.injuryHistory,
     });
 
-    const healthMetrics = await prisma.healthMetric.findMany({
-      where: { user: { clerkId: userId } },
-      orderBy: { date: "desc" },
-      take: 7,
-      select: { date: true, steps: true, activeEnergyKcal: true, sleepMinutes: true, restingHeartRate: true },
-    });
     const healthSummary = buildHealthSummary(healthMetrics);
-
-    // Save user message
-    await prisma.chatMessage.create({
-      data: {
-        user: { connect: { clerkId: userId } },
-        role: "user",
-        content: message,
-      },
-    });
 
     const aiProvider = AIProviderRegistry.getProviderForTask("chat");
 

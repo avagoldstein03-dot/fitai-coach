@@ -229,17 +229,17 @@ Generate exactly 7 days (Monday-Sunday), each with Breakfast, Lunch, Dinner, and
   }
 
   async generateProgressReview(userProfile: ProgressReviewInput): Promise<string> {
-    const prompt = `Generate a detailed and encouraging ${userProfile.period} progress review for a user:
+    const prompt = `Generate a concise, scannable ${userProfile.period} progress review for a user:
 Meals logged: ${userProfile.mealsLogged}
 Workouts completed: ${userProfile.workoutsCompleted}
 Weight change: ${userProfile.weightChange} kg
 Body metrics: ${JSON.stringify(userProfile.bodyMetrics)}
 
-Provide behavioral insights, positive reinforcement, goal adjustment suggestions, and a motivating summary.`;
+Lead with the single most important takeaway in one sentence. Then at most 3 short sections (a couple sentences each) covering only what actually stands out — a behavioral insight, one goal adjustment if warranted, and a brief motivating close. Skip anything generic or filler; if there's nothing notable for a section, leave it out entirely rather than padding it. Plain, direct language over a formal report tone.`;
 
     const message = await anthropic.messages.create({
       model: "claude-sonnet-4-5",
-      max_tokens: 2048,
+      max_tokens: 600,
       messages: [{ role: "user", content: prompt }],
     });
 
