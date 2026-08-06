@@ -9,6 +9,7 @@ import axios from "axios";
 import { useTranslation } from "react-i18next";
 import { T } from "@/lib/theme";
 import * as Notifications from "expo-notifications";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 import { useAxiosAuth } from "@/hooks/useAxiosAuth";
 import { UpgradeGateProvider } from "@/contexts/UpgradeGateContext";
@@ -54,6 +55,7 @@ const API_URL = process.env.EXPO_PUBLIC_API_URL;
 
 function DashboardTabs() {
   const { t } = useTranslation();
+  const insets = useSafeAreaInsets();
   return (
     <Tab.Navigator
       screenOptions={({ route }) => ({
@@ -76,7 +78,8 @@ function DashboardTabs() {
           backgroundColor: T.surface,
           borderTopColor: T.border,
           borderTopWidth: 1,
-          paddingBottom: 4,
+          height: 56 + insets.bottom,
+          paddingBottom: Math.max(insets.bottom, 4),
         },
         tabBarLabelStyle: { fontSize: 11 },
       })}

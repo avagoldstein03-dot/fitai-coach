@@ -140,6 +140,7 @@ export default function App() {
       <PostHogProvider
         apiKey={process.env.EXPO_PUBLIC_POSTHOG_KEY ?? "phc_placeholder"}
         options={{ host: process.env.EXPO_PUBLIC_POSTHOG_HOST ?? "https://us.i.posthog.com", disabled: !process.env.EXPO_PUBLIC_POSTHOG_KEY }}
+        autocapture={{ captureScreens: false }}
       >
         <ErrorBoundary>
           <SafeAreaProvider>
