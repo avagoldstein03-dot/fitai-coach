@@ -23,7 +23,7 @@ const API_URL = process.env.EXPO_PUBLIC_API_URL;
 interface ReviewContent {
   wins: string[];
   insight?: string;
-  adjustment?: string;
+  adjustments?: string[];
   closing: string;
 }
 
@@ -46,9 +46,9 @@ function ReviewHighlights({ wins, title }: { wins: string[]; title: string }) {
   );
 }
 
-function ReviewDetails({ insight, adjustment, closing, insightLabel, adjustmentLabel }: {
+function ReviewDetails({ insight, adjustments, closing, insightLabel, adjustmentLabel }: {
   insight?: string;
-  adjustment?: string;
+  adjustments?: string[];
   closing: string;
   insightLabel: string;
   adjustmentLabel: string;
@@ -61,10 +61,12 @@ function ReviewDetails({ insight, adjustment, closing, insightLabel, adjustmentL
           <Text style={s.reviewPara}>{insight}</Text>
         </View>
       ) : null}
-      {adjustment ? (
+      {adjustments?.length ? (
         <View>
           <Text style={s.reviewSection}>{adjustmentLabel}</Text>
-          <Text style={s.reviewPara}>{adjustment}</Text>
+          {adjustments.map((a, i) => (
+            <Text key={i} style={s.reviewPara}>{adjustments.length > 1 ? `${i + 1}. ${a}` : a}</Text>
+          ))}
         </View>
       ) : null}
       <Text style={s.reviewLead}>{closing}</Text>
@@ -75,7 +77,7 @@ function ReviewDetails({ insight, adjustment, closing, insightLabel, adjustmentL
 function reviewToShareText(review: ReviewContent): string {
   const parts = [review.wins.map((w) => `✓ ${w}`).join("\n")];
   if (review.insight) parts.push(review.insight);
-  if (review.adjustment) parts.push(review.adjustment);
+  if (review.adjustments?.length) parts.push(review.adjustments.join("\n"));
   parts.push(review.closing);
   return parts.join("\n\n");
 }
@@ -220,7 +222,7 @@ export default function WeeklyReviewScreen() {
             </View>
             <ReviewDetails
               insight={data.review.insight}
-              adjustment={data.review.adjustment}
+              adjustments={data.review.adjustments}
               closing={data.review.closing}
               insightLabel={t("weekly_review.insight_label")}
               adjustmentLabel={t("weekly_review.adjustment_label")}

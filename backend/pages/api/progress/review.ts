@@ -60,6 +60,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       weightChange: 0,
       bodyMetrics,
       period: period as string,
+      tier: subscription.tier,
     });
 
     await prisma.analyticsEvent.create({

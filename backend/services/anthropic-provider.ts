@@ -230,7 +230,25 @@ Generate exactly 7 days (Monday-Sunday), each with Breakfast, Lunch, Dinner, and
   }
 
   async generateProgressReview(userProfile: ProgressReviewInput): Promise<ProgressReviewResult> {
-    const prompt = `Generate a concise ${userProfile.period} progress review for a user:
+    const isElite = userProfile.tier === "elite";
+
+    const prompt = isElite
+      ? `Generate an in-depth ${userProfile.period} progress review for a user:
+Meals logged: ${userProfile.mealsLogged}
+Workouts completed: ${userProfile.workoutsCompleted}
+Weight change: ${userProfile.weightChange} kg
+Body metrics: ${JSON.stringify(userProfile.bodyMetrics)}
+
+This user is on the top subscription tier — give them real depth on top of the wins, not just a longer version of a generic review. People still want to see what they're doing well first. Return ONLY valid JSON with no markdown, structured exactly like this:
+{
+  "wins": ["short, specific, genuine positive callout", "a second one if there's a real second win", "a third if there's genuinely one, otherwise omit"],
+  "insight": "2-3 sentences on a real behavioral pattern in this data — specific and substantive, not generic. Omit entirely if nothing stands out.",
+  "adjustments": ["one specific, actionable fix tied to the actual numbers", "a second specific fix if there's a genuine second one", "a third if warranted — omit the field entirely if nothing is worth changing"],
+  "closing": "one short motivating line to close on"
+}
+
+"wins" always has at least 1 entry — never fabricated, never generic. "adjustments" should be concrete and specific enough that the user knows exactly what to do differently (e.g. tied to a specific metric or pattern), not vague advice like "try to be more consistent." Still no filler anywhere — depth means specific and useful, not longer for its own sake.`
+      : `Generate a concise ${userProfile.period} progress review for a user:
 Meals logged: ${userProfile.mealsLogged}
 Workouts completed: ${userProfile.workoutsCompleted}
 Weight change: ${userProfile.weightChange} kg
@@ -240,7 +258,7 @@ People want to see what they're doing well before anything else. Return ONLY val
 {
   "wins": ["short, specific, genuine positive callout", "a second one if there's a real second win, otherwise omit"],
   "insight": "one short sentence on a behavioral pattern worth noting — omit this field entirely if nothing stands out",
-  "adjustment": "one short sentence suggesting a change — omit this field entirely if nothing is warranted",
+  "adjustments": ["one short sentence suggesting a change — omit the field entirely if nothing is warranted"],
   "closing": "one short motivating line to close on"
 }
 
@@ -248,7 +266,7 @@ People want to see what they're doing well before anything else. Return ONLY val
 
     const message = await anthropic.messages.create({
       model: "claude-sonnet-4-5",
-      max_tokens: 700,
+      max_tokens: isElite ? 1100 : 700,
       messages: [{ role: "user", content: prompt }],
     });
 
@@ -265,7 +283,9 @@ People want to see what they're doing well before anything else. Return ONLY val
       return {
         wins: Array.isArray(parsed.wins) && parsed.wins.length ? parsed.wins : ["You showed up this week — that's what counts."],
         insight: typeof parsed.insight === "string" ? parsed.insight : undefined,
-        adjustment: typeof parsed.adjustment === "string" ? parsed.adjustment : undefined,
+        adjustments: Array.isArray(parsed.adjustments) && parsed.adjustments.length
+          ? parsed.adjustments.filter((a: unknown) => typeof a === "string")
+          : undefined,
         closing: typeof parsed.closing === "string" ? parsed.closing : "Keep it going.",
       };
     } catch {

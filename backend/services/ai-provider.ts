@@ -141,12 +141,13 @@ export interface ProgressReviewInput {
   weightChange: number;
   bodyMetrics: Record<string, number>;
   period: string; // "weekly" | "monthly"
+  tier: string; // "pro" | "elite" — elite gets a deeper review with more specific fixes
 }
 
 export interface ProgressReviewResult {
   wins: string[]; // 1-3 short positive callouts — always present, always rendered first
   insight?: string; // a behavioral pattern worth noting, omitted if nothing stands out
-  adjustment?: string; // a suggested change, omitted if nothing warranted
+  adjustments?: string[]; // specific, actionable fixes — 1 for Pro, up to 3 for Elite
   closing: string; // one short motivating closing line
 }
 

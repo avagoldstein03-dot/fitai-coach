@@ -82,9 +82,10 @@ describe("anthropicProvider.generateProgressReview", () => {
     weightChange: -0.8,
     bodyMetrics: {},
     period: "weekly",
+    tier: "pro",
   };
 
-  it("parses a well-formed structured response into wins/insight/adjustment/closing", async () => {
+  it("parses a well-formed structured response into wins/insight/adjustments/closing", async () => {
     mockCreate.mockResolvedValue({
       content: [
         {
@@ -92,7 +93,7 @@ describe("anthropicProvider.generateProgressReview", () => {
           text: JSON.stringify({
             wins: ["You logged 18 meals this week — great consistency.", "4 workouts completed."],
             insight: "Your best days are ones you log breakfast early.",
-            adjustment: "Try logging dinner the same night instead of the next morning.",
+            adjustments: ["Try logging dinner the same night instead of the next morning."],
             closing: "Keep this pace going.",
           }),
         },
@@ -106,11 +107,11 @@ describe("anthropicProvider.generateProgressReview", () => {
       "4 workouts completed.",
     ]);
     expect(result.insight).toBe("Your best days are ones you log breakfast early.");
-    expect(result.adjustment).toBe("Try logging dinner the same night instead of the next morning.");
+    expect(result.adjustments).toEqual(["Try logging dinner the same night instead of the next morning."]);
     expect(result.closing).toBe("Keep this pace going.");
   });
 
-  it("omits insight/adjustment when the model leaves them out", async () => {
+  it("omits insight/adjustments when the model leaves them out", async () => {
     mockCreate.mockResolvedValue({
       content: [{ type: "text", text: JSON.stringify({ wins: ["Solid week."], closing: "Nice work." }) }],
     });
@@ -119,7 +120,7 @@ describe("anthropicProvider.generateProgressReview", () => {
 
     expect(result.wins).toEqual(["Solid week."]);
     expect(result.insight).toBeUndefined();
-    expect(result.adjustment).toBeUndefined();
+    expect(result.adjustments).toBeUndefined();
   });
 
   it("always returns at least one win, even if the model returns an empty wins array", async () => {
@@ -147,5 +148,36 @@ describe("anthropicProvider.generateProgressReview", () => {
     const prompt = call.messages[0].content;
     expect(prompt).toContain("what they're doing well before anything else");
     expect(prompt).toContain('"wins"');
+  });
+
+  it("uses the concise prompt and a lower token cap for pro tier", async () => {
+    await anthropicProvider.generateProgressReview({ ...baseInput, tier: "pro" });
+    const call = mockCreate.mock.calls[0][0];
+    expect(call.max_tokens).toBe(700);
+    expect(call.messages[0].content).toContain("concise");
+    expect(call.messages[0].content).not.toContain("top subscription tier");
+  });
+
+  it("uses the in-depth prompt and a higher token cap for elite tier", async () => {
+    await anthropicProvider.generateProgressReview({ ...baseInput, tier: "elite" });
+    const call = mockCreate.mock.calls[0][0];
+    expect(call.max_tokens).toBe(1100);
+    expect(call.messages[0].content).toContain("top subscription tier");
+    expect(call.messages[0].content).toContain("in-depth");
+  });
+
+  it("filters out non-string entries in adjustments defensively", async () => {
+    mockCreate.mockResolvedValue({
+      content: [
+        {
+          type: "text",
+          text: JSON.stringify({ wins: ["Solid week."], adjustments: ["Real fix", 42, null], closing: "Nice work." }),
+        },
+      ],
+    });
+
+    const result = await anthropicProvider.generateProgressReview({ ...baseInput, tier: "elite" });
+
+    expect(result.adjustments).toEqual(["Real fix"]);
   });
 });

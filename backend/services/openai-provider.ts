@@ -279,9 +279,27 @@ Generate exactly 7 days (Monday-Sunday). Each day must include Breakfast, Lunch,
   }
 
   // Not currently used — progress_review routes to AnthropicProvider (see ai-registry.ts).
-  // Kept in sync with that prompt's structured, wins-first approach in case routing ever changes.
+  // Kept in sync with that prompt's structured, wins-first, tier-aware approach in case routing ever changes.
   async generateProgressReview(userProfile: ProgressReviewInput): Promise<ProgressReviewResult> {
-    const prompt = `Create a concise ${userProfile.period} progress review for a user with:
+    const isElite = userProfile.tier === "elite";
+
+    const prompt = isElite
+      ? `Create an in-depth ${userProfile.period} progress review for a user with:
+- Meals logged: ${userProfile.mealsLogged}
+- Workouts completed: ${userProfile.workoutsCompleted}
+- Weight change: ${userProfile.weightChange} kg
+- Body metrics: ${JSON.stringify(userProfile.bodyMetrics)}
+
+This user is on the top subscription tier — give them real depth on top of the wins, not just a longer generic review. Return ONLY valid JSON with no markdown, structured exactly like this:
+{
+  "wins": ["short, specific, genuine positive callout", "a second one if real", "a third if genuinely warranted, otherwise omit"],
+  "insight": "2-3 sentences on a real, specific behavioral pattern — omit entirely if nothing stands out",
+  "adjustments": ["one specific, actionable fix tied to the actual numbers", "a second if genuinely warranted", "a third if warranted — omit the field entirely if nothing is worth changing"],
+  "closing": "one short motivating line to close on"
+}
+
+"wins" always has at least 1 entry, never fabricated. "adjustments" must be concrete and specific, not vague advice. No filler — depth means specific, not longer for its own sake.`
+      : `Create a concise ${userProfile.period} progress review for a user with:
 - Meals logged: ${userProfile.mealsLogged}
 - Workouts completed: ${userProfile.workoutsCompleted}
 - Weight change: ${userProfile.weightChange} kg
@@ -291,7 +309,7 @@ People want to see what they're doing well before anything else. Return ONLY val
 {
   "wins": ["short, specific, genuine positive callout", "a second one if there's a real second win, otherwise omit"],
   "insight": "one short sentence on a behavioral pattern worth noting — omit this field entirely if nothing stands out",
-  "adjustment": "one short sentence suggesting a change — omit this field entirely if nothing is warranted",
+  "adjustments": ["one short sentence suggesting a change — omit the field entirely if nothing is warranted"],
   "closing": "one short motivating line to close on"
 }
 
@@ -300,7 +318,7 @@ People want to see what they're doing well before anything else. Return ONLY val
     const response = await openai.chat.completions.create({
       model: "gpt-4o",
       response_format: { type: "json_object" },
-      max_tokens: 700,
+      max_tokens: isElite ? 1100 : 700,
       messages: [{ role: "user", content: prompt }],
     });
 
@@ -314,7 +332,9 @@ People want to see what they're doing well before anything else. Return ONLY val
       return {
         wins: Array.isArray(parsed.wins) && parsed.wins.length ? parsed.wins : ["You showed up this week — that's what counts."],
         insight: typeof parsed.insight === "string" ? parsed.insight : undefined,
-        adjustment: typeof parsed.adjustment === "string" ? parsed.adjustment : undefined,
+        adjustments: Array.isArray(parsed.adjustments) && parsed.adjustments.length
+          ? parsed.adjustments.filter((a: unknown) => typeof a === "string")
+          : undefined,
         closing: typeof parsed.closing === "string" ? parsed.closing : "Keep it going.",
       };
     } catch {

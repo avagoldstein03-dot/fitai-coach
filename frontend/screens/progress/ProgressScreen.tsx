@@ -89,7 +89,7 @@ interface ReviewData {
   review: {
     wins: string[];
     insight?: string;
-    adjustment?: string;
+    adjustments?: string[];
     closing: string;
   };
 }
@@ -282,7 +282,9 @@ export default function ProgressScreen() {
               <View style={s.reviewTextBox}>
                 <Text style={s.reviewTextLabel}>{t("weekly_review.ai_review")}</Text>
                 {review.review.insight ? <Text style={s.reviewText}>{review.review.insight}</Text> : null}
-                {review.review.adjustment ? <Text style={s.reviewText}>{review.review.adjustment}</Text> : null}
+                {review.review.adjustments?.map((a, i) => (
+                  <Text key={i} style={s.reviewText}>{a}</Text>
+                ))}
                 <Text style={s.reviewText}>{review.review.closing}</Text>
               </View>
             </View>
