@@ -424,7 +424,10 @@
     "health_disconnect_button": "接続解除",
     "health_disconnect_title": "Apple Healthの接続を解除しますか？",
     "health_disconnect_msg": "アプリの新しいデータ同期を停止しますが、Apple Healthへのアクセスは取り消されません。iOSの設定 > ヘルスケア > データアクセスとデバイスで管理できます。",
-    "error_health_connect": "Apple Healthに接続できませんでした。もう一度お試しください。"
+    "error_health_connect": "Apple Healthに接続できませんでした。もう一度お試しください。",
+    "diet_allergies": "食事と アレルギー",
+    "diet_not_set": "食事の好みが設定されていません",
+    "allergies_label": "アレルギー"
   },
   "notifications": {
     "title": "通知",
@@ -1383,5 +1386,13 @@
     "kg": "kg",
     "error_save": "変更を保存できませんでした。もう一度お試しください。",
     "name": "名前"
+  },
+  "edit_goal": {
+    "title": "目標を編集",
+    "error_save": "目標を保存できませんでした。もう一度お試しください。"
+  },
+  "edit_diet": {
+    "title": "食事と アレルギー",
+    "error_save": "変更を保存できませんでした。もう一度お試しください。"
   }
 }

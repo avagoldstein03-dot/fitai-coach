@@ -16,9 +16,9 @@ export default async function handler(
     const { userId } = getAuth(req);
     if (!userId) return sendError(res, "unauthorized", "Unauthorized", 401);
 
-    // PATCH — update weight, height, age, name, or injury/mobility history
+    // PATCH — update weight, height, age, name, injury/mobility history, or diet/allergies
     if (req.method === "PATCH") {
-      const { weight, height, age, name, unitSystem, language, country, currency, injuryHistory } = req.body;
+      const { weight, height, age, name, unitSystem, language, country, currency, injuryHistory, dietPreferences, foodAllergies } = req.body;
       const updateData: Record<string, any> = {};
       if (weight !== undefined) updateData.weight = Number(weight);
       if (height !== undefined) updateData.height = Number(height);
@@ -29,6 +29,12 @@ export default async function handler(
       if (country !== undefined) updateData.country = String(country);
       if (currency !== undefined) updateData.currency = String(currency);
       if (injuryHistory !== undefined) updateData.injuryHistory = String(injuryHistory).trim().slice(0, 500);
+      if (dietPreferences !== undefined) {
+        updateData.dietPreferences = Array.isArray(dietPreferences) ? dietPreferences.map((d) => String(d).toLowerCase()) : [];
+      }
+      if (foodAllergies !== undefined) {
+        updateData.foodAllergies = Array.isArray(foodAllergies) ? foodAllergies.map((a) => String(a).trim()).filter(Boolean) : [];
+      }
 
       if (Object.keys(updateData).length === 0) {
         return sendError(res, "validation_error", "No valid fields provided", 400);
@@ -37,7 +43,7 @@ export default async function handler(
       const updated = await prisma.user.update({
         where: { clerkId: userId },
         data: updateData,
-        select: { id: true, name: true, weight: true, height: true, age: true, unitSystem: true, language: true, country: true, currency: true, injuryHistory: true },
+        select: { id: true, name: true, weight: true, height: true, age: true, unitSystem: true, language: true, country: true, currency: true, injuryHistory: true, dietPreferences: true, foodAllergies: true },
       });
 
       return sendSuccess(res, updated, "Profile updated successfully");
@@ -60,6 +66,8 @@ export default async function handler(
         country: true,
         currency: true,
         injuryHistory: true,
+        dietPreferences: true,
+        foodAllergies: true,
         onboardingCompleted: true,
         onboardingStep: true,
       },
@@ -81,6 +89,8 @@ export default async function handler(
       country: user.country || "United States",
       currency: user.currency || "usd",
       injuryHistory: user.injuryHistory || undefined,
+      dietPreferences: user.dietPreferences,
+      foodAllergies: user.foodAllergies,
       onboardingCompleted: user.onboardingCompleted,
       onboardingStep: user.onboardingStep,
     };

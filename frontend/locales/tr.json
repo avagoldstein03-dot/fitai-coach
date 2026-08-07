@@ -424,7 +424,10 @@
     "health_disconnect_button": "Bağlantıyı Kes",
     "health_disconnect_title": "Apple Health bağlantısı kesilsin mi?",
     "health_disconnect_msg": "Bu, uygulamanın yeni veri senkronize etmesini durdurur, ancak Apple Health erişimini iptal etmez — bunu iOS Ayarları > Sağlık > Veri Erişimi ve Cihazlar kısmından yönetebilirsiniz.",
-    "error_health_connect": "Apple Health'e bağlanılamadı. Lütfen tekrar deneyin."
+    "error_health_connect": "Apple Health'e bağlanılamadı. Lütfen tekrar deneyin.",
+    "diet_allergies": "Diyet & Alerjiler",
+    "diet_not_set": "Diyet tercihi ayarlanmamış",
+    "allergies_label": "Alerjiler"
   },
   "notifications": {
     "title": "Bildirimler",
@@ -1383,5 +1386,13 @@
     "kg": "kg",
     "error_save": "Değişiklikleriniz kaydedilemedi. Lütfen tekrar deneyin.",
     "name": "Ad"
+  },
+  "edit_goal": {
+    "title": "Hedefi Düzenle",
+    "error_save": "Hedefiniz kaydedilemedi. Lütfen tekrar deneyin."
+  },
+  "edit_diet": {
+    "title": "Diyet & Alerjiler",
+    "error_save": "Değişiklikleriniz kaydedilemedi. Lütfen tekrar deneyin."
   }
 }

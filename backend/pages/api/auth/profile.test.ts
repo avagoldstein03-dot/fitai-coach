@@ -48,6 +48,36 @@ describe("auth/profile handler", () => {
         expect.objectContaining({ data: expect.objectContaining({ injuryHistory: "" }) })
       );
     });
+
+    it("lowercases dietPreferences entries", async () => {
+      (prisma.user.update as jest.Mock).mockResolvedValue({ id: "user_1", dietPreferences: ["vegan"] });
+      const { req, res } = mockReqRes("PATCH", { dietPreferences: ["Vegan", "KETO"] });
+      await handler(req, res);
+
+      expect(prisma.user.update).toHaveBeenCalledWith(
+        expect.objectContaining({ data: expect.objectContaining({ dietPreferences: ["vegan", "keto"] }) })
+      );
+    });
+
+    it("trims foodAllergies entries and drops empty ones", async () => {
+      (prisma.user.update as jest.Mock).mockResolvedValue({ id: "user_1", foodAllergies: ["peanuts"] });
+      const { req, res } = mockReqRes("PATCH", { foodAllergies: ["  peanuts  ", "", "  "] });
+      await handler(req, res);
+
+      expect(prisma.user.update).toHaveBeenCalledWith(
+        expect.objectContaining({ data: expect.objectContaining({ foodAllergies: ["peanuts"] }) })
+      );
+    });
+
+    it("allows clearing dietPreferences/foodAllergies with an empty array", async () => {
+      (prisma.user.update as jest.Mock).mockResolvedValue({ id: "user_1", dietPreferences: [], foodAllergies: [] });
+      const { req, res } = mockReqRes("PATCH", { dietPreferences: [], foodAllergies: [] });
+      await handler(req, res);
+
+      expect(prisma.user.update).toHaveBeenCalledWith(
+        expect.objectContaining({ data: expect.objectContaining({ dietPreferences: [], foodAllergies: [] }) })
+      );
+    });
   });
 
   describe("GET", () => {

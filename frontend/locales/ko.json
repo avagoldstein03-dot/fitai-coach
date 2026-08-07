@@ -424,7 +424,10 @@
     "health_disconnect_button": "연결 해제",
     "health_disconnect_title": "Apple Health 연결을 해제하시겠습니까?",
     "health_disconnect_msg": "이렇게 하면 앱이 새 데이터 동기화를 중지하지만 Apple Health 접근 권한이 취소되지는 않습니다. iOS 설정 > 건강 > 데이터 접근 및 기기에서 관리할 수 있습니다.",
-    "error_health_connect": "Apple Health에 연결할 수 없습니다. 다시 시도하세요."
+    "error_health_connect": "Apple Health에 연결할 수 없습니다. 다시 시도하세요.",
+    "diet_allergies": "식단 및 알레르기",
+    "diet_not_set": "설정된 식단 선호도가 없습니다",
+    "allergies_label": "알레르기"
   },
   "notifications": {
     "title": "알림",
@@ -1383,5 +1386,13 @@
     "kg": "킬로그램",
     "error_save": "변경 사항을 저장할 수 없습니다. 다시 시도해주세요.",
     "name": "이름"
+  },
+  "edit_goal": {
+    "title": "목표 수정",
+    "error_save": "목표를 저장할 수 없습니다. 다시 시도해주세요."
+  },
+  "edit_diet": {
+    "title": "식단 및 알레르기",
+    "error_save": "변경사항을 저장할 수 없습니다. 다시 시도해주세요."
   }
 }

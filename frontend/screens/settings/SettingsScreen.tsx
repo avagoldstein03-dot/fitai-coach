@@ -371,6 +371,21 @@ export default function SettingsScreen() {
           </TouchableOpacity>
         </View>
 
+        {/* Diet & Allergies */}
+        <TouchableOpacity
+          style={s.card}
+          activeOpacity={0.7}
+          onPress={() => navigation.navigate("EditDiet")}
+        >
+          <Text style={s.cardTitle}>{t("settings.diet_allergies")}</Text>
+          <Text style={s.cardSub}>
+            {profile?.dietPreferences?.length
+              ? profile.dietPreferences.map((d: string) => t(`onboarding.step5.${d}`)).join(", ")
+              : t("settings.diet_not_set")}
+            {profile?.foodAllergies?.length ? ` · ${t("settings.allergies_label")}: ${profile.foodAllergies.join(", ")}` : ""}
+          </Text>
+        </TouchableOpacity>
+
         {/* Apple Health */}
         {Platform.OS === "ios" && (
           <View style={s.card}>

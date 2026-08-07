@@ -424,7 +424,10 @@
     "health_disconnect_button": "Katiza Unganisho",
     "health_disconnect_title": "Kukatiza Apple Health?",
     "health_disconnect_msg": "Hii inasimamisha programu isambaze data mpya, lakini haibatili upatikanaji wa Apple Health — unaweza kuisimamia katika iOS Settings > Health > Data Access & Devices.",
-    "error_health_connect": "Haiwezi kuunganisha na Apple Health. Jaribu tena."
+    "error_health_connect": "Haiwezi kuunganisha na Apple Health. Jaribu tena.",
+    "diet_allergies": "Mlo & Mipango",
+    "diet_not_set": "Hakuna mlo iliyochaguliwa",
+    "allergies_label": "Mipango"
   },
   "notifications": {
     "title": "Arifa",
@@ -1383,5 +1386,13 @@
     "kg": "kg",
     "error_save": "Haikuweza kuhifadhi mabadiliko yako. Tafadhali jaribu tena.",
     "name": "Jina"
+  },
+  "edit_goal": {
+    "title": "Hariri Lengo",
+    "error_save": "Haikuweza kuokoa lengo lako. Tafadhali jaribu tena."
+  },
+  "edit_diet": {
+    "title": "Mlo & Mipango",
+    "error_save": "Haikuweza kuokoa mabadiliko yako. Tafadhali jaribu tena."
   }
 }

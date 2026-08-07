@@ -424,7 +424,10 @@
     "health_disconnect_button": "נתק",
     "health_disconnect_title": "נתק את Apple Health?",
     "health_disconnect_msg": "פעולה זו עוצרת את סנכרון הנתונים החדשים באפליקציה, אך לא מבטלת את הגישה ל-Apple Health — באפשרותך לנהל זאת בהגדרות iOS > Health > Data Access & Devices.",
-    "error_health_connect": "לא היה ניתן להתחבר ל-Apple Health. נסה שוב."
+    "error_health_connect": "לא היה ניתן להתחבר ל-Apple Health. נסה שוב.",
+    "diet_allergies": "דיאטה ואלרגיות",
+    "diet_not_set": "לא הוגדרה העדפת דיאטה",
+    "allergies_label": "אלרגיות"
   },
   "notifications": {
     "title": "התראות",
@@ -1383,5 +1386,13 @@
     "kg": "kg",
     "error_save": "לא ניתן לשמור את השינויים שלך. אנא נסה שוב.",
     "name": "שם"
+  },
+  "edit_goal": {
+    "title": "עריכת יעד",
+    "error_save": "לא היה ניתן לשמור את היעד שלך. בבקשה נסה שוב."
+  },
+  "edit_diet": {
+    "title": "דיאטה ואלרגיות",
+    "error_save": "לא היה ניתן לשמור את השינויים שלך. בבקשה נסה שוב."
   }
 }

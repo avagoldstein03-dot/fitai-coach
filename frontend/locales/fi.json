@@ -424,7 +424,10 @@
     "health_disconnect_button": "Katkaise yhteys",
     "health_disconnect_title": "Katkaise Apple Healthin yhteys?",
     "health_disconnect_msg": "Tämä lopettaa sovelluksen uusien tietojen synkronoinnin, mutta ei poista Apple Health -käyttöoikeutta — voit hallita sitä iOS-asetuksissa > Terveydentiedot > Tietojen käyttöoikeus ja laitteet.",
-    "error_health_connect": "Apple Healthiin yhdistäminen epäonnistui. Yritä uudelleen."
+    "error_health_connect": "Apple Healthiin yhdistäminen epäonnistui. Yritä uudelleen.",
+    "diet_allergies": "Ruokavalio ja allergiat",
+    "diet_not_set": "Ruokavalintaa ei ole asetettu",
+    "allergies_label": "Allergiat"
   },
   "notifications": {
     "title": "Ilmoitukset",
@@ -1383,5 +1386,13 @@
     "kg": "kg",
     "error_save": "Muutoksia ei voitu tallentaa. Yritä uudelleen.",
     "name": "Nimi"
+  },
+  "edit_goal": {
+    "title": "Muokkaa tavoitetta",
+    "error_save": "Tavoitetta ei voitu tallentaa. Yritä uudelleen."
+  },
+  "edit_diet": {
+    "title": "Ruokavalio ja allergiat",
+    "error_save": "Muutoksia ei voitu tallentaa. Yritä uudelleen."
   }
 }

@@ -58,6 +58,15 @@ export default function ProfileScreen() {
     staleTime: 300_000,
   });
 
+  const { data: goalData } = useQuery<{ goal: { primaryGoal: string } | null }>({
+    queryKey: ["goal"],
+    queryFn: async () => {
+      const res = await axios.get(`${API_URL}/api/goal`);
+      return res.data.data;
+    },
+    staleTime: 300_000,
+  });
+
   const subscription = subscriptionData?.subscription;
   const isPremium = subscription?.plan === "premium" && subscription?.status === "active";
   const periodEnd = subscription?.currentPeriodEnd
@@ -69,9 +78,8 @@ export default function ProfileScreen() {
   const joinedDate = user?.createdAt
     ? new Date(user.createdAt).toLocaleDateString(i18n.language, { month: "short", year: "numeric" })
     : null;
-  const goalLabel = profile?.goal
-    ? profile.goal.replace(/_/g, " ").replace(/\b\w/g, (c: string) => c.toUpperCase())
-    : null;
+  const primaryGoal = goalData?.goal?.primaryGoal;
+  const goalLabel = primaryGoal ? t(`onboarding.step2.${primaryGoal}`) : null;
 
   return (
     <ScrollView
@@ -99,9 +107,9 @@ export default function ProfileScreen() {
             <Text style={s.userEmail}>{email}</Text>
             <View style={s.userMetaRow}>
               {goalLabel && (
-                <View style={s.goalChip}>
+                <TouchableOpacity style={s.goalChip} activeOpacity={0.7} onPress={() => navigation.navigate("EditGoal")}>
                   <Text style={s.goalChipText}>🎯 {goalLabel}</Text>
-                </View>
+                </TouchableOpacity>
               )}
               {joinedDate && (
                 <Text style={s.joinedText}>{t("profile.joined_since", { date: joinedDate })}</Text>

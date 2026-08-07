@@ -424,7 +424,10 @@
     "health_disconnect_button": "डिसकनेक्ट करें",
     "health_disconnect_title": "Apple Health को डिसकनेक्ट करें?",
     "health_disconnect_msg": "यह ऐप को नए डेटा को सिंक करने से रोकता है, लेकिन Apple Health एक्सेस को रद्द नहीं करता — आप इसे iOS सेटिंग्स > Health > डेटा एक्सेस और डिवाइस में प्रबंधित कर सकते हैं।",
-    "error_health_connect": "Apple Health से कनेक्ट नहीं हो सका। फिर से कोशिश करें।"
+    "error_health_connect": "Apple Health से कनेक्ट नहीं हो सका। फिर से कोशिश करें।",
+    "diet_allergies": "आहार और एलर्जी",
+    "diet_not_set": "कोई आहार पसंद सेट नहीं है",
+    "allergies_label": "एलर्जी"
   },
   "notifications": {
     "title": "सूचनाएं",
@@ -1383,5 +1386,13 @@
     "kg": "किग्रा",
     "error_save": "आपके परिवर्तन सहेजे नहीं जा सके। कृपया फिर से प्रयास करें।",
     "name": "नाम"
+  },
+  "edit_goal": {
+    "title": "लक्ष्य संपादित करें",
+    "error_save": "आपके लक्ष्य को सहेजा नहीं जा सका। कृपया पुनः प्रयास करें।"
+  },
+  "edit_diet": {
+    "title": "आहार और एलर्जी",
+    "error_save": "आपके परिवर्तन को सहेजा नहीं जा सका। कृपया पुनः प्रयास करें।"
   }
 }

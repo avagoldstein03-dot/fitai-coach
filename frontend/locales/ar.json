@@ -424,7 +424,10 @@
     "health_disconnect_button": "قطع الاتصال",
     "health_disconnect_title": "قطع اتصال Apple Health؟",
     "health_disconnect_msg": "هذا يوقف مزامنة البيانات الجديدة من التطبيق، لكنه لا يلغي وصول Apple Health — يمكنك إدارة ذلك في إعدادات iOS > الصحة > وصول البيانات والأجهزة.",
-    "error_health_connect": "تعذر الاتصال بـ Apple Health. حاول مرة أخرى."
+    "error_health_connect": "تعذر الاتصال بـ Apple Health. حاول مرة أخرى.",
+    "diet_allergies": "النظام الغذائي والحساسية",
+    "diet_not_set": "لم يتم تعيين تفضيل غذائي",
+    "allergies_label": "الحساسية"
   },
   "notifications": {
     "title": "الإشعارات",
@@ -1383,5 +1386,13 @@
     "kg": "كجم",
     "error_save": "لم نتمكن من حفظ التغييرات. يرجى المحاولة مرة أخرى.",
     "name": "الاسم"
+  },
+  "edit_goal": {
+    "title": "تعديل الهدف",
+    "error_save": "تعذر حفظ هدفك. يرجى المحاولة مرة أخرى."
+  },
+  "edit_diet": {
+    "title": "النظام الغذائي والحساسية",
+    "error_save": "تعذر حفظ التغييرات. يرجى المحاولة مرة أخرى."
   }
 }

@@ -424,7 +424,10 @@
     "health_disconnect_button": "Desconectar",
     "health_disconnect_title": "¿Desconectar Apple Health?",
     "health_disconnect_msg": "Esto detiene la sincronización de nuevos datos en la aplicación, pero no revoca el acceso a Apple Health — puedes administrarlo en Configuración de iOS > Salud > Acceso a datos y dispositivos.",
-    "error_health_connect": "No se pudo conectar a Apple Health. Intenta de nuevo."
+    "error_health_connect": "No se pudo conectar a Apple Health. Intenta de nuevo.",
+    "diet_allergies": "Dieta y Alergias",
+    "diet_not_set": "Sin preferencia de dieta establecida",
+    "allergies_label": "Alergias"
   },
   "notifications": {
     "title": "Notificaciones",
@@ -1383,5 +1386,13 @@
     "kg": "kg",
     "error_save": "No se pudieron guardar los cambios. Por favor, intenta de nuevo.",
     "name": "Nombre"
+  },
+  "edit_goal": {
+    "title": "Editar Objetivo",
+    "error_save": "No se pudo guardar tu objetivo. Por favor, intenta de nuevo."
+  },
+  "edit_diet": {
+    "title": "Dieta y Alergias",
+    "error_save": "No se pudieron guardar tus cambios. Por favor, intenta de nuevo."
   }
 }

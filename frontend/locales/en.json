@@ -409,6 +409,9 @@
     "injury_history": "Injuries & Mobility",
     "injury_history_sub": "Helps your AI coach avoid or modify exercises that could aggravate this",
     "injury_placeholder": "e.g. bad left knee, lower back pain",
+    "diet_allergies": "Diet & Allergies",
+    "diet_not_set": "No diet preference set",
+    "allergies_label": "Allergies",
     "health_card_title": "Apple Health",
     "health_card_sub": "Sync steps, sleep, active energy, heart rate, and weight from Apple Health to reduce manual logging.",
     "health_connect_button": "Connect Apple Health",
@@ -1325,6 +1328,14 @@
     "inches": "in",
     "lbs": "lbs",
     "kg": "kg",
+    "error_save": "Couldn't save your changes. Please try again."
+  },
+  "edit_goal": {
+    "title": "Edit Goal",
+    "error_save": "Couldn't save your goal. Please try again."
+  },
+  "edit_diet": {
+    "title": "Diet & Allergies",
     "error_save": "Couldn't save your changes. Please try again."
   },
   "friends": {

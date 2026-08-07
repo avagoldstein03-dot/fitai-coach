@@ -424,7 +424,10 @@
     "health_disconnect_button": "Putuskan Sambungan",
     "health_disconnect_title": "Putuskan Sambungan Apple Health?",
     "health_disconnect_msg": "Ini menghentikan aplikasi daripada menyinkronkan data baru, tetapi tidak membatalkan akses Apple Health — anda dapat mengurusnya dalam Tetapan iOS > Kesihatan > Akses Data & Peranti.",
-    "error_health_connect": "Tidak dapat menyambung ke Apple Health. Cuba lagi."
+    "error_health_connect": "Tidak dapat menyambung ke Apple Health. Cuba lagi.",
+    "diet_allergies": "Diet & Alahan",
+    "diet_not_set": "Tiada pilihan diet yang ditetapkan",
+    "allergies_label": "Alahan"
   },
   "notifications": {
     "title": "Pemberitahuan",
@@ -1383,5 +1386,13 @@
     "kg": "kg",
     "error_save": "Tidak dapat menyimpan perubahan Anda. Sila cuba lagi.",
     "name": "Nama"
+  },
+  "edit_goal": {
+    "title": "Edit Matlamat",
+    "error_save": "Tidak dapat menyimpan matlamat anda. Sila cuba lagi."
+  },
+  "edit_diet": {
+    "title": "Diet & Alahan",
+    "error_save": "Tidak dapat menyimpan perubahan anda. Sila cuba lagi."
   }
 }

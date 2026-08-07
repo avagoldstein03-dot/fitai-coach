@@ -424,7 +424,10 @@
     "health_disconnect_button": "Lecsatlakoztatás",
     "health_disconnect_title": "Lecsatlakoztatod az Apple Health-et?",
     "health_disconnect_msg": "Ez leállítja az alkalmazás új adatok szinkronizálását, de nem vonják vissza az Apple Health hozzáféréseit — ezt az iOS Beállítások > Egészség > Adathozzáférés és eszközök menüpontban kezelheted.",
-    "error_health_connect": "Nem sikerült csatlakozni az Apple Health-hez. Próbáld újra."
+    "error_health_connect": "Nem sikerült csatlakozni az Apple Health-hez. Próbáld újra.",
+    "diet_allergies": "Diéta és allergiák",
+    "diet_not_set": "Nincs beállított diétapreferencia",
+    "allergies_label": "Allergiák"
   },
   "notifications": {
     "title": "Értesítések",
@@ -1383,5 +1386,13 @@
     "kg": "kg",
     "error_save": "Nem sikerült menteni a módosításokat. Kérjük, próbálja újra.",
     "name": "Név"
+  },
+  "edit_goal": {
+    "title": "Cél szerkesztése",
+    "error_save": "Nem sikerült menteni a célodat. Kérlek, próbáld újra."
+  },
+  "edit_diet": {
+    "title": "Diéta és allergiák",
+    "error_save": "Nem sikerült menteni a változtatásokat. Kérlek, próbáld újra."
   }
 }

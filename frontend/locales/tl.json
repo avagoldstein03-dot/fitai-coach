@@ -424,7 +424,10 @@
     "health_disconnect_button": "Idiskonekta",
     "health_disconnect_title": "Idiskonekta ang Apple Health?",
     "health_disconnect_msg": "Titigil nito ang pag-sync ng app sa mga bagong datos, ngunit hindi ire-revoke ang Apple Health access — maaari mong pamahalaan ito sa iOS Settings > Health > Data Access & Devices.",
-    "error_health_connect": "Hindi maaaring kumonekta sa Apple Health. Subukan muli."
+    "error_health_connect": "Hindi maaaring kumonekta sa Apple Health. Subukan muli.",
+    "diet_allergies": "Diet & Allergies",
+    "diet_not_set": "Walang itinakdang kagustuhan sa diet",
+    "allergies_label": "Allergies"
   },
   "notifications": {
     "title": "Notifications",
@@ -1383,5 +1386,13 @@
     "kg": "kg",
     "error_save": "Hindi makapag-save ng iyong mga pagbabago. Subukan ulit.",
     "name": "Pangalan"
+  },
+  "edit_goal": {
+    "title": "I-edit ang Layunin",
+    "error_save": "Hindi ma-save ang iyong layunin. Mangyaring subukan ulit."
+  },
+  "edit_diet": {
+    "title": "Diet & Allergies",
+    "error_save": "Hindi ma-save ang iyong mga pagbabago. Mangyaring subukan ulit."
   }
 }

@@ -424,7 +424,10 @@
     "health_disconnect_button": "Verbreek verbinding",
     "health_disconnect_title": "Apple Health verbreken?",
     "health_disconnect_msg": "Hiermee stopt de app met het synchroniseren van nieuwe gegevens, maar wordt de Apple Health-toegang niet ingetrokken — je kunt dit beheren in iOS-instellingen > Health > Gegevenstoegang & apparaten.",
-    "error_health_connect": "Kon niet verbinding maken met Apple Health. Probeer opnieuw."
+    "error_health_connect": "Kon niet verbinding maken met Apple Health. Probeer opnieuw.",
+    "diet_allergies": "Dieet & Allergieën",
+    "diet_not_set": "Geen dieetvoorkeur ingesteld",
+    "allergies_label": "Allergieën"
   },
   "notifications": {
     "title": "Meldingen",
@@ -1383,5 +1386,13 @@
     "kg": "kg",
     "error_save": "Kon je wijzigingen niet opslaan. Probeer het alstublieft opnieuw.",
     "name": "Naam"
+  },
+  "edit_goal": {
+    "title": "Doel bewerken",
+    "error_save": "Kon je doel niet opslaan. Probeer het alstublieft opnieuw."
+  },
+  "edit_diet": {
+    "title": "Dieet & Allergieën",
+    "error_save": "Kon je wijzigingen niet opslaan. Probeer het alstublieft opnieuw."
   }
 }

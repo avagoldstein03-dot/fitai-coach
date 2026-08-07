@@ -424,7 +424,10 @@
     "health_disconnect_button": "Prekini vezu",
     "health_disconnect_title": "Prekini vezu sa Apple Health?",
     "health_disconnect_msg": "Ovo zaustavlja sinhronizaciju novih podataka u aplikaciji, ali ne opoziva pristup Apple Health — možeš to upravljati u iOS Postavke > Zdravlje > Pristup podacima i uređajima.",
-    "error_health_connect": "Nije moguće povezati se sa Apple Health. Pokušaj ponovo."
+    "error_health_connect": "Nije moguće povezati se sa Apple Health. Pokušaj ponovo.",
+    "diet_allergies": "Dijeta & Alergije",
+    "diet_not_set": "Nema postavljene preferencije za dijetu",
+    "allergies_label": "Alergije"
   },
   "notifications": {
     "title": "Обавештења",
@@ -1383,5 +1386,13 @@
     "kg": "kg",
     "error_save": "Nije moguće sačuvati izmene. Pokušajte ponovo.",
     "name": "Ime"
+  },
+  "edit_goal": {
+    "title": "Izmeni Cilj",
+    "error_save": "Nije moguće sačuvati vaš cilj. Pokušajte ponovo."
+  },
+  "edit_diet": {
+    "title": "Dijeta & Alergije",
+    "error_save": "Nije moguće sačuvati vaše izmene. Pokušajte ponovo."
   }
 }

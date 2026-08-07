@@ -424,7 +424,10 @@
     "health_disconnect_button": "Ngắt kết nối",
     "health_disconnect_title": "Ngắt kết nối Apple Health?",
     "health_disconnect_msg": "Điều này dừng ứng dụng từ việc đồng bộ hóa dữ liệu mới, nhưng không thu hồi quyền truy cập Apple Health — bạn có thể quản lý điều đó trong iOS Settings > Health > Data Access & Devices.",
-    "error_health_connect": "Không thể kết nối với Apple Health. Vui lòng thử lại."
+    "error_health_connect": "Không thể kết nối với Apple Health. Vui lòng thử lại.",
+    "diet_allergies": "Chế độ ăn & Dị ứng",
+    "diet_not_set": "Chưa đặt sở thích chế độ ăn",
+    "allergies_label": "Dị ứng"
   },
   "notifications": {
     "title": "Thông báo",
@@ -1383,5 +1386,13 @@
     "kg": "kg",
     "error_save": "Không thể lưu các thay đổi của bạn. Vui lòng thử lại.",
     "name": "Tên"
+  },
+  "edit_goal": {
+    "title": "Chỉnh sửa mục tiêu",
+    "error_save": "Không thể lưu mục tiêu của bạn. Vui lòng thử lại."
+  },
+  "edit_diet": {
+    "title": "Chế độ ăn & Dị ứng",
+    "error_save": "Không thể lưu những thay đổi của bạn. Vui lòng thử lại."
   }
 }

@@ -424,7 +424,10 @@
     "health_disconnect_button": "斷開連接",
     "health_disconnect_title": "斷開 Apple Health 連接？",
     "health_disconnect_msg": "這會停止應用程式同步新數據，但不會撤銷 Apple Health 存取權限 — 您可以在 iOS 設定 > Health > 資料存取與裝置中進行管理。",
-    "error_health_connect": "無法連接至 Apple Health。請重試。"
+    "error_health_connect": "無法連接至 Apple Health。請重試。",
+    "diet_allergies": "飲食偏好與過敏原",
+    "diet_not_set": "未設定飲食偏好",
+    "allergies_label": "過敏原"
   },
   "notifications": {
     "title": "通知",
@@ -1383,5 +1386,13 @@
     "kg": "公斤",
     "error_save": "無法保存您的變更。請重試。",
     "name": "姓名"
+  },
+  "edit_goal": {
+    "title": "編輯目標",
+    "error_save": "無法保存您的目標。請重試。"
+  },
+  "edit_diet": {
+    "title": "飲食偏好與過敏原",
+    "error_save": "無法保存您的變更。請重試。"
   }
 }

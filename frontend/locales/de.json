@@ -424,7 +424,10 @@
     "health_disconnect_button": "Verbindung trennen",
     "health_disconnect_title": "Apple Health trennen?",
     "health_disconnect_msg": "Dies stoppt die Synchronisierung neuer Daten, widerruft aber nicht den Apple-Health-Zugriff — du kannst dies in iOS-Einstellungen > Health > Datenzugriff & Geräte verwalten.",
-    "error_health_connect": "Konnte keine Verbindung zu Apple Health herstellen. Versuche es erneut."
+    "error_health_connect": "Konnte keine Verbindung zu Apple Health herstellen. Versuche es erneut.",
+    "diet_allergies": "Ernährung & Allergien",
+    "diet_not_set": "Keine Ernährungspräferenz festgelegt",
+    "allergies_label": "Allergien"
   },
   "notifications": {
     "title": "Benachrichtigungen",
@@ -1383,5 +1386,13 @@
     "kg": "kg",
     "error_save": "Deine Änderungen konnten nicht gespeichert werden. Bitte versuche es erneut.",
     "name": "Name"
+  },
+  "edit_goal": {
+    "title": "Ziel bearbeiten",
+    "error_save": "Dein Ziel konnte nicht gespeichert werden. Bitte versuche es erneut."
+  },
+  "edit_diet": {
+    "title": "Ernährung & Allergien",
+    "error_save": "Deine Änderungen konnten nicht gespeichert werden. Bitte versuche es erneut."
   }
 }

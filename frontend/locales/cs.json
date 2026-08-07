@@ -424,7 +424,10 @@
     "health_disconnect_button": "Odpojit",
     "health_disconnect_title": "Odpojit Apple Health?",
     "health_disconnect_msg": "Aplikace přestane synchronizovat nová data, ale neodvolá přístup k Apple Health — můžete to spravovat v Nastavení iOS > Zdraví > Přístup k datům a zařízením.",
-    "error_health_connect": "Nepodařilo se připojit k Apple Health. Zkuste to znovu."
+    "error_health_connect": "Nepodařilo se připojit k Apple Health. Zkuste to znovu.",
+    "diet_allergies": "Dieta a alergeny",
+    "diet_not_set": "Není nastavena preference stravy",
+    "allergies_label": "Alergeny"
   },
   "notifications": {
     "title": "Oznámení",
@@ -1383,5 +1386,13 @@
     "kg": "kg",
     "error_save": "Změny se nepodařilo uložit. Zkuste to prosím znovu.",
     "name": "Jméno"
+  },
+  "edit_goal": {
+    "title": "Upravit cíl",
+    "error_save": "Nepodařilo se uložit váš cíl. Zkuste to prosím znovu."
+  },
+  "edit_diet": {
+    "title": "Dieta a alergeny",
+    "error_save": "Nepodařilo se uložit vaše změny. Zkuste to prosím znovu."
   }
 }

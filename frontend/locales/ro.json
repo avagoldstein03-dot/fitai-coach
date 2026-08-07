@@ -424,7 +424,10 @@
     "health_disconnect_button": "Deconectează",
     "health_disconnect_title": "Deconectezi Apple Health?",
     "health_disconnect_msg": "Aceasta oprește sincronizarea datelor noi în aplicație, dar nu revocă accesul la Apple Health — poți gestiona asta în Setări iOS > Sănătate > Acces la date și dispozitive.",
-    "error_health_connect": "Nu s-a putut conecta la Apple Health. Încearcă din nou."
+    "error_health_connect": "Nu s-a putut conecta la Apple Health. Încearcă din nou.",
+    "diet_allergies": "Dietă și alergii",
+    "diet_not_set": "Nicio preferință alimentară setată",
+    "allergies_label": "Alergii"
   },
   "notifications": {
     "title": "Notificari",
@@ -1383,5 +1386,13 @@
     "kg": "kg",
     "error_save": "Nu s-au putut salva modificările. Încearcă din nou.",
     "name": "Nume"
+  },
+  "edit_goal": {
+    "title": "Editare obiectiv",
+    "error_save": "Nu am putut salva obiectivul dvs. Vă rugăm să încercați din nou."
+  },
+  "edit_diet": {
+    "title": "Dietă și alergii",
+    "error_save": "Nu am putut salva modificările. Vă rugăm să încercați din nou."
   }
 }

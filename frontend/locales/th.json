@@ -424,7 +424,10 @@
     "health_disconnect_button": "ยกเลิกการเชื่อมต่อ",
     "health_disconnect_title": "ยกเลิกการเชื่อมต่อ Apple Health?",
     "health_disconnect_msg": "สิ่งนี้จะหยุดการซิงค์ข้อมูลใหม่ของแอป แต่ไม่ได้เพิกถอนการเข้าถึง Apple Health — คุณสามารถจัดการได้ใน iOS Settings > Health > Data Access & Devices",
-    "error_health_connect": "ไม่สามารถเชื่อมต่อกับ Apple Health ได้ โปรดลองอีกครั้ง"
+    "error_health_connect": "ไม่สามารถเชื่อมต่อกับ Apple Health ได้ โปรดลองอีกครั้ง",
+    "diet_allergies": "อาหารและภูมิแพ้",
+    "diet_not_set": "ยังไม่ได้ตั้งค่าความชอบด้านอาหาร",
+    "allergies_label": "ภูมิแพ้"
   },
   "notifications": {
     "title": "การแจ้งเตือน",
@@ -1383,5 +1386,13 @@
     "kg": "กิโลกรัม",
     "error_save": "ไม่สามารถบันทึกการเปลี่ยนแปลงของคุณได้ โปรดลองอีกครั้ง",
     "name": "ชื่อ"
+  },
+  "edit_goal": {
+    "title": "แก้ไขเป้าหมาย",
+    "error_save": "ไม่สามารถบันทึกเป้าหมายของคุณได้ โปรดลองอีกครั้ง"
+  },
+  "edit_diet": {
+    "title": "อาหารและภูมิแพ้",
+    "error_save": "ไม่สามารถบันทึกการเปลี่ยนแปลงของคุณได้ โปรดลองอีกครั้ง"
   }
 }

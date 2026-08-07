@@ -424,7 +424,10 @@
     "health_disconnect_button": "Ontkoppel",
     "health_disconnect_title": "Ontkoppel Apple Health?",
     "health_disconnect_msg": "Dit stop die app van sinkronisering van nuwe data, maar trek nie Apple Health-toegang in nie — jy kan dit bestuur in iOS-instellings > Gesondheid > Data-toegang & Toestelle.",
-    "error_health_connect": "Kon nie aan Apple Health koppel nie. Probeer weer."
+    "error_health_connect": "Kon nie aan Apple Health koppel nie. Probeer weer.",
+    "diet_allergies": "Dieet & Allergiëe",
+    "diet_not_set": "Geen dieetvoorkeur ingestel",
+    "allergies_label": "Allergiëe"
   },
   "notifications": {
     "title": "Kennisgewings",
@@ -1383,5 +1386,13 @@
     "kg": "kg",
     "error_save": "Kon jou veranderinge nie stoor nie. Probeer asseblief weer.",
     "name": "Naam"
+  },
+  "edit_goal": {
+    "title": "Wysig Doel",
+    "error_save": "Kon nie jou doel stoor nie. Probeer asseblief weer."
+  },
+  "edit_diet": {
+    "title": "Dieet & Allergiëe",
+    "error_save": "Kon nie jou veranderinge stoor nie. Probeer asseblief weer."
   }
 }

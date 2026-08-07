@@ -424,7 +424,10 @@
     "health_disconnect_button": "Afbryd forbindelse",
     "health_disconnect_title": "Afbryd forbindelse til Apple Health?",
     "health_disconnect_msg": "Dette stopper appen med at synkronisere nye data, men tilbagekalder ikke Apple Health-adgangen — du kan administrere det i iOS Indstillinger > Sundhed > Dataaccesss & enheder.",
-    "error_health_connect": "Kunne ikke oprette forbindelse til Apple Health. Prøv igen."
+    "error_health_connect": "Kunne ikke oprette forbindelse til Apple Health. Prøv igen.",
+    "diet_allergies": "Kost & Allergi",
+    "diet_not_set": "Ingen kostpræference indstillet",
+    "allergies_label": "Allergi"
   },
   "notifications": {
     "title": "Notifikationer",
@@ -1383,5 +1386,13 @@
     "kg": "kg",
     "error_save": "Kunne ikke gemme dine ændringer. Prøv igen.",
     "name": "Navn"
+  },
+  "edit_goal": {
+    "title": "Rediger mål",
+    "error_save": "Kunne ikke gemme dit mål. Prøv igen."
+  },
+  "edit_diet": {
+    "title": "Kost & Allergi",
+    "error_save": "Kunne ikke gemme dine ændringer. Prøv igen."
   }
 }

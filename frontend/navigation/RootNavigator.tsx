@@ -47,6 +47,8 @@ import FriendsScreen from "@/screens/social/FriendsScreen";
 import SettingsScreen from "@/screens/settings/SettingsScreen";
 import NotificationsScreen from "@/screens/settings/NotificationsScreen";
 import EditProfileScreen from "@/screens/profile/EditProfileScreen";
+import EditGoalScreen from "@/screens/profile/EditGoalScreen";
+import EditDietScreen from "@/screens/profile/EditDietScreen";
 import PricingScreen from "@/screens/subscription/PricingScreen";
 import SubscriptionManagementScreen from "@/screens/subscription/SubscriptionManagementScreen";
 
@@ -167,6 +169,8 @@ export default function RootNavigator() {
             <Stack.Screen name="Settings"              component={SettingsScreen}              options={{ animation: "slide_from_bottom" }} />
             <Stack.Screen name="Notifications"         component={NotificationsScreen}         options={{ animation: "slide_from_right" }} />
             <Stack.Screen name="EditProfile"           component={EditProfileScreen}           options={{ animation: "slide_from_bottom" }} />
+            <Stack.Screen name="EditGoal"               component={EditGoalScreen}              options={{ animation: "slide_from_bottom" }} />
+            <Stack.Screen name="EditDiet"               component={EditDietScreen}              options={{ animation: "slide_from_bottom" }} />
             <Stack.Screen name="Pricing"               component={PricingScreen}               options={{ animation: "slide_from_bottom" }} />
             <Stack.Screen name="SubscriptionManagement" component={SubscriptionManagementScreen} options={{ animation: "slide_from_bottom" }} />
             <Stack.Screen name="WeeklyReview"          component={WeeklyReviewScreen}          options={{ animation: "slide_from_right" }} />
@@ -193,6 +197,8 @@ export default function RootNavigator() {
             <Stack.Screen name="Settings"              component={SettingsScreen}              options={{ animation: "slide_from_bottom" }} />
             <Stack.Screen name="Notifications"         component={NotificationsScreen}         options={{ animation: "slide_from_right" }} />
             <Stack.Screen name="EditProfile"           component={EditProfileScreen}           options={{ animation: "slide_from_bottom" }} />
+            <Stack.Screen name="EditGoal"               component={EditGoalScreen}              options={{ animation: "slide_from_bottom" }} />
+            <Stack.Screen name="EditDiet"               component={EditDietScreen}              options={{ animation: "slide_from_bottom" }} />
             <Stack.Screen name="Pricing"               component={PricingScreen}               options={{ animation: "slide_from_bottom" }} />
             <Stack.Screen name="SubscriptionManagement" component={SubscriptionManagementScreen} options={{ animation: "slide_from_bottom" }} />
             <Stack.Screen name="WeeklyReview"          component={WeeklyReviewScreen}          options={{ animation: "slide_from_right" }} />

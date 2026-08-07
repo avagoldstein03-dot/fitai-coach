@@ -61,6 +61,8 @@ export interface UserProfile {
   country?: string;
   currency?: string;
   injuryHistory?: string;
+  dietPreferences?: string[];
+  foodAllergies?: string[];
   onboardingCompleted: boolean;
   onboardingStep: number;
 }

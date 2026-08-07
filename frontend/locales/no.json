@@ -424,7 +424,10 @@
     "health_disconnect_button": "Koble fra",
     "health_disconnect_title": "Koble fra Apple Health?",
     "health_disconnect_msg": "Dette stopper appen fra å synkronisere nye data, men tilbakekaller ikke Apple Health-tilgang — du kan administrere det i iOS Innstillinger > Helse > Datatilgang og enheter.",
-    "error_health_connect": "Kunne ikke koble til Apple Health. Prøv igjen."
+    "error_health_connect": "Kunne ikke koble til Apple Health. Prøv igjen.",
+    "diet_allergies": "Diett & Allergi",
+    "diet_not_set": "Ingen diettpreferanse angitt",
+    "allergies_label": "Allergi"
   },
   "notifications": {
     "title": "Varslinger",
@@ -1383,5 +1386,13 @@
     "kg": "kg",
     "error_save": "Kunne ikke lagre endringene dine. Prøv igjen.",
     "name": "Navn"
+  },
+  "edit_goal": {
+    "title": "Rediger Mål",
+    "error_save": "Kunne ikke lagre målet ditt. Prøv igjen."
+  },
+  "edit_diet": {
+    "title": "Diett & Allergi",
+    "error_save": "Kunne ikke lagre endringene dine. Prøv igjen."
   }
 }
