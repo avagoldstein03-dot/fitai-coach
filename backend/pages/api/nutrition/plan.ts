@@ -28,7 +28,13 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     }
 
     // POST: generate new plan
-    const subscription = await getUserSubscription(req);
+    // Independent of each other's results, so run concurrently instead of as
+    // two sequential round trips.
+    const [subscription, user] = await Promise.all([
+      getUserSubscription(req),
+      prisma.user.findUnique({ where: { clerkId: userId }, include: { goal: true } }),
+    ]);
+
     if (!subscription.limits.unlimitedMealPlans) {
       return sendError(
         res,
@@ -37,11 +43,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         403
       );
     }
-
-    const user = await prisma.user.findUnique({
-      where: { clerkId: userId },
-      include: { goal: true },
-    });
 
     if (!user) return sendError(res, "user_not_found", "User not found", 404);
 
@@ -60,6 +61,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       activityLevel: user.activityLevel || "moderately_active",
       dietPreferences: user.dietPreferences || [],
       foodAllergies: user.foodAllergies || [],
+      tier: subscription.tier,
     });
 
     const shoppingListItems = [...generateShoppingList(mealPlanResult.days), ...preservedCustomItems];

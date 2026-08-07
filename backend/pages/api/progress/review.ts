@@ -14,7 +14,17 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     const { userId } = getAuth(req);
     if (!userId) return sendError(res, "unauthorized", "Unauthorized", 401);
 
-    const subscription = await getUserSubscription(req);
+    const { period = "weekly" } = req.query;
+    const days = period === "monthly" ? 30 : 7;
+    const since = new Date(Date.now() - days * 24 * 60 * 60 * 1000);
+
+    // Independent of each other's results, so run concurrently instead of as
+    // two sequential round trips.
+    const [subscription, user] = await Promise.all([
+      getUserSubscription(req),
+      prisma.user.findUnique({ where: { clerkId: userId }, select: { id: true, weight: true } }),
+    ]);
+
     if (!subscription.limits.progressReviews) {
       return sendError(
         res,
@@ -23,15 +33,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         403
       );
     }
-
-    const { period = "weekly" } = req.query;
-    const days = period === "monthly" ? 30 : 7;
-    const since = new Date(Date.now() - days * 24 * 60 * 60 * 1000);
-
-    const user = await prisma.user.findUnique({
-      where: { clerkId: userId },
-      select: { id: true, weight: true },
-    });
 
     if (!user) return sendError(res, "user_not_found", "User not found", 404);
 

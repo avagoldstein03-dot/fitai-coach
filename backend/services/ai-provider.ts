@@ -132,6 +132,7 @@ export interface NutritionGenerationInput {
   activityLevel: string;
   dietPreferences: string[];
   foodAllergies: string[];
+  tier: string; // "starter" | "pro" | "elite" — pro/elite get exact gram measurements per food
 }
 
 export interface ProgressReviewInput {

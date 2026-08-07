@@ -1,6 +1,7 @@
 import OpenAI from "openai";
 import { buildTierGatingPrompt } from "@/lib/coach-tier-prompt";
 import { expandWeekWithProgression } from "@/lib/workout-progression";
+import { expandDaysWithRotation } from "@/lib/meal-plan-rotation";
 import type {
   AIProvider,
   FoodAnalysisResult,
@@ -232,7 +233,18 @@ Each day must have exactly 4-5 exercises, chosen so that together they hit all t
   }
 
   async generateMealPlan(userProfile: NutritionGenerationInput): Promise<MealPlanResult> {
-    const prompt = `Create a personalized 7-day meal plan for someone with:
+    // Only 3 template days are AI-authored, then rotated across the full week
+    // programmatically (see expandDaysWithRotation) — asking for all 7 unique
+    // days in one call was the main driver of slow meal-plan generation, same
+    // root cause as the earlier workout-generation fix.
+    const TEMPLATE_DAY_COUNT = 3;
+    const isPrecisionTier = userProfile.tier === "pro" || userProfile.tier === "elite";
+
+    const foodsInstruction = isPrecisionTier
+      ? `Each food item must include an exact gram (or ml for liquids) measurement in parentheses, e.g. "3 large eggs (150g)", "1 cup dry oatmeal (80g)", "1 medium banana (118g)" — precise enough that the calorie/macro totals are traceable back to real measured quantities, not vague portions.`
+      : `Each food item should use realistic everyday quantities, e.g. "3 whole eggs", "1 cup oatmeal", "1 banana".`;
+
+    const prompt = `Create ${TEMPLATE_DAY_COUNT} varied template days of a personalized meal plan for someone with:
 - Goal: ${userProfile.goal}
 - Weight: ${userProfile.weight} kg
 - Activity Level: ${userProfile.activityLevel}
@@ -243,7 +255,7 @@ Return ONLY valid JSON with no markdown, structured exactly like this:
 {
   "days": [
     {
-      "day": "Monday",
+      "day": "Day 1",
       "meals": [
         {
           "name": "Breakfast",
@@ -258,12 +270,16 @@ Return ONLY valid JSON with no markdown, structured exactly like this:
   ]
 }
 
-Generate exactly 7 days (Monday-Sunday). Each day must include Breakfast, Lunch, Dinner, and a Snack (4 meals). Each meal needs a realistic foods list and accurate calorie/protein/carb/fat totals for that meal, respecting the stated diet preferences and allergies. Vary meals across days rather than repeating the same plan every day.`;
+Generate exactly ${TEMPLATE_DAY_COUNT} day entries, labeled "Day 1", "Day 2", "Day 3" — these will be rotated across a full week, so make them meaningfully different from each other rather than near-duplicates. Each day must include Breakfast, Lunch, Dinner, and a Snack (4 meals). ${foodsInstruction} Give accurate calorie/protein/carb/fat totals for each meal, respecting the stated diet preferences and allergies.`;
+
+    // Sized for 3 template days instead of 7 — precision-tier output has more
+    // detail per food item, so it gets a bit more headroom.
+    const maxTokens = isPrecisionTier ? 1800 : 1400;
 
     const response = await openai.chat.completions.create({
       model: "gpt-4o",
       response_format: { type: "json_object" },
-      max_tokens: 3000,
+      max_tokens: maxTokens,
       messages: [{ role: "user", content: prompt }],
     });
 
@@ -275,7 +291,8 @@ Generate exactly 7 days (Monday-Sunday). Each day must include Breakfast, Lunch,
       console.error("Raw OpenAI meal plan response:", content);
       throw new Error(`AI did not return JSON: "${content.slice(0, 200)}"`);
     }
-    return JSON.parse(jsonMatch[0]);
+    const parsed = JSON.parse(jsonMatch[0]) as MealPlanResult;
+    return { days: expandDaysWithRotation(parsed.days, 7) };
   }
 
   // Not currently used — progress_review routes to AnthropicProvider (see ai-registry.ts).
