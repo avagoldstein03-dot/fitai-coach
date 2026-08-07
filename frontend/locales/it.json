@@ -1205,7 +1205,8 @@
     "badge_streak_7": "Campione della Settimana",
     "badge_streak_14": "Sequenza di Due Settimane",
     "badge_streak_30": "Sequenza di 30 Giorni",
-    "badge_ten_workouts": "Dieci Allenamenti"
+    "badge_ten_workouts": "Dieci Allenamenti",
+    "tap_to_edit": "Tocca per modificare"
   },
   "navigation": {
     "home": "Home",
@@ -1371,5 +1372,16 @@
     "scan_another": "Scansiona un Altro",
     "done": "Fatto",
     "error_upstream": "Database prodotti temporaneamente non disponibile, riprova tra poco"
+  },
+  "edit_profile": {
+    "title": "Modifica Profilo",
+    "height": "Altezza",
+    "weight": "Peso",
+    "age": "Età",
+    "feet": "ft",
+    "inches": "in",
+    "lbs": "lbs",
+    "kg": "kg",
+    "error_save": "Impossibile salvare le modifiche. Prova di nuovo."
   }
 }

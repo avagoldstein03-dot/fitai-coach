@@ -1205,7 +1205,8 @@
     "badge_streak_7": "Majster týždňa",
     "badge_streak_14": "Séria dvoch týždňov",
     "badge_streak_30": "Séria 30 dní",
-    "badge_ten_workouts": "Desať tréningov"
+    "badge_ten_workouts": "Desať tréningov",
+    "tap_to_edit": "Klepnite na upravenie"
   },
   "navigation": {
     "home": "Domov",
@@ -1371,5 +1372,16 @@
     "scan_another": "Naskenujte Ďalší",
     "done": "Hotovo",
     "error_upstream": "Databáza produktov je dočasne nedostupná, skúste znova o chvíľu"
+  },
+  "edit_profile": {
+    "title": "Upraviť profil",
+    "height": "Výška",
+    "weight": "Váha",
+    "age": "Vek",
+    "feet": "ft",
+    "inches": "in",
+    "lbs": "lbs",
+    "kg": "kg",
+    "error_save": "Nepodarilo sa uložiť vaše zmeny. Skúste to prosím znova."
   }
 }

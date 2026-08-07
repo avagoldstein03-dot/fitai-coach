@@ -1205,7 +1205,8 @@
     "badge_streak_7": "Nhà Vô Địch Tuần",
     "badge_streak_14": "Chuỗi Hai Tuần",
     "badge_streak_30": "Chuỗi 30 Ngày",
-    "badge_ten_workouts": "Mười Bài Tập"
+    "badge_ten_workouts": "Mười Bài Tập",
+    "tap_to_edit": "Nhấn để chỉnh sửa"
   },
   "navigation": {
     "home": "Trang chủ",
@@ -1371,5 +1372,16 @@
     "scan_another": "Quét Cái khác",
     "done": "Hoàn tất",
     "error_upstream": "Cơ sở dữ liệu sản phẩm tạm thời không khả dụng, hãy thử lại trong chốc lát"
+  },
+  "edit_profile": {
+    "title": "Chỉnh sửa Hồ sơ",
+    "height": "Chiều cao",
+    "weight": "Cân nặng",
+    "age": "Tuổi",
+    "feet": "ft",
+    "inches": "in",
+    "lbs": "lbs",
+    "kg": "kg",
+    "error_save": "Không thể lưu các thay đổi của bạn. Vui lòng thử lại."
   }
 }

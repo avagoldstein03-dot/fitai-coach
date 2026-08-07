@@ -1205,7 +1205,8 @@
     "badge_streak_7": "Tjedan šampion",
     "badge_streak_14": "Niz od dva tjedna",
     "badge_streak_30": "Niz od 30 dana",
-    "badge_ten_workouts": "Deset treningima"
+    "badge_ten_workouts": "Deset treningima",
+    "tap_to_edit": "Dodirnite za uređivanje"
   },
   "navigation": {
     "home": "Početna",
@@ -1371,5 +1372,16 @@
     "scan_another": "Skeniraj još jedan",
     "done": "Gotovo",
     "error_upstream": "Baza podataka proizvoda privremeno nije dostupna, pokušaj ponovno za nekoliko trenutaka"
+  },
+  "edit_profile": {
+    "title": "Uređivanje profila",
+    "height": "Visina",
+    "weight": "Težina",
+    "age": "Godine",
+    "feet": "ft",
+    "inches": "in",
+    "lbs": "lbs",
+    "kg": "kg",
+    "error_save": "Nije moguće spremiti promjene. Molimo pokušajte ponovno."
   }
 }

@@ -1205,7 +1205,8 @@
     "badge_streak_7": "Campion al Săptămânii",
     "badge_streak_14": "Șir de Două Săptămâni",
     "badge_streak_30": "Șir de 30 de Zile",
-    "badge_ten_workouts": "Zece Antrenamente"
+    "badge_ten_workouts": "Zece Antrenamente",
+    "tap_to_edit": "Atinge pentru a edita"
   },
   "navigation": {
     "home": "Acasă",
@@ -1371,5 +1372,16 @@
     "scan_another": "Scanează Altul",
     "done": "Gata",
     "error_upstream": "Baza de date cu produse este temporar indisponibilă, încearcă din nou în curând"
+  },
+  "edit_profile": {
+    "title": "Editare Profil",
+    "height": "Înălțime",
+    "weight": "Greutate",
+    "age": "Vârstă",
+    "feet": "ft",
+    "inches": "in",
+    "lbs": "lbs",
+    "kg": "kg",
+    "error_save": "Nu s-au putut salva modificările. Încearcă din nou."
   }
 }

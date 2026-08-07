@@ -1205,7 +1205,8 @@
     "badge_streak_7": "Weekkampioen",
     "badge_streak_14": "Twee-Weekse Serie",
     "badge_streak_30": "30-Daagse Serie",
-    "badge_ten_workouts": "Tien Trainingen"
+    "badge_ten_workouts": "Tien Trainingen",
+    "tap_to_edit": "Tik om te bewerken"
   },
   "navigation": {
     "home": "Home",
@@ -1371,5 +1372,16 @@
     "scan_another": "Nog Eentje Scannen",
     "done": "Klaar",
     "error_upstream": "Productdatabase tijdelijk niet beschikbaar, probeer het zo snel mogelijk opnieuw"
+  },
+  "edit_profile": {
+    "title": "Profiel bewerken",
+    "height": "Lengte",
+    "weight": "Gewicht",
+    "age": "Leeftijd",
+    "feet": "ft",
+    "inches": "in",
+    "lbs": "lbs",
+    "kg": "kg",
+    "error_save": "Kon je wijzigingen niet opslaan. Probeer het alstublieft opnieuw."
   }
 }

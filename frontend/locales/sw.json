@@ -1205,7 +1205,8 @@
     "badge_streak_7": "Mfalme wa Wiki",
     "badge_streak_14": "Kamba ya Wiki Mbili",
     "badge_streak_30": "Kamba ya Siku 30",
-    "badge_ten_workouts": "Mazoezi Kumi"
+    "badge_ten_workouts": "Mazoezi Kumi",
+    "tap_to_edit": "Gusa ili kuhariri"
   },
   "navigation": {
     "home": "Nyumbani",
@@ -1371,5 +1372,16 @@
     "scan_another": "Changia Nyingine",
     "done": "Imekamilika",
     "error_upstream": "Hifadhidata ya bidhaa haipo kwa sasa, jaribu tena baada ya muda"
+  },
+  "edit_profile": {
+    "title": "Hariri Wasifu",
+    "height": "Urefu",
+    "weight": "Uzani",
+    "age": "Umri",
+    "feet": "ft",
+    "inches": "in",
+    "lbs": "lbs",
+    "kg": "kg",
+    "error_save": "Haikuweza kuhifadhi mabadiliko yako. Tafadhali jaribu tena."
   }
 }

@@ -1278,6 +1278,7 @@
     "height": "Height",
     "weight": "Weight",
     "age": "Age",
+    "tap_to_edit": "Tap to edit",
     "current_plan": "Current Plan",
     "plan_premium": "⚡ Premium",
     "plan_free": "Free",
@@ -1314,6 +1315,17 @@
     "badge_streak_30": "30-Day Streak",
     "badge_ten_workouts": "Ten Workouts",
     "default_name": "Athlete"
+  },
+  "edit_profile": {
+    "title": "Edit Profile",
+    "height": "Height",
+    "weight": "Weight",
+    "age": "Age",
+    "feet": "ft",
+    "inches": "in",
+    "lbs": "lbs",
+    "kg": "kg",
+    "error_save": "Couldn't save your changes. Please try again."
   },
   "friends": {
     "title": "Friends",

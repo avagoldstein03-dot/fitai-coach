@@ -1205,7 +1205,8 @@
     "badge_streak_7": "週間チャンピオン",
     "badge_streak_14": "2週間連続",
     "badge_streak_30": "30日連続",
-    "badge_ten_workouts": "10回のワークアウト"
+    "badge_ten_workouts": "10回のワークアウト",
+    "tap_to_edit": "編集するにはタップ"
   },
   "navigation": {
     "home": "ホーム",
@@ -1371,5 +1372,16 @@
     "scan_another": "別のものをスキャン",
     "done": "完了",
     "error_upstream": "製品データベースは一時的に利用できません。しばらくしてからもう一度お試しください"
+  },
+  "edit_profile": {
+    "title": "プロフィール編集",
+    "height": "身長",
+    "weight": "体重",
+    "age": "年齢",
+    "feet": "フィート",
+    "inches": "インチ",
+    "lbs": "ポンド",
+    "kg": "kg",
+    "error_save": "変更を保存できませんでした。もう一度お試しください。"
   }
 }

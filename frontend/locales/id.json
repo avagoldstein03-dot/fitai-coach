@@ -1205,7 +1205,8 @@
     "badge_streak_7": "Juara Minggu",
     "badge_streak_14": "Dua Minggu Beruntun",
     "badge_streak_30": "Tiga Puluh Hari Beruntun",
-    "badge_ten_workouts": "Sepuluh Latihan"
+    "badge_ten_workouts": "Sepuluh Latihan",
+    "tap_to_edit": "Ketuk untuk mengedit"
   },
   "navigation": {
     "home": "Beranda",
@@ -1371,5 +1372,16 @@
     "scan_another": "Pindai Lagi",
     "done": "Selesai",
     "error_upstream": "Database produk tidak tersedia untuk sementara, coba lagi nanti"
+  },
+  "edit_profile": {
+    "title": "Edit Profil",
+    "height": "Tinggi Badan",
+    "weight": "Berat Badan",
+    "age": "Usia",
+    "feet": "ft",
+    "inches": "in",
+    "lbs": "lbs",
+    "kg": "kg",
+    "error_save": "Tidak dapat menyimpan perubahan Anda. Silakan coba lagi."
   }
 }

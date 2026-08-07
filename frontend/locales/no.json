@@ -1205,7 +1205,8 @@
     "badge_streak_7": "Ukesmester",
     "badge_streak_14": "14-dagers serie",
     "badge_streak_30": "30-dagers serie",
-    "badge_ten_workouts": "Ti treninger"
+    "badge_ten_workouts": "Ti treninger",
+    "tap_to_edit": "Trykk for å redigere"
   },
   "navigation": {
     "home": "Hjem",
@@ -1371,5 +1372,16 @@
     "scan_another": "Skann et annet",
     "done": "Ferdig",
     "error_upstream": "Produktdatabasen er midlertidig utilgjengelig, prøv igjen snart"
+  },
+  "edit_profile": {
+    "title": "Rediger profil",
+    "height": "Høyde",
+    "weight": "Vekt",
+    "age": "Alder",
+    "feet": "ft",
+    "inches": "in",
+    "lbs": "lbs",
+    "kg": "kg",
+    "error_save": "Kunne ikke lagre endringene dine. Prøv igjen."
   }
 }

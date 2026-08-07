@@ -1205,7 +1205,8 @@
     "badge_streak_7": "Hafta Şampiyonu",
     "badge_streak_14": "İki Haftalık Seri",
     "badge_streak_30": "30 Günlük Seri",
-    "badge_ten_workouts": "On Antrenman"
+    "badge_ten_workouts": "On Antrenman",
+    "tap_to_edit": "Düzenlemek için dokunun"
   },
   "navigation": {
     "home": "Ana Sayfa",
@@ -1371,5 +1372,16 @@
     "scan_another": "Başka Bir Tarama Yap",
     "done": "Bitti",
     "error_upstream": "Ürün veritabanı geçici olarak kullanılamıyor, kısa süre içinde tekrar deneyin"
+  },
+  "edit_profile": {
+    "title": "Profili Düzenle",
+    "height": "Boy",
+    "weight": "Kilo",
+    "age": "Yaş",
+    "feet": "ft",
+    "inches": "in",
+    "lbs": "lbs",
+    "kg": "kg",
+    "error_save": "Değişiklikleriniz kaydedilemedi. Lütfen tekrar deneyin."
   }
 }

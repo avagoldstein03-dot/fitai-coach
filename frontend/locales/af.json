@@ -1205,7 +1205,8 @@
     "badge_streak_7": "Weekkampioen",
     "badge_streak_14": "Twee-Week Streek",
     "badge_streak_30": "30-Dag Streek",
-    "badge_ten_workouts": "Tien Werkouts"
+    "badge_ten_workouts": "Tien Werkouts",
+    "tap_to_edit": "Tik om te redigeer"
   },
   "navigation": {
     "home": "Tuis",
@@ -1371,5 +1372,16 @@
     "scan_another": "Skandeer Nog Een",
     "done": "Klaar",
     "error_upstream": "Produktdatabasis is tydelik onbeskikbaar, probeer gou weer"
+  },
+  "edit_profile": {
+    "title": "Profiel Redigeer",
+    "height": "Lengte",
+    "weight": "Gewig",
+    "age": "Ouderdom",
+    "feet": "ft",
+    "inches": "duim",
+    "lbs": "lbs",
+    "kg": "kg",
+    "error_save": "Kon jou veranderinge nie stoor nie. Probeer asseblief weer."
   }
 }

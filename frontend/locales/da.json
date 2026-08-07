@@ -1205,7 +1205,8 @@
     "badge_streak_7": "Ugens Mester",
     "badge_streak_14": "To-Ugers Streak",
     "badge_streak_30": "30-Dages Streak",
-    "badge_ten_workouts": "Ti Træninger"
+    "badge_ten_workouts": "Ti Træninger",
+    "tap_to_edit": "Tryk for at redigere"
   },
   "navigation": {
     "home": "Hjem",
@@ -1371,5 +1372,16 @@
     "scan_another": "Skan et andet",
     "done": "Færdig",
     "error_upstream": "Produktdatabasen er midlertidigt utilgængelig, prøv igen snart"
+  },
+  "edit_profile": {
+    "title": "Rediger profil",
+    "height": "Højde",
+    "weight": "Vægt",
+    "age": "Alder",
+    "feet": "fod",
+    "inches": "tommer",
+    "lbs": "lbs",
+    "kg": "kg",
+    "error_save": "Kunne ikke gemme dine ændringer. Prøv igen."
   }
 }

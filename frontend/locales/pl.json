@@ -1205,7 +1205,8 @@
     "badge_streak_7": "Mistrz Tygodnia",
     "badge_streak_14": "Seria 2 tygodni",
     "badge_streak_30": "Seria 30 dni",
-    "badge_ten_workouts": "Dziesięć Treningów"
+    "badge_ten_workouts": "Dziesięć Treningów",
+    "tap_to_edit": "Dotknij, aby edytować"
   },
   "navigation": {
     "home": "Strona główna",
@@ -1371,5 +1372,16 @@
     "scan_another": "Skanuj Następny",
     "done": "Gotowe",
     "error_upstream": "Baza danych produktów jest czasowo niedostępna, spróbuj za chwilę"
+  },
+  "edit_profile": {
+    "title": "Edytuj Profil",
+    "height": "Wzrost",
+    "weight": "Waga",
+    "age": "Wiek",
+    "feet": "ft",
+    "inches": "in",
+    "lbs": "lbs",
+    "kg": "kg",
+    "error_save": "Nie udało się zapisać zmian. Spróbuj ponownie."
   }
 }

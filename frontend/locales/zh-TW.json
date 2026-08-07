@@ -1205,7 +1205,8 @@
     "badge_streak_7": "週冠軍",
     "badge_streak_14": "兩週連勝",
     "badge_streak_30": "30 日連勝",
-    "badge_ten_workouts": "十次訓練"
+    "badge_ten_workouts": "十次訓練",
+    "tap_to_edit": "輕按以編輯"
   },
   "navigation": {
     "home": "首頁",
@@ -1371,5 +1372,16 @@
     "scan_another": "掃描另一個",
     "done": "完成",
     "error_upstream": "產品資料庫暫時無法使用，請稍後重試"
+  },
+  "edit_profile": {
+    "title": "編輯個人資料",
+    "height": "身高",
+    "weight": "體重",
+    "age": "年齡",
+    "feet": "英尺",
+    "inches": "英寸",
+    "lbs": "磅",
+    "kg": "公斤",
+    "error_save": "無法保存您的變更。請重試。"
   }
 }

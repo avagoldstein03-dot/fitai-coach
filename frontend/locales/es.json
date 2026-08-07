@@ -1205,7 +1205,8 @@
     "badge_streak_7": "Campeón de la Semana",
     "badge_streak_14": "Racha de Dos Semanas",
     "badge_streak_30": "Racha de 30 Días",
-    "badge_ten_workouts": "Diez Entrenamientos"
+    "badge_ten_workouts": "Diez Entrenamientos",
+    "tap_to_edit": "Toca para editar"
   },
   "navigation": {
     "home": "Inicio",
@@ -1371,5 +1372,16 @@
     "scan_another": "Escanear Otro",
     "done": "Hecho",
     "error_upstream": "La base de datos de productos no está disponible temporalmente, intenta de nuevo en breve"
+  },
+  "edit_profile": {
+    "title": "Editar Perfil",
+    "height": "Altura",
+    "weight": "Peso",
+    "age": "Edad",
+    "feet": "ft",
+    "inches": "in",
+    "lbs": "lbs",
+    "kg": "kg",
+    "error_save": "No se pudieron guardar los cambios. Por favor, intenta de nuevo."
   }
 }

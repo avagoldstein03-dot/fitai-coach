@@ -1205,7 +1205,8 @@
     "badge_streak_7": "周冠军",
     "badge_streak_14": "两周连续",
     "badge_streak_30": "30 天连续",
-    "badge_ten_workouts": "十次训练"
+    "badge_ten_workouts": "十次训练",
+    "tap_to_edit": "点击编辑"
   },
   "navigation": {
     "home": "首页",
@@ -1371,5 +1372,16 @@
     "scan_another": "扫描其他产品",
     "done": "完成",
     "error_upstream": "产品数据库暂时不可用，请稍后重试"
+  },
+  "edit_profile": {
+    "title": "编辑个人资料",
+    "height": "身高",
+    "weight": "体重",
+    "age": "年龄",
+    "feet": "英尺",
+    "inches": "英寸",
+    "lbs": "磅",
+    "kg": "公斤",
+    "error_save": "无法保存您的更改。请重试。"
   }
 }
