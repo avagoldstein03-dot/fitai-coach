@@ -1381,6 +1381,7 @@
     "inches": "hüvelyk",
     "lbs": "font",
     "kg": "kg",
-    "error_save": "Nem sikerült menteni a módosításokat. Kérjük, próbálja újra."
+    "error_save": "Nem sikerült menteni a módosításokat. Kérjük, próbálja újra.",
+    "name": "Név"
   }
 }

@@ -1381,6 +1381,7 @@
     "inches": "in",
     "lbs": "lbs",
     "kg": "kg",
-    "error_save": "Tidak dapat menyimpan perubahan Anda. Silakan coba lagi."
+    "error_save": "Tidak dapat menyimpan perubahan Anda. Silakan coba lagi.",
+    "name": "Nama"
   }
 }

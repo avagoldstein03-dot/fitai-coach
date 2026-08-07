@@ -1381,6 +1381,7 @@
     "inches": "in",
     "lbs": "lbs",
     "kg": "kg",
-    "error_save": "Không thể lưu các thay đổi của bạn. Vui lòng thử lại."
+    "error_save": "Không thể lưu các thay đổi của bạn. Vui lòng thử lại.",
+    "name": "Tên"
   }
 }

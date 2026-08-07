@@ -1381,6 +1381,7 @@
     "inches": "in",
     "lbs": "lbs",
     "kg": "kg",
-    "error_save": "Nepodarilo sa uložiť vaše zmeny. Skúste to prosím znova."
+    "error_save": "Nepodarilo sa uložiť vaše zmeny. Skúste to prosím znova.",
+    "name": "Meno"
   }
 }

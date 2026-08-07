@@ -1381,6 +1381,7 @@
     "inches": "po",
     "lbs": "lb",
     "kg": "kg",
-    "error_save": "Impossible d'enregistrer vos modifications. Veuillez réessayer."
+    "error_save": "Impossible d'enregistrer vos modifications. Veuillez réessayer.",
+    "name": "Nom"
   }
 }

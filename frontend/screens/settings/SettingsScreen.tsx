@@ -235,15 +235,22 @@ export default function SettingsScreen() {
         <View style={s.card}>
           <Text style={s.cardTitle}>{t("settings.account")}</Text>
           {[
-            { label: t("settings.name"),  value: profile?.name ?? "—" },
-            { label: t("settings.email"), value: profile?.email ?? "—" },
-            { label: t("settings.age"),   value: profile?.age ? `${profile.age} ${t("settings.age_unit")}` : "—" },
-          ].map(({ label, value }, i, arr) => (
-            <View key={label} style={[s.row, i < arr.length - 1 && s.rowBorder]}>
-              <Text style={s.rowLabel}>{label}</Text>
-              <Text style={s.rowValue} numberOfLines={1}>{value}</Text>
-            </View>
-          ))}
+            { label: t("settings.name"),  value: profile?.name ?? "—", editable: true },
+            { label: t("settings.email"), value: profile?.email ?? "—", editable: false },
+            { label: t("settings.age"),   value: profile?.age ? `${profile.age} ${t("settings.age_unit")}` : "—", editable: true },
+          ].map(({ label, value, editable }, i, arr) => {
+            const Row = editable ? TouchableOpacity : View;
+            return (
+              <Row
+                key={label}
+                style={[s.row, i < arr.length - 1 && s.rowBorder]}
+                {...(editable ? { onPress: () => navigation.navigate("EditProfile"), activeOpacity: 0.6 } : {})}
+              >
+                <Text style={s.rowLabel}>{label}</Text>
+                <Text style={s.rowValue} numberOfLines={1}>{value}</Text>
+              </Row>
+            );
+          })}
         </View>
 
         {/* Units */}

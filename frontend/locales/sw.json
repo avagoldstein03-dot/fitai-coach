@@ -1381,6 +1381,7 @@
     "inches": "in",
     "lbs": "lbs",
     "kg": "kg",
-    "error_save": "Haikuweza kuhifadhi mabadiliko yako. Tafadhali jaribu tena."
+    "error_save": "Haikuweza kuhifadhi mabadiliko yako. Tafadhali jaribu tena.",
+    "name": "Jina"
   }
 }

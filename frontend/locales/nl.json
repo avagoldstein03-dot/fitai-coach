@@ -1381,6 +1381,7 @@
     "inches": "in",
     "lbs": "lbs",
     "kg": "kg",
-    "error_save": "Kon je wijzigingen niet opslaan. Probeer het alstublieft opnieuw."
+    "error_save": "Kon je wijzigingen niet opslaan. Probeer het alstublieft opnieuw.",
+    "name": "Naam"
   }
 }

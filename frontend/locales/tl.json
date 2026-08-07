@@ -1381,6 +1381,7 @@
     "inches": "in",
     "lbs": "lbs",
     "kg": "kg",
-    "error_save": "Hindi makapag-save ng iyong mga pagbabago. Subukan ulit."
+    "error_save": "Hindi makapag-save ng iyong mga pagbabago. Subukan ulit.",
+    "name": "Pangalan"
   }
 }

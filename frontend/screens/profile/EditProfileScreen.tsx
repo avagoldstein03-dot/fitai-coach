@@ -21,6 +21,7 @@ import { cmToFtIn, ftInToCm, kgToLbs, lbsToKg } from "@/lib/units";
 const API_URL = process.env.EXPO_PUBLIC_API_URL;
 
 interface ProfileData {
+  name: string | null;
   height: number | null; // cm
   weight: number | null; // kg
   age: number | null;
@@ -42,6 +43,7 @@ export default function EditProfileScreen() {
 
   const isImperial = (profile?.unitSystem ?? "imperial") === "imperial";
 
+  const [name, setName] = useState("");
   const [heightFt, setHeightFt] = useState("");
   const [heightIn, setHeightIn] = useState("");
   const [heightCm, setHeightCm] = useState("");
@@ -50,6 +52,7 @@ export default function EditProfileScreen() {
 
   useEffect(() => {
     if (!profile) return;
+    if (profile.name) setName(profile.name);
     if (profile.height != null) {
       if (isImperial) {
         const { ft, in: inch } = cmToFtIn(profile.height);
@@ -74,6 +77,7 @@ export default function EditProfileScreen() {
       const weightKgValue = isImperial ? lbsToKg(parseFloat(weight || "0")) : parseFloat(weight || "0");
 
       await axios.patch(`${API_URL}/api/auth/profile`, {
+        name: name.trim(),
         height: Math.round(heightCmValue * 10) / 10,
         weight: Math.round(weightKgValue * 10) / 10,
         age: parseInt(age || "0", 10),
@@ -90,7 +94,7 @@ export default function EditProfileScreen() {
   });
 
   const heightOk = isImperial ? !!heightFt : !!heightCm;
-  const canSave = heightOk && !!weight && !!age && !isPending;
+  const canSave = !!name.trim() && heightOk && !!weight && !!age && !isPending;
 
   if (isLoading) {
     return (
@@ -111,6 +115,18 @@ export default function EditProfileScreen() {
         </View>
 
         <ScrollView contentContainerStyle={{ paddingBottom: 40 }} showsVerticalScrollIndicator={false}>
+          <View style={s.card}>
+            <Text style={s.label}>{t("edit_profile.name")}</Text>
+            <TextInput
+              style={s.input}
+              value={name}
+              onChangeText={setName}
+              placeholder={t("edit_profile.name")}
+              placeholderTextColor={T.textMuted}
+              autoCapitalize="words"
+            />
+          </View>
+
           <View style={s.card}>
             <Text style={s.label}>{t("edit_profile.height")}</Text>
             {isImperial ? (

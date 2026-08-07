@@ -1381,6 +1381,7 @@
     "inches": "in",
     "lbs": "lbs",
     "kg": "kg",
-    "error_save": "Změny se nepodařilo uložit. Zkuste to prosím znovu."
+    "error_save": "Změny se nepodařilo uložit. Zkuste to prosím znovu.",
+    "name": "Jméno"
   }
 }

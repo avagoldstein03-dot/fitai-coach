@@ -1381,6 +1381,7 @@
     "inches": "in",
     "lbs": "lbs",
     "kg": "kg",
-    "error_save": "Kunne ikke lagre endringene dine. Prøv igjen."
+    "error_save": "Kunne ikke lagre endringene dine. Prøv igjen.",
+    "name": "Navn"
   }
 }

@@ -1381,6 +1381,7 @@
     "inches": "in",
     "lbs": "lbs",
     "kg": "kg",
-    "error_save": "Nije moguće spremiti promjene. Molimo pokušajte ponovno."
+    "error_save": "Nije moguće spremiti promjene. Molimo pokušajte ponovno.",
+    "name": "Ime"
   }
 }

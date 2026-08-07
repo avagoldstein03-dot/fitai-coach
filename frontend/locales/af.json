@@ -1381,6 +1381,7 @@
     "inches": "duim",
     "lbs": "lbs",
     "kg": "kg",
-    "error_save": "Kon jou veranderinge nie stoor nie. Probeer asseblief weer."
+    "error_save": "Kon jou veranderinge nie stoor nie. Probeer asseblief weer.",
+    "name": "Naam"
   }
 }

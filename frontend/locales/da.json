@@ -1381,6 +1381,7 @@
     "inches": "tommer",
     "lbs": "lbs",
     "kg": "kg",
-    "error_save": "Kunne ikke gemme dine ændringer. Prøv igen."
+    "error_save": "Kunne ikke gemme dine ændringer. Prøv igen.",
+    "name": "Navn"
   }
 }

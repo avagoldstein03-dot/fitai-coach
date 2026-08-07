@@ -1381,6 +1381,7 @@
     "inches": "tum",
     "lbs": "lbs",
     "kg": "kg",
-    "error_save": "Kunde inte spara dina ändringar. Försök igen."
+    "error_save": "Kunde inte spara dina ändringar. Försök igen.",
+    "name": "Namn"
   }
 }

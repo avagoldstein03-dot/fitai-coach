@@ -1317,6 +1317,7 @@
   },
   "edit_profile": {
     "title": "Edit Profile",
+    "name": "Name",
     "height": "Height",
     "weight": "Weight",
     "age": "Age",

@@ -1381,6 +1381,7 @@
     "inches": "in",
     "lbs": "lbs",
     "kg": "kg",
-    "error_save": "Muutoksia ei voitu tallentaa. Yritä uudelleen."
+    "error_save": "Muutoksia ei voitu tallentaa. Yritä uudelleen.",
+    "name": "Nimi"
   }
 }

@@ -1381,6 +1381,7 @@
     "inches": "in",
     "lbs": "lbs",
     "kg": "kg",
-    "error_save": "Değişiklikleriniz kaydedilemedi. Lütfen tekrar deneyin."
+    "error_save": "Değişiklikleriniz kaydedilemedi. Lütfen tekrar deneyin.",
+    "name": "Ad"
   }
 }

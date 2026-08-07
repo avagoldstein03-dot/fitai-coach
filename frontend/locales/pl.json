@@ -1381,6 +1381,7 @@
     "inches": "in",
     "lbs": "lbs",
     "kg": "kg",
-    "error_save": "Nie udało się zapisać zmian. Spróbuj ponownie."
+    "error_save": "Nie udało się zapisać zmian. Spróbuj ponownie.",
+    "name": "Imię"
   }
 }
