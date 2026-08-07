@@ -112,23 +112,20 @@ export default function ProfileScreen() {
 
         {/* Quick Stats */}
         <TouchableOpacity
-          style={s.statsCard}
+          style={s.statsRow}
           activeOpacity={0.7}
           onPress={() => navigation.navigate("EditProfile")}
         >
-          <View style={s.statsRow}>
-            {[
-              { label: t("profile.height"), value: formatHeight(profile?.height, profile?.unitSystem) },
-              { label: t("profile.weight"), value: formatWeight(profile?.weight, profile?.unitSystem) },
-              { label: t("profile.age"),    value: profile?.age ? t("profile.age_value", { age: profile.age }) : "—" },
-            ].map((stat) => (
-              <View key={stat.label} style={s.statItem}>
-                <Text style={s.statValue}>{stat.value}</Text>
-                <Text style={s.statLabel}>{stat.label}</Text>
-              </View>
-            ))}
-          </View>
-          <Text style={s.statsEditHint}>{t("profile.tap_to_edit")}</Text>
+          {[
+            { label: t("profile.height"), value: formatHeight(profile?.height, profile?.unitSystem) },
+            { label: t("profile.weight"), value: formatWeight(profile?.weight, profile?.unitSystem) },
+            { label: t("profile.age"),    value: profile?.age ? t("profile.age_value", { age: profile.age }) : "—" },
+          ].map((stat) => (
+            <View key={stat.label} style={s.statItem}>
+              <Text style={s.statValue}>{stat.value}</Text>
+              <Text style={s.statLabel}>{stat.label}</Text>
+            </View>
+          ))}
         </TouchableOpacity>
 
         {/* Subscription Card */}
@@ -292,7 +289,8 @@ const s = StyleSheet.create({
   joinedText: { fontSize: 11, color: T.textMuted, fontWeight: "600" },
 
   // Stats row
-  statsCard: {
+  statsRow: {
+    flexDirection: "row",
     backgroundColor: T.surface,
     borderRadius: 16,
     borderWidth: 1,
@@ -300,8 +298,6 @@ const s = StyleSheet.create({
     marginBottom: 16,
     overflow: "hidden",
   },
-  statsRow: { flexDirection: "row" },
-  statsEditHint: { fontSize: 11, color: T.textMuted, textAlign: "center", paddingBottom: 10 },
   statItem: {
     flex: 1,
     alignItems: "center",
