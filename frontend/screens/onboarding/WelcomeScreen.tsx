@@ -28,7 +28,7 @@ export default function WelcomeScreen() {
         {/* Hero */}
         <View style={s.hero}>
           <Text style={s.logoEmoji}>🏆</Text>
-          <Text style={s.appName}>Active AI Coach</Text>
+          <Text style={s.appName}>Active AI</Text>
           <Text style={s.tagline}>{t("welcome.tagline")}</Text>
         </View>
 

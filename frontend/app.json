@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "Active AI Coach",
+    "name": "Active AI",
     "slug": "active-ai-coach",
     "version": "1.0.0",
     "scheme": "activeai",
@@ -20,9 +20,9 @@
       "bundleIdentifier": "com.activeai.coach",
       "buildNumber": "1",
       "infoPlist": {
-        "NSCameraUsageDescription": "Active AI Coach uses your camera to capture body scan photos for AI-powered body composition analysis.",
-        "NSPhotoLibraryUsageDescription": "Active AI Coach accesses your photo library to upload progress photos and body scan images.",
-        "NSPhotoLibraryAddUsageDescription": "Active AI Coach saves progress photos to your photo library.",
+        "NSCameraUsageDescription": "Active AI uses your camera to capture body scan photos for AI-powered body composition analysis.",
+        "NSPhotoLibraryUsageDescription": "Active AI accesses your photo library to upload progress photos and body scan images.",
+        "NSPhotoLibraryAddUsageDescription": "Active AI saves progress photos to your photo library.",
         "ITSAppUsesNonExemptEncryption": false
       }
     },
@@ -68,7 +68,7 @@
       [
         "@kingstinct/react-native-healthkit",
         {
-          "NSHealthShareUsageDescription": "Active AI Coach reads your steps, sleep, active energy, heart rate, and weight from Apple Health to reduce manual logging and give your AI coach fuller context on your progress.",
+          "NSHealthShareUsageDescription": "Active AI reads your steps, sleep, active energy, heart rate, and weight from Apple Health to reduce manual logging and give your AI coach fuller context on your progress.",
           "NSHealthUpdateUsageDescription": false,
           "background": false
         }

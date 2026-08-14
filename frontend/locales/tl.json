@@ -411,7 +411,7 @@
     "privacy_policy": "Patakaran sa Privacy",
     "terms_of_service": "Mga Kondisyon ng Serbisyo",
     "privacy_policy_sub": "Paano namin pinangangalagaan ang iyong data",
-    "terms_of_service_sub": "Mga patakaran para sa paggamit ng Active AI Coach",
+    "terms_of_service_sub": "Mga patakaran para sa paggamit ng Active AI",
     "injury_history": "Pinsala & Mobilidad",
     "injury_history_sub": "Tumutulong sa iyong AI coach na iwasan o baguhin ang mga ehersisyo na maaaring lumala dito",
     "injury_placeholder": "hal. masama ang kaliwang tuhod, sakit ng ibabang likod",
@@ -1245,11 +1245,11 @@
     "title": "Bago Kang Magpatuloy",
     "subtitle": "Mangyaring basahin ang mahalagang abiso na ito",
     "agree": "Nauunawaan Ko at Sumasang-ayon",
-    "required": "Kinakailangan upang gamitin ang Active AI Coach",
-    "body_p1": "Gumagamit ang Active AI Coach ng AI upang lumikha ng feedback sa fitness, nutrition, at body composition batay sa mga larawan at impormasyon na iyong ibinibigay.",
+    "required": "Kinakailangan upang gamitin ang Active AI",
+    "body_p1": "Gumagamit ang Active AI ng AI upang lumikha ng feedback sa fitness, nutrition, at body composition batay sa mga larawan at impormasyon na iyong ibinibigay.",
     "body_p2": "Ang content na ito ay AI-generated at maaaring maging hindi tumpak o hindi kumpleto. Hindi ito medikal, nutritional, o propesyonal na payo sa fitness, at hindi ito kapalit ng konsultasyon sa isang qualified na doktor, registered dietitian, o certified trainer.",
     "body_p3": "Laging kumunsulta sa isang qualified na propesyonal bago magsimula ng anumang bagong diet o exercise program, lalo na kung mayroon kang anumang medikal na kondisyon. Huminto kaagad at maghanap ng medikal na atensyon kung nakaranas ka ng sakit, dizziness, o discomfort sa panahon ng ehersisyo.",
-    "body_p4": "Sa pagpapatuloy, kinikilala mo ang mga limitasyong ito at sumasang-ayon na gamitin ang Active AI Coach sa iyong sariling peligro."
+    "body_p4": "Sa pagpapatuloy, kinikilala mo ang mga limitasyong ito at sumasang-ayon na gamitin ang Active AI sa iyong sariling peligro."
   },
   "welcome": {
     "tagline": "Ang iyong AI-powered fitness team,\navailable 24/7",
@@ -1271,7 +1271,7 @@
     "title": "Mga Kaibigan",
     "your_code": "Ang Iyong Kod",
     "share_code": "Ibahagi ang Kod",
-    "share_message": "Panatilihin nating accountable ang isa't isa sa Active AI Coach! Kumonekta sa akin gamit ang kod {{code}}.",
+    "share_message": "Panatilihin nating accountable ang isa't isa sa Active AI! Kumonekta sa akin gamit ang kod {{code}}.",
     "connect_label": "Mayroon ka bang kod ng kaibigan?",
     "code_placeholder": "Ipasok ang kod",
     "connect_button": "Kumonekta",

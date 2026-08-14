@@ -411,7 +411,7 @@
     "privacy_policy": "Politika privatnosti",
     "terms_of_service": "Uvjeti korištenja",
     "privacy_policy_sub": "Kako postupamo s vašim podacima",
-    "terms_of_service_sub": "Pravila korištenja Active AI Coach-a",
+    "terms_of_service_sub": "Pravila korištenja Active AI-a",
     "injury_history": "Ozljede i mobilnost",
     "injury_history_sub": "Pomaže vašem AI treneru da izbjegne ili prilagodi vježbe koje bi mogle pogoršati stanje",
     "injury_placeholder": "npr. loše lijevo koljeno, bol u donjem dijelu leđa",
@@ -1245,11 +1245,11 @@
     "title": "Prije nego što nastaviš",
     "subtitle": "Molimo pročitaj ovu važnu obavijest",
     "agree": "Razumijem i slažem se",
-    "required": "Obavezno za korištenje Active AI Coacha",
-    "body_p1": "Active AI Coach koristi AI za generiranje povratnih informacija o fitnessу, nutritivnim savjetima i sastavu tijela na temelju fotografija i informacija koje ste dali.",
+    "required": "Obavezno za korištenje Active AIa",
+    "body_p1": "Active AI koristi AI za generiranje povratnih informacija o fitnessу, nutritivnim savjetima i sastavu tijela na temelju fotografija i informacija koje ste dali.",
     "body_p2": "Ovaj sadržaj je generiран AI-om i može biti netočan ili nepotpun. Nije medicinski, nutritivni ili profesionalni fitness savjet, niti zamjena za konzultaciju s kvalificiranim liječnikom, registriranim nutricionistom ili certificiranim trenerom.",
     "body_p3": "Prije nego što započnete novu dijetu ili program vježbanja, uvijek se konzultirajte s kvalificiranim stručnjakom, posebno ako imate zdravstvenih problema. Odmah prestanite i potražite medicinske savjete ako osjetite bol, vrtoglavicu ili nelagodu tijekom vježbanja.",
-    "body_p4": "Nastavljanjem potvrđujete ova ograničenja i slažete se da koristite Active AI Coach na vlastiti rizik."
+    "body_p4": "Nastavljanjem potvrđujete ova ograničenja i slažete se da koristite Active AI na vlastiti rizik."
   },
   "welcome": {
     "tagline": "Tvoj AI-pokretan fitness tim,\ndostupan 24/7",
@@ -1271,7 +1271,7 @@
     "title": "Prijatelji",
     "your_code": "Vaš kod",
     "share_code": "Dijelite kod",
-    "share_message": "Hajde da budemo odgovorni jedni drugima na Active AI Coach! Povežite se sa mnom koristeći kod {{code}}.",
+    "share_message": "Hajde da budemo odgovorni jedni drugima na Active AI! Povežite se sa mnom koristeći kod {{code}}.",
     "connect_label": "Imate kod prijatelja?",
     "code_placeholder": "Unesite kod",
     "connect_button": "Povežite se",

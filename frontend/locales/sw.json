@@ -411,7 +411,7 @@
     "privacy_policy": "Sera ya Faragha",
     "terms_of_service": "Masharti ya Huduma",
     "privacy_policy_sub": "Jinsi tunavyohifadhi data yako",
-    "terms_of_service_sub": "Sheria za kutumia Active AI Coach",
+    "terms_of_service_sub": "Sheria za kutumia Active AI",
     "injury_history": "Jeraha & Uhamaji",
     "injury_history_sub": "Husaidia kocha yako wa AI kuepuka au kurekebishwa mazoezi ambayo yanaweza kudhuru hili",
     "injury_placeholder": "k.m. kiwiko kibovu, maumivu ya mgongo",
@@ -1245,11 +1245,11 @@
     "title": "Kabla ya Kuendelea",
     "subtitle": "Tafadhali soma ilani hii muhimu",
     "agree": "Ninaelewa & Kukubali",
-    "required": "Inayohitajika ili kutumia Active AI Coach",
-    "body_p1": "Active AI Coach hutumia AI kutoa maoni kuhusu fitness, elimu ya kufa, na utungaji wa mwili kulingana na picha na taarifa unazotoa.",
+    "required": "Inayohitajika ili kutumia Active AI",
+    "body_p1": "Active AI hutumia AI kutoa maoni kuhusu fitness, elimu ya kufa, na utungaji wa mwili kulingana na picha na taarifa unazotoa.",
     "body_p2": "Maudhui haya yanazalishwa na AI na yanaweza kuwa ya kupotosha au ya kutofautiana. Si ushauri wa kimatibabu, wa kufa, au wa kitaaluma wa fitness, kwa hiyo sio badala ya ushauri kutoka kwa dakitari mwenye ujuzi, mgawaji wa chakula aliyesajiliwa, au mfundishi aliyeidhinisha.",
     "body_p3": "Kamata muongoze mwenye ujuzi kabla ya kuanza mpango wowote mpya wa mlo au zoezi, haswa ikiwa una matatizo yoyote ya kimatibabu. Acha haraka na tafuta msaada wa haraka wa kimatibabu ikiwa unakabiliwa na maumivu, mzunguko, au utamabudu wakati wa zoezi.",
-    "body_p4": "Kwa kuendelea, unakubali vizuizi hivi na kukubaliana na kutumia Active AI Coach kwa hatari yako mwenyewe."
+    "body_p4": "Kwa kuendelea, unakubali vizuizi hivi na kukubaliana na kutumia Active AI kwa hatari yako mwenyewe."
   },
   "welcome": {
     "tagline": "Timu yako ya utendaji inayosimamiwa na AI,\ninapatikana 24/7",
@@ -1271,7 +1271,7 @@
     "title": "Rafiki",
     "your_code": "Nambari Yako",
     "share_code": "Shiriki Nambari",
-    "share_message": "Tuendelee kumkumbuka kila mmoja juu ya Active AI Coach! Unganisha nami kwa kutumia nambari {{code}}.",
+    "share_message": "Tuendelee kumkumbuka kila mmoja juu ya Active AI! Unganisha nami kwa kutumia nambari {{code}}.",
     "connect_label": "Una nambari ya rafiki?",
     "code_placeholder": "Ingiza nambari",
     "connect_button": "Unganisha",

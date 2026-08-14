@@ -411,7 +411,7 @@
     "privacy_policy": "Zásady ochrany osobních údajů",
     "terms_of_service": "Podmínky služby",
     "privacy_policy_sub": "Jak zacházíme s vašimi daty",
-    "terms_of_service_sub": "Pravidla pro používání aplikace Active AI Coach",
+    "terms_of_service_sub": "Pravidla pro používání aplikace Active AI",
     "injury_history": "Zranění a mobilita",
     "injury_history_sub": "Pomáhá vašemu AI trenérovi vyhnout se nebo upravit cvičení, která by mohla toto zhoršit",
     "injury_placeholder": "např. špatné levé koleno, bolest v dolní části zad",
@@ -1245,11 +1245,11 @@
     "title": "Než budete pokračovat",
     "subtitle": "Prosím přečtěte si toto důležité upozornění",
     "agree": "Rozumím a souhlasím",
-    "required": "Vyžadováno pro použití Active AI Coach",
-    "body_p1": "Active AI Coach využívá AI k vytváření zpětné vazby o fitness, výživě a složení těla na základě fotek a informací, které poskytnete.",
+    "required": "Vyžadováno pro použití Active AI",
+    "body_p1": "Active AI využívá AI k vytváření zpětné vazby o fitness, výživě a složení těla na základě fotek a informací, které poskytnete.",
     "body_p2": "Tento obsah je generován umělou inteligencí a může být nepřesný nebo neúplný. Nejedná se o lékařskou, nutriční ani odbornou fitness radu a není náhradou za konzultaci s kvalifikovaným lékařem, registrovaným nutriční terapeautem nebo certifikovaným trenérem.",
     "body_p3": "Vždy se před zahájením jakéhokoliv nového dietního nebo cvičebního programu poraďte s kvalifikovaným odborníkem, zejména pokud máte nějaké zdravotní potíže. Pokud během cvičení pociťujete bolest, závratě nebo diskomfort, okamžitě přestaňte a vyhledejte lékařskou pomoc.",
-    "body_p4": "Pokračováním potvrzujete tato omezení a souhlasíte s používáním aplikace Active AI Coach na vlastní nebezpečí."
+    "body_p4": "Pokračováním potvrzujete tato omezení a souhlasíte s používáním aplikace Active AI na vlastní nebezpečí."
   },
   "welcome": {
     "tagline": "Váš AI-poháněný fitness tým,\ndostupný 24/7",
@@ -1271,7 +1271,7 @@
     "title": "Přátelé",
     "your_code": "Váš kód",
     "share_code": "Sdílet kód",
-    "share_message": "Pojďme se navzájem kontrolovat v Active AI Coach! Připoj se ke mně pomocí kódu {{code}}.",
+    "share_message": "Pojďme se navzájem kontrolovat v Active AI! Připoj se ke mně pomocí kódu {{code}}.",
     "connect_label": "Máš kód od přítele?",
     "code_placeholder": "Zadej kód",
     "connect_button": "Připojit",

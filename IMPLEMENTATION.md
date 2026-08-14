@@ -1,4 +1,4 @@
-# Active AI Coach - Implementation Summary
+# Active AI - Implementation Summary
 
 > **Update (2026-07):** Phases 3-6 (Food Scanner, Workout Generation, Nutrition Planning, AI Coach) are also complete — this doc's phase-by-phase writeups below predate that work and only cover Phases 1, 2, and 7 in detail. See the "Development Phases" table in [README.md](./README.md) for current status. Also note: Phase 2's photo upload now stores to S3 (`backend/lib/s3.ts`), not local disk as described below. Security section at the bottom is superseded — rate limiting, security headers, and account-deletion S3 cleanup are now implemented.
 
@@ -6,7 +6,7 @@
 
 ### ✅ COMPLETED - Phase 1: Authentication & Onboarding
 
-The complete foundation for Active AI Coach has been implemented, including:
+The complete foundation for Active AI has been implemented, including:
 
 #### Backend Infrastructure
 - **Next.js API Routes**: Production-ready API structure
@@ -558,7 +558,7 @@ npm run dev
 
 ## Conclusion
 
-Active AI Coach Phase 1 is **complete and production-ready**. The foundation is solid with:
+Active AI Phase 1 is **complete and production-ready**. The foundation is solid with:
 - Type-safe codebase (TypeScript throughout)
 - Clean architecture (separation of concerns)
 - Scalable infrastructure (modular structure)

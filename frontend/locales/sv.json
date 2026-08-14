@@ -411,7 +411,7 @@
     "privacy_policy": "Integritetspolicy",
     "terms_of_service": "Användarvillkor",
     "privacy_policy_sub": "Hur vi hanterar dina data",
-    "terms_of_service_sub": "Regler för att använda Active AI Coach",
+    "terms_of_service_sub": "Regler för att använda Active AI",
     "injury_history": "Skador & Rörlighet",
     "injury_history_sub": "Hjälper din AI-coach att undvika eller modifiera övningar som kan förvärra detta",
     "injury_placeholder": "t.ex. dåligt vänster knä, lägre ryggsmärta",
@@ -1245,11 +1245,11 @@
     "title": "Innan du fortsätter",
     "subtitle": "Läs denna viktiga notis",
     "agree": "Jag förstår och accepterar",
-    "required": "Krävs för att använda Active AI Coach",
-    "body_p1": "Active AI Coach använder AI för att generera feedback om träning, näring och kroppssammansättning baserat på foton och information du tillhandahåller.",
+    "required": "Krävs för att använda Active AI",
+    "body_p1": "Active AI använder AI för att generera feedback om träning, näring och kroppssammansättning baserat på foton och information du tillhandahåller.",
     "body_p2": "Detta innehål är AI-genererat och kan vara felaktigt eller ofullständigt. Det är inte medicinsk, näringsmässig eller professionell träningsrådgivning, och det är inte en ersättning för konsultation med en kvalificerad läkare, registrerad dietist eller certifierad tränare.",
     "body_p3": "Konsultera alltid en kvalificerad professionell innan du påbörjar något nytt diet- eller träningsprogram, särskilt om du har några medicinska tillstånd. Sluta omedelbar och söka medicinsk vård om du upplever smärta, yrsel eller obehag under träning.",
-    "body_p4": "Genom att fortsätta bekräftar du dessa begränsningar och godkänner att använda Active AI Coach på egen risk."
+    "body_p4": "Genom att fortsätta bekräftar du dessa begränsningar och godkänner att använda Active AI på egen risk."
   },
   "welcome": {
     "tagline": "Ditt AI-drivna träningsteam,\ntillgängligt 24/7",
@@ -1271,7 +1271,7 @@
     "title": "Vänner",
     "your_code": "Din kod",
     "share_code": "Dela kod",
-    "share_message": "Låt oss hålla varandra ansvariga på Active AI Coach! Anslut till mig med koden {{code}}.",
+    "share_message": "Låt oss hålla varandra ansvariga på Active AI! Anslut till mig med koden {{code}}.",
     "connect_label": "Har du en väns kod?",
     "code_placeholder": "Ange kod",
     "connect_button": "Anslut",

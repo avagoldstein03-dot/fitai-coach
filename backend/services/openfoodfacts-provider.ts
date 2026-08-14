@@ -21,7 +21,7 @@ export async function lookupProduct(barcode: string): Promise<OFFProduct | null>
     const response = await axios.get(`${OFF_BASE_URL}/${encodeURIComponent(barcode)}.json`, {
       params: { fields: FIELDS },
       timeout: 8000,
-      headers: { "User-Agent": "ActiveAICoach/1.0 (support@activeaicoach.app)" },
+      headers: { "User-Agent": "ActiveAI/1.0 (support@activeai.app)" },
     });
 
     if (response.data?.status !== 1 || !response.data?.product) {

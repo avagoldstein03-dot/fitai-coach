@@ -1,4 +1,4 @@
-# Active AI Coach
+# Active AI
 
 Production-ready mobile fitness coaching application powered by AI.
 
@@ -168,4 +168,4 @@ STRIPE_WEBHOOK_SECRET=whsec_...
 
 ## License
 
-Proprietary - Active AI Coach
+Proprietary - Active AI

@@ -411,7 +411,7 @@
     "privacy_policy": "개인정보처리방침",
     "terms_of_service": "서비스 약관",
     "privacy_policy_sub": "귀하의 데이터를 어떻게 처리하는지",
-    "terms_of_service_sub": "Active AI Coach 사용 규칙",
+    "terms_of_service_sub": "Active AI 사용 규칙",
     "injury_history": "부상 및 움직임",
     "injury_history_sub": "AI 코치가 이를 악화시킬 수 있는 운동을 피하거나 수정하는 데 도움이 됩니다",
     "injury_placeholder": "예: 왼쪽 무릎 통증, 허리 통증",
@@ -1246,10 +1246,10 @@
     "subtitle": "이 중요한 공지를 읽어주세요",
     "agree": "이해하고 동의합니다",
     "required": "FitAI 코치를 사용하려면 필수입니다",
-    "body_p1": "Active AI Coach는 AI를 사용하여 제공된 사진과 정보를 기반으로 피트니스, 영양, 신체 구성 피드백을 생성합니다.",
+    "body_p1": "Active AI는 AI를 사용하여 제공된 사진과 정보를 기반으로 피트니스, 영양, 신체 구성 피드백을 생성합니다.",
     "body_p2": "이 콘텐츠는 AI가 생성한 것으로 부정확하거나 불완전할 수 있습니다. 이는 의료, 영양 또는 전문 피트니스 조언이 아니며, 자격 있는 의사, 등록된 영양사 또는 공인 트레이너와의 상담을 대신할 수 없습니다.",
     "body_p3": "새로운 식단이나 운동 프로그램을 시작하기 전에 항상 자격 있는 전문가와 상담하세요. 특히 의료 조건이 있는 경우에는 더욱 그렇습니다. 운동 중 통증, 어지러움 또는 불편함을 느끼면 즉시 중단하고 의료 지원을 받으세요.",
-    "body_p4": "계속 진행하면 이러한 제한사항을 인정하고 Active AI Coach를 본인의 책임 하에 사용하기로 동의합니다."
+    "body_p4": "계속 진행하면 이러한 제한사항을 인정하고 Active AI를 본인의 책임 하에 사용하기로 동의합니다."
   },
   "welcome": {
     "tagline": "당신의 AI 기반 피트니스 팀,\n24/7 이용 가능",
@@ -1271,7 +1271,7 @@
     "title": "친구",
     "your_code": "내 코드",
     "share_code": "코드 공유",
-    "share_message": "Active AI Coach에서 함께 책임감 있게 운동해요! 코드 {{code}}로 저와 연결하세요.",
+    "share_message": "Active AI에서 함께 책임감 있게 운동해요! 코드 {{code}}로 저와 연결하세요.",
     "connect_label": "친구의 코드가 있으신가요?",
     "code_placeholder": "코드 입력",
     "connect_button": "연결",

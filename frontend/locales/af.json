@@ -411,7 +411,7 @@
     "privacy_policy": "Privacybeleid",
     "terms_of_service": "Diensvoorwaardes",
     "privacy_policy_sub": "Hoe ons jou data hanteer",
-    "terms_of_service_sub": "Reëls vir die gebruik van Active AI Coach",
+    "terms_of_service_sub": "Reëls vir die gebruik van Active AI",
     "injury_history": "Beserings & Mobiliteit",
     "injury_history_sub": "Help jou AI-afrigter oefeninge wat dit kan vererger vermy of wysig",
     "injury_placeholder": "bv. swak linker knie, onderrugpyn",
@@ -1245,11 +1245,11 @@
     "title": "Voordat jy voortgaan",
     "subtitle": "Lees asseblief hierdie belangrike opmerking",
     "agree": "Ek verstaan en stem saam",
-    "required": "Vereist om Active AI Coach te gebruik",
-    "body_p1": "Active AI Coach gebruik AI om fiksheid-, voeding- en liggaamsamestelling-terugvoer te genereer op grond van foto's en inligting wat jy verskaf.",
+    "required": "Vereist om Active AI te gebruik",
+    "body_p1": "Active AI gebruik AI om fiksheid-, voeding- en liggaamsamestelling-terugvoer te genereer op grond van foto's en inligting wat jy verskaf.",
     "body_p2": "Hierdie inhoud word deur AI gegenereer en kan onakkuraat of onvolledig wees. Dit is nie mediese, voedings- of professionele fiksheidsadvies nie, en dit is nie 'n plaasvervanger vir konsultasie met 'n gekwalifiseerde dokter, geregistreerde diëtisyn of gesertifiseerde afrigter nie.",
     "body_p3": "Raadpleeg altyd 'n gekwalifiseerde professioneel voordat jy enige nuwe dieet- of oefenprogram begin, veral as jy enige mediese toestande het. Stop onmiddellik en soek mediese hulp as jy pyn, duiseligheid of ongemak tydens oefening ondervind.",
-    "body_p4": "Deur voort te gaan, erken jy hierdie beperkings en stem in om Active AI Coach op jou eie risiko te gebruik."
+    "body_p4": "Deur voort te gaan, erken jy hierdie beperkings en stem in om Active AI op jou eie risiko te gebruik."
   },
   "welcome": {
     "tagline": "Jou AI-aangedrewe fitnesspan,\nbeskikbaar 24/7",
@@ -1271,7 +1271,7 @@
     "title": "Vriende",
     "your_code": "Jou Kode",
     "share_code": "Deel Kode",
-    "share_message": "Laat ons mekaar aanspreeklik hou op Active AI Coach! Koppel met my deur kode {{code}} te gebruik.",
+    "share_message": "Laat ons mekaar aanspreeklik hou op Active AI! Koppel met my deur kode {{code}} te gebruik.",
     "connect_label": "Het jy 'n vriend se kode?",
     "code_placeholder": "Voer kode in",
     "connect_button": "Koppel",

@@ -411,7 +411,7 @@
     "privacy_policy": "Политика приватности",
     "terms_of_service": "Условима коришћења",
     "privacy_policy_sub": "Како управљамо вашим податцима",
-    "terms_of_service_sub": "Правила за коришћење Active AI Coach апликације",
+    "terms_of_service_sub": "Правила за коришћење Active AI апликације",
     "injury_history": "Повреде и покретљивост",
     "injury_history_sub": "Помаже вашем AI тренеру да избегне или модификује вежбе које би могле да погоршају ово",
     "injury_placeholder": "нпр. лоше лево колено, болови у доњој части леђа",
@@ -1246,10 +1246,10 @@
     "subtitle": "Molimo pročitaj ovu važnu obavezu",
     "agree": "Razumem i prihvatam",
     "required": "Obavezno za korišćenje FitAI trenera",
-    "body_p1": "Active AI Coach користи вештачку интелигенцију да генерише повратне информације о физичкој активности, исхрани и телесном саставу на основу фотографија и информација које дате.",
+    "body_p1": "Active AI користи вештачку интелигенцију да генерише повратне информације о физичкој активности, исхрани и телесном саставу на основу фотографија и информација које дате.",
     "body_p2": "Овај садржај је генерисан помоћу вештачке интелигенције и може бити неправилан или непотпун. Није медицински, нутритивни или професионални савет о физичкој активности, нити замењује консултацију са квалификованим лекаром, регистрованим дијететичаром или сертификованим тренером.",
     "body_p3": "Увек консултујте квалификованог стручњака пре него што почнете нову исхрану или програм вежби, посебно ако имате медицинске проблеме. Одмах престаните и потражите медицинску помоћ ако осетите болезину, вртоглавицу или неудобност током вежбања.",
-    "body_p4": "Наставком признајете та ограничења и слажете се да користите Active AI Coach на своју одговорност."
+    "body_p4": "Наставком признајете та ограничења и слажете се да користите Active AI на своју одговорност."
   },
   "welcome": {
     "tagline": "Tvoj AI-napajani fitnes tim,\ndostupan 24/7",
@@ -1271,7 +1271,7 @@
     "title": "Prijatelji",
     "your_code": "Vaš kod",
     "share_code": "Podelite kod",
-    "share_message": "Hajde da budemo odgovorni jedni prema drugima na Active AI Coach! Povežite se sa mnom koristeći kod {{code}}.",
+    "share_message": "Hajde da budemo odgovorni jedni prema drugima na Active AI! Povežite se sa mnom koristeći kod {{code}}.",
     "connect_label": "Imate kod prijatelja?",
     "code_placeholder": "Unesite kod",
     "connect_button": "Povežite se",

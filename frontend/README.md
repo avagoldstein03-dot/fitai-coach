@@ -1,4 +1,4 @@
-# Active AI Coach - Mobile App (React Native/Expo)
+# Active AI - Mobile App (React Native/Expo)
 
 Production-ready fitness coaching mobile application built with React Native and Expo.
 

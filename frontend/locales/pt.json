@@ -411,7 +411,7 @@
     "privacy_policy": "Política de Privacidade",
     "terms_of_service": "Termos de Serviço",
     "privacy_policy_sub": "Como tratamos seus dados",
-    "terms_of_service_sub": "Regras para usar o Active AI Coach",
+    "terms_of_service_sub": "Regras para usar o Active AI",
     "injury_history": "Lesões e Mobilidade",
     "injury_history_sub": "Ajuda seu treinador de IA a evitar ou modificar exercícios que possam agravar isso",
     "injury_placeholder": "ex. joelho esquerdo ruim, dor nas costas",
@@ -1245,11 +1245,11 @@
     "title": "Antes de Continuar",
     "subtitle": "Por favor, leia este aviso importante",
     "agree": "Compreendo e Concordo",
-    "required": "Obrigatório para usar Active AI Coach",
-    "body_p1": "O Active AI Coach usa IA para gerar feedback sobre fitness, nutrição e composição corporal baseado em fotos e informações que você fornece.",
+    "required": "Obrigatório para usar Active AI",
+    "body_p1": "O Active AI usa IA para gerar feedback sobre fitness, nutrição e composição corporal baseado em fotos e informações que você fornece.",
     "body_p2": "Este conteúdo é gerado por IA e pode ser impreciso ou incompleto. Não constitui aconselhamento médico, nutricional ou profissional de fitness, e não substitui uma consulta com um médico qualificado, nutricionista registrado ou treinador certificado.",
     "body_p3": "Sempre consulte um profissional qualificado antes de iniciar qualquer nova dieta ou programa de exercícios, especialmente se tiver alguma condição médica. Pare imediatamente e procure atendimento médico se sentir dor, tontura ou desconforto durante o exercício.",
-    "body_p4": "Ao continuar, você reconhece essas limitações e concorda em usar o Active AI Coach por sua própria conta e risco."
+    "body_p4": "Ao continuar, você reconhece essas limitações e concorda em usar o Active AI por sua própria conta e risco."
   },
   "welcome": {
     "tagline": "Seu time de fitness com IA,\ndisponível 24/7",
@@ -1271,7 +1271,7 @@
     "title": "Amigos",
     "your_code": "Seu Código",
     "share_code": "Compartilhar Código",
-    "share_message": "Vamos nos manter motivados no Active AI Coach! Conecte-se comigo usando o código {{code}}.",
+    "share_message": "Vamos nos manter motivados no Active AI! Conecte-se comigo usando o código {{code}}.",
     "connect_label": "Tem o código de um amigo?",
     "code_placeholder": "Digite o código",
     "connect_button": "Conectar",

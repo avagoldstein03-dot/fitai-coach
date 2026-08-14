@@ -411,7 +411,7 @@
     "privacy_policy": "プライバシーポリシー",
     "terms_of_service": "利用規約",
     "privacy_policy_sub": "お客様のデータの取り扱い方法",
-    "terms_of_service_sub": "Active AI Coachの使用ルール",
+    "terms_of_service_sub": "Active AIの使用ルール",
     "injury_history": "ケガと可動域",
     "injury_history_sub": "AIコーチが悪化の可能性のあるエクササイズを回避または変更するのに役立ちます",
     "injury_placeholder": "例：左膝が悪い、腰痛",
@@ -1245,11 +1245,11 @@
     "title": "続行する前に",
     "subtitle": "この重要な通知をお読みください",
     "agree": "理解して同意します",
-    "required": "Active AI Coachを使用するために必要",
-    "body_p1": "Active AI Coachは、AIを使用して、提供していただいた写真と情報に基づいて、フィットネス、栄養、体組成に関するフィードバックを生成します。",
+    "required": "Active AIを使用するために必要",
+    "body_p1": "Active AIは、AIを使用して、提供していただいた写真と情報に基づいて、フィットネス、栄養、体組成に関するフィードバックを生成します。",
     "body_p2": "このコンテンツはAIが生成したもので、不正確または不完全である可能性があります。これは医学的、栄養学的、または専門的なフィットネスアドバイスではなく、医師、管理栄養士、または認定トレーナーへの相談に代わるものではありません。",
     "body_p3": "新しいダイエットまたはエクササイズプログラムを開始する前に、常に資格のある専門家に相談してください。特に医学的な状態がある場合はそうしてください。運動中に痛み、めまい、または不快感を感じた場合は、すぐに中止して医療を受けてください。",
-    "body_p4": "続行することで、これらの制限を認識し、Active AI Coachを自己責任で使用することに同意します。"
+    "body_p4": "続行することで、これらの制限を認識し、Active AIを自己責任で使用することに同意します。"
   },
   "welcome": {
     "tagline": "あなたのAI搭載フィットネスチーム、\n24/7利用可能",
@@ -1271,7 +1271,7 @@
     "title": "フレンド",
     "your_code": "あなたのコード",
     "share_code": "コードを共有",
-    "share_message": "Active AI Coachで一緒に頑張ろう！コード{{code}}で私とつながってください。",
+    "share_message": "Active AIで一緒に頑張ろう！コード{{code}}で私とつながってください。",
     "connect_label": "フレンドのコードはありますか？",
     "code_placeholder": "コードを入力",
     "connect_button": "つながる",

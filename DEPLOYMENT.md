@@ -1,4 +1,4 @@
-# Active AI Coach - Deployment Guide
+# Active AI - Deployment Guide
 
 ## Deployment Architecture
 

@@ -411,7 +411,7 @@
     "privacy_policy": "Zásady ochrany osobných údajov",
     "terms_of_service": "Podmienky používania",
     "privacy_policy_sub": "Ako zaobchodávame s vašimi údajmi",
-    "terms_of_service_sub": "Pravidlá používania aplikácie Active AI Coach",
+    "terms_of_service_sub": "Pravidlá používania aplikácie Active AI",
     "injury_history": "Zranenia a mobilita",
     "injury_history_sub": "Pomôže vášmu AI koučovi vyhnúť sa alebo upraviť cvičenia, ktoré by mohli toto zhoršiť",
     "injury_placeholder": "napr. zlé ľavé koleno, bolesť dolného chrbta",
@@ -1245,11 +1245,11 @@
     "title": "Pred pokračovaním",
     "subtitle": "Prosím, prečítaj si túto dôležitú poznámku",
     "agree": "Rozumiem a súhlasím",
-    "required": "Vyžaduje sa na používanie Active AI Coach",
-    "body_p1": "Active AI Coach používa AI na generovanie spätnej väzby o fitness, výžive a zložení tela na základe fotografií a informácií, ktoré poskytnete.",
+    "required": "Vyžaduje sa na používanie Active AI",
+    "body_p1": "Active AI používa AI na generovanie spätnej väzby o fitness, výžive a zložení tela na základe fotografií a informácií, ktoré poskytnete.",
     "body_p2": "Tento obsah je generovaný AI a môže byť nepresný alebo neúplný. Nejde o lekársku, výživovú alebo profesionálnu fitness poradenstvo a nie je náhradou za konzultáciu s kvalifikovaným lekárom, registrovaným nutričným špecialista alebo certifikovaným trénerom.",
     "body_p3": "Pred začatím akéhokoľvek nového diétneho programu alebo cvičebného režimu vždy konzultujte s kvalifikovaným odborníkom, najmä ak máte akékoľvek zdravotné problémy. Ak počas cvičenia pociťujete bolesť, závrat alebo nepohodlie, ihneď prestanite a vyhľadajte lekársku pomoc.",
-    "body_p4": "Pokračovaním potvrdzujete tieto obmedzenia a súhlasíte s používaním aplikácie Active AI Coach na vlastné riziko."
+    "body_p4": "Pokračovaním potvrdzujete tieto obmedzenia a súhlasíte s používaním aplikácie Active AI na vlastné riziko."
   },
   "welcome": {
     "tagline": "Tvoj AI-poháňaný fitness tím,\ndostupný 24/7",
@@ -1271,7 +1271,7 @@
     "title": "Priatelia",
     "your_code": "Váš kód",
     "share_code": "Zdieľať kód",
-    "share_message": "Zostaňme si navzájom zodpovední v Active AI Coach! Pripojte sa ku mne pomocou kódu {{code}}.",
+    "share_message": "Zostaňme si navzájom zodpovední v Active AI! Pripojte sa ku mne pomocou kódu {{code}}.",
     "connect_label": "Máte kód svojho priateľa?",
     "code_placeholder": "Zadajte kód",
     "connect_button": "Pripojiť",

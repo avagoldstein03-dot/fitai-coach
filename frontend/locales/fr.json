@@ -411,7 +411,7 @@
     "privacy_policy": "Politique de confidentialité",
     "terms_of_service": "Conditions d'utilisation",
     "privacy_policy_sub": "Comment nous traitons vos données",
-    "terms_of_service_sub": "Règles d'utilisation de Active AI Coach",
+    "terms_of_service_sub": "Règles d'utilisation de Active AI",
     "injury_history": "Blessures & Mobilité",
     "injury_history_sub": "Aide votre coach IA à éviter ou modifier les exercices qui pourraient aggraver cela",
     "injury_placeholder": "ex. mauvais genou gauche, douleur lombaire",
@@ -1245,11 +1245,11 @@
     "title": "Avant de continuer",
     "subtitle": "Veuillez lire cet avis important",
     "agree": "Je comprends et accepte",
-    "required": "Obligatoire pour utiliser Active AI Coach",
-    "body_p1": "Active AI Coach utilise l'IA pour générer des retours sur la forme physique, la nutrition et la composition corporelle basés sur les photos et informations que vous fournissez.",
+    "required": "Obligatoire pour utiliser Active AI",
+    "body_p1": "Active AI utilise l'IA pour générer des retours sur la forme physique, la nutrition et la composition corporelle basés sur les photos et informations que vous fournissez.",
     "body_p2": "Ce contenu est généré par l'IA et peut être inexact ou incomplet. Il ne constitue pas un conseil médical, nutritionnel ou professionnel en matière de fitness, et ne remplace pas une consultation avec un médecin qualifié, un diététicien agréé ou un entraîneur certifié.",
     "body_p3": "Consultez toujours un professionnel qualifié avant de commencer un nouveau régime ou programme d'exercice, en particulier si vous avez des problèmes de santé. Arrêtez immédiatement et consultez un médecin si vous ressentez de la douleur, des étourdissements ou de l'inconfort pendant l'exercice.",
-    "body_p4": "En continuant, vous reconnaissez ces limitations et acceptez d'utiliser Active AI Coach à vos propres risques."
+    "body_p4": "En continuant, vous reconnaissez ces limitations et acceptez d'utiliser Active AI à vos propres risques."
   },
   "welcome": {
     "tagline": "Votre équipe de fitness alimentée par l'IA,\ndisponible 24h/24, 7j/7",
@@ -1271,7 +1271,7 @@
     "title": "Amis",
     "your_code": "Votre Code",
     "share_code": "Partager le Code",
-    "share_message": "Restons responsables ensemble sur Active AI Coach ! Connectez-vous avec moi en utilisant le code {{code}}.",
+    "share_message": "Restons responsables ensemble sur Active AI ! Connectez-vous avec moi en utilisant le code {{code}}.",
     "connect_label": "Avez-vous le code d'un ami ?",
     "code_placeholder": "Entrez le code",
     "connect_button": "Connecter",

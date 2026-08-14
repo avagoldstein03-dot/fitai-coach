@@ -411,7 +411,7 @@
     "privacy_policy": "Tietosuojakäytäntö",
     "terms_of_service": "Käyttöehdot",
     "privacy_policy_sub": "Kuinka käsittelemme tietojasi",
-    "terms_of_service_sub": "Säännöt Active AI Coachin käyttöön",
+    "terms_of_service_sub": "Säännöt Active AIin käyttöön",
     "injury_history": "Loukkaantumiset ja liikkuvuus",
     "injury_history_sub": "Auttaa AI-valmentajaasi välttämään tai muokkaamaan liikkeitä, jotka voivat pahentaa tilannetta",
     "injury_placeholder": "esim. huono vasen polvi, alaselkäkipu",
@@ -1245,11 +1245,11 @@
     "title": "Ennen kuin jatkat",
     "subtitle": "Lue tämä tärkeä ilmoitus",
     "agree": "Ymmärrän ja hyväksyn",
-    "required": "Vaaditaan Active AI Coachin käyttöön",
-    "body_p1": "Active AI Coach käyttää tekoälyä tuottaakseen kunto-, ravitsemus- ja kehonkoostumuspalautetta sinulle toimittamiesi kuvien ja tietojen perusteella.",
+    "required": "Vaaditaan Active AIin käyttöön",
+    "body_p1": "Active AI käyttää tekoälyä tuottaakseen kunto-, ravitsemus- ja kehonkoostumuspalautetta sinulle toimittamiesi kuvien ja tietojen perusteella.",
     "body_p2": "Tämä sisältö on tekoälyn tuottamaa ja voi olla epätarkkaa tai puutteellista. Se ei ole lääketieteellistä, ravitsemusneuvontaa tai ammattimaista kuntoliikuntaneuvontaa, eikä se korvaa pätevän lääkärin, rekisteröidyn ravitsemusterapeutin tai sertifioidun valmentajan neuvontaa.",
     "body_p3": "Konsultoi aina pätevää ammattilaista ennen kuin aloitat uuden ruokavalion tai liikuntaohjelman, erityisesti jos sinulla on terveysongelmia. Lopeta välittömästi ja hae sairaanhoidollista apua, jos koet kipua, huimausta tai epämukavuutta liikuntaa harjoittaessa.",
-    "body_p4": "Jatkamalla tunnustat nämä rajoitukset ja hyväksyt Active AI Coachin käytön omalla vastuullasi."
+    "body_p4": "Jatkamalla tunnustat nämä rajoitukset ja hyväksyt Active AIin käytön omalla vastuullasi."
   },
   "welcome": {
     "tagline": "Sinun tekoälyjohtainen kuntoilutiimisi,\nsaatavilla 24/7",
@@ -1271,7 +1271,7 @@
     "title": "Ystävät",
     "your_code": "Sinun koodi",
     "share_code": "Jaa koodi",
-    "share_message": "Pidetään toisistamme huolta Active AI Coachilla! Muodosta yhteys kanssani koodilla {{code}}.",
+    "share_message": "Pidetään toisistamme huolta Active AIilla! Muodosta yhteys kanssani koodilla {{code}}.",
     "connect_label": "Onko sinulla ystävän koodi?",
     "code_placeholder": "Syötä koodi",
     "connect_button": "Muodosta yhteys",

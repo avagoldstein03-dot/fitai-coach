@@ -1,8 +1,8 @@
-# Active AI Coach - Subscription Implementation Complete ✅
+# Active AI - Subscription Implementation Complete ✅
 
 ## Summary
 
-The complete subscription system for Active AI Coach has been implemented and is production-ready. Users can now:
+The complete subscription system for Active AI has been implemented and is production-ready. Users can now:
 
 - **Browse pricing tiers** with clear feature comparison
 - **Upgrade to premium** via Stripe checkout
@@ -154,7 +154,7 @@ stripe trigger customer.subscription.created
    - Configure webhook in Stripe Dashboard
 
 3. **Create Production Products**
-   - Add "Active AI Coach Premium" product
+   - Add "Active AI Premium" product
    - Create $9.99/month pricing
    - Note the Price ID
 

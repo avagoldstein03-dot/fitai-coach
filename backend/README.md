@@ -1,4 +1,4 @@
-# Active AI Coach Backend
+# Active AI Backend
 
 Next.js API backend with PostgreSQL and Prisma ORM.
 

@@ -411,7 +411,7 @@
     "privacy_policy": "Gizlilik Politikası",
     "terms_of_service": "Hizmet Şartları",
     "privacy_policy_sub": "Verilerinizi nasıl işlediğimiz",
-    "terms_of_service_sub": "Active AI Coach kullanım kuralları",
+    "terms_of_service_sub": "Active AI kullanım kuralları",
     "injury_history": "Yaralanmalar & Hareket Kabiliyeti",
     "injury_history_sub": "Yapay zeka antrenörünüzün bu sorunu ağırlaştırabilecek egzersizleri önlemesine veya değiştirmesine yardımcı olur",
     "injury_placeholder": "örn. sol diz ağrısı, bel ağrısı",
@@ -1245,11 +1245,11 @@
     "title": "Devam Etmeden Önce",
     "subtitle": "Lütfen bu önemli bildirimi okuyun",
     "agree": "Anlıyorum ve Kabul Ediyorum",
-    "required": "Active AI Coach kullanmak için gerekli",
-    "body_p1": "Active AI Coach, sağladığınız fotoğraf ve bilgilere dayalı olarak fitness, beslenme ve beden kompozisyonu hakkında geribildirim oluşturmak için yapay zekayı kullanır.",
+    "required": "Active AI kullanmak için gerekli",
+    "body_p1": "Active AI, sağladığınız fotoğraf ve bilgilere dayalı olarak fitness, beslenme ve beden kompozisyonu hakkında geribildirim oluşturmak için yapay zekayı kullanır.",
     "body_p2": "Bu içerik yapay zeka tarafından oluşturulmuş olup yanlış veya eksik olabilir. Tıbbi, beslenme veya profesyonel fitness tavsiyesi değildir ve nitelikli bir doktor, kayıtlı diyetisyen veya sertifikalı antrenör ile danışmanın yerine geçmez.",
     "body_p3": "Özellikle tıbbi koşullarınız varsa, herhangi bir yeni diyet veya egzersiz programına başlamadan önce her zaman nitelikli bir profesyonelle danışın. Egzersiz sırasında ağrı, başdönmesi veya rahatsızlık hissederseniz hemen durdurun ve tıbbi yardım alın.",
-    "body_p4": "Devam ederek, bu sınırlamaları kabul etmiş olursunuz ve Active AI Coach'u kendi sorumluluğunuzda kullanmayı kabul edersiniz."
+    "body_p4": "Devam ederek, bu sınırlamaları kabul etmiş olursunuz ve Active AI'u kendi sorumluluğunuzda kullanmayı kabul edersiniz."
   },
   "welcome": {
     "tagline": "Senin Yapay Zeka Fitness Takımın,\n7/24 kullanılabilir",
@@ -1271,7 +1271,7 @@
     "title": "Arkadaşlar",
     "your_code": "Kodunuz",
     "share_code": "Kodu Paylaş",
-    "share_message": "Active AI Coach'ta birbirimizi motive edelim! {{code}} kodunu kullanarak benimle bağlan.",
+    "share_message": "Active AI'ta birbirimizi motive edelim! {{code}} kodunu kullanarak benimle bağlan.",
     "connect_label": "Bir arkadaşının kodu var mı?",
     "code_placeholder": "Kodu girin",
     "connect_button": "Bağlan",

@@ -411,7 +411,7 @@
     "privacy_policy": "Adatvédelmi Nyilatkozat",
     "terms_of_service": "Szolgáltatási Feltételek",
     "privacy_policy_sub": "Hogyan kezeljük az adataidat",
-    "terms_of_service_sub": "A Active AI Coach használatának szabályai",
+    "terms_of_service_sub": "A Active AI használatának szabályai",
     "injury_history": "Sérülések és mobilitás",
     "injury_history_sub": "Segít az AI edzőodnek elkerülni vagy módosítani azokat a gyakorlatokat, amelyek ezt súlyosbíthatnák",
     "injury_placeholder": "pl. rossz bal térd, alsó hátfájdalom",
@@ -1245,11 +1245,11 @@
     "title": "Mielőtt folytatnál",
     "subtitle": "Kérjük, olvass el ezt a fontos közleményt",
     "agree": "Megértettem és egyetértek",
-    "required": "A Active AI Coach használatához szükséges",
-    "body_p1": "A Active AI Coach mesterséges intelligenciát használ az edzés-, táplálkozás- és testösszetétel-elemzéshez az Ön által szolgáltatott fotók és információk alapján.",
+    "required": "A Active AI használatához szükséges",
+    "body_p1": "A Active AI mesterséges intelligenciát használ az edzés-, táplálkozás- és testösszetétel-elemzéshez az Ön által szolgáltatott fotók és információk alapján.",
     "body_p2": "Ez a tartalom mesterséges intelligencia által létrehozva, és lehet pontatlan vagy hiányos. Nem orvosi, táplálkozási vagy szakmai edzési tanács, és nem helyettesíti a képzett orvos, regisztrált táplálkozási szakember vagy szertifikált edzővel való konzultációt.",
     "body_p3": "Mindig konzultálj egy képzett szaksemberrel új diéta vagy edzésprogram kezdése előtt, különösen, ha bármilyen egészségügyi problémád van. Ha fájdalmat, szédülést vagy kellemetlen érzést tapasztalsz az edzés során, azonnal állj meg és kérj orvosi segítséget.",
-    "body_p4": "A folytatásával elismered ezeket a korlátozásokat, és vállalja, hogy a Active AI Coach-ot saját felelősségére használod."
+    "body_p4": "A folytatásával elismered ezeket a korlátozásokat, és vállalja, hogy a Active AI-ot saját felelősségére használod."
   },
   "welcome": {
     "tagline": "Az AI-alapú fitness csapatod,\n24/7 elérhető",
@@ -1271,7 +1271,7 @@
     "title": "Barátok",
     "your_code": "Az Ön kódja",
     "share_code": "Kód megosztása",
-    "share_message": "Tartsuk számon egymást az Active AI Coach-on! Csatlakozz velem a {{code}} kóddal.",
+    "share_message": "Tartsuk számon egymást az Active AI-on! Csatlakozz velem a {{code}} kóddal.",
     "connect_label": "Van barátod kódja?",
     "code_placeholder": "Írd be a kódot",
     "connect_button": "Csatlakozás",

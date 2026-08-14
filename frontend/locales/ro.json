@@ -411,7 +411,7 @@
     "privacy_policy": "Politica de Confidențialitate",
     "terms_of_service": "Termenii de Utilizare",
     "privacy_policy_sub": "Cum ne protejăm datele dvs.",
-    "terms_of_service_sub": "Reguli pentru utilizarea Active AI Coach",
+    "terms_of_service_sub": "Reguli pentru utilizarea Active AI",
     "injury_history": "Vânătăi și mobilitate",
     "injury_history_sub": "Ajută antrenorul tău AI să evite sau să modifice exercițiile care ar putea agrava aceasta",
     "injury_placeholder": "ex. genunchi stâng slab, dureri de spate",
@@ -1245,11 +1245,11 @@
     "title": "Înainte să continui",
     "subtitle": "Te rugăm citește această notificare importantă",
     "agree": "Înțeleg și sunt de acord",
-    "required": "Necesar pentru a folosi Active AI Coach",
-    "body_p1": "Active AI Coach utilizează AI pentru a genera feedback despre fitness, nutriție și compoziția corporală pe baza fotografiilor și informațiilor pe care le furnizați.",
+    "required": "Necesar pentru a folosi Active AI",
+    "body_p1": "Active AI utilizează AI pentru a genera feedback despre fitness, nutriție și compoziția corporală pe baza fotografiilor și informațiilor pe care le furnizați.",
     "body_p2": "Acest conținut este generat de AI și poate fi inexact sau incomplet. Nu constituie sfaturi medicale, nutriționale sau profesionale de fitness și nu înlocuiește consultația cu un medic calificat, dietetician înregistrat sau antrenor certificat.",
     "body_p3": "Întotdeauna consultați un profesionist calificat înainte de a începe orice nouă diană sau program de exerciții, mai ales dacă aveți condiții medicale. Opriți imediat și solicitați asistență medicală dacă resimțiți durere, ameață sau disconfort în timpul exercițiului.",
-    "body_p4": "Continuând, recunoașteți aceste limitări și acceptați să utilizați Active AI Coach pe propria răspundere."
+    "body_p4": "Continuând, recunoașteți aceste limitări și acceptați să utilizați Active AI pe propria răspundere."
   },
   "welcome": {
     "tagline": "Echipa ta IA fitness,\ndisponibilă 24/7",
@@ -1271,7 +1271,7 @@
     "title": "Prieteni",
     "your_code": "Codul Tău",
     "share_code": "Partajează Codul",
-    "share_message": "Să ne responsabilizăm reciproc pe Active AI Coach! Conectează-te cu mine folosind codul {{code}}.",
+    "share_message": "Să ne responsabilizăm reciproc pe Active AI! Conectează-te cu mine folosind codul {{code}}.",
     "connect_label": "Ai codul unui prieten?",
     "code_placeholder": "Introdu codul",
     "connect_button": "Conectează",

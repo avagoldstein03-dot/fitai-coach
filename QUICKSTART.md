@@ -1,4 +1,4 @@
-# Active AI Coach - Quick Reference Guide
+# Active AI - Quick Reference Guide
 
 ## 📱 Project Overview
 

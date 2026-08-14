@@ -1,4 +1,4 @@
-# Active AI Coach - Setup & Development Guide
+# Active AI - Setup & Development Guide
 
 ## Table of Contents
 1. [Project Overview](#project-overview)
@@ -11,7 +11,7 @@
 
 ## Project Overview
 
-Active AI Coach is a production-ready mobile fitness application with:
+Active AI is a production-ready mobile fitness application with:
 - React Native/Expo frontend
 - Next.js backend
 - PostgreSQL database
@@ -430,4 +430,4 @@ npx prisma studio
 
 ## License
 
-Proprietary - Active AI Coach
+Proprietary - Active AI

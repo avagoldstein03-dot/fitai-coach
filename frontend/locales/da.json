@@ -411,7 +411,7 @@
     "privacy_policy": "Privatlivspolitik",
     "terms_of_service": "Servicevilkår",
     "privacy_policy_sub": "Hvordan vi håndterer dine data",
-    "terms_of_service_sub": "Regler for brug af Active AI Coach",
+    "terms_of_service_sub": "Regler for brug af Active AI",
     "injury_history": "Skader og mobilitet",
     "injury_history_sub": "Hjælper din AI-træner med at undgå eller tilpasse øvelser, der kunne forværre dette",
     "injury_placeholder": "f.eks. dårligt venstre knæ, lændesmerter",
@@ -1245,11 +1245,11 @@
     "title": "Før du fortsætter",
     "subtitle": "Læs venligst denne vigtige meddelelse",
     "agree": "Jeg forstår og accepterer",
-    "required": "Påkrævet for at bruge Active AI Coach",
-    "body_p1": "Active AI Coach bruger AI til at generere trænings-, ernærings- og kropsammensætningsfeedback baseret på fotos og oplysninger, som du leverer.",
+    "required": "Påkrævet for at bruge Active AI",
+    "body_p1": "Active AI bruger AI til at generere trænings-, ernærings- og kropsammensætningsfeedback baseret på fotos og oplysninger, som du leverer.",
     "body_p2": "Dette indhold er AI-genereret og kan være unøjagtigt eller ufuldstændigt. Det er ikke medicinsk, ernæringsmæssigt eller professionelt træningsråd, og det er ikke en erstatning for konsultation med en kvalificeret læge, registreret diætist eller certificeret træner.",
     "body_p3": "Konsulter altid en kvalificeret fagperson, før du starter et nyt diæt- eller træningsprogram, især hvis du har nogen medicinske forhold. Stop øjeblikkeligt og søg lægehjælp, hvis du oplever smerter, svimmelhed eller ubehag under træning.",
-    "body_p4": "Ved at fortsætte anerkender du disse begrænsninger og accepterer at bruge Active AI Coach på eget ansvar."
+    "body_p4": "Ved at fortsætte anerkender du disse begrænsninger og accepterer at bruge Active AI på eget ansvar."
   },
   "welcome": {
     "tagline": "Dit AI-drevne træningsteam,\ntilgængeligt 24/7",
@@ -1271,7 +1271,7 @@
     "title": "Venner",
     "your_code": "Din kode",
     "share_code": "Del kode",
-    "share_message": "Lad os holde hinanden ansvarlige på Active AI Coach! Forbind med mig ved at bruge koden {{code}}.",
+    "share_message": "Lad os holde hinanden ansvarlige på Active AI! Forbind med mig ved at bruge koden {{code}}.",
     "connect_label": "Har du en vens kode?",
     "code_placeholder": "Indtast kode",
     "connect_button": "Forbind",

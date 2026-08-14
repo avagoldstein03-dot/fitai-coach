@@ -436,7 +436,7 @@ Be specific, actionable, and encouraging. Never diagnose injuries.`,
 
   async chat(userMessage: string, context: ChatContext): Promise<string> {
     const tierGating = buildTierGatingPrompt(context.tier);
-    const systemPrompt = `You are Active AI Coach, a personalized fitness and nutrition coaching assistant.
+    const systemPrompt = `You are Active AI, a personalized fitness and nutrition coaching assistant.
 You have access to the user's profile, recent meals, workouts, and goals. Provide personalized,
 motivating, and evidence-based coaching. Never provide medical diagnoses.
 Keep responses short and conversational — a few sentences to a short paragraph, like a text from a

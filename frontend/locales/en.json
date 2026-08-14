@@ -458,7 +458,7 @@
     "privacy_policy": "Privacy Policy",
     "terms_of_service": "Terms of Service",
     "privacy_policy_sub": "How we handle your data",
-    "terms_of_service_sub": "Rules for using Active AI Coach"
+    "terms_of_service_sub": "Rules for using Active AI"
   },
   "notifications": {
     "title": "Notifications",
@@ -1342,7 +1342,7 @@
     "title": "Friends",
     "your_code": "Your Code",
     "share_code": "Share Code",
-    "share_message": "Let's keep each other accountable on Active AI Coach! Connect with me using code {{code}}.",
+    "share_message": "Let's keep each other accountable on Active AI! Connect with me using code {{code}}.",
     "connect_label": "Have a friend's code?",
     "code_placeholder": "Enter code",
     "connect_button": "Connect",
@@ -1366,11 +1366,11 @@
     "title": "Before You Continue",
     "subtitle": "Please read this important notice",
     "agree": "I Understand & Agree",
-    "required": "Required to use Active AI Coach",
-    "body_p1": "Active AI Coach uses AI to generate fitness, nutrition, and body-composition feedback based on photos and information you provide.",
+    "required": "Required to use Active AI",
+    "body_p1": "Active AI uses AI to generate fitness, nutrition, and body-composition feedback based on photos and information you provide.",
     "body_p2": "This content is AI-generated and may be inaccurate or incomplete. It is not medical, nutritional, or professional fitness advice, and it is not a substitute for consultation with a qualified doctor, registered dietitian, or certified trainer.",
     "body_p3": "Always consult a qualified professional before starting any new diet or exercise program, especially if you have any medical conditions. Stop immediately and seek medical attention if you experience pain, dizziness, or discomfort during exercise.",
-    "body_p4": "By continuing, you acknowledge these limitations and agree to use Active AI Coach at your own risk."
+    "body_p4": "By continuing, you acknowledge these limitations and agree to use Active AI at your own risk."
   },
   "welcome": {
     "tagline": "Your AI-powered fitness team,\navailable 24/7",

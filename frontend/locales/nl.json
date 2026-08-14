@@ -411,7 +411,7 @@
     "privacy_policy": "Privacybeleid",
     "terms_of_service": "Servicevoorwaarden",
     "privacy_policy_sub": "Hoe we je gegevens behandelen",
-    "terms_of_service_sub": "Regels voor het gebruik van Active AI Coach",
+    "terms_of_service_sub": "Regels voor het gebruik van Active AI",
     "injury_history": "Blessures & Mobiliteit",
     "injury_history_sub": "Helpt je AI-coach oefeningen te vermijden of aan te passen die dit kunnen verergeren",
     "injury_placeholder": "bijv. slechte linkerknie, lage rugpijn",
@@ -1245,11 +1245,11 @@
     "title": "Voordat Je Verdergaat",
     "subtitle": "Lees deze belangrijke kennisgeving",
     "agree": "Ik Begrijp & Stem In",
-    "required": "Vereist voor gebruik van Active AI Coach",
-    "body_p1": "Active AI Coach gebruikt AI om fitness-, voedings- en lichaamsamsamenstelling-feedback te genereren op basis van foto's en informatie die je verstrekt.",
+    "required": "Vereist voor gebruik van Active AI",
+    "body_p1": "Active AI gebruikt AI om fitness-, voedings- en lichaamsamsamenstelling-feedback te genereren op basis van foto's en informatie die je verstrekt.",
     "body_p2": "Deze inhoud wordt gegenereerd door AI en kan onnauwkeurig of onvolledig zijn. Het is geen medisch, voedings- of professioneel fitnessadvies en is geen vervanging voor overleg met een gekwalificeerde arts, geregistreerde diëtist of gecertificeerde trainer.",
     "body_p3": "Raadpleeg altijd een gekwalificeerde professional voordat je een nieuw dieet of trainingsschema begint, vooral als je medische aandoeningen hebt. Stop onmiddellijk en zoek medische hulp als je pijn, duizeligheid of ongemak voelt tijdens het trainen.",
-    "body_p4": "Door door te gaan, erken je deze beperkingen en ga je akkoord met het gebruik van Active AI Coach op eigen risico."
+    "body_p4": "Door door te gaan, erken je deze beperkingen en ga je akkoord met het gebruik van Active AI op eigen risico."
   },
   "welcome": {
     "tagline": "Je AI-aangedreven fitnessteam,\nbeschikbaar 24/7",
@@ -1271,7 +1271,7 @@
     "title": "Vrienden",
     "your_code": "Jouw Code",
     "share_code": "Code Delen",
-    "share_message": "Laten we elkaar aansporen op Active AI Coach! Verbind met mij met code {{code}}.",
+    "share_message": "Laten we elkaar aansporen op Active AI! Verbind met mij met code {{code}}.",
     "connect_label": "Heb je de code van een vriend?",
     "code_placeholder": "Code invoeren",
     "connect_button": "Verbinden",

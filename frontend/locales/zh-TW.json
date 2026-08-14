@@ -411,7 +411,7 @@
     "privacy_policy": "隱私政策",
     "terms_of_service": "服務條款",
     "privacy_policy_sub": "我們如何處理您的數據",
-    "terms_of_service_sub": "使用 Active AI Coach 的規則",
+    "terms_of_service_sub": "使用 Active AI 的規則",
     "injury_history": "傷害與活動能力",
     "injury_history_sub": "幫助您的 AI 教練避免或修改可能加重症狀的運動",
     "injury_placeholder": "例如：左膝蓋疼痛、下背部疼痛",
@@ -1245,11 +1245,11 @@
     "title": "繼續之前",
     "subtitle": "請閱讀此重要通知",
     "agree": "我理解並同意",
-    "required": "使用 Active AI Coach 需要",
-    "body_p1": "Active AI Coach 使用 AI 根據您提供的照片和信息生成健身、營養和身體成分反饋。",
+    "required": "使用 Active AI 需要",
+    "body_p1": "Active AI 使用 AI 根據您提供的照片和信息生成健身、營養和身體成分反饋。",
     "body_p2": "此內容由 AI 生成，可能不準確或不完整。它不是醫學、營養或專業健身建議，也不能替代與合格醫生、註冊營養師或認證教練的諮詢。",
     "body_p3": "在開始任何新飲食或運動計劃前，請務必諮詢合格的專業人士，特別是如果您有任何醫學狀況。如果在運動過程中感到疼痛、頭暈或不適，請立即停止並尋求醫療幫助。",
-    "body_p4": "繼續使用即表示您承認這些限制，並同意自行承擔風險使用 Active AI Coach。"
+    "body_p4": "繼續使用即表示您承認這些限制，並同意自行承擔風險使用 Active AI。"
   },
   "welcome": {
     "tagline": "您的 AI 動力健身團隊，\n24/7 全年無休",
@@ -1271,7 +1271,7 @@
     "title": "好友",
     "your_code": "您的代碼",
     "share_code": "分享代碼",
-    "share_message": "讓我們在 Active AI Coach 上互相督促！使用代碼 {{code}} 與我連接。",
+    "share_message": "讓我們在 Active AI 上互相督促！使用代碼 {{code}} 與我連接。",
     "connect_label": "有朋友的代碼？",
     "code_placeholder": "輸入代碼",
     "connect_button": "連接",

@@ -411,7 +411,7 @@
     "privacy_policy": "Kebijakan Privasi",
     "terms_of_service": "Syarat Layanan",
     "privacy_policy_sub": "Bagaimana kami menangani data Anda",
-    "terms_of_service_sub": "Aturan penggunaan Active AI Coach",
+    "terms_of_service_sub": "Aturan penggunaan Active AI",
     "injury_history": "Cedera & Mobilitas",
     "injury_history_sub": "Membantu AI coach Anda menghindari atau memodifikasi latihan yang dapat memperburuk kondisi ini",
     "injury_placeholder": "contoh: lutut kiri yang buruk, nyeri punggung bawah",
@@ -1245,11 +1245,11 @@
     "title": "Sebelum Anda Melanjutkan",
     "subtitle": "Silakan baca pemberitahuan penting ini",
     "agree": "Saya Memahami & Setuju",
-    "required": "Diperlukan untuk menggunakan Active AI Coach",
-    "body_p1": "Active AI Coach menggunakan AI untuk menghasilkan umpan balik kebugaran, nutrisi, dan komposisi tubuh berdasarkan foto dan informasi yang Anda berikan.",
+    "required": "Diperlukan untuk menggunakan Active AI",
+    "body_p1": "Active AI menggunakan AI untuk menghasilkan umpan balik kebugaran, nutrisi, dan komposisi tubuh berdasarkan foto dan informasi yang Anda berikan.",
     "body_p2": "Konten ini dihasilkan oleh AI dan mungkin tidak akurat atau tidak lengkap. Ini bukan nasihat medis, nutrisi, atau kebugaran profesional, dan bukan pengganti konsultasi dengan dokter yang berkualifikasi, ahli gizi terdaftar, atau pelatih bersertifikat.",
     "body_p3": "Selalu konsultasikan dengan profesional yang berkualifikasi sebelum memulai program diet atau olahraga baru, terutama jika Anda memiliki kondisi medis apa pun. Hentikan segera dan cari bantuan medis jika Anda mengalami rasa sakit, pusing, atau ketidaknyamanan saat berolahraga.",
-    "body_p4": "Dengan melanjutkan, Anda mengakui keterbatasan ini dan setuju menggunakan Active AI Coach dengan risiko Anda sendiri."
+    "body_p4": "Dengan melanjutkan, Anda mengakui keterbatasan ini dan setuju menggunakan Active AI dengan risiko Anda sendiri."
   },
   "welcome": {
     "tagline": "Tim kebugaran bertenaga AI Anda,\ntersedia 24/7",
@@ -1271,7 +1271,7 @@
     "title": "Teman",
     "your_code": "Kode Anda",
     "share_code": "Bagikan Kode",
-    "share_message": "Mari kita saling memotivasi di Active AI Coach! Terhubung dengan saya menggunakan kode {{code}}.",
+    "share_message": "Mari kita saling memotivasi di Active AI! Terhubung dengan saya menggunakan kode {{code}}.",
     "connect_label": "Punya kode teman?",
     "code_placeholder": "Masukkan kode",
     "connect_button": "Terhubung",

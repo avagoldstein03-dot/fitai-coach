@@ -121,7 +121,7 @@ export default function SignInScreen() {
     <KeyboardAvoidingView behavior={Platform.OS === "ios" ? "padding" : "height"} style={{ flex: 1 }}>
     <ScrollView style={s.screen} keyboardShouldPersistTaps="handled" showsVerticalScrollIndicator={false}>
       <View style={s.container}>
-        <Text style={s.logo}>Active AI Coach</Text>
+        <Text style={s.logo}>Active AI</Text>
         <Text style={s.subtitle}>{t("auth.signin.subtitle")}</Text>
 
         <View style={s.fieldGroup}>

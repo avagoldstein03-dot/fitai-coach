@@ -411,7 +411,7 @@
     "privacy_policy": "Chính sách bảo mật",
     "terms_of_service": "Điều khoản dịch vụ",
     "privacy_policy_sub": "Cách chúng tôi xử lý dữ liệu của bạn",
-    "terms_of_service_sub": "Quy tắc sử dụng Active AI Coach",
+    "terms_of_service_sub": "Quy tắc sử dụng Active AI",
     "injury_history": "Chấn thương & Khả năng Vận động",
     "injury_history_sub": "Giúp huấn luyện viên AI tránh hoặc điều chỉnh các bài tập có thể làm trầm trọng thêm tình trạng này",
     "injury_placeholder": "ví dụ: đầu gối trái yếu, đau lưng dưới",
@@ -1245,11 +1245,11 @@
     "title": "Trước khi tiếp tục",
     "subtitle": "Vui lòng đọc thông báo quan trọng này",
     "agree": "Tôi hiểu & Đồng ý",
-    "required": "Cần thiết để sử dụng Active AI Coach",
-    "body_p1": "Active AI Coach sử dụng AI để tạo phản hồi về thể dục, dinh dưỡng và thành phần cơ thể dựa trên ảnh và thông tin bạn cung cấp.",
+    "required": "Cần thiết để sử dụng Active AI",
+    "body_p1": "Active AI sử dụng AI để tạo phản hồi về thể dục, dinh dưỡng và thành phần cơ thể dựa trên ảnh và thông tin bạn cung cấp.",
     "body_p2": "Nội dung này do AI tạo ra và có thể không chính xác hoặc không đầy đủ. Đây không phải là lời khuyên y tế, dinh dưỡng hoặc tập luyện chuyên nghiệp, và nó không thay thế cho việc tư vấn với bác sĩ, chuyên gia dinh dưỡng đã đăng ký hoặc huấn luyện viên được chứng chỉ.",
     "body_p3": "Luôn tư vấn với chuyên gia có trình độ trước khi bắt đầu bất kỳ chế độ ăn hoặc chương trình tập luyện mới, đặc biệt nếu bạn có bất kỳ tình trạng y tế nào. Dừng lại ngay lập tức và tìm kiếm chăm sóc y tế nếu bạn cảm thấy đau, chóng mặt hoặc khó chịu khi tập luyện.",
-    "body_p4": "Bằng cách tiếp tục, bạn thừa nhận những hạn chế này và đồng ý sử dụng Active AI Coach theo rủi ro của riêng bạn."
+    "body_p4": "Bằng cách tiếp tục, bạn thừa nhận những hạn chế này và đồng ý sử dụng Active AI theo rủi ro của riêng bạn."
   },
   "welcome": {
     "tagline": "Đội tập luyện AI của bạn,\nco sẵn 24/7",
@@ -1271,7 +1271,7 @@
     "title": "Bạn bè",
     "your_code": "Mã của bạn",
     "share_code": "Chia sẻ mã",
-    "share_message": "Hãy giúp nhau có trách nhiệm trên Active AI Coach! Kết nối với tôi bằng mã {{code}}.",
+    "share_message": "Hãy giúp nhau có trách nhiệm trên Active AI! Kết nối với tôi bằng mã {{code}}.",
     "connect_label": "Có mã của bạn bè?",
     "code_placeholder": "Nhập mã",
     "connect_button": "Kết nối",
