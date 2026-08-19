@@ -1388,7 +1388,21 @@
     "log_button": "记录",
     "logged_title": "已记录",
     "logged_msg": "已添加到您的食物日记。",
-    "error_log_meal": "无法记录此产品。"
+    "error_log_meal": "无法记录此产品。",
+    "why_this_rating": "为什么是这个评分",
+    "factor_nutrition": "营养质量",
+    "factor_processing": "加工程度",
+    "factor_additives": "添加剂",
+    "flagged_count": "发现 {{count}} 个有问题的成分",
+    "nutriscore_a": "优秀的营养质量",
+    "nutriscore_b": "良好的营养质量",
+    "nutriscore_c": "平均营养质量",
+    "nutriscore_d": "较差的营养质量",
+    "nutriscore_e": "差的营养质量",
+    "nova_1": "未加工或最少加工",
+    "nova_2": "加工烹饪成分（油、糖、盐）",
+    "nova_3": "加工食品",
+    "nova_4": "超加工食品"
   },
   "edit_profile": {
     "title": "编辑个人资料",

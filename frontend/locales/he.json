@@ -1388,7 +1388,21 @@
     "log_button": "רשום",
     "logged_title": "נרשם",
     "logged_msg": "התווסף ליומן המזון שלך.",
-    "error_log_meal": "לא היה ניתן לרשום את המוצר הזה."
+    "error_log_meal": "לא היה ניתן לרשום את המוצר הזה.",
+    "why_this_rating": "מדוע דירוג זה",
+    "factor_nutrition": "איכות תזונתית",
+    "factor_processing": "רמת עיבוד",
+    "factor_additives": "תוספים",
+    "flagged_count": "{{count}} מ成分מסומן(ים) נמצא(ו)",
+    "nutriscore_a": "איכות תזונתית מעולה",
+    "nutriscore_b": "איכות תזונתית טובה",
+    "nutriscore_c": "איכות תזונתית ממוצעת",
+    "nutriscore_d": "איכות תזונתית חלשה",
+    "nutriscore_e": "איכות תזונתית רעה",
+    "nova_1": "לא מעובד או מעובד מינימלי",
+    "nova_2": "מרכיב קולינרי מעובד (שמן, סוכר, מלח)",
+    "nova_3": "מזון מעובד",
+    "nova_4": "מזון במעצבעיבוד יתר"
   },
   "edit_profile": {
     "title": "עריכת פרופיל",

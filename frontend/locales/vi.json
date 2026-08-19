@@ -1388,7 +1388,21 @@
     "log_button": "Ghi lại",
     "logged_title": "Đã ghi lại",
     "logged_msg": "Đã thêm vào nhật ký ăn uống của bạn.",
-    "error_log_meal": "Không thể ghi lại sản phẩm này."
+    "error_log_meal": "Không thể ghi lại sản phẩm này.",
+    "why_this_rating": "Tại Sao Có Đánh Giá Này",
+    "factor_nutrition": "Chất Lượng Dinh Dưỡng",
+    "factor_processing": "Mức Độ Chế Biến",
+    "factor_additives": "Chất Phụ Gia",
+    "flagged_count": "Tìm thấy {{count}} thành phần bị đánh dấu",
+    "nutriscore_a": "Chất lượng dinh dưỡng tuyệt vời",
+    "nutriscore_b": "Chất lượng dinh dưỡng tốt",
+    "nutriscore_c": "Chất lượng dinh dưỡng trung bình",
+    "nutriscore_d": "Chất lượng dinh dưỡng kém",
+    "nutriscore_e": "Chất lượng dinh dưỡng xấu",
+    "nova_1": "Chưa chế biến hoặc chế biến tối thiểu",
+    "nova_2": "Thành phần nấu ăn đã chế biến (dầu, đường, muối)",
+    "nova_3": "Thực phẩm đã chế biến",
+    "nova_4": "Thực phẩm siêu chế biến"
   },
   "edit_profile": {
     "title": "Chỉnh sửa Hồ sơ",

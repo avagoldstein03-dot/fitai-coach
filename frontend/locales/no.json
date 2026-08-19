@@ -1388,7 +1388,21 @@
     "log_button": "Logg det",
     "logged_title": "Logget",
     "logged_msg": "Lagt til i matdagboken din.",
-    "error_log_meal": "Kunne ikke logge dette produktet."
+    "error_log_meal": "Kunne ikke logge dette produktet.",
+    "why_this_rating": "Hvorfor denne vurderingen",
+    "factor_nutrition": "Ernæringsmessig kvalitet",
+    "factor_processing": "Bearbeidingsnivå",
+    "factor_additives": "Tilsetningsstoffer",
+    "flagged_count": "{{count}} flagget ingrediens(er) funnet",
+    "nutriscore_a": "Utmerket ernæringsmessig kvalitet",
+    "nutriscore_b": "God ernæringsmessig kvalitet",
+    "nutriscore_c": "Gjennomsnittlig ernæringsmessig kvalitet",
+    "nutriscore_d": "Dårlig ernæringsmessig kvalitet",
+    "nutriscore_e": "Svært dårlig ernæringsmessig kvalitet",
+    "nova_1": "Ubearbeidet eller minimalt bearbeidet",
+    "nova_2": "Bearbeidet kulinarisk ingrediens (olje, sukker, salt)",
+    "nova_3": "Bearbeidet mat",
+    "nova_4": "Ultrabearbeidet mat"
   },
   "edit_profile": {
     "title": "Rediger profil",

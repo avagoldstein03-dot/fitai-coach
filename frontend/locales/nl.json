@@ -1388,7 +1388,21 @@
     "log_button": "Registreren",
     "logged_title": "Geregistreerd",
     "logged_msg": "Toegevoegd aan je voedingsdagboek.",
-    "error_log_meal": "Dit product kon niet worden geregistreerd."
+    "error_log_meal": "Dit product kon niet worden geregistreerd.",
+    "why_this_rating": "Waarom deze beoordeling",
+    "factor_nutrition": "Voedingswaarde",
+    "factor_processing": "Verwerkingsniveau",
+    "factor_additives": "Additieven",
+    "flagged_count": "{{count}} gemarkeerde ingredient(en) gevonden",
+    "nutriscore_a": "Uitstekende voedingswaarde",
+    "nutriscore_b": "Goede voedingswaarde",
+    "nutriscore_c": "Gemiddelde voedingswaarde",
+    "nutriscore_d": "Slechte voedingswaarde",
+    "nutriscore_e": "Zeer slechte voedingswaarde",
+    "nova_1": "Onverwerkt of minimaal verwerkt",
+    "nova_2": "Verwerkte culinaire ingredient (olie, suiker, zout)",
+    "nova_3": "Verwerkt voedsel",
+    "nova_4": "Ultraverwerkt voedsel"
   },
   "edit_profile": {
     "title": "Profiel bewerken",

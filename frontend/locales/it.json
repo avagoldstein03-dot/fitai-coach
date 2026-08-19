@@ -1388,7 +1388,21 @@
     "log_button": "Registra",
     "logged_title": "Registrato",
     "logged_msg": "Aggiunto al tuo diario alimentare.",
-    "error_log_meal": "Impossibile registrare questo prodotto."
+    "error_log_meal": "Impossibile registrare questo prodotto.",
+    "why_this_rating": "Perché Questo Voto",
+    "factor_nutrition": "Qualità Nutrizionale",
+    "factor_processing": "Livello di Trasformazione",
+    "factor_additives": "Additivi",
+    "flagged_count": "{{count}} ingrediente(i) evidenziato(i)",
+    "nutriscore_a": "Qualità nutrizionale eccellente",
+    "nutriscore_b": "Buona qualità nutrizionale",
+    "nutriscore_c": "Qualità nutrizionale media",
+    "nutriscore_d": "Scarsa qualità nutrizionale",
+    "nutriscore_e": "Qualità nutrizionale cattiva",
+    "nova_1": "Non trasformato o minimamente trasformato",
+    "nova_2": "Ingrediente culinario trasformato (olio, zucchero, sale)",
+    "nova_3": "Alimento trasformato",
+    "nova_4": "Alimento ultra-trasformato"
   },
   "edit_profile": {
     "title": "Modifica Profilo",

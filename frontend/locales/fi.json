@@ -1388,7 +1388,21 @@
     "log_button": "Kirjaa",
     "logged_title": "Kirjattu",
     "logged_msg": "Lisätty ruokapäiväkirjaasi.",
-    "error_log_meal": "Tuotetta ei voitu kirjata."
+    "error_log_meal": "Tuotetta ei voitu kirjata.",
+    "why_this_rating": "Miksi tämä arviointi",
+    "factor_nutrition": "Ravitsemuksellinen laatu",
+    "factor_processing": "Jalostustaso",
+    "factor_additives": "Lisäaineet",
+    "flagged_count": "{{count}} merkittyä ainesosaa löytyi",
+    "nutriscore_a": "Erinomainen ravitsemuksellinen laatu",
+    "nutriscore_b": "Hyvä ravitsemuksellinen laatu",
+    "nutriscore_c": "Keskivertainen ravitsemuksellinen laatu",
+    "nutriscore_d": "Heikko ravitsemuksellinen laatu",
+    "nutriscore_e": "Huono ravitsemuksellinen laatu",
+    "nova_1": "Jalostamaton tai minimaalisesti jalostettu",
+    "nova_2": "Jalostettu ruoanlaittoaine (öljy, sokeri, suola)",
+    "nova_3": "Jalostettu elintarvike",
+    "nova_4": "Ultrajalostettu elintarvike"
   },
   "edit_profile": {
     "title": "Muokkaa profiilia",

@@ -1388,7 +1388,21 @@
     "log_button": "Kaydet",
     "logged_title": "Kaydedildi",
     "logged_msg": "Yemek günlüğünüze eklendi.",
-    "error_log_meal": "Bu ürün kaydedilemedi."
+    "error_log_meal": "Bu ürün kaydedilemedi.",
+    "why_this_rating": "Neden Bu Puan",
+    "factor_nutrition": "Beslenme Kalitesi",
+    "factor_processing": "İşleme Seviyesi",
+    "factor_additives": "Katkı Maddeleri",
+    "flagged_count": "{{count}} işaretlenmiş bileşen bulundu",
+    "nutriscore_a": "Mükemmel beslenme kalitesi",
+    "nutriscore_b": "İyi beslenme kalitesi",
+    "nutriscore_c": "Orta beslenme kalitesi",
+    "nutriscore_d": "Düşük beslenme kalitesi",
+    "nutriscore_e": "Kötü beslenme kalitesi",
+    "nova_1": "İşlenmemiş veya minimal işlenmiş",
+    "nova_2": "İşlenmiş kulinaire bileşen (yağ, şeker, tuz)",
+    "nova_3": "İşlenmiş gıda",
+    "nova_4": "Ultra işlenmiş gıda"
   },
   "edit_profile": {
     "title": "Profili Düzenle",

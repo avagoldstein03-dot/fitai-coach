@@ -1388,7 +1388,21 @@
     "log_button": "Rekebisha",
     "logged_title": "Imerekabishwa",
     "logged_msg": "Imeongezwa kwenye toleo lako la chakula.",
-    "error_log_meal": "Haikuweza kurekebisha bidhaa hii."
+    "error_log_meal": "Haikuweza kurekebisha bidhaa hii.",
+    "why_this_rating": "Kwa Nini Ukadiriaji Huu",
+    "factor_nutrition": "Ubora wa Virutubishi",
+    "factor_processing": "Kiwango cha Uchakataji",
+    "factor_additives": "Nyongeza",
+    "flagged_count": "Nyongeza {{count}} zilizofungwa zimegundulika",
+    "nutriscore_a": "Ubora wa virutubishi wenye faida",
+    "nutriscore_b": "Ubora wa virutubishi vizuri",
+    "nutriscore_c": "Ubora wa virutubishi wa kawaida",
+    "nutriscore_d": "Ubora wa virutubishi duni",
+    "nutriscore_e": "Ubora wa virutubishi mbaya",
+    "nova_1": "Bila uchakataji au kwa uchakataji wa chini",
+    "nova_2": "Nyongeza ya kupikia iliyochakatwa (mafuta, sukari, chumvi)",
+    "nova_3": "Chakula kilichochakatwa",
+    "nova_4": "Chakula kilichochakatwa sana"
   },
   "edit_profile": {
     "title": "Hariri Wasifu",

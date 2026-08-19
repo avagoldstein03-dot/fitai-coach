@@ -1388,7 +1388,21 @@
     "log_button": "Logga det",
     "logged_title": "Loggad",
     "logged_msg": "Tillagd i din matdagbok.",
-    "error_log_meal": "Kunde inte logga denna produkt."
+    "error_log_meal": "Kunde inte logga denna produkt.",
+    "why_this_rating": "Varför detta betyg",
+    "factor_nutrition": "Näringsvärde",
+    "factor_processing": "Bearbetningsnivå",
+    "factor_additives": "Tillsatser",
+    "flagged_count": "{{count}} flaggad(e) ingrediens(er) hittad(e)",
+    "nutriscore_a": "Utmärkt näringsvärde",
+    "nutriscore_b": "Bra näringsvärde",
+    "nutriscore_c": "Medelmåttigt näringsvärde",
+    "nutriscore_d": "Dåligt näringsvärde",
+    "nutriscore_e": "Mycket dåligt näringsvärde",
+    "nova_1": "Obearbetad eller minimalt bearbetad",
+    "nova_2": "Bearbetad matlagningsingrediens (olja, socker, salt)",
+    "nova_3": "Bearbetad mat",
+    "nova_4": "Ultrabearbetad mat"
   },
   "edit_profile": {
     "title": "Redigera profil",

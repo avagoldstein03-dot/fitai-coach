@@ -1388,7 +1388,21 @@
     "log_button": "기록",
     "logged_title": "기록됨",
     "logged_msg": "식단일지에 추가되었습니다.",
-    "error_log_meal": "이 제품을 기록할 수 없습니다."
+    "error_log_meal": "이 제품을 기록할 수 없습니다.",
+    "why_this_rating": "왜 이 등급인가요",
+    "factor_nutrition": "영양가",
+    "factor_processing": "가공 수준",
+    "factor_additives": "첨가물",
+    "flagged_count": "문제 성분 {{count}}개 발견됨",
+    "nutriscore_a": "우수한 영양 품질",
+    "nutriscore_b": "좋은 영양 품질",
+    "nutriscore_c": "평균적인 영양 품질",
+    "nutriscore_d": "낮은 영양 품질",
+    "nutriscore_e": "나쁜 영양 품질",
+    "nova_1": "미가공 또는 최소 가공 식품",
+    "nova_2": "가공 조리 재료(기름, 설탕, 소금)",
+    "nova_3": "가공 식품",
+    "nova_4": "초가공 식품"
   },
   "edit_profile": {
     "title": "프로필 편집",

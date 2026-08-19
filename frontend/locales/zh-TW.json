@@ -1388,7 +1388,21 @@
     "log_button": "記錄",
     "logged_title": "已記錄",
     "logged_msg": "已加入您的食物日記。",
-    "error_log_meal": "無法記錄此產品。"
+    "error_log_meal": "無法記錄此產品。",
+    "why_this_rating": "為什麼是這個評級",
+    "factor_nutrition": "營養品質",
+    "factor_processing": "加工等級",
+    "factor_additives": "添加劑",
+    "flagged_count": "發現 {{count}} 個標記的成分",
+    "nutriscore_a": "優質營養品質",
+    "nutriscore_b": "良好營養品質",
+    "nutriscore_c": "一般營養品質",
+    "nutriscore_d": "較差營養品質",
+    "nutriscore_e": "劣質營養品質",
+    "nova_1": "未加工或最少加工",
+    "nova_2": "加工烹飪原料（油、糖、鹽）",
+    "nova_3": "加工食品",
+    "nova_4": "超高度加工食品"
   },
   "edit_profile": {
     "title": "編輯個人資料",

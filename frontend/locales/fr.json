@@ -1388,7 +1388,21 @@
     "log_button": "Enregistrer",
     "logged_title": "Enregistré",
     "logged_msg": "Ajouté à votre journal alimentaire.",
-    "error_log_meal": "Impossible d'enregistrer ce produit."
+    "error_log_meal": "Impossible d'enregistrer ce produit.",
+    "why_this_rating": "Pourquoi cette note",
+    "factor_nutrition": "Qualité nutritionnelle",
+    "factor_processing": "Niveau de transformation",
+    "factor_additives": "Additifs",
+    "flagged_count": "{{count}} ingrédient(s) signalé(s) trouvé(s)",
+    "nutriscore_a": "Excellente qualité nutritionnelle",
+    "nutriscore_b": "Bonne qualité nutritionnelle",
+    "nutriscore_c": "Qualité nutritionnelle moyenne",
+    "nutriscore_d": "Mauvaise qualité nutritionnelle",
+    "nutriscore_e": "Très mauvaise qualité nutritionnelle",
+    "nova_1": "Non transformé ou minimalement transformé",
+    "nova_2": "Ingrédient culinaire transformé (huile, sucre, sel)",
+    "nova_3": "Aliment transformé",
+    "nova_4": "Aliment ultra-transformé"
   },
   "edit_profile": {
     "title": "Modifier le profil",

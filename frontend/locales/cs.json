@@ -1388,7 +1388,21 @@
     "log_button": "Zaznamenat",
     "logged_title": "Zaznamenáno",
     "logged_msg": "Přidáno do vašeho deníku jídel.",
-    "error_log_meal": "Nepodařilo se zaznamenat tento produkt."
+    "error_log_meal": "Nepodařilo se zaznamenat tento produkt.",
+    "why_this_rating": "Proč toto hodnocení",
+    "factor_nutrition": "Nutriční kvalita",
+    "factor_processing": "Stupeň zpracování",
+    "factor_additives": "Aditiva",
+    "flagged_count": "Nalezeno {{count}} podezřelá(ých) složka(y)",
+    "nutriscore_a": "Vynikající nutriční kvalita",
+    "nutriscore_b": "Dobrá nutriční kvalita",
+    "nutriscore_c": "Průměrná nutriční kvalita",
+    "nutriscore_d": "Špatná nutriční kvalita",
+    "nutriscore_e": "Velmi špatná nutriční kvalita",
+    "nova_1": "Nezpracovaná nebo minimálně zpracovaná",
+    "nova_2": "Zpracovaná kulinářská ingredience (olej, cukr, sůl)",
+    "nova_3": "Zpracovaná potravina",
+    "nova_4": "Ultra-zpracovaná potravina"
   },
   "edit_profile": {
     "title": "Úprava profilu",

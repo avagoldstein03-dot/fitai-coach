@@ -1388,7 +1388,21 @@
     "log_button": "I-log Ito",
     "logged_title": "Nai-log",
     "logged_msg": "Naidagdag sa iyong food diary.",
-    "error_log_meal": "Hindi makapagsagawa ng pag-log sa produktong ito."
+    "error_log_meal": "Hindi makapagsagawa ng pag-log sa produktong ito.",
+    "why_this_rating": "Bakit Ang Rating Na Ito",
+    "factor_nutrition": "Kalidad ng Nutrisyon",
+    "factor_processing": "Antas ng Pagpoproseso",
+    "factor_additives": "Mga Additibong Sangkap",
+    "flagged_count": "{{count}} napakitaang ingredient(s) na nahanap",
+    "nutriscore_a": "Napakahusay na kalidad ng nutrisyon",
+    "nutriscore_b": "Mahusay na kalidad ng nutrisyon",
+    "nutriscore_c": "Average na kalidad ng nutrisyon",
+    "nutriscore_d": "Mahinang kalidad ng nutrisyon",
+    "nutriscore_e": "Masayang kalidad ng nutrisyon",
+    "nova_1": "Hindi napoproseso o minimally napoproseso",
+    "nova_2": "Naprosesong culinary ingredient (langis, asukal, asin)",
+    "nova_3": "Naprosesong pagkain",
+    "nova_4": "Ultra-naprosesong pagkain"
   },
   "edit_profile": {
     "title": "Baguhin ang Profile",

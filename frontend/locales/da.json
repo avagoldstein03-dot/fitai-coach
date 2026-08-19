@@ -1388,7 +1388,21 @@
     "log_button": "Log Det",
     "logged_title": "Logget",
     "logged_msg": "Tilføjet til din fødevarejournal.",
-    "error_log_meal": "Kunne ikke logge dette produkt."
+    "error_log_meal": "Kunne ikke logge dette produkt.",
+    "why_this_rating": "Hvorfor denne vurdering",
+    "factor_nutrition": "Ernæringsmæssig kvalitet",
+    "factor_processing": "Processeringsniveau",
+    "factor_additives": "Tilsætningsstoffer",
+    "flagged_count": "{{count}} markeret(e) ingrediens(er) fundet",
+    "nutriscore_a": "Fremragende ernæringsmæssig kvalitet",
+    "nutriscore_b": "God ernæringsmæssig kvalitet",
+    "nutriscore_c": "Gennemsnitlig ernæringsmæssig kvalitet",
+    "nutriscore_d": "Dårlig ernæringsmæssig kvalitet",
+    "nutriscore_e": "Meget dårlig ernæringsmæssig kvalitet",
+    "nova_1": "Uforarbejdet eller minimalt forarbejdet",
+    "nova_2": "Forarbejdet kulinarisk ingrediens (olie, sukker, salt)",
+    "nova_3": "Forarbejdet fødevare",
+    "nova_4": "Ultraforarbejdet fødevare"
   },
   "edit_profile": {
     "title": "Rediger profil",

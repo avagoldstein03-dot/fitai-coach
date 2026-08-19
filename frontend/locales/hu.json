@@ -1388,7 +1388,21 @@
     "log_button": "Naplózás",
     "logged_title": "Naplózva",
     "logged_msg": "Hozzáadva az étkezési naplódhoz.",
-    "error_log_meal": "Nem sikerült ezt a terméket naplózni."
+    "error_log_meal": "Nem sikerült ezt a terméket naplózni.",
+    "why_this_rating": "Miért ez az értékelés",
+    "factor_nutrition": "Tápanyag Minősége",
+    "factor_processing": "Feldolgozás Szintje",
+    "factor_additives": "Adalékok",
+    "flagged_count": "{{count}} megjelölt összetevő találva",
+    "nutriscore_a": "Kiváló tápanyag minőség",
+    "nutriscore_b": "Jó tápanyag minőség",
+    "nutriscore_c": "Átlagos tápanyag minőség",
+    "nutriscore_d": "Gyenge tápanyag minőség",
+    "nutriscore_e": "Rossz tápanyag minőség",
+    "nova_1": "Feldolgozatlan vagy minimálisan feldolgozott",
+    "nova_2": "Feldolgozott kulináris összetevő (olaj, cukor, só)",
+    "nova_3": "Feldolgozott élelmiszer",
+    "nova_4": "Ultrafeldolgozott élelmiszer"
   },
   "edit_profile": {
     "title": "Profil szerkesztése",

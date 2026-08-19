@@ -1388,7 +1388,21 @@
     "log_button": "Protokollieren",
     "logged_title": "Protokolliert",
     "logged_msg": "Zu deinem Ernährungstagebuch hinzugefügt.",
-    "error_log_meal": "Konnte dieses Produkt nicht protokollieren."
+    "error_log_meal": "Konnte dieses Produkt nicht protokollieren.",
+    "why_this_rating": "Warum diese Bewertung",
+    "factor_nutrition": "Ernährungsqualität",
+    "factor_processing": "Verarbeitungsstufe",
+    "factor_additives": "Zusatzstoffe",
+    "flagged_count": "{{count}} verdächtige Zutat(en) gefunden",
+    "nutriscore_a": "Ausgezeichnete Ernährungsqualität",
+    "nutriscore_b": "Gute Ernährungsqualität",
+    "nutriscore_c": "Durchschnittliche Ernährungsqualität",
+    "nutriscore_d": "Schlechte Ernährungsqualität",
+    "nutriscore_e": "Sehr schlechte Ernährungsqualität",
+    "nova_1": "Unverarbeitet oder minimal verarbeitet",
+    "nova_2": "Verarbeitete Zutat zum Kochen (Öl, Zucker, Salz)",
+    "nova_3": "Verarbeitetes Lebensmittel",
+    "nova_4": "Hochverarbeitetes Lebensmittel"
   },
   "edit_profile": {
     "title": "Profil bearbeiten",

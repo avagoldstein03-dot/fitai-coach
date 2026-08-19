@@ -35,12 +35,17 @@ interface ScannedProduct {
   score: number;
   grade: "great" | "good" | "mediocre" | "bad";
   flaggedIngredients: FlaggedIngredient[];
+  nutriscoreGrade: string | null;
+  novaGroup: number | null;
   caloriesPer100g: number | null;
   proteinPer100g: number | null;
   carbsPer100g: number | null;
   fatPer100g: number | null;
   servingSizeGrams: number | null;
 }
+
+const NUTRISCORE_COLOR: Record<string, string> = { a: T.green, b: T.teal, c: T.amber, d: T.red, e: T.red };
+const NOVA_COLOR: Record<number, string> = { 1: T.green, 2: T.teal, 3: T.amber, 4: T.red };
 
 const MEAL_TYPES = ["breakfast", "lunch", "dinner", "snack"] as const;
 
@@ -206,24 +211,68 @@ export default function ProductScanScreen() {
         </View>
 
         <View style={s.ingredientsSection}>
-          <Text style={s.ingredientsTitle}>{t("product_scan.flagged_ingredients_title")}</Text>
-          {product.flaggedIngredients.length === 0 ? (
-            <Text style={s.noFlagged}>{t("product_scan.no_flagged_ingredients")}</Text>
-          ) : (
-            product.flaggedIngredients.map((ing) => (
-              <View key={ing.code} style={s.ingredientRow}>
-                <View
-                  style={[
-                    s.riskDot,
-                    { backgroundColor: ing.riskLevel === "high" ? T.red : T.amber },
-                  ]}
-                />
-                <View style={{ flex: 1 }}>
-                  <Text style={s.ingredientName}>{ing.name}</Text>
-                  <Text style={s.ingredientReason}>{ing.reason}</Text>
-                </View>
+          <Text style={s.ingredientsTitle}>{t("product_scan.why_this_rating")}</Text>
+
+          {product.nutriscoreGrade && (
+            <View style={s.factorRow}>
+              <View style={[s.factorBadge, { backgroundColor: NUTRISCORE_COLOR[product.nutriscoreGrade.toLowerCase()] ?? T.textMuted }]}>
+                <Text style={s.factorBadgeText}>{product.nutriscoreGrade.toUpperCase()}</Text>
               </View>
-            ))
+              <View style={{ flex: 1 }}>
+                <Text style={s.factorTitle}>{t("product_scan.factor_nutrition")}</Text>
+                <Text style={s.factorDetail}>{t(`product_scan.nutriscore_${product.nutriscoreGrade.toLowerCase()}`)}</Text>
+              </View>
+            </View>
+          )}
+
+          {product.novaGroup != null && (
+            <View style={s.factorRow}>
+              <View style={[s.factorBadge, { backgroundColor: NOVA_COLOR[product.novaGroup] ?? T.textMuted }]}>
+                <Text style={s.factorBadgeText}>{product.novaGroup}</Text>
+              </View>
+              <View style={{ flex: 1 }}>
+                <Text style={s.factorTitle}>{t("product_scan.factor_processing")}</Text>
+                <Text style={s.factorDetail}>{t(`product_scan.nova_${product.novaGroup}`)}</Text>
+              </View>
+            </View>
+          )}
+
+          <View style={s.factorRow}>
+            <View
+              style={[
+                s.factorBadge,
+                { backgroundColor: product.flaggedIngredients.length === 0 ? T.green : T.red },
+              ]}
+            >
+              <Text style={s.factorBadgeText}>{product.flaggedIngredients.length}</Text>
+            </View>
+            <View style={{ flex: 1 }}>
+              <Text style={s.factorTitle}>{t("product_scan.factor_additives")}</Text>
+              <Text style={s.factorDetail}>
+                {product.flaggedIngredients.length === 0
+                  ? t("product_scan.no_flagged_ingredients")
+                  : t("product_scan.flagged_count", { count: product.flaggedIngredients.length })}
+              </Text>
+            </View>
+          </View>
+
+          {product.flaggedIngredients.length > 0 && (
+            <View style={s.flaggedList}>
+              {product.flaggedIngredients.map((ing) => (
+                <View key={ing.code} style={s.ingredientRow}>
+                  <View
+                    style={[
+                      s.riskDot,
+                      { backgroundColor: ing.riskLevel === "high" ? T.red : T.amber },
+                    ]}
+                  />
+                  <View style={{ flex: 1 }}>
+                    <Text style={s.ingredientName}>{ing.name}</Text>
+                    <Text style={s.ingredientReason}>{ing.reason}</Text>
+                  </View>
+                </View>
+              ))}
+            </View>
           )}
         </View>
 
@@ -472,6 +521,16 @@ const s = StyleSheet.create({
   ingredientsSection: { paddingHorizontal: 24, marginBottom: 20 },
   ingredientsTitle: { fontSize: 15, fontWeight: "700", color: T.textPrimary, marginBottom: 12 },
   noFlagged: { color: T.textMuted, fontSize: 13 },
+
+  factorRow: { flexDirection: "row", gap: 12, alignItems: "center", marginBottom: 14 },
+  factorBadge: { width: 32, height: 32, borderRadius: 16, alignItems: "center", justifyContent: "center" },
+  factorBadgeText: { color: "#000", fontWeight: "800", fontSize: 13 },
+  factorTitle: { color: T.textPrimary, fontWeight: "600", fontSize: 14 },
+  factorDetail: { color: T.textSecondary, fontSize: 12, marginTop: 1 },
+  flaggedList: {
+    marginTop: 4, paddingTop: 14, borderTopWidth: 1, borderColor: T.border,
+  },
+
   ingredientRow: { flexDirection: "row", gap: 10, marginBottom: 14, alignItems: "flex-start" },
   riskDot: { width: 8, height: 8, borderRadius: 4, marginTop: 5 },
   ingredientName: { color: T.textPrimary, fontWeight: "600", fontSize: 14 },

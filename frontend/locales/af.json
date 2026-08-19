@@ -1388,7 +1388,21 @@
     "log_button": "Teken Dit Aan",
     "logged_title": "Aangeteken",
     "logged_msg": "By jou voedingsdiarium gevoeg.",
-    "error_log_meal": "Kon hierdie produk nie aanteken nie."
+    "error_log_meal": "Kon hierdie produk nie aanteken nie.",
+    "why_this_rating": "Waarom Hierdie Gradering",
+    "factor_nutrition": "Voedingsgehalte",
+    "factor_processing": "Verwerkingsvlak",
+    "factor_additives": "Toevoegstowwe",
+    "flagged_count": "{{count}} gemerkte bestanddeel(e) gevind",
+    "nutriscore_a": "Uitstekende voedingsgehalte",
+    "nutriscore_b": "Goeie voedingsgehalte",
+    "nutriscore_c": "Gemiddelde voedingsgehalte",
+    "nutriscore_d": "Swak voedingsgehalte",
+    "nutriscore_e": "Slegte voedingsgehalte",
+    "nova_1": "Onverwerkt of minimaal verwerk",
+    "nova_2": "Verwerkte kulinêre bestanddeel (olie, suiker, sout)",
+    "nova_3": "Verwerkte kos",
+    "nova_4": "Ultra-verwerkte kos"
   },
   "edit_profile": {
     "title": "Profiel Redigeer",

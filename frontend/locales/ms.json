@@ -1388,7 +1388,21 @@
     "log_button": "Catat",
     "logged_title": "Tercatat",
     "logged_msg": "Ditambah ke diari makanan anda.",
-    "error_log_meal": "Tidak dapat mencatat produk ini."
+    "error_log_meal": "Tidak dapat mencatat produk ini.",
+    "why_this_rating": "Mengapa Penarafan Ini",
+    "factor_nutrition": "Kualiti Pemakanan",
+    "factor_processing": "Tahap Pemprosesan",
+    "factor_additives": "Bahan Tambahan",
+    "flagged_count": "{{count}} bahan berbendera ditemui",
+    "nutriscore_a": "Kualiti pemakanan yang sangat baik",
+    "nutriscore_b": "Kualiti pemakanan yang baik",
+    "nutriscore_c": "Kualiti pemakanan yang sederhana",
+    "nutriscore_d": "Kualiti pemakanan yang lemah",
+    "nutriscore_e": "Kualiti pemakanan yang buruk",
+    "nova_1": "Tidak diproses atau minimal diproses",
+    "nova_2": "Bahan kulinari yang diproses (minyak, gula, garam)",
+    "nova_3": "Makanan yang diproses",
+    "nova_4": "Makanan ultra-diproses"
   },
   "edit_profile": {
     "title": "Edit Profil",

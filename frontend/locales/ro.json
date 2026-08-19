@@ -1388,7 +1388,21 @@
     "log_button": "Înregistrează",
     "logged_title": "Înregistrat",
     "logged_msg": "Adăugat în jurnalul tău alimentar.",
-    "error_log_meal": "Nu s-a putut înregistra acest produs."
+    "error_log_meal": "Nu s-a putut înregistra acest produs.",
+    "why_this_rating": "De Ce Această評価",
+    "factor_nutrition": "Calitatea Nutrițională",
+    "factor_processing": "Nivelul de Procesare",
+    "factor_additives": "Aditivi",
+    "flagged_count": "{{count}} ingredient(e) marcat(e) găsite",
+    "nutriscore_a": "Calitate nutrițională excelentă",
+    "nutriscore_b": "Calitate nutrițională bună",
+    "nutriscore_c": "Calitate nutrițională medie",
+    "nutriscore_d": "Calitate nutrițională slabă",
+    "nutriscore_e": "Calitate nutrițională proastă",
+    "nova_1": "Neprelucrat sau minim prelucrat",
+    "nova_2": "Ingredient culinar prelucrat (ulei, zahăr, sare)",
+    "nova_3": "Aliment prelucrat",
+    "nova_4": "Aliment ultra-prelucrat"
   },
   "edit_profile": {
     "title": "Editare Profil",

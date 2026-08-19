@@ -1388,7 +1388,21 @@
     "log_button": "Zaloguj",
     "logged_title": "Zalogowano",
     "logged_msg": "Dodano do dziennika posiłków.",
-    "error_log_meal": "Nie udało się zalogować tego produktu."
+    "error_log_meal": "Nie udało się zalogować tego produktu.",
+    "why_this_rating": "Dlaczego ta ocena",
+    "factor_nutrition": "Jakość odżywcza",
+    "factor_processing": "Stopień przetworzenia",
+    "factor_additives": "Dodatki",
+    "flagged_count": "Znaleziono {{count}} składnik(ów) oznaczony(ych) jako wątpliwy(e)",
+    "nutriscore_a": "Doskonała jakość odżywcza",
+    "nutriscore_b": "Dobra jakość odżywcza",
+    "nutriscore_c": "Średnia jakość odżywcza",
+    "nutriscore_d": "Słaba jakość odżywcza",
+    "nutriscore_e": "Zła jakość odżywcza",
+    "nova_1": "Nieprzetworzony lub minimalnie przetworzony",
+    "nova_2": "Przetworzony składnik kulinarny (olej, cukier, sól)",
+    "nova_3": "Produkt przetworzony",
+    "nova_4": "Produkt ultra-przetworzony"
   },
   "edit_profile": {
     "title": "Edytuj Profil",

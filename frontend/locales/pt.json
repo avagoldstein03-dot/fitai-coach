@@ -1388,7 +1388,21 @@
     "log_button": "Registar",
     "logged_title": "Registado",
     "logged_msg": "Adicionado ao seu diário alimentar.",
-    "error_log_meal": "Não foi possível registar este produto."
+    "error_log_meal": "Não foi possível registar este produto.",
+    "why_this_rating": "Por Que Esta Classificação",
+    "factor_nutrition": "Qualidade Nutricional",
+    "factor_processing": "Nível de Processamento",
+    "factor_additives": "Aditivos",
+    "flagged_count": "{{count}} ingrediente(s) sinalizado(s) encontrado(s)",
+    "nutriscore_a": "Qualidade nutricional excelente",
+    "nutriscore_b": "Qualidade nutricional boa",
+    "nutriscore_c": "Qualidade nutricional média",
+    "nutriscore_d": "Qualidade nutricional fraca",
+    "nutriscore_e": "Qualidade nutricional ruim",
+    "nova_1": "Não processado ou minimamente processado",
+    "nova_2": "Ingrediente culinário processado (óleo, açúcar, sal)",
+    "nova_3": "Alimento processado",
+    "nova_4": "Alimento ultra-processado"
   },
   "edit_profile": {
     "title": "Editar Perfil",

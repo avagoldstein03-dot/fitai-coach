@@ -1388,7 +1388,21 @@
     "log_button": "Zabilježi",
     "logged_title": "Zabilježeno",
     "logged_msg": "Dodano u vašu prehranu.",
-    "error_log_meal": "Nije moguće zabilježiti ovaj proizvod."
+    "error_log_meal": "Nije moguće zabilježiti ovaj proizvod.",
+    "why_this_rating": "Zašto ovakva ocjena",
+    "factor_nutrition": "Kvaliteta prehrane",
+    "factor_processing": "Razina obrade",
+    "factor_additives": "Aditivi",
+    "flagged_count": "Pronađen {{count}} problematičan/na ingredient/a",
+    "nutriscore_a": "Odličan značaj nutritivne vrijednosti",
+    "nutriscore_b": "Dobar značaj nutritivne vrijednosti",
+    "nutriscore_c": "Prosječan značaj nutritivne vrijednosti",
+    "nutriscore_d": "Slab značaj nutritivne vrijednosti",
+    "nutriscore_e": "Loš značaj nutritivne vrijednosti",
+    "nova_1": "Neobrađeno ili minimalno obrađeno",
+    "nova_2": "Obrađeni kulinarski ingredient (ulje, šećer, sol)",
+    "nova_3": "Obrađena hrana",
+    "nova_4": "Ultraobrađena hrana"
   },
   "edit_profile": {
     "title": "Uređivanje profila",

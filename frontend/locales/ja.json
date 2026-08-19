@@ -1388,7 +1388,21 @@
     "log_button": "ログする",
     "logged_title": "ログされました",
     "logged_msg": "食事日記に追加されました。",
-    "error_log_meal": "この商品をログできませんでした。"
+    "error_log_meal": "この商品をログできませんでした。",
+    "why_this_rating": "なぜこの評価？",
+    "factor_nutrition": "栄養価",
+    "factor_processing": "加工レベル",
+    "factor_additives": "添加物",
+    "flagged_count": "{{count}}個の問題のある成分が見つかりました",
+    "nutriscore_a": "優れた栄養価",
+    "nutriscore_b": "良好な栄養価",
+    "nutriscore_c": "平均的な栄養価",
+    "nutriscore_d": "低い栄養価",
+    "nutriscore_e": "不良な栄養価",
+    "nova_1": "未加工または最小限の加工",
+    "nova_2": "加工調理用材料（油、砂糖、塩）",
+    "nova_3": "加工食品",
+    "nova_4": "超加工食品"
   },
   "edit_profile": {
     "title": "プロフィール編集",
