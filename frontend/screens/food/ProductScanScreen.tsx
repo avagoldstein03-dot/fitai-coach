@@ -306,7 +306,7 @@ export default function ProductScanScreen() {
                   style={[s.mealTypeChip, logMealType === mt && s.mealTypeChipActive]}
                 >
                   <Text style={[s.mealTypeText, logMealType === mt && s.mealTypeTextActive]}>
-                    {t(`food_scanner.meal_${mt}`)}
+                    {t(`food_diary.meal_${mt}`)}
                   </Text>
                 </TouchableOpacity>
               ))}
