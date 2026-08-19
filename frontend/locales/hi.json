@@ -892,7 +892,9 @@
     "ring_goal": "लक्ष्य",
     "ring_over": "अधिक",
     "ring_remaining": "बचा है",
-    "error_generate": "भोजन योजना जनरेट करने में विफल"
+    "error_generate": "भोजन योजना जनरेट करने में विफल",
+    "scan_product": "किसी उत्पाद को स्कैन करें",
+    "scan_product_sub": "सामग्री, योजक और पोषण तथ्य जांचें"
   },
   "progress": {
     "title": "प्रगति",
@@ -1373,7 +1375,20 @@
     "try_supplements_cta": "सप्लीमेंट स्टैक आजमाएं",
     "scan_another": "दूसरा स्कैन करें",
     "done": "पूर्ण",
-    "error_upstream": "उत्पाद डेटाबेस अस्थायी रूप से अनुपलब्ध है, कुछ समय बाद पुनः प्रयास करें"
+    "error_upstream": "उत्पाद डेटाबेस अस्थायी रूप से अनुपलब्ध है, कुछ समय बाद पुनः प्रयास करें",
+    "add_to_shopping_list": "शॉपिंग लिस्ट में जोड़ें",
+    "added_to_list_title": "जोड़ा गया",
+    "added_to_list_msg": "यह आपकी शॉपिंग लिस्ट पर है।",
+    "error_no_plan": "शॉपिंग लिस्ट शुरू करने के लिए पहले एक भोजन योजना बनाएं।",
+    "error_subscription_required": "शॉपिंग लिस्ट तक पहुंचने के लिए अपग्रेड करें।",
+    "error_add_to_list": "इसे आपकी शॉपिंग लिस्ट में जोड़ा नहीं जा सका।",
+    "log_this_product": "इस उत्पाद को लॉग करें",
+    "grams_label": "मात्रा",
+    "log_preview": "{{calories}} kcal · {{protein}}g प्रोटीन · {{carbs}}g कार्ब्स · {{fat}}g वसा",
+    "log_button": "लॉग करें",
+    "logged_title": "लॉग किया गया",
+    "logged_msg": "आपकी खाद्य डायरी में जोड़ा गया।",
+    "error_log_meal": "इस उत्पाद को लॉग नहीं किया जा सका।"
   },
   "edit_profile": {
     "title": "प्रोफाइल संपादित करें",

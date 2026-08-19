@@ -892,7 +892,9 @@
     "ring_goal": "obiettivo",
     "ring_over": "oltre",
     "ring_remaining": "rimanente",
-    "error_generate": "Impossibile generare il piano pasto"
+    "error_generate": "Impossibile generare il piano pasto",
+    "scan_product": "Scansiona un Prodotto",
+    "scan_product_sub": "Verifica ingredienti, additivi e valori nutrizionali"
   },
   "progress": {
     "title": "Progresso",
@@ -1373,7 +1375,20 @@
     "try_supplements_cta": "Prova Stack di Integratori",
     "scan_another": "Scansiona un Altro",
     "done": "Fatto",
-    "error_upstream": "Database prodotti temporaneamente non disponibile, riprova tra poco"
+    "error_upstream": "Database prodotti temporaneamente non disponibile, riprova tra poco",
+    "add_to_shopping_list": "Aggiungi alla lista della spesa",
+    "added_to_list_title": "Aggiunto",
+    "added_to_list_msg": "È nella tua lista della spesa.",
+    "error_no_plan": "Genera prima un piano alimentare per iniziare una lista della spesa.",
+    "error_subscription_required": "Esegui l'upgrade per accedere alla lista della spesa.",
+    "error_add_to_list": "Impossibile aggiungere questo alla tua lista della spesa.",
+    "log_this_product": "Registra questo prodotto",
+    "grams_label": "Quantità",
+    "log_preview": "{{calories}} kcal · {{protein}}g proteine · {{carbs}}g carboidrati · {{fat}}g grassi",
+    "log_button": "Registra",
+    "logged_title": "Registrato",
+    "logged_msg": "Aggiunto al tuo diario alimentare.",
+    "error_log_meal": "Impossibile registrare questo prodotto."
   },
   "edit_profile": {
     "title": "Modifica Profilo",

@@ -892,7 +892,9 @@
     "ring_goal": "doelstelling",
     "ring_over": "bo",
     "ring_remaining": "oor",
-    "error_generate": "Kon nie maaltydplan skep nie"
+    "error_generate": "Kon nie maaltydplan skep nie",
+    "scan_product": "Skandeer 'n Produk",
+    "scan_product_sub": "Kontroleer ingrediënte, toevoegings en voedingsfeite"
   },
   "progress": {
     "title": "Vordering",
@@ -1373,7 +1375,20 @@
     "try_supplements_cta": "Probeer Supplement Stack",
     "scan_another": "Skandeer Nog Een",
     "done": "Klaar",
-    "error_upstream": "Produktdatabasis is tydelik onbeskikbaar, probeer gou weer"
+    "error_upstream": "Produktdatabasis is tydelik onbeskikbaar, probeer gou weer",
+    "add_to_shopping_list": "Voeg by Inkopielys",
+    "added_to_list_title": "Bygevoeg",
+    "added_to_list_msg": "Dit is op jou inkopielys.",
+    "error_no_plan": "Genereer eers 'n maaltydplan om 'n inkopielys te begin.",
+    "error_subscription_required": "Opgradeer om toegang tot die inkopielys te kry.",
+    "error_add_to_list": "Kon dit nie by jou inkopielys voeg nie.",
+    "log_this_product": "Hierdie Produk Aanteken",
+    "grams_label": "Hoeveelheid",
+    "log_preview": "{{calories}} kcal · {{protein}}g proteïen · {{carbs}}g koolhidrate · {{fat}}g vet",
+    "log_button": "Teken Dit Aan",
+    "logged_title": "Aangeteken",
+    "logged_msg": "By jou voedingsdiarium gevoeg.",
+    "error_log_meal": "Kon hierdie produk nie aanteken nie."
   },
   "edit_profile": {
     "title": "Profiel Redigeer",

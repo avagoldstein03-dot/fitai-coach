@@ -892,7 +892,9 @@
     "ring_goal": "objectif",
     "ring_over": "au-dessus",
     "ring_remaining": "restant",
-    "error_generate": "Impossible de générer le plan de repas"
+    "error_generate": "Impossible de générer le plan de repas",
+    "scan_product": "Scanner un produit",
+    "scan_product_sub": "Vérifiez les ingrédients, additifs et informations nutritionnelles"
   },
   "progress": {
     "title": "Progression",
@@ -1373,7 +1375,20 @@
     "try_supplements_cta": "Essayer la Pile de Suppléments",
     "scan_another": "Scanner un Autre",
     "done": "Terminé",
-    "error_upstream": "Base de données des produits temporairement indisponible, veuillez réessayer sous peu"
+    "error_upstream": "Base de données des produits temporairement indisponible, veuillez réessayer sous peu",
+    "add_to_shopping_list": "Ajouter à la liste d'achats",
+    "added_to_list_title": "Ajouté",
+    "added_to_list_msg": "C'est sur votre liste d'achats.",
+    "error_no_plan": "Générez d'abord un plan alimentaire pour commencer une liste d'achats.",
+    "error_subscription_required": "Passez à l'abonnement pour accéder à la liste d'achats.",
+    "error_add_to_list": "Impossible d'ajouter cela à votre liste d'achats.",
+    "log_this_product": "Enregistrer ce produit",
+    "grams_label": "Quantité",
+    "log_preview": "{{calories}} kcal · {{protein}}g protéines · {{carbs}}g glucides · {{fat}}g lipides",
+    "log_button": "Enregistrer",
+    "logged_title": "Enregistré",
+    "logged_msg": "Ajouté à votre journal alimentaire.",
+    "error_log_meal": "Impossible d'enregistrer ce produit."
   },
   "edit_profile": {
     "title": "Modifier le profil",

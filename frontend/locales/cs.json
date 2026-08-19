@@ -892,7 +892,9 @@
     "ring_goal": "cíl",
     "ring_over": "přes",
     "ring_remaining": "zbývá",
-    "error_generate": "Selhalo vygenerování plánu jídel"
+    "error_generate": "Selhalo vygenerování plánu jídel",
+    "scan_product": "Naskenovat Produkt",
+    "scan_product_sub": "Zkontrolujte ingredience, aditiva a výživové údaje"
   },
   "progress": {
     "title": "Pokrok",
@@ -1373,7 +1375,20 @@
     "try_supplements_cta": "Vyzkoušejte Stack Suplementů",
     "scan_another": "Skenujte Další",
     "done": "Hotovo",
-    "error_upstream": "Databáze produktů je dočasně nedostupná, zkuste to za chvíli znovu"
+    "error_upstream": "Databáze produktů je dočasně nedostupná, zkuste to za chvíli znovu",
+    "add_to_shopping_list": "Přidat do nákupního seznamu",
+    "added_to_list_title": "Přidáno",
+    "added_to_list_msg": "Je na vašem nákupním seznamu.",
+    "error_no_plan": "Nejdříve vytvořte plán jídel, abyste mohli začít nákupní seznam.",
+    "error_subscription_required": "Upgradujte si předplatné pro přístup k nákupnímu seznamu.",
+    "error_add_to_list": "Nepodařilo se přidat tuto položku na váš nákupní seznam.",
+    "log_this_product": "Zaznamenat tento produkt",
+    "grams_label": "Množství",
+    "log_preview": "{{calories}} kcal · {{protein}}g protein · {{carbs}}g sacharidů · {{fat}}g tuků",
+    "log_button": "Zaznamenat",
+    "logged_title": "Zaznamenáno",
+    "logged_msg": "Přidáno do vašeho deníku jídel.",
+    "error_log_meal": "Nepodařilo se zaznamenat tento produkt."
   },
   "edit_profile": {
     "title": "Úprava profilu",

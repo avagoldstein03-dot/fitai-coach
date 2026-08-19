@@ -892,7 +892,9 @@
     "ring_goal": "目標",
     "ring_over": "超過",
     "ring_remaining": "残り",
-    "error_generate": "食事プランの生成に失敗しました"
+    "error_generate": "食事プランの生成に失敗しました",
+    "scan_product": "製品をスキャン",
+    "scan_product_sub": "成分、添加物、栄養成分表示を確認"
   },
   "progress": {
     "title": "進捗",
@@ -1373,7 +1375,20 @@
     "try_supplements_cta": "サプリメントスタックを試す",
     "scan_another": "別のものをスキャン",
     "done": "完了",
-    "error_upstream": "製品データベースは一時的に利用できません。しばらくしてからもう一度お試しください"
+    "error_upstream": "製品データベースは一時的に利用できません。しばらくしてからもう一度お試しください",
+    "add_to_shopping_list": "ショッピングリストに追加",
+    "added_to_list_title": "追加されました",
+    "added_to_list_msg": "ショッピングリストに追加されました。",
+    "error_no_plan": "ショッピングリストを開始するには、まず食事プランを生成してください。",
+    "error_subscription_required": "ショッピングリストにアクセスするにはアップグレードしてください。",
+    "error_add_to_list": "ショッピングリストに追加できませんでした。",
+    "log_this_product": "この商品をログする",
+    "grams_label": "数量",
+    "log_preview": "{{calories}} kcal · {{protein}}g たんぱく質 · {{carbs}}g 炭水化物 · {{fat}}g 脂質",
+    "log_button": "ログする",
+    "logged_title": "ログされました",
+    "logged_msg": "食事日記に追加されました。",
+    "error_log_meal": "この商品をログできませんでした。"
   },
   "edit_profile": {
     "title": "プロフィール編集",

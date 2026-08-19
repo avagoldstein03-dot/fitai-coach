@@ -892,7 +892,9 @@
     "ring_goal": "cilj",
     "ring_over": "preko",
     "ring_remaining": "preostalo",
-    "error_generate": "Stvaranje plana obroka nije uspjelo"
+    "error_generate": "Stvaranje plana obroka nije uspjelo",
+    "scan_product": "Skeniraj Proizvod",
+    "scan_product_sub": "Provjeri sastojke, aditive i nutritivne činjenice"
   },
   "progress": {
     "title": "Napredak",
@@ -1373,7 +1375,20 @@
     "try_supplements_cta": "Pokušaj Supplement Stack",
     "scan_another": "Skeniraj još jedan",
     "done": "Gotovo",
-    "error_upstream": "Baza podataka proizvoda privremeno nije dostupna, pokušaj ponovno za nekoliko trenutaka"
+    "error_upstream": "Baza podataka proizvoda privremeno nije dostupna, pokušaj ponovno za nekoliko trenutaka",
+    "add_to_shopping_list": "Dodaj na popis kupovine",
+    "added_to_list_title": "Dodano",
+    "added_to_list_msg": "Nalazi se na vašoj listi za kupovinu.",
+    "error_no_plan": "Prvo generirajte plan prehrane da biste započeli popis kupovine.",
+    "error_subscription_required": "Nadogradite da biste pristupili popisu kupovine.",
+    "error_add_to_list": "Nije moguće dodati ovo na vašu listu za kupovinu.",
+    "log_this_product": "Zabilježi Ovaj Proizvod",
+    "grams_label": "Količina",
+    "log_preview": "{{calories}} kcal · {{protein}}g proteina · {{carbs}}g ugljikohidrata · {{fat}}g masti",
+    "log_button": "Zabilježi",
+    "logged_title": "Zabilježeno",
+    "logged_msg": "Dodano u vašu prehranu.",
+    "error_log_meal": "Nije moguće zabilježiti ovaj proizvod."
   },
   "edit_profile": {
     "title": "Uređivanje profila",

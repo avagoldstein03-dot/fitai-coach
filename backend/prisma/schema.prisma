@@ -565,6 +565,12 @@ model ProductScan {
   novaGroup             Int?
   nutriscoreGrade       String?
 
+  caloriesPer100g       Float?
+  proteinPer100g        Float?
+  carbsPer100g          Float?
+  fatPer100g            Float?
+  servingSizeGrams      Float?
+
   score                 Int
   grade                 String                 // "great" | "good" | "mediocre" | "bad"
   flaggedIngredients    Json                   @default("[]")

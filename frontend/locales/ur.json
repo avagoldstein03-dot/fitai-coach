@@ -892,7 +892,9 @@
     "ring_goal": "مقصد",
     "ring_over": "اوپر",
     "ring_remaining": "باقی",
-    "error_generate": "کھانے کی منصوبہ بندی تیار کرنے میں ناکام"
+    "error_generate": "کھانے کی منصوبہ بندی تیار کرنے میں ناکام",
+    "scan_product": "کوئی مصنوعات اسکین کریں",
+    "scan_product_sub": "اجزاء، اضافی مواد اور غذائی حقائق کی جانچ کریں"
   },
   "progress": {
     "title": "پیشرفت",
@@ -1373,7 +1375,20 @@
     "try_supplements_cta": "Supplement Stack آزمائیں",
     "scan_another": "دوسرا سکین کریں",
     "done": "مکمل",
-    "error_upstream": "مصنوعات کا ڈیٹا بیس عارضی طور پر دستیاب نہیں ہے، کچھ دیر بعد دوبارہ کوشش کریں"
+    "error_upstream": "مصنوعات کا ڈیٹا بیس عارضی طور پر دستیاب نہیں ہے، کچھ دیر بعد دوبارہ کوشش کریں",
+    "add_to_shopping_list": "شاپنگ لسٹ میں شامل کریں",
+    "added_to_list_title": "شامل کیا گیا",
+    "added_to_list_msg": "یہ آپ کی شاپنگ لسٹ میں ہے۔",
+    "error_no_plan": "شاپنگ لسٹ شروع کرنے کے لیے پہلے کھانے کا منصوبہ بنائیں۔",
+    "error_subscription_required": "شاپنگ لسٹ تک رسائی کے لیے اپ گریڈ کریں۔",
+    "error_add_to_list": "یہ آپ کی شاپنگ لسٹ میں شامل نہیں کیا جا سکا۔",
+    "log_this_product": "یہ پروڈکٹ ریکارڈ کریں",
+    "grams_label": "مقدار",
+    "log_preview": "{{calories}} کیلوری · {{protein}}g پروٹین · {{carbs}}g کاربوہائیڈریٹس · {{fat}}g چربی",
+    "log_button": "ریکارڈ کریں",
+    "logged_title": "ریکارڈ شدہ",
+    "logged_msg": "آپ کی غذائی ڈائری میں شامل کیا گیا۔",
+    "error_log_meal": "یہ پروڈکٹ ریکارڈ نہیں کیا جا سکا۔"
   },
   "edit_profile": {
     "title": "پروفائل میں ترمیم کریں",

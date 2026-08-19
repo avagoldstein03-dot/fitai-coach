@@ -892,7 +892,9 @@
     "ring_goal": "lengo",
     "ring_over": "zaidi",
     "ring_remaining": "iliyobaki",
-    "error_generate": "Haikuweza kujenga mpango wa chakula"
+    "error_generate": "Haikuweza kujenga mpango wa chakula",
+    "scan_product": "Scan bidhaa",
+    "scan_product_sub": "Angalia viambajengo, viongezaji & ukweli wa kuona"
   },
   "progress": {
     "title": "Maendeleo",
@@ -1373,7 +1375,20 @@
     "try_supplements_cta": "Jaribu Supplement Stack",
     "scan_another": "Changia Nyingine",
     "done": "Imekamilika",
-    "error_upstream": "Hifadhidata ya bidhaa haipo kwa sasa, jaribu tena baada ya muda"
+    "error_upstream": "Hifadhidata ya bidhaa haipo kwa sasa, jaribu tena baada ya muda",
+    "add_to_shopping_list": "Ongeza kwenye Orodha ya Ununuzi",
+    "added_to_list_title": "Imeongezwa",
+    "added_to_list_msg": "Iko kwenye orodha yako ya ununuzi.",
+    "error_no_plan": "Tengeneza mpango wa chakula kwanza ili kuanza orodha ya ununuzi.",
+    "error_subscription_required": "Boresha ili kufikia orodha ya ununuzi.",
+    "error_add_to_list": "Haikuweza kuongeza hii kwenye orodha yako ya ununuzi.",
+    "log_this_product": "Rekebisha Bidhaa Hii",
+    "grams_label": "Kiasi",
+    "log_preview": "{{calories}} kcal · {{protein}}g protini · {{carbs}}g kabohaidreti · {{fat}}g mafuta",
+    "log_button": "Rekebisha",
+    "logged_title": "Imerekabishwa",
+    "logged_msg": "Imeongezwa kwenye toleo lako la chakula.",
+    "error_log_meal": "Haikuweza kurekebisha bidhaa hii."
   },
   "edit_profile": {
     "title": "Hariri Wasifu",

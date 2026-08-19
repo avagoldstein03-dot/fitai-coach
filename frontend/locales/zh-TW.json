@@ -892,7 +892,9 @@
     "ring_goal": "目標",
     "ring_over": "超過",
     "ring_remaining": "剩餘",
-    "error_generate": "無法生成餐飲計畫"
+    "error_generate": "無法生成餐飲計畫",
+    "scan_product": "掃描產品",
+    "scan_product_sub": "檢查成分、添加物和營養資訊"
   },
   "progress": {
     "title": "進度",
@@ -1373,7 +1375,20 @@
     "try_supplements_cta": "嘗試補充堆棧",
     "scan_another": "掃描另一個",
     "done": "完成",
-    "error_upstream": "產品資料庫暫時無法使用，請稍後重試"
+    "error_upstream": "產品資料庫暫時無法使用，請稍後重試",
+    "add_to_shopping_list": "加入購物清單",
+    "added_to_list_title": "已加入",
+    "added_to_list_msg": "已加入您的購物清單。",
+    "error_no_plan": "請先生成膳食計劃以開始購物清單。",
+    "error_subscription_required": "升級訂閱以存取購物清單。",
+    "error_add_to_list": "無法將此項目加入購物清單。",
+    "log_this_product": "記錄此產品",
+    "grams_label": "數量",
+    "log_preview": "{{calories}} 大卡 · {{protein}}g 蛋白質 · {{carbs}}g 碳水化合物 · {{fat}}g 脂肪",
+    "log_button": "記錄",
+    "logged_title": "已記錄",
+    "logged_msg": "已加入您的食物日記。",
+    "error_log_meal": "無法記錄此產品。"
   },
   "edit_profile": {
     "title": "編輯個人資料",

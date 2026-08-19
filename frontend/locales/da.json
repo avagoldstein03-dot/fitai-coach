@@ -892,7 +892,9 @@
     "ring_goal": "mål",
     "ring_over": "over",
     "ring_remaining": "tilbage",
-    "error_generate": "Kunne ikke generere måltidsplan"
+    "error_generate": "Kunne ikke generere måltidsplan",
+    "scan_product": "Scan et produkt",
+    "scan_product_sub": "Tjek ingredienser, tilsætningsstoffer og ernæringsmæssige fakta"
   },
   "progress": {
     "title": "Fremskridt",
@@ -1373,7 +1375,20 @@
     "try_supplements_cta": "Prøv Supplement Stack",
     "scan_another": "Skan et andet",
     "done": "Færdig",
-    "error_upstream": "Produktdatabasen er midlertidigt utilgængelig, prøv igen snart"
+    "error_upstream": "Produktdatabasen er midlertidigt utilgængelig, prøv igen snart",
+    "add_to_shopping_list": "Føj til indkøbsliste",
+    "added_to_list_title": "Tilføjet",
+    "added_to_list_msg": "Det er på din indkøbsliste.",
+    "error_no_plan": "Generer en måltidsplan først for at starte en indkøbsliste.",
+    "error_subscription_required": "Opgrader for at få adgang til indkøbslisten.",
+    "error_add_to_list": "Kunne ikke føje dette til din indkøbsliste.",
+    "log_this_product": "Log Dette Produkt",
+    "grams_label": "Mængde",
+    "log_preview": "{{calories}} kcal · {{protein}}g protein · {{carbs}}g kulhydrater · {{fat}}g fedt",
+    "log_button": "Log Det",
+    "logged_title": "Logget",
+    "logged_msg": "Tilføjet til din fødevarejournal.",
+    "error_log_meal": "Kunne ikke logge dette produkt."
   },
   "edit_profile": {
     "title": "Rediger profil",

@@ -892,7 +892,9 @@
     "ring_goal": "cél",
     "ring_over": "felett",
     "ring_remaining": "maradt",
-    "error_generate": "Nem sikerült létrehozni az étrendet"
+    "error_generate": "Nem sikerült létrehozni az étrendet",
+    "scan_product": "Termék beolvasása",
+    "scan_product_sub": "Ellenőrizze az összetevőket, adalékanyagokat és tápértéket"
   },
   "progress": {
     "title": "Haladás",
@@ -1373,7 +1375,20 @@
     "try_supplements_cta": "Próbálja meg a Supplement Stack-et",
     "scan_another": "Másik beolvasása",
     "done": "Kész",
-    "error_upstream": "A termékadat-bázis átmenetileg nem elérhető, próbálja meg később"
+    "error_upstream": "A termékadat-bázis átmenetileg nem elérhető, próbálja meg később",
+    "add_to_shopping_list": "Hozzáadás a bevásárlólistához",
+    "added_to_list_title": "Hozzáadva",
+    "added_to_list_msg": "Rajta van a bevásárlólistádon.",
+    "error_no_plan": "Először készítsen étrendet a bevásárlólista indításához.",
+    "error_subscription_required": "Frissítsen a bevásárlólista eléréséhez.",
+    "error_add_to_list": "Nem sikerült ezt hozzáadni a bevásárlólistádhoz.",
+    "log_this_product": "Terméket Naplózás",
+    "grams_label": "Mennyiség",
+    "log_preview": "{{calories}} kcal · {{protein}}g fehérje · {{carbs}}g szénhidrát · {{fat}}g zsír",
+    "log_button": "Naplózás",
+    "logged_title": "Naplózva",
+    "logged_msg": "Hozzáadva az étkezési naplódhoz.",
+    "error_log_meal": "Nem sikerült ezt a terméket naplózni."
   },
   "edit_profile": {
     "title": "Profil szerkesztése",

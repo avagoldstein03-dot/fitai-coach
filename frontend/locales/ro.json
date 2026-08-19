@@ -892,7 +892,9 @@
     "ring_goal": "obiectiv",
     "ring_over": "peste",
     "ring_remaining": "rămas",
-    "error_generate": "Nu s-a putut genera planul de masă"
+    "error_generate": "Nu s-a putut genera planul de masă",
+    "scan_product": "Scanează un Produs",
+    "scan_product_sub": "Verifică ingredientele, aditivii și informațiile nutriționale"
   },
   "progress": {
     "title": "Progres",
@@ -1373,7 +1375,20 @@
     "try_supplements_cta": "Încearcă Stiva de Suplimente",
     "scan_another": "Scanează Altul",
     "done": "Gata",
-    "error_upstream": "Baza de date cu produse este temporar indisponibilă, încearcă din nou în curând"
+    "error_upstream": "Baza de date cu produse este temporar indisponibilă, încearcă din nou în curând",
+    "add_to_shopping_list": "Adaugă în Lista de Cumpărături",
+    "added_to_list_title": "Adăugat",
+    "added_to_list_msg": "Se află pe lista ta de cumpărături.",
+    "error_no_plan": "Generează un plan alimentar mai întâi pentru a începe o listă de cumpărături.",
+    "error_subscription_required": "Upgrade pentru a accesa lista de cumpărături.",
+    "error_add_to_list": "Nu s-a putut adăuga aceasta în lista ta de cumpărături.",
+    "log_this_product": "Înregistrează Acest Produs",
+    "grams_label": "Cantitate",
+    "log_preview": "{{calories}} kcal · {{protein}}g proteine · {{carbs}}g carbohidrați · {{fat}}g grăsimi",
+    "log_button": "Înregistrează",
+    "logged_title": "Înregistrat",
+    "logged_msg": "Adăugat în jurnalul tău alimentar.",
+    "error_log_meal": "Nu s-a putut înregistra acest produs."
   },
   "edit_profile": {
     "title": "Editare Profil",

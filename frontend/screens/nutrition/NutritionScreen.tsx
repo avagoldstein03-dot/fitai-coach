@@ -314,14 +314,25 @@ export default function NutritionScreen() {
             </TouchableOpacity>
 
             {planData?.plan && (
-              <TouchableOpacity onPress={() => navigation.navigate("ShoppingList")} style={s.shoppingBtn} activeOpacity={0.8}>
-                <Text style={s.shoppingEmoji}>🛒</Text>
-                <View style={{ flex: 1 }}>
-                  <Text style={s.shoppingTitle}>{t("nutrition.shopping_list")}</Text>
-                  <Text style={s.shoppingSub}>{t("nutrition.shopping_sub")}</Text>
-                </View>
-                <Text style={s.shoppingArrow}>›</Text>
-              </TouchableOpacity>
+              <>
+                <TouchableOpacity onPress={() => navigation.navigate("ShoppingList")} style={s.shoppingBtn} activeOpacity={0.8}>
+                  <Text style={s.shoppingEmoji}>🛒</Text>
+                  <View style={{ flex: 1 }}>
+                    <Text style={s.shoppingTitle}>{t("nutrition.shopping_list")}</Text>
+                    <Text style={s.shoppingSub}>{t("nutrition.shopping_sub")}</Text>
+                  </View>
+                  <Text style={s.shoppingArrow}>›</Text>
+                </TouchableOpacity>
+
+                <TouchableOpacity onPress={() => navigation.navigate("ProductScan")} style={s.shoppingBtn} activeOpacity={0.8}>
+                  <Text style={s.shoppingEmoji}>🔍</Text>
+                  <View style={{ flex: 1 }}>
+                    <Text style={s.shoppingTitle}>{t("nutrition.scan_product")}</Text>
+                    <Text style={s.shoppingSub}>{t("nutrition.scan_product_sub")}</Text>
+                  </View>
+                  <Text style={s.shoppingArrow}>›</Text>
+                </TouchableOpacity>
+              </>
             )}
 
             {loadingPlan ? (

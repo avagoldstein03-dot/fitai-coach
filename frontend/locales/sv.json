@@ -892,7 +892,9 @@
     "ring_goal": "målvärde",
     "ring_over": "över",
     "ring_remaining": "återstår",
-    "error_generate": "Misslyckades att generera måltidsplan"
+    "error_generate": "Misslyckades att generera måltidsplan",
+    "scan_product": "Skanna en produkt",
+    "scan_product_sub": "Kontrollera ingredienser, tillsatser och näringsinnehål"
   },
   "progress": {
     "title": "Framsteg",
@@ -1373,7 +1375,20 @@
     "try_supplements_cta": "Prova Supplement Stack",
     "scan_another": "Skanna en annan",
     "done": "Klart",
-    "error_upstream": "Produktdatabasen är tillfälligt otillgänglig, försök igen inom kort"
+    "error_upstream": "Produktdatabasen är tillfälligt otillgänglig, försök igen inom kort",
+    "add_to_shopping_list": "Lägg till i inköpslista",
+    "added_to_list_title": "Tillagd",
+    "added_to_list_msg": "Den finns på din inköpslista.",
+    "error_no_plan": "Skapa en måltidsplan först för att starta en inköpslista.",
+    "error_subscription_required": "Uppgradera för att få tillgång till inköpslistan.",
+    "error_add_to_list": "Kunde inte lägga till det här i din inköpslista.",
+    "log_this_product": "Logga denna produkt",
+    "grams_label": "Mängd",
+    "log_preview": "{{calories}} kcal · {{protein}}g protein · {{carbs}}g kolhydrater · {{fat}}g fett",
+    "log_button": "Logga det",
+    "logged_title": "Loggad",
+    "logged_msg": "Tillagd i din matdagbok.",
+    "error_log_meal": "Kunde inte logga denna produkt."
   },
   "edit_profile": {
     "title": "Redigera profil",

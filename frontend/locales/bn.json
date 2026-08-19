@@ -892,7 +892,9 @@
     "ring_goal": "লক্ষ্য",
     "ring_over": "অতিরিক্ত",
     "ring_remaining": "বাকি",
-    "error_generate": "খাবার পরিকল্পনা তৈরি করতে ব্যর্থ"
+    "error_generate": "খাবার পরিকল্পনা তৈরি করতে ব্যর্থ",
+    "scan_product": "একটি পণ্য স্ক্যান করুন",
+    "scan_product_sub": "উপাদান, সংযোজন এবং পুষ্টির তথ্য পরীক্ষা করুন"
   },
   "progress": {
     "title": "অগ্রগতি",
@@ -1373,7 +1375,20 @@
     "try_supplements_cta": "সাপ্লিমেন্ট স্ট্যাক চেষ্টা করুন",
     "scan_another": "অন্যটি স্ক্যান করুন",
     "done": "সম্পন্ন",
-    "error_upstream": "পণ্য ডাটাবেস অস্থায়ীভাবে অনুপলব্ধ, শীঘ্রই আবার চেষ্টা করুন"
+    "error_upstream": "পণ্য ডাটাবেস অস্থায়ীভাবে অনুপলব্ধ, শীঘ্রই আবার চেষ্টা করুন",
+    "add_to_shopping_list": "শপিং লিস্টে যোগ করুন",
+    "added_to_list_title": "যোগ হয়েছে",
+    "added_to_list_msg": "এটি আপনার শপিং লিস্টে রয়েছে।",
+    "error_no_plan": "শপিং লিস্ট শুরু করতে প্রথমে একটি মিল প্ল্যান তৈরি করুন।",
+    "error_subscription_required": "শপিং লিস্ট অ্যাক্সেস করতে আপগ্রেড করুন।",
+    "error_add_to_list": "এটি আপনার শপিং লিস্টে যোগ করা যায়নি।",
+    "log_this_product": "এই পণ্যটি লগ করুন",
+    "grams_label": "পরিমাণ",
+    "log_preview": "{{calories}} kcal · {{protein}}g প্রোটিন · {{carbs}}g কার্বস · {{fat}}g ফ্যাট",
+    "log_button": "লগ করুন",
+    "logged_title": "লগ হয়েছে",
+    "logged_msg": "আপনার খাদ্য ডায়ারিতে যোগ হয়েছে।",
+    "error_log_meal": "এই পণ্যটি লগ করা যায়নি।"
   },
   "edit_profile": {
     "title": "প্রোফাইল সম্পাদন করুন",

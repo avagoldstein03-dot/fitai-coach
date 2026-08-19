@@ -892,7 +892,9 @@
     "ring_goal": "cieľ",
     "ring_over": "nadbytek",
     "ring_remaining": "zostáva",
-    "error_generate": "Nepodarilo sa generovať plán jedál"
+    "error_generate": "Nepodarilo sa generovať plán jedál",
+    "scan_product": "Naskenujte Produkt",
+    "scan_product_sub": "Skontrolujte ingrediencie, aditíva a výživové hodnoty"
   },
   "progress": {
     "title": "Pokrok",
@@ -1373,7 +1375,20 @@
     "try_supplements_cta": "Skúsiť Supplement Stack",
     "scan_another": "Naskenujte Ďalší",
     "done": "Hotovo",
-    "error_upstream": "Databáza produktov je dočasne nedostupná, skúste znova o chvíľu"
+    "error_upstream": "Databáza produktov je dočasne nedostupná, skúste znova o chvíľu",
+    "add_to_shopping_list": "Pridať na zoznam nákupov",
+    "added_to_list_title": "Pridané",
+    "added_to_list_msg": "Je na vašom zozname nákupov.",
+    "error_no_plan": "Najprv vytvorte plán jedál, aby ste mohli začať so zoznamom nákupov.",
+    "error_subscription_required": "Upgradujte si účet, aby ste mali prístup k zoznamu nákupov.",
+    "error_add_to_list": "Nepodarilo sa pridať do vášho zoznamu nákupov.",
+    "log_this_product": "Zaznamenať tento produkt",
+    "grams_label": "Množstvo",
+    "log_preview": "{{calories}} kcal · {{protein}}g proteín · {{carbs}}g sacharidov · {{fat}}g tukov",
+    "log_button": "Zaznamenať",
+    "logged_title": "Zaznamenané",
+    "logged_msg": "Pridané do vášho denníka jedál.",
+    "error_log_meal": "Nepodarilo sa zaznamenať tento produkt."
   },
   "edit_profile": {
     "title": "Upraviť profil",

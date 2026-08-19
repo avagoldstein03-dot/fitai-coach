@@ -892,7 +892,9 @@
     "ring_goal": "מטרה",
     "ring_over": "מעל",
     "ring_remaining": "נותר",
-    "error_generate": "נכשל בייצור תוכנית ארוחה"
+    "error_generate": "נכשל בייצור תוכנית ארוחה",
+    "scan_product": "סרוק מוצר",
+    "scan_product_sub": "בדוק מרכיבים, תוספים ועובדות תזונה"
   },
   "progress": {
     "title": "התקדמות",
@@ -1373,7 +1375,20 @@
     "try_supplements_cta": "נסה את Supplement Stack",
     "scan_another": "סרוק עוד אחד",
     "done": "בוצע",
-    "error_upstream": "מאגר נתונים של מוצרים זמינה ארעית, נסה שוב בעוד מעט"
+    "error_upstream": "מאגר נתונים של מוצרים זמינה ארעית, נסה שוב בעוד מעט",
+    "add_to_shopping_list": "הוסף לרשימת קניות",
+    "added_to_list_title": "התווסף",
+    "added_to_list_msg": "זה נמצא ברשימת הקניות שלך.",
+    "error_no_plan": "צור תוכנית ארוחות תחילה כדי להתחיל רשימת קניות.",
+    "error_subscription_required": "שדרג כדי לגשת לרשימת הקניות.",
+    "error_add_to_list": "לא היה ניתן להוסיף זאת לרשימת הקניות שלך.",
+    "log_this_product": "רשום את המוצר הזה",
+    "grams_label": "כמות",
+    "log_preview": "{{calories}} קלוריות · {{protein}}ג' חלבון · {{carbs}}ג' פחמימות · {{fat}}ג' שומן",
+    "log_button": "רשום",
+    "logged_title": "נרשם",
+    "logged_msg": "התווסף ליומן המזון שלך.",
+    "error_log_meal": "לא היה ניתן לרשום את המוצר הזה."
   },
   "edit_profile": {
     "title": "עריכת פרופיל",

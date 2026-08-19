@@ -892,7 +892,9 @@
     "ring_goal": "doel",
     "ring_over": "over",
     "ring_remaining": "resterend",
-    "error_generate": "Maaltijdplan genereren mislukt"
+    "error_generate": "Maaltijdplan genereren mislukt",
+    "scan_product": "Scan een Product",
+    "scan_product_sub": "Controleer ingrediënten, additieven & voedingswaarden"
   },
   "progress": {
     "title": "Voortgang",
@@ -1373,7 +1375,20 @@
     "try_supplements_cta": "Probeer Supplement Stack",
     "scan_another": "Nog Eentje Scannen",
     "done": "Klaar",
-    "error_upstream": "Productdatabase tijdelijk niet beschikbaar, probeer het zo snel mogelijk opnieuw"
+    "error_upstream": "Productdatabase tijdelijk niet beschikbaar, probeer het zo snel mogelijk opnieuw",
+    "add_to_shopping_list": "Toevoegen aan boodschappenlijst",
+    "added_to_list_title": "Toegevoegd",
+    "added_to_list_msg": "Het staat op je boodschappenlijst.",
+    "error_no_plan": "Maak eerst een maaltijdplan om een boodschappenlijst te starten.",
+    "error_subscription_required": "Upgrade om toegang tot de boodschappenlijst te krijgen.",
+    "error_add_to_list": "Dit kon niet aan je boodschappenlijst worden toegevoegd.",
+    "log_this_product": "Dit product registreren",
+    "grams_label": "Hoeveelheid",
+    "log_preview": "{{calories}} kcal · {{protein}}g eiwit · {{carbs}}g koolhydraten · {{fat}}g vet",
+    "log_button": "Registreren",
+    "logged_title": "Geregistreerd",
+    "logged_msg": "Toegevoegd aan je voedingsdagboek.",
+    "error_log_meal": "Dit product kon niet worden geregistreerd."
   },
   "edit_profile": {
     "title": "Profiel bewerken",

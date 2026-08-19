@@ -892,7 +892,9 @@
     "ring_goal": "cel",
     "ring_over": "ponad",
     "ring_remaining": "pozostało",
-    "error_generate": "Nie udało się wygenerować planu posiłków"
+    "error_generate": "Nie udało się wygenerować planu posiłków",
+    "scan_product": "Skanuj produkt",
+    "scan_product_sub": "Sprawdź składniki, dodatki i wartości odżywcze"
   },
   "progress": {
     "title": "Postępy",
@@ -1373,7 +1375,20 @@
     "try_supplements_cta": "Spróbuj Zestawu Suplementów",
     "scan_another": "Skanuj Następny",
     "done": "Gotowe",
-    "error_upstream": "Baza danych produktów jest czasowo niedostępna, spróbuj za chwilę"
+    "error_upstream": "Baza danych produktów jest czasowo niedostępna, spróbuj za chwilę",
+    "add_to_shopping_list": "Dodaj do listy zakupów",
+    "added_to_list_title": "Dodano",
+    "added_to_list_msg": "Jest na twojej liście zakupów.",
+    "error_no_plan": "Najpierw wygeneruj plan posiłków, aby rozpocząć listę zakupów.",
+    "error_subscription_required": "Uaktualnij subskrypcję, aby uzyskać dostęp do listy zakupów.",
+    "error_add_to_list": "Nie udało się dodać tego do listy zakupów.",
+    "log_this_product": "Zaloguj ten produkt",
+    "grams_label": "Ilość",
+    "log_preview": "{{calories}} kcal · {{protein}}g białka · {{carbs}}g węglowodanów · {{fat}}g tłuszczu",
+    "log_button": "Zaloguj",
+    "logged_title": "Zalogowano",
+    "logged_msg": "Dodano do dziennika posiłków.",
+    "error_log_meal": "Nie udało się zalogować tego produktu."
   },
   "edit_profile": {
     "title": "Edytuj Profil",

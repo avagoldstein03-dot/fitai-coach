@@ -892,7 +892,9 @@
     "ring_goal": "meta",
     "ring_over": "acima",
     "ring_remaining": "restante",
-    "error_generate": "Falha ao gerar plano de refeições"
+    "error_generate": "Falha ao gerar plano de refeições",
+    "scan_product": "Escanear um Produto",
+    "scan_product_sub": "Verifique ingredientes, aditivos e informações nutricionais"
   },
   "progress": {
     "title": "Progresso",
@@ -1373,7 +1375,20 @@
     "try_supplements_cta": "Experimente a Pilha de Suplementos",
     "scan_another": "Escanear Outro",
     "done": "Concluído",
-    "error_upstream": "Banco de dados de produtos temporariamente indisponível, tente novamente em breve"
+    "error_upstream": "Banco de dados de produtos temporariamente indisponível, tente novamente em breve",
+    "add_to_shopping_list": "Adicionar à Lista de Compras",
+    "added_to_list_title": "Adicionado",
+    "added_to_list_msg": "Está na sua lista de compras.",
+    "error_no_plan": "Gere um plano de refeições primeiro para iniciar uma lista de compras.",
+    "error_subscription_required": "Faça upgrade para acessar a lista de compras.",
+    "error_add_to_list": "Não foi possível adicionar isto à sua lista de compras.",
+    "log_this_product": "Registar Este Produto",
+    "grams_label": "Quantidade",
+    "log_preview": "{{calories}} kcal · {{protein}}g proteína · {{carbs}}g hidratos · {{fat}}g gordura",
+    "log_button": "Registar",
+    "logged_title": "Registado",
+    "logged_msg": "Adicionado ao seu diário alimentar.",
+    "error_log_meal": "Não foi possível registar este produto."
   },
   "edit_profile": {
     "title": "Editar Perfil",

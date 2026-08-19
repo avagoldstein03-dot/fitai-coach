@@ -892,7 +892,9 @@
     "ring_goal": "mục tiêu",
     "ring_over": "vượt",
     "ring_remaining": "còn lại",
-    "error_generate": "Không thể tạo kế hoạch bữa ăn"
+    "error_generate": "Không thể tạo kế hoạch bữa ăn",
+    "scan_product": "Quét một Sản phẩm",
+    "scan_product_sub": "Kiểm tra thành phần, phụ gia và thông tin dinh dưỡng"
   },
   "progress": {
     "title": "Tiến độ",
@@ -1373,7 +1375,20 @@
     "try_supplements_cta": "Thử Supplement Stack",
     "scan_another": "Quét Cái khác",
     "done": "Hoàn tất",
-    "error_upstream": "Cơ sở dữ liệu sản phẩm tạm thời không khả dụng, hãy thử lại trong chốc lát"
+    "error_upstream": "Cơ sở dữ liệu sản phẩm tạm thời không khả dụng, hãy thử lại trong chốc lát",
+    "add_to_shopping_list": "Thêm vào danh sách mua sắm",
+    "added_to_list_title": "Đã thêm",
+    "added_to_list_msg": "Nó đã có trong danh sách mua sắm của bạn.",
+    "error_no_plan": "Tạo kế hoạch ăn uống trước để bắt đầu danh sách mua sắm.",
+    "error_subscription_required": "Nâng cấp để truy cập danh sách mua sắm.",
+    "error_add_to_list": "Không thể thêm sản phẩm này vào danh sách mua sắm.",
+    "log_this_product": "Ghi lại sản phẩm này",
+    "grams_label": "Số lượng",
+    "log_preview": "{{calories}} kcal · {{protein}}g protein · {{carbs}}g carbs · {{fat}}g fat",
+    "log_button": "Ghi lại",
+    "logged_title": "Đã ghi lại",
+    "logged_msg": "Đã thêm vào nhật ký ăn uống của bạn.",
+    "error_log_meal": "Không thể ghi lại sản phẩm này."
   },
   "edit_profile": {
     "title": "Chỉnh sửa Hồ sơ",

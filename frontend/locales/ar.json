@@ -892,7 +892,9 @@
     "ring_goal": "هدف",
     "ring_over": "فوق",
     "ring_remaining": "متبقٍ",
-    "error_generate": "فشل توليد خطة الوجبات"
+    "error_generate": "فشل توليد خطة الوجبات",
+    "scan_product": "مسح منتج",
+    "scan_product_sub": "تحقق من المكونات والإضافات والمعلومات الغذائية"
   },
   "progress": {
     "title": "التقدم",
@@ -1373,7 +1375,20 @@
     "try_supplements_cta": "جرّب Supplement Stack",
     "scan_another": "مسح آخر",
     "done": "تم",
-    "error_upstream": "قاعدة بيانات المنتجات غير متاحة مؤقتًا، حاول لاحقًا"
+    "error_upstream": "قاعدة بيانات المنتجات غير متاحة مؤقتًا، حاول لاحقًا",
+    "add_to_shopping_list": "إضافة إلى قائمة التسوق",
+    "added_to_list_title": "تمت الإضافة",
+    "added_to_list_msg": "إنها في قائمة التسوق الخاصة بك.",
+    "error_no_plan": "أنشئ خطة وجبات أولاً لبدء قائمة التسوق.",
+    "error_subscription_required": "قم بالترقية للوصول إلى قائمة التسوق.",
+    "error_add_to_list": "لم تتمكن من إضافة هذا إلى قائمة التسوق الخاصة بك.",
+    "log_this_product": "تسجيل هذا المنتج",
+    "grams_label": "الكمية",
+    "log_preview": "{{calories}} سعرة حرارية · {{protein}}غ بروتين · {{carbs}}غ كربوهيدرات · {{fat}}غ دهون",
+    "log_button": "سجله",
+    "logged_title": "تم التسجيل",
+    "logged_msg": "تمت الإضافة إلى دفتر الطعام الخاص بك.",
+    "error_log_meal": "لم تتمكن من تسجيل هذا المنتج."
   },
   "edit_profile": {
     "title": "تعديل الملف الشخصي",

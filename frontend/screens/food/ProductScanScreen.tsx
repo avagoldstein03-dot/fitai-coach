@@ -35,7 +35,14 @@ interface ScannedProduct {
   score: number;
   grade: "great" | "good" | "mediocre" | "bad";
   flaggedIngredients: FlaggedIngredient[];
+  caloriesPer100g: number | null;
+  proteinPer100g: number | null;
+  carbsPer100g: number | null;
+  fatPer100g: number | null;
+  servingSizeGrams: number | null;
 }
+
+const MEAL_TYPES = ["breakfast", "lunch", "dinner", "snack"] as const;
 
 type ScanResponse =
   | { status: "found"; cacheHit: boolean; product: ScannedProduct }
@@ -57,6 +64,56 @@ export default function ProductScanScreen() {
   const [isPaused, setIsPaused] = useState(false);
   const [manualBarcode, setManualBarcode] = useState("");
   const [result, setResult] = useState<ScanResponse | null>(null);
+  const [logGrams, setLogGrams] = useState("100");
+  const [logMealType, setLogMealType] = useState<typeof MEAL_TYPES[number]>("snack");
+
+  const { mutate: addToShoppingList, isPending: isAddingToList } = useMutation({
+    mutationFn: async (name: string) => {
+      await axios.patch(`${API_URL}/api/nutrition/shopping-list`, { action: "add", name });
+    },
+    onSuccess: () => {
+      Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success);
+      Alert.alert(t("product_scan.added_to_list_title"), t("product_scan.added_to_list_msg"));
+    },
+    onError: (error: any) => {
+      const code = error?.response?.data?.error;
+      if (code === "not_found") {
+        Alert.alert(t("common.error"), t("product_scan.error_no_plan"));
+      } else if (code === "subscription_required") {
+        Alert.alert(t("common.error"), t("product_scan.error_subscription_required"));
+      } else {
+        Alert.alert(t("common.error"), t("product_scan.error_add_to_list"));
+      }
+    },
+  });
+
+  const { mutate: logProductAsMeal, isPending: isLoggingMeal } = useMutation({
+    mutationFn: async ({ product, grams }: { product: ScannedProduct; grams: number }) => {
+      const factor = grams / 100;
+      await axios.post(`${API_URL}/api/food/manual`, {
+        mealType: logMealType,
+        items: [
+          {
+            foodName: product.productName ?? t("product_scan.unknown_product"),
+            quantity: grams,
+            unit: "g",
+            calories: Math.round((product.caloriesPer100g ?? 0) * factor),
+            protein: Math.round((product.proteinPer100g ?? 0) * factor),
+            carbs: Math.round((product.carbsPer100g ?? 0) * factor),
+            fat: Math.round((product.fatPer100g ?? 0) * factor),
+            fiber: 0,
+          },
+        ],
+      });
+    },
+    onSuccess: () => {
+      Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success);
+      Alert.alert(t("product_scan.logged_title"), t("product_scan.logged_msg"));
+    },
+    onError: () => {
+      Alert.alert(t("common.error"), t("product_scan.error_log_meal"));
+    },
+  });
 
   const { mutate: scanProduct, isPending: isScanning } = useMutation({
     mutationFn: async (barcode: string) => {
@@ -72,6 +129,8 @@ export default function ProductScanScreen() {
           cacheHit: data.cacheHit,
         });
         Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success);
+        setLogGrams(String(data.product.servingSizeGrams ?? 100));
+        setLogMealType("snack");
       }
       setResult(data);
     },
@@ -167,6 +226,74 @@ export default function ProductScanScreen() {
             ))
           )}
         </View>
+
+        <TouchableOpacity
+          onPress={() => addToShoppingList(product.productName ?? t("product_scan.unknown_product"))}
+          style={s.addToListBtn}
+          activeOpacity={0.8}
+          disabled={isAddingToList}
+        >
+          {isAddingToList ? (
+            <ActivityIndicator color={T.accent} size="small" />
+          ) : (
+            <Text style={s.addToListBtnText}>🛒  {t("product_scan.add_to_shopping_list")}</Text>
+          )}
+        </TouchableOpacity>
+
+        {product.caloriesPer100g != null && (
+          <View style={s.logSection}>
+            <Text style={s.logSectionTitle}>{t("product_scan.log_this_product")}</Text>
+
+            <View style={s.mealTypeRow}>
+              {MEAL_TYPES.map((mt) => (
+                <TouchableOpacity
+                  key={mt}
+                  onPress={() => setLogMealType(mt)}
+                  style={[s.mealTypeChip, logMealType === mt && s.mealTypeChipActive]}
+                >
+                  <Text style={[s.mealTypeText, logMealType === mt && s.mealTypeTextActive]}>
+                    {t(`food_scanner.meal_${mt}`)}
+                  </Text>
+                </TouchableOpacity>
+              ))}
+            </View>
+
+            <View style={s.gramsRow}>
+              <Text style={s.gramsLabel}>{t("product_scan.grams_label")}</Text>
+              <TextInput
+                style={s.gramsInput}
+                value={logGrams}
+                onChangeText={setLogGrams}
+                keyboardType="number-pad"
+                placeholder="100"
+                placeholderTextColor={T.textMuted}
+              />
+              <Text style={s.gramsUnit}>g</Text>
+            </View>
+
+            <Text style={s.gramsPreview}>
+              {t("product_scan.log_preview", {
+                calories: Math.round((product.caloriesPer100g ?? 0) * (Number(logGrams || 0) / 100)),
+                protein: Math.round((product.proteinPer100g ?? 0) * (Number(logGrams || 0) / 100)),
+                carbs: Math.round((product.carbsPer100g ?? 0) * (Number(logGrams || 0) / 100)),
+                fat: Math.round((product.fatPer100g ?? 0) * (Number(logGrams || 0) / 100)),
+              })}
+            </Text>
+
+            <TouchableOpacity
+              onPress={() => logProductAsMeal({ product, grams: Number(logGrams || 0) })}
+              style={s.logBtn}
+              activeOpacity={0.8}
+              disabled={isLoggingMeal || !Number(logGrams)}
+            >
+              {isLoggingMeal ? (
+                <ActivityIndicator color="#000" size="small" />
+              ) : (
+                <Text style={s.logBtnText}>{t("product_scan.log_button")}</Text>
+              )}
+            </TouchableOpacity>
+          </View>
+        )}
 
         <View style={s.resultsActions}>
           <TouchableOpacity onPress={scanAnother} style={s.secondaryBtn}>
@@ -349,6 +476,36 @@ const s = StyleSheet.create({
   riskDot: { width: 8, height: 8, borderRadius: 4, marginTop: 5 },
   ingredientName: { color: T.textPrimary, fontWeight: "600", fontSize: 14 },
   ingredientReason: { color: T.textSecondary, fontSize: 12, marginTop: 2 },
+
+  addToListBtn: {
+    marginHorizontal: 24, backgroundColor: T.surface, borderWidth: 1, borderColor: T.border,
+    borderRadius: 12, paddingVertical: 14, alignItems: "center", marginBottom: 20,
+  },
+  addToListBtnText: { color: T.textPrimary, fontWeight: "700", fontSize: 14 },
+
+  logSection: {
+    marginHorizontal: 24, backgroundColor: T.surface, borderWidth: 1, borderColor: T.border,
+    borderRadius: 16, padding: 18, marginBottom: 20,
+  },
+  logSectionTitle: { fontSize: 15, fontWeight: "700", color: T.textPrimary, marginBottom: 14 },
+  mealTypeRow: { flexDirection: "row", gap: 8, marginBottom: 16 },
+  mealTypeChip: {
+    flex: 1, borderWidth: 1, borderColor: T.border, borderRadius: 10,
+    paddingVertical: 8, alignItems: "center",
+  },
+  mealTypeChipActive: { backgroundColor: T.accentDark, borderColor: T.accent },
+  mealTypeText: { fontSize: 12, color: T.textSecondary, fontWeight: "600", textTransform: "capitalize" },
+  mealTypeTextActive: { color: T.accent },
+  gramsRow: { flexDirection: "row", alignItems: "center", gap: 10, marginBottom: 10 },
+  gramsLabel: { color: T.textSecondary, fontSize: 13, flex: 1 },
+  gramsInput: {
+    backgroundColor: T.surface2, borderWidth: 1, borderColor: T.border, borderRadius: 8,
+    paddingHorizontal: 12, paddingVertical: 8, color: T.textPrimary, fontSize: 14, width: 70, textAlign: "center",
+  },
+  gramsUnit: { color: T.textSecondary, fontSize: 13 },
+  gramsPreview: { color: T.textSecondary, fontSize: 12, marginBottom: 14 },
+  logBtn: { backgroundColor: T.accent, borderRadius: 10, paddingVertical: 13, alignItems: "center" },
+  logBtnText: { color: "#000", fontWeight: "700", fontSize: 14 },
 
   resultsActions: { flexDirection: "row", gap: 12, paddingHorizontal: 24, marginTop: 8 },
   secondaryBtn: { flex: 1, borderWidth: 1, borderColor: T.border, borderRadius: 12, paddingVertical: 15, alignItems: "center" },

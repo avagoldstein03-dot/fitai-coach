@@ -892,7 +892,9 @@
     "ring_goal": "Ziel",
     "ring_over": "über",
     "ring_remaining": "verbleibend",
-    "error_generate": "Mahlzeitenplan konnte nicht generiert werden"
+    "error_generate": "Mahlzeitenplan konnte nicht generiert werden",
+    "scan_product": "Produkt scannen",
+    "scan_product_sub": "Überprüfen Sie Zutaten, Zusatzstoffe und Nährwertangaben"
   },
   "progress": {
     "title": "Fortschritt",
@@ -1373,7 +1375,20 @@
     "try_supplements_cta": "Supplement Stack ausprobieren",
     "scan_another": "Ein weiteres scannen",
     "done": "Fertig",
-    "error_upstream": "Produktdatenbank vorübergehend nicht verfügbar, versuchen Sie es bald erneut"
+    "error_upstream": "Produktdatenbank vorübergehend nicht verfügbar, versuchen Sie es bald erneut",
+    "add_to_shopping_list": "Zur Einkaufsliste hinzufügen",
+    "added_to_list_title": "Hinzugefügt",
+    "added_to_list_msg": "Es steht auf deiner Einkaufsliste.",
+    "error_no_plan": "Erstelle zunächst einen Essensplan, um eine Einkaufsliste zu starten.",
+    "error_subscription_required": "Upgrade erforderlich, um auf die Einkaufsliste zuzugreifen.",
+    "error_add_to_list": "Konnte dies nicht zu deiner Einkaufsliste hinzufügen.",
+    "log_this_product": "Dieses Produkt protokollieren",
+    "grams_label": "Menge",
+    "log_preview": "{{calories}} kcal · {{protein}}g Protein · {{carbs}}g Kohlenhydrate · {{fat}}g Fett",
+    "log_button": "Protokollieren",
+    "logged_title": "Protokolliert",
+    "logged_msg": "Zu deinem Ernährungstagebuch hinzugefügt.",
+    "error_log_meal": "Konnte dieses Produkt nicht protokollieren."
   },
   "edit_profile": {
     "title": "Profil bearbeiten",

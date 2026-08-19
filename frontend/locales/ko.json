@@ -892,7 +892,9 @@
     "ring_goal": "목표",
     "ring_over": "초과",
     "ring_remaining": "남음",
-    "error_generate": "식단 계획 생성에 실패했습니다"
+    "error_generate": "식단 계획 생성에 실패했습니다",
+    "scan_product": "제품 스캔",
+    "scan_product_sub": "성분, 첨가물 및 영양 정보 확인"
   },
   "progress": {
     "title": "진행 상황",
@@ -1373,7 +1375,20 @@
     "try_supplements_cta": "보충제 스택 시도",
     "scan_another": "다른 제품 스캔",
     "done": "완료",
-    "error_upstream": "제품 데이터베이스를 일시적으로 사용할 수 없습니다. 잠시 후 다시 시도해주세요"
+    "error_upstream": "제품 데이터베이스를 일시적으로 사용할 수 없습니다. 잠시 후 다시 시도해주세요",
+    "add_to_shopping_list": "장바구니에 추가",
+    "added_to_list_title": "추가됨",
+    "added_to_list_msg": "장바구니에 추가되었습니다.",
+    "error_no_plan": "장바구니를 시작하려면 먼저 식단 계획을 생성하세요.",
+    "error_subscription_required": "장바구니에 접근하려면 업그레이드하세요.",
+    "error_add_to_list": "이 항목을 장바구니에 추가할 수 없습니다.",
+    "log_this_product": "이 제품 기록",
+    "grams_label": "수량",
+    "log_preview": "{{calories}} kcal · {{protein}}g 단백질 · {{carbs}}g 탄수화물 · {{fat}}g 지방",
+    "log_button": "기록",
+    "logged_title": "기록됨",
+    "logged_msg": "식단일지에 추가되었습니다.",
+    "error_log_meal": "이 제품을 기록할 수 없습니다."
   },
   "edit_profile": {
     "title": "프로필 편집",

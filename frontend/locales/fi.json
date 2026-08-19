@@ -892,7 +892,9 @@
     "ring_goal": "tavoite",
     "ring_over": "yli",
     "ring_remaining": "jäljellä",
-    "error_generate": "Ruokasuunnitelman luominen epäonnistui"
+    "error_generate": "Ruokasuunnitelman luominen epäonnistui",
+    "scan_product": "Skannaa tuote",
+    "scan_product_sub": "Tarkista ainesosat, lisäaineet ja ravintotiedot"
   },
   "progress": {
     "title": "Edistyminen",
@@ -1373,7 +1375,20 @@
     "try_supplements_cta": "Kokeile Supplement Stack",
     "scan_another": "Skannaa toinen",
     "done": "Valmis",
-    "error_upstream": "Tuotetietokanta on väliaikaisesti poissa käytöstä, yritä uudelleen pian"
+    "error_upstream": "Tuotetietokanta on väliaikaisesti poissa käytöstä, yritä uudelleen pian",
+    "add_to_shopping_list": "Lisää ostoslistalle",
+    "added_to_list_title": "Lisätty",
+    "added_to_list_msg": "Se on ostoslistallasi.",
+    "error_no_plan": "Luo ensin ruokasuunnitelma aloittaaksesi ostoslistan.",
+    "error_subscription_required": "Päivitä tilaus päästäksesi ostoslistalle.",
+    "error_add_to_list": "Tuotetta ei voitu lisätä ostoslistallesi.",
+    "log_this_product": "Kirjaa tämä tuote",
+    "grams_label": "Määrä",
+    "log_preview": "{{calories}} kcal · {{protein}}g proteiinia · {{carbs}}g hiilihydraatteja · {{fat}}g rasvaa",
+    "log_button": "Kirjaa",
+    "logged_title": "Kirjattu",
+    "logged_msg": "Lisätty ruokapäiväkirjaasi.",
+    "error_log_meal": "Tuotetta ei voitu kirjata."
   },
   "edit_profile": {
     "title": "Muokkaa profiilia",

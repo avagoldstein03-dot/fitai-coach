@@ -892,7 +892,9 @@
     "ring_goal": "hedef",
     "ring_over": "üzerinde",
     "ring_remaining": "kalan",
-    "error_generate": "Öğün planı oluşturulamadı"
+    "error_generate": "Öğün planı oluşturulamadı",
+    "scan_product": "Ürün Tara",
+    "scan_product_sub": "İçeriği, katkı maddeleri ve besin bilgilerini kontrol et"
   },
   "progress": {
     "title": "İlerleme",
@@ -1373,7 +1375,20 @@
     "try_supplements_cta": "Supplement Stack'i Dene",
     "scan_another": "Başka Bir Tarama Yap",
     "done": "Bitti",
-    "error_upstream": "Ürün veritabanı geçici olarak kullanılamıyor, kısa süre içinde tekrar deneyin"
+    "error_upstream": "Ürün veritabanı geçici olarak kullanılamıyor, kısa süre içinde tekrar deneyin",
+    "add_to_shopping_list": "Alışveriş Listesine Ekle",
+    "added_to_list_title": "Eklendi",
+    "added_to_list_msg": "Alışveriş listenizde.",
+    "error_no_plan": "Alışveriş listesi başlatmak için önce bir beslenme planı oluşturun.",
+    "error_subscription_required": "Alışveriş listesine erişmek için yükseltin.",
+    "error_add_to_list": "Bu, alışveriş listenize eklenemedi.",
+    "log_this_product": "Bu Ürünü Kaydet",
+    "grams_label": "Miktar",
+    "log_preview": "{{calories}} kcal · {{protein}}g protein · {{carbs}}g karbonhidrat · {{fat}}g yağ",
+    "log_button": "Kaydet",
+    "logged_title": "Kaydedildi",
+    "logged_msg": "Yemek günlüğünüze eklendi.",
+    "error_log_meal": "Bu ürün kaydedilemedi."
   },
   "edit_profile": {
     "title": "Profili Düzenle",

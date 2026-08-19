@@ -892,7 +892,9 @@
     "ring_goal": "tujuan",
     "ring_over": "melebihi",
     "ring_remaining": "tersisa",
-    "error_generate": "Gagal membuat rencana makan"
+    "error_generate": "Gagal membuat rencana makan",
+    "scan_product": "Pindai Produk",
+    "scan_product_sub": "Periksa bahan, aditif & fakta nutrisi"
   },
   "progress": {
     "title": "Kemajuan",
@@ -1373,7 +1375,20 @@
     "try_supplements_cta": "Coba Supplement Stack",
     "scan_another": "Pindai Lagi",
     "done": "Selesai",
-    "error_upstream": "Database produk tidak tersedia untuk sementara, coba lagi nanti"
+    "error_upstream": "Database produk tidak tersedia untuk sementara, coba lagi nanti",
+    "add_to_shopping_list": "Tambahkan ke Daftar Belanja",
+    "added_to_list_title": "Ditambahkan",
+    "added_to_list_msg": "Sudah ada di daftar belanja Anda.",
+    "error_no_plan": "Buat rencana makan terlebih dahulu untuk memulai daftar belanja.",
+    "error_subscription_required": "Tingkatkan akses untuk menggunakan daftar belanja.",
+    "error_add_to_list": "Tidak bisa menambahkan ini ke daftar belanja Anda.",
+    "log_this_product": "Catat Produk Ini",
+    "grams_label": "Jumlah",
+    "log_preview": "{{calories}} kkal · {{protein}}g protein · {{carbs}}g karbohidrat · {{fat}}g lemak",
+    "log_button": "Catat",
+    "logged_title": "Tercatat",
+    "logged_msg": "Ditambahkan ke buku harian makanan Anda.",
+    "error_log_meal": "Tidak bisa mencatat produk ini."
   },
   "edit_profile": {
     "title": "Edit Profil",

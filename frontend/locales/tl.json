@@ -892,7 +892,9 @@
     "ring_goal": "layunin",
     "ring_over": "higit pa",
     "ring_remaining": "natitira",
-    "error_generate": "Nabigo ang paglikha ng meal plan"
+    "error_generate": "Nabigo ang paglikha ng meal plan",
+    "scan_product": "I-scan ang Produkto",
+    "scan_product_sub": "Tingnan ang sangkap, dagdag at katotohang nutritional"
   },
   "progress": {
     "title": "Progress",
@@ -1373,7 +1375,20 @@
     "try_supplements_cta": "Subukan ang Supplement Stack",
     "scan_another": "Mag-scan ng Iba",
     "done": "Tapos Na",
-    "error_upstream": "Ang database ng produkto ay pansamantalang hindi available, subukan ulit sa madaling panahon"
+    "error_upstream": "Ang database ng produkto ay pansamantalang hindi available, subukan ulit sa madaling panahon",
+    "add_to_shopping_list": "Idagdag sa Shopping List",
+    "added_to_list_title": "Naidagdag",
+    "added_to_list_msg": "Ito ay nasa iyong shopping list.",
+    "error_no_plan": "Lumikha muna ng meal plan upang magsimula ng shopping list.",
+    "error_subscription_required": "I-upgrade upang ma-access ang shopping list.",
+    "error_add_to_list": "Hindi makapagsagawa ng pagdagdag nito sa iyong shopping list.",
+    "log_this_product": "I-log ang Produktong Ito",
+    "grams_label": "Dami",
+    "log_preview": "{{calories}} kcal · {{protein}}g protein · {{carbs}}g carbs · {{fat}}g fat",
+    "log_button": "I-log Ito",
+    "logged_title": "Nai-log",
+    "logged_msg": "Naidagdag sa iyong food diary.",
+    "error_log_meal": "Hindi makapagsagawa ng pag-log sa produktong ito."
   },
   "edit_profile": {
     "title": "Baguhin ang Profile",

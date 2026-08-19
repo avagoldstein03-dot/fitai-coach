@@ -892,7 +892,9 @@
     "ring_goal": "objetivo",
     "ring_over": "exceso",
     "ring_remaining": "restante",
-    "error_generate": "No se pudo generar el plan de comidas"
+    "error_generate": "No se pudo generar el plan de comidas",
+    "scan_product": "Escanear un Producto",
+    "scan_product_sub": "Verifica ingredientes, aditivos e información nutricional"
   },
   "progress": {
     "title": "Progreso",
@@ -1373,7 +1375,20 @@
     "try_supplements_cta": "Prueba Stack de Suplementos",
     "scan_another": "Escanear Otro",
     "done": "Hecho",
-    "error_upstream": "La base de datos de productos no está disponible temporalmente, intenta de nuevo en breve"
+    "error_upstream": "La base de datos de productos no está disponible temporalmente, intenta de nuevo en breve",
+    "add_to_shopping_list": "Agregar a la Lista de Compras",
+    "added_to_list_title": "Añadido",
+    "added_to_list_msg": "Está en tu lista de compras.",
+    "error_no_plan": "Genera un plan de comidas primero para comenzar una lista de compras.",
+    "error_subscription_required": "Actualiza tu suscripción para acceder a la lista de compras.",
+    "error_add_to_list": "No se pudo añadir esto a tu lista de compras.",
+    "log_this_product": "Registrar Este Producto",
+    "grams_label": "Cantidad",
+    "log_preview": "{{calories}} kcal · {{protein}}g proteína · {{carbs}}g carbohidratos · {{fat}}g grasas",
+    "log_button": "Registrarlo",
+    "logged_title": "Registrado",
+    "logged_msg": "Añadido a tu diario de alimentos.",
+    "error_log_meal": "No se pudo registrar este producto."
   },
   "edit_profile": {
     "title": "Editar Perfil",

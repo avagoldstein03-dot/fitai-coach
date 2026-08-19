@@ -892,7 +892,9 @@
     "ring_goal": "目标",
     "ring_over": "超额",
     "ring_remaining": "剩余",
-    "error_generate": "生成膳食计划失败"
+    "error_generate": "生成膳食计划失败",
+    "scan_product": "扫描产品",
+    "scan_product_sub": "检查成分、添加剂和营养信息"
   },
   "progress": {
     "title": "进度",
@@ -1373,7 +1375,20 @@
     "try_supplements_cta": "尝试补剂堆栈",
     "scan_another": "扫描其他产品",
     "done": "完成",
-    "error_upstream": "产品数据库暂时不可用，请稍后重试"
+    "error_upstream": "产品数据库暂时不可用，请稍后重试",
+    "add_to_shopping_list": "添加到购物清单",
+    "added_to_list_title": "已添加",
+    "added_to_list_msg": "已添加到您的购物清单。",
+    "error_no_plan": "请先生成饮食计划以开始购物清单。",
+    "error_subscription_required": "升级后即可访问购物清单。",
+    "error_add_to_list": "无法将此项添加到购物清单。",
+    "log_this_product": "记录此产品",
+    "grams_label": "数量",
+    "log_preview": "{{calories}} 卡路里 · {{protein}}g 蛋白质 · {{carbs}}g 碳水化合物 · {{fat}}g 脂肪",
+    "log_button": "记录",
+    "logged_title": "已记录",
+    "logged_msg": "已添加到您的食物日记。",
+    "error_log_meal": "无法记录此产品。"
   },
   "edit_profile": {
     "title": "编辑个人资料",

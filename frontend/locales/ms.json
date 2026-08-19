@@ -892,7 +892,9 @@
     "ring_goal": "objektif",
     "ring_over": "lebih",
     "ring_remaining": "baki",
-    "error_generate": "Gagal menjana rancangan makanan"
+    "error_generate": "Gagal menjana rancangan makanan",
+    "scan_product": "Imbas Produk",
+    "scan_product_sub": "Semak bahan, aditif & fakta pemakanan"
   },
   "progress": {
     "title": "Kemajuan",
@@ -1373,7 +1375,20 @@
     "try_supplements_cta": "Cuba Tindanan Suplemen",
     "scan_another": "Imbas Satu Lagi",
     "done": "Selesai",
-    "error_upstream": "Pangkalan data produk sementara tidak tersedia, cuba lagi sebentar"
+    "error_upstream": "Pangkalan data produk sementara tidak tersedia, cuba lagi sebentar",
+    "add_to_shopping_list": "Tambah ke Senarai Belanja",
+    "added_to_list_title": "Ditambah",
+    "added_to_list_msg": "Ia ada dalam senarai belanja anda.",
+    "error_no_plan": "Hasilkan pelan makanan terlebih dahulu untuk memulakan senarai belanja.",
+    "error_subscription_required": "Naik taraf untuk mengakses senarai belanja.",
+    "error_add_to_list": "Tidak dapat menambah ini ke senarai belanja anda.",
+    "log_this_product": "Catat Produk Ini",
+    "grams_label": "Jumlah",
+    "log_preview": "{{calories}} kcal · {{protein}}g protein · {{carbs}}g karbohidrat · {{fat}}g lemak",
+    "log_button": "Catat",
+    "logged_title": "Tercatat",
+    "logged_msg": "Ditambah ke diari makanan anda.",
+    "error_log_meal": "Tidak dapat mencatat produk ini."
   },
   "edit_profile": {
     "title": "Edit Profil",
