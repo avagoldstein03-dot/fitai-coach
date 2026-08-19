@@ -1402,7 +1402,8 @@
     "nova_1": "Ubearbeidet eller minimalt bearbeidet",
     "nova_2": "Bearbeidet kulinarisk ingrediens (olje, sukker, salt)",
     "nova_3": "Bearbeidet mat",
-    "nova_4": "Ultrabearbeidet mat"
+    "nova_4": "Ultrabearbeidet mat",
+    "not_found_produce_sub": "Vi gjenkjenner ikke denne produktkoden ennå — vi bygger fortsatt opp listen vår over ferskvare-koder."
   },
   "edit_profile": {
     "title": "Rediger profil",

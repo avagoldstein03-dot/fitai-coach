@@ -1402,7 +1402,8 @@
     "nova_1": "Tidak diproses atau minimal diproses",
     "nova_2": "Bahan kulinari yang diproses (minyak, gula, garam)",
     "nova_3": "Makanan yang diproses",
-    "nova_4": "Makanan ultra-diproses"
+    "nova_4": "Makanan ultra-diproses",
+    "not_found_produce_sub": "Kami belum mengenali kod hasil pertanian itu — kami masih sedang membina senarai kod hasil pertanian segar kami."
   },
   "edit_profile": {
     "title": "Edit Profil",

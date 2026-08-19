@@ -1402,7 +1402,8 @@
     "nova_1": "Chưa chế biến hoặc chế biến tối thiểu",
     "nova_2": "Thành phần nấu ăn đã chế biến (dầu, đường, muối)",
     "nova_3": "Thực phẩm đã chế biến",
-    "nova_4": "Thực phẩm siêu chế biến"
+    "nova_4": "Thực phẩm siêu chế biến",
+    "not_found_produce_sub": "Chúng tôi chưa nhận ra mã sản phẩm này — chúng tôi vẫn đang xây dựng danh sách mã sản phẩm tươi sống của mình."
   },
   "edit_profile": {
     "title": "Chỉnh sửa Hồ sơ",

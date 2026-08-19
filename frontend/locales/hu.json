@@ -1402,7 +1402,8 @@
     "nova_1": "Feldolgozatlan vagy minimálisan feldolgozott",
     "nova_2": "Feldolgozott kulináris összetevő (olaj, cukor, só)",
     "nova_3": "Feldolgozott élelmiszer",
-    "nova_4": "Ultrafeldolgozott élelmiszer"
+    "nova_4": "Ultrafeldolgozott élelmiszer",
+    "not_found_produce_sub": "Még nem ismerjük fel ezt a zöldség-gyümölcs kódot — még építjük a friss termékek kódjainak listáját."
   },
   "edit_profile": {
     "title": "Profil szerkesztése",

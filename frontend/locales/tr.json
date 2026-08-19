@@ -1402,7 +1402,8 @@
     "nova_1": "İşlenmemiş veya minimal işlenmiş",
     "nova_2": "İşlenmiş kulinaire bileşen (yağ, şeker, tuz)",
     "nova_3": "İşlenmiş gıda",
-    "nova_4": "Ultra işlenmiş gıda"
+    "nova_4": "Ultra işlenmiş gıda",
+    "not_found_produce_sub": "Bu ürün kodunu henüz tanımıyoruz — taze ürün kodları listesini hala oluşturuyoruz."
   },
   "edit_profile": {
     "title": "Profili Düzenle",

@@ -1402,7 +1402,8 @@
     "nova_1": "Nieprzetworzony lub minimalnie przetworzony",
     "nova_2": "Przetworzony składnik kulinarny (olej, cukier, sól)",
     "nova_3": "Produkt przetworzony",
-    "nova_4": "Produkt ultra-przetworzony"
+    "nova_4": "Produkt ultra-przetworzony",
+    "not_found_produce_sub": "Nie rozpoznajemy jeszcze tego kodu produktu — wciąż rozbudowujemy naszą listę kodów świeżych produktów."
   },
   "edit_profile": {
     "title": "Edytuj Profil",

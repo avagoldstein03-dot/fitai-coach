@@ -1402,7 +1402,8 @@
     "nova_1": "Bila uchakataji au kwa uchakataji wa chini",
     "nova_2": "Nyongeza ya kupikia iliyochakatwa (mafuta, sukari, chumvi)",
     "nova_3": "Chakula kilichochakatwa",
-    "nova_4": "Chakula kilichochakatwa sana"
+    "nova_4": "Chakula kilichochakatwa sana",
+    "not_found_produce_sub": "Hatuna nchi hiyo ya mavuno bado — bado tunajenga orodha yetu ya nchi za mavuno safi."
   },
   "edit_profile": {
     "title": "Hariri Wasifu",

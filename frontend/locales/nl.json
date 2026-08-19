@@ -1402,7 +1402,8 @@
     "nova_1": "Onverwerkt of minimaal verwerkt",
     "nova_2": "Verwerkte culinaire ingredient (olie, suiker, zout)",
     "nova_3": "Verwerkt voedsel",
-    "nova_4": "Ultraverwerkt voedsel"
+    "nova_4": "Ultraverwerkt voedsel",
+    "not_found_produce_sub": "We herkennen die productencode nog niet — we bouwen nog steeds aan onze lijst met verse producencodes."
   },
   "edit_profile": {
     "title": "Profiel bewerken",

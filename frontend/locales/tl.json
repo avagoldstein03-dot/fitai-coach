@@ -1402,7 +1402,8 @@
     "nova_1": "Hindi napoproseso o minimally napoproseso",
     "nova_2": "Naprosesong culinary ingredient (langis, asukal, asin)",
     "nova_3": "Naprosesong pagkain",
-    "nova_4": "Ultra-naprosesong pagkain"
+    "nova_4": "Ultra-naprosesong pagkain",
+    "not_found_produce_sub": "Hindi pa namin kinikilala ang code ng produktong iyon — patuloy pa naming binubuo ang aming listahan ng mga fresh produce codes."
   },
   "edit_profile": {
     "title": "Baguhin ang Profile",

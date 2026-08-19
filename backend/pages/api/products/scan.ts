@@ -6,9 +6,10 @@ import { sendSuccess, sendError } from "@/lib/api-utils";
 import { checkRateLimit } from "@/lib/rate-limit";
 import { lookupProduct } from "@/services/openfoodfacts-provider";
 import { computeProductScore, SCORING_VERSION } from "@/lib/ingredient-score";
+import { lookupPLU } from "@/lib/plu-codes";
 
 const RequestSchema = z.object({
-  barcode: z.string().trim().regex(/^\d{6,14}$/, "Invalid barcode"),
+  barcode: z.string().trim().regex(/^\d{4,14}$/, "Invalid barcode"),
 });
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
@@ -32,6 +33,38 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       return sendError(res, "invalid_input", "A valid barcode is required", 400);
     }
     const { barcode } = parsed.data;
+
+    // 4-5 digit codes are PLU (loose produce) codes, not EAN/UPC barcodes —
+    // they can't match anything in the ProductScan cache or Open Food
+    // Facts (which is keyed by manufacturer GTIN), so resolve them against
+    // our own small produce table instead of hitting either.
+    if (barcode.length <= 5) {
+      const produce = lookupPLU(barcode);
+      if (!produce) {
+        return sendSuccess(res, { status: "not_found", barcode });
+      }
+      return sendSuccess(res, {
+        status: "found",
+        cacheHit: false,
+        product: {
+          productName: produce.name,
+          brand: null,
+          imageUrl: null,
+          ingredientsText: null,
+          additivesTags: [],
+          novaGroup: 1,
+          nutriscoreGrade: null,
+          score: 95,
+          grade: "great",
+          flaggedIngredients: [],
+          caloriesPer100g: produce.caloriesPer100g,
+          proteinPer100g: produce.proteinPer100g,
+          carbsPer100g: produce.carbsPer100g,
+          fatPer100g: produce.fatPer100g,
+          servingSizeGrams: null,
+        },
+      });
+    }
 
     const cached = await prisma.productScan.findUnique({ where: { barcode } });
 

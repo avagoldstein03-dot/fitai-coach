@@ -153,7 +153,7 @@ export default function ProductScanScreen() {
 
   const submitManualBarcode = () => {
     const trimmed = manualBarcode.trim();
-    if (!/^\d{6,14}$/.test(trimmed)) return;
+    if (!/^\d{4,14}$/.test(trimmed)) return;
     setIsPaused(true);
     scanProduct(trimmed);
   };
@@ -166,23 +166,28 @@ export default function ProductScanScreen() {
 
   if (result) {
     if (result.status === "not_found") {
+      const isProduceCode = result.barcode.length <= 5;
       return (
         <ScrollView style={s.resultsScreen} contentContainerStyle={{ paddingBottom: 40 }}>
           <View style={[s.resultsHeader, { paddingTop: insets.top + 16 }]}>
             <Text style={s.emptyIcon}>🔍</Text>
             <Text style={s.emptyTitle}>{t("product_scan.not_found_title")}</Text>
-            <Text style={s.emptySub}>{t("product_scan.not_found_sub")}</Text>
+            <Text style={s.emptySub}>
+              {isProduceCode ? t("product_scan.not_found_produce_sub") : t("product_scan.not_found_sub")}
+            </Text>
           </View>
           <View style={s.resultsActions}>
             <TouchableOpacity onPress={scanAnother} style={s.secondaryBtn}>
               <Text style={s.secondaryBtnText}>{t("product_scan.scan_another")}</Text>
             </TouchableOpacity>
-            <TouchableOpacity
-              onPress={() => navigation.navigate("Supplements")}
-              style={s.primaryBtn}
-            >
-              <Text style={s.primaryBtnText}>{t("product_scan.try_supplements_cta")}</Text>
-            </TouchableOpacity>
+            {!isProduceCode && (
+              <TouchableOpacity
+                onPress={() => navigation.navigate("Supplements")}
+                style={s.primaryBtn}
+              >
+                <Text style={s.primaryBtnText}>{t("product_scan.try_supplements_cta")}</Text>
+              </TouchableOpacity>
+            )}
           </View>
         </ScrollView>
       );

@@ -1402,7 +1402,8 @@
     "nova_1": "Não processado ou minimamente processado",
     "nova_2": "Ingrediente culinário processado (óleo, açúcar, sal)",
     "nova_3": "Alimento processado",
-    "nova_4": "Alimento ultra-processado"
+    "nova_4": "Alimento ultra-processado",
+    "not_found_produce_sub": "Ainda não reconhecemos esse código de produto — ainda estamos expandindo nossa lista de códigos de produtos frescos."
   },
   "edit_profile": {
     "title": "Editar Perfil",

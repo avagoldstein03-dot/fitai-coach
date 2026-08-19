@@ -1402,7 +1402,8 @@
     "nova_1": "Neprelucrat sau minim prelucrat",
     "nova_2": "Ingredient culinar prelucrat (ulei, zahăr, sare)",
     "nova_3": "Aliment prelucrat",
-    "nova_4": "Aliment ultra-prelucrat"
+    "nova_4": "Aliment ultra-prelucrat",
+    "not_found_produce_sub": "Nu recunoaștem încă acel cod de produs — încă dezvoltăm lista noastră de coduri pentru produse proaspete."
   },
   "edit_profile": {
     "title": "Editare Profil",

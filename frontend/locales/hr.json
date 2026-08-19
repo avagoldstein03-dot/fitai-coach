@@ -1402,7 +1402,8 @@
     "nova_1": "Neobrađeno ili minimalno obrađeno",
     "nova_2": "Obrađeni kulinarski ingredient (ulje, šećer, sol)",
     "nova_3": "Obrađena hrana",
-    "nova_4": "Ultraobrađena hrana"
+    "nova_4": "Ultraobrađena hrana",
+    "not_found_produce_sub": "Još ne prepoznajemo taj kod proizvoda — još uvijek gradimo našu listu kodova svježih proizvoda."
   },
   "edit_profile": {
     "title": "Uređivanje profila",

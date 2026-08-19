@@ -1402,7 +1402,8 @@
     "nova_1": "Non transformé ou minimalement transformé",
     "nova_2": "Ingrédient culinaire transformé (huile, sucre, sel)",
     "nova_3": "Aliment transformé",
-    "nova_4": "Aliment ultra-transformé"
+    "nova_4": "Aliment ultra-transformé",
+    "not_found_produce_sub": "Nous ne reconnaissons pas encore ce code de produit — nous construisons toujours notre liste de codes de produits frais."
   },
   "edit_profile": {
     "title": "Modifier le profil",

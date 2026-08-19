@@ -166,4 +166,39 @@ describe("products/scan handler", () => {
     expect(prisma.productScan.upsert).not.toHaveBeenCalled();
     expect(res.status).toHaveBeenCalledWith(502);
   });
+
+  it("resolves a known PLU code without touching the database or Open Food Facts", async () => {
+    const { req, res } = mockReqRes("POST", { barcode: "4011" });
+    await handler(req, res);
+
+    expect(prisma.productScan.findUnique).not.toHaveBeenCalled();
+    expect(lookupProduct).not.toHaveBeenCalled();
+    expect(res.status).toHaveBeenCalledWith(200);
+    const { data } = res.json.mock.calls[0][0];
+    expect(data.status).toBe("found");
+    expect(data.product.productName).toBe("Banana");
+    expect(data.product.novaGroup).toBe(1);
+    expect(data.product.flaggedIngredients).toEqual([]);
+  });
+
+  it("resolves the organic variant of a known PLU code via the leading-9 prefix", async () => {
+    const { req, res } = mockReqRes("POST", { barcode: "94011" });
+    await handler(req, res);
+
+    expect(res.status).toHaveBeenCalledWith(200);
+    const { data } = res.json.mock.calls[0][0];
+    expect(data.product.productName).toBe("Banana (Organic)");
+  });
+
+  it("returns not_found for an unrecognized 4-5 digit code without touching the database or Open Food Facts", async () => {
+    const { req, res } = mockReqRes("POST", { barcode: "9999" });
+    await handler(req, res);
+
+    expect(prisma.productScan.findUnique).not.toHaveBeenCalled();
+    expect(lookupProduct).not.toHaveBeenCalled();
+    expect(res.status).toHaveBeenCalledWith(200);
+    const { data } = res.json.mock.calls[0][0];
+    expect(data.status).toBe("not_found");
+    expect(data.barcode).toBe("9999");
+  });
 });

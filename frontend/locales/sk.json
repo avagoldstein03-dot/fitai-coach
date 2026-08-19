@@ -1402,7 +1402,8 @@
     "nova_1": "Nespracované alebo minimálne spracované",
     "nova_2": "Spracovaná kulinárska ingrediencia (olej, cukor, soľ)",
     "nova_3": "Spracovaná potravina",
-    "nova_4": "Ultraspracovaná potravina"
+    "nova_4": "Ultraspracovaná potravina",
+    "not_found_produce_sub": "Tento kód čerstvých produktov zatiaľ nepoznáme — stále rozširujeme našu databázu kódov čerstvých produktov."
   },
   "edit_profile": {
     "title": "Upraviť profil",

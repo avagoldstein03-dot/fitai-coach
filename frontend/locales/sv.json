@@ -1402,7 +1402,8 @@
     "nova_1": "Obearbetad eller minimalt bearbetad",
     "nova_2": "Bearbetad matlagningsingrediens (olja, socker, salt)",
     "nova_3": "Bearbetad mat",
-    "nova_4": "Ultrabearbetad mat"
+    "nova_4": "Ultrabearbetad mat",
+    "not_found_produce_sub": "Vi känner inte igen den produktkoden än — vi bygger fortfarande ut vår lista över koder för färsk frukt och grönsaker."
   },
   "edit_profile": {
     "title": "Redigera profil",

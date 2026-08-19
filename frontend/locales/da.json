@@ -1402,7 +1402,8 @@
     "nova_1": "Uforarbejdet eller minimalt forarbejdet",
     "nova_2": "Forarbejdet kulinarisk ingrediens (olie, sukker, salt)",
     "nova_3": "Forarbejdet fødevare",
-    "nova_4": "Ultraforarbejdet fødevare"
+    "nova_4": "Ultraforarbejdet fødevare",
+    "not_found_produce_sub": "Vi genkender ikke den produktkode endnu — vi er stadig ved at bygge vores liste over friske produktkoder."
   },
   "edit_profile": {
     "title": "Rediger profil",

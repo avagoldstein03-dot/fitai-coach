@@ -1402,7 +1402,8 @@
     "nova_1": "Onverwerkt of minimaal verwerk",
     "nova_2": "Verwerkte kulinêre bestanddeel (olie, suiker, sout)",
     "nova_3": "Verwerkte kos",
-    "nova_4": "Ultra-verwerkte kos"
+    "nova_4": "Ultra-verwerkte kos",
+    "not_found_produce_sub": "Ons herken daardie produksiekode nog nie — ons bou nog steeds aan ons lys van vars produksiekodes."
   },
   "edit_profile": {
     "title": "Profiel Redigeer",

@@ -1402,7 +1402,8 @@
     "nova_1": "Необрађена или минимално обрађена",
     "nova_2": "Обрађена кулинарска намирница (уље, шећер, со)",
     "nova_3": "Обрађена намирница",
-    "nova_4": "Ултра-обрађена намирница"
+    "nova_4": "Ултра-обрађена намирница",
+    "not_found_produce_sub": "Još ne prepoznajemo taj kod za proizvode — i dalje gradimo našu listu kodova za svež proizvode."
   },
   "edit_profile": {
     "title": "Uređivanje profila",

@@ -1402,7 +1402,8 @@
     "nova_1": "Jalostamaton tai minimaalisesti jalostettu",
     "nova_2": "Jalostettu ruoanlaittoaine (öljy, sokeri, suola)",
     "nova_3": "Jalostettu elintarvike",
-    "nova_4": "Ultrajalostettu elintarvike"
+    "nova_4": "Ultrajalostettu elintarvike",
+    "not_found_produce_sub": "Emme tunnista tuota tuotekoodia vielä — olemme vielä rakentamassa luetteloamme tuoreista tuotekoodeista."
   },
   "edit_profile": {
     "title": "Muokkaa profiilia",
