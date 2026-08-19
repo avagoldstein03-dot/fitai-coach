@@ -7,7 +7,7 @@
     <key>CFBundleDevelopmentRegion</key>
     <string>$(DEVELOPMENT_LANGUAGE)</string>
     <key>CFBundleDisplayName</key>
-    <string>Active AI Coach</string>
+    <string>Active AI</string>
     <key>CFBundleExecutable</key>
     <string>$(EXECUTABLE_NAME)</string>
     <key>CFBundleIdentifier</key>
@@ -62,13 +62,13 @@
     <key>NSFaceIDUsageDescription</key>
     <string>Allow $(PRODUCT_NAME) to access your Face ID biometric data.</string>
     <key>NSHealthShareUsageDescription</key>
-    <string>Active AI Coach reads your steps, sleep, active energy, heart rate, and weight from Apple Health to reduce manual logging and give your AI coach fuller context on your progress.</string>
+    <string>Active AI reads your steps, sleep, active energy, heart rate, and weight from Apple Health to reduce manual logging and give your AI coach fuller context on your progress.</string>
     <key>NSLocalNetworkUsageDescription</key>
     <string>Expo Dev Launcher uses the local network to discover and connect to development servers running on your computer.</string>
     <key>NSMicrophoneUsageDescription</key>
     <string>Allow $(PRODUCT_NAME) to access your microphone</string>
     <key>NSPhotoLibraryAddUsageDescription</key>
-    <string>Active AI Coach saves progress photos to your photo library.</string>
+    <string>Active AI saves progress photos to your photo library.</string>
     <key>NSPhotoLibraryUsageDescription</key>
     <string>Allow $(PRODUCT_NAME) to access your photos to upload progress photos and body scan images.</string>
     <key>RCTNewArchEnabled</key>
