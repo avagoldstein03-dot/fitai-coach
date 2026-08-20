@@ -19,14 +19,17 @@ export interface OFFProduct {
 }
 
 // Returns null when Open Food Facts genuinely has no data for this barcode
-// (status: 0, a 200 response — not an HTTP error). Throws on network/HTTP
-// failure so the caller can distinguish "not found" from "upstream down".
+// (status: 0 in the body — OFF returns this as either a 200 or a 404
+// depending on the barcode, so we treat both as a normal response rather
+// than an HTTP error). Throws only on a real network/5xx failure, so the
+// caller can distinguish "not found" from "upstream down".
 export async function lookupProduct(barcode: string): Promise<OFFProduct | null> {
   try {
     const response = await axios.get(`${OFF_BASE_URL}/${encodeURIComponent(barcode)}.json`, {
       params: { fields: FIELDS },
       timeout: 8000,
       headers: { "User-Agent": "ActiveAI/1.0 (support@activeai.app)" },
+      validateStatus: (status) => status === 200 || status === 404,
     });
 
     if (response.data?.status !== 1 || !response.data?.product) {
