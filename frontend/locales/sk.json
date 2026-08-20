@@ -1407,7 +1407,21 @@
     "error_rate_limited": "Príliš veľa skenovaní — urobte si krátku prestávku a skúste to neskôr.",
     "error_unauthorized": "Vaša relácia vypršala — odhláste sa a znova sa prihláste, potom skúste znova.",
     "error_invalid_barcode": "Toto nevyzerá ako platný čiarový kód alebo kód produktu.",
-    "error_generic": "Nemohol som to naskenať. Skúste znova."
+    "error_generic": "Nemohol som to naskenať. Skúste znova.",
+    "add_this_product": "Pridať tento produkt",
+    "submit_form_title": "Pomôžte iným nájsť tento produkt nabudúce",
+    "submit_form_sub": "Uložíme, čo zadáte, aby sa tento produkt okamžite objavil pre ďalšiu osobu, ktorá ho naskenuje. Informácie o výžive sú voliteľné.",
+    "submit_name_placeholder": "Názov produktu (povinné)",
+    "submit_brand_placeholder": "Značka (voliteľné)",
+    "submit_macros_label": "Výživa na 100 g (voliteľné)",
+    "submit_calories_placeholder": "Kalórie",
+    "submit_protein_placeholder": "Proteín (g)",
+    "submit_carbs_placeholder": "Sacharidy (g)",
+    "submit_fat_placeholder": "Tuky (g)",
+    "submit_button": "Uložiť produkt",
+    "error_submit_product": "Nepodarilo sa uložiť tento produkt. Skúste znova.",
+    "community_added_title": "Pridané komunitou",
+    "community_added_sub": "Tento produkt bol pridaný iným používateľom a nebol nezávisle overený z hľadiska zloženia alebo prísad."
   },
   "edit_profile": {
     "title": "Upraviť profil",

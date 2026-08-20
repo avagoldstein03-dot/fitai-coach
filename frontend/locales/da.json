@@ -1407,7 +1407,21 @@
     "error_rate_limited": "For mange scanninger — tag en kort pause og prøv igen om lidt.",
     "error_unauthorized": "Din session er udløbet — log ud og ind igen, og prøv derefter igen.",
     "error_invalid_barcode": "Det ser ikke ud til at være en gyldig stregkode eller produktkode.",
-    "error_generic": "Kunne ikke scanne det. Prøv igen."
+    "error_generic": "Kunne ikke scanne det. Prøv igen.",
+    "add_this_product": "Tilføj Dette Produkt",
+    "submit_form_title": "Hjælp andre med at finde dette næste gang",
+    "submit_form_sub": "Vi gemmer det, du indtaster, så produktet vises øjeblikkeligt for den næste person, der scanner det. Ernæringsoplysninger er valgfrit.",
+    "submit_name_placeholder": "Produktnavn (påkrævet)",
+    "submit_brand_placeholder": "Mærke (valgfrit)",
+    "submit_macros_label": "Ernæring pr. 100g (valgfrit)",
+    "submit_calories_placeholder": "Kalorier",
+    "submit_protein_placeholder": "Protein (g)",
+    "submit_carbs_placeholder": "Kulhydrater (g)",
+    "submit_fat_placeholder": "Fedt (g)",
+    "submit_button": "Gem Produkt",
+    "error_submit_product": "Kunne ikke gemme dette produkt. Prøv igen.",
+    "community_added_title": "Tilføjet af Fællesskabet",
+    "community_added_sub": "Dette produkt blev tilføjet af en anden bruger og er ikke blevet uafhængigt kontrolleret for ingredienser eller tilsætningsstoffer."
   },
   "edit_profile": {
     "title": "Rediger profil",

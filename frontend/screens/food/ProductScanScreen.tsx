@@ -42,6 +42,7 @@ interface ScannedProduct {
   carbsPer100g: number | null;
   fatPer100g: number | null;
   servingSizeGrams: number | null;
+  isUserSubmitted: boolean;
 }
 
 const NUTRISCORE_COLOR: Record<string, string> = { a: T.green, b: T.teal, c: T.amber, d: T.red, e: T.red };
@@ -71,6 +72,40 @@ export default function ProductScanScreen() {
   const [result, setResult] = useState<ScanResponse | null>(null);
   const [logGrams, setLogGrams] = useState("100");
   const [logMealType, setLogMealType] = useState<typeof MEAL_TYPES[number]>("snack");
+  const [submitFormVisible, setSubmitFormVisible] = useState(false);
+  const [submitProductName, setSubmitProductName] = useState("");
+  const [submitBrand, setSubmitBrand] = useState("");
+  const [submitCalories, setSubmitCalories] = useState("");
+  const [submitProtein, setSubmitProtein] = useState("");
+  const [submitCarbs, setSubmitCarbs] = useState("");
+  const [submitFat, setSubmitFat] = useState("");
+
+  const { mutate: submitManualProduct, isPending: isSubmittingProduct } = useMutation({
+    mutationFn: async (barcode: string) => {
+      const response = await axios.post<{ data: ScanResponse }>(`${API_URL}/api/products/manual`, {
+        barcode,
+        productName: submitProductName.trim(),
+        brand: submitBrand.trim() || undefined,
+        caloriesPer100g: submitCalories ? Number(submitCalories) : undefined,
+        proteinPer100g: submitProtein ? Number(submitProtein) : undefined,
+        carbsPer100g: submitCarbs ? Number(submitCarbs) : undefined,
+        fatPer100g: submitFat ? Number(submitFat) : undefined,
+      });
+      return response.data.data;
+    },
+    onSuccess: (data) => {
+      Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success);
+      setSubmitFormVisible(false);
+      if (data.status === "found") {
+        setLogGrams(String(data.product.servingSizeGrams ?? 100));
+        setLogMealType("snack");
+      }
+      setResult(data);
+    },
+    onError: () => {
+      Alert.alert(t("common.error"), t("product_scan.error_submit_product"));
+    },
+  });
 
   const { mutate: addToShoppingList, isPending: isAddingToList } = useMutation({
     mutationFn: async (name: string) => {
@@ -173,6 +208,13 @@ export default function ProductScanScreen() {
     setResult(null);
     setManualBarcode("");
     setIsPaused(false);
+    setSubmitFormVisible(false);
+    setSubmitProductName("");
+    setSubmitBrand("");
+    setSubmitCalories("");
+    setSubmitProtein("");
+    setSubmitCarbs("");
+    setSubmitFat("");
   };
 
   if (result) {
@@ -187,19 +229,99 @@ export default function ProductScanScreen() {
               {isProduceCode ? t("product_scan.not_found_produce_sub") : t("product_scan.not_found_sub")}
             </Text>
           </View>
-          <View style={s.resultsActions}>
-            <TouchableOpacity onPress={scanAnother} style={s.secondaryBtn}>
-              <Text style={s.secondaryBtnText}>{t("product_scan.scan_another")}</Text>
-            </TouchableOpacity>
-            {!isProduceCode && (
-              <TouchableOpacity
-                onPress={() => navigation.navigate("Supplements")}
-                style={s.primaryBtn}
-              >
-                <Text style={s.primaryBtnText}>{t("product_scan.try_supplements_cta")}</Text>
-              </TouchableOpacity>
-            )}
-          </View>
+
+          {submitFormVisible ? (
+            <View style={s.submitForm}>
+              <Text style={s.submitFormTitle}>{t("product_scan.submit_form_title")}</Text>
+              <Text style={s.submitFormSub}>{t("product_scan.submit_form_sub")}</Text>
+
+              <TextInput
+                style={s.submitInput}
+                value={submitProductName}
+                onChangeText={setSubmitProductName}
+                placeholder={t("product_scan.submit_name_placeholder")}
+                placeholderTextColor={T.textMuted}
+              />
+              <TextInput
+                style={s.submitInput}
+                value={submitBrand}
+                onChangeText={setSubmitBrand}
+                placeholder={t("product_scan.submit_brand_placeholder")}
+                placeholderTextColor={T.textMuted}
+              />
+              <Text style={s.submitFieldLabel}>{t("product_scan.submit_macros_label")}</Text>
+              <View style={s.submitMacroRow}>
+                <TextInput
+                  style={s.submitMacroInput}
+                  value={submitCalories}
+                  onChangeText={setSubmitCalories}
+                  placeholder={t("product_scan.submit_calories_placeholder")}
+                  placeholderTextColor={T.textMuted}
+                  keyboardType="number-pad"
+                />
+                <TextInput
+                  style={s.submitMacroInput}
+                  value={submitProtein}
+                  onChangeText={setSubmitProtein}
+                  placeholder={t("product_scan.submit_protein_placeholder")}
+                  placeholderTextColor={T.textMuted}
+                  keyboardType="number-pad"
+                />
+              </View>
+              <View style={s.submitMacroRow}>
+                <TextInput
+                  style={s.submitMacroInput}
+                  value={submitCarbs}
+                  onChangeText={setSubmitCarbs}
+                  placeholder={t("product_scan.submit_carbs_placeholder")}
+                  placeholderTextColor={T.textMuted}
+                  keyboardType="number-pad"
+                />
+                <TextInput
+                  style={s.submitMacroInput}
+                  value={submitFat}
+                  onChangeText={setSubmitFat}
+                  placeholder={t("product_scan.submit_fat_placeholder")}
+                  placeholderTextColor={T.textMuted}
+                  keyboardType="number-pad"
+                />
+              </View>
+
+              <View style={s.resultsActions}>
+                <TouchableOpacity onPress={() => setSubmitFormVisible(false)} style={s.secondaryBtn}>
+                  <Text style={s.secondaryBtnText}>{t("common.cancel")}</Text>
+                </TouchableOpacity>
+                <TouchableOpacity
+                  onPress={() => submitManualProduct(result.barcode)}
+                  style={s.primaryBtn}
+                  disabled={isSubmittingProduct || !submitProductName.trim()}
+                  activeOpacity={0.8}
+                >
+                  {isSubmittingProduct ? (
+                    <ActivityIndicator color="#000" size="small" />
+                  ) : (
+                    <Text style={s.primaryBtnText}>{t("product_scan.submit_button")}</Text>
+                  )}
+                </TouchableOpacity>
+              </View>
+            </View>
+          ) : (
+            <>
+              <View style={s.resultsActions}>
+                <TouchableOpacity onPress={scanAnother} style={s.secondaryBtn}>
+                  <Text style={s.secondaryBtnText}>{t("product_scan.scan_another")}</Text>
+                </TouchableOpacity>
+                <TouchableOpacity onPress={() => setSubmitFormVisible(true)} style={s.primaryBtn}>
+                  <Text style={s.primaryBtnText}>{t("product_scan.add_this_product")}</Text>
+                </TouchableOpacity>
+              </View>
+              {!isProduceCode && (
+                <TouchableOpacity onPress={() => navigation.navigate("Supplements")} style={s.addProductLink}>
+                  <Text style={s.addProductLinkText}>{t("product_scan.try_supplements_cta")}</Text>
+                </TouchableOpacity>
+              )}
+            </>
+          )}
         </ScrollView>
       );
     }
@@ -214,18 +336,27 @@ export default function ProductScanScreen() {
           <Text style={s.productName}>{product.productName ?? t("product_scan.unknown_product")}</Text>
         </View>
 
-        <View style={s.scoreCard}>
-          <View style={s.scoreRow}>
-            <Text style={[s.scoreValue, { color: gradeColor }]}>{product.score}</Text>
-            <View style={[s.gradePill, { backgroundColor: gradeColor }]}>
-              <Text style={s.gradePillText}>{t(`product_scan.grade_${product.grade}`)}</Text>
+        {product.isUserSubmitted ? (
+          <View style={s.communityCard}>
+            <Text style={s.communityIcon}>🤝</Text>
+            <Text style={s.communityTitle}>{t("product_scan.community_added_title")}</Text>
+            <Text style={s.communitySub}>{t("product_scan.community_added_sub")}</Text>
+          </View>
+        ) : (
+          <View style={s.scoreCard}>
+            <View style={s.scoreRow}>
+              <Text style={[s.scoreValue, { color: gradeColor }]}>{product.score}</Text>
+              <View style={[s.gradePill, { backgroundColor: gradeColor }]}>
+                <Text style={s.gradePillText}>{t(`product_scan.grade_${product.grade}`)}</Text>
+              </View>
+            </View>
+            <View style={s.scoreBarTrack}>
+              <View style={[s.scoreBarFill, { width: `${product.score}%`, backgroundColor: gradeColor }]} />
             </View>
           </View>
-          <View style={s.scoreBarTrack}>
-            <View style={[s.scoreBarFill, { width: `${product.score}%`, backgroundColor: gradeColor }]} />
-          </View>
-        </View>
+        )}
 
+        {!product.isUserSubmitted && (
         <View style={s.ingredientsSection}>
           <Text style={s.ingredientsTitle}>{t("product_scan.why_this_rating")}</Text>
 
@@ -291,6 +422,7 @@ export default function ProductScanScreen() {
             </View>
           )}
         </View>
+        )}
 
         <TouchableOpacity
           onPress={() => addToShoppingList(product.productName ?? t("product_scan.unknown_product"))}
@@ -587,4 +719,32 @@ const s = StyleSheet.create({
   secondaryBtnText: { color: T.textSecondary, fontWeight: "700", fontSize: 14 },
   primaryBtn: { flex: 1, backgroundColor: T.accent, borderRadius: 12, paddingVertical: 15, alignItems: "center" },
   primaryBtnText: { color: "#000", fontWeight: "700", fontSize: 14 },
+
+  addProductLink: { alignItems: "center", paddingVertical: 14 },
+  addProductLinkText: { color: T.accent, fontWeight: "600", fontSize: 13 },
+
+  submitForm: {
+    marginHorizontal: 24, backgroundColor: T.surface, borderWidth: 1, borderColor: T.border,
+    borderRadius: 16, padding: 18, marginTop: 4, marginBottom: 20,
+  },
+  submitFormTitle: { fontSize: 15, fontWeight: "700", color: T.textPrimary, marginBottom: 4 },
+  submitFormSub: { fontSize: 12, color: T.textSecondary, marginBottom: 16 },
+  submitInput: {
+    backgroundColor: T.surface2, borderWidth: 1, borderColor: T.border, borderRadius: 10,
+    paddingHorizontal: 14, paddingVertical: 11, color: T.textPrimary, fontSize: 14, marginBottom: 10,
+  },
+  submitFieldLabel: { fontSize: 12, color: T.textSecondary, marginBottom: 8, marginTop: 4 },
+  submitMacroRow: { flexDirection: "row", gap: 10, marginBottom: 10 },
+  submitMacroInput: {
+    flex: 1, backgroundColor: T.surface2, borderWidth: 1, borderColor: T.border, borderRadius: 10,
+    paddingHorizontal: 14, paddingVertical: 11, color: T.textPrimary, fontSize: 14,
+  },
+
+  communityCard: {
+    marginHorizontal: 24, backgroundColor: T.surface, borderWidth: 1, borderColor: T.border,
+    borderRadius: 16, padding: 20, marginBottom: 20, alignItems: "center",
+  },
+  communityIcon: { fontSize: 28, marginBottom: 8 },
+  communityTitle: { fontSize: 15, fontWeight: "700", color: T.textPrimary, marginBottom: 4, textAlign: "center" },
+  communitySub: { fontSize: 12, color: T.textSecondary, textAlign: "center" },
 });

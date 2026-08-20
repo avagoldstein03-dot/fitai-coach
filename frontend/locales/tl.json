@@ -1407,7 +1407,21 @@
     "error_rate_limited": "Masyadong maraming scans — magpahinga ng konti at subukan ulit sa ilang sandali.",
     "error_unauthorized": "Nag-expire na ang iyong session — mag-sign out at bumalik, pagkatapos subukan ulit.",
     "error_invalid_barcode": "Mukhang hindi valid na barcode o produce code iyan.",
-    "error_generic": "Hindi makascan iyan. Subukan ulit."
+    "error_generic": "Hindi makascan iyan. Subukan ulit.",
+    "add_this_product": "Idagdag ang Produktong Ito",
+    "submit_form_title": "Tulungan ang iba na mahanap ito sa susunod",
+    "submit_form_sub": "Isasave namin ang iyong input para ang produktong ito ay lalabas kaagad para sa susunod na taong mag-scan. Ang nutrition info ay opsyonal.",
+    "submit_name_placeholder": "Pangalan ng produkto (kailangan)",
+    "submit_brand_placeholder": "Brand (opsyonal)",
+    "submit_macros_label": "Nutrition per 100g (opsyonal)",
+    "submit_calories_placeholder": "Calories",
+    "submit_protein_placeholder": "Protein (g)",
+    "submit_carbs_placeholder": "Carbs (g)",
+    "submit_fat_placeholder": "Fat (g)",
+    "submit_button": "I-save ang Produkto",
+    "error_submit_product": "Hindi ma-save ang produktong ito. Subukan muli.",
+    "community_added_title": "Idinagdag ng Community",
+    "community_added_sub": "Ang produktong ito ay idinagdag ng kapwa user at hindi pa independiyenteng sinuri para sa sangkap o additives."
   },
   "edit_profile": {
     "title": "Baguhin ang Profile",

@@ -1407,7 +1407,21 @@
     "error_rate_limited": "扫描次数过多——请稍作休息，稍后再试。",
     "error_unauthorized": "您的会话已过期——请登出后重新登入，然后重试。",
     "error_invalid_barcode": "这看起来不像有效的条形码或农产品代码。",
-    "error_generic": "无法扫描。请重试。"
+    "error_generic": "无法扫描。请重试。",
+    "add_this_product": "添加此产品",
+    "submit_form_title": "帮助他人下次找到它",
+    "submit_form_sub": "我们将保存您输入的信息，这样下一个扫描该产品的人就能立即看到。营养信息是可选的。",
+    "submit_name_placeholder": "产品名称（必填）",
+    "submit_brand_placeholder": "品牌（可选）",
+    "submit_macros_label": "每100克营养成分（可选）",
+    "submit_calories_placeholder": "卡路里",
+    "submit_protein_placeholder": "蛋白质（克）",
+    "submit_carbs_placeholder": "碳水化合物（克）",
+    "submit_fat_placeholder": "脂肪（克）",
+    "submit_button": "保存产品",
+    "error_submit_product": "无法保存此产品。请重试。",
+    "community_added_title": "社区添加",
+    "community_added_sub": "此产品由用户添加，尚未独立检查其成分或添加剂。"
   },
   "edit_profile": {
     "title": "编辑个人资料",

@@ -1407,7 +1407,21 @@
     "error_rate_limited": "Liian monta skannausta — pidä lyhyt tauko ja yritä uudelleen hetken päästä.",
     "error_unauthorized": "Istuntosi vanhentui — kirjaudu ulos ja takaisin sisään, sitten yritä uudelleen.",
     "error_invalid_barcode": "Tämä ei näytä kelvolliselta viivakoodilta tai tuotekoodilta.",
-    "error_generic": "Ei voitu skannata sitä. Yritä uudelleen."
+    "error_generic": "Ei voitu skannata sitä. Yritä uudelleen.",
+    "add_this_product": "Lisää tämä tuote",
+    "submit_form_title": "Auta muita löytämään tämä tuote",
+    "submit_form_sub": "Tallennamme antamasi tiedot, jotta tuote näkyy välittömästi seuraavalle skannaajalle. Ravintotiedot ovat valinnaisia.",
+    "submit_name_placeholder": "Tuotteen nimi (pakollinen)",
+    "submit_brand_placeholder": "Merkki (valinnainen)",
+    "submit_macros_label": "Ravintosisältö 100 g:ssa (valinnainen)",
+    "submit_calories_placeholder": "Kalorit",
+    "submit_protein_placeholder": "Proteiini (g)",
+    "submit_carbs_placeholder": "Hiilihydraatit (g)",
+    "submit_fat_placeholder": "Rasva (g)",
+    "submit_button": "Tallenna tuote",
+    "error_submit_product": "Tuotteen tallentaminen epäonnistui. Yritä uudelleen.",
+    "community_added_title": "Yhteisön lisäämä",
+    "community_added_sub": "Tämän tuotteen on lisännyt toinen käyttäjä, eikä sen ainesosia tai lisäaineita ole tarkistettu itsenäisesti."
   },
   "edit_profile": {
     "title": "Muokkaa profiilia",

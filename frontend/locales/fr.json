@@ -1407,7 +1407,21 @@
     "error_rate_limited": "Trop de scans — prenez une courte pause et réessayez dans quelques instants.",
     "error_unauthorized": "Votre session a expiré — déconnectez-vous et reconnectez-vous, puis réessayez.",
     "error_invalid_barcode": "Cela ne semble pas être un code-barres ou un code produit valide.",
-    "error_generic": "Impossible de scanner cela. Réessayez."
+    "error_generic": "Impossible de scanner cela. Réessayez.",
+    "add_this_product": "Ajouter Ce Produit",
+    "submit_form_title": "Aidez les autres à trouver ce produit la prochaine fois",
+    "submit_form_sub": "Nous enregistrerons ce que vous entrez afin que ce produit s'affiche instantanément pour la prochaine personne qui le scanne. Les informations nutritionnelles sont optionnelles.",
+    "submit_name_placeholder": "Nom du produit (obligatoire)",
+    "submit_brand_placeholder": "Marque (optionnel)",
+    "submit_macros_label": "Nutrition pour 100g (optionnel)",
+    "submit_calories_placeholder": "Calories",
+    "submit_protein_placeholder": "Protéines (g)",
+    "submit_carbs_placeholder": "Glucides (g)",
+    "submit_fat_placeholder": "Lipides (g)",
+    "submit_button": "Enregistrer le Produit",
+    "error_submit_product": "Impossible d'enregistrer ce produit. Veuillez réessayer.",
+    "community_added_title": "Ajouté par la Communauté",
+    "community_added_sub": "Ce produit a été ajouté par un utilisateur et n'a pas été vérifié indépendamment pour ses ingrédients ou ses additifs."
   },
   "edit_profile": {
     "title": "Modifier le profil",

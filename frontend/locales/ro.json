@@ -1407,7 +1407,21 @@
     "error_rate_limited": "Prea multe scanări — ia o pauză scurtă și încearcă din nou peste puțin.",
     "error_unauthorized": "Sesiunea ta a expirat — deconectează-te și conectează-te din nou, apoi încearcă din nou.",
     "error_invalid_barcode": "Asta nu arată ca un cod de bare sau cod produs valid.",
-    "error_generic": "N-am putut scana asta. Încearcă din nou."
+    "error_generic": "N-am putut scana asta. Încearcă din nou.",
+    "add_this_product": "Adaugă acest produs",
+    "submit_form_title": "Ajută alții să găsească acest produs data viitoare",
+    "submit_form_sub": "Vom salva informațiile pe care le introduci, astfel încât acest produs să apară instant pentru următoarea persoană care îl scanează. Informațiile nutriționale sunt opționale.",
+    "submit_name_placeholder": "Numele produsului (obligatoriu)",
+    "submit_brand_placeholder": "Marcă (opțional)",
+    "submit_macros_label": "Nutriție per 100g (opțional)",
+    "submit_calories_placeholder": "Calorii",
+    "submit_protein_placeholder": "Proteină (g)",
+    "submit_carbs_placeholder": "Carbohidrați (g)",
+    "submit_fat_placeholder": "Grăsime (g)",
+    "submit_button": "Salvează produsul",
+    "error_submit_product": "Nu am putut salva acest produs. Încearcă din nou.",
+    "community_added_title": "Adăugat de comunitate",
+    "community_added_sub": "Acest produs a fost adăugat de un alt utilizator și nu a fost verificat independent pentru ingrediente sau aditivi."
   },
   "edit_profile": {
     "title": "Editare Profil",

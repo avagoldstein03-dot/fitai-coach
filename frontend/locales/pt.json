@@ -1407,7 +1407,21 @@
     "error_rate_limited": "Muitas digitalizações — faça uma pausa curta e tente novamente em alguns instantes.",
     "error_unauthorized": "Sua sessão expirou — saia e entre novamente, depois tente de novo.",
     "error_invalid_barcode": "Isso não parece ser um código de barras ou código de produto válido.",
-    "error_generic": "Não foi possível digitalizar. Tente novamente."
+    "error_generic": "Não foi possível digitalizar. Tente novamente.",
+    "add_this_product": "Adicionar Este Produto",
+    "submit_form_title": "Ajude outros a encontrar isso da próxima vez",
+    "submit_form_sub": "Salvaremos o que você digitar para que este produto apareça instantaneamente para a próxima pessoa que digitalizá-lo. Informações nutricionais são opcionais.",
+    "submit_name_placeholder": "Nome do produto (obrigatório)",
+    "submit_brand_placeholder": "Marca (opcional)",
+    "submit_macros_label": "Nutrição por 100g (opcional)",
+    "submit_calories_placeholder": "Calorias",
+    "submit_protein_placeholder": "Proteína (g)",
+    "submit_carbs_placeholder": "Carboidratos (g)",
+    "submit_fat_placeholder": "Gordura (g)",
+    "submit_button": "Salvar Produto",
+    "error_submit_product": "Não foi possível salvar este produto. Tente novamente.",
+    "community_added_title": "Adicionado pela Comunidade",
+    "community_added_sub": "Este produto foi adicionado por um usuário e não foi verificado independentemente quanto a ingredientes ou aditivos."
   },
   "edit_profile": {
     "title": "Editar Perfil",

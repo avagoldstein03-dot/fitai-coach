@@ -1407,7 +1407,21 @@
     "error_rate_limited": "יותר מדי סריקות — קח הפסקה קצרה והנסה שוב בעוד רגע.",
     "error_unauthorized": "ההפעלה שלך פגה — התנתק והתחבר שוב, ואז נסה שוב.",
     "error_invalid_barcode": "זה לא נראה כמו ברקוד או קוד פרודקט תקף.",
-    "error_generic": "לא הצלחנו לסרוק את זה. נסה שוב."
+    "error_generic": "לא הצלחנו לסרוק את זה. נסה שוב.",
+    "add_this_product": "הוסף מוצר זה",
+    "submit_form_title": "עזור לאחרים למצוא את זה בפעם הבאה",
+    "submit_form_sub": "נשמור את מה שתזין כדי שהמוצר יופיע באופן מיידי לאדם הבא שסורק אותו. מידע תזונתי הוא אופציונלי.",
+    "submit_name_placeholder": "שם המוצר (חובה)",
+    "submit_brand_placeholder": "מותג (אופציונלי)",
+    "submit_macros_label": "תזונה ל-100 גרם (אופציונלי)",
+    "submit_calories_placeholder": "קלוריות",
+    "submit_protein_placeholder": "חלבון (גרם)",
+    "submit_carbs_placeholder": "פחמימות (גרם)",
+    "submit_fat_placeholder": "שומן (גרם)",
+    "submit_button": "שמור מוצר",
+    "error_submit_product": "לא היה אפשר לשמור את המוצר הזה. נסה שוב.",
+    "community_added_title": "נוסף על ידי הקהילה",
+    "community_added_sub": "מוצר זה נוסף על ידי משתמש אחר ולא בדוק באופן עצמאי למרכיבים או תוספות."
   },
   "edit_profile": {
     "title": "עריכת פרופיל",

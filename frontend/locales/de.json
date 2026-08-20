@@ -1407,7 +1407,21 @@
     "error_rate_limited": "Zu viele Scans — machen Sie eine kurze Pause und versuchen Sie es in Kürze erneut.",
     "error_unauthorized": "Ihre Sitzung ist abgelaufen — melden Sie sich ab und wieder an, dann versuchen Sie es erneut.",
     "error_invalid_barcode": "Das sieht nicht wie ein gültiger Barcode oder Produktcode aus.",
-    "error_generic": "Das konnte nicht gescannt werden. Versuchen Sie es erneut."
+    "error_generic": "Das konnte nicht gescannt werden. Versuchen Sie es erneut.",
+    "add_this_product": "Dieses Produkt hinzufügen",
+    "submit_form_title": "Hilf anderen, dieses Produkt beim nächsten Mal zu finden",
+    "submit_form_sub": "Wir speichern deine Angaben, damit dieses Produkt beim nächsten Scan sofort angezeigt wird. Nährwertangaben sind optional.",
+    "submit_name_placeholder": "Produktname (erforderlich)",
+    "submit_brand_placeholder": "Marke (optional)",
+    "submit_macros_label": "Nährwerte pro 100g (optional)",
+    "submit_calories_placeholder": "Kalorien",
+    "submit_protein_placeholder": "Protein (g)",
+    "submit_carbs_placeholder": "Kohlenhydrate (g)",
+    "submit_fat_placeholder": "Fett (g)",
+    "submit_button": "Produkt speichern",
+    "error_submit_product": "Produkt konnte nicht gespeichert werden. Bitte versuche es erneut.",
+    "community_added_title": "Von der Community hinzugefügt",
+    "community_added_sub": "Dieses Produkt wurde von einem anderen Benutzer hinzugefügt und wurde nicht unabhängig auf Inhaltsstoffe oder Zusatzstoffe überprüft."
   },
   "edit_profile": {
     "title": "Profil bearbeiten",

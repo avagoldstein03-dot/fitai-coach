@@ -1407,7 +1407,21 @@
     "error_rate_limited": "掃描次數過多 — 休息一下，稍後再試。",
     "error_unauthorized": "您的工作階段已過期 — 登出後重新登入，然後重試。",
     "error_invalid_barcode": "這看起來不像有效的條碼或農產品代碼。",
-    "error_generic": "無法掃描。請重試。"
+    "error_generic": "無法掃描。請重試。",
+    "add_this_product": "新增此產品",
+    "submit_form_title": "幫助其他人下次找到它",
+    "submit_form_sub": "我們會儲存您輸入的資訊，讓下一位掃描此產品的用戶能立即看到。營養資訊為選填項目。",
+    "submit_name_placeholder": "產品名稱（必填）",
+    "submit_brand_placeholder": "品牌（選填）",
+    "submit_macros_label": "每100克營養資訊（選填）",
+    "submit_calories_placeholder": "卡路里",
+    "submit_protein_placeholder": "蛋白質（克）",
+    "submit_carbs_placeholder": "碳水化合物（克）",
+    "submit_fat_placeholder": "脂肪（克）",
+    "submit_button": "儲存產品",
+    "error_submit_product": "無法儲存此產品。請重試。",
+    "community_added_title": "由社群新增",
+    "community_added_sub": "此產品由使用者新增，尚未經過獨立檢驗其成分或添加物。"
   },
   "edit_profile": {
     "title": "編輯個人資料",

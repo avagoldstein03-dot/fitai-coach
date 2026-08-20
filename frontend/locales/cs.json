@@ -1407,7 +1407,21 @@
     "error_rate_limited": "Příliš mnoho scanů — udělej si krátkou pauzu a zkus to za chvíli znovu.",
     "error_unauthorized": "Vaše relace vypršela — odhlaste se a znovu se přihlaste, pak to zkuste znovu.",
     "error_invalid_barcode": "To nevypadá jako platný čárový kód nebo kód produktu.",
-    "error_generic": "Nepodařilo se to nascanovat. Zkus to znovu."
+    "error_generic": "Nepodařilo se to nascanovat. Zkus to znovu.",
+    "add_this_product": "Přidat tento produkt",
+    "submit_form_title": "Pomozte ostatním najít tento produkt příště",
+    "submit_form_sub": "Uložíme vaše údaje, aby se tento produkt zobrazil okamžitě při příštím skenování. Informace o výživě jsou volitelné.",
+    "submit_name_placeholder": "Název produktu (povinné)",
+    "submit_brand_placeholder": "Značka (volitelné)",
+    "submit_macros_label": "Výživa na 100 g (volitelné)",
+    "submit_calories_placeholder": "Kalorie",
+    "submit_protein_placeholder": "Bílkoviny (g)",
+    "submit_carbs_placeholder": "Sacharidy (g)",
+    "submit_fat_placeholder": "Tuky (g)",
+    "submit_button": "Uložit produkt",
+    "error_submit_product": "Nemohl jsem uložit tento produkt. Zkuste znovu.",
+    "community_added_title": "Přidáno komunitou",
+    "community_added_sub": "Tento produkt přidal jiný uživatel a nebyl nezávisle ověřen z hlediska složení nebo přídatných látek."
   },
   "edit_profile": {
     "title": "Úprava profilu",

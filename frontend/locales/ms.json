@@ -1407,7 +1407,21 @@
     "error_rate_limited": "Terlalu banyak imbasan — ambil rehat sebentar dan cuba lagi nanti.",
     "error_unauthorized": "Sesi anda telah tamat — keluar dan masuk semula, kemudian cuba lagi.",
     "error_invalid_barcode": "Itu tidak kelihatan seperti kod bar atau kod hasil yang sah.",
-    "error_generic": "Tidak dapat mengimbas itu. Cuba lagi."
+    "error_generic": "Tidak dapat mengimbas itu. Cuba lagi.",
+    "add_this_product": "Tambah Produk Ini",
+    "submit_form_title": "Bantu orang lain mencari produk ini lain kali",
+    "submit_form_sub": "Kami akan menyimpan maklumat yang anda masukkan supaya produk ini muncul serta-merta untuk pengguna seterusnya yang mengimbas. Maklumat nutrisi adalah pilihan.",
+    "submit_name_placeholder": "Nama produk (diperlukan)",
+    "submit_brand_placeholder": "Jenama (pilihan)",
+    "submit_macros_label": "Nutrisi per 100g (pilihan)",
+    "submit_calories_placeholder": "Kalori",
+    "submit_protein_placeholder": "Protein (g)",
+    "submit_carbs_placeholder": "Karbohidrat (g)",
+    "submit_fat_placeholder": "Lemak (g)",
+    "submit_button": "Simpan Produk",
+    "error_submit_product": "Tidak dapat menyimpan produk ini. Cuba lagi.",
+    "community_added_title": "Ditambah oleh Komuniti",
+    "community_added_sub": "Produk ini telah ditambah oleh pengguna lain dan belum disemak secara bebas untuk bahan atau bahan tambahan."
   },
   "edit_profile": {
     "title": "Edit Profil",

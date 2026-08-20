@@ -1407,7 +1407,21 @@
     "error_rate_limited": "スキャンが多すぎます — 少し休憩してからもう一度お試しください。",
     "error_unauthorized": "セッションの有効期限が切れました — サインアウトしてからサインインし直してからもう一度お試しください。",
     "error_invalid_barcode": "有効なバーコードまたは農産物コードのようには見えません。",
-    "error_generic": "スキャンできませんでした。もう一度お試しください。"
+    "error_generic": "スキャンできませんでした。もう一度お試しください。",
+    "add_this_product": "この商品を追加",
+    "submit_form_title": "次回のために他のユーザーがこの商品を見つけやすくしてください",
+    "submit_form_sub": "入力内容を保存して、次にこの商品をスキャンした人に即座に表示されるようにします。栄養情報はオプションです。",
+    "submit_name_placeholder": "商品名（必須）",
+    "submit_brand_placeholder": "ブランド（オプション）",
+    "submit_macros_label": "100gあたりの栄養価（オプション）",
+    "submit_calories_placeholder": "カロリー",
+    "submit_protein_placeholder": "タンパク質（g）",
+    "submit_carbs_placeholder": "炭水化物（g）",
+    "submit_fat_placeholder": "脂肪（g）",
+    "submit_button": "商品を保存",
+    "error_submit_product": "この商品を保存できませんでした。もう一度お試しください。",
+    "community_added_title": "コミュニティが追加",
+    "community_added_sub": "この商品はユーザーによって追加されたもので、成分または添加物については独立して検証されていません。"
   },
   "edit_profile": {
     "title": "プロフィール編集",

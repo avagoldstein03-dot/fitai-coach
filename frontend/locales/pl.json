@@ -1407,7 +1407,21 @@
     "error_rate_limited": "Zbyt wiele skanów — zrób krótką przerwę i spróbuj ponownie za chwilę.",
     "error_unauthorized": "Twoja sesja wygasła — wyloguj się i zaloguj ponownie, a następnie spróbuj jeszcze raz.",
     "error_invalid_barcode": "To nie wygląda na prawidłowy kod kreskowy lub kod produktu.",
-    "error_generic": "Nie udało się skanować. Spróbuj ponownie."
+    "error_generic": "Nie udało się skanować. Spróbuj ponownie.",
+    "add_this_product": "Dodaj Ten Produkt",
+    "submit_form_title": "Pomóż innym znaleźć ten produkt następnym razem",
+    "submit_form_sub": "Zapiszemy to, co wpiszesz, aby ten produkt pojawił się natychmiast dla następnej osoby, która go zeskanuje. Informacje o wartościach odżywczych są opcjonalne.",
+    "submit_name_placeholder": "Nazwa produktu (wymagane)",
+    "submit_brand_placeholder": "Marka (opcjonalnie)",
+    "submit_macros_label": "Wartości odżywcze na 100g (opcjonalnie)",
+    "submit_calories_placeholder": "Kalorie",
+    "submit_protein_placeholder": "Białko (g)",
+    "submit_carbs_placeholder": "Węglowodany (g)",
+    "submit_fat_placeholder": "Tłuszcz (g)",
+    "submit_button": "Zapisz Produkt",
+    "error_submit_product": "Nie udało się zapisać tego produktu. Spróbuj ponownie.",
+    "community_added_title": "Dodane Przez Społeczność",
+    "community_added_sub": "Ten produkt został dodany przez innego użytkownika i nie został niezależnie sprawdzony pod kątem składników lub dodatków."
   },
   "edit_profile": {
     "title": "Edytuj Profil",

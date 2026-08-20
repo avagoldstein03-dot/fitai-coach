@@ -1407,7 +1407,21 @@
     "error_rate_limited": "Té veel skanderings — neem 'n kort pouse en probeer oor 'n rukkie weer.",
     "error_unauthorized": "U sessie het verstryk — meld af en weer aan, en probeer dan weer.",
     "error_invalid_barcode": "Dit lyk nie soos 'n geldige streepkode of produksiekode nie.",
-    "error_generic": "Kon dit nie skandeer nie. Probeer weer."
+    "error_generic": "Kon dit nie skandeer nie. Probeer weer.",
+    "add_this_product": "Voeg Hierdie Produk By",
+    "submit_form_title": "Help ander hierdie produk volgende keer vind",
+    "submit_form_sub": "Ons sal wat jy intik save sodat hierdie produk onmiddellik vir die volgende persoon wat dit skandeer verskyn. Voedingswaarde-inligting is opsioneel.",
+    "submit_name_placeholder": "Produknaam (vereist)",
+    "submit_brand_placeholder": "Merk (opsioneel)",
+    "submit_macros_label": "Voedingswaarde per 100g (opsioneel)",
+    "submit_calories_placeholder": "Kalorieë",
+    "submit_protein_placeholder": "Proteïen (g)",
+    "submit_carbs_placeholder": "Koolhidrate (g)",
+    "submit_fat_placeholder": "Vet (g)",
+    "submit_button": "Stoor Produk",
+    "error_submit_product": "Kon hierdie produk nie stoor nie. Probeer weer.",
+    "community_added_title": "Deur Gemeenskap Bygevoeg",
+    "community_added_sub": "Hierdie produk is deur 'n medevoerbruiker bygevoeg en is nog nie onafhanklik vir bestanddele of toevoegstowwe nagegaan nie."
   },
   "edit_profile": {
     "title": "Profiel Redigeer",

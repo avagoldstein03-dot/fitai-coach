@@ -576,6 +576,11 @@ model ProductScan {
   flaggedIngredients    Json                   @default("[]")
   scoringVersion        Int                    @default(1)
 
+  // User-submitted rows have no real ingredient/nutriscore data behind
+  // them, so score/grade are placeholders — the frontend must ignore
+  // them and show an "unverified" state instead when this is true.
+  isUserSubmitted       Boolean                @default(false)
+
   lastFetchedAt         DateTime               @default(now())
   createdAt             DateTime               @default(now())
   updatedAt             DateTime               @updatedAt

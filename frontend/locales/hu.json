@@ -1407,7 +1407,21 @@
     "error_rate_limited": "Túl sok szkennelés — tartson egy rövid szünetet, és próbálja újra később.",
     "error_unauthorized": "A munkamenete lejárt — jelentkezzen ki, majd vissza be, és próbálja újra.",
     "error_invalid_barcode": "Ez nem tűnik érvényes vonalkódnak vagy termékkódnak.",
-    "error_generic": "Nem sikerült beolvasni. Próbálja újra."
+    "error_generic": "Nem sikerült beolvasni. Próbálja újra.",
+    "add_this_product": "Termék hozzáadása",
+    "submit_form_title": "Segítsd meg másokat, hogy megtalálják ezt legközelebb",
+    "submit_form_sub": "Elmentjük az adataidat, így ez a termék azonnal megjelenik a következő felhasználónak, aki beolvassa. A táplálkozási információ opcionális.",
+    "submit_name_placeholder": "Termék neve (kötelező)",
+    "submit_brand_placeholder": "Márka (opcionális)",
+    "submit_macros_label": "Tápanyagtartalom 100g-onként (opcionális)",
+    "submit_calories_placeholder": "Kalória",
+    "submit_protein_placeholder": "Fehérje (g)",
+    "submit_carbs_placeholder": "Szénhidrát (g)",
+    "submit_fat_placeholder": "Zsír (g)",
+    "submit_button": "Termék mentése",
+    "error_submit_product": "Nem sikerült menteni ezt a terméket. Próbáld újra.",
+    "community_added_title": "Közösség által hozzáadva",
+    "community_added_sub": "Ezt a terméket egy másik felhasználó adta hozzá, és független ellenőrzésre nem került sor az összetevők vagy adalékanyagok tekintetében."
   },
   "edit_profile": {
     "title": "Profil szerkesztése",

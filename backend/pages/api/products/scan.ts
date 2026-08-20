@@ -62,6 +62,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
           carbsPer100g: produce.carbsPer100g,
           fatPer100g: produce.fatPer100g,
           servingSizeGrams: null,
+          isUserSubmitted: false,
         },
       });
     }

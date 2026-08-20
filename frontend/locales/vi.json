@@ -1407,7 +1407,21 @@
     "error_rate_limited": "Quá nhiều lần quét — hãy nghỉ một chút và thử lại sau.",
     "error_unauthorized": "Phiên của bạn đã hết hạn — đăng xuất và đăng nhập lại, sau đó thử lại.",
     "error_invalid_barcode": "Điều này không giống như một mã vạch hoặc mã sản phẩm hợp lệ.",
-    "error_generic": "Không thể quét được. Vui lòng thử lại."
+    "error_generic": "Không thể quét được. Vui lòng thử lại.",
+    "add_this_product": "Thêm Sản Phẩm Này",
+    "submit_form_title": "Giúp những người khác tìm thấy sản phẩm này lần tới",
+    "submit_form_sub": "Chúng tôi sẽ lưu những gì bạn nhập để sản phẩm này xuất hiện ngay lập tức cho người tiếp theo quét nó. Thông tin dinh dưỡng là tùy chọn.",
+    "submit_name_placeholder": "Tên sản phẩm (bắt buộc)",
+    "submit_brand_placeholder": "Thương hiệu (tùy chọn)",
+    "submit_macros_label": "Dinh dưỡng trên 100g (tùy chọn)",
+    "submit_calories_placeholder": "Calo",
+    "submit_protein_placeholder": "Protein (g)",
+    "submit_carbs_placeholder": "Carbs (g)",
+    "submit_fat_placeholder": "Fat (g)",
+    "submit_button": "Lưu Sản Phẩm",
+    "error_submit_product": "Không thể lưu sản phẩm này. Vui lòng thử lại.",
+    "community_added_title": "Cộng Đồng Đã Thêm",
+    "community_added_sub": "Sản phẩm này được thêm bởi một người dùng khác và chưa được kiểm tra độc lập về thành phần hoặc phụ gia."
   },
   "edit_profile": {
     "title": "Chỉnh sửa Hồ sơ",

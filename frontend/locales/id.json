@@ -1407,7 +1407,21 @@
     "error_rate_limited": "Terlalu banyak pemindaian — istirahat sebentar dan coba lagi dalam beberapa saat.",
     "error_unauthorized": "Sesi Anda telah berakhir — keluar dan masuk kembali, lalu coba lagi.",
     "error_invalid_barcode": "Itu bukan barcode atau kode produk yang valid.",
-    "error_generic": "Tidak bisa memindai itu. Coba lagi."
+    "error_generic": "Tidak bisa memindai itu. Coba lagi.",
+    "add_this_product": "Tambahkan Produk Ini",
+    "submit_form_title": "Bantu orang lain menemukan ini di lain waktu",
+    "submit_form_sub": "Kami akan menyimpan informasi yang Anda masukkan sehingga produk ini muncul langsung untuk pengguna berikutnya yang memindainya. Info nutrisi bersifat opsional.",
+    "submit_name_placeholder": "Nama produk (wajib)",
+    "submit_brand_placeholder": "Merek (opsional)",
+    "submit_macros_label": "Nutrisi per 100g (opsional)",
+    "submit_calories_placeholder": "Kalori",
+    "submit_protein_placeholder": "Protein (g)",
+    "submit_carbs_placeholder": "Karbohidrat (g)",
+    "submit_fat_placeholder": "Lemak (g)",
+    "submit_button": "Simpan Produk",
+    "error_submit_product": "Tidak bisa menyimpan produk ini. Coba lagi.",
+    "community_added_title": "Ditambahkan oleh Komunitas",
+    "community_added_sub": "Produk ini ditambahkan oleh pengguna lain dan belum diperiksa secara independen untuk bahan atau aditif."
   },
   "edit_profile": {
     "title": "Edit Profil",

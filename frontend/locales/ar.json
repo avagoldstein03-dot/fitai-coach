@@ -1407,7 +1407,21 @@
     "error_rate_limited": "عدد كبير جداً من المسحات — خذ فترة راحة قصيرة وحاول مجدداً بعد قليل.",
     "error_unauthorized": "انتهت جلستك — قم بتسجيل الخروج وتسجيل الدخول مرة أخرى، ثم حاول مجدداً.",
     "error_invalid_barcode": "هذا لا يبدو وكأنه رمز شريطي أو كود منتج صحيح.",
-    "error_generic": "تعذر مسح هذا. حاول مجدداً."
+    "error_generic": "تعذر مسح هذا. حاول مجدداً.",
+    "add_this_product": "إضافة هذا المنتج",
+    "submit_form_title": "ساعد الآخرين في العثور على هذا المنتج لاحقاً",
+    "submit_form_sub": "سنحفظ المعلومات التي تدخلها حتى يظهر هذا المنتج فوراً للشخص التالي الذي يقوم بمسحه. معلومات التغذية اختيارية.",
+    "submit_name_placeholder": "اسم المنتج (مطلوب)",
+    "submit_brand_placeholder": "العلامة التجارية (اختيارية)",
+    "submit_macros_label": "التغذية لكل 100 غرام (اختيارية)",
+    "submit_calories_placeholder": "السعرات الحرارية",
+    "submit_protein_placeholder": "البروتين (غ)",
+    "submit_carbs_placeholder": "الكربوهيدرات (غ)",
+    "submit_fat_placeholder": "الدهون (غ)",
+    "submit_button": "حفظ المنتج",
+    "error_submit_product": "لم يتمكن من حفظ هذا المنتج. حاول مرة أخرى.",
+    "community_added_title": "تمت الإضافة من قبل المجتمع",
+    "community_added_sub": "تمت إضافة هذا المنتج من قبل مستخدم آخر ولم يتم التحقق منه بشكل مستقل من حيث المكونات أو المضافات."
   },
   "edit_profile": {
     "title": "تعديل الملف الشخصي",

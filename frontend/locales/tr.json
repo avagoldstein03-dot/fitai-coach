@@ -1407,7 +1407,21 @@
     "error_rate_limited": "Çok fazla tarama yapıldı — kısa bir molaya alın ve daha sonra tekrar deneyin.",
     "error_unauthorized": "Oturumunuzun süresi doldu — oturumu kapatıp tekrar açın, ardından tekrar deneyin.",
     "error_invalid_barcode": "Bu geçerli bir barkod veya ürün kodu gibi görünmüyor.",
-    "error_generic": "O taranmadı. Tekrar deneyin."
+    "error_generic": "O taranmadı. Tekrar deneyin.",
+    "add_this_product": "Bu Ürünü Ekle",
+    "submit_form_title": "Diğerlerinin bunu bir sonraki seferde bulmasına yardım et",
+    "submit_form_sub": "Girdiğin bilgileri kaydederiz, böylece bu ürün tarayanlar için anında görünür. Beslenme bilgisi isteğe bağlıdır.",
+    "submit_name_placeholder": "Ürün adı (gerekli)",
+    "submit_brand_placeholder": "Marka (isteğe bağlı)",
+    "submit_macros_label": "100g başına beslenme bilgisi (isteğe bağlı)",
+    "submit_calories_placeholder": "Kalori",
+    "submit_protein_placeholder": "Protein (g)",
+    "submit_carbs_placeholder": "Karbonhidrat (g)",
+    "submit_fat_placeholder": "Yağ (g)",
+    "submit_button": "Ürünü Kaydet",
+    "error_submit_product": "Bu ürün kaydedilemedi. Lütfen tekrar deneyin.",
+    "community_added_title": "Topluluk Tarafından Eklendi",
+    "community_added_sub": "Bu ürün başka bir kullanıcı tarafından eklenmiştir ve içeriği veya katkı maddeleri bağımsız olarak kontrol edilmemiştir."
   },
   "edit_profile": {
     "title": "Profili Düzenle",

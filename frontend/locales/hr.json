@@ -1407,7 +1407,21 @@
     "error_rate_limited": "Previše skeniranja — napravite kratku pauzu i pokušajte ponovno za nekoliko trenutaka.",
     "error_unauthorized": "Vaša sesija je istekla — odjavljuje se i ponovno prijavite, pa pokušajte ponovno.",
     "error_invalid_barcode": "To ne izgleda kao valjani barkod ili kod proizvoda.",
-    "error_generic": "Nije moguće skenirati to. Pokušajte ponovno."
+    "error_generic": "Nije moguće skenirati to. Pokušajte ponovno.",
+    "add_this_product": "Dodaj ovaj proizvod",
+    "submit_form_title": "Pomozi drugima da ga sljedeći put pronađu",
+    "submit_form_sub": "Spremit ćemo što uneseš kako bi se ovaj proizvod odmah pojavio sljedećoj osobi koja ga skenira. Informacije o prehrani su opcionalne.",
+    "submit_name_placeholder": "Naziv proizvoda (obavezno)",
+    "submit_brand_placeholder": "Marka (opcionalno)",
+    "submit_macros_label": "Prehrana na 100g (opcionalno)",
+    "submit_calories_placeholder": "Kalorije",
+    "submit_protein_placeholder": "Protein (g)",
+    "submit_carbs_placeholder": "Ugljikohidrati (g)",
+    "submit_fat_placeholder": "Mast (g)",
+    "submit_button": "Spremi proizvod",
+    "error_submit_product": "Nije moguće spremiti ovaj proizvod. Pokušaj ponovno.",
+    "community_added_title": "Dodano od korisnika",
+    "community_added_sub": "Ovaj je proizvod dodao neki korisnik i nije samostalno provjeren na sastojke ili aditiveе."
   },
   "edit_profile": {
     "title": "Uređivanje profila",

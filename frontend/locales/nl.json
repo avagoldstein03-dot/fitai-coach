@@ -1407,7 +1407,21 @@
     "error_rate_limited": "Te veel scans — maak een korte pauze en probeer het over een moment opnieuw.",
     "error_unauthorized": "Uw sessie is verlopen — meld u af en weer aan, en probeer het opnieuw.",
     "error_invalid_barcode": "Dit ziet er niet uit als een geldige barcode of productcode.",
-    "error_generic": "Kon dat niet scannen. Probeer het opnieuw."
+    "error_generic": "Kon dat niet scannen. Probeer het opnieuw.",
+    "add_this_product": "Dit Product Toevoegen",
+    "submit_form_title": "Help anderen dit volgende keer te vinden",
+    "submit_form_sub": "We slaan op wat je invoert, zodat dit product direct verschijnt voor de volgende persoon die het scant. Voedingsinformatie is optioneel.",
+    "submit_name_placeholder": "Productnaam (verplicht)",
+    "submit_brand_placeholder": "Merk (optioneel)",
+    "submit_macros_label": "Voeding per 100g (optioneel)",
+    "submit_calories_placeholder": "Calorieën",
+    "submit_protein_placeholder": "Eiwit (g)",
+    "submit_carbs_placeholder": "Koolhydraten (g)",
+    "submit_fat_placeholder": "Vet (g)",
+    "submit_button": "Product Opslaan",
+    "error_submit_product": "Dit product kon niet worden opgeslagen. Probeer het opnieuw.",
+    "community_added_title": "Door Community Toegevoegd",
+    "community_added_sub": "Dit product is toegevoegd door een andere gebruiker en is niet onafhankelijk gecontroleerd op ingrediënten of additieven."
   },
   "edit_profile": {
     "title": "Profiel bewerken",

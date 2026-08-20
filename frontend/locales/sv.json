@@ -1407,7 +1407,21 @@
     "error_rate_limited": "För många skanningar — ta en kort paus och försök igen senare.",
     "error_unauthorized": "Din session har upphört — logga ut och in igen, försök sedan igen.",
     "error_invalid_barcode": "Det verkar inte vara en giltig streckkod eller produktkod.",
-    "error_generic": "Kunde inte skanna det. Försök igen."
+    "error_generic": "Kunde inte skanna det. Försök igen.",
+    "add_this_product": "Lägg Till Denna Produkt",
+    "submit_form_title": "Hjälp andra att hitta detta nästa gång",
+    "submit_form_sub": "Vi sparar det du anger så att denna produkt visas direkt för nästa person som skannar det. Nutritionsinformation är valfri.",
+    "submit_name_placeholder": "Produktnamn (obligatoriskt)",
+    "submit_brand_placeholder": "Märke (valfritt)",
+    "submit_macros_label": "Näringsvärde per 100g (valfritt)",
+    "submit_calories_placeholder": "Kalorier",
+    "submit_protein_placeholder": "Protein (g)",
+    "submit_carbs_placeholder": "Kolhydrater (g)",
+    "submit_fat_placeholder": "Fett (g)",
+    "submit_button": "Spara Produkt",
+    "error_submit_product": "Kunde inte spara denna produkt. Försök igen.",
+    "community_added_title": "Tillagt av Gemenskapen",
+    "community_added_sub": "Denna produkt lades till av en annan användare och har inte oberoende kontrollerats för ingredienser eller tillsatser."
   },
   "edit_profile": {
     "title": "Redigera profil",
