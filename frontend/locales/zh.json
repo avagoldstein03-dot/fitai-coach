@@ -1403,7 +1403,11 @@
     "nova_2": "加工烹饪成分（油、糖、盐）",
     "nova_3": "加工食品",
     "nova_4": "超加工食品",
-    "not_found_produce_sub": "我们还不能识别该农产品代码——我们仍在完善新鲜农产品代码列表。"
+    "not_found_produce_sub": "我们还不能识别该农产品代码——我们仍在完善新鲜农产品代码列表。",
+    "error_rate_limited": "扫描次数过多——请稍作休息，稍后再试。",
+    "error_unauthorized": "您的会话已过期——请登出后重新登入，然后重试。",
+    "error_invalid_barcode": "这看起来不像有效的条形码或农产品代码。",
+    "error_generic": "无法扫描。请重试。"
   },
   "edit_profile": {
     "title": "编辑个人资料",

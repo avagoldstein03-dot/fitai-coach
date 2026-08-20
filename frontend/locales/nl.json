@@ -1403,7 +1403,11 @@
     "nova_2": "Verwerkte culinaire ingredient (olie, suiker, zout)",
     "nova_3": "Verwerkt voedsel",
     "nova_4": "Ultraverwerkt voedsel",
-    "not_found_produce_sub": "We herkennen die productencode nog niet — we bouwen nog steeds aan onze lijst met verse producencodes."
+    "not_found_produce_sub": "We herkennen die productencode nog niet — we bouwen nog steeds aan onze lijst met verse producencodes.",
+    "error_rate_limited": "Te veel scans — maak een korte pauze en probeer het over een moment opnieuw.",
+    "error_unauthorized": "Uw sessie is verlopen — meld u af en weer aan, en probeer het opnieuw.",
+    "error_invalid_barcode": "Dit ziet er niet uit als een geldige barcode of productcode.",
+    "error_generic": "Kon dat niet scannen. Probeer het opnieuw."
   },
   "edit_profile": {
     "title": "Profiel bewerken",

@@ -1403,7 +1403,11 @@
     "nova_2": "Verwerkte kulinêre bestanddeel (olie, suiker, sout)",
     "nova_3": "Verwerkte kos",
     "nova_4": "Ultra-verwerkte kos",
-    "not_found_produce_sub": "Ons herken daardie produksiekode nog nie — ons bou nog steeds aan ons lys van vars produksiekodes."
+    "not_found_produce_sub": "Ons herken daardie produksiekode nog nie — ons bou nog steeds aan ons lys van vars produksiekodes.",
+    "error_rate_limited": "Té veel skanderings — neem 'n kort pouse en probeer oor 'n rukkie weer.",
+    "error_unauthorized": "U sessie het verstryk — meld af en weer aan, en probeer dan weer.",
+    "error_invalid_barcode": "Dit lyk nie soos 'n geldige streepkode of produksiekode nie.",
+    "error_generic": "Kon dit nie skandeer nie. Probeer weer."
   },
   "edit_profile": {
     "title": "Profiel Redigeer",

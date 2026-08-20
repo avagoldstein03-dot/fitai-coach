@@ -1403,7 +1403,11 @@
     "nova_2": "Bearbeidet kulinarisk ingrediens (olje, sukker, salt)",
     "nova_3": "Bearbeidet mat",
     "nova_4": "Ultrabearbeidet mat",
-    "not_found_produce_sub": "Vi gjenkjenner ikke denne produktkoden ennå — vi bygger fortsatt opp listen vår over ferskvare-koder."
+    "not_found_produce_sub": "Vi gjenkjenner ikke denne produktkoden ennå — vi bygger fortsatt opp listen vår over ferskvare-koder.",
+    "error_rate_limited": "For mange skanninger — ta en kort pause og prøv igjen om litt.",
+    "error_unauthorized": "Økten din utløp — logg ut og inn igjen, deretter prøv på nytt.",
+    "error_invalid_barcode": "Det ser ikke ut til å være en gyldig strekkode eller varekode.",
+    "error_generic": "Kunne ikke skanne det. Prøv igjen."
   },
   "edit_profile": {
     "title": "Rediger profil",

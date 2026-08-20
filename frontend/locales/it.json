@@ -1403,7 +1403,11 @@
     "nova_2": "Ingrediente culinario trasformato (olio, zucchero, sale)",
     "nova_3": "Alimento trasformato",
     "nova_4": "Alimento ultra-trasformato",
-    "not_found_produce_sub": "Non riconosciamo ancora quel codice di prodotto — stiamo ancora ampliando la nostra lista di codici per i prodotti freschi."
+    "not_found_produce_sub": "Non riconosciamo ancora quel codice di prodotto — stiamo ancora ampliando la nostra lista di codici per i prodotti freschi.",
+    "error_rate_limited": "Troppi scan — fai una pausa breve e riprova tra poco.",
+    "error_unauthorized": "La tua sessione è scaduta — esci e accedi di nuovo, poi riprova.",
+    "error_invalid_barcode": "Non sembra un codice a barre o codice prodotto valido.",
+    "error_generic": "Non riesco a scansionare quello. Riprova."
   },
   "edit_profile": {
     "title": "Modifica Profilo",

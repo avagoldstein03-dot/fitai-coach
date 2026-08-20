@@ -1403,7 +1403,11 @@
     "nova_2": "Ingredient culinar prelucrat (ulei, zahăr, sare)",
     "nova_3": "Aliment prelucrat",
     "nova_4": "Aliment ultra-prelucrat",
-    "not_found_produce_sub": "Nu recunoaștem încă acel cod de produs — încă dezvoltăm lista noastră de coduri pentru produse proaspete."
+    "not_found_produce_sub": "Nu recunoaștem încă acel cod de produs — încă dezvoltăm lista noastră de coduri pentru produse proaspete.",
+    "error_rate_limited": "Prea multe scanări — ia o pauză scurtă și încearcă din nou peste puțin.",
+    "error_unauthorized": "Sesiunea ta a expirat — deconectează-te și conectează-te din nou, apoi încearcă din nou.",
+    "error_invalid_barcode": "Asta nu arată ca un cod de bare sau cod produs valid.",
+    "error_generic": "N-am putut scana asta. Încearcă din nou."
   },
   "edit_profile": {
     "title": "Editare Profil",

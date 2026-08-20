@@ -1403,7 +1403,11 @@
     "nova_2": "Bearbetad matlagningsingrediens (olja, socker, salt)",
     "nova_3": "Bearbetad mat",
     "nova_4": "Ultrabearbetad mat",
-    "not_found_produce_sub": "Vi känner inte igen den produktkoden än — vi bygger fortfarande ut vår lista över koder för färsk frukt och grönsaker."
+    "not_found_produce_sub": "Vi känner inte igen den produktkoden än — vi bygger fortfarande ut vår lista över koder för färsk frukt och grönsaker.",
+    "error_rate_limited": "För många skanningar — ta en kort paus och försök igen senare.",
+    "error_unauthorized": "Din session har upphört — logga ut och in igen, försök sedan igen.",
+    "error_invalid_barcode": "Det verkar inte vara en giltig streckkod eller produktkod.",
+    "error_generic": "Kunde inte skanna det. Försök igen."
   },
   "edit_profile": {
     "title": "Redigera profil",

@@ -1403,7 +1403,11 @@
     "nova_2": "Jalostettu ruoanlaittoaine (öljy, sokeri, suola)",
     "nova_3": "Jalostettu elintarvike",
     "nova_4": "Ultrajalostettu elintarvike",
-    "not_found_produce_sub": "Emme tunnista tuota tuotekoodia vielä — olemme vielä rakentamassa luetteloamme tuoreista tuotekoodeista."
+    "not_found_produce_sub": "Emme tunnista tuota tuotekoodia vielä — olemme vielä rakentamassa luetteloamme tuoreista tuotekoodeista.",
+    "error_rate_limited": "Liian monta skannausta — pidä lyhyt tauko ja yritä uudelleen hetken päästä.",
+    "error_unauthorized": "Istuntosi vanhentui — kirjaudu ulos ja takaisin sisään, sitten yritä uudelleen.",
+    "error_invalid_barcode": "Tämä ei näytä kelvolliselta viivakoodilta tai tuotekoodilta.",
+    "error_generic": "Ei voitu skannata sitä. Yritä uudelleen."
   },
   "edit_profile": {
     "title": "Muokkaa profiilia",

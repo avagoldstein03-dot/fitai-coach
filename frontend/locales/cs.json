@@ -1403,7 +1403,11 @@
     "nova_2": "Zpracovaná kulinářská ingredience (olej, cukr, sůl)",
     "nova_3": "Zpracovaná potravina",
     "nova_4": "Ultra-zpracovaná potravina",
-    "not_found_produce_sub": "Tento kód ovoce nebo zeleniny ještě neznáme — stále rozšiřujeme naši databázi kódů čerstvých produktů."
+    "not_found_produce_sub": "Tento kód ovoce nebo zeleniny ještě neznáme — stále rozšiřujeme naši databázi kódů čerstvých produktů.",
+    "error_rate_limited": "Příliš mnoho scanů — udělej si krátkou pauzu a zkus to za chvíli znovu.",
+    "error_unauthorized": "Vaše relace vypršela — odhlaste se a znovu se přihlaste, pak to zkuste znovu.",
+    "error_invalid_barcode": "To nevypadá jako platný čárový kód nebo kód produktu.",
+    "error_generic": "Nepodařilo se to nascanovat. Zkus to znovu."
   },
   "edit_profile": {
     "title": "Úprava profilu",

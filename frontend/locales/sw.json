@@ -1403,7 +1403,11 @@
     "nova_2": "Nyongeza ya kupikia iliyochakatwa (mafuta, sukari, chumvi)",
     "nova_3": "Chakula kilichochakatwa",
     "nova_4": "Chakula kilichochakatwa sana",
-    "not_found_produce_sub": "Hatuna nchi hiyo ya mavuno bado — bado tunajenga orodha yetu ya nchi za mavuno safi."
+    "not_found_produce_sub": "Hatuna nchi hiyo ya mavuno bado — bado tunajenga orodha yetu ya nchi za mavuno safi.",
+    "error_rate_limited": "Mipango mingi sana — chukua mapumziko mafupi na jaribu tena baadaye.",
+    "error_unauthorized": "Mkutano wako umemadhalimika — fungua akaunti na ingia tena, kisha jaribu.",
+    "error_invalid_barcode": "Hiyo haionekani kama barcode au kodi ya bidhaa sahihi.",
+    "error_generic": "Haikuweza kusambaza hiyo. Jaribu tena."
   },
   "edit_profile": {
     "title": "Hariri Wasifu",

@@ -1403,7 +1403,11 @@
     "nova_2": "Naprosesong culinary ingredient (langis, asukal, asin)",
     "nova_3": "Naprosesong pagkain",
     "nova_4": "Ultra-naprosesong pagkain",
-    "not_found_produce_sub": "Hindi pa namin kinikilala ang code ng produktong iyon — patuloy pa naming binubuo ang aming listahan ng mga fresh produce codes."
+    "not_found_produce_sub": "Hindi pa namin kinikilala ang code ng produktong iyon — patuloy pa naming binubuo ang aming listahan ng mga fresh produce codes.",
+    "error_rate_limited": "Masyadong maraming scans — magpahinga ng konti at subukan ulit sa ilang sandali.",
+    "error_unauthorized": "Nag-expire na ang iyong session — mag-sign out at bumalik, pagkatapos subukan ulit.",
+    "error_invalid_barcode": "Mukhang hindi valid na barcode o produce code iyan.",
+    "error_generic": "Hindi makascan iyan. Subukan ulit."
   },
   "edit_profile": {
     "title": "Baguhin ang Profile",

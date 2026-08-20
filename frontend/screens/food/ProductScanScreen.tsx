@@ -139,9 +139,20 @@ export default function ProductScanScreen() {
       }
       setResult(data);
     },
-    onError: () => {
+    onError: (error: any) => {
       setIsPaused(false);
-      Alert.alert(t("common.error"), t("product_scan.error_upstream"));
+      const code = error?.response?.data?.error;
+      if (code === "rate_limited") {
+        Alert.alert(t("common.error"), t("product_scan.error_rate_limited"));
+      } else if (code === "unauthorized") {
+        Alert.alert(t("common.error"), t("product_scan.error_unauthorized"));
+      } else if (code === "invalid_input") {
+        Alert.alert(t("common.error"), t("product_scan.error_invalid_barcode"));
+      } else if (code === "upstream_unavailable") {
+        Alert.alert(t("common.error"), t("product_scan.error_upstream"));
+      } else {
+        Alert.alert(t("common.error"), t("product_scan.error_generic"));
+      }
     },
   });
 

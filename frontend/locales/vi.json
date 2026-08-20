@@ -1403,7 +1403,11 @@
     "nova_2": "Thành phần nấu ăn đã chế biến (dầu, đường, muối)",
     "nova_3": "Thực phẩm đã chế biến",
     "nova_4": "Thực phẩm siêu chế biến",
-    "not_found_produce_sub": "Chúng tôi chưa nhận ra mã sản phẩm này — chúng tôi vẫn đang xây dựng danh sách mã sản phẩm tươi sống của mình."
+    "not_found_produce_sub": "Chúng tôi chưa nhận ra mã sản phẩm này — chúng tôi vẫn đang xây dựng danh sách mã sản phẩm tươi sống của mình.",
+    "error_rate_limited": "Quá nhiều lần quét — hãy nghỉ một chút và thử lại sau.",
+    "error_unauthorized": "Phiên của bạn đã hết hạn — đăng xuất và đăng nhập lại, sau đó thử lại.",
+    "error_invalid_barcode": "Điều này không giống như một mã vạch hoặc mã sản phẩm hợp lệ.",
+    "error_generic": "Không thể quét được. Vui lòng thử lại."
   },
   "edit_profile": {
     "title": "Chỉnh sửa Hồ sơ",

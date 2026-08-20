@@ -1403,7 +1403,11 @@
     "nova_2": "İşlenmiş kulinaire bileşen (yağ, şeker, tuz)",
     "nova_3": "İşlenmiş gıda",
     "nova_4": "Ultra işlenmiş gıda",
-    "not_found_produce_sub": "Bu ürün kodunu henüz tanımıyoruz — taze ürün kodları listesini hala oluşturuyoruz."
+    "not_found_produce_sub": "Bu ürün kodunu henüz tanımıyoruz — taze ürün kodları listesini hala oluşturuyoruz.",
+    "error_rate_limited": "Çok fazla tarama yapıldı — kısa bir molaya alın ve daha sonra tekrar deneyin.",
+    "error_unauthorized": "Oturumunuzun süresi doldu — oturumu kapatıp tekrar açın, ardından tekrar deneyin.",
+    "error_invalid_barcode": "Bu geçerli bir barkod veya ürün kodu gibi görünmüyor.",
+    "error_generic": "O taranmadı. Tekrar deneyin."
   },
   "edit_profile": {
     "title": "Profili Düzenle",

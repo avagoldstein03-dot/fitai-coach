@@ -1403,7 +1403,11 @@
     "nova_2": "Ingrédient culinaire transformé (huile, sucre, sel)",
     "nova_3": "Aliment transformé",
     "nova_4": "Aliment ultra-transformé",
-    "not_found_produce_sub": "Nous ne reconnaissons pas encore ce code de produit — nous construisons toujours notre liste de codes de produits frais."
+    "not_found_produce_sub": "Nous ne reconnaissons pas encore ce code de produit — nous construisons toujours notre liste de codes de produits frais.",
+    "error_rate_limited": "Trop de scans — prenez une courte pause et réessayez dans quelques instants.",
+    "error_unauthorized": "Votre session a expiré — déconnectez-vous et reconnectez-vous, puis réessayez.",
+    "error_invalid_barcode": "Cela ne semble pas être un code-barres ou un code produit valide.",
+    "error_generic": "Impossible de scanner cela. Réessayez."
   },
   "edit_profile": {
     "title": "Modifier le profil",

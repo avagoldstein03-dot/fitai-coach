@@ -1403,7 +1403,11 @@
     "nova_2": "Bahan kuliner olahan (minyak, gula, garam)",
     "nova_3": "Makanan olahan",
     "nova_4": "Makanan ultra olahan",
-    "not_found_produce_sub": "Kami belum mengenali kode produk segar itu — kami masih membangun daftar kode produk segar kami."
+    "not_found_produce_sub": "Kami belum mengenali kode produk segar itu — kami masih membangun daftar kode produk segar kami.",
+    "error_rate_limited": "Terlalu banyak pemindaian — istirahat sebentar dan coba lagi dalam beberapa saat.",
+    "error_unauthorized": "Sesi Anda telah berakhir — keluar dan masuk kembali, lalu coba lagi.",
+    "error_invalid_barcode": "Itu bukan barcode atau kode produk yang valid.",
+    "error_generic": "Tidak bisa memindai itu. Coba lagi."
   },
   "edit_profile": {
     "title": "Edit Profil",

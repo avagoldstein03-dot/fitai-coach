@@ -1403,7 +1403,11 @@
     "nova_2": "Obrađeni kulinarski ingredient (ulje, šećer, sol)",
     "nova_3": "Obrađena hrana",
     "nova_4": "Ultraobrađena hrana",
-    "not_found_produce_sub": "Još ne prepoznajemo taj kod proizvoda — još uvijek gradimo našu listu kodova svježih proizvoda."
+    "not_found_produce_sub": "Još ne prepoznajemo taj kod proizvoda — još uvijek gradimo našu listu kodova svježih proizvoda.",
+    "error_rate_limited": "Previše skeniranja — napravite kratku pauzu i pokušajte ponovno za nekoliko trenutaka.",
+    "error_unauthorized": "Vaša sesija je istekla — odjavljuje se i ponovno prijavite, pa pokušajte ponovno.",
+    "error_invalid_barcode": "To ne izgleda kao valjani barkod ili kod proizvoda.",
+    "error_generic": "Nije moguće skenirati to. Pokušajte ponovno."
   },
   "edit_profile": {
     "title": "Uređivanje profila",

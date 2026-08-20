@@ -1403,7 +1403,11 @@
     "nova_2": "Forarbejdet kulinarisk ingrediens (olie, sukker, salt)",
     "nova_3": "Forarbejdet fødevare",
     "nova_4": "Ultraforarbejdet fødevare",
-    "not_found_produce_sub": "Vi genkender ikke den produktkode endnu — vi er stadig ved at bygge vores liste over friske produktkoder."
+    "not_found_produce_sub": "Vi genkender ikke den produktkode endnu — vi er stadig ved at bygge vores liste over friske produktkoder.",
+    "error_rate_limited": "For mange scanninger — tag en kort pause og prøv igen om lidt.",
+    "error_unauthorized": "Din session er udløbet — log ud og ind igen, og prøv derefter igen.",
+    "error_invalid_barcode": "Det ser ikke ud til at være en gyldig stregkode eller produktkode.",
+    "error_generic": "Kunne ikke scanne det. Prøv igen."
   },
   "edit_profile": {
     "title": "Rediger profil",

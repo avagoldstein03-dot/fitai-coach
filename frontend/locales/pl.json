@@ -1403,7 +1403,11 @@
     "nova_2": "Przetworzony składnik kulinarny (olej, cukier, sól)",
     "nova_3": "Produkt przetworzony",
     "nova_4": "Produkt ultra-przetworzony",
-    "not_found_produce_sub": "Nie rozpoznajemy jeszcze tego kodu produktu — wciąż rozbudowujemy naszą listę kodów świeżych produktów."
+    "not_found_produce_sub": "Nie rozpoznajemy jeszcze tego kodu produktu — wciąż rozbudowujemy naszą listę kodów świeżych produktów.",
+    "error_rate_limited": "Zbyt wiele skanów — zrób krótką przerwę i spróbuj ponownie za chwilę.",
+    "error_unauthorized": "Twoja sesja wygasła — wyloguj się i zaloguj ponownie, a następnie spróbuj jeszcze raz.",
+    "error_invalid_barcode": "To nie wygląda na prawidłowy kod kreskowy lub kod produktu.",
+    "error_generic": "Nie udało się skanować. Spróbuj ponownie."
   },
   "edit_profile": {
     "title": "Edytuj Profil",

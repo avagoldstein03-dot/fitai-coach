@@ -1403,7 +1403,11 @@
     "nova_2": "Ingrediente culinario procesado (aceite, azúcar, sal)",
     "nova_3": "Alimento procesado",
     "nova_4": "Alimento ultraprocesado",
-    "not_found_produce_sub": "Aún no reconocemos ese código de producto — todavía estamos ampliando nuestra lista de códigos de productos frescos."
+    "not_found_produce_sub": "Aún no reconocemos ese código de producto — todavía estamos ampliando nuestra lista de códigos de productos frescos.",
+    "error_rate_limited": "Demasiados escaneos — tómate un descanso y vuelve a intentarlo en un momento.",
+    "error_unauthorized": "Tu sesión expiró — cierra sesión e inicia sesión de nuevo, luego vuelve a intentarlo.",
+    "error_invalid_barcode": "Eso no parece un código de barras o código de producto válido.",
+    "error_generic": "No se pudo escanear eso. Vuelve a intentarlo."
   },
   "edit_profile": {
     "title": "Editar Perfil",

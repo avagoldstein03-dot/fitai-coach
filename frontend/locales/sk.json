@@ -1403,7 +1403,11 @@
     "nova_2": "Spracovaná kulinárska ingrediencia (olej, cukor, soľ)",
     "nova_3": "Spracovaná potravina",
     "nova_4": "Ultraspracovaná potravina",
-    "not_found_produce_sub": "Tento kód čerstvých produktov zatiaľ nepoznáme — stále rozširujeme našu databázu kódov čerstvých produktov."
+    "not_found_produce_sub": "Tento kód čerstvých produktov zatiaľ nepoznáme — stále rozširujeme našu databázu kódov čerstvých produktov.",
+    "error_rate_limited": "Príliš veľa skenovaní — urobte si krátku prestávku a skúste to neskôr.",
+    "error_unauthorized": "Vaša relácia vypršala — odhláste sa a znova sa prihláste, potom skúste znova.",
+    "error_invalid_barcode": "Toto nevyzerá ako platný čiarový kód alebo kód produktu.",
+    "error_generic": "Nemohol som to naskenať. Skúste znova."
   },
   "edit_profile": {
     "title": "Upraviť profil",

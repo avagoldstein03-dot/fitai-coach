@@ -1403,7 +1403,11 @@
     "nova_2": "Обрађена кулинарска намирница (уље, шећер, со)",
     "nova_3": "Обрађена намирница",
     "nova_4": "Ултра-обрађена намирница",
-    "not_found_produce_sub": "Još ne prepoznajemo taj kod za proizvode — i dalje gradimo našu listu kodova za svež proizvode."
+    "not_found_produce_sub": "Još ne prepoznajemo taj kod za proizvode — i dalje gradimo našu listu kodova za svež proizvode.",
+    "error_rate_limited": "Превише сkenирања — направите кратку паузу и покушајте поново за тренутак.",
+    "error_unauthorized": "Ваша сесија је истекла — одјавите се и поново се пријавите, затим покушајте поново.",
+    "error_invalid_barcode": "То не изгледа као валидна баркод или код производа.",
+    "error_generic": "Не могу да скенирам то. Покушајте поново."
   },
   "edit_profile": {
     "title": "Uređivanje profila",

@@ -1403,7 +1403,11 @@
     "nova_2": "加工烹飪原料（油、糖、鹽）",
     "nova_3": "加工食品",
     "nova_4": "超高度加工食品",
-    "not_found_produce_sub": "我們還無法識別該農產品代碼 — 我們仍在建立新鮮農產品代碼清單。"
+    "not_found_produce_sub": "我們還無法識別該農產品代碼 — 我們仍在建立新鮮農產品代碼清單。",
+    "error_rate_limited": "掃描次數過多 — 休息一下，稍後再試。",
+    "error_unauthorized": "您的工作階段已過期 — 登出後重新登入，然後重試。",
+    "error_invalid_barcode": "這看起來不像有效的條碼或農產品代碼。",
+    "error_generic": "無法掃描。請重試。"
   },
   "edit_profile": {
     "title": "編輯個人資料",

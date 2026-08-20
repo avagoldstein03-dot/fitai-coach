@@ -1403,7 +1403,11 @@
     "nova_2": "Bahan kulinari yang diproses (minyak, gula, garam)",
     "nova_3": "Makanan yang diproses",
     "nova_4": "Makanan ultra-diproses",
-    "not_found_produce_sub": "Kami belum mengenali kod hasil pertanian itu — kami masih sedang membina senarai kod hasil pertanian segar kami."
+    "not_found_produce_sub": "Kami belum mengenali kod hasil pertanian itu — kami masih sedang membina senarai kod hasil pertanian segar kami.",
+    "error_rate_limited": "Terlalu banyak imbasan — ambil rehat sebentar dan cuba lagi nanti.",
+    "error_unauthorized": "Sesi anda telah tamat — keluar dan masuk semula, kemudian cuba lagi.",
+    "error_invalid_barcode": "Itu tidak kelihatan seperti kod bar atau kod hasil yang sah.",
+    "error_generic": "Tidak dapat mengimbas itu. Cuba lagi."
   },
   "edit_profile": {
     "title": "Edit Profil",

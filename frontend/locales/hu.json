@@ -1403,7 +1403,11 @@
     "nova_2": "Feldolgozott kulináris összetevő (olaj, cukor, só)",
     "nova_3": "Feldolgozott élelmiszer",
     "nova_4": "Ultrafeldolgozott élelmiszer",
-    "not_found_produce_sub": "Még nem ismerjük fel ezt a zöldség-gyümölcs kódot — még építjük a friss termékek kódjainak listáját."
+    "not_found_produce_sub": "Még nem ismerjük fel ezt a zöldség-gyümölcs kódot — még építjük a friss termékek kódjainak listáját.",
+    "error_rate_limited": "Túl sok szkennelés — tartson egy rövid szünetet, és próbálja újra később.",
+    "error_unauthorized": "A munkamenete lejárt — jelentkezzen ki, majd vissza be, és próbálja újra.",
+    "error_invalid_barcode": "Ez nem tűnik érvényes vonalkódnak vagy termékkódnak.",
+    "error_generic": "Nem sikerült beolvasni. Próbálja újra."
   },
   "edit_profile": {
     "title": "Profil szerkesztése",
