@@ -7,6 +7,7 @@ import { checkRateLimit } from "@/lib/rate-limit";
 import { lookupProduct } from "@/services/openfoodfacts-provider";
 import { computeProductScore, SCORING_VERSION } from "@/lib/ingredient-score";
 import { lookupPLU } from "@/lib/plu-codes";
+import { computeProductPersonalization, fetchPersonalizationContext } from "@/lib/product-personalization";
 
 const RequestSchema = z.object({
   barcode: z.string().trim().regex(/^\d{4,14}$/, "Invalid barcode"),
@@ -34,6 +35,11 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     }
     const { barcode } = parsed.data;
 
+    const user = await prisma.user.findUnique({ where: { clerkId: auth.userId }, select: { id: true } });
+    if (!user) {
+      return sendError(res, "user_not_found", "User not found", 404);
+    }
+
     // 4-5 digit codes are PLU (loose produce) codes, not EAN/UPC barcodes —
     // they can't match anything in the ProductScan cache or Open Food
     // Facts (which is keyed by manufacturer GTIN), so resolve them against
@@ -43,34 +49,35 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       if (!produce) {
         return sendSuccess(res, { status: "not_found", barcode });
       }
-      return sendSuccess(res, {
-        status: "found",
-        cacheHit: false,
-        product: {
-          productName: produce.name,
-          brand: null,
-          imageUrl: null,
-          ingredientsText: null,
-          additivesTags: [],
-          novaGroup: 1,
-          nutriscoreGrade: null,
-          score: 95,
-          grade: "great",
-          flaggedIngredients: [],
-          caloriesPer100g: produce.caloriesPer100g,
-          proteinPer100g: produce.proteinPer100g,
-          carbsPer100g: produce.carbsPer100g,
-          fatPer100g: produce.fatPer100g,
-          servingSizeGrams: null,
-          isUserSubmitted: false,
-        },
-      });
+      const product = {
+        productName: produce.name,
+        brand: null,
+        imageUrl: null,
+        ingredientsText: null,
+        additivesTags: [],
+        novaGroup: 1,
+        nutriscoreGrade: null,
+        score: 95,
+        grade: "great",
+        flaggedIngredients: [],
+        caloriesPer100g: produce.caloriesPer100g,
+        proteinPer100g: produce.proteinPer100g,
+        carbsPer100g: produce.carbsPer100g,
+        fatPer100g: produce.fatPer100g,
+        servingSizeGrams: null,
+        isUserSubmitted: false,
+      };
+      const context = await fetchPersonalizationContext(user.id);
+      const personalization = computeProductPersonalization({ ...context, product });
+      return sendSuccess(res, { status: "found", cacheHit: false, product, personalization });
     }
 
     const cached = await prisma.productScan.findUnique({ where: { barcode } });
 
     if (cached && cached.scoringVersion === SCORING_VERSION) {
-      return sendSuccess(res, { status: "found", cacheHit: true, product: cached });
+      const context = await fetchPersonalizationContext(user.id);
+      const personalization = computeProductPersonalization({ ...context, product: cached });
+      return sendSuccess(res, { status: "found", cacheHit: true, product: cached, personalization });
     }
 
     if (cached) {
@@ -88,7 +95,9 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
           scoringVersion: SCORING_VERSION,
         },
       });
-      return sendSuccess(res, { status: "found", cacheHit: true, product: updated });
+      const context = await fetchPersonalizationContext(user.id);
+      const personalization = computeProductPersonalization({ ...context, product: updated });
+      return sendSuccess(res, { status: "found", cacheHit: true, product: updated, personalization });
     }
 
     let offProduct;
@@ -133,7 +142,9 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       },
     });
 
-    return sendSuccess(res, { status: "found", cacheHit: false, product: saved });
+    const context = await fetchPersonalizationContext(user.id);
+    const personalization = computeProductPersonalization({ ...context, product: saved });
+    return sendSuccess(res, { status: "found", cacheHit: false, product: saved, personalization });
   } catch (error) {
     console.error("Product scan error:", error);
     return sendError(res, "product_scan_failed", "Product scan failed", 500);

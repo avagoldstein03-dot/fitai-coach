@@ -1423,7 +1423,10 @@
     "submit_button": "Termék mentése",
     "error_submit_product": "Nem sikerült menteni ezt a terméket. Próbáld újra.",
     "community_added_title": "Közösség által hozzáadva",
-    "community_added_sub": "Ezt a terméket egy másik felhasználó adta hozzá, és független ellenőrzésre nem került sor az összetevők vagy adalékanyagok tekintetében."
+    "community_added_sub": "Ezt a terméket egy másik felhasználó adta hozzá, és független ellenőrzésre nem került sor az összetevők vagy adalékanyagok tekintetében.",
+    "allergy_warning_title": "Allergiás összetevőt tartalmaz",
+    "allergy_warning_sub": "Az allergia listádban szereplő: {{items}}",
+    "remaining_preview": "Ez a napi megmaradó kalóriád {{caloriesPct}}%-a és a megmaradó fehérjéd {{proteinPct}}%-a."
   },
   "edit_profile": {
     "title": "Profil szerkesztése",

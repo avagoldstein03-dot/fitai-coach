@@ -1423,7 +1423,10 @@
     "submit_button": "Product Opslaan",
     "error_submit_product": "Dit product kon niet worden opgeslagen. Probeer het opnieuw.",
     "community_added_title": "Door Community Toegevoegd",
-    "community_added_sub": "Dit product is toegevoegd door een andere gebruiker en is niet onafhankelijk gecontroleerd op ingrediënten of additieven."
+    "community_added_sub": "Dit product is toegevoegd door een andere gebruiker en is niet onafhankelijk gecontroleerd op ingrediënten of additieven.",
+    "allergy_warning_title": "Bevat iets waar je allergisch voor bent",
+    "allergy_warning_sub": "Gevonden in je allergielijst: {{items}}",
+    "remaining_preview": "Dat is {{caloriesPct}}% van je resterende calorieën en {{proteinPct}}% van je resterende eiwitten vandaag."
   },
   "edit_profile": {
     "title": "Profiel bewerken",

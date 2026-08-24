@@ -1423,7 +1423,10 @@
     "submit_button": "Lưu Sản Phẩm",
     "error_submit_product": "Không thể lưu sản phẩm này. Vui lòng thử lại.",
     "community_added_title": "Cộng Đồng Đã Thêm",
-    "community_added_sub": "Sản phẩm này được thêm bởi một người dùng khác và chưa được kiểm tra độc lập về thành phần hoặc phụ gia."
+    "community_added_sub": "Sản phẩm này được thêm bởi một người dùng khác và chưa được kiểm tra độc lập về thành phần hoặc phụ gia.",
+    "allergy_warning_title": "Chứa Thứ Gì Đó Bạn Bị Dị Ứng",
+    "allergy_warning_sub": "Được tìm thấy trong danh sách dị ứng của bạn: {{items}}",
+    "remaining_preview": "Đó là {{caloriesPct}}% lượng calo còn lại và {{proteinPct}}% protein còn lại của bạn hôm nay."
   },
   "edit_profile": {
     "title": "Chỉnh sửa Hồ sơ",

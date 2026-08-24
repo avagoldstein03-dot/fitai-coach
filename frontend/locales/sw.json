@@ -1423,7 +1423,10 @@
     "submit_button": "Hifadhi Bidhaa",
     "error_submit_product": "Haikuweza kuhifadhi bidhaa hii. Jaribu tena.",
     "community_added_title": "Jamii Imeongeza",
-    "community_added_sub": "Bidhaa hii imeongezwa na mtumiaji mwenzako na haijachunguzwa kwa kujitegemea kwa ajili ya vijenzi au viongeza."
+    "community_added_sub": "Bidhaa hii imeongezwa na mtumiaji mwenzako na haijachunguzwa kwa kujitegemea kwa ajili ya vijenzi au viongeza.",
+    "allergy_warning_title": "Ina Kitu Unachojinga",
+    "allergy_warning_sub": "Iliyopatikana katika orodha yako ya jinga: {{items}}",
+    "remaining_preview": "Hiyo ni {{caloriesPct}}% ya kalori zako zilizobaki na {{proteinPct}}% ya protini yako iliyobaki leo."
   },
   "edit_profile": {
     "title": "Hariri Wasifu",

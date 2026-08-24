@@ -1423,7 +1423,10 @@
     "submit_button": "儲存產品",
     "error_submit_product": "無法儲存此產品。請重試。",
     "community_added_title": "由社群新增",
-    "community_added_sub": "此產品由使用者新增，尚未經過獨立檢驗其成分或添加物。"
+    "community_added_sub": "此產品由使用者新增，尚未經過獨立檢驗其成分或添加物。",
+    "allergy_warning_title": "包含您過敏的物質",
+    "allergy_warning_sub": "在您的過敏清單中找到：{{items}}",
+    "remaining_preview": "這是您今天剩餘卡路里的 {{caloriesPct}}% 和剩餘蛋白質的 {{proteinPct}}%。"
   },
   "edit_profile": {
     "title": "編輯個人資料",

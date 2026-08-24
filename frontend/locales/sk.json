@@ -1423,7 +1423,10 @@
     "submit_button": "Uložiť produkt",
     "error_submit_product": "Nepodarilo sa uložiť tento produkt. Skúste znova.",
     "community_added_title": "Pridané komunitou",
-    "community_added_sub": "Tento produkt bol pridaný iným používateľom a nebol nezávisle overený z hľadiska zloženia alebo prísad."
+    "community_added_sub": "Tento produkt bol pridaný iným používateľom a nebol nezávisle overený z hľadiska zloženia alebo prísad.",
+    "allergy_warning_title": "Obsahuje niečo, na čo ste alergickí",
+    "allergy_warning_sub": "Nájdené na vašom zozname alergií: {{items}}",
+    "remaining_preview": "To je {{caloriesPct}}% vašich zostávajúcich kalórií a {{proteinPct}}% vášho zostávajúceho proteínu dnes."
   },
   "edit_profile": {
     "title": "Upraviť profil",

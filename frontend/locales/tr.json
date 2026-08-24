@@ -1423,7 +1423,10 @@
     "submit_button": "Ürünü Kaydet",
     "error_submit_product": "Bu ürün kaydedilemedi. Lütfen tekrar deneyin.",
     "community_added_title": "Topluluk Tarafından Eklendi",
-    "community_added_sub": "Bu ürün başka bir kullanıcı tarafından eklenmiştir ve içeriği veya katkı maddeleri bağımsız olarak kontrol edilmemiştir."
+    "community_added_sub": "Bu ürün başka bir kullanıcı tarafından eklenmiştir ve içeriği veya katkı maddeleri bağımsız olarak kontrol edilmemiştir.",
+    "allergy_warning_title": "Alerji Listenizde Olan Bir Şey İçeriyor",
+    "allergy_warning_sub": "Alerji listenizde bulundu: {{items}}",
+    "remaining_preview": "Bu, bugünün kalan kalorisinin {{caloriesPct}}%'si ve kalan proteininin {{proteinPct}}%'sidir."
   },
   "edit_profile": {
     "title": "Profili Düzenle",

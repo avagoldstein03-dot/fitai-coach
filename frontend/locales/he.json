@@ -1423,7 +1423,10 @@
     "submit_button": "שמור מוצר",
     "error_submit_product": "לא היה אפשר לשמור את המוצר הזה. נסה שוב.",
     "community_added_title": "נוסף על ידי הקהילה",
-    "community_added_sub": "מוצר זה נוסף על ידי משתמש אחר ולא בדוק באופן עצמאי למרכיבים או תוספות."
+    "community_added_sub": "מוצר זה נוסף על ידי משתמש אחר ולא בדוק באופן עצמאי למרכיבים או תוספות.",
+    "allergy_warning_title": "מכיל משהו שאתה אלרגי אליו",
+    "allergy_warning_sub": "נמצא ברשימת האלרגיות שלך: {{items}}",
+    "remaining_preview": "זה {{caloriesPct}}% מהקלוריות הנותרות שלך ו-{{proteinPct}}% מהחלבון הנותר שלך היום."
   },
   "edit_profile": {
     "title": "עריכת פרופיל",

@@ -1423,7 +1423,10 @@
     "submit_button": "商品を保存",
     "error_submit_product": "この商品を保存できませんでした。もう一度お試しください。",
     "community_added_title": "コミュニティが追加",
-    "community_added_sub": "この商品はユーザーによって追加されたもので、成分または添加物については独立して検証されていません。"
+    "community_added_sub": "この商品はユーザーによって追加されたもので、成分または添加物については独立して検証されていません。",
+    "allergy_warning_title": "あなたがアレルギーを持っているものが含まれています",
+    "allergy_warning_sub": "あなたのアレルギーリストにあります: {{items}}",
+    "remaining_preview": "これは本日の残りカロリーの{{caloriesPct}}%、残りタンパク質の{{proteinPct}}%です。"
   },
   "edit_profile": {
     "title": "プロフィール編集",

@@ -1423,7 +1423,10 @@
     "submit_button": "I-save ang Produkto",
     "error_submit_product": "Hindi ma-save ang produktong ito. Subukan muli.",
     "community_added_title": "Idinagdag ng Community",
-    "community_added_sub": "Ang produktong ito ay idinagdag ng kapwa user at hindi pa independiyenteng sinuri para sa sangkap o additives."
+    "community_added_sub": "Ang produktong ito ay idinagdag ng kapwa user at hindi pa independiyenteng sinuri para sa sangkap o additives.",
+    "allergy_warning_title": "Naglalaman ng Bagay na Allergi Mo",
+    "allergy_warning_sub": "Nahanap sa iyong listahan ng allergi: {{items}}",
+    "remaining_preview": "Iyan ay {{caloriesPct}}% ng iyong natitirang calories at {{proteinPct}}% ng iyong natitirang protein ngayong araw."
   },
   "edit_profile": {
     "title": "Baguhin ang Profile",

@@ -1423,7 +1423,10 @@
     "submit_button": "Salvează produsul",
     "error_submit_product": "Nu am putut salva acest produs. Încearcă din nou.",
     "community_added_title": "Adăugat de comunitate",
-    "community_added_sub": "Acest produs a fost adăugat de un alt utilizator și nu a fost verificat independent pentru ingrediente sau aditivi."
+    "community_added_sub": "Acest produs a fost adăugat de un alt utilizator și nu a fost verificat independent pentru ingrediente sau aditivi.",
+    "allergy_warning_title": "Conține Ceva la Care Ești Alergic/ă",
+    "allergy_warning_sub": "Găsit în lista ta de alergii: {{items}}",
+    "remaining_preview": "Aceasta reprezintă {{caloriesPct}}% din caloriile rămase și {{proteinPct}}% din proteinele rămase astazi."
   },
   "edit_profile": {
     "title": "Editare Profil",

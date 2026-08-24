@@ -1423,7 +1423,10 @@
     "submit_button": "Stoor Produk",
     "error_submit_product": "Kon hierdie produk nie stoor nie. Probeer weer.",
     "community_added_title": "Deur Gemeenskap Bygevoeg",
-    "community_added_sub": "Hierdie produk is deur 'n medevoerbruiker bygevoeg en is nog nie onafhanklik vir bestanddele of toevoegstowwe nagegaan nie."
+    "community_added_sub": "Hierdie produk is deur 'n medevoerbruiker bygevoeg en is nog nie onafhanklik vir bestanddele of toevoegstowwe nagegaan nie.",
+    "allergy_warning_title": "Bevat Iets Wat Jy Allergies Teen Hebt",
+    "allergy_warning_sub": "Gevind in jou allergiëlys: {{items}}",
+    "remaining_preview": "Dit is {{caloriesPct}}% van jou oorblywende kaloried en {{proteinPct}}% van jou oorblywende proteïen vandag."
   },
   "edit_profile": {
     "title": "Profiel Redigeer",

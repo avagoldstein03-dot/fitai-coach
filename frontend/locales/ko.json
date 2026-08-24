@@ -1423,7 +1423,10 @@
     "submit_button": "제품 저장",
     "error_submit_product": "이 제품을 저장할 수 없습니다. 다시 시도해주세요.",
     "community_added_title": "커뮤니티에서 추가됨",
-    "community_added_sub": "이 제품은 다른 사용자가 추가했으며 성분 또는 첨가물에 대해 독립적으로 검증되지 않았습니다."
+    "community_added_sub": "이 제품은 다른 사용자가 추가했으며 성분 또는 첨가물에 대해 독립적으로 검증되지 않았습니다.",
+    "allergy_warning_title": "당신이 알레르기가 있는 항목이 포함되어 있습니다",
+    "allergy_warning_sub": "알레르기 목록에서 발견됨: {{items}}",
+    "remaining_preview": "오늘 남은 칼로리의 {{caloriesPct}}%와 남은 단백질의 {{proteinPct}}%입니다."
   },
   "edit_profile": {
     "title": "프로필 편집",

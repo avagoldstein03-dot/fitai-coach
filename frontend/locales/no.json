@@ -1423,7 +1423,10 @@
     "submit_button": "Lagre produkt",
     "error_submit_product": "Kunne ikke lagre dette produktet. Prøv igjen.",
     "community_added_title": "Lagt til av samfunnet",
-    "community_added_sub": "Dette produktet ble lagt til av en annen bruker og har ikke blitt uavhengig kontrollert for ingredienser eller tilsetningsstoffer."
+    "community_added_sub": "Dette produktet ble lagt til av en annen bruker og har ikke blitt uavhengig kontrollert for ingredienser eller tilsetningsstoffer.",
+    "allergy_warning_title": "Inneholder noe du er allergisk mot",
+    "allergy_warning_sub": "Funnet i allergilisten din: {{items}}",
+    "remaining_preview": "Det er {{caloriesPct}}% av dine gjenværende kalorier og {{proteinPct}}% av ditt gjenværende protein i dag."
   },
   "edit_profile": {
     "title": "Rediger profil",

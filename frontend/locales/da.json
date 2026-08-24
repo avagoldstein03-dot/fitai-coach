@@ -1423,7 +1423,10 @@
     "submit_button": "Gem Produkt",
     "error_submit_product": "Kunne ikke gemme dette produkt. Prøv igen.",
     "community_added_title": "Tilføjet af Fællesskabet",
-    "community_added_sub": "Dette produkt blev tilføjet af en anden bruger og er ikke blevet uafhængigt kontrolleret for ingredienser eller tilsætningsstoffer."
+    "community_added_sub": "Dette produkt blev tilføjet af en anden bruger og er ikke blevet uafhængigt kontrolleret for ingredienser eller tilsætningsstoffer.",
+    "allergy_warning_title": "Indeholder noget du er allergisk over for",
+    "allergy_warning_sub": "Fundet på din allergiliste: {{items}}",
+    "remaining_preview": "Det er {{caloriesPct}}% af dine resterende kalorier og {{proteinPct}}% af dit resterende protein i dag."
   },
   "edit_profile": {
     "title": "Rediger profil",

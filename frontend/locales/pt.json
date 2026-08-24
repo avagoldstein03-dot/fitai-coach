@@ -1423,7 +1423,10 @@
     "submit_button": "Salvar Produto",
     "error_submit_product": "Não foi possível salvar este produto. Tente novamente.",
     "community_added_title": "Adicionado pela Comunidade",
-    "community_added_sub": "Este produto foi adicionado por um usuário e não foi verificado independentemente quanto a ingredientes ou aditivos."
+    "community_added_sub": "Este produto foi adicionado por um usuário e não foi verificado independentemente quanto a ingredientes ou aditivos.",
+    "allergy_warning_title": "Contém Algo para o Qual Você é Alérgico",
+    "allergy_warning_sub": "Encontrado na sua lista de alergias: {{items}}",
+    "remaining_preview": "Isso representa {{caloriesPct}}% das suas calorias restantes e {{proteinPct}}% da sua proteína restante hoje."
   },
   "edit_profile": {
     "title": "Editar Perfil",

@@ -1423,7 +1423,10 @@
     "submit_button": "Zapisz Produkt",
     "error_submit_product": "Nie udało się zapisać tego produktu. Spróbuj ponownie.",
     "community_added_title": "Dodane Przez Społeczność",
-    "community_added_sub": "Ten produkt został dodany przez innego użytkownika i nie został niezależnie sprawdzony pod kątem składników lub dodatków."
+    "community_added_sub": "Ten produkt został dodany przez innego użytkownika i nie został niezależnie sprawdzony pod kątem składników lub dodatków.",
+    "allergy_warning_title": "Zawiera coś, na co masz uczulenie",
+    "allergy_warning_sub": "Znalezione na twojej liście alergenów: {{items}}",
+    "remaining_preview": "To {{caloriesPct}}% twoich pozostałych kalorii i {{proteinPct}}% twojego pozostałego białka na dziś."
   },
   "edit_profile": {
     "title": "Edytuj Profil",

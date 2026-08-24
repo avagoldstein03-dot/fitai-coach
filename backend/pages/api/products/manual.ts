@@ -4,6 +4,7 @@ import { z } from "zod";
 import prisma from "@/lib/prisma";
 import { sendSuccess, sendError } from "@/lib/api-utils";
 import { checkRateLimit } from "@/lib/rate-limit";
+import { computeProductPersonalization, fetchPersonalizationContext } from "@/lib/product-personalization";
 
 const RequestSchema = z.object({
   barcode: z.string().trim().regex(/^\d{4,14}$/, "Invalid barcode"),
@@ -37,12 +38,19 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     }
     const { barcode, productName, brand, caloriesPer100g, proteinPer100g, carbsPer100g, fatPer100g } = parsed.data;
 
+    const user = await prisma.user.findUnique({ where: { clerkId: auth.userId }, select: { id: true } });
+    if (!user) {
+      return sendError(res, "user_not_found", "User not found", 404);
+    }
+
     // Don't let a manual submission clobber an existing row — whether it
     // came from Open Food Facts or an earlier user submission, that data
     // is at least as good as a fresh one-off entry.
     const existing = await prisma.productScan.findUnique({ where: { barcode } });
     if (existing) {
-      return sendSuccess(res, { status: "found", cacheHit: true, product: existing });
+      const context = await fetchPersonalizationContext(user.id);
+      const personalization = computeProductPersonalization({ ...context, product: existing });
+      return sendSuccess(res, { status: "found", cacheHit: true, product: existing, personalization });
     }
 
     const created = await prisma.productScan.create({
@@ -61,7 +69,9 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       },
     });
 
-    return sendSuccess(res, { status: "found", cacheHit: false, product: created });
+    const context = await fetchPersonalizationContext(user.id);
+    const personalization = computeProductPersonalization({ ...context, product: created });
+    return sendSuccess(res, { status: "found", cacheHit: false, product: created, personalization });
   } catch (error: any) {
     console.error("Manual product submission error:", error);
     return sendError(res, "server_error", error?.message ?? "Failed to save product", 500);

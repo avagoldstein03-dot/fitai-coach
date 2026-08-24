@@ -1423,7 +1423,10 @@
     "submit_button": "Spara Produkt",
     "error_submit_product": "Kunde inte spara denna produkt. Försök igen.",
     "community_added_title": "Tillagt av Gemenskapen",
-    "community_added_sub": "Denna produkt lades till av en annan användare och har inte oberoende kontrollerats för ingredienser eller tillsatser."
+    "community_added_sub": "Denna produkt lades till av en annan användare och har inte oberoende kontrollerats för ingredienser eller tillsatser.",
+    "allergy_warning_title": "Innehåller något du är allergisk mot",
+    "allergy_warning_sub": "Hittades i din allergilista: {{items}}",
+    "remaining_preview": "Det är {{caloriesPct}}% av dina återstående kalorier och {{proteinPct}}% av ditt återstående protein idag."
   },
   "edit_profile": {
     "title": "Redigera profil",

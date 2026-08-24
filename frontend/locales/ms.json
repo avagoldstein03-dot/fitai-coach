@@ -1423,7 +1423,10 @@
     "submit_button": "Simpan Produk",
     "error_submit_product": "Tidak dapat menyimpan produk ini. Cuba lagi.",
     "community_added_title": "Ditambah oleh Komuniti",
-    "community_added_sub": "Produk ini telah ditambah oleh pengguna lain dan belum disemak secara bebas untuk bahan atau bahan tambahan."
+    "community_added_sub": "Produk ini telah ditambah oleh pengguna lain dan belum disemak secara bebas untuk bahan atau bahan tambahan.",
+    "allergy_warning_title": "Mengandungi Sesuatu Yang Anda Alergik",
+    "allergy_warning_sub": "Ditemui dalam senarai alergi anda: {{items}}",
+    "remaining_preview": "Itu adalah {{caloriesPct}}% daripada kalori baki anda dan {{proteinPct}}% daripada protein baki anda hari ini."
   },
   "edit_profile": {
     "title": "Edit Profil",

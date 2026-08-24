@@ -12,6 +12,10 @@ jest.mock("@/lib/prisma", () => ({
   __esModule: true,
   default: {
     productScan: { findUnique: jest.fn(), create: jest.fn() },
+    user: { findUnique: jest.fn() },
+    nutritionPlan: { findUnique: jest.fn() },
+    meal: { findMany: jest.fn() },
+    workoutSession: { findFirst: jest.fn() },
   },
 }));
 
@@ -35,6 +39,10 @@ describe("products/manual handler", () => {
     (getAuth as jest.Mock).mockReturnValue({ userId: "clerk_1" });
     (checkRateLimit as jest.Mock).mockResolvedValue(true);
     (prisma.productScan.findUnique as jest.Mock).mockResolvedValue(null);
+    (prisma.user.findUnique as jest.Mock).mockResolvedValue({ id: "user_1", foodAllergies: [], goal: null });
+    (prisma.nutritionPlan.findUnique as jest.Mock).mockResolvedValue(null);
+    (prisma.meal.findMany as jest.Mock).mockResolvedValue([]);
+    (prisma.workoutSession.findFirst as jest.Mock).mockResolvedValue(null);
   });
 
   it("rejects unsupported methods", async () => {

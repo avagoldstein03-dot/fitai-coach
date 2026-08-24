@@ -1423,7 +1423,10 @@
     "submit_button": "Spremi proizvod",
     "error_submit_product": "Nije moguće spremiti ovaj proizvod. Pokušaj ponovno.",
     "community_added_title": "Dodano od korisnika",
-    "community_added_sub": "Ovaj je proizvod dodao neki korisnik i nije samostalno provjeren na sastojke ili aditiveе."
+    "community_added_sub": "Ovaj je proizvod dodao neki korisnik i nije samostalno provjeren na sastojke ili aditiveе.",
+    "allergy_warning_title": "Sadrži nešto na što ste alergični",
+    "allergy_warning_sub": "Pronađeno na vašoj listi alergija: {{items}}",
+    "remaining_preview": "To je {{caloriesPct}}% vaših preostalih kalorija i {{proteinPct}}% vaših preostalih proteina danas."
   },
   "edit_profile": {
     "title": "Uređivanje profila",

@@ -1423,7 +1423,10 @@
     "submit_button": "Сачувај производ",
     "error_submit_product": "Није могуће сачувати овај производ. Покушај поново.",
     "community_added_title": "Додао корисник",
-    "community_added_sub": "Овај производ је додала друга особа и није независно провераван на састојке или адитиве."
+    "community_added_sub": "Овај производ је додала друга особа и није независно провераван на састојке или адитиве.",
+    "allergy_warning_title": "Sadrži nešto na šta ste alergični",
+    "allergy_warning_sub": "Pronađeno na vašoj listi alergija: {{items}}",
+    "remaining_preview": "To je {{caloriesPct}}% vaših preostalih kalorija i {{proteinPct}}% vašeg preostalog proteina za danas."
   },
   "edit_profile": {
     "title": "Uređivanje profila",

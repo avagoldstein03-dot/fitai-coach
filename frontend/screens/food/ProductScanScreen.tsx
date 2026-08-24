@@ -45,13 +45,20 @@ interface ScannedProduct {
   isUserSubmitted: boolean;
 }
 
+interface Personalization {
+  remaining: { calories: number; protein: number; carbs: number; fat: number } | null;
+  goalNote: string | null;
+  allergyWarnings: string[];
+  trainingNote: string | null;
+}
+
 const NUTRISCORE_COLOR: Record<string, string> = { a: T.green, b: T.teal, c: T.amber, d: T.red, e: T.red };
 const NOVA_COLOR: Record<number, string> = { 1: T.green, 2: T.teal, 3: T.amber, 4: T.red };
 
 const MEAL_TYPES = ["breakfast", "lunch", "dinner", "snack"] as const;
 
 type ScanResponse =
-  | { status: "found"; cacheHit: boolean; product: ScannedProduct }
+  | { status: "found"; cacheHit: boolean; product: ScannedProduct; personalization: Personalization }
   | { status: "not_found"; barcode: string };
 
 const GRADE_COLOR: Record<ScannedProduct["grade"], string> = {
@@ -326,7 +333,7 @@ export default function ProductScanScreen() {
       );
     }
 
-    const { product } = result;
+    const { product, personalization } = result;
     const gradeColor = GRADE_COLOR[product.grade];
 
     return (
@@ -335,6 +342,32 @@ export default function ProductScanScreen() {
           {product.brand ? <Text style={s.productBrand}>{product.brand}</Text> : null}
           <Text style={s.productName}>{product.productName ?? t("product_scan.unknown_product")}</Text>
         </View>
+
+        {personalization.allergyWarnings.length > 0 && (
+          <View style={s.allergyCard}>
+            <Text style={s.allergyIcon}>⚠️</Text>
+            <View style={{ flex: 1 }}>
+              <Text style={s.allergyTitle}>{t("product_scan.allergy_warning_title")}</Text>
+              <Text style={s.allergySub}>
+                {t("product_scan.allergy_warning_sub", { items: personalization.allergyWarnings.join(", ") })}
+              </Text>
+            </View>
+          </View>
+        )}
+
+        {personalization.goalNote && (
+          <View style={s.noteCard}>
+            <Text style={s.noteIcon}>🎯</Text>
+            <Text style={s.noteText}>{personalization.goalNote}</Text>
+          </View>
+        )}
+
+        {personalization.trainingNote && (
+          <View style={s.noteCard}>
+            <Text style={s.noteIcon}>💪</Text>
+            <Text style={s.noteText}>{personalization.trainingNote}</Text>
+          </View>
+        )}
 
         {product.isUserSubmitted ? (
           <View style={s.communityCard}>
@@ -476,6 +509,22 @@ export default function ProductScanScreen() {
                 fat: Math.round((product.fatPer100g ?? 0) * (Number(logGrams || 0) / 100)),
               })}
             </Text>
+
+            {personalization.remaining && personalization.remaining.calories > 0 && (
+              <Text style={s.remainingPreview}>
+                {t("product_scan.remaining_preview", {
+                  caloriesPct: Math.round(
+                    (((product.caloriesPer100g ?? 0) * (Number(logGrams || 0) / 100)) / personalization.remaining.calories) * 100
+                  ),
+                  proteinPct:
+                    personalization.remaining.protein > 0
+                      ? Math.round(
+                          (((product.proteinPer100g ?? 0) * (Number(logGrams || 0) / 100)) / personalization.remaining.protein) * 100
+                        )
+                      : 0,
+                })}
+              </Text>
+            )}
 
             <TouchableOpacity
               onPress={() => logProductAsMeal({ product, grams: Number(logGrams || 0) })}
@@ -710,9 +759,25 @@ const s = StyleSheet.create({
     paddingHorizontal: 12, paddingVertical: 8, color: T.textPrimary, fontSize: 14, width: 70, textAlign: "center",
   },
   gramsUnit: { color: T.textSecondary, fontSize: 13 },
-  gramsPreview: { color: T.textSecondary, fontSize: 12, marginBottom: 14 },
+  gramsPreview: { color: T.textSecondary, fontSize: 12, marginBottom: 4 },
+  remainingPreview: { color: T.textMuted, fontSize: 12, marginBottom: 14 },
   logBtn: { backgroundColor: T.accent, borderRadius: 10, paddingVertical: 13, alignItems: "center" },
   logBtnText: { color: "#000", fontWeight: "700", fontSize: 14 },
+
+  allergyCard: {
+    marginHorizontal: 24, backgroundColor: T.redDark ?? T.surface, borderWidth: 1, borderColor: T.red,
+    borderRadius: 14, padding: 16, marginBottom: 16, flexDirection: "row", gap: 12, alignItems: "flex-start",
+  },
+  allergyIcon: { fontSize: 22 },
+  allergyTitle: { color: T.red, fontWeight: "800", fontSize: 14, marginBottom: 3 },
+  allergySub: { color: T.textPrimary, fontSize: 13, lineHeight: 18 },
+
+  noteCard: {
+    marginHorizontal: 24, backgroundColor: T.surface, borderWidth: 1, borderColor: T.border,
+    borderRadius: 14, padding: 14, marginBottom: 12, flexDirection: "row", gap: 10, alignItems: "center",
+  },
+  noteIcon: { fontSize: 18 },
+  noteText: { flex: 1, color: T.textPrimary, fontSize: 13, lineHeight: 18 },
 
   resultsActions: { flexDirection: "row", gap: 12, paddingHorizontal: 24, marginTop: 8 },
   secondaryBtn: { flex: 1, borderWidth: 1, borderColor: T.border, borderRadius: 12, paddingVertical: 15, alignItems: "center" },

@@ -14,6 +14,10 @@ jest.mock("@/lib/prisma", () => ({
   __esModule: true,
   default: {
     productScan: { findUnique: jest.fn(), update: jest.fn(), upsert: jest.fn() },
+    user: { findUnique: jest.fn() },
+    nutritionPlan: { findUnique: jest.fn() },
+    meal: { findMany: jest.fn() },
+    workoutSession: { findFirst: jest.fn() },
   },
 }));
 
@@ -51,6 +55,10 @@ describe("products/scan handler", () => {
     (getAuth as jest.Mock).mockReturnValue({ userId: "clerk_1" });
     (checkRateLimit as jest.Mock).mockResolvedValue(true);
     (prisma.productScan.findUnique as jest.Mock).mockResolvedValue(null);
+    (prisma.user.findUnique as jest.Mock).mockResolvedValue({ id: "user_1", foodAllergies: [], goal: null });
+    (prisma.nutritionPlan.findUnique as jest.Mock).mockResolvedValue(null);
+    (prisma.meal.findMany as jest.Mock).mockResolvedValue([]);
+    (prisma.workoutSession.findFirst as jest.Mock).mockResolvedValue(null);
   });
 
   it("rejects unsupported methods", async () => {
@@ -200,5 +208,50 @@ describe("products/scan handler", () => {
     const { data } = res.json.mock.calls[0][0];
     expect(data.status).toBe("not_found");
     expect(data.barcode).toBe("9999");
+  });
+
+  it("returns 404 when the authenticated Clerk user has no matching User record", async () => {
+    (prisma.user.findUnique as jest.Mock).mockResolvedValue(null);
+    const { req, res } = mockReqRes("POST");
+    await handler(req, res);
+    expect(res.status).toHaveBeenCalledWith(404);
+  });
+
+  it("attaches personalization computed from the user's goal, targets, and today's meals", async () => {
+    (prisma.user.findUnique as jest.Mock).mockResolvedValue({
+      id: "user_1",
+      foodAllergies: ["peanuts"],
+      goal: { primaryGoal: "fat_loss" },
+    });
+    (prisma.nutritionPlan.findUnique as jest.Mock).mockResolvedValue({
+      dailyCaloricTarget: 2000,
+      proteinTarget: 150,
+      carbsTarget: 200,
+      fatsTarget: 60,
+    });
+    (prisma.meal.findMany as jest.Mock).mockResolvedValue([
+      { totalCalories: 500, totalProtein: 40, totalCarbs: 50, totalFat: 15 },
+    ]);
+    (lookupProduct as jest.Mock).mockResolvedValue({
+      ...OFF_PRODUCT,
+      ingredientsText: "wheat, sugar, peanuts",
+      caloriesPer100g: 120,
+      proteinPer100g: 25,
+    });
+    (prisma.productScan.upsert as jest.Mock).mockResolvedValue({
+      barcode: VALID_BODY.barcode,
+      ...OFF_PRODUCT,
+      ingredientsText: "wheat, sugar, peanuts",
+      caloriesPer100g: 120,
+      proteinPer100g: 25,
+    });
+
+    const { req, res } = mockReqRes("POST");
+    await handler(req, res);
+
+    const { data } = res.json.mock.calls[0][0];
+    expect(data.personalization.remaining).toEqual({ calories: 1500, protein: 110, carbs: 150, fat: 45 });
+    expect(data.personalization.goalNote).toMatch(/protein-per-calorie/i);
+    expect(data.personalization.allergyWarnings).toEqual(["peanuts"]);
   });
 });

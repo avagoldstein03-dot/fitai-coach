@@ -1423,7 +1423,10 @@
     "submit_button": "保存产品",
     "error_submit_product": "无法保存此产品。请重试。",
     "community_added_title": "社区添加",
-    "community_added_sub": "此产品由用户添加，尚未独立检查其成分或添加剂。"
+    "community_added_sub": "此产品由用户添加，尚未独立检查其成分或添加剂。",
+    "allergy_warning_title": "包含您过敏的物质",
+    "allergy_warning_sub": "在您的过敏清单中发现: {{items}}",
+    "remaining_preview": "这是您今天剩余热量的{{caloriesPct}}%和剩余蛋白质的{{proteinPct}}%。"
   },
   "edit_profile": {
     "title": "编辑个人资料",

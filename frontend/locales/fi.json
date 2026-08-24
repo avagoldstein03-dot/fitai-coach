@@ -1423,7 +1423,10 @@
     "submit_button": "Tallenna tuote",
     "error_submit_product": "Tuotteen tallentaminen epäonnistui. Yritä uudelleen.",
     "community_added_title": "Yhteisön lisäämä",
-    "community_added_sub": "Tämän tuotteen on lisännyt toinen käyttäjä, eikä sen ainesosia tai lisäaineita ole tarkistettu itsenäisesti."
+    "community_added_sub": "Tämän tuotteen on lisännyt toinen käyttäjä, eikä sen ainesosia tai lisäaineita ole tarkistettu itsenäisesti.",
+    "allergy_warning_title": "Sisältää jotain, johon olet allerginen",
+    "allergy_warning_sub": "Löytyi allergialistastasi: {{items}}",
+    "remaining_preview": "Se on {{caloriesPct}}% jäljellä olevista kaloreistasi ja {{proteinPct}}% jäljellä olevasta proteiinistasi tänään."
   },
   "edit_profile": {
     "title": "Muokkaa profiilia",
