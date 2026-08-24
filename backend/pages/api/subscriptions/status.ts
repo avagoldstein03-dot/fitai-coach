@@ -2,6 +2,7 @@ import type { NextApiRequest, NextApiResponse } from "next";
 import { getAuth } from "@clerk/nextjs/server";
 import prisma from "@/lib/prisma";
 import { sendSuccess, sendError } from "@/lib/api-utils";
+import { getUserSubscription } from "@/lib/subscription-middleware";
 
 export default async function handler(
   req: NextApiRequest,
@@ -56,6 +57,8 @@ export default async function handler(
       stripeCustomerId: null,
     };
 
+    const { tier } = await getUserSubscription(req);
+
     sendSuccess(
       res,
       {
@@ -64,6 +67,7 @@ export default async function handler(
           email: user.email,
         },
         subscription,
+        tier,
       },
       "Subscription retrieved successfully"
     );

@@ -2,6 +2,7 @@ import axios from "axios";
 
 const OFF_BASE_URL = "https://world.openfoodfacts.org/api/v2/product";
 const FIELDS = "product_name,brands,image_url,ingredients_text,additives_tags,nova_group,nutriscore_grade,nutriments,serving_quantity";
+const VALID_NUTRISCORE_GRADES = new Set(["a", "b", "c", "d", "e"]);
 
 export interface OFFProduct {
   productName: string | null;
@@ -45,7 +46,13 @@ export async function lookupProduct(barcode: string): Promise<OFFProduct | null>
       ingredientsText: p.ingredients_text || null,
       additivesTags: Array.isArray(p.additives_tags) ? p.additives_tags : [],
       novaGroup: typeof p.nova_group === "number" ? p.nova_group : null,
-      nutriscoreGrade: p.nutriscore_grade || null,
+      // OFF sometimes returns "not-applicable", "unknown", or other non-letter
+      // values here instead of a real grade — anything outside a-e must become
+      // null, or it flows through as a raw, untranslatable string in the UI.
+      nutriscoreGrade:
+        typeof p.nutriscore_grade === "string" && VALID_NUTRISCORE_GRADES.has(p.nutriscore_grade.toLowerCase())
+          ? p.nutriscore_grade.toLowerCase()
+          : null,
       caloriesPer100g: typeof nutriments["energy-kcal_100g"] === "number" ? nutriments["energy-kcal_100g"] : null,
       proteinPer100g: typeof nutriments.proteins_100g === "number" ? nutriments.proteins_100g : null,
       carbsPer100g: typeof nutriments.carbohydrates_100g === "number" ? nutriments.carbohydrates_100g : null,

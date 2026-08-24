@@ -58,6 +58,37 @@ describe("openfoodfacts-provider", () => {
     );
   });
 
+  it("nulls out a non-letter nutriscore_grade instead of passing it through raw", async () => {
+    // OFF sometimes returns "unknown", "not-applicable", etc. instead of a
+    // real a-e grade — this must become null, not flow through as a raw
+    // string that has no matching translation key in the UI.
+    (axios.get as jest.Mock).mockResolvedValue({
+      status: 200,
+      data: {
+        status: 1,
+        product: { product_name: "Sourdough Cookies", nutriscore_grade: "unknown" },
+      },
+    });
+
+    const result = await lookupProduct("199874676180");
+
+    expect(result?.nutriscoreGrade).toBeNull();
+  });
+
+  it("lowercases a valid nutriscore_grade", async () => {
+    (axios.get as jest.Mock).mockResolvedValue({
+      status: 200,
+      data: {
+        status: 1,
+        product: { product_name: "Test Cereal", nutriscore_grade: "D" },
+      },
+    });
+
+    const result = await lookupProduct("0123456789012");
+
+    expect(result?.nutriscoreGrade).toBe("d");
+  });
+
   it("throws on a real network/upstream failure so the caller can distinguish it from not-found", async () => {
     (axios.get as jest.Mock).mockRejectedValue(new Error("network error"));
 
