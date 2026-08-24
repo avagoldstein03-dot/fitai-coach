@@ -427,7 +427,9 @@
     "error_health_connect": "Tidak dapat menyambung ke Apple Health. Cuba lagi.",
     "diet_allergies": "Diet & Alahan",
     "diet_not_set": "Tiada pilihan diet yang ditetapkan",
-    "allergies_label": "Alahan"
+    "allergies_label": "Alahan",
+    "app_icon": "Ikon Aplikasi",
+    "app_icon_sub": "Elite — pilih dari beberapa rupa"
   },
   "notifications": {
     "title": "Pemberitahuan",
@@ -1442,5 +1444,19 @@
   "edit_diet": {
     "title": "Diet & Alahan",
     "error_save": "Tidak dapat menyimpan perubahan anda. Sila cuba lagi."
+  },
+  "app_icon": {
+    "title": "Ikon Aplikasi",
+    "subtitle": "Pilih rupa yang akan muncul di skrin utama anda.",
+    "signal_a": "Signal A",
+    "orbit_node": "Orbit Node",
+    "waveform": "Waveform",
+    "focus_bracket": "Focus Bracket",
+    "locked_title": "Keistimewaan Elite",
+    "locked_sub": "Ikon aplikasi kustom adalah sebahagian daripada Elite. Tingkatkan untuk memilih dari beberapa rupa berbeza untuk skrin utama anda.",
+    "upgrade_button": "Tingkatkan ke Elite",
+    "unsupported_title": "Tidak Tersedia di Peranti Ini",
+    "unsupported_sub": "Ikon aplikasi kustom tidak disokong pada peranti atau platform ini.",
+    "error_switch": "Tidak dapat menukar ikon aplikasi. Cuba lagi."
   }
 }

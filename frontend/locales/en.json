@@ -421,6 +421,8 @@
     "health_disconnect_msg": "This stops the app from syncing new data, but doesn't revoke Apple Health access — you can manage that in iOS Settings > Health > Data Access & Devices.",
     "notifications": "Notifications",
     "notifications_sub": "Workout reminders, meal nudges, weekly reviews",
+    "app_icon": "App Icon",
+    "app_icon_sub": "Elite — choose from a few looks",
     "privacy_data": "Privacy & Data",
     "export_data": "Export My Data",
     "export_sub": "GDPR data portability",
@@ -459,6 +461,20 @@
     "terms_of_service": "Terms of Service",
     "privacy_policy_sub": "How we handle your data",
     "terms_of_service_sub": "Rules for using Active AI"
+  },
+  "app_icon": {
+    "title": "App Icon",
+    "subtitle": "Pick the look that shows up on your home screen.",
+    "signal_a": "Signal A",
+    "orbit_node": "Orbit Node",
+    "waveform": "Waveform",
+    "focus_bracket": "Focus Bracket",
+    "locked_title": "An Elite Perk",
+    "locked_sub": "Custom app icons are part of Elite. Upgrade to pick from a few different looks for your home screen.",
+    "upgrade_button": "Upgrade to Elite",
+    "unsupported_title": "Not Available on This Device",
+    "unsupported_sub": "Custom app icons aren't supported on this device or platform.",
+    "error_switch": "Couldn't switch the app icon. Try again."
   },
   "notifications": {
     "title": "Notifications",

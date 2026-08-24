@@ -427,7 +427,9 @@
     "error_health_connect": "Nu s-a putut conecta la Apple Health. Încearcă din nou.",
     "diet_allergies": "Dietă și alergii",
     "diet_not_set": "Nicio preferință alimentară setată",
-    "allergies_label": "Alergii"
+    "allergies_label": "Alergii",
+    "app_icon": "Pictogramă Aplicație",
+    "app_icon_sub": "Elite — alege din mai multe aspecte"
   },
   "notifications": {
     "title": "Notificari",
@@ -1442,5 +1444,19 @@
   "edit_diet": {
     "title": "Dietă și alergii",
     "error_save": "Nu am putut salva modificările. Vă rugăm să încercați din nou."
+  },
+  "app_icon": {
+    "title": "Pictogramă Aplicație",
+    "subtitle": "Selectează aspectul care apare pe ecranul tău de start.",
+    "signal_a": "Signal A",
+    "orbit_node": "Orbit Node",
+    "waveform": "Waveform",
+    "focus_bracket": "Focus Bracket",
+    "locked_title": "Un Privilegiu Elite",
+    "locked_sub": "Pictogramele de aplicație personalizate fac parte din Elite. Efectuează upgrade pentru a alege din mai multe aspecte diferite pentru ecranul tău de start.",
+    "upgrade_button": "Efectuează Upgrade la Elite",
+    "unsupported_title": "Indisponibil pe Acest Dispozitiv",
+    "unsupported_sub": "Pictogramele de aplicație personalizate nu sunt suportate pe acest dispozitiv sau platformă.",
+    "error_switch": "Nu s-a putut schimba pictograma aplicației. Încearcă din nou."
   }
 }

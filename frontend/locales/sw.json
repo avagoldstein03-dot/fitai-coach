@@ -427,7 +427,9 @@
     "error_health_connect": "Haiwezi kuunganisha na Apple Health. Jaribu tena.",
     "diet_allergies": "Mlo & Mipango",
     "diet_not_set": "Hakuna mlo iliyochaguliwa",
-    "allergies_label": "Mipango"
+    "allergies_label": "Mipango",
+    "app_icon": "Aikoni ya Programu",
+    "app_icon_sub": "Elite — chagua kutoka kwa mifumo kadhaa"
   },
   "notifications": {
     "title": "Arifa",
@@ -1442,5 +1444,19 @@
   "edit_diet": {
     "title": "Mlo & Mipango",
     "error_save": "Haikuweza kuokoa mabadiliko yako. Tafadhali jaribu tena."
+  },
+  "app_icon": {
+    "title": "Aikoni ya Programu",
+    "subtitle": "Chagua mifumo inayoonekana kwenye skrini yako ya nyumbani.",
+    "signal_a": "Ishara A",
+    "orbit_node": "Nodi ya Obiti",
+    "waveform": "Mfumo wa Mawimbi",
+    "focus_bracket": "Mabano ya Mitazamo",
+    "locked_title": "Zawadi ya Elite",
+    "locked_sub": "Aikoni za programu maalum ni sehemu ya Elite. Boresha ili kuchagua mifumo tofauti kwa skrini yako ya nyumbani.",
+    "upgrade_button": "Boresha hadi Elite",
+    "unsupported_title": "Haipatikani Kwenye Kifaa Hiki",
+    "unsupported_sub": "Aikoni za programu maalum hazisaidiwi kwenye kifaa hiki au jukwaa.",
+    "error_switch": "Haiwezi kubadilisha aikoni ya programu. Jaribu tena."
   }
 }

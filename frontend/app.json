@@ -73,7 +73,36 @@
           "background": false
         }
       ],
-      "expo-video"
+      "expo-video",
+      [
+        "expo-alternate-app-icons",
+        [
+          {
+            "name": "Orbit",
+            "ios": "./assets/icon-orbit.png",
+            "android": {
+              "foregroundImage": "./assets/icon-orbit-fg.png",
+              "backgroundColor": "#000000"
+            }
+          },
+          {
+            "name": "Waveform",
+            "ios": "./assets/icon-waveform.png",
+            "android": {
+              "foregroundImage": "./assets/icon-waveform-fg.png",
+              "backgroundColor": "#000000"
+            }
+          },
+          {
+            "name": "Focus",
+            "ios": "./assets/icon-focus.png",
+            "android": {
+              "foregroundImage": "./assets/icon-focus-fg.png",
+              "backgroundColor": "#000000"
+            }
+          }
+        ]
+      ]
     ],
     "extra": {
       "eas": {

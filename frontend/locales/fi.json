@@ -427,7 +427,9 @@
     "error_health_connect": "Apple Healthiin yhdistäminen epäonnistui. Yritä uudelleen.",
     "diet_allergies": "Ruokavalio ja allergiat",
     "diet_not_set": "Ruokavalintaa ei ole asetettu",
-    "allergies_label": "Allergiat"
+    "allergies_label": "Allergiat",
+    "app_icon": "Sovelluskuvake",
+    "app_icon_sub": "Elite — valitse muutamasta vaihtoehdosta"
   },
   "notifications": {
     "title": "Ilmoitukset",
@@ -1442,5 +1444,19 @@
   "edit_diet": {
     "title": "Ruokavalio ja allergiat",
     "error_save": "Muutoksia ei voitu tallentaa. Yritä uudelleen."
+  },
+  "app_icon": {
+    "title": "Sovelluskuvake",
+    "subtitle": "Valitse ulkonäkö, joka näkyy kotinäytölläsi.",
+    "signal_a": "Signal A",
+    "orbit_node": "Orbit Node",
+    "waveform": "Waveform",
+    "focus_bracket": "Focus Bracket",
+    "locked_title": "Elite-etu",
+    "locked_sub": "Mukautetut sovelluskuvakkeet ovat osa Elitea. Päivitä saadaksesi valita muutamasta eri ulkonäöstä kotinäytöllesi.",
+    "upgrade_button": "Päivitä Elitelle",
+    "unsupported_title": "Ei saatavilla tällä laitteella",
+    "unsupported_sub": "Mukautettuja sovelluskuvakkeita ei tueta tällä laitteella tai alustalla.",
+    "error_switch": "Sovelluskuvakkeen vaihtaminen epäonnistui. Yritä uudelleen."
   }
 }

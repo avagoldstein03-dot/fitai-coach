@@ -427,7 +427,9 @@
     "error_health_connect": "Tidak dapat terhubung ke Apple Health. Coba lagi.",
     "diet_allergies": "Diet & Alergi",
     "diet_not_set": "Preferensi diet belum diatur",
-    "allergies_label": "Alergi"
+    "allergies_label": "Alergi",
+    "app_icon": "Ikon Aplikasi",
+    "app_icon_sub": "Elite — pilih dari beberapa tampilan"
   },
   "notifications": {
     "title": "Notifikasi",
@@ -1442,5 +1444,19 @@
   "edit_diet": {
     "title": "Diet & Alergi",
     "error_save": "Tidak dapat menyimpan perubahan Anda. Silakan coba lagi."
+  },
+  "app_icon": {
+    "title": "Ikon Aplikasi",
+    "subtitle": "Pilih tampilan yang muncul di layar beranda Anda.",
+    "signal_a": "Signal A",
+    "orbit_node": "Orbit Node",
+    "waveform": "Waveform",
+    "focus_bracket": "Focus Bracket",
+    "locked_title": "Keuntungan Elite",
+    "locked_sub": "Ikon aplikasi kustom adalah bagian dari Elite. Tingkatkan untuk memilih dari beberapa tampilan berbeda untuk layar beranda Anda.",
+    "upgrade_button": "Tingkatkan ke Elite",
+    "unsupported_title": "Tidak Tersedia di Perangkat Ini",
+    "unsupported_sub": "Ikon aplikasi kustom tidak didukung di perangkat atau platform ini.",
+    "error_switch": "Tidak dapat mengganti ikon aplikasi. Coba lagi."
   }
 }

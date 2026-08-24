@@ -427,7 +427,9 @@
     "error_health_connect": "Kon niet verbinding maken met Apple Health. Probeer opnieuw.",
     "diet_allergies": "Dieet & Allergieën",
     "diet_not_set": "Geen dieetvoorkeur ingesteld",
-    "allergies_label": "Allergieën"
+    "allergies_label": "Allergieën",
+    "app_icon": "App-pictogram",
+    "app_icon_sub": "Elite — kies uit een aantal ontwerpen"
   },
   "notifications": {
     "title": "Meldingen",
@@ -1442,5 +1444,19 @@
   "edit_diet": {
     "title": "Dieet & Allergieën",
     "error_save": "Kon je wijzigingen niet opslaan. Probeer het alstublieft opnieuw."
+  },
+  "app_icon": {
+    "title": "App-pictogram",
+    "subtitle": "Kies het ontwerp dat op je startscherm wordt weergegeven.",
+    "signal_a": "Signal A",
+    "orbit_node": "Orbit Node",
+    "waveform": "Waveform",
+    "focus_bracket": "Focus Bracket",
+    "locked_title": "Een Elite-voordeel",
+    "locked_sub": "Aangepaste app-pictogrammen maken deel uit van Elite. Upgrade naar Elite om uit verschillende ontwerpen voor je startscherm te kiezen.",
+    "upgrade_button": "Upgrade naar Elite",
+    "unsupported_title": "Niet beschikbaar op dit apparaat",
+    "unsupported_sub": "Aangepaste app-pictogrammen worden niet ondersteund op dit apparaat of platform.",
+    "error_switch": "Kon het app-pictogram niet wijzigen. Probeer het opnieuw."
   }
 }

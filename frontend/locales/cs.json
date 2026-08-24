@@ -427,7 +427,9 @@
     "error_health_connect": "Nepodařilo se připojit k Apple Health. Zkuste to znovu.",
     "diet_allergies": "Dieta a alergeny",
     "diet_not_set": "Není nastavena preference stravy",
-    "allergies_label": "Alergeny"
+    "allergies_label": "Alergeny",
+    "app_icon": "Ikona aplikace",
+    "app_icon_sub": "Elite — vyberte si z několika variant"
   },
   "notifications": {
     "title": "Oznámení",
@@ -1442,5 +1444,19 @@
   "edit_diet": {
     "title": "Dieta a alergeny",
     "error_save": "Nepodařilo se uložit vaše změny. Zkuste to prosím znovu."
+  },
+  "app_icon": {
+    "title": "Ikona aplikace",
+    "subtitle": "Vyberte vzhled, který se zobrazí na vaší domovské obrazovce.",
+    "signal_a": "Signal A",
+    "orbit_node": "Orbit Node",
+    "waveform": "Waveform",
+    "focus_bracket": "Focus Bracket",
+    "locked_title": "Exkluzivní výhoda Elite",
+    "locked_sub": "Vlastní ikony aplikace jsou součástí Elite. Upgradujte na Elite a vyberte si z několika různých variant pro vaši domovskou obrazovku.",
+    "upgrade_button": "Upgradovat na Elite",
+    "unsupported_title": "Není dostupné na tomto zařízení",
+    "unsupported_sub": "Vlastní ikony aplikace nejsou na tomto zařízení nebo platformě podporovány.",
+    "error_switch": "Nepodařilo se přepnout ikonu aplikace. Zkuste to znovu."
   }
 }

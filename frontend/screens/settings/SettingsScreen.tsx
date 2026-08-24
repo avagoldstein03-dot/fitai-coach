@@ -427,6 +427,15 @@ export default function SettingsScreen() {
           <Text style={s.arrow}>→</Text>
         </TouchableOpacity>
 
+        {/* App Icon */}
+        <TouchableOpacity style={[s.card, s.rowCard]} onPress={() => navigation.navigate("AppIcon")}>
+          <View>
+            <Text style={s.cardTitle}>{t("settings.app_icon")}</Text>
+            <Text style={s.cardSub}>{t("settings.app_icon_sub")}</Text>
+          </View>
+          <Text style={s.arrow}>→</Text>
+        </TouchableOpacity>
+
         {/* Privacy & Data */}
         <View style={s.card}>
           <Text style={s.cardTitle}>{t("settings.privacy_data")}</Text>

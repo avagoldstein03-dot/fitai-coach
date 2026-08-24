@@ -427,7 +427,9 @@
     "error_health_connect": "Apple Health'e bağlanılamadı. Lütfen tekrar deneyin.",
     "diet_allergies": "Diyet & Alerjiler",
     "diet_not_set": "Diyet tercihi ayarlanmamış",
-    "allergies_label": "Alerjiler"
+    "allergies_label": "Alerjiler",
+    "app_icon": "Uygulama İkonu",
+    "app_icon_sub": "Elite — birkaç görünümden seçin"
   },
   "notifications": {
     "title": "Bildirimler",
@@ -1442,5 +1444,19 @@
   "edit_diet": {
     "title": "Diyet & Alerjiler",
     "error_save": "Değişiklikleriniz kaydedilemedi. Lütfen tekrar deneyin."
+  },
+  "app_icon": {
+    "title": "Uygulama İkonu",
+    "subtitle": "Ana ekranınızda görünecek görünümü seçin.",
+    "signal_a": "Signal A",
+    "orbit_node": "Orbit Node",
+    "waveform": "Waveform",
+    "focus_bracket": "Focus Bracket",
+    "locked_title": "Bir Elite Avantajı",
+    "locked_sub": "Özel uygulama ikonları Elite'in bir parçasıdır. Ana ekranınız için birkaç farklı görünümden seçim yapmak için Elite'e yükseltin.",
+    "upgrade_button": "Elite'e Yüksel",
+    "unsupported_title": "Bu Cihazda Kullanılamıyor",
+    "unsupported_sub": "Özel uygulama ikonları bu cihazda veya platformda desteklenmiyor.",
+    "error_switch": "Uygulama ikonu değiştirilemedi. Tekrar deneyin."
   }
 }

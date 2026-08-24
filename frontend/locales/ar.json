@@ -427,7 +427,9 @@
     "error_health_connect": "تعذر الاتصال بـ Apple Health. حاول مرة أخرى.",
     "diet_allergies": "النظام الغذائي والحساسية",
     "diet_not_set": "لم يتم تعيين تفضيل غذائي",
-    "allergies_label": "الحساسية"
+    "allergies_label": "الحساسية",
+    "app_icon": "أيقونة التطبيق",
+    "app_icon_sub": "Elite — اختر من بين عدة تصاميم"
   },
   "notifications": {
     "title": "الإشعارات",
@@ -1442,5 +1444,19 @@
   "edit_diet": {
     "title": "النظام الغذائي والحساسية",
     "error_save": "تعذر حفظ التغييرات. يرجى المحاولة مرة أخرى."
+  },
+  "app_icon": {
+    "title": "أيقونة التطبيق",
+    "subtitle": "اختر التصميم الذي سيظهر على شاشة منزلك.",
+    "signal_a": "Signal A",
+    "orbit_node": "Orbit Node",
+    "waveform": "Waveform",
+    "focus_bracket": "Focus Bracket",
+    "locked_title": "ميزة Elite",
+    "locked_sub": "أيقونات التطبيق المخصصة تابعة لـ Elite. قم بالترقية لاختيار من بين عدة تصاميم مختلفة لشاشة منزلك.",
+    "upgrade_button": "الترقية إلى Elite",
+    "unsupported_title": "غير متاح على هذا الجهاز",
+    "unsupported_sub": "أيقونات التطبيق المخصصة غير مدعومة على هذا الجهاز أو النظام الأساسي.",
+    "error_switch": "تعذر تبديل أيقونة التطبيق. حاول مرة أخرى."
   }
 }

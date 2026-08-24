@@ -427,7 +427,9 @@
     "error_health_connect": "לא היה ניתן להתחבר ל-Apple Health. נסה שוב.",
     "diet_allergies": "דיאטה ואלרגיות",
     "diet_not_set": "לא הוגדרה העדפת דיאטה",
-    "allergies_label": "אלרגיות"
+    "allergies_label": "אלרגיות",
+    "app_icon": "סמל האפליקציה",
+    "app_icon_sub": "Elite — בחר מכמה עיצובים"
   },
   "notifications": {
     "title": "התראות",
@@ -1442,5 +1444,19 @@
   "edit_diet": {
     "title": "דיאטה ואלרגיות",
     "error_save": "לא היה ניתן לשמור את השינויים שלך. בבקשה נסה שוב."
+  },
+  "app_icon": {
+    "title": "סמל האפליקציה",
+    "subtitle": "בחר את העיצוב שיופיע במסך הבית שלך.",
+    "signal_a": "Signal A",
+    "orbit_node": "Orbit Node",
+    "waveform": "Waveform",
+    "focus_bracket": "Focus Bracket",
+    "locked_title": "יתרון של Elite",
+    "locked_sub": "סמלי אפליקציה מותאמים אישית הם חלק מ-Elite. שדרג כדי לבחור מכמה עיצובים שונים עבור מסך הבית שלך.",
+    "upgrade_button": "שדרג ל-Elite",
+    "unsupported_title": "לא זמין בהתקן זה",
+    "unsupported_sub": "סמלי אפליקציה מותאמים אישית אינם נתמכים בהתקן או בפלטפורמה זו.",
+    "error_switch": "לא היה ניתן להחליף את סמל האפליקציה. נסה שוב."
   }
 }

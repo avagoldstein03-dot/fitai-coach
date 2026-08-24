@@ -427,7 +427,9 @@
     "error_health_connect": "Kon nie aan Apple Health koppel nie. Probeer weer.",
     "diet_allergies": "Dieet & Allergiëe",
     "diet_not_set": "Geen dieetvoorkeur ingestel",
-    "allergies_label": "Allergiëe"
+    "allergies_label": "Allergiëe",
+    "app_icon": "App Ikoon",
+    "app_icon_sub": "Elite — kies uit 'n paar uitsiene"
   },
   "notifications": {
     "title": "Kennisgewings",
@@ -1442,5 +1444,19 @@
   "edit_diet": {
     "title": "Dieet & Allergiëe",
     "error_save": "Kon nie jou veranderinge stoor nie. Probeer asseblief weer."
+  },
+  "app_icon": {
+    "title": "App Ikoon",
+    "subtitle": "Kies die uitsiening wat op jou tuisskerm verskyn.",
+    "signal_a": "Signal A",
+    "orbit_node": "Orbit Node",
+    "waveform": "Golfvorm",
+    "focus_bracket": "Focus Bracket",
+    "locked_title": "'n Elite Voordeel",
+    "locked_sub": "Pasgemaakte app-ikone is deel van Elite. Opgradeer om uit 'n paar verskillende uitsiene vir jou tuisskerm te kies.",
+    "upgrade_button": "Opgradeer na Elite",
+    "unsupported_title": "Nie Beskikbaar op Hierdie Toestel Nie",
+    "unsupported_sub": "Pasgemaakte app-ikone word nie op hierdie toestel of platform ondersteun nie.",
+    "error_switch": "Kon nie die app-ikoon wissel nie. Probeer weer."
   }
 }

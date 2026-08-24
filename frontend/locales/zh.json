@@ -427,7 +427,9 @@
     "error_health_connect": "无法连接到 Apple Health。请重试。",
     "diet_allergies": "饮食与过敏原",
     "diet_not_set": "未设置饮食偏好",
-    "allergies_label": "过敏原"
+    "allergies_label": "过敏原",
+    "app_icon": "应用图标",
+    "app_icon_sub": "精英版 — 选择多种外观"
   },
   "notifications": {
     "title": "通知",
@@ -1442,5 +1444,19 @@
   "edit_diet": {
     "title": "饮食与过敏原",
     "error_save": "无法保存您的更改。请重试。"
+  },
+  "app_icon": {
+    "title": "应用图标",
+    "subtitle": "选择在主屏幕上显示的外观。",
+    "signal_a": "信号 A",
+    "orbit_node": "轨道节点",
+    "waveform": "波形",
+    "focus_bracket": "焦点括号",
+    "locked_title": "精英版专享",
+    "locked_sub": "自定义应用图标是精英版的功能。升级到精英版即可为主屏幕选择多种不同的外观。",
+    "upgrade_button": "升级到精英版",
+    "unsupported_title": "此设备不支持",
+    "unsupported_sub": "此设备或平台不支持自定义应用图标。",
+    "error_switch": "无法切换应用图标。请重试。"
   }
 }

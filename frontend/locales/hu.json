@@ -427,7 +427,9 @@
     "error_health_connect": "Nem sikerült csatlakozni az Apple Health-hez. Próbáld újra.",
     "diet_allergies": "Diéta és allergiák",
     "diet_not_set": "Nincs beállított diétapreferencia",
-    "allergies_label": "Allergiák"
+    "allergies_label": "Allergiák",
+    "app_icon": "Alkalmazás ikon",
+    "app_icon_sub": "Elite — válassz néhány lehetőség közül"
   },
   "notifications": {
     "title": "Értesítések",
@@ -1442,5 +1444,19 @@
   "edit_diet": {
     "title": "Diéta és allergiák",
     "error_save": "Nem sikerült menteni a változtatásokat. Kérlek, próbáld újra."
+  },
+  "app_icon": {
+    "title": "Alkalmazás ikon",
+    "subtitle": "Válaszd ki azt a megjelenést, amely a kezdőképernyőn jelenik meg.",
+    "signal_a": "Signal A",
+    "orbit_node": "Orbit Node",
+    "waveform": "Waveform",
+    "focus_bracket": "Focus Bracket",
+    "locked_title": "Egy Elite előjog",
+    "locked_sub": "Az egyéni alkalmazás ikonok az Elite része. Frissíts az Elite-re, hogy néhány különböző megjelenés közül választhass a kezdőképernyőhöz.",
+    "upgrade_button": "Frissítés Elite-re",
+    "unsupported_title": "Nem elérhető ezen az eszközön",
+    "unsupported_sub": "Az egyéni alkalmazás ikonok nem támogatottak ezen az eszközön vagy platformon.",
+    "error_switch": "Nem sikerült átváltani az alkalmazás ikont. Próbáld újra."
   }
 }

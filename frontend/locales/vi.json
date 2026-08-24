@@ -427,7 +427,9 @@
     "error_health_connect": "Không thể kết nối với Apple Health. Vui lòng thử lại.",
     "diet_allergies": "Chế độ ăn & Dị ứng",
     "diet_not_set": "Chưa đặt sở thích chế độ ăn",
-    "allergies_label": "Dị ứng"
+    "allergies_label": "Dị ứng",
+    "app_icon": "Biểu Tượng Ứng Dụng",
+    "app_icon_sub": "Elite — chọn từ một vài kiểu dáng"
   },
   "notifications": {
     "title": "Thông báo",
@@ -1442,5 +1444,19 @@
   "edit_diet": {
     "title": "Chế độ ăn & Dị ứng",
     "error_save": "Không thể lưu những thay đổi của bạn. Vui lòng thử lại."
+  },
+  "app_icon": {
+    "title": "Biểu Tượng Ứng Dụng",
+    "subtitle": "Chọn kiểu dáng sẽ hiển thị trên màn hình chính của bạn.",
+    "signal_a": "Signal A",
+    "orbit_node": "Orbit Node",
+    "waveform": "Waveform",
+    "focus_bracket": "Focus Bracket",
+    "locked_title": "Một Quyền Lợi Elite",
+    "locked_sub": "Biểu tượng ứng dụng tùy chỉnh là một phần của Elite. Nâng cấp để chọn từ một vài kiểu dáng khác nhau cho màn hình chính của bạn.",
+    "upgrade_button": "Nâng Cấp Lên Elite",
+    "unsupported_title": "Không Có Sẵn Trên Thiết Bị Này",
+    "unsupported_sub": "Biểu tượng ứng dụng tùy chỉnh không được hỗ trợ trên thiết bị hoặc nền tảng này.",
+    "error_switch": "Không thể thay đổi biểu tượng ứng dụng. Vui lòng thử lại."
   }
 }

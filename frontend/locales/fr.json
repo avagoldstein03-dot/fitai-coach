@@ -427,7 +427,9 @@
     "error_health_connect": "Impossible de se connecter à Apple Health. Réessayez.",
     "diet_allergies": "Régime & Allergies",
     "diet_not_set": "Aucune préférence de régime définie",
-    "allergies_label": "Allergies"
+    "allergies_label": "Allergies",
+    "app_icon": "Icône de l'application",
+    "app_icon_sub": "Elite — choisissez parmi plusieurs styles"
   },
   "notifications": {
     "title": "Notifications",
@@ -1442,5 +1444,19 @@
   "edit_diet": {
     "title": "Régime & Allergies",
     "error_save": "Impossible d'enregistrer vos modifications. Veuillez réessayer."
+  },
+  "app_icon": {
+    "title": "Icône de l'application",
+    "subtitle": "Choisissez le style qui s'affichera sur votre écran d'accueil.",
+    "signal_a": "Signal A",
+    "orbit_node": "Nœud orbital",
+    "waveform": "Forme d'onde",
+    "focus_bracket": "Crochet de mise au point",
+    "locked_title": "Un avantage Elite",
+    "locked_sub": "Les icônes d'application personnalisées font partie d'Elite. Passez à la version Elite pour choisir parmi plusieurs styles pour votre écran d'accueil.",
+    "upgrade_button": "Passer à Elite",
+    "unsupported_title": "Non disponible sur cet appareil",
+    "unsupported_sub": "Les icônes d'application personnalisées ne sont pas compatibles avec cet appareil ou cette plateforme.",
+    "error_switch": "Impossible de changer l'icône de l'application. Réessayez."
   }
 }

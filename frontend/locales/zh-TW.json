@@ -427,7 +427,9 @@
     "error_health_connect": "無法連接至 Apple Health。請重試。",
     "diet_allergies": "飲食偏好與過敏原",
     "diet_not_set": "未設定飲食偏好",
-    "allergies_label": "過敏原"
+    "allergies_label": "過敏原",
+    "app_icon": "應用程式圖示",
+    "app_icon_sub": "Elite — 選擇您喜歡的風格"
   },
   "notifications": {
     "title": "通知",
@@ -1442,5 +1444,19 @@
   "edit_diet": {
     "title": "飲食偏好與過敏原",
     "error_save": "無法保存您的變更。請重試。"
+  },
+  "app_icon": {
+    "title": "應用程式圖示",
+    "subtitle": "選擇在主畫面上顯示的風格。",
+    "signal_a": "Signal A",
+    "orbit_node": "Orbit Node",
+    "waveform": "Waveform",
+    "focus_bracket": "Focus Bracket",
+    "locked_title": "Elite 專屬功能",
+    "locked_sub": "自訂應用程式圖示是 Elite 的一部分。升級以為您的主畫面選擇不同的風格。",
+    "upgrade_button": "升級至 Elite",
+    "unsupported_title": "此裝置不支援",
+    "unsupported_sub": "此裝置或平台不支援自訂應用程式圖示。",
+    "error_switch": "無法切換應用程式圖示。請重試。"
   }
 }

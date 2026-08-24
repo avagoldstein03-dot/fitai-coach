@@ -427,7 +427,9 @@
     "error_health_connect": "Hindi maaaring kumonekta sa Apple Health. Subukan muli.",
     "diet_allergies": "Diet & Allergies",
     "diet_not_set": "Walang itinakdang kagustuhan sa diet",
-    "allergies_label": "Allergies"
+    "allergies_label": "Allergies",
+    "app_icon": "App Icon",
+    "app_icon_sub": "Elite — piliin mula sa ilang disenyo"
   },
   "notifications": {
     "title": "Notifications",
@@ -1442,5 +1444,19 @@
   "edit_diet": {
     "title": "Diet & Allergies",
     "error_save": "Hindi ma-save ang iyong mga pagbabago. Mangyaring subukan ulit."
+  },
+  "app_icon": {
+    "title": "App Icon",
+    "subtitle": "Piliin ang disenyo na makikita sa iyong home screen.",
+    "signal_a": "Signal A",
+    "orbit_node": "Orbit Node",
+    "waveform": "Waveform",
+    "focus_bracket": "Focus Bracket",
+    "locked_title": "Isang Elite Perk",
+    "locked_sub": "Ang custom app icons ay bahagi ng Elite. I-upgrade upang pumili mula sa iba't ibang disenyo para sa iyong home screen.",
+    "upgrade_button": "I-upgrade sa Elite",
+    "unsupported_title": "Hindi Available sa Deviceng Ito",
+    "unsupported_sub": "Ang custom app icons ay hindi sinusuportahan sa deviceng ito o platform.",
+    "error_switch": "Hindi nagawang baguhin ang app icon. Subukan ulit."
   }
 }

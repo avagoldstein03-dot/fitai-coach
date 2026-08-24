@@ -427,7 +427,9 @@
     "error_health_connect": "Kunne ikke oprette forbindelse til Apple Health. Prøv igen.",
     "diet_allergies": "Kost & Allergi",
     "diet_not_set": "Ingen kostpræference indstillet",
-    "allergies_label": "Allergi"
+    "allergies_label": "Allergi",
+    "app_icon": "App-ikon",
+    "app_icon_sub": "Elite — vælg mellem flere designs"
   },
   "notifications": {
     "title": "Notifikationer",
@@ -1442,5 +1444,19 @@
   "edit_diet": {
     "title": "Kost & Allergi",
     "error_save": "Kunne ikke gemme dine ændringer. Prøv igen."
+  },
+  "app_icon": {
+    "title": "App-ikon",
+    "subtitle": "Vælg det design, der vises på din hjemmeskærm.",
+    "signal_a": "Signal A",
+    "orbit_node": "Orbit Node",
+    "waveform": "Bølgeform",
+    "focus_bracket": "Focus Bracket",
+    "locked_title": "En Elite-fordel",
+    "locked_sub": "Brugerdefinerede app-ikoner er en del af Elite. Opgrader for at vælge blandt flere designs til din hjemmeskærm.",
+    "upgrade_button": "Opgrader til Elite",
+    "unsupported_title": "Ikke tilgængelig på denne enhed",
+    "unsupported_sub": "Brugerdefinerede app-ikoner understøttes ikke på denne enhed eller platform.",
+    "error_switch": "Kunne ikke skifte app-ikon. Prøv igen."
   }
 }

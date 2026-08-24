@@ -427,7 +427,9 @@
     "error_health_connect": "Apple Healthに接続できませんでした。もう一度お試しください。",
     "diet_allergies": "食事と アレルギー",
     "diet_not_set": "食事の好みが設定されていません",
-    "allergies_label": "アレルギー"
+    "allergies_label": "アレルギー",
+    "app_icon": "アプリアイコン",
+    "app_icon_sub": "Elite — 複数のデザインから選択可能"
   },
   "notifications": {
     "title": "通知",
@@ -1442,5 +1444,19 @@
   "edit_diet": {
     "title": "食事と アレルギー",
     "error_save": "変更を保存できませんでした。もう一度お試しください。"
+  },
+  "app_icon": {
+    "title": "アプリアイコン",
+    "subtitle": "ホーム画面に表示されるデザインを選択してください。",
+    "signal_a": "Signal A",
+    "orbit_node": "Orbit Node",
+    "waveform": "Waveform",
+    "focus_bracket": "Focus Bracket",
+    "locked_title": "Elite限定機能",
+    "locked_sub": "カスタムアプリアイコンはEliteの機能です。アップグレードしてホーム画面の複数のデザインから選択できます。",
+    "upgrade_button": "Eliteにアップグレード",
+    "unsupported_title": "このデバイスでは利用できません",
+    "unsupported_sub": "カスタムアプリアイコンはこのデバイスまたはプラットフォームではサポートされていません。",
+    "error_switch": "アプリアイコンを切り替えられませんでした。もう一度お試しください。"
   }
 }

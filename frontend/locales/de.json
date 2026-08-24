@@ -427,7 +427,9 @@
     "error_health_connect": "Konnte keine Verbindung zu Apple Health herstellen. Versuche es erneut.",
     "diet_allergies": "Ernährung & Allergien",
     "diet_not_set": "Keine Ernährungspräferenz festgelegt",
-    "allergies_label": "Allergien"
+    "allergies_label": "Allergien",
+    "app_icon": "App-Symbol",
+    "app_icon_sub": "Elite — wähle aus mehreren Designs"
   },
   "notifications": {
     "title": "Benachrichtigungen",
@@ -1442,5 +1444,19 @@
   "edit_diet": {
     "title": "Ernährung & Allergien",
     "error_save": "Deine Änderungen konnten nicht gespeichert werden. Bitte versuche es erneut."
+  },
+  "app_icon": {
+    "title": "App-Symbol",
+    "subtitle": "Wähle das Design, das auf deinem Startbildschirm angezeigt wird.",
+    "signal_a": "Signal A",
+    "orbit_node": "Orbit Node",
+    "waveform": "Wellenform",
+    "focus_bracket": "Focus Bracket",
+    "locked_title": "Ein Elite-Vorteil",
+    "locked_sub": "Benutzerdefinierte App-Symbole sind Teil von Elite. Upgraden Sie auf Elite, um aus verschiedenen Designs für Ihren Startbildschirm zu wählen.",
+    "upgrade_button": "Auf Elite upgraden",
+    "unsupported_title": "Auf diesem Gerät nicht verfügbar",
+    "unsupported_sub": "Benutzerdefinierte App-Symbole werden auf diesem Gerät oder dieser Plattform nicht unterstützt.",
+    "error_switch": "App-Symbol konnte nicht gewechselt werden. Versuche es erneut."
   }
 }

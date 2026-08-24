@@ -427,7 +427,9 @@
     "error_health_connect": "Nije moguće povezati se sa Apple Health. Pokušaj ponovo.",
     "diet_allergies": "Dijeta & Alergije",
     "diet_not_set": "Nema postavljene preferencije za dijetu",
-    "allergies_label": "Alergije"
+    "allergies_label": "Alergije",
+    "app_icon": "Ikona aplikacije",
+    "app_icon_sub": "Elite — izaberite iz nekoliko izgleda"
   },
   "notifications": {
     "title": "Обавештења",
@@ -1442,5 +1444,19 @@
   "edit_diet": {
     "title": "Dijeta & Alergije",
     "error_save": "Nije moguće sačuvati vaše izmene. Pokušajte ponovo."
+  },
+  "app_icon": {
+    "title": "Ikona aplikacije",
+    "subtitle": "Izaberite izgled koji će se prikazati na vašoj početnoj zastavi.",
+    "signal_a": "Signal A",
+    "orbit_node": "Orbit Node",
+    "waveform": "Talasni oblik",
+    "focus_bracket": "Focus Bracket",
+    "locked_title": "Elite privilegija",
+    "locked_sub": "Prilagođene ikone aplikacija su deo Elite paketa. Nadogradite se kako biste izabrali različite izglede za vašu početnu zastavu.",
+    "upgrade_button": "Nadogradi se na Elite",
+    "unsupported_title": "Nije dostupno na ovoj uređaju",
+    "unsupported_sub": "Prilagođene ikone aplikacija nisu podržane na ovoj uređaju ili platformi.",
+    "error_switch": "Nije moguće promeniti ikonu aplikacije. Pokušajte ponovo."
   }
 }

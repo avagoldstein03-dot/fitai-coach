@@ -46,6 +46,7 @@ import ProductScanScreen from "@/screens/food/ProductScanScreen";
 import FriendsScreen from "@/screens/social/FriendsScreen";
 import SettingsScreen from "@/screens/settings/SettingsScreen";
 import NotificationsScreen from "@/screens/settings/NotificationsScreen";
+import AppIconScreen from "@/screens/settings/AppIconScreen";
 import EditProfileScreen from "@/screens/profile/EditProfileScreen";
 import EditGoalScreen from "@/screens/profile/EditGoalScreen";
 import EditDietScreen from "@/screens/profile/EditDietScreen";
@@ -168,6 +169,7 @@ export default function RootNavigator() {
             <Stack.Screen name="ShoppingList"         component={ShoppingListScreen}          options={{ animation: "slide_from_right" }} />
             <Stack.Screen name="Settings"              component={SettingsScreen}              options={{ animation: "slide_from_bottom" }} />
             <Stack.Screen name="Notifications"         component={NotificationsScreen}         options={{ animation: "slide_from_right" }} />
+            <Stack.Screen name="AppIcon"                component={AppIconScreen}               options={{ animation: "slide_from_right" }} />
             <Stack.Screen name="EditProfile"           component={EditProfileScreen}           options={{ animation: "slide_from_bottom" }} />
             <Stack.Screen name="EditGoal"               component={EditGoalScreen}              options={{ animation: "slide_from_bottom" }} />
             <Stack.Screen name="EditDiet"               component={EditDietScreen}              options={{ animation: "slide_from_bottom" }} />
@@ -196,6 +198,7 @@ export default function RootNavigator() {
             <Stack.Screen name="ShoppingList"         component={ShoppingListScreen}          options={{ animation: "slide_from_right" }} />
             <Stack.Screen name="Settings"              component={SettingsScreen}              options={{ animation: "slide_from_bottom" }} />
             <Stack.Screen name="Notifications"         component={NotificationsScreen}         options={{ animation: "slide_from_right" }} />
+            <Stack.Screen name="AppIcon"                component={AppIconScreen}               options={{ animation: "slide_from_right" }} />
             <Stack.Screen name="EditProfile"           component={EditProfileScreen}           options={{ animation: "slide_from_bottom" }} />
             <Stack.Screen name="EditGoal"               component={EditGoalScreen}              options={{ animation: "slide_from_bottom" }} />
             <Stack.Screen name="EditDiet"               component={EditDietScreen}              options={{ animation: "slide_from_bottom" }} />
