@@ -45,24 +45,6 @@ export default function WelcomeScreen() {
           ))}
         </View>
 
-        {/* Social proof */}
-        <View style={s.proofRow}>
-          <View style={s.proofItem}>
-            <Text style={s.proofValue}>50K+</Text>
-            <Text style={s.proofLabel}>{t("welcome.active_users")}</Text>
-          </View>
-          <View style={s.proofDivider} />
-          <View style={s.proofItem}>
-            <Text style={s.proofValue}>4.9★</Text>
-            <Text style={s.proofLabel}>{t("welcome.app_rating")}</Text>
-          </View>
-          <View style={s.proofDivider} />
-          <View style={s.proofItem}>
-            <Text style={s.proofValue}>2M+</Text>
-            <Text style={s.proofLabel}>{t("welcome.meals_tracked")}</Text>
-          </View>
-        </View>
-
         {/* CTA */}
         <TouchableOpacity
           style={s.ctaBtn}
@@ -112,20 +94,6 @@ const s = StyleSheet.create({
   featureBody: { flex: 1 },
   featureTitle: { fontSize: 15, fontWeight: "800", marginBottom: 3 },
   featureDesc: { fontSize: 13, color: T.textSecondary, lineHeight: 19 },
-
-  proofRow: {
-    flexDirection: "row",
-    backgroundColor: T.surface,
-    borderRadius: 16,
-    borderWidth: 1,
-    borderColor: T.border,
-    padding: 20,
-    marginBottom: 28,
-  },
-  proofItem: { flex: 1, alignItems: "center" },
-  proofDivider: { width: 1, backgroundColor: T.border },
-  proofValue: { fontSize: 20, fontWeight: "800", color: T.accent, marginBottom: 2 },
-  proofLabel: { fontSize: 11, color: T.textMuted, fontWeight: "600" },
 
   ctaBtn: {
     backgroundColor: T.accent,

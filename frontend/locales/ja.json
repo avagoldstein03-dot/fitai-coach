@@ -1265,9 +1265,6 @@
     "feature_workouts_desc": "AIがあなたの目標と機器の周りに4週間のプログレッシブプログラムを構築します。",
     "feature_body_scan_title": "ボディスキャン分析",
     "feature_body_scan_desc": "3枚の写真をアップロードし、AI搭載のボディ成分評価を取得します。",
-    "active_users": "アクティブユーザー",
-    "app_rating": "アプリの評価",
-    "meals_tracked": "ログに記録された食事",
     "cta": "開始 — 無料",
     "fine_print": "2分で完了 · クレジットカード不要"
   },
