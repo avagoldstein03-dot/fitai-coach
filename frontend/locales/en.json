@@ -559,7 +559,6 @@
     "coming_soon_title": "Coming Soon",
     "coming_soon_msg": "This plan option isn't configured yet.",
     "cancel_note": "Subscription renews automatically. Cancel anytime in Settings.",
-    "social_proof": "⭐⭐⭐⭐⭐  Loved by 5,000+ athletes",
     "success_active": "Your plan is now active!",
     "error_no_url": "No checkout URL returned",
     "error_checkout": "Failed to create checkout session",

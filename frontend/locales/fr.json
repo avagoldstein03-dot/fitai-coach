@@ -533,7 +533,6 @@
         "a": "Les remboursements sont disponibles dans les 30 jours suivant l'achat."
       }
     ],
-    "social_proof": "⭐⭐⭐⭐⭐  Adoré par plus de 5 000 athlètes",
     "success_active": "Votre plan est maintenant actif!",
     "error_no_url": "Aucune URL de paiement retournée",
     "error_checkout": "Impossible de créer une session de paiement",

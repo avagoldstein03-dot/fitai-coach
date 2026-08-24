@@ -533,7 +533,6 @@
         "a": "Återbetalningar är tillgängliga inom 30 dagar från köpet."
       }
     ],
-    "social_proof": "⭐⭐⭐⭐⭐  Älskad av 5 000+ idrottare",
     "success_active": "Din plan är nu aktiv!",
     "error_no_url": "Ingen checkout-URL returnerades",
     "error_checkout": "Misslyckades att skapa checkout-session",

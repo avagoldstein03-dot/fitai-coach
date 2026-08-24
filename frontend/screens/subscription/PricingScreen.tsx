@@ -271,9 +271,6 @@ export default function PricingScreen({ onClose }: { onClose?: () => void } = {}
           <Text style={s.heroEmoji}>⚡</Text>
           <Text style={s.heroTitle}>{t("pricing.title")}</Text>
           <Text style={s.heroSub}>{t("pricing.subtitle")}</Text>
-          <View style={s.socialProof}>
-            <Text style={s.socialProofText}>{t("pricing.social_proof")}</Text>
-          </View>
         </View>
 
         {isPremium && periodEnd && (
@@ -492,15 +489,6 @@ const s = StyleSheet.create({
   heroEmoji: { fontSize: 40, marginBottom: 12 },
   heroTitle: { fontSize: 28, fontWeight: "800", color: T.textPrimary, textAlign: "center", letterSpacing: -0.5, marginBottom: 8 },
   heroSub: { fontSize: 14, color: T.textSecondary, textAlign: "center", lineHeight: 22, marginBottom: 14 },
-  socialProof: {
-    backgroundColor: T.accentDark,
-    borderWidth: 1,
-    borderColor: T.accentBorder,
-    borderRadius: 20,
-    paddingHorizontal: 14,
-    paddingVertical: 6,
-  },
-  socialProofText: { fontSize: 12, color: T.accentMuted, fontWeight: "600" },
 
   // Active banner
   activeBanner: {

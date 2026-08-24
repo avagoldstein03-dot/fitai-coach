@@ -533,7 +533,6 @@
         "a": "Refusioner er tilgængelige inden for 30 dage efter køb."
       }
     ],
-    "social_proof": "⭐⭐⭐⭐⭐  Elsket af 5.000+ atleter",
     "success_active": "Din plan er nu aktiv!",
     "error_no_url": "Ingen checkout URL returneret",
     "error_checkout": "Kunne ikke oprette checkout-session",
