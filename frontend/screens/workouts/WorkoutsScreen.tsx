@@ -261,8 +261,17 @@ export default function WorkoutsScreen() {
       setSessionVolume(newVolume);
 
       const dayExercises = data?.activeProgram?.weeks[selectedWeek]?.days[selectedDay]?.exercises ?? [];
-      if (dayExercises.length > 0 && newLoggedIds.length >= dayExercises.length) {
+      const justCompletedSession = dayExercises.length > 0 && newLoggedIds.length >= dayExercises.length;
+      if (justCompletedSession) {
         setTimeout(() => setShowCompleteModal(true), 600);
+        // Ask right at the "you just finished a full workout" moment, not on
+        // every individual set logged — a rare, genuinely positive beat is
+        // what Apple's own guidance (and our own ASO plan) calls for.
+        if ((data?.stats?.totalSessions ?? 0) >= 2) {
+          StoreReview.isAvailableAsync().then((ok) => {
+            if (ok) StoreReview.requestReview();
+          }).catch(() => {});
+        }
       }
 
       setLogModal(null);
@@ -273,9 +282,6 @@ export default function WorkoutsScreen() {
         setRestExerciseName(exercise.exerciseName);
         setRestSecondsLeft(secs);
       }
-      StoreReview.isAvailableAsync().then((ok) => {
-        if (ok && (data?.stats?.totalSessions ?? 0) >= 2) StoreReview.requestReview();
-      }).catch(() => {});
     },
     onError: () => Alert.alert(t("common.error"), t("workouts.error_log")),
   });
