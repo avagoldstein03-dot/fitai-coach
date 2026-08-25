@@ -1263,9 +1263,18 @@
     "cta": "Zacznij — bezpłatnie",
     "fine_print": "Zajmuje 2 minuty · Nie wymagana karta kredytowa",
     "readiness_badge": "DARMOWE",
-    "readiness_headline": "Twój Wskaźnik Gotowości",
-    "plus_label": "Plus wszystko inne, co otrzymujesz:",
-    "readiness_desc": "Jedna liczba pokazująca, jak gotowe jest Twoje ciało do treningu dzisiaj — oparta na jakości snu i tętnie. Nie potrzebna żadna opaska."
+    "feature_readiness_title": "Codzienny wynik gotowości",
+    "feature_readiness_desc": "Oparty na Twojej jakości snu i tętnie — nie potrzebna urządzenia noszone.",
+    "feature_coach_desc": "Pytaj o wszystko — odżywianie, treningi, regenerację. Otrzymaj odpowiedzi dostosowane do Twojego ciała.",
+    "feature_scan_desc": "Skieruj kamerę na dowolny posiłek i uzyskaj pełny rozkład makroskładników w kilka sekund.",
+    "feature_workouts_desc": "AI buduje 4-tygodniowy program progresywny dopasowany do Twojego celu i sprzętu.",
+    "feature_body_scan_desc": "Prześlij 3 zdjęcia i otrzymaj ocenę składu masy ciała wspieraną przez AI.",
+    "source_label": "Skąd nas znaleźć?",
+    "source_tiktok": "TikTok",
+    "source_instagram": "Instagram",
+    "source_app_store": "App Store",
+    "source_friend": "Od przyjaciela",
+    "source_highlight_tag": "To właśnie to 👀"
   },
   "friends": {
     "title": "Znajomi",

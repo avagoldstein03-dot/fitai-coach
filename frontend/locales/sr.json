@@ -1263,9 +1263,18 @@
     "cta": "Počni — Besplatno",
     "fine_print": "Traje 2 minuta · Nije potrebna kreditna kartica",
     "readiness_badge": "BESPLATNO",
-    "readiness_headline": "Vaš Indeks Spremnosti",
-    "plus_label": "Plus sve ostalo što dobijate:",
-    "readiness_desc": "Jedan broj koji pokazuje kako je vaše telo spremno za trening danas — izračunat na osnovu vašeg sna i srčane frekvencije. Nije potreban nosivi uređaj."
+    "feature_readiness_title": "Dnevni skor spremnosti",
+    "feature_readiness_desc": "Izgrađen na osnovu vašeg sna i srčane frekvencije — nije potreban nosivi uređaj.",
+    "feature_coach_desc": "Pitajte šta god — nutricionizam, treninge, oporavak. Dobijte odgovore prilagođene vašem telu.",
+    "feature_scan_desc": "Usmerite kameru na bilo koju hranu i dobijte potpuni pregled makro hranljive vrednosti za sekunde.",
+    "feature_workouts_desc": "AI kreira 4-nedeljni progresivni program prilagođen vašem cilju i opremi.",
+    "feature_body_scan_desc": "Učitajte 3 fotografije i dobijte AI-podržanu analizu telesnog sastava.",
+    "source_label": "Odakle ste nas pronašli?",
+    "source_tiktok": "TikTok",
+    "source_instagram": "Instagram",
+    "source_app_store": "App Store",
+    "source_friend": "Prijatelj",
+    "source_highlight_tag": "Upravo to 👀"
   },
   "friends": {
     "title": "Prijatelji",

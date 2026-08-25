@@ -1263,9 +1263,18 @@
     "cta": "התחל בחינם",
     "fine_print": "לוקח דקה — אין צורך בכרטיס אשראי",
     "readiness_badge": "חינם",
-    "readiness_headline": "ציון הזiness שלך",
-    "plus_label": "בנוסף לכל השאר שאתה מקבל:",
-    "readiness_desc": "מספר אחד שמראה עד כמה הגוף שלך מוכן להתאמן היום — בנוי על בסיס השינה וקצב הלב שלך. לא נדרש מכשיר носимый."
+    "feature_readiness_title": "ציון כשירות יומי",
+    "feature_readiness_desc": "בנוי מנתוני השינה וקצב הלב שלך — לא נדרש צמיד חיישנים.",
+    "feature_coach_desc": "שאל כל דבר — תזונה, אימונים, התאוששות. קבל תשובות התואמות לגופך.",
+    "feature_scan_desc": "כוון את המצלמה לכל ארוחה וקבל פירוק מאקרו מלא בשניות.",
+    "feature_workouts_desc": "AI בונה תוכנית התקדמות של 4 שבועות סביב המטרה והציוד שלך.",
+    "feature_body_scan_desc": "העלה 3 תמונות וקבל הערכת הרכב גוף מופעלת בחברת AI.",
+    "source_label": "איפה מצאת אותנו?",
+    "source_tiktok": "TikTok",
+    "source_instagram": "Instagram",
+    "source_app_store": "App Store",
+    "source_friend": "חבר/ה",
+    "source_highlight_tag": "זה בדיוק זה 👀"
   },
   "friends": {
     "title": "חברים",

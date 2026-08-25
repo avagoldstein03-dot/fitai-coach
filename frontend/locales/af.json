@@ -1263,9 +1263,18 @@
     "cta": "Kom aan die gang — gratis",
     "fine_print": "Neem 2 minute · Geen kredietkaart vereist",
     "readiness_badge": "VRY",
-    "readiness_headline": "Jou Gereedheidstelling",
-    "plus_label": "Plus alles anders wat jy kry:",
-    "readiness_desc": "Een getal vir hoe gereed jou liggaam vandag is om te train — gebou uit jou slaap en hartklop. Geen draagbare toestel nodig."
+    "feature_readiness_title": "Daaglikse Gereedheidstelling",
+    "feature_readiness_desc": "Gebou vanaf jou slaap en hartklop — geen draagbare toestel nodig.",
+    "feature_coach_desc": "Vra enige iets — voeding, oefeninge, herstel. Kry antwoorde aangepas aan jou liggaam.",
+    "feature_scan_desc": "Rig jou kamera op enige maaltyd en kry volledige makro-afbreking in sekondes.",
+    "feature_workouts_desc": "KI bou 'n 4-week progressiewe program rondom jou doel en toerusting.",
+    "feature_body_scan_desc": "Laai 3 foto's op en kry KI-aangedrewe liggaamssamestelling-beoordeling.",
+    "source_label": "Waar het jy ons gevind?",
+    "source_tiktok": "TikTok",
+    "source_instagram": "Instagram",
+    "source_app_store": "App Store",
+    "source_friend": "'n Vriend",
+    "source_highlight_tag": "Dit is dit 👀"
   },
   "friends": {
     "title": "Vriende",

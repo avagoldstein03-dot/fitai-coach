@@ -1263,9 +1263,18 @@
     "cta": "Mulai — Percuma",
     "fine_print": "Hanya 2 minit · Tiada kad kredit diperlukan",
     "readiness_badge": "PERCUMA",
-    "readiness_headline": "Skor Kesiapan Anda",
-    "plus_label": "Tambah semua yang lain anda dapat:",
-    "readiness_desc": "Satu angka untuk menunjukkan sejauh mana tubuh anda siap untuk berlatih hari ini — dibina dari tidur dan kadar jantung anda. Tiada peranti boleh pakai diperlukan."
+    "feature_readiness_title": "Skor Kesediaan Harian",
+    "feature_readiness_desc": "Dibina daripada tidur dan kadar denyutan jantung anda — tiada perangkat boleh pakai diperlukan.",
+    "feature_coach_desc": "Tanya apa saja — nutrisi, latihan, pemulihan. Dapatkan jawapan yang disesuaikan dengan badan anda.",
+    "feature_scan_desc": "Arahkan kamera anda ke mana-mana makanan dan dapatkan pecahan makro lengkap dalam beberapa saat.",
+    "feature_workouts_desc": "AI membina program progresif 4 minggu di sekitar matlamat dan peralatan anda.",
+    "feature_body_scan_desc": "Muat naik 3 foto dan dapatkan penilaian komposisi badan yang dikuasai AI.",
+    "source_label": "Di mana anda menemui kami?",
+    "source_tiktok": "TikTok",
+    "source_instagram": "Instagram",
+    "source_app_store": "App Store",
+    "source_friend": "Seorang rakan",
+    "source_highlight_tag": "Ini dia 👀"
   },
   "friends": {
     "title": "Rakan",

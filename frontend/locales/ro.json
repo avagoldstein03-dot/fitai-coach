@@ -1263,9 +1263,18 @@
     "cta": "Primeiros passos — Gratuit",
     "fine_print": "Durează 2 minute · Nicio carte de credit necesară",
     "readiness_badge": "GRATUIT",
-    "readiness_headline": "Scorul tău de Pregătire",
-    "plus_label": "Plus tot ceea ce mai primești:",
-    "readiness_desc": "Un singur număr care arată cât de pregătit este corpul tău pentru antrenament astazi — calculat din calitatea somnului și ritmul cardiac. Nu este nevoie de dispozitiv purtabil."
+    "feature_readiness_title": "Scor zilnic de pregătire",
+    "feature_readiness_desc": "Construit pe baza somnului și frecvenței cardiace — nu necesită dispozitiv purtabil.",
+    "feature_coach_desc": "Întreabă orice — nutriție, antrenamente, recuperare. Primește răspunsuri adaptate corpului tău.",
+    "feature_scan_desc": "Îndreaptă camera spre orice mâncare și obține descompunerea completă a macronutrienților în secunde.",
+    "feature_workouts_desc": "IA construiește un program progresiv de 4 săptămâni în jurul scopului și echipamentului tău.",
+    "feature_body_scan_desc": "Încarcă 3 fotografii și obține o evaluare a compoziției corporale bazată pe IA.",
+    "source_label": "De unde ne-ai găsit?",
+    "source_tiktok": "TikTok",
+    "source_instagram": "Instagram",
+    "source_app_store": "App Store",
+    "source_friend": "Un prieten",
+    "source_highlight_tag": "Asta e 👀"
   },
   "friends": {
     "title": "Prieteni",

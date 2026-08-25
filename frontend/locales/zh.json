@@ -1263,9 +1263,18 @@
     "cta": "开始 — 免费",
     "fine_print": "只需 2 分钟 · 无需信用卡",
     "readiness_badge": "免费",
-    "readiness_headline": "您的准备度评分",
-    "plus_label": "加上您还能获得的一切：",
-    "readiness_desc": "一个数字显示你的身体今天的训练准备情况——基于你的睡眠和心率。无需穿戴设备。"
+    "feature_readiness_title": "每日准备度评分",
+    "feature_readiness_desc": "基于您的睡眠和心率生成——无需穿戴设备。",
+    "feature_coach_desc": "询问任何问题——营养、锻炼、恢复。获得为您身体量身定制的答案。",
+    "feature_scan_desc": "将相机对准任何食物，数秒内获得完整的宏量营养分解。",
+    "feature_workouts_desc": "AI根据您的目标和可用设备生成4周渐进式训练计划。",
+    "feature_body_scan_desc": "上传3张照片，获得AI驱动的身体成分评估。",
+    "source_label": "你是从哪里了解到我们的?",
+    "source_tiktok": "抖音",
+    "source_instagram": "Instagram",
+    "source_app_store": "App Store",
+    "source_friend": "朋友推荐",
+    "source_highlight_tag": "就是这个 👀"
   },
   "friends": {
     "title": "好友",

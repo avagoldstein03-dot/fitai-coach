@@ -1263,9 +1263,18 @@
     "cta": "Aan de Slag — Gratis",
     "fine_print": "Duurt 2 minuten · Geen creditcard vereist",
     "readiness_badge": "GRATIS",
-    "readiness_headline": "Je Readiness Score",
-    "plus_label": "Plus alles wat je nog krijgt:",
-    "readiness_desc": "Eén getal voor hoe klaar je lichaam is om vandaag te trainen — gebaseerd op je slaap en hartslag. Geen wearable nodig."
+    "feature_readiness_title": "Dagelijkse Paraatheid Score",
+    "feature_readiness_desc": "Gebaseerd op je slaap en hartslag — geen wearable nodig.",
+    "feature_coach_desc": "Vraag naar alles — voeding, trainingen, herstel. Krijg antwoorden afgestemd op jouw lichaam.",
+    "feature_scan_desc": "Richt je camera op een maaltijd en krijg een volledige macro-analyse in enkele seconden.",
+    "feature_workouts_desc": "AI bouwt een 4-weken progressief programma rondom je doel en apparatuur.",
+    "feature_body_scan_desc": "Upload 3 foto's en krijg een AI-gestuurde lichaamssamenstelling analyse.",
+    "source_label": "Waar heb je ons gevonden?",
+    "source_tiktok": "TikTok",
+    "source_instagram": "Instagram",
+    "source_app_store": "App Store",
+    "source_friend": "Een vriend",
+    "source_highlight_tag": "Dit is het 👀"
   },
   "friends": {
     "title": "Vrienden",

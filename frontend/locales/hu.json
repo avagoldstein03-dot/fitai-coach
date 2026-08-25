@@ -1263,9 +1263,18 @@
     "cta": "Kezdj el — ingyenes",
     "fine_print": "2 perc alatt · Nincs szükség hitelkártyára",
     "readiness_badge": "INGYENES",
-    "readiness_headline": "Az Ön Készenlét Pontszáma",
-    "plus_label": "Plus minden más, amit kapsz:",
-    "readiness_desc": "Egy szám, amely azt mutatja, hogy tested mennyire készült az edzésre ma — alvásod és pulzusod alapján számítva. Nincs szükség viselendő eszközre."
+    "feature_readiness_title": "Napi Felkészültségi Pontszám",
+    "feature_readiness_desc": "Az alvás és pulzus alapján készült — nem szükséges hordható eszköz.",
+    "feature_coach_desc": "Kérdezz bármit — táplálkozás, edzések, regeneráció. Kapj a tested szerint szabott válaszokat.",
+    "feature_scan_desc": "Mutasd a kamerát az étel felé és kapd meg a teljes makró összetételt másodpercek alatt.",
+    "feature_workouts_desc": "Az AI egy 4 hetes progresszív programot hoz létre az eszközeid és céljaid alapján.",
+    "feature_body_scan_desc": "Töltsd fel 3 fotót és kapj AI-alapú testtörzs-összetétel értékelést.",
+    "source_label": "Honnan találtál minket?",
+    "source_tiktok": "TikTok",
+    "source_instagram": "Instagram",
+    "source_app_store": "App Store",
+    "source_friend": "Egy barát ajánlotta",
+    "source_highlight_tag": "Ez az! 👀"
   },
   "friends": {
     "title": "Barátok",

@@ -1263,9 +1263,18 @@
     "cta": "Los geht's – Kostenlos",
     "fine_print": "Dauert 2 Minuten · Keine Kreditkarte erforderlich",
     "readiness_badge": "KOSTENLOS",
-    "readiness_headline": "Dein Leistungsbereitschafts-Score",
-    "plus_label": "Plus alles andere, das du bekommst:",
-    "readiness_desc": "Eine Zahl zeigt dir, wie bereit dein Körper heute zum Trainieren ist — basierend auf deinem Schlaf und deiner Herzfrequenz. Keine Smartwatch erforderlich."
+    "feature_readiness_title": "Täglicher Leistungsbereitschafts-Score",
+    "feature_readiness_desc": "Basierend auf deinem Schlaf und deiner Herzfrequenz — keine Wearables erforderlich.",
+    "feature_coach_desc": "Frag alles — Ernährung, Trainingseinheiten, Erholung. Erhalte Antworten, die auf deinen Körper zugeschnitten sind.",
+    "feature_scan_desc": "Halte deine Kamera auf eine Mahlzeit und erhalte in Sekunden eine vollständige Makronährstoff-Aufschlüsselung.",
+    "feature_workouts_desc": "KI erstellt ein 4-wöchiges progressives Programm basierend auf deinem Ziel und deiner Ausrüstung.",
+    "feature_body_scan_desc": "Lade 3 Fotos hoch und erhalte eine KI-gestützte Körperzusammensetzungs-Bewertung.",
+    "source_label": "Wie hast du uns gefunden?",
+    "source_tiktok": "TikTok",
+    "source_instagram": "Instagram",
+    "source_app_store": "App Store",
+    "source_friend": "Ein Freund",
+    "source_highlight_tag": "Das ist es 👀"
   },
   "friends": {
     "title": "Freunde",

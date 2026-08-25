@@ -1263,9 +1263,18 @@
     "cta": "開始——免費",
     "fine_print": "只需 2 分鐘 · 無需信用卡",
     "readiness_badge": "免費",
-    "readiness_headline": "你的準備度分數",
-    "plus_label": "加上你還能獲得的一切：",
-    "readiness_desc": "一個數字顯示你的身體今天的訓練準備程度 — 基於你的睡眠和心率計算。無需穿戴式裝置。"
+    "feature_readiness_title": "每日準備度評分",
+    "feature_readiness_desc": "根據您的睡眠和心率構建 — 無需穿戴式裝置。",
+    "feature_coach_desc": "詢問任何問題 — 營養、鍛煉、恢復。取得針對您身體的答案。",
+    "feature_scan_desc": "將相機對準任何餐食，在幾秒內取得完整巨量營養素分解。",
+    "feature_workouts_desc": "AI 根據您的目標和設備構建 4 週漸進式計畫。",
+    "feature_body_scan_desc": "上傳 3 張照片，取得 AI 驅動的身體組成評估。",
+    "source_label": "你是從哪裡找到我們的？",
+    "source_tiktok": "TikTok",
+    "source_instagram": "Instagram",
+    "source_app_store": "App Store",
+    "source_friend": "朋友介紹",
+    "source_highlight_tag": "就是這個 👀"
   },
   "friends": {
     "title": "好友",

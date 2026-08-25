@@ -1263,9 +1263,18 @@
     "cta": "Kom igång — gratis",
     "fine_print": "Tar 2 minuter · Inget kreditkort krävs",
     "readiness_badge": "GRATIS",
-    "readiness_headline": "Din Beredskapsscore",
-    "plus_label": "Plus allt annat du får:",
-    "readiness_desc": "Ett nummer som visar hur redo din kropp är att träna idag — baserat på din sömn och hjärtfrekvens. Ingen wearable krävs."
+    "feature_readiness_title": "Dagligt Beredskapspoäng",
+    "feature_readiness_desc": "Baserat på din sömn och pulshastighet — ingen wearable krävs.",
+    "feature_coach_desc": "Fråga vad som helst — nutrition, träning, återhämtning. Få svar anpassade till din kropp.",
+    "feature_scan_desc": "Peka din kamera på vilken måltid som helst och få fullständig makrofördelning på sekunder.",
+    "feature_workouts_desc": "AI bygger ett 4-veckors progressivt program omkring ditt mål och utrustning.",
+    "feature_body_scan_desc": "Ladda upp 3 foton och få AI-driven bedömning av kroppssammansättning.",
+    "source_label": "Var hittade du oss?",
+    "source_tiktok": "TikTok",
+    "source_instagram": "Instagram",
+    "source_app_store": "App Store",
+    "source_friend": "En vän",
+    "source_highlight_tag": "Det är det 👀"
   },
   "friends": {
     "title": "Vänner",

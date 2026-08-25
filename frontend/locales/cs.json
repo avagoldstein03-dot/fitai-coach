@@ -1263,9 +1263,18 @@
     "cta": "Začínáme — zdarma",
     "fine_print": "Trvá 2 minuty · Není vyžadována kreditní karta",
     "readiness_badge": "ZDARMA",
-    "readiness_headline": "Vaše skóre připravenosti",
-    "plus_label": "Plus vše ostatní, co získáte:",
-    "readiness_desc": "Jedno číslo, které ukazuje, jak je vaše tělo připraveno trénovat dnes — vycházíme z vašeho spánku a srdeční frekvence. Není potřeba chytré zařízení."
+    "feature_readiness_title": "Denní skóre připravenosti",
+    "feature_readiness_desc": "Vytvořeno z vašeho spánku a srdeční frekvence — není potřeba nositelné zařízení.",
+    "feature_coach_desc": "Zeptejte se na cokoliv — výživa, tréninky, regenerace. Dostanete odpovědi přizpůsobené vašemu tělu.",
+    "feature_scan_desc": "Namiřte kameru na jakékoliv jídlo a získejte úplný rozpis makroživin během několika sekund.",
+    "feature_workouts_desc": "AI vytvoří 4týdenní progresivní program přizpůsobený vašemu cíli a vybavení.",
+    "feature_body_scan_desc": "Nahrajte 3 fotografie a získejte AI-powered analýzu složení těla.",
+    "source_label": "Kde jste nás našli?",
+    "source_tiktok": "TikTok",
+    "source_instagram": "Instagram",
+    "source_app_store": "App Store",
+    "source_friend": "Kamarád",
+    "source_highlight_tag": "Toto je ono 👀"
   },
   "friends": {
     "title": "Přátelé",

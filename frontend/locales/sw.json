@@ -1263,9 +1263,18 @@
     "cta": "Kuanza — Bure",
     "fine_print": "Inachukua dakika 2 · Hakuna kadi ya mkopo inayohitajika",
     "readiness_badge": "BURE",
-    "readiness_headline": "Alama Yako ya Utayari",
-    "plus_label": "Pamoja na kila kitu kingine unachokipata:",
-    "readiness_desc": "Nambari moja inayoonyesha jinsi mwili wako unavyokuwa tayari kufanya mazoezi leo — iliyoundwa kutoka kwa usingizi wako na kiwango cha mapigo ya moyo. Hakuna haja ya kifaa kinachoweza kuvaliwa."
+    "feature_readiness_title": "Alama ya Uwezo wa Kila Siku",
+    "feature_readiness_desc": "Iliyojengwa kutokana na usingizi wako na kiwango cha mapigo ya moyo — hakuna kiweza kinachohitajika.",
+    "feature_coach_desc": "Uliza chochote — lishe, mazoezi, kupona. Pata majibu yaliyohusu mwili wako.",
+    "feature_scan_desc": "Elekeza kamera yako kwenye chakula chochote na upate muhtasari kamili wa macronutrients kwa sekunde.",
+    "feature_workouts_desc": "AI inajenga programu ya maendeleo ya wiki 4 inayolingana na lengo lako na vifaa.",
+    "feature_body_scan_desc": "Pakia picha 3 na upate tathmini ya muundo wa mwili inayoendeshwa na AI.",
+    "source_label": "Umetupataje wapi?",
+    "source_tiktok": "TikTok",
+    "source_instagram": "Instagram",
+    "source_app_store": "App Store",
+    "source_friend": "Rafiki",
+    "source_highlight_tag": "Hii ndiyo 👀"
   },
   "friends": {
     "title": "Rafiki",

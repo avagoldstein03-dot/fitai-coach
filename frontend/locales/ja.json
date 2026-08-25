@@ -1263,9 +1263,18 @@
     "cta": "開始 — 無料",
     "fine_print": "2分で完了 · クレジットカード不要",
     "readiness_badge": "FREE",
-    "readiness_headline": "あなたのレディネススコア",
-    "plus_label": "その他の機能:",
-    "readiness_desc": "今日のトレーニングに向けた体の準備状態を1つの数値で表示 — 睡眠と心拍数から算出されます。ウェアラブルデバイスは不要です。"
+    "feature_readiness_title": "毎日のレディネススコア",
+    "feature_readiness_desc": "睡眠と心拍数から算出 — ウェアラブルデバイス不要。",
+    "feature_coach_desc": "栄養、ワークアウト、リカバリーなど何でも質問できます。あなたの体に合わせたアドバイスが得られます。",
+    "feature_scan_desc": "カメラで食事を撮るだけで、数秒でマクロ栄養素の詳細分析が得られます。",
+    "feature_workouts_desc": "AIがあなたの目標と持っている器具に合わせて、4週間のプログレッシブプログラムを作成します。",
+    "feature_body_scan_desc": "3枚の写真をアップロードすると、AI搭載の体組成評価が得られます。",
+    "source_label": "どこで私たちを見つけましたか？",
+    "source_tiktok": "TikTok",
+    "source_instagram": "Instagram",
+    "source_app_store": "App Store",
+    "source_friend": "友人の紹介",
+    "source_highlight_tag": "これです 👀"
   },
   "friends": {
     "title": "フレンド",

@@ -1263,9 +1263,18 @@
     "cta": "Inizia — Gratuito",
     "fine_print": "Ci vogliono 2 minuti · Nessuna carta di credito richiesta",
     "readiness_badge": "GRATUITO",
-    "readiness_headline": "Il Tuo Punteggio di Prontezza",
-    "plus_label": "Più tutto il resto che ottieni:",
-    "readiness_desc": "Un numero che indica quanto il tuo corpo è pronto ad allenarsi oggi — calcolato in base al sonno e alla frequenza cardiaca. Non è necessario alcun dispositivo indossabile."
+    "feature_readiness_title": "Punteggio di Prontezza Giornaliera",
+    "feature_readiness_desc": "Basato sul tuo sonno e la frequenza cardiaca — nessun dispositivo indossabile necessario.",
+    "feature_coach_desc": "Chiedi qualsiasi cosa — nutrizione, allenamenti, recupero. Ottieni risposte personalizzate per il tuo corpo.",
+    "feature_scan_desc": "Punta la fotocamera su qualsiasi pasto e ottieni la scomposizione completa dei macronutrienti in pochi secondi.",
+    "feature_workouts_desc": "L'IA crea un programma progressivo di 4 settimane in base al tuo obiettivo e alle attrezzature disponibili.",
+    "feature_body_scan_desc": "Carica 3 foto e ottieni una valutazione della composizione corporea alimentata dall'IA.",
+    "source_label": "Come ci hai conosciuto?",
+    "source_tiktok": "TikTok",
+    "source_instagram": "Instagram",
+    "source_app_store": "App Store",
+    "source_friend": "Un amico",
+    "source_highlight_tag": "Esatto 👀"
   },
   "friends": {
     "title": "Amici",

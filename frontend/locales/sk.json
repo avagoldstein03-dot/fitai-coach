@@ -1263,9 +1263,18 @@
     "cta": "Začni — zadarmo",
     "fine_print": "Trvá 2 minúty · Nie je potrebná kreditná karta",
     "readiness_badge": "BEZPLATNÉ",
-    "readiness_headline": "Vaše skóre pripravenosti",
-    "plus_label": "Plus všetko ostatné, čo dostanete:",
-    "readiness_desc": "Jedno číslo na zistenie, ako je vaše telo pripravené na tréning dnes — vytvorené z vašej kvality spánku a srdcovej frekvencie. Nie je potrebné носiteľné zariadenie."
+    "feature_readiness_title": "Denné skóre prippravenosti",
+    "feature_readiness_desc": "Vytvorené z vášho spánku a srdcovej frekvencie — nevyžaduje si nositeľné zariadenie.",
+    "feature_coach_desc": "Opýtajte sa na čokoľvek — výživa, tréningy, regenerácia. Získajte odpovede prispôsobené vášmu telu.",
+    "feature_scan_desc": "Namiereajte fotoaparát na ľubovoľné jedlo a za sekundy získajte úplný rozpad makroživín.",
+    "feature_workouts_desc": "AI vytvorí 4-týždňový progresívny program prispôsobený vašему cieľu a vybaveniu.",
+    "feature_body_scan_desc": "Nahrajte 3 fotografie a získajte analýzu zloženia tela pomocou AI.",
+    "source_label": "Kde ste nás našli?",
+    "source_tiktok": "TikTok",
+    "source_instagram": "Instagram",
+    "source_app_store": "App Store",
+    "source_friend": "Od priateľa",
+    "source_highlight_tag": "Toto je to 👀"
   },
   "friends": {
     "title": "Priatelia",

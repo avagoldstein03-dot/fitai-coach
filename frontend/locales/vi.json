@@ -1263,9 +1263,18 @@
     "cta": "Bắt đầu — Miễn phí",
     "fine_print": "Mất 2 phút · Không cần thẻ tín dụng",
     "readiness_badge": "MIỄN PHÍ",
-    "readiness_headline": "Điểm Sẵn Sàng Của Bạn",
-    "plus_label": "Cộng với mọi thứ khác bạn nhận được:",
-    "readiness_desc": "Một con số cho biết cơ thể bạn sẵn sàng tập luyện hôm nay — được xây dựng từ giấc ngủ và nhịp tim của bạn. Không cần thiết bị đeo."
+    "feature_readiness_title": "Điểm Sẵn Sàng Hàng Ngày",
+    "feature_readiness_desc": "Được xây dựng từ giấc ngủ và nhịp tim của bạn — không cần thiết bị đeo.",
+    "feature_coach_desc": "Hỏi bất kỳ điều gì — dinh dưỡng, bài tập, phục hồi. Nhận câu trả lời phù hợp với cơ thể của bạn.",
+    "feature_scan_desc": "Hướng camera của bạn vào bất kỳ bữa ăn nào và nhận phân tích macro đầy đủ trong vài giây.",
+    "feature_workouts_desc": "AI xây dựng chương trình tiến bộ 4 tuần dựa trên mục tiêu và thiết bị của bạn.",
+    "feature_body_scan_desc": "Tải lên 3 ảnh và nhận đánh giá thành phần cơ thể do AI hỗ trợ.",
+    "source_label": "Bạn tìm thấy chúng tôi ở đâu?",
+    "source_tiktok": "TikTok",
+    "source_instagram": "Instagram",
+    "source_app_store": "App Store",
+    "source_friend": "Một người bạn",
+    "source_highlight_tag": "Đúng rồi 👀"
   },
   "friends": {
     "title": "Bạn bè",

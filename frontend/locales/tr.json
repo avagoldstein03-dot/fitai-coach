@@ -1263,9 +1263,18 @@
     "cta": "Başla — Ücretsiz",
     "fine_print": "2 dakika alır · Kredi kartı gerekmez",
     "readiness_badge": "ÜCRETSİZ",
-    "readiness_headline": "Hazırlık Puanınız",
-    "plus_label": "Buna ek olarak aldığınız her şey:",
-    "readiness_desc": "Bugün antrenman yapmaya hazır olup olmadığınızı gösteren tek bir sayı — uyku ve kalp atışınızdan hesaplanır. Giyilebilir cihaz gerekmez."
+    "feature_readiness_title": "Günlük Hazırlık Puanı",
+    "feature_readiness_desc": "Uyku ve kalp atış hızınızdan oluşturulmuş — giyilebilir cihaz gerekli değil.",
+    "feature_coach_desc": "Her şey sorun — beslenme, antrenmanlar, toparlanma. Vücudunuza özel cevaplar alın.",
+    "feature_scan_desc": "Kameranızı herhangi bir yemeğe yönlendirin ve saniyeler içinde tam makro dökümünü alın.",
+    "feature_workouts_desc": "Yapay zeka, hedefiniz ve ekipmanınıza göre 4 haftalık ilerlemeli bir program oluşturur.",
+    "feature_body_scan_desc": "3 fotoğraf yükleyin ve yapay zeka destekli vücut kompozisyonu değerlendirmesi alın.",
+    "source_label": "Bizi nereden buldunuz?",
+    "source_tiktok": "TikTok",
+    "source_instagram": "Instagram",
+    "source_app_store": "App Store",
+    "source_friend": "Bir arkadaş",
+    "source_highlight_tag": "İşte bu 👀"
   },
   "friends": {
     "title": "Arkadaşlar",

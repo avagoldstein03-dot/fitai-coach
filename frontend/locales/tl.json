@@ -1263,9 +1263,18 @@
     "cta": "Magsimula — Libre",
     "fine_print": "Tumatagal ng 2 minuto · Walang credit card na kailangan",
     "readiness_badge": "LIBRE",
-    "readiness_headline": "Ang Iyong Readiness Score",
-    "plus_label": "Plus lahat ng iba pang makukuha mo:",
-    "readiness_desc": "Isang numero para sa kung gaano ka-handa ang iyong katawan na magsanay ngayong araw — binuo mula sa iyong tulog at heart rate. Walang kailangang wearable device."
+    "feature_readiness_title": "Araw-araw na Readiness Score",
+    "feature_readiness_desc": "Batay sa iyong tulog at heart rate — walang kailangang wearable.",
+    "feature_coach_desc": "Magtanong ng kahit ano — nutrition, workout, recovery. Makatanggap ng sagot na angkop sa iyong katawan.",
+    "feature_scan_desc": "Ituro ang iyong camera sa anumang pagkain at makakuha ng kumpletong macro breakdown sa ilang segundo.",
+    "feature_workouts_desc": "Ang AI ay bumubuo ng 4-linggo na progressive program base sa iyong layunin at equipment.",
+    "feature_body_scan_desc": "I-upload ang 3 larawan at makakuha ng AI-powered body composition assessment.",
+    "source_label": "Saan mo kami nahanap?",
+    "source_tiktok": "TikTok",
+    "source_instagram": "Instagram",
+    "source_app_store": "App Store",
+    "source_friend": "Mula sa isang kaibigan",
+    "source_highlight_tag": "Ito na 👀"
   },
   "friends": {
     "title": "Mga Kaibigan",

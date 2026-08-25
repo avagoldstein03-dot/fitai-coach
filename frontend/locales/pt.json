@@ -1263,9 +1263,18 @@
     "cta": "Comece — Grátis",
     "fine_print": "Leva 2 minutos · Nenhum cartão de crédito necessário",
     "readiness_badge": "GRATUITO",
-    "readiness_headline": "Sua Pontuação de Prontidão",
-    "plus_label": "Mais tudo mais que você recebe:",
-    "readiness_desc": "Um número que mostra o quão preparado seu corpo está para treinar hoje — baseado no seu sono e frequência cardíaca. Nenhum dispositivo vestível necessário."
+    "feature_readiness_title": "Pontuação Diária de Prontidão",
+    "feature_readiness_desc": "Baseado no seu sono e frequência cardíaca — sem necessidade de wearable.",
+    "feature_coach_desc": "Pergunte qualquer coisa — nutrição, treinos, recuperação. Obtenha respostas personalizadas para seu corpo.",
+    "feature_scan_desc": "Aponte sua câmera para qualquer refeição e obtenha a decomposição completa de macros em segundos.",
+    "feature_workouts_desc": "IA cria um programa progressivo de 4 semanas adaptado ao seu objetivo e equipamento.",
+    "feature_body_scan_desc": "Envie 3 fotos e obtenha avaliação de composição corporal alimentada por IA.",
+    "source_label": "Como você nos encontrou?",
+    "source_tiktok": "TikTok",
+    "source_instagram": "Instagram",
+    "source_app_store": "App Store",
+    "source_friend": "Um amigo",
+    "source_highlight_tag": "É isso 👀"
   },
   "friends": {
     "title": "Amigos",

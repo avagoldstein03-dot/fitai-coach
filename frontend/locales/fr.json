@@ -1263,9 +1263,18 @@
     "cta": "Commencer — Gratuit",
     "fine_print": "2 minutes seulement · Aucune carte de crédit requise",
     "readiness_badge": "GRATUIT",
-    "readiness_headline": "Votre Score de Préparation",
-    "plus_label": "Plus tout le reste que vous obtenez :",
-    "readiness_desc": "Un seul chiffre pour savoir à quel point votre corps est prêt à s'entraîner aujourd'hui — calculé en fonction de votre sommeil et de votre fréquence cardiaque. Aucun appareil portable requis."
+    "feature_readiness_title": "Score de Préparation Quotidien",
+    "feature_readiness_desc": "Basé sur votre sommeil et votre fréquence cardiaque — aucun appareil portable requis.",
+    "feature_coach_desc": "Posez n'importe quelle question — nutrition, entraînements, récupération. Obtenez des réponses adaptées à votre corps.",
+    "feature_scan_desc": "Pointez votre caméra vers n'importe quel repas et obtenez une répartition complète des macronutriments en quelques secondes.",
+    "feature_workouts_desc": "L'IA crée un programme progressif de 4 semaines autour de votre objectif et de votre équipement.",
+    "feature_body_scan_desc": "Téléchargez 3 photos et obtenez une évaluation de la composition corporelle alimentée par l'IA.",
+    "source_label": "Comment nous as-tu trouvés ?",
+    "source_tiktok": "TikTok",
+    "source_instagram": "Instagram",
+    "source_app_store": "App Store",
+    "source_friend": "Un ami",
+    "source_highlight_tag": "C'est ça 👀"
   },
   "friends": {
     "title": "Amis",

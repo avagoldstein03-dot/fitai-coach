@@ -1263,9 +1263,18 @@
     "cta": "Comenzar — Gratis",
     "fine_print": "Toma 2 minutos · No requiere tarjeta de crédito",
     "readiness_badge": "GRATIS",
-    "readiness_headline": "Tu Puntuación de Disponibilidad",
-    "plus_label": "Plus todo lo demás que obtienes:",
-    "readiness_desc": "Un número que indica qué tan preparado está tu cuerpo para entrenar hoy — basado en tu sueño y frecuencia cardíaca. No se requiere dispositivo wearable."
+    "feature_readiness_title": "Puntuación Diaria de Disponibilidad",
+    "feature_readiness_desc": "Basada en tu sueño y frecuencia cardíaca — no requiere dispositivo portátil.",
+    "feature_coach_desc": "Pregunta cualquier cosa — nutrición, entrenamientos, recuperación. Obtén respuestas personalizadas para tu cuerpo.",
+    "feature_scan_desc": "Apunta tu cámara a cualquier comida y obtén el desglose completo de macros en segundos.",
+    "feature_workouts_desc": "La IA crea un programa progresivo de 4 semanas adaptado a tu objetivo y equipo.",
+    "feature_body_scan_desc": "Sube 3 fotos y obtén una evaluación de composición corporal impulsada por IA.",
+    "source_label": "¿Dónde nos encontraste?",
+    "source_tiktok": "TikTok",
+    "source_instagram": "Instagram",
+    "source_app_store": "App Store",
+    "source_friend": "Un amigo",
+    "source_highlight_tag": "Esto es 👀"
   },
   "friends": {
     "title": "Amigos",

@@ -1263,9 +1263,18 @@
     "cta": "Aloita — ilmainen",
     "fine_print": "Kestää 2 minuuttia · Luottokorttia ei vaadita",
     "readiness_badge": "ILMAINEN",
-    "readiness_headline": "Sinun valmiuspisteesi",
-    "plus_label": "Plus kaikki muu mitä saat:",
-    "readiness_desc": "Yksi luku sille, kuinka valmis kehosi on tänään harjoitteluun — perustuu uneen ja sykkeeseen. Ei vaadita mitään wearable-laitetta."
+    "feature_readiness_title": "Päivittäinen kuntoutumispistemäärä",
+    "feature_readiness_desc": "Rakennettu unen ja sydämen sykkeen perusteella — ei vaadita puettavaa laitetta.",
+    "feature_coach_desc": "Kysy mitä tahansa — ravinto, treenit, palautuminen. Saa vastaukset, jotka on räätälöity kehollesi.",
+    "feature_scan_desc": "Suuntaa kamera mihin tahansa ateriaan ja saa täydellisen makrojakauman sekunneissa.",
+    "feature_workouts_desc": "Tekoäly rakentaa 4 viikon progressiivisen ohjelman tavoitteesi ja välineidesi ympärille.",
+    "feature_body_scan_desc": "Lataa 3 kuvaa ja saa tekoälyn avustamaa kehon koostumuksen arviointia.",
+    "source_label": "Mistä löysit meidät?",
+    "source_tiktok": "TikTok",
+    "source_instagram": "Instagram",
+    "source_app_store": "App Store",
+    "source_friend": "Ystävä",
+    "source_highlight_tag": "Juuri se 👀"
   },
   "friends": {
     "title": "Ystävät",

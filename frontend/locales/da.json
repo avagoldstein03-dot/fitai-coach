@@ -1263,9 +1263,18 @@
     "cta": "Kom igang — gratis",
     "fine_print": "Tager 2 minutter · Ingen kreditkort påkrævet",
     "readiness_badge": "GRATIS",
-    "readiness_headline": "Dit træningsparathedsscore",
-    "plus_label": "Plus alt det andet du får:",
-    "readiness_desc": "Ét tal for hvor klar din krop er til træning i dag — baseret på din søvn og pulslag. Intet wearable-ur påkrævet."
+    "feature_readiness_title": "Daglig Beredskabsscore",
+    "feature_readiness_desc": "Bygget på dine søvndata og puls — ingen wearable påkrævet.",
+    "feature_coach_desc": "Spørg om hvad som helst — ernæring, træning, restitution. Få svar tilpasset din krop.",
+    "feature_scan_desc": "Peg dit kamera på et måltid, og få fuldstændig makro-opdeling på sekunder.",
+    "feature_workouts_desc": "AI bygger et 4-ugers progressivt program omkring dit mål og udstyr.",
+    "feature_body_scan_desc": "Upload 3 fotos, og få AI-drevet vurdering af kropsammensætning.",
+    "source_label": "Hvor fandt du os?",
+    "source_tiktok": "TikTok",
+    "source_instagram": "Instagram",
+    "source_app_store": "App Store",
+    "source_friend": "En ven",
+    "source_highlight_tag": "Det er det 👀"
   },
   "friends": {
     "title": "Venner",
