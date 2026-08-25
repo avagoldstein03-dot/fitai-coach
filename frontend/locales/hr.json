@@ -1264,8 +1264,8 @@
     "fine_print": "Traje 2 minute · Nije potrebna kreditna kartica",
     "readiness_badge": "BESPLATNO",
     "readiness_headline": "Vaš Indeks Spreman",
-    "readiness_desc": "Jedan broj koji pokazuje koliko je vaše tijelo spremno za trening danas — izračunat na temelju vašeg sna i pulsa. Nije potreban skupi nosivi uređaj od 300 $.",
-    "plus_label": "Plus sve ostalo što dobivate:"
+    "plus_label": "Plus sve ostalo što dobivate:",
+    "readiness_desc": "Jedan broj koji pokazuje kako je vaše tijelo spremno za trening danas — sastavljen od vašeg sna i srčane frekvencije. Nije potreban nosivi uređaj."
   },
   "friends": {
     "title": "Prijatelji",

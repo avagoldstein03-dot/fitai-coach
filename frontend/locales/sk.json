@@ -1264,8 +1264,8 @@
     "fine_print": "Trvá 2 minúty · Nie je potrebná kreditná karta",
     "readiness_badge": "BEZPLATNÉ",
     "readiness_headline": "Vaše skóre pripravenosti",
-    "readiness_desc": "Jedno číslo, ktoré ukazuje, ako je vaše telo pripravené na tréning dnes — postavené na základe vášho spánku a srdcovej frekvencie. Nepotrebujete zariadenie za 300 dolárov.",
-    "plus_label": "Plus všetko ostatné, čo dostanete:"
+    "plus_label": "Plus všetko ostatné, čo dostanete:",
+    "readiness_desc": "Jedno číslo na zistenie, ako je vaše telo pripravené na tréning dnes — vytvorené z vašej kvality spánku a srdcovej frekvencie. Nie je potrebné носiteľné zariadenie."
   },
   "friends": {
     "title": "Priatelia",

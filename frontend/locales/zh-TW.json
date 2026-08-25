@@ -1264,8 +1264,8 @@
     "fine_print": "只需 2 分鐘 · 無需信用卡",
     "readiness_badge": "免費",
     "readiness_headline": "你的準備度分數",
-    "readiness_desc": "一個數字顯示你的身體今天準備好訓練的程度 — 根據你的睡眠和心率計算。無需昂貴的可穿戴設備。",
-    "plus_label": "加上你還能獲得的一切："
+    "plus_label": "加上你還能獲得的一切：",
+    "readiness_desc": "一個數字顯示你的身體今天的訓練準備程度 — 基於你的睡眠和心率計算。無需穿戴式裝置。"
   },
   "friends": {
     "title": "好友",

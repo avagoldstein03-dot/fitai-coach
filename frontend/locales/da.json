@@ -1264,8 +1264,8 @@
     "fine_print": "Tager 2 minutter · Ingen kreditkort påkrævet",
     "readiness_badge": "GRATIS",
     "readiness_headline": "Dit træningsparathedsscore",
-    "readiness_desc": "Et tal der viser hvor klar din krop er til træning i dag — baseret på din søvn og puls. Ingen dyr wearable på €300 nødvendig.",
-    "plus_label": "Plus alt det andet du får:"
+    "plus_label": "Plus alt det andet du får:",
+    "readiness_desc": "Ét tal for hvor klar din krop er til træning i dag — baseret på din søvn og pulslag. Intet wearable-ur påkrævet."
   },
   "friends": {
     "title": "Venner",

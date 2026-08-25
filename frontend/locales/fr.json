@@ -1264,8 +1264,8 @@
     "fine_print": "2 minutes seulement · Aucune carte de crédit requise",
     "readiness_badge": "GRATUIT",
     "readiness_headline": "Votre Score de Préparation",
-    "readiness_desc": "Un seul chiffre pour savoir si votre corps est prêt à s'entraîner aujourd'hui — basé sur votre sommeil et votre fréquence cardiaque. Aucun appareil portable à 300 $ requis.",
-    "plus_label": "Plus tout le reste que vous obtenez :"
+    "plus_label": "Plus tout le reste que vous obtenez :",
+    "readiness_desc": "Un seul chiffre pour savoir à quel point votre corps est prêt à s'entraîner aujourd'hui — calculé en fonction de votre sommeil et de votre fréquence cardiaque. Aucun appareil portable requis."
   },
   "friends": {
     "title": "Amis",

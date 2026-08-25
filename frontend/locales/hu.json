@@ -1264,8 +1264,8 @@
     "fine_print": "2 perc alatt · Nincs szükség hitelkártyára",
     "readiness_badge": "INGYENES",
     "readiness_headline": "Az Ön Készenlét Pontszáma",
-    "readiness_desc": "Egy szám, amely megmutatja, mennyire kész a tested az mai edzésre — alvásod és pulzusod alapján. Nincs szükség 300 dolláros viselkedő eszközre.",
-    "plus_label": "Plus minden más, amit kapsz:"
+    "plus_label": "Plus minden más, amit kapsz:",
+    "readiness_desc": "Egy szám, amely azt mutatja, hogy tested mennyire készült az edzésre ma — alvásod és pulzusod alapján számítva. Nincs szükség viselendő eszközre."
   },
   "friends": {
     "title": "Barátok",

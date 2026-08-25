@@ -1264,8 +1264,8 @@
     "fine_print": "Leva 2 minutos · Nenhum cartão de crédito necessário",
     "readiness_badge": "GRATUITO",
     "readiness_headline": "Sua Pontuação de Prontidão",
-    "readiness_desc": "Um único número que mostra como seu corpo está pronto para treinar hoje — baseado no seu sono e frequência cardíaca. Nenhum dispositivo vestível de $300 necessário.",
-    "plus_label": "Mais tudo mais que você recebe:"
+    "plus_label": "Mais tudo mais que você recebe:",
+    "readiness_desc": "Um número que mostra o quão preparado seu corpo está para treinar hoje — baseado no seu sono e frequência cardíaca. Nenhum dispositivo vestível necessário."
   },
   "friends": {
     "title": "Amigos",

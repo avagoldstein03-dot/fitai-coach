@@ -1264,8 +1264,8 @@
     "fine_print": "Tar 2 minutter · Ingen kredittkort kreves",
     "readiness_badge": "GRATIS",
     "readiness_headline": "Din beredskapspoengsum",
-    "readiness_desc": "Ett tall for hvor klar kroppen din er til å trene i dag — basert på søvnen og pulsen din. Ingen $300 wearable nødvendig.",
-    "plus_label": "Plus alt annet du får:"
+    "plus_label": "Plus alt annet du får:",
+    "readiness_desc": "Ett tall som viser hvor klar kroppen din er til å trene i dag — basert på søvn og puls. Ingen wearable nødvendig."
   },
   "friends": {
     "title": "Venner",

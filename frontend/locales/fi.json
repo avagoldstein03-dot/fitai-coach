@@ -1264,8 +1264,8 @@
     "fine_print": "Kestää 2 minuuttia · Luottokorttia ei vaadita",
     "readiness_badge": "ILMAINEN",
     "readiness_headline": "Sinun valmiuspisteesi",
-    "readiness_desc": "Yksi numero sille, kuinka valmis kehosi on tänään harjoitteluun — rakennettu unesi ja sykkeesi perusteella. Ei tarvita 300 dollarin arvoista puettavaa laitetta.",
-    "plus_label": "Plus kaikki muu mitä saat:"
+    "plus_label": "Plus kaikki muu mitä saat:",
+    "readiness_desc": "Yksi luku sille, kuinka valmis kehosi on tänään harjoitteluun — perustuu uneen ja sykkeeseen. Ei vaadita mitään wearable-laitetta."
   },
   "friends": {
     "title": "Ystävät",

@@ -1264,8 +1264,8 @@
     "fine_print": "Mất 2 phút · Không cần thẻ tín dụng",
     "readiness_badge": "MIỄN PHÍ",
     "readiness_headline": "Điểm Sẵn Sàng Của Bạn",
-    "readiness_desc": "Một con số cho biết cơ thể bạn sẵn sàng tập luyện hôm nay như thế nào — được xây dựng từ giấc ngủ và nhịp tim của bạn. Không cần thiết bị đeo giá $300.",
-    "plus_label": "Cộng với mọi thứ khác bạn nhận được:"
+    "plus_label": "Cộng với mọi thứ khác bạn nhận được:",
+    "readiness_desc": "Một con số cho biết cơ thể bạn sẵn sàng tập luyện hôm nay — được xây dựng từ giấc ngủ và nhịp tim của bạn. Không cần thiết bị đeo."
   },
   "friends": {
     "title": "Bạn bè",

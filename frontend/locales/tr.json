@@ -1264,8 +1264,8 @@
     "fine_print": "2 dakika alır · Kredi kartı gerekmez",
     "readiness_badge": "ÜCRETSİZ",
     "readiness_headline": "Hazırlık Puanınız",
-    "readiness_desc": "Vücudunuzun bugün antrenman yapmaya ne kadar hazır olduğunun bir sayıyla gösterimi — uykunuz ve kalp atış hızınızdan oluşturulan. 300$ değerinde giyilebilir teknoloji gerekli değildir.",
-    "plus_label": "Buna ek olarak aldığınız her şey:"
+    "plus_label": "Buna ek olarak aldığınız her şey:",
+    "readiness_desc": "Bugün antrenman yapmaya hazır olup olmadığınızı gösteren tek bir sayı — uyku ve kalp atışınızdan hesaplanır. Giyilebilir cihaz gerekmez."
   },
   "friends": {
     "title": "Arkadaşlar",

@@ -1264,8 +1264,8 @@
     "fine_print": "Dauert 2 Minuten · Keine Kreditkarte erforderlich",
     "readiness_badge": "KOSTENLOS",
     "readiness_headline": "Dein Leistungsbereitschafts-Score",
-    "readiness_desc": "Eine Zahl, die zeigt, wie bereit dein Körper heute zum Training ist — basierend auf deinem Schlaf und deiner Herzfrequenz. Keine 300-Euro-Smartwatch erforderlich.",
-    "plus_label": "Plus alles andere, das du bekommst:"
+    "plus_label": "Plus alles andere, das du bekommst:",
+    "readiness_desc": "Eine Zahl zeigt dir, wie bereit dein Körper heute zum Trainieren ist — basierend auf deinem Schlaf und deiner Herzfrequenz. Keine Smartwatch erforderlich."
   },
   "friends": {
     "title": "Freunde",

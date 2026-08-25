@@ -1264,8 +1264,8 @@
     "fine_print": "Ci vogliono 2 minuti · Nessuna carta di credito richiesta",
     "readiness_badge": "GRATUITO",
     "readiness_headline": "Il Tuo Punteggio di Prontezza",
-    "readiness_desc": "Un numero unico che mostra quanto il tuo corpo è pronto ad allenarti oggi — calcolato da sonno e frequenza cardiaca. Nessun dispositivo indossabile da $300 richiesto.",
-    "plus_label": "Più tutto il resto che ottieni:"
+    "plus_label": "Più tutto il resto che ottieni:",
+    "readiness_desc": "Un numero che indica quanto il tuo corpo è pronto ad allenarsi oggi — calcolato in base al sonno e alla frequenza cardiaca. Non è necessario alcun dispositivo indossabile."
   },
   "friends": {
     "title": "Amici",

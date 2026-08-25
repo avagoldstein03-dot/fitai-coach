@@ -1264,8 +1264,8 @@
     "fine_print": "Inachukua dakika 2 · Hakuna kadi ya mkopo inayohitajika",
     "readiness_badge": "BURE",
     "readiness_headline": "Alama Yako ya Utayari",
-    "readiness_desc": "Namba moja inayoonyesha jinsi mwili wako ulivyo tayari kufanya mazoezi leo — iliyoundwa kutoka kwa usingizi wako na kiwango cha moyo. Hakuna haja ya kifaa cha auri cha dola 300.",
-    "plus_label": "Pamoja na kila kitu kingine unachokipata:"
+    "plus_label": "Pamoja na kila kitu kingine unachokipata:",
+    "readiness_desc": "Nambari moja inayoonyesha jinsi mwili wako unavyokuwa tayari kufanya mazoezi leo — iliyoundwa kutoka kwa usingizi wako na kiwango cha mapigo ya moyo. Hakuna haja ya kifaa kinachoweza kuvaliwa."
   },
   "friends": {
     "title": "Rafiki",

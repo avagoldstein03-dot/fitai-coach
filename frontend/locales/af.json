@@ -1264,8 +1264,8 @@
     "fine_print": "Neem 2 minute · Geen kredietkaart vereist",
     "readiness_badge": "VRY",
     "readiness_headline": "Jou Gereedheidstelling",
-    "readiness_desc": "Een nommer wat aantoon hoe gereed jou liggaam is om vandag te train — gebaseer op jou slaap en hartslag. Geen $300 draagbare toestel nodig.",
-    "plus_label": "Plus alles anders wat jy kry:"
+    "plus_label": "Plus alles anders wat jy kry:",
+    "readiness_desc": "Een getal vir hoe gereed jou liggaam vandag is om te train — gebou uit jou slaap en hartklop. Geen draagbare toestel nodig."
   },
   "friends": {
     "title": "Vriende",

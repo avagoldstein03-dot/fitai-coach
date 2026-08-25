@@ -1264,8 +1264,8 @@
     "fine_print": "Durează 2 minute · Nicio carte de credit necesară",
     "readiness_badge": "GRATUIT",
     "readiness_headline": "Scorul tău de Pregătire",
-    "readiness_desc": "Un singur număr care arată cât de gata este corpul tău să se antreneze astazi — calculat din calitatea somnului și ritmul cardiac. Nu ai nevoie de un ceas inteligent de 300 de dolari.",
-    "plus_label": "Plus tot ceea ce mai primești:"
+    "plus_label": "Plus tot ceea ce mai primești:",
+    "readiness_desc": "Un singur număr care arată cât de pregătit este corpul tău pentru antrenament astazi — calculat din calitatea somnului și ritmul cardiac. Nu este nevoie de dispozitiv purtabil."
   },
   "friends": {
     "title": "Prieteni",

@@ -1264,8 +1264,8 @@
     "fine_print": "Tar 2 minuter · Inget kreditkort krävs",
     "readiness_badge": "GRATIS",
     "readiness_headline": "Din Beredskapsscore",
-    "readiness_desc": "Ett värde för hur redo din kropp är för träning idag — baserat på din sömn och puls. Ingen $300 dyr enhet krävs.",
-    "plus_label": "Plus allt annat du får:"
+    "plus_label": "Plus allt annat du får:",
+    "readiness_desc": "Ett nummer som visar hur redo din kropp är att träna idag — baserat på din sömn och hjärtfrekvens. Ingen wearable krävs."
   },
   "friends": {
     "title": "Vänner",

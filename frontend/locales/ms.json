@@ -1264,8 +1264,8 @@
     "fine_print": "Hanya 2 minit · Tiada kad kredit diperlukan",
     "readiness_badge": "PERCUMA",
     "readiness_headline": "Skor Kesiapan Anda",
-    "readiness_desc": "Satu nombor untuk menunjukkan seberapa siap tubuh anda untuk berlatih hari ini — dibina daripada tidur dan kadar jantung anda. Tiada peranti boleh pakai $300 diperlukan.",
-    "plus_label": "Tambah semua yang lain anda dapat:"
+    "plus_label": "Tambah semua yang lain anda dapat:",
+    "readiness_desc": "Satu angka untuk menunjukkan sejauh mana tubuh anda siap untuk berlatih hari ini — dibina dari tidur dan kadar jantung anda. Tiada peranti boleh pakai diperlukan."
   },
   "friends": {
     "title": "Rakan",
