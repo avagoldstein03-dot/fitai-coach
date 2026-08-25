@@ -1257,15 +1257,15 @@
   "welcome": {
     "tagline": "Váš AI-poháněný fitness tým,\ndostupný 24/7",
     "feature_coach_title": "AI osobní kouč",
-    "feature_coach_desc": "Ptejte se na cokoliv — výživa, tréninky, regenerace. Získejte odpovědi přizpůsobené vašemu tělu.",
     "feature_scan_title": "Instant skener potravin",
-    "feature_scan_desc": "Namiřte fotoaparát na jakékoliv jídlo a za sekundy získejte úplný rozpis maker.",
     "feature_workouts_title": "Vlastní tréningové plány",
-    "feature_workouts_desc": "AI vytvoří 4týdenní progresivní program kolem vašeho cíle a vybavení.",
     "feature_body_scan_title": "Analýza body scanu",
-    "feature_body_scan_desc": "Nahrajte 3 fotografie a získejte posouzení složení těla poháněné AI.",
     "cta": "Začínáme — zdarma",
-    "fine_print": "Trvá 2 minuty · Není vyžadována kreditní karta"
+    "fine_print": "Trvá 2 minuty · Není vyžadována kreditní karta",
+    "readiness_badge": "ZDARMA",
+    "readiness_headline": "Vaše skóre připravenosti",
+    "readiness_desc": "Jedno číslo, které vám řekne, jak je vaše tělo připraveno na trénink dnes — na základě vašeho spánku a srdeční frekvence. Nepotřebujete žádný drahý nositelný náramek za 300 dolarů.",
+    "plus_label": "Plus vše ostatní, co získáte:"
   },
   "friends": {
     "title": "Přátelé",

@@ -1257,15 +1257,15 @@
   "welcome": {
     "tagline": "あなたのAI搭載フィットネスチーム、\n24/7利用可能",
     "feature_coach_title": "AIパーソナルコーチ",
-    "feature_coach_desc": "何でも質問してください — 栄養、ワークアウト、リカバリー。あなたの体に合わせた回答を得てください。",
     "feature_scan_title": "インスタントフードスキャン",
-    "feature_scan_desc": "任意の食事にカメラを向けて、数秒で完全なマクロ内訳を取得します。",
     "feature_workouts_title": "カスタムワークアウトプラン",
-    "feature_workouts_desc": "AIがあなたの目標と機器の周りに4週間のプログレッシブプログラムを構築します。",
     "feature_body_scan_title": "ボディスキャン分析",
-    "feature_body_scan_desc": "3枚の写真をアップロードし、AI搭載のボディ成分評価を取得します。",
     "cta": "開始 — 無料",
-    "fine_print": "2分で完了 · クレジットカード不要"
+    "fine_print": "2分で完了 · クレジットカード不要",
+    "readiness_badge": "FREE",
+    "readiness_headline": "あなたのレディネススコア",
+    "readiness_desc": "今日のトレーニングに向けた体の準備度合いを1つの数字で表示 — 睡眠と心拍数から算出されます。300ドルのウェアラブルは不要です。",
+    "plus_label": "その他の機能:"
   },
   "friends": {
     "title": "フレンド",

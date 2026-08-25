@@ -1257,15 +1257,15 @@
   "welcome": {
     "tagline": "Ihr KI-gestütztes Fitness-Team,\nverfügbar 24/7",
     "feature_coach_title": "KI Personal Coach",
-    "feature_coach_desc": "Fragen Sie nach allem – Ernährung, Training, Erholung. Erhalten Sie Antworten, die auf Ihren Körper zugeschnitten sind.",
     "feature_scan_title": "Sofortiger Food Scanner",
-    "feature_scan_desc": "Richten Sie Ihre Kamera auf eine beliebige Mahlzeit und erhalten Sie die vollständige Makronährstoff-Aufschlüsselung in Sekunden.",
     "feature_workouts_title": "Benutzerdefinierte Trainingspläne",
-    "feature_workouts_desc": "KI erstellt ein 4-Wochen-Progressiv-Programm rund um Ihr Ziel und Equipment.",
     "feature_body_scan_title": "Body-Scan-Analyse",
-    "feature_body_scan_desc": "Laden Sie 3 Fotos hoch und erhalten Sie eine KI-gestützte Körperzusammensetzungsbewertung.",
     "cta": "Los geht's – Kostenlos",
-    "fine_print": "Dauert 2 Minuten · Keine Kreditkarte erforderlich"
+    "fine_print": "Dauert 2 Minuten · Keine Kreditkarte erforderlich",
+    "readiness_badge": "KOSTENLOS",
+    "readiness_headline": "Dein Leistungsbereitschafts-Score",
+    "readiness_desc": "Eine Zahl, die zeigt, wie bereit dein Körper heute zum Training ist — basierend auf deinem Schlaf und deiner Herzfrequenz. Keine 300-Euro-Smartwatch erforderlich.",
+    "plus_label": "Plus alles andere, das du bekommst:"
   },
   "friends": {
     "title": "Freunde",

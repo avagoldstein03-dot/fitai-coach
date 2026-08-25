@@ -1257,15 +1257,15 @@
   "welcome": {
     "tagline": "Jou AI-aangedrewe fitnesspan,\nbeskikbaar 24/7",
     "feature_coach_title": "AI persoonlike coach",
-    "feature_coach_desc": "Vra enige iets — voeding, oefeninge, herstel. Kry antwoorde wat aan jou liggaam aangepas is.",
     "feature_scan_title": "Onmiddellike voedselskanding",
-    "feature_scan_desc": "Rig jou kamera op enige maaltyd en kry volledige makro-afbreking in sekondes.",
     "feature_workouts_title": "Pasgemaakte oefenplanne",
-    "feature_workouts_desc": "AI bou 'n 4-week progressiewe program rondom jou doelstelling en toerusting.",
     "feature_body_scan_title": "Liggaamskanninganalise",
-    "feature_body_scan_desc": "Laai 3 foto's op en kry AI-aangedrewe liggaamssamestelling-beoordeling.",
     "cta": "Kom aan die gang — gratis",
-    "fine_print": "Neem 2 minute · Geen kredietkaart vereist"
+    "fine_print": "Neem 2 minute · Geen kredietkaart vereist",
+    "readiness_badge": "VRY",
+    "readiness_headline": "Jou Gereedheidstelling",
+    "readiness_desc": "Een nommer wat aantoon hoe gereed jou liggaam is om vandag te train — gebaseer op jou slaap en hartslag. Geen $300 draagbare toestel nodig.",
+    "plus_label": "Plus alles anders wat jy kry:"
   },
   "friends": {
     "title": "Vriende",

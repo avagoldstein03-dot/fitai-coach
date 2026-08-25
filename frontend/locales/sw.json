@@ -1257,15 +1257,15 @@
   "welcome": {
     "tagline": "Timu yako ya utendaji inayosimamiwa na AI,\ninapatikana 24/7",
     "feature_coach_title": "Kocha wa Kibinafsi wa AI",
-    "feature_coach_desc": "Uliza kitu chochote — virutubishi, mazoezi, kurejesha. Pata majibu yaliyoundwa kwa mwili wako.",
     "feature_scan_title": "Ukumbaji wa Chakula wa Haraka",
-    "feature_scan_desc": "Elekeza kamera yako kwa mloweza yeyote na upate mwezi kamili ya macro katika sekunde.",
     "feature_workouts_title": "Mipango ya Mazoezi ya Binafsi",
-    "feature_workouts_desc": "AI inajenga programu ya hasi 4 linganifu kuizunguka lengo lako na vifaa.",
     "feature_body_scan_title": "Uchambuzi wa Mchakato wa Mwili",
-    "feature_body_scan_desc": "Pakia picha 3 na upate tathmini ya mwili iliyosimamiwa na AI.",
     "cta": "Kuanza — Bure",
-    "fine_print": "Inachukua dakika 2 · Hakuna kadi ya mkopo inayohitajika"
+    "fine_print": "Inachukua dakika 2 · Hakuna kadi ya mkopo inayohitajika",
+    "readiness_badge": "BURE",
+    "readiness_headline": "Alama Yako ya Utayari",
+    "readiness_desc": "Namba moja inayoonyesha jinsi mwili wako ulivyo tayari kufanya mazoezi leo — iliyoundwa kutoka kwa usingizi wako na kiwango cha moyo. Hakuna haja ya kifaa cha auri cha dola 300.",
+    "plus_label": "Pamoja na kila kitu kingine unachokipata:"
   },
   "friends": {
     "title": "Rafiki",

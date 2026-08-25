@@ -1440,14 +1440,14 @@
   },
   "welcome": {
     "tagline": "Your AI-powered fitness team,\navailable 24/7",
+    "readiness_badge": "FREE",
+    "readiness_headline": "Your Readiness Score",
+    "readiness_desc": "One number for how ready your body is to train today — built from your sleep and heart rate. No $300 wearable required.",
+    "plus_label": "Plus everything else you get:",
     "feature_coach_title": "AI Personal Coach",
-    "feature_coach_desc": "Ask anything — nutrition, workouts, recovery. Get answers tailored to your body.",
     "feature_scan_title": "Instant Food Scan",
-    "feature_scan_desc": "Point your camera at any meal and get full macro breakdown in seconds.",
     "feature_workouts_title": "Custom Workout Plans",
-    "feature_workouts_desc": "AI builds a 4-week progressive program around your goal and equipment.",
     "feature_body_scan_title": "Body Scan Analysis",
-    "feature_body_scan_desc": "Upload 3 photos and get AI-powered body composition assessment.",
     "cta": "Get Started — Free",
     "fine_print": "Takes 2 minutes · No credit card required"
   }

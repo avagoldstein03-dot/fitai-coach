@@ -1257,15 +1257,15 @@
   "welcome": {
     "tagline": "Votre équipe de fitness alimentée par l'IA,\ndisponible 24h/24, 7j/7",
     "feature_coach_title": "Coach personnel IA",
-    "feature_coach_desc": "Posez n'importe quelle question — nutrition, entraînements, récupération. Obtenez des réponses adaptées à votre corps.",
     "feature_scan_title": "Scan alimentaire instantané",
-    "feature_scan_desc": "Pointez votre caméra sur n'importe quel repas et obtenez une répartition macronutritionnelle complète en quelques secondes.",
     "feature_workouts_title": "Plans d'entraînement personnalisés",
-    "feature_workouts_desc": "L'IA crée un programme progressif de 4 semaines adapté à votre objectif et à votre équipement.",
     "feature_body_scan_title": "Analyse de scan corporel",
-    "feature_body_scan_desc": "Téléchargez 3 photos et obtenez une évaluation de composition corporelle alimentée par l'IA.",
     "cta": "Commencer — Gratuit",
-    "fine_print": "2 minutes seulement · Aucune carte de crédit requise"
+    "fine_print": "2 minutes seulement · Aucune carte de crédit requise",
+    "readiness_badge": "GRATUIT",
+    "readiness_headline": "Votre Score de Préparation",
+    "readiness_desc": "Un seul chiffre pour savoir si votre corps est prêt à s'entraîner aujourd'hui — basé sur votre sommeil et votre fréquence cardiaque. Aucun appareil portable à 300 $ requis.",
+    "plus_label": "Plus tout le reste que vous obtenez :"
   },
   "friends": {
     "title": "Amis",

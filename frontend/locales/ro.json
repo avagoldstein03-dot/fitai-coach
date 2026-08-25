@@ -1257,15 +1257,15 @@
   "welcome": {
     "tagline": "Echipa ta IA fitness,\ndisponibilă 24/7",
     "feature_coach_title": "Antrenor IA personal",
-    "feature_coach_desc": "Întreabă orice — nutriție, antrenamente, recuperare. Primești răspunsuri adaptate corpului tău.",
     "feature_scan_title": "Scanare instantă a mâncării",
-    "feature_scan_desc": "Îndreaptă camera la orice masă și obține breakdown complet de macro în secunde.",
     "feature_workouts_title": "Planuri de antrenament personalizate",
-    "feature_workouts_desc": "IA construiește un program progresiv de 4 săptămâni în jurul obiectivului și echipamentului tău.",
     "feature_body_scan_title": "Analiza Body Scan",
-    "feature_body_scan_desc": "Încarcă 3 fotografii și primești evaluare compoziției corpului bazată pe IA.",
     "cta": "Primeiros passos — Gratuit",
-    "fine_print": "Durează 2 minute · Nicio carte de credit necesară"
+    "fine_print": "Durează 2 minute · Nicio carte de credit necesară",
+    "readiness_badge": "GRATUIT",
+    "readiness_headline": "Scorul tău de Pregătire",
+    "readiness_desc": "Un singur număr care arată cât de gata este corpul tău să se antreneze astazi — calculat din calitatea somnului și ritmul cardiac. Nu ai nevoie de un ceas inteligent de 300 de dolari.",
+    "plus_label": "Plus tot ceea ce mai primești:"
   },
   "friends": {
     "title": "Prieteni",

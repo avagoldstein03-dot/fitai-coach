@@ -1257,15 +1257,15 @@
   "welcome": {
     "tagline": "Senin Yapay Zeka Fitness Takımın,\n7/24 kullanılabilir",
     "feature_coach_title": "Yapay Zeka Kişisel Koçu",
-    "feature_coach_desc": "Her şey sor — beslenme, antrenman, toparlanma. Vücuduna göre uyarlanmış cevaplar al.",
     "feature_scan_title": "Anında Yiyecek Tarama",
-    "feature_scan_desc": "Kameranı herhangi bir öğüne çevir ve saniyeler içinde tam makro dökümü al.",
     "feature_workouts_title": "Özel Antrenman Planları",
-    "feature_workouts_desc": "Yapay zeka hedefin ve ekipmanın etrafında 4 haftalık ilerleyici bir program oluşturur.",
     "feature_body_scan_title": "Vücut Taraması Analizi",
-    "feature_body_scan_desc": "3 fotoğraf yükle ve Yapay Zeka tarafından güçlendirilmiş vücut bileşimi değerlendirmesi al.",
     "cta": "Başla — Ücretsiz",
-    "fine_print": "2 dakika alır · Kredi kartı gerekmez"
+    "fine_print": "2 dakika alır · Kredi kartı gerekmez",
+    "readiness_badge": "ÜCRETSİZ",
+    "readiness_headline": "Hazırlık Puanınız",
+    "readiness_desc": "Vücudunuzun bugün antrenman yapmaya ne kadar hazır olduğunun bir sayıyla gösterimi — uykunuz ve kalp atış hızınızdan oluşturulan. 300$ değerinde giyilebilir teknoloji gerekli değildir.",
+    "plus_label": "Buna ek olarak aldığınız her şey:"
   },
   "friends": {
     "title": "Arkadaşlar",

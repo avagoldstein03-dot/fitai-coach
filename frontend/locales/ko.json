@@ -1257,15 +1257,15 @@
   "welcome": {
     "tagline": "당신의 AI 기반 피트니스 팀,\n24/7 이용 가능",
     "feature_coach_title": "AI 개인 코치",
-    "feature_coach_desc": "무엇이든 물어보세요 — 영양, 운동, 회복. 당신의 몸에 맞춘 답변을 받으세요.",
     "feature_scan_title": "즉석 음식 스캔",
-    "feature_scan_desc": "카메라를 어떤 식사에 향해 몇 초 안에 전체 매크로 분석을 얻으세요.",
     "feature_workouts_title": "맞춤 운동 계획",
-    "feature_workouts_desc": "AI가 당신의 목표와 장비를 중심으로 4주 점진적 프로그램을 구축합니다.",
     "feature_body_scan_title": "신체 스캔 분석",
-    "feature_body_scan_desc": "3장의 사진을 업로드하면 AI 기반 신체 구성 평가를 받으세요.",
     "cta": "시작하기 — 무료",
-    "fine_print": "2분 소요 · 신용카드 불필요"
+    "fine_print": "2분 소요 · 신용카드 불필요",
+    "readiness_badge": "무료",
+    "readiness_headline": "준비도 점수",
+    "readiness_desc": "오늘 운동할 준비가 얼마나 되어 있는지 한 눈에 보여주는 점수입니다 — 수면과 심박수로 계산됩니다. 비싼 웨어러블 기기가 필요 없습니다.",
+    "plus_label": "이 외에도 다음을 이용할 수 있습니다:"
   },
   "friends": {
     "title": "친구",

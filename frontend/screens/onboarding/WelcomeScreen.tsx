@@ -15,11 +15,11 @@ export default function WelcomeScreen() {
   const navigation = useNavigation() as any;
   const { t } = useTranslation();
 
-  const FEATURES = [
-    { icon: "🤖", title: t("welcome.feature_coach_title"), desc: t("welcome.feature_coach_desc"), color: T.accent, bg: T.accentDark },
-    { icon: "📸", title: t("welcome.feature_scan_title"), desc: t("welcome.feature_scan_desc"), color: T.teal, bg: T.tealDark },
-    { icon: "💪", title: t("welcome.feature_workouts_title"), desc: t("welcome.feature_workouts_desc"), color: T.blue, bg: T.blueDark },
-    { icon: "📊", title: t("welcome.feature_body_scan_title"), desc: t("welcome.feature_body_scan_desc"), color: T.amber, bg: T.amberDark },
+  const PLUS_FEATURES = [
+    { icon: "🤖", title: t("welcome.feature_coach_title") },
+    { icon: "📸", title: t("welcome.feature_scan_title") },
+    { icon: "💪", title: t("welcome.feature_workouts_title") },
+    { icon: "📊", title: t("welcome.feature_body_scan_title") },
   ];
 
   return (
@@ -32,15 +32,22 @@ export default function WelcomeScreen() {
           <Text style={s.tagline}>{t("welcome.tagline")}</Text>
         </View>
 
-        {/* Feature Cards */}
-        <View style={s.features}>
-          {FEATURES.map((f, i) => (
-            <View key={i} style={[s.featureCard, { backgroundColor: f.bg, borderColor: f.color + "40" }]}>
-              <Text style={s.featureIcon}>{f.icon}</Text>
-              <View style={s.featureBody}>
-                <Text style={[s.featureTitle, { color: f.color }]}>{f.title}</Text>
-                <Text style={s.featureDesc}>{f.desc}</Text>
-              </View>
+        {/* Readiness spotlight — the single, free, headline feature */}
+        <View style={s.readinessCard}>
+          <View style={s.readinessBadge}>
+            <Text style={s.readinessBadgeText}>{t("welcome.readiness_badge")}</Text>
+          </View>
+          <Text style={s.readinessHeadline}>{t("welcome.readiness_headline")}</Text>
+          <Text style={s.readinessDesc}>{t("welcome.readiness_desc")}</Text>
+        </View>
+
+        {/* Plus everything else — compact, secondary */}
+        <Text style={s.plusLabel}>{t("welcome.plus_label")}</Text>
+        <View style={s.plusRow}>
+          {PLUS_FEATURES.map((f, i) => (
+            <View key={i} style={s.plusItem}>
+              <Text style={s.plusIcon}>{f.icon}</Text>
+              <Text style={s.plusTitle}>{f.title}</Text>
             </View>
           ))}
         </View>
@@ -81,19 +88,41 @@ const s = StyleSheet.create({
     lineHeight: 26,
   },
 
-  features: { gap: 12, marginBottom: 28 },
-  featureCard: {
+  readinessCard: {
+    backgroundColor: T.greenDark,
+    borderWidth: 1,
+    borderColor: T.greenBorder,
+    borderRadius: 20,
+    padding: 20,
+    marginBottom: 20,
+  },
+  readinessBadge: {
+    alignSelf: "flex-start",
+    backgroundColor: T.green,
+    borderRadius: 8,
+    paddingHorizontal: 8,
+    paddingVertical: 3,
+    marginBottom: 10,
+  },
+  readinessBadgeText: { fontSize: 10, fontWeight: "800", color: "#000", letterSpacing: 0.6 },
+  readinessHeadline: { fontSize: 19, fontWeight: "800", color: T.green, marginBottom: 6 },
+  readinessDesc: { fontSize: 14, color: T.textSecondary, lineHeight: 21 },
+
+  plusLabel: { fontSize: 12, fontWeight: "700", color: T.textMuted, textTransform: "uppercase", letterSpacing: 0.5, marginBottom: 10 },
+  plusRow: { flexDirection: "row", flexWrap: "wrap", gap: 10, marginBottom: 28 },
+  plusItem: {
     flexDirection: "row",
     alignItems: "center",
-    borderRadius: 16,
+    backgroundColor: T.surface,
     borderWidth: 1,
-    padding: 16,
-    gap: 14,
+    borderColor: T.border,
+    borderRadius: 12,
+    paddingHorizontal: 12,
+    paddingVertical: 8,
+    gap: 6,
   },
-  featureIcon: { fontSize: 28, width: 36, textAlign: "center" },
-  featureBody: { flex: 1 },
-  featureTitle: { fontSize: 15, fontWeight: "800", marginBottom: 3 },
-  featureDesc: { fontSize: 13, color: T.textSecondary, lineHeight: 19 },
+  plusIcon: { fontSize: 15 },
+  plusTitle: { fontSize: 12.5, fontWeight: "600", color: T.textSecondary },
 
   ctaBtn: {
     backgroundColor: T.accent,

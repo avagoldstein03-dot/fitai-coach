@@ -1257,15 +1257,15 @@
   "welcome": {
     "tagline": "Dit AI-drevne træningsteam,\ntilgængeligt 24/7",
     "feature_coach_title": "AI personlig coach",
-    "feature_coach_desc": "Spørg om hvad som helst — ernæring, træning, genopretning. Få svar tilpasset din krop.",
     "feature_scan_title": "Øjeblikkelig madskanning",
-    "feature_scan_desc": "Peg kameraet på ethvert måltid og få fuld makro-opdeling på sekunder.",
     "feature_workouts_title": "Brugerdefinerede træningsplaner",
-    "feature_workouts_desc": "AI bygger et 4-ugers progressivt program omkring dit mål og udstyr.",
     "feature_body_scan_title": "Body scan-analyse",
-    "feature_body_scan_desc": "Upload 3 fotos og få AI-drevet kropssammensætningsvurdering.",
     "cta": "Kom igang — gratis",
-    "fine_print": "Tager 2 minutter · Ingen kreditkort påkrævet"
+    "fine_print": "Tager 2 minutter · Ingen kreditkort påkrævet",
+    "readiness_badge": "GRATIS",
+    "readiness_headline": "Dit træningsparathedsscore",
+    "readiness_desc": "Et tal der viser hvor klar din krop er til træning i dag — baseret på din søvn og puls. Ingen dyr wearable på €300 nødvendig.",
+    "plus_label": "Plus alt det andet du får:"
   },
   "friends": {
     "title": "Venner",

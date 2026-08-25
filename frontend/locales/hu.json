@@ -1257,15 +1257,15 @@
   "welcome": {
     "tagline": "Az AI-alapú fitness csapatod,\n24/7 elérhető",
     "feature_coach_title": "AI személyes edző",
-    "feature_coach_desc": "Kérdezz bármit — táplálkozás, edzések, regeneráció. Kapj személyre szabott válaszokat.",
     "feature_scan_title": "Azonnali étel scan",
-    "feature_scan_desc": "Irányítsd a kameradat bármely étkezésre és kapj teljes makró lebontást másodpercek alatt.",
     "feature_workouts_title": "Egyéni edzéstervek",
-    "feature_workouts_desc": "Az AI 4 hetes progresszív programot épít a céledhez és felszereléséhez.",
     "feature_body_scan_title": "Body scan elemzés",
-    "feature_body_scan_desc": "Töltsd fel a 3 fotót és kapj AI-alapú testösszetétel értékelést.",
     "cta": "Kezdj el — ingyenes",
-    "fine_print": "2 perc alatt · Nincs szükség hitelkártyára"
+    "fine_print": "2 perc alatt · Nincs szükség hitelkártyára",
+    "readiness_badge": "INGYENES",
+    "readiness_headline": "Az Ön Készenlét Pontszáma",
+    "readiness_desc": "Egy szám, amely megmutatja, mennyire kész a tested az mai edzésre — alvásod és pulzusod alapján. Nincs szükség 300 dolláros viselkedő eszközre.",
+    "plus_label": "Plus minden más, amit kapsz:"
   },
   "friends": {
     "title": "Barátok",

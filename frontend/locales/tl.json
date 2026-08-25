@@ -1257,15 +1257,15 @@
   "welcome": {
     "tagline": "Ang iyong AI-powered fitness team,\navailable 24/7",
     "feature_coach_title": "AI Personal Coach",
-    "feature_coach_desc": "Magtanong ng kahit ano — nutrisyon, ehersisyo, recovery. Makatanggap ng mga sagot na akma sa iyong katawan.",
     "feature_scan_title": "Instant Food Scan",
-    "feature_scan_desc": "Ituro ang iyong camera sa anumang pagkain at makakuha ng buong macro breakdown sa loob ng ilang segundo.",
     "feature_workouts_title": "Custom Workout Plans",
-    "feature_workouts_desc": "Ang AI ay bumubuo ng 4-linggo na progressive program sa paligid ng iyong layunin at equipment.",
     "feature_body_scan_title": "Body Scan Analysis",
-    "feature_body_scan_desc": "Mag-upload ng 3 larawan at makakuha ng AI-powered body composition assessment.",
     "cta": "Magsimula — Libre",
-    "fine_print": "Tumatagal ng 2 minuto · Walang credit card na kailangan"
+    "fine_print": "Tumatagal ng 2 minuto · Walang credit card na kailangan",
+    "readiness_badge": "LIBRE",
+    "readiness_headline": "Ang Iyong Readiness Score",
+    "readiness_desc": "Isang numero para sa kung gaano handa ang iyong katawan na magsanay ngayon — binuo mula sa iyong tulog at heart rate. Walang kailangang $300 na wearable.",
+    "plus_label": "Plus lahat ng iba pang makukuha mo:"
   },
   "friends": {
     "title": "Mga Kaibigan",

@@ -1257,15 +1257,15 @@
   "welcome": {
     "tagline": "Je AI-aangedreven fitnessteam,\nbeschikbaar 24/7",
     "feature_coach_title": "AI Persoonlijke Coach",
-    "feature_coach_desc": "Stel alles — voeding, trainingen, herstel. Krijg antwoorden aangepast aan je lichaam.",
     "feature_scan_title": "Instant Voedingscan",
-    "feature_scan_desc": "Richt je camera op een maaltijd en krijg volledige macroindeling in seconden.",
     "feature_workouts_title": "Aangepaste Trainingsplannen",
-    "feature_workouts_desc": "AI bouwt een 4-weken progressief programma rond je doel en apparatuur.",
     "feature_body_scan_title": "Lichaamsscan-analyse",
-    "feature_body_scan_desc": "Upload 3 foto's en krijg AI-aangedreven lichaamsamsamenstelling-beoordeling.",
     "cta": "Aan de Slag — Gratis",
-    "fine_print": "Duurt 2 minuten · Geen creditcard vereist"
+    "fine_print": "Duurt 2 minuten · Geen creditcard vereist",
+    "readiness_badge": "GRATIS",
+    "readiness_headline": "Je Readiness Score",
+    "readiness_desc": "Eén getal voor hoe klaar je lichaam is om vandaag te trainen — gebaseerd op je slaap en hartslag. Geen €300 wearable nodig.",
+    "plus_label": "Plus alles wat je nog krijgt:"
   },
   "friends": {
     "title": "Vrienden",

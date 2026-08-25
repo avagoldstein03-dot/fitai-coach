@@ -1257,15 +1257,15 @@
   "welcome": {
     "tagline": "您的 AI 動力健身團隊，\n24/7 全年無休",
     "feature_coach_title": "AI 個人教練",
-    "feature_coach_desc": "詢問任何事情——營養、健身、恢復。獲得根據您的身體量身定制的答案。",
     "feature_scan_title": "即時食物掃描",
-    "feature_scan_desc": "將相機對著任何餐點，幾秒內獲得完整的巨量營養素分解。",
     "feature_workouts_title": "自訂健身計畫",
-    "feature_workouts_desc": "AI 根據您的目標和器材建立 4 週漸進式計畫。",
     "feature_body_scan_title": "身體掃描分析",
-    "feature_body_scan_desc": "上傳 3 張照片並獲得 AI 動力身體成份評估。",
     "cta": "開始——免費",
-    "fine_print": "只需 2 分鐘 · 無需信用卡"
+    "fine_print": "只需 2 分鐘 · 無需信用卡",
+    "readiness_badge": "免費",
+    "readiness_headline": "你的準備度分數",
+    "readiness_desc": "一個數字顯示你的身體今天準備好訓練的程度 — 根據你的睡眠和心率計算。無需昂貴的可穿戴設備。",
+    "plus_label": "加上你還能獲得的一切："
   },
   "friends": {
     "title": "好友",

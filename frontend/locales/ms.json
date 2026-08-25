@@ -1257,15 +1257,15 @@
   "welcome": {
     "tagline": "Pasukan kecergasan bertenaga AI anda,\ntersedia 24/7",
     "feature_coach_title": "Jurulatih Peribadi AI",
-    "feature_coach_desc": "Tanya apa saja — pemakanan, senaman, pemulihan. Dapatkan jawapan yang disesuaikan dengan badan anda.",
     "feature_scan_title": "Imbasan Makanan Seketika",
-    "feature_scan_desc": "Arahkan kamera anda pada sebarang makanan dan dapatkan pecahan makro penuh dalam beberapa saat.",
     "feature_workouts_title": "Rancangan Senaman Tersuai",
-    "feature_workouts_desc": "AI membina program progresif 4 minggu di sekitar objektif dan peralatan anda.",
     "feature_body_scan_title": "Analisis Imbasan Badan",
-    "feature_body_scan_desc": "Muat naik 3 foto dan dapatkan penilaian komposisi badan bertenaga AI.",
     "cta": "Mulai — Percuma",
-    "fine_print": "Hanya 2 minit · Tiada kad kredit diperlukan"
+    "fine_print": "Hanya 2 minit · Tiada kad kredit diperlukan",
+    "readiness_badge": "PERCUMA",
+    "readiness_headline": "Skor Kesiapan Anda",
+    "readiness_desc": "Satu nombor untuk menunjukkan seberapa siap tubuh anda untuk berlatih hari ini — dibina daripada tidur dan kadar jantung anda. Tiada peranti boleh pakai $300 diperlukan.",
+    "plus_label": "Tambah semua yang lain anda dapat:"
   },
   "friends": {
     "title": "Rakan",

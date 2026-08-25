@@ -1257,15 +1257,15 @@
   "welcome": {
     "tagline": "Ditt AI-drivna träningsteam,\ntillgängligt 24/7",
     "feature_coach_title": "AI-personlig tränare",
-    "feature_coach_desc": "Fråga vad som helst — näring, träning, återhämtning. Få svar anpassade till din kropp.",
     "feature_scan_title": "Snabb matskanning",
-    "feature_scan_desc": "Peka din kamera på någon måltid och få fullständig makrouppdelning på sekunder.",
     "feature_workouts_title": "Anpassade träningsplaner",
-    "feature_workouts_desc": "AI bygger ett 4-veckors progressivt program runt ditt mål och utrustning.",
     "feature_body_scan_title": "Body scan-analys",
-    "feature_body_scan_desc": "Ladda upp 3 foton och få AI-driven kroppsammansättningsbedömning.",
     "cta": "Kom igång — gratis",
-    "fine_print": "Tar 2 minuter · Inget kreditkort krävs"
+    "fine_print": "Tar 2 minuter · Inget kreditkort krävs",
+    "readiness_badge": "GRATIS",
+    "readiness_headline": "Din Beredskapsscore",
+    "readiness_desc": "Ett värde för hur redo din kropp är för träning idag — baserat på din sömn och puls. Ingen $300 dyr enhet krävs.",
+    "plus_label": "Plus allt annat du får:"
   },
   "friends": {
     "title": "Vänner",

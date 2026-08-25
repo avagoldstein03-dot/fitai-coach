@@ -1257,15 +1257,15 @@
   "welcome": {
     "tagline": "Tu equipo de fitness con IA,\ndisponible 24/7",
     "feature_coach_title": "Entrenador Personal IA",
-    "feature_coach_desc": "Pregunta cualquier cosa — nutrición, entrenamientos, recuperación. Obtén respuestas adaptadas a tu cuerpo.",
     "feature_scan_title": "Escaneo Instantáneo de Comida",
-    "feature_scan_desc": "Apunta tu cámara a cualquier comida y obtén el desglose completo de macros en segundos.",
     "feature_workouts_title": "Planes de Entrenamiento Personalizados",
-    "feature_workouts_desc": "IA construye un programa progresivo de 4 semanas alrededor de tu objetivo y equipo.",
     "feature_body_scan_title": "Análisis de Escaneo Corporal",
-    "feature_body_scan_desc": "Sube 3 fotos y obtén evaluación de composición corporal impulsada por IA.",
     "cta": "Comenzar — Gratis",
-    "fine_print": "Toma 2 minutos · No requiere tarjeta de crédito"
+    "fine_print": "Toma 2 minutos · No requiere tarjeta de crédito",
+    "readiness_badge": "GRATIS",
+    "readiness_headline": "Tu Puntuación de Disponibilidad",
+    "readiness_desc": "Un número que indica qué tan preparado está tu cuerpo para entrenar hoy — basado en tu sueño y frecuencia cardíaca. No requiere un dispositivo wearable de $300.",
+    "plus_label": "Plus todo lo demás que obtienes:"
   },
   "friends": {
     "title": "Amigos",

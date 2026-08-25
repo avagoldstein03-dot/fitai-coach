@@ -1257,15 +1257,15 @@
   "welcome": {
     "tagline": "Tvoj AI-napajani fitnes tim,\ndostupan 24/7",
     "feature_coach_title": "AI lični trener",
-    "feature_coach_desc": "Pitaj šta god — ishrana, treninzi, oporavak. Dobij odgovore prilagođene tvom telu.",
     "feature_scan_title": "Instant skeniranje hrane",
-    "feature_scan_desc": "Usmeri kameru na bilo koji obrok i dobij puno raščlanjivanje makro za nekoliko sekundi.",
     "feature_workouts_title": "Prilagođeni planovi treninga",
-    "feature_workouts_desc": "AI pravi 4-nedeljni napredni program oko tvog cilja i opreme.",
     "feature_body_scan_title": "Analiza body scana",
-    "feature_body_scan_desc": "Učitaj 3 fotografije i dobij analizu telesnog sastava iz AI.",
     "cta": "Počni — Besplatno",
-    "fine_print": "Traje 2 minuta · Nije potrebna kreditna kartica"
+    "fine_print": "Traje 2 minuta · Nije potrebna kreditna kartica",
+    "readiness_badge": "BESPLATNO",
+    "readiness_headline": "Vaš Indeks Spremnosti",
+    "readiness_desc": "Jedan broj koji pokazuje koliko je vaše telo spremno za treniranje danas — izračunat na osnovu vašeg sna i otkucaja srca. Nije potreban skupan nosivi uređaj od 300$.",
+    "plus_label": "Plus sve ostalo što dobijate:"
   },
   "friends": {
     "title": "Prijatelji",

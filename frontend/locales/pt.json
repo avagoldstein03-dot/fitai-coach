@@ -1257,15 +1257,15 @@
   "welcome": {
     "tagline": "Seu time de fitness com IA,\ndisponível 24/7",
     "feature_coach_title": "Coach de IA Pessoal",
-    "feature_coach_desc": "Pergunte qualquer coisa — nutrição, treinos, recuperação. Obtenha respostas personalizadas para seu corpo.",
     "feature_scan_title": "Leitura Instantânea de Alimentos",
-    "feature_scan_desc": "Aponte sua câmera para qualquer refeição e obtenha a quebra completa de macros em segundos.",
     "feature_workouts_title": "Planos de Treino Personalizados",
-    "feature_workouts_desc": "IA constrói um programa progressivo de 4 semanas em torno de seu objetivo e equipamento.",
     "feature_body_scan_title": "Análise de Leitura de Corpo",
-    "feature_body_scan_desc": "Envie 3 fotos e obtenha uma avaliação de composição corporal impulsionada por IA.",
     "cta": "Comece — Grátis",
-    "fine_print": "Leva 2 minutos · Nenhum cartão de crédito necessário"
+    "fine_print": "Leva 2 minutos · Nenhum cartão de crédito necessário",
+    "readiness_badge": "GRATUITO",
+    "readiness_headline": "Sua Pontuação de Prontidão",
+    "readiness_desc": "Um único número que mostra como seu corpo está pronto para treinar hoje — baseado no seu sono e frequência cardíaca. Nenhum dispositivo vestível de $300 necessário.",
+    "plus_label": "Mais tudo mais que você recebe:"
   },
   "friends": {
     "title": "Amigos",

@@ -1257,15 +1257,15 @@
   "welcome": {
     "tagline": "Tim kebugaran bertenaga AI Anda,\ntersedia 24/7",
     "feature_coach_title": "Pelatih Pribadi AI",
-    "feature_coach_desc": "Tanyakan apa saja — nutrisi, latihan, pemulihan. Dapatkan jawaban yang disesuaikan dengan tubuh Anda.",
     "feature_scan_title": "Pemindaian Makanan Instan",
-    "feature_scan_desc": "Arahkan kamera Anda ke makanan apa pun dan dapatkan rincian makro lengkap dalam hitungan detik.",
     "feature_workouts_title": "Rencana Latihan Kustom",
-    "feature_workouts_desc": "AI membuat program progresif 4 minggu di sekitar tujuan dan peralatan Anda.",
     "feature_body_scan_title": "Analisis Pemindaian Tubuh",
-    "feature_body_scan_desc": "Unggah 3 foto dan dapatkan penilaian komposisi tubuh bertenaga AI.",
     "cta": "Mulai — Gratis",
-    "fine_print": "Butuh 2 menit · Tidak perlu kartu kredit"
+    "fine_print": "Butuh 2 menit · Tidak perlu kartu kredit",
+    "readiness_badge": "GRATIS",
+    "readiness_headline": "Skor Kesiapan Anda",
+    "readiness_desc": "Satu angka untuk menunjukkan seberapa siap tubuh Anda untuk berlatih hari ini — dibangun dari pola tidur dan detak jantung Anda. Tidak perlu perangkat yang mahal.",
+    "plus_label": "Plus semua yang lainnya Anda dapatkan:"
   },
   "friends": {
     "title": "Teman",

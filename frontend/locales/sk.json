@@ -1257,15 +1257,15 @@
   "welcome": {
     "tagline": "Tvoj AI-poháňaný fitness tím,\ndostupný 24/7",
     "feature_coach_title": "AI osobný tréner",
-    "feature_coach_desc": "Spýtaj sa čokoľvek — výživa, tréningy, regenerácia. Dostanete odpovede prispôsobené vášmu telu.",
     "feature_scan_title": "Okamžité skenovanie jedál",
-    "feature_scan_desc": "Nasmerujem kamerou na akékoľvek jedlo a dostaneš úplný rozpis makroprvkov za sekundy.",
     "feature_workouts_title": "Vlastné plány tréningov",
-    "feature_workouts_desc": "AI zbuduje 4-týždňový progresívny program okolo tvojho cieľa a vybavenia.",
     "feature_body_scan_title": "Analýza body scanu",
-    "feature_body_scan_desc": "Nahraj 3 fotky a dostanú AI-poháňanú analýzu zloženia tela.",
     "cta": "Začni — zadarmo",
-    "fine_print": "Trvá 2 minúty · Nie je potrebná kreditná karta"
+    "fine_print": "Trvá 2 minúty · Nie je potrebná kreditná karta",
+    "readiness_badge": "BEZPLATNÉ",
+    "readiness_headline": "Vaše skóre pripravenosti",
+    "readiness_desc": "Jedno číslo, ktoré ukazuje, ako je vaše telo pripravené na tréning dnes — postavené na základe vášho spánku a srdcovej frekvencie. Nepotrebujete zariadenie za 300 dolárov.",
+    "plus_label": "Plus všetko ostatné, čo dostanete:"
   },
   "friends": {
     "title": "Priatelia",

@@ -1257,15 +1257,15 @@
   "welcome": {
     "tagline": "Sinun tekoälyjohtainen kuntoilutiimisi,\nsaatavilla 24/7",
     "feature_coach_title": "Tekoäly henkilökohtainen valmentaja",
-    "feature_coach_desc": "Kysy mitä tahansa — ravitsemus, treenit, palautuminen. Saa vastauksia, jotka on räätälöity kehollesi.",
     "feature_scan_title": "Pikaruokanskanni",
-    "feature_scan_desc": "Osoita kameraasi mihin tahansa ateriaan ja saa täydellinen makrojaottelu sekunneissa.",
     "feature_workouts_title": "Räätälöidyt treeniohjelmat",
-    "feature_workouts_desc": "Tekoäly rakentaa 4 viikon progressiivisen ohjelman tavoitteellesi ja välineillesi.",
     "feature_body_scan_title": "Kehoskaanitanalyysi",
-    "feature_body_scan_desc": "Lataa 3 valokuvaa ja saa tekoälyn avulla kehon koostumuksen arviointia.",
     "cta": "Aloita — ilmainen",
-    "fine_print": "Kestää 2 minuuttia · Luottokorttia ei vaadita"
+    "fine_print": "Kestää 2 minuuttia · Luottokorttia ei vaadita",
+    "readiness_badge": "ILMAINEN",
+    "readiness_headline": "Sinun valmiuspisteesi",
+    "readiness_desc": "Yksi numero sille, kuinka valmis kehosi on tänään harjoitteluun — rakennettu unesi ja sykkeesi perusteella. Ei tarvita 300 dollarin arvoista puettavaa laitetta.",
+    "plus_label": "Plus kaikki muu mitä saat:"
   },
   "friends": {
     "title": "Ystävät",

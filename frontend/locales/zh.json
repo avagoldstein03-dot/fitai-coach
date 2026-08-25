@@ -1257,15 +1257,15 @@
   "welcome": {
     "tagline": "你的 AI 驱动的健身团队，\n全天 24/7 可用",
     "feature_coach_title": "AI 个人教练",
-    "feature_coach_desc": "询问任何问题 — 营养、训练、恢复。获得针对你身体的答案。",
     "feature_scan_title": "即时食物扫描",
-    "feature_scan_desc": "对着任何膳食拍照，几秒钟内获得完整的宏量分解。",
     "feature_workouts_title": "定制训练计划",
-    "feature_workouts_desc": "AI 根据你的目标和器材建立 4 周循序渐进计划。",
     "feature_body_scan_title": "身体扫描分析",
-    "feature_body_scan_desc": "上传 3 张照片并获得 AI 驱动的身体成分评估。",
     "cta": "开始 — 免费",
-    "fine_print": "只需 2 分钟 · 无需信用卡"
+    "fine_print": "只需 2 分钟 · 无需信用卡",
+    "readiness_badge": "免费",
+    "readiness_headline": "您的准备度评分",
+    "readiness_desc": "一个数字显示您的身体今天的训练准备程度——基于您的睡眠和心率数据。无需昂贵的可穿戴设备。",
+    "plus_label": "加上您还能获得的一切："
   },
   "friends": {
     "title": "好友",
