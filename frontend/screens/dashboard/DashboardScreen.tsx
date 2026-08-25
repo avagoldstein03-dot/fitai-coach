@@ -21,6 +21,7 @@ import { T } from "@/lib/theme";
 import { syncHealthData } from "@/lib/health";
 import { useUpgradeGate } from "@/contexts/UpgradeGateContext";
 import { posthog, Events } from "@/lib/analytics";
+import { requestReviewOnce } from "@/lib/store-review";
 
 const API_URL = process.env.EXPO_PUBLIC_API_URL;
 const W = Dimensions.get("window").width;
@@ -249,6 +250,9 @@ export default function DashboardScreen() {
       if (!done) {
         setCelebrationMilestone(hit);
         AsyncStorage.setItem(key, "1");
+        // A streak milestone is exactly the "genuinely positive moment" the
+        // ASO plan calls for — first real one lands at 3 days.
+        requestReviewOnce();
       }
     });
   }, [data?.streaks?.workouts, data?.streaks?.meals]);

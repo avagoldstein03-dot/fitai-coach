@@ -17,7 +17,7 @@ import axios from "axios";
 import { useUpgradeGate, isPremiumRequiredError } from "@/contexts/UpgradeGateContext";
 import { useTranslation } from "react-i18next";
 import * as Haptics from "expo-haptics";
-import * as StoreReview from "expo-store-review";
+import { requestReviewOnce } from "@/lib/store-review";
 import { T } from "@/lib/theme";
 import { posthog, Events } from "@/lib/analytics";
 import { SwipeToDeleteRow } from "@/components/SwipeToDeleteRow";
@@ -267,11 +267,7 @@ export default function WorkoutsScreen() {
         // Ask right at the "you just finished a full workout" moment, not on
         // every individual set logged — a rare, genuinely positive beat is
         // what Apple's own guidance (and our own ASO plan) calls for.
-        if ((data?.stats?.totalSessions ?? 0) >= 2) {
-          StoreReview.isAvailableAsync().then((ok) => {
-            if (ok) StoreReview.requestReview();
-          }).catch(() => {});
-        }
+        if ((data?.stats?.totalSessions ?? 0) >= 2) requestReviewOnce();
       }
 
       setLogModal(null);

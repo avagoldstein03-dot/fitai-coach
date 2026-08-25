@@ -11,11 +11,13 @@ import {
 } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { useQuery } from "@tanstack/react-query";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 import axios from "axios";
 import { useUpgradeGate } from "@/contexts/UpgradeGateContext";
 import { useTranslation } from "react-i18next";
 import * as Haptics from "expo-haptics";
 import { T } from "@/lib/theme";
+import { requestReviewOnce } from "@/lib/store-review";
 
 const API_URL = process.env.EXPO_PUBLIC_API_URL;
 
@@ -123,6 +125,20 @@ export default function WeeklyReviewScreen() {
     },
     retry: false,
   });
+
+  useEffect(() => {
+    // A real, non-empty "what's going well" list is the actual value moment
+    // of this feature — ask for a review the first time someone gets one,
+    // not on every repeat visit.
+    if (!data?.review?.wins?.length) return;
+    const key = "celebrated_weekly_review";
+    AsyncStorage.getItem(key).then((done) => {
+      if (!done) {
+        AsyncStorage.setItem(key, "1");
+        requestReviewOnce();
+      }
+    });
+  }, [data?.review?.wins]);
 
   useEffect(() => {
     // Resets/cycles a loading-message index in response to query loading state — an
