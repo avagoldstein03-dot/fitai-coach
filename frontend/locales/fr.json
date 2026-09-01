@@ -129,7 +129,13 @@
       "language": "Langue",
       "language_placeholder": "Sélectionner la langue",
       "button": "Prochaine étape",
-      "error_fill": "Veuillez remplir tous les champs obligatoires."
+      "error_fill": "Veuillez remplir tous les champs obligatoires.",
+      "life_stage_label": "Êtes-vous en périménopause, ménopause ou postménopause ? (optionnel)",
+      "not_applicable": "Non applicable",
+      "perimenopause": "Périménopause",
+      "menopause": "Ménopause",
+      "postmenopause": "Postménopause",
+      "prefer_not_to_say": "Préfère ne pas répondre"
     },
     "step2": {
       "title": "Quel est votre objectif?",
@@ -357,7 +363,8 @@
     "readiness_label_prioritize_recovery": "Priorisez la récupération",
     "readiness_disclaimer": "Non un conseil médical — un signal de récupération général basé sur vos données récentes.",
     "readiness_nudge": "Connectez Apple Health et enregistrez quelques entraînements pour déverrouiller votre score de préparation.",
-    "task_connect_friend": "Se connecter avec un ami"
+    "task_connect_friend": "Se connecter avec un ami",
+    "protein_note": "Comprend une augmentation modeste des protéines — conseil courant durant cette étape de la vie pour aider à soutenir la musculature."
   },
   "settings": {
     "title": "Paramètres",

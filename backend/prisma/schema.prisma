@@ -24,6 +24,7 @@ model User {
   // Profile Information
   age                   Int?
   sex                   String?                // "male" | "female" | "other"
+  lifeStage             String?                // "not_applicable" | "perimenopause" | "menopause" | "postmenopause" | "prefer_not_to_say"
   height                Float?                 // always stored in cm
   weight                Float?                 // always stored in kg
   unitSystem            String?                @default("imperial") // "imperial" | "metric" — display preference only

@@ -129,7 +129,13 @@
       "language": "Jezik",
       "language_placeholder": "Odaberi jezik",
       "button": "Sljedeći korak",
-      "error_fill": "Molimo popuni sva obavezna polja."
+      "error_fill": "Molimo popuni sva obavezna polja.",
+      "life_stage_label": "Jeste li u perimenopauzi, menopauzi ili postmenopauzi? (opcionalno)",
+      "not_applicable": "Nije primjenjivo",
+      "perimenopause": "Perimenopauza",
+      "menopause": "Menopauza",
+      "postmenopause": "Postmenopauza",
+      "prefer_not_to_say": "Radije ne bih odgovarao/odgovarala"
     },
     "step2": {
       "title": "Koji je tvoj cilj?",
@@ -357,7 +363,8 @@
     "readiness_label_prioritize_recovery": "Prioritiziraj oporavak",
     "readiness_disclaimer": "Nije medicinski savjet — opći signal oporavka temeljen na tvojim nedavnim podacima.",
     "readiness_nudge": "Poveži Apple Health i zabilježi nekoliko treningima kako bi otključao/otključala svoju ocjenu spremnosti.",
-    "task_connect_friend": "Poveži se s prijateljem"
+    "task_connect_friend": "Poveži se s prijateljem",
+    "protein_note": "Uključuje umjeren porast proteina — čest savjet tijekom ovog životnog razdoblja kako bi se pomoglo održavanju mišićne mase."
   },
   "settings": {
     "title": "Postavke",

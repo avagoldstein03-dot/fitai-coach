@@ -129,7 +129,13 @@
       "language": "Wika",
       "language_placeholder": "Piliin ang wika",
       "button": "Susunod na Hakbang",
-      "error_fill": "Mangyaring punan ang lahat ng kinakailangang mga puwesto."
+      "error_fill": "Mangyaring punan ang lahat ng kinakailangang mga puwesto.",
+      "life_stage_label": "Nasa perimenopause, menopause, o postmenopause ka na ba? (opsyonal)",
+      "not_applicable": "Hindi applicable",
+      "perimenopause": "Perimenopause",
+      "menopause": "Menopause",
+      "postmenopause": "Postmenopause",
+      "prefer_not_to_say": "Ayaw kong sabihin"
     },
     "step2": {
       "title": "Ano ang Iyong Goal?",
@@ -357,7 +363,8 @@
     "readiness_label_prioritize_recovery": "Bigyan ng Priyoridad ang Pagkakaguluhan",
     "readiness_disclaimer": "Hindi ito medikal na payo — isang pangkalahatang recovery signal batay sa iyong nakaraang data.",
     "readiness_nudge": "Ikonekta ang Apple Health at mag-log ng ilang workout upang i-unlock ang iyong readiness score.",
-    "task_connect_friend": "Makipag-ugnayan sa isang kaibigan"
+    "task_connect_friend": "Makipag-ugnayan sa isang kaibigan",
+    "protein_note": "Kasama ang isang katamtamang pagtaas ng protein — karaniwang payo sa yugto ng buhay na ito upang tulungan ang suporta sa kalamnan."
   },
   "settings": {
     "title": "Settings",

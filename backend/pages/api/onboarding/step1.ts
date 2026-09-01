@@ -9,6 +9,7 @@ const step1Schema = z.object({
   name: z.string().min(1),
   age: z.number().min(13).max(120),
   sex: z.enum(["male", "female", "other"]),
+  lifeStage: z.enum(["not_applicable", "perimenopause", "menopause", "postmenopause", "prefer_not_to_say"]).optional(),
   height: z.number().min(50).max(300), // cm
   weight: z.number().min(20).max(500), // kg
   language: z.string().optional(),
@@ -64,6 +65,7 @@ export default async function handler(
           name: data.name,
           age: data.age,
           sex: data.sex,
+          lifeStage: data.lifeStage,
           height: data.height,
           weight: data.weight,
           language: data.language ?? "English",
@@ -79,6 +81,7 @@ export default async function handler(
           name: data.name,
           age: data.age,
           sex: data.sex,
+          lifeStage: data.lifeStage,
           height: data.height,
           weight: data.weight,
           language: data.language ?? "English",

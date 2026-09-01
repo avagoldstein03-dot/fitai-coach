@@ -129,7 +129,13 @@
       "language": "Limba",
       "language_placeholder": "Selecteaza limba",
       "button": "Pasul Urmator",
-      "error_fill": "Te rugăm completează toate câmpurile obligatorii."
+      "error_fill": "Te rugăm completează toate câmpurile obligatorii.",
+      "life_stage_label": "Ești în perimenopauză, menopauză sau postmenopauză? (opțional)",
+      "not_applicable": "Nu se aplică",
+      "perimenopause": "Perimenopauză",
+      "menopause": "Menopauză",
+      "postmenopause": "Postmenopauză",
+      "prefer_not_to_say": "Prefer să nu spun"
     },
     "step2": {
       "title": "Care e Scopul Tau?",
@@ -357,7 +363,8 @@
     "readiness_label_prioritize_recovery": "Prioritizează recuperarea",
     "readiness_disclaimer": "Nu este sfat medical — un semnal general de recuperare bazat pe datele tale recente.",
     "readiness_nudge": "Conectează Apple Health și înregistrează câteva antrenamente pentru a debloca scorul tău de pregătire.",
-    "task_connect_friend": "Conectează-te cu un prieten"
+    "task_connect_friend": "Conectează-te cu un prieten",
+    "protein_note": "Include o creștere modestă de proteine — sfat frecvent în această etapă a vieții pentru a sprijini masa musculară."
   },
   "settings": {
     "title": "Setari",

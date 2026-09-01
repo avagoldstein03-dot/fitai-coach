@@ -129,7 +129,13 @@
       "language": "Lugha",
       "language_placeholder": "Chagua lugha",
       "button": "Hatua Inayofuata",
-      "error_fill": "Tafadhali jaza sehemu zote zinazohitajika."
+      "error_fill": "Tafadhali jaza sehemu zote zinazohitajika.",
+      "life_stage_label": "Je, uko katika kipindi cha kabla ya menopause, menopause, au baada ya menopause? (ikhtiyari)",
+      "not_applicable": "Haifiki",
+      "perimenopause": "Kabla ya Menopause",
+      "menopause": "Menopause",
+      "postmenopause": "Baada ya Menopause",
+      "prefer_not_to_say": "Ninataka kutosema"
     },
     "step2": {
       "title": "Lengo Lako ni Lipi?",
@@ -357,7 +363,8 @@
     "readiness_label_prioritize_recovery": "Prioritize Kufanya Upya",
     "readiness_disclaimer": "Sio ushauri wa kimatibabu — ishara ya jumla ya kufanya upya kulingana na data yako ya karibuni.",
     "readiness_nudge": "Unganisha Apple Health na boresha mazoezi machache ili kufungua alama yako ya uhalifu.",
-    "task_connect_friend": "Unganisha na rafiki"
+    "task_connect_friend": "Unganisha na rafiki",
+    "protein_note": "Inajumuisha ongezeko dogo la protini — ushauri wa kawaida wakati wa kipindi hiki cha maisha kusaidia kuunga mkono misuli."
   },
   "settings": {
     "title": "Mipangilio",

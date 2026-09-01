@@ -129,7 +129,13 @@
       "language": "語言",
       "language_placeholder": "選擇語言",
       "button": "下一步",
-      "error_fill": "請填寫所有必填欄位。"
+      "error_fill": "請填寫所有必填欄位。",
+      "life_stage_label": "你處於更年期前期、更年期或更年期後期嗎？(可選)",
+      "not_applicable": "不適用",
+      "perimenopause": "更年期前期",
+      "menopause": "更年期",
+      "postmenopause": "更年期後期",
+      "prefer_not_to_say": "寧願不說"
     },
     "step2": {
       "title": "您的目標是什麼？",
@@ -357,7 +363,8 @@
     "readiness_label_prioritize_recovery": "優先恢復",
     "readiness_disclaimer": "非醫療建議——根據您最近的數據提供的一般恢復信號。",
     "readiness_nudge": "連接 Apple Health 並記錄幾次訓練以解鎖您的準備度分數。",
-    "task_connect_friend": "與朋友連接"
+    "task_connect_friend": "與朋友連接",
+    "protein_note": "包含適度的蛋白質增加——在此人生階段的常見建議，有助於維持肌肉。"
   },
   "settings": {
     "title": "設定",

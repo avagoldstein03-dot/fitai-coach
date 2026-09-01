@@ -129,7 +129,13 @@
       "language": "שפה",
       "language_placeholder": "בחר שפה",
       "button": "שלב הבא",
-      "error_fill": "בואו מלאו את כל השדות הנדרשים."
+      "error_fill": "בואו מלאו את כל השדות הנדרשים.",
+      "life_stage_label": "האם אתה בתקופת קדם-הפסקת התחזוקה, הפסקת התחזוקה, או לאחר הפסקת התחזוקה? (אופציונלי)",
+      "not_applicable": "לא רלוונטי",
+      "perimenopause": "תקופת קדם-הפסקת התחזוקה",
+      "menopause": "הפסקת התחזוקה",
+      "postmenopause": "לאחר הפסקת התחזוקה",
+      "prefer_not_to_say": "מעדיף לא להשיב"
     },
     "step2": {
       "title": "מה המטרה שלך?",
@@ -357,7 +363,8 @@
     "readiness_label_prioritize_recovery": "תעדוף התאוששות",
     "readiness_disclaimer": "לא עצה רפואית — אות התאוששות כללית המבוססת על הנתונים האחרונים שלך.",
     "readiness_nudge": "חבר את Apple Health ורשום כמה אימונים כדי לבטל את הנעילה של ציון המוכנות שלך.",
-    "task_connect_friend": "התחבר עם חבר"
+    "task_connect_friend": "התחבר עם חבר",
+    "protein_note": "כולל עלייה צנועה בחלבון — הנחיה נפוצה בתקופת חיים זו כדי לתמוך בשריר."
   },
   "settings": {
     "title": "הגדרות",

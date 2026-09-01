@@ -129,7 +129,13 @@
       "language": "اللغة",
       "language_placeholder": "اختر اللغة",
       "button": "الخطوة التالية",
-      "error_fill": "يرجى ملء جميع الحقول المطلوبة."
+      "error_fill": "يرجى ملء جميع الحقول المطلوبة.",
+      "life_stage_label": "هل أنتِ في مرحلة ما قبل انقطاع الطمث أو انقطاع الطمث أو بعد انقطاع الطمث؟ (اختياري)",
+      "not_applicable": "غير قابل للتطبيق",
+      "perimenopause": "ما قبل انقطاع الطمث",
+      "menopause": "انقطاع الطمث",
+      "postmenopause": "بعد انقطاع الطمث",
+      "prefer_not_to_say": "أفضل عدم الإجابة"
     },
     "step2": {
       "title": "ما هدفك؟",
@@ -357,7 +363,8 @@
     "readiness_label_prioritize_recovery": "ركز على التعافي",
     "readiness_disclaimer": "ليست نصيحة طبية — إشارة تعافي عامة بناءً على بياناتك الأخيرة.",
     "readiness_nudge": "اتصل بـ Apple Health وسجل بعض التمارين لفتح درجة الجاهزية الخاصة بك.",
-    "task_connect_friend": "الاتصال بصديق"
+    "task_connect_friend": "الاتصال بصديق",
+    "protein_note": "يتضمن زيادة متواضعة في البروتين — وهي نصيحة شائعة خلال هذه المرحلة من العمر لدعم العضلات."
   },
   "settings": {
     "title": "الإعدادات",

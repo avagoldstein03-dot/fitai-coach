@@ -129,7 +129,13 @@
       "language": "言語",
       "language_placeholder": "言語を選択",
       "button": "次のステップ",
-      "error_fill": "すべての必須項目に入力してください。"
+      "error_fill": "すべての必須項目に入力してください。",
+      "life_stage_label": "更年期前段階、更年期、または更年期後ですか？（オプション）",
+      "not_applicable": "該当なし",
+      "perimenopause": "更年期前段階",
+      "menopause": "更年期",
+      "postmenopause": "更年期後",
+      "prefer_not_to_say": "答えたくない"
     },
     "step2": {
       "title": "あなたの目標は？",
@@ -357,7 +363,8 @@
     "readiness_label_prioritize_recovery": "リカバリーを優先する",
     "readiness_disclaimer": "医学的アドバイスではありません — 最近のデータに基づいた一般的なリカバリーシグナルです。",
     "readiness_nudge": "Apple Healthを接続して、いくつかのワークアウトをログして、レディネススコアをアンロックしてください。",
-    "task_connect_friend": "友達と繋がる"
+    "task_connect_friend": "友達と繋がる",
+    "protein_note": "適度なタンパク質の増加を含みます — このライフステージでは筋肉をサポートするために一般的に推奨されています。"
   },
   "settings": {
     "title": "設定",

@@ -129,7 +129,13 @@
       "language": "Kieli",
       "language_placeholder": "Valitse kieli",
       "button": "Seuraava vaihe",
-      "error_fill": "Täytä kaikki pakolliset kentät."
+      "error_fill": "Täytä kaikki pakolliset kentät.",
+      "life_stage_label": "Oletko perimenopaussissa, menopaussissa vai postmenopaussissa? (valinnainen)",
+      "not_applicable": "Ei sovellu",
+      "perimenopause": "Perimenopaussi",
+      "menopause": "Menopaussi",
+      "postmenopause": "Postmenopaussi",
+      "prefer_not_to_say": "En halua vastata"
     },
     "step2": {
       "title": "Mikä on tavoitteesi?",
@@ -357,7 +363,8 @@
     "readiness_label_prioritize_recovery": "Priorisoi palautuminen",
     "readiness_disclaimer": "Ei lääketieteellistä neuvontaa — yleinen palautumissignaali viimeaikaisten tietojesi perusteella.",
     "readiness_nudge": "Yhdistä Apple Health ja kirjaa muutama harjoitus avataksesi valmiusindeksisi.",
-    "task_connect_friend": "Muodosta yhteys ystävään"
+    "task_connect_friend": "Muodosta yhteys ystävään",
+    "protein_note": "Sisältää vaatimattoman proteiinin lisän — yleisen suosituksen mukainen lisä tässä elämänvaiheessa lihaskudoksen tukemiseksi."
   },
   "settings": {
     "title": "Asetukset",

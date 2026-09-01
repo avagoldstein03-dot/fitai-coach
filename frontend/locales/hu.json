@@ -129,7 +129,13 @@
       "language": "Nyelv",
       "language_placeholder": "Válassz nyelvet",
       "button": "Következő lépés",
-      "error_fill": "Kérjük, töltsd ki az összes kötelező mezőt."
+      "error_fill": "Kérjük, töltsd ki az összes kötelező mezőt.",
+      "life_stage_label": "Perimennopauza, menopausza vagy posztmenopausza szakaszában vagy? (opcionális)",
+      "not_applicable": "Nem értelmezhető",
+      "perimenopause": "Perimenopauza",
+      "menopause": "Menopausza",
+      "postmenopause": "Posztmenopauza",
+      "prefer_not_to_say": "Nem szeretnék válaszolni"
     },
     "step2": {
       "title": "Mi a célod?",
@@ -357,7 +363,8 @@
     "readiness_label_prioritize_recovery": "Helyezd előtérbe a regenerációt",
     "readiness_disclaimer": "Nem orvosi tanács — csak egy általános regenerációs jel a legutóbbi adatok alapján.",
     "readiness_nudge": "Csatlakoztasd az Apple Health-ot és naplózz néhány edzést a felkészültségi pontszám feloldásához.",
-    "task_connect_friend": "Csatlakozz egy baráthoz"
+    "task_connect_friend": "Csatlakozz egy baráthoz",
+    "protein_note": "Tartalmaz egy szerény fehérje-növekedést — ez az életszakaszban gyakori ajánlás az izomtámogatás érdekében."
   },
   "settings": {
     "title": "Beállítások",

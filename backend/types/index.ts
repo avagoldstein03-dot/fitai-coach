@@ -10,6 +10,7 @@ export interface OnboardingStep1Request {
   name: string;
   age: number;
   sex: "male" | "female" | "other";
+  lifeStage?: "not_applicable" | "perimenopause" | "menopause" | "postmenopause" | "prefer_not_to_say";
   height: number; // cm
   weight: number; // kg
   language?: string;

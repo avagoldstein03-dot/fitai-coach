@@ -129,7 +129,13 @@
       "language": "Språk",
       "language_placeholder": "Välj språk",
       "button": "Nästa steg",
-      "error_fill": "Fyll i alla obligatoriska fält."
+      "error_fill": "Fyll i alla obligatoriska fält.",
+      "life_stage_label": "Befinner du dig i perimenopaus, menopaus eller postmenopaus? (valfritt)",
+      "not_applicable": "Inte tillämpligt",
+      "perimenopause": "Perimenopaus",
+      "menopause": "Menopaus",
+      "postmenopause": "Postmenopaus",
+      "prefer_not_to_say": "Föredrar att inte säga"
     },
     "step2": {
       "title": "Vad är ditt mål?",
@@ -357,7 +363,8 @@
     "readiness_label_prioritize_recovery": "Prioritera återhämtning",
     "readiness_disclaimer": "Inte medicinsk rådgivning — en allmän återhämtningssignal baserad på dina senaste data.",
     "readiness_nudge": "Anslut Apple Health och logga några träningar för att låsa upp din beredskapsscore.",
-    "task_connect_friend": "Anslut med en vän"
+    "task_connect_friend": "Anslut med en vän",
+    "protein_note": "Innehåller en blygsam proteinökning — vanlig rekommendation under denna livsfas för att stödja muskeluppbyggnad."
   },
   "settings": {
     "title": "Inställningar",

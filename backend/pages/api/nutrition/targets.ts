@@ -28,10 +28,20 @@ function calculateTDEE(
   return bmr * (activityMultipliers[activityLevel] || 1.375);
 }
 
+// Anabolic resistance (reduced muscle-protein-synthesis efficiency) increases as estrogen
+// declines, so a modest protein increase alongside resistance training is standard
+// sports-nutrition guidance during this life stage.
+export const LIFE_STAGE_PROTEIN_BUMP_G_PER_KG = 0.2;
+
+export function isMenopauseAdjacent(stage?: string | null): boolean {
+  return stage === "perimenopause" || stage === "menopause" || stage === "postmenopause";
+}
+
 function calculateMacros(
   tdee: number,
   goal: string,
-  weight: number
+  weight: number,
+  lifeStage?: string | null
 ): { calories: number; protein: number; carbs: number; fat: number; water: number } {
   let calories: number;
   let proteinPerKg: number;
@@ -56,6 +66,10 @@ function calculateMacros(
     default:
       calories = tdee;
       proteinPerKg = 1.6;
+  }
+
+  if (isMenopauseAdjacent(lifeStage)) {
+    proteinPerKg += LIFE_STAGE_PROTEIN_BUMP_G_PER_KG;
   }
 
   const protein = Math.round(weight * proteinPerKg);
@@ -105,7 +119,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       user.activityLevel
     );
 
-    const macros = calculateMacros(tdee, user.goal?.primaryGoal || "general_health", user.weight);
+    const macros = calculateMacros(tdee, user.goal?.primaryGoal || "general_health", user.weight, user.lifeStage);
 
     const mealTimings = [
       { meal: "Breakfast", time: "07:00", caloriePercent: 25 },
@@ -123,6 +137,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       tdee: Math.round(tdee),
       mealTimings,
       goal: user.goal?.primaryGoal || "general_health",
+      proteinAdjusted: isMenopauseAdjacent(user.lifeStage),
     });
   } catch (error) {
     console.error("Nutrition targets error:", error);

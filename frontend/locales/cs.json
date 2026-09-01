@@ -129,7 +129,13 @@
       "language": "Jazyk",
       "language_placeholder": "Vyberte jazyk",
       "button": "Další krok",
-      "error_fill": "Prosím vyplňte všechna povinná pole."
+      "error_fill": "Prosím vyplňte všechna povinná pole.",
+      "life_stage_label": "Nacházíte se v perimenopauze, menopauze nebo postmenopauze? (volitelné)",
+      "not_applicable": "Neplatí",
+      "perimenopause": "Perimenopauza",
+      "menopause": "Menopauza",
+      "postmenopause": "Postmenopauza",
+      "prefer_not_to_say": "Raději neříkám"
     },
     "step2": {
       "title": "Jaký je váš cíl?",
@@ -357,7 +363,8 @@
     "readiness_label_prioritize_recovery": "Prioritizujte regeneraci",
     "readiness_disclaimer": "Není lékařská rada — obecný signál regenerace na základě vašich nedávných údajů.",
     "readiness_nudge": "Připojte Apple Health a zaznamenejte pár tréninků, abyste odemkli své skóre připravenosti.",
-    "task_connect_friend": "Připojte se s přítelem"
+    "task_connect_friend": "Připojte se s přítelem",
+    "protein_note": "Zahrnuje skromný zvýšený obsah bílkovin — běžné doporučení v této životní etapě, které pomáhá podporovat svalstvo."
   },
   "settings": {
     "title": "Nastavení",

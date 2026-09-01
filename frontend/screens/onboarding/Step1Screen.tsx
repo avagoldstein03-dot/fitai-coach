@@ -43,6 +43,7 @@ export default function OnboardingStep1() {
     name: "",
     age: "0",
     sex: "" as "male" | "female" | "other",
+    lifeStage: null as null | "not_applicable" | "perimenopause" | "menopause" | "postmenopause" | "prefer_not_to_say",
     heightFt: "0",
     heightIn: "0",
     heightCm: "0",
@@ -74,6 +75,7 @@ export default function OnboardingStep1() {
         name: data.name,
         age: parseInt(data.age),
         sex: data.sex,
+        lifeStage: data.lifeStage ?? undefined,
         height: Math.round(heightCm * 10) / 10,
         weight: Math.round(weightKg * 10) / 10,
         language: data.language,
@@ -157,6 +159,26 @@ export default function OnboardingStep1() {
             ))}
           </View>
         </View>
+
+        {/* Life stage — optional, only relevant when sex isn't male */}
+        {formData.sex && formData.sex !== "male" && (
+          <View style={s.fieldGroup}>
+            <Text style={s.label}>{t("onboarding.step1.life_stage_label")}</Text>
+            <View style={[s.chipRow, { flexWrap: "wrap" }]}>
+              {(["not_applicable", "perimenopause", "menopause", "postmenopause", "prefer_not_to_say"] as const).map((option) => (
+                <TouchableOpacity
+                  key={option}
+                  onPress={() => { Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light); setFormData({ ...formData, lifeStage: option }); }}
+                  style={[s.chip, { flexBasis: "48%", flexGrow: 0 }, formData.lifeStage === option && s.chipActive]}
+                >
+                  <Text style={[s.chipText, formData.lifeStage === option && s.chipTextActive]}>
+                    {t(`onboarding.step1.${option}`)}
+                  </Text>
+                </TouchableOpacity>
+              ))}
+            </View>
+          </View>
+        )}
 
         {/* Units */}
         <View style={s.fieldGroup}>

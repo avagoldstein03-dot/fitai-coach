@@ -129,7 +129,13 @@
       "language": "Język",
       "language_placeholder": "Wybierz język",
       "button": "Następny krok",
-      "error_fill": "Proszę wypełnić wszystkie wymagane pola."
+      "error_fill": "Proszę wypełnić wszystkie wymagane pola.",
+      "life_stage_label": "Czy jesteś w perímenopauzzie, menopauzzie czy postmenopauzzie? (opcjonalnie)",
+      "not_applicable": "Nie dotyczy",
+      "perimenopause": "Perímenopauza",
+      "menopause": "Menopauza",
+      "postmenopause": "Postmenopauza",
+      "prefer_not_to_say": "Wolę nie mówić"
     },
     "step2": {
       "title": "Jaki jest twój cel?",
@@ -357,7 +363,8 @@
     "readiness_label_prioritize_recovery": "Priorytet odzyskiwania sił",
     "readiness_disclaimer": "Nie stanowi porady medycznej — ogólny sygnał regeneracji na podstawie Twoich ostatnich danych.",
     "readiness_nudge": "Połącz Apple Health i zaloguj kilka treningów, aby odblokować swój wynik gotowości.",
-    "task_connect_friend": "Połącz się z przyjacielem"
+    "task_connect_friend": "Połącz się z przyjacielem",
+    "protein_note": "Zawiera nieznaczny wzrost białka — powszechna rekomendacja na tym etapie życia, aby wspierać mięśnie."
   },
   "settings": {
     "title": "Ustawienia",

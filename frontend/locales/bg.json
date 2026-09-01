@@ -129,7 +129,13 @@
       "language": "Език",
       "language_placeholder": "Изберете език",
       "button": "Следващ етап",
-      "error_fill": "Моля, попълни всички задължителни полета."
+      "error_fill": "Моля, попълни всички задължителни полета.",
+      "life_stage_label": "Вие в периmenopause, menopause или postmenopause? (по желание)",
+      "not_applicable": "Не е приложимо",
+      "perimenopause": "Периmenopause",
+      "menopause": "Menopause",
+      "postmenopause": "Postmenopause",
+      "prefer_not_to_say": "Предпочитам да не казвам"
     },
     "step2": {
       "title": "Каква е вашата цел?",
@@ -357,7 +363,8 @@
     "readiness_label_prioritize_recovery": "Приоритизирай възстановяването",
     "readiness_disclaimer": "Не е медицински съвет — общ сигнал за възстановяване, основан на вашите скорошни данни.",
     "readiness_nudge": "Свържете Apple Health и записвайте няколко тренировки, за да отключите вашия резултат за готовност.",
-    "task_connect_friend": "Свържи се с приятел"
+    "task_connect_friend": "Свържи се с приятел",
+    "protein_note": "Включва скромно увеличение на протеините — обичайна препоръка в този период на живота, за да поддържи мускулатурата."
   },
   "settings": {
     "title": "Настройки",

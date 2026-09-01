@@ -216,7 +216,7 @@ export default function DashboardScreen() {
     return !last || Date.now() - new Date(last).getTime() > 7 * 24 * 60 * 60 * 1000;
   }, [data?.lastAssessmentDate]);
 
-  const { data: targets } = useQuery<{ dailyCaloricTarget: number; proteinTarget: number }>({
+  const { data: targets } = useQuery<{ dailyCaloricTarget: number; proteinTarget: number; proteinAdjusted?: boolean }>({
     queryKey: ["nutritionTargets"],
     queryFn: async () => {
       const res = await axios.get(`${API_URL}/api/nutrition/targets`);
@@ -362,6 +362,9 @@ export default function DashboardScreen() {
                 </View>
               </View>
             ))}
+            {targets.proteinAdjusted && (
+              <Text style={[s.macroDeficitPct, { marginTop: 8 }]}>{t("dashboard.protein_note")}</Text>
+            )}
             {(() => {
               const remaining = calTarget - cal;
               const isOver = remaining < 0;

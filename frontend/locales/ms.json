@@ -129,7 +129,13 @@
       "language": "Bahasa",
       "language_placeholder": "Pilih bahasa",
       "button": "Langkah Seterusnya",
-      "error_fill": "Sila isi semua medan yang diperlukan."
+      "error_fill": "Sila isi semua medan yang diperlukan.",
+      "life_stage_label": "Adakah anda dalam peritmenopause, menopause, atau postmenopause? (pilihan)",
+      "not_applicable": "Tidak berkenaan",
+      "perimenopause": "Peritmenopause",
+      "menopause": "Menopause",
+      "postmenopause": "Postmenopause",
+      "prefer_not_to_say": "Lebih suka tidak menjawab"
     },
     "step2": {
       "title": "Apakah Matlamat Anda?",
@@ -357,7 +363,8 @@
     "readiness_label_prioritize_recovery": "Utamakan Pemulihan",
     "readiness_disclaimer": "Bukan nasihat medis — sinyal pemulihan umum berdasarkan data terbaru Anda.",
     "readiness_nudge": "Hubungkan Apple Health dan catat beberapa latihan untuk membuka skor kesiapan Anda.",
-    "task_connect_friend": "Terhubung dengan teman"
+    "task_connect_friend": "Terhubung dengan teman",
+    "protein_note": "Termasuk peningkatan protein yang sederhana — panduan umum semasa peringkat kehidupan ini untuk membantu menyokong otot."
   },
   "settings": {
     "title": "Tetapan",

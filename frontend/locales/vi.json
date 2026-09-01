@@ -129,7 +129,13 @@
       "language": "Ngôn ngữ",
       "language_placeholder": "Chọn ngôn ngữ",
       "button": "Bước tiếp theo",
-      "error_fill": "Vui lòng điền đầy đủ tất cả các trường bắt buộc."
+      "error_fill": "Vui lòng điền đầy đủ tất cả các trường bắt buộc.",
+      "life_stage_label": "Bạn đang trong giai đoạn tiền mãn kinh, mãn kinh hay sau mãn kinh? (tùy chọn)",
+      "not_applicable": "Không áp dụng",
+      "perimenopause": "Tiền mãn kinh",
+      "menopause": "Mãn kinh",
+      "postmenopause": "Sau mãn kinh",
+      "prefer_not_to_say": "Không muốn nói"
     },
     "step2": {
       "title": "Mục tiêu của bạn là gì?",
@@ -357,7 +363,8 @@
     "readiness_label_prioritize_recovery": "Ưu Tiên Phục Hồi",
     "readiness_disclaimer": "Không phải lời khuyên y tế — một tín hiệu phục hồi chung dựa trên dữ liệu gần đây của bạn.",
     "readiness_nudge": "Kết nối Apple Health và ghi lại một vài bài tập để mở khóa điểm sẵn sàng của bạn.",
-    "task_connect_friend": "Kết nối với một bạn bè"
+    "task_connect_friend": "Kết nối với một bạn bè",
+    "protein_note": "Bao gồm mức protein tăng nhẹ — hướng dẫn phổ biến trong giai đoạn này để giúp hỗ trợ cơ bắp."
   },
   "settings": {
     "title": "Cài đặt",

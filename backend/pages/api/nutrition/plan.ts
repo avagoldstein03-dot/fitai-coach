@@ -6,6 +6,7 @@ import { sendSuccess, sendError, validateRequest } from "@/lib/api-utils";
 import { AIProviderRegistry } from "@/services/ai-registry";
 import { getUserSubscription } from "@/lib/subscription-middleware";
 import { generateShoppingList, ShoppingListItem } from "@/lib/shopping-list";
+import { isMenopauseAdjacent, LIFE_STAGE_PROTEIN_BUMP_G_PER_KG } from "./targets";
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (!validateRequest(req, ["POST", "GET"])) {
@@ -69,7 +70,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     // Calculate targets inline
     const weight = user.weight || 70;
     const dailyCaloricTarget = Math.round(weight * 30);
-    const proteinTarget = Math.round(weight * 2);
+    const proteinPerKg = 2 + (isMenopauseAdjacent(user.lifeStage) ? LIFE_STAGE_PROTEIN_BUMP_G_PER_KG : 0);
+    const proteinTarget = Math.round(weight * proteinPerKg);
     const carbsTarget = Math.round((dailyCaloricTarget * 0.4) / 4);
     const fatsTarget = Math.round((dailyCaloricTarget * 0.25) / 9);
     const waterTarget = Math.round(weight * 35);

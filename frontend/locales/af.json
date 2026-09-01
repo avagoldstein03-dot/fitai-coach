@@ -129,7 +129,13 @@
       "language": "Taal",
       "language_placeholder": "Kies taal",
       "button": "Volgende Stap",
-      "error_fill": "Vul asseblief alle vereiste velde in."
+      "error_fill": "Vul asseblief alle vereiste velde in.",
+      "life_stage_label": "Is jy in perimenopouse, menopouse, of postmenopouse? (opsioneel)",
+      "not_applicable": "Nie van toepassing nie",
+      "perimenopause": "Perimenopouse",
+      "menopause": "Menopouse",
+      "postmenopause": "Postmenopouse",
+      "prefer_not_to_say": "Verkies om nie te sê nie"
     },
     "step2": {
       "title": "Wat is Jou Doel?",
@@ -357,7 +363,8 @@
     "readiness_label_prioritize_recovery": "Prioritiseer Herstel",
     "readiness_disclaimer": "Nie mediese raad nie — 'n algemene herstel-sein gebaseer op jou onlangse data.",
     "readiness_nudge": "Koppel Apple Health en teken 'n paar werkouts aan om jou gereedheidstelling te ontgrendel.",
-    "task_connect_friend": "Koppel met 'n vriend"
+    "task_connect_friend": "Koppel met 'n vriend",
+    "protein_note": "Sluit 'n beskeie proteïenverhoging in — algemene raad tydens hierdie lewensfase om spierondersteuning te bevorder."
   },
   "settings": {
     "title": "Instellings",

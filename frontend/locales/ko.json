@@ -129,7 +129,13 @@
       "language": "언어",
       "language_placeholder": "언어 선택",
       "button": "다음 단계",
-      "error_fill": "모든 필수 항목을 입력해주세요."
+      "error_fill": "모든 필수 항목을 입력해주세요.",
+      "life_stage_label": "폐경 전, 폐경, 또는 폐경 후 단계에 있으신가요? (선택사항)",
+      "not_applicable": "해당 없음",
+      "perimenopause": "폐경 전",
+      "menopause": "폐경",
+      "postmenopause": "폐경 후",
+      "prefer_not_to_say": "답변하지 않음"
     },
     "step2": {
       "title": "목표가 무엇인가요?",
@@ -357,7 +363,8 @@
     "readiness_label_prioritize_recovery": "회복 우선하기",
     "readiness_disclaimer": "의료 조언이 아닙니다 — 최근 데이터를 기반으로 한 일반적인 회복 신호입니다.",
     "readiness_nudge": "Apple Health를 연결하고 몇 가지 운동을 기록하여 준비도 점수를 잠금 해제하세요.",
-    "task_connect_friend": "친구와 연결하기"
+    "task_connect_friend": "친구와 연결하기",
+    "protein_note": "적당한 수준의 단백질 증량이 포함되어 있습니다 — 이 시기에 근육을 지원하기 위한 일반적인 권장사항입니다."
   },
   "settings": {
     "title": "설정",

@@ -129,7 +129,13 @@
       "language": "语言",
       "language_placeholder": "选择语言",
       "button": "下一步",
-      "error_fill": "请填写所有必填字段。"
+      "error_fill": "请填写所有必填字段。",
+      "life_stage_label": "您处于围绝经期、绝经期还是绝经后期？(可选)",
+      "not_applicable": "不适用",
+      "perimenopause": "围绝经期",
+      "menopause": "绝经期",
+      "postmenopause": "绝经后期",
+      "prefer_not_to_say": "不愿透露"
     },
     "step2": {
       "title": "您的目标是什么?",
@@ -357,7 +363,8 @@
     "readiness_label_prioritize_recovery": "优先恢复",
     "readiness_disclaimer": "非医学建议 — 基于您最近数据的常规恢复信号。",
     "readiness_nudge": "连接 Apple Health 并记录几项训练以解锁您的准备状态评分。",
-    "task_connect_friend": "与朋友连接"
+    "task_connect_friend": "与朋友连接",
+    "protein_note": "包含适度增加的蛋白质——这个人生阶段的常见建议，有助于维持肌肉。"
   },
   "settings": {
     "title": "设置",

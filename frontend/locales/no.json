@@ -129,7 +129,13 @@
       "language": "Språk",
       "language_placeholder": "Velg språk",
       "button": "Neste steg",
-      "error_fill": "Vennligst fyll inn alle obligatoriske felt."
+      "error_fill": "Vennligst fyll inn alle obligatoriske felt.",
+      "life_stage_label": "Er du i perimenopause, menopause eller postmenopause? (valgfritt)",
+      "not_applicable": "Ikke relevant",
+      "perimenopause": "Perimenopause",
+      "menopause": "Menopause",
+      "postmenopause": "Postmenopause",
+      "prefer_not_to_say": "Foretrekker ikke å si"
     },
     "step2": {
       "title": "Hva er ditt mål?",
@@ -357,7 +363,8 @@
     "readiness_label_prioritize_recovery": "Prioriter restitusjon",
     "readiness_disclaimer": "Ikke medisinsk råd — et generelt restitusjonssignal basert på dine nylige data.",
     "readiness_nudge": "Koble til Apple Health og logg noen få treninger for å låse opp beredskapsscore.",
-    "task_connect_friend": "Koble til en venn"
+    "task_connect_friend": "Koble til en venn",
+    "protein_note": "Inkluderer en beskjeden proteinøkning — vanlig råd i denne livsfasen for å støtte muskelmassen."
   },
   "settings": {
     "title": "Innstillinger",

@@ -129,7 +129,13 @@
       "language": "Taal",
       "language_placeholder": "Selecteer taal",
       "button": "Volgende Stap",
-      "error_fill": "Vul alstublieft alle verplichte velden in."
+      "error_fill": "Vul alstublieft alle verplichte velden in.",
+      "life_stage_label": "Bent u in de perimenopauze, menopauze of postmenopauze? (optioneel)",
+      "not_applicable": "Niet van toepassing",
+      "perimenopause": "Perimenopauze",
+      "menopause": "Menopauze",
+      "postmenopause": "Postmenopauze",
+      "prefer_not_to_say": "Liever niet zeggen"
     },
     "step2": {
       "title": "Wat is Je Doel?",
@@ -357,7 +363,8 @@
     "readiness_label_prioritize_recovery": "Prioriteer Herstel",
     "readiness_disclaimer": "Geen medisch advies — een algemeen herstelsignaal gebaseerd op je recente gegevens.",
     "readiness_nudge": "Verbind Apple Health en registreer een paar trainingen om je paraatheidscore te ontgrendelen.",
-    "task_connect_friend": "Verbind met een vriend"
+    "task_connect_friend": "Verbind met een vriend",
+    "protein_note": "Inclusief een bescheiden proteïneverhoging — gebruikelijk advies tijdens deze levensfase om spierondersteuning te bevorderen."
   },
   "settings": {
     "title": "Instellingen",
