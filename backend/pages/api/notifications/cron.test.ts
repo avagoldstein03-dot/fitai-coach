@@ -4,6 +4,8 @@ import {
   broadcastMealNudges,
   broadcastProgressUpdates,
   broadcastWeeklyReviewReady,
+  broadcastOnboardingSequence,
+  broadcastWinBackSequence,
 } from "@/services/notifications";
 import { generateWeeklyInsightsForAllEligibleUsers } from "@/services/insights";
 import handler from "./cron";
@@ -13,6 +15,8 @@ jest.mock("@/services/notifications", () => ({
   broadcastMealNudges: jest.fn(),
   broadcastProgressUpdates: jest.fn(),
   broadcastWeeklyReviewReady: jest.fn(),
+  broadcastOnboardingSequence: jest.fn(),
+  broadcastWinBackSequence: jest.fn(),
 }));
 
 jest.mock("@/services/insights", () => ({
@@ -47,6 +51,8 @@ describe("notifications/cron handler", () => {
     (broadcastMealNudges as jest.Mock).mockResolvedValue({ sent: 1, failed: 0 });
     (broadcastProgressUpdates as jest.Mock).mockResolvedValue({ sent: 1, failed: 0 });
     (broadcastWeeklyReviewReady as jest.Mock).mockResolvedValue({ sent: 1, failed: 0 });
+    (broadcastOnboardingSequence as jest.Mock).mockResolvedValue({ sent: 1, failed: 0 });
+    (broadcastWinBackSequence as jest.Mock).mockResolvedValue({ sent: 1, failed: 0 });
     (generateWeeklyInsightsForAllEligibleUsers as jest.Mock).mockResolvedValue({ attempted: 1, failed: 0 });
   });
 
@@ -62,15 +68,24 @@ describe("notifications/cron handler", () => {
     expect(broadcastWorkoutReminders).not.toHaveBeenCalled();
   });
 
-  it("type=workout on a non-Sunday only runs the workout broadcast", async () => {
+  it("type=workout on a non-Sunday runs the workout, onboarding, and win-back broadcasts", async () => {
     mockDayOfWeek(1); // Monday
     const { req, res } = mockReqRes({ type: "workout" });
     await handler(req, res);
 
     expect(broadcastWorkoutReminders).toHaveBeenCalledTimes(1);
+    expect(broadcastOnboardingSequence).toHaveBeenCalledTimes(1);
+    expect(broadcastWinBackSequence).toHaveBeenCalledTimes(1);
     expect(broadcastProgressUpdates).not.toHaveBeenCalled();
     expect(broadcastWeeklyReviewReady).not.toHaveBeenCalled();
     expect(generateWeeklyInsightsForAllEligibleUsers).not.toHaveBeenCalled();
+
+    const responseBody = res.json.mock.calls[0][0];
+    expect(responseBody.data).toEqual({
+      workoutReminders: { sent: 1, failed: 0 },
+      onboarding: { sent: 1, failed: 0 },
+      winBack: { sent: 1, failed: 0 },
+    });
   });
 
   it("type=workout on a Sunday also runs the weekly broadcasts and insight generation", async () => {
@@ -79,6 +94,8 @@ describe("notifications/cron handler", () => {
     await handler(req, res);
 
     expect(broadcastWorkoutReminders).toHaveBeenCalledTimes(1);
+    expect(broadcastOnboardingSequence).toHaveBeenCalledTimes(1);
+    expect(broadcastWinBackSequence).toHaveBeenCalledTimes(1);
     expect(broadcastProgressUpdates).toHaveBeenCalledTimes(1);
     expect(broadcastWeeklyReviewReady).toHaveBeenCalledTimes(1);
     expect(generateWeeklyInsightsForAllEligibleUsers).toHaveBeenCalledTimes(1);
@@ -86,6 +103,8 @@ describe("notifications/cron handler", () => {
     const responseBody = res.json.mock.calls[0][0];
     expect(responseBody.data).toEqual({
       workoutReminders: { sent: 1, failed: 0 },
+      onboarding: { sent: 1, failed: 0 },
+      winBack: { sent: 1, failed: 0 },
       progressUpdates: { sent: 1, failed: 0 },
       weeklyReview: { sent: 1, failed: 0 },
       weeklyInsights: { attempted: 1, failed: 0 },

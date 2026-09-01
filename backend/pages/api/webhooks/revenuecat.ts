@@ -2,6 +2,7 @@ import type { NextApiRequest, NextApiResponse } from "next";
 import { timingSafeEqual } from "crypto";
 import prisma from "@/lib/prisma";
 import { sendSuccess, sendError } from "@/lib/api-utils";
+import { notifyPayingWinBack } from "@/services/notifications";
 
 // RevenueCat's own tier identifiers — must match the Entitlement names configured
 // in the RevenueCat dashboard, which in turn match the Offering names already
@@ -94,6 +95,8 @@ async function handleExpiration(event: any) {
   }).catch(() => {
     // No existing Subscription row for this user — nothing to expire.
   });
+
+  notifyPayingWinBack(user.id).catch((err) => console.error("Paying win-back push failed:", err));
 
   console.log(`RevenueCat EXPIRATION: marked user ${user.id} canceled`);
 }

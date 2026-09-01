@@ -5,6 +5,8 @@ import {
   broadcastMealNudges,
   broadcastProgressUpdates,
   broadcastWeeklyReviewReady,
+  broadcastOnboardingSequence,
+  broadcastWinBackSequence,
 } from "@/services/notifications";
 import { generateWeeklyInsightsForAllEligibleUsers } from "@/services/insights";
 
@@ -41,6 +43,14 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   if (type === "workout") {
     const result = await broadcastWorkoutReminders();
 
+    // Daily piggyback — onboarding (D1/D3/D7) and win-back (D3/D7/D14) are
+    // both date-bucketed, so running them on every daily `workout` tick is
+    // safe without a separate cron slot (see the Vercel Hobby cap note above).
+    const [onboarding, winBack] = await Promise.all([
+      broadcastOnboardingSequence(),
+      broadcastWinBackSequence(),
+    ]);
+
     // Sunday piggyback — see the vercel.json note above.
     if (new Date().getUTCDay() === 0) {
       const [progressUpdates, weeklyReview, weeklyInsights] = await Promise.all([
@@ -50,12 +60,12 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       ]);
       return sendSuccess(
         res,
-        { workoutReminders: result, progressUpdates, weeklyReview, weeklyInsights },
+        { workoutReminders: result, onboarding, winBack, progressUpdates, weeklyReview, weeklyInsights },
         "Workout reminders + Sunday weekly notifications sent"
       );
     }
 
-    return sendSuccess(res, result, "Workout reminders sent");
+    return sendSuccess(res, { workoutReminders: result, onboarding, winBack }, "Workout reminders sent");
   }
 
   if (type === "meal") {

@@ -2,6 +2,7 @@ import type { NextApiRequest, NextApiResponse } from "next";
 import { getAuth } from "@clerk/nextjs/server";
 import prisma from "@/lib/prisma";
 import { sendSuccess, sendError } from "@/lib/api-utils";
+import { notifyOnboardingWelcome } from "@/services/notifications";
 import { z } from "zod";
 
 const schema = z.object({
@@ -36,10 +37,21 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
   const { token } = parsed.data;
 
-  await prisma.user.update({
+  const existing = await prisma.user.findUnique({
+    where: { clerkId: userId },
+    select: { pushToken: true },
+  });
+
+  const user = await prisma.user.update({
     where: { clerkId: userId },
     data:  { pushToken: token },
   });
+
+  // Fire the D0 welcome only the first time a token is registered for this
+  // user — re-registration on reinstall/relaunch shouldn't re-send it.
+  if (!existing?.pushToken) {
+    notifyOnboardingWelcome(user.id).catch((err) => console.error("D0 welcome push failed:", err));
+  }
 
   return sendSuccess(res, { registered: true }, "Push token registered");
 }
