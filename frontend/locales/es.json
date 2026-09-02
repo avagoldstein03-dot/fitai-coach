@@ -436,7 +436,9 @@
     "diet_not_set": "Sin preferencia de dieta establecida",
     "allergies_label": "Alergias",
     "app_icon": "Icono de la Aplicación",
-    "app_icon_sub": "Elite — elige entre varios estilos"
+    "app_icon_sub": "Elite — elige entre varios estilos",
+    "affiliate_code": "Código de Referencia",
+    "affiliate_code_sub": "¿Te recomendó un creador? Ingresa su código"
   },
   "notifications": {
     "title": "Notificaciones",
@@ -1473,5 +1475,15 @@
     "unsupported_title": "No Disponible en Este Dispositivo",
     "unsupported_sub": "Los iconos de aplicación personalizados no son compatibles con este dispositivo o plataforma.",
     "error_switch": "No se pudo cambiar el icono de la aplicación. Intenta de nuevo."
+  },
+  "affiliate_code": {
+    "title": "Código de Referencia",
+    "subtitle": "Si un creador te envió aquí con un código, introdúcelo a continuación.",
+    "placeholder": "CÓDIGO",
+    "submit": "Aplicar Código",
+    "success": "Código aplicado — ¡gracias por decirnos quién te recomendó!",
+    "error_already_attributed": "Ya has sido atribuido a un código de referencia.",
+    "error_not_found": "Ese código no es válido. Verifica con quien te lo compartió.",
+    "error_generic": "Algo salió mal — intenta de nuevo en un momento."
   }
 }

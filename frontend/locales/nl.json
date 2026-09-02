@@ -436,7 +436,9 @@
     "diet_not_set": "Geen dieetvoorkeur ingesteld",
     "allergies_label": "Allergieën",
     "app_icon": "App-pictogram",
-    "app_icon_sub": "Elite — kies uit een aantal ontwerpen"
+    "app_icon_sub": "Elite — kies uit een aantal ontwerpen",
+    "affiliate_code": "Aanbevelingscode",
+    "affiliate_code_sub": "Ben je doorgestuurd door een creator? Voer hun code in"
   },
   "notifications": {
     "title": "Meldingen",
@@ -1473,5 +1475,15 @@
     "unsupported_title": "Niet beschikbaar op dit apparaat",
     "unsupported_sub": "Aangepaste app-pictogrammen worden niet ondersteund op dit apparaat of platform.",
     "error_switch": "Kon het app-pictogram niet wijzigen. Probeer het opnieuw."
+  },
+  "affiliate_code": {
+    "title": "Aanbevelingscode",
+    "subtitle": "Als een creator je hiernaartoe heeft gestuurd met een code, voer deze hieronder in.",
+    "placeholder": "CODE",
+    "submit": "Code toepassen",
+    "success": "Code toegepast — bedankt dat je ons hebt laten weten wie je heeft doorgestuurd!",
+    "error_already_attributed": "Je bent al aan een aanbevelingscode gekoppeld.",
+    "error_not_found": "Die code is niet geldig. Controleer het met degene die het heeft gedeeld.",
+    "error_generic": "Er is iets misgegaan — probeer het zo meteen opnieuw."
   }
 }

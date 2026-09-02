@@ -4,6 +4,50 @@ import prisma from "@/lib/prisma";
 import { sendSuccess, sendError } from "@/lib/api-utils";
 import { notifyPayingWinBack } from "@/services/notifications";
 
+// Attribution/ledger only — no payout execution exists yet (CommissionEntry.status
+// stays "pending"). Only meaningful for the small fraction of users with an
+// AffiliateReferral row, so this is a no-op for everyone else.
+async function captureCommissionIfReferred(userId: string, event: any) {
+  const referral = await prisma.affiliateReferral.findUnique({
+    where: { userId },
+    include: { affiliate: true },
+  });
+  if (!referral) return;
+
+  const grossAmount = typeof event.price === "number" ? event.price : null;
+  if (!grossAmount || grossAmount <= 0) {
+    // Never record a $0/missing-price entry that would look like a real
+    // completed transaction — RevenueCat's documented payload includes
+    // `price`, but this hasn't been verified against a live payload yet.
+    console.warn(
+      `RevenueCat ${event.type} for referred user ${userId} has no usable price — skipping commission entry.`
+    );
+    return;
+  }
+
+  const providerEventId: string = event.id ?? `${event.app_user_id}:${event.type}:${event.purchased_at_ms}`;
+  const eventType = event.type === "INITIAL_PURCHASE" ? "initial_purchase" : "renewal";
+
+  try {
+    await prisma.commissionEntry.create({
+      data: {
+        referralId: referral.id,
+        providerEventId,
+        eventType,
+        grossAmount,
+        currency: event.currency ?? "usd",
+        commissionAmount: grossAmount * referral.affiliate.commissionRate,
+      },
+    });
+  } catch (err: any) {
+    if (err?.code === "P2002") {
+      // Expected on a webhook retry — this event's commission entry already exists.
+      return;
+    }
+    console.error("Failed to record affiliate commission entry:", err);
+  }
+}
+
 // RevenueCat's own tier identifiers — must match the Entitlement names configured
 // in the RevenueCat dashboard, which in turn match the Offering names already
 // relied on in frontend/lib/purchases.ts's getOffering().
@@ -76,6 +120,8 @@ async function handleActiveEvent(event: any) {
   });
 
   console.log(`RevenueCat ${event.type}: granted ${tier} to user ${user.id}`);
+
+  await captureCommissionIfReferred(user.id, event);
 }
 
 async function handleExpiration(event: any) {

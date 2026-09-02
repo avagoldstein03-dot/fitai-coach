@@ -436,7 +436,9 @@
     "diet_not_set": "Geen dieetvoorkeur ingestel",
     "allergies_label": "Allergiëe",
     "app_icon": "App Ikoon",
-    "app_icon_sub": "Elite — kies uit 'n paar uitsiene"
+    "app_icon_sub": "Elite — kies uit 'n paar uitsiene",
+    "affiliate_code": "Verwysings kode",
+    "affiliate_code_sub": "Is jy deur 'n skepper na hier verwys? Voer hulle kode in"
   },
   "notifications": {
     "title": "Kennisgewings",
@@ -1473,5 +1475,15 @@
     "unsupported_title": "Nie Beskikbaar op Hierdie Toestel Nie",
     "unsupported_sub": "Pasgemaakte app-ikone word nie op hierdie toestel of platform ondersteun nie.",
     "error_switch": "Kon nie die app-ikoon wissel nie. Probeer weer."
+  },
+  "affiliate_code": {
+    "title": "Verwysings kode",
+    "subtitle": "As 'n skepper jou hiernatoe gestuur het met 'n kode, voer dit hieronder in.",
+    "placeholder": "KODE",
+    "submit": "Pas kode toe",
+    "success": "Kode toegepas — dankie dat jy ons laat weet wie jou gestuur het!",
+    "error_already_attributed": "Jy is reeds aan 'n verwysings kode toegeken.",
+    "error_not_found": "Dié kode is nie geldig nie. Kontroleer dit met die persoon wat dit met jou gedeel het.",
+    "error_generic": "Iets het fout gelopen — probeer oor 'n oomblik weer."
   }
 }

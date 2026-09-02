@@ -436,7 +436,9 @@
     "diet_not_set": "Nijaká voľba diéty niet nastavená",
     "allergies_label": "Alergické reakcie",
     "app_icon": "Ikona aplikácie",
-    "app_icon_sub": "Elite — vyberte si z niekoľkých dizajnov"
+    "app_icon_sub": "Elite — vyberte si z niekoľkých dizajnov",
+    "affiliate_code": "Referenčný kód",
+    "affiliate_code_sub": "Poslal vám sem tvorca svojím kódom? Zadajte ho"
   },
   "notifications": {
     "title": "Oznámenia",
@@ -1473,5 +1475,15 @@
     "unsupported_title": "Nie je dostupné na tomto zariadení",
     "unsupported_sub": "Vlastné ikony aplikácií nie sú podporované na tomto zariadení alebo platforme.",
     "error_switch": "Nepodarilo sa zmeniť ikonu aplikácie. Skúste znova."
+  },
+  "affiliate_code": {
+    "title": "Referenčný kód",
+    "subtitle": "Ak vám tvorca poslal kód, zadajte ho nižšie.",
+    "placeholder": "KÓD",
+    "submit": "Použiť kód",
+    "success": "Kód bol použitý — ďakujeme, že ste nám dali vedieť, kto vás poslal!",
+    "error_already_attributed": "Už ste boli priradení k referenčnému kódu.",
+    "error_not_found": "Tento kód nie je platný. Skontrolujte si ho s osobou, ktorá vám ho poslala.",
+    "error_generic": "Niečo sa pokazilo — skúste to o chvíľu znova."
   }
 }

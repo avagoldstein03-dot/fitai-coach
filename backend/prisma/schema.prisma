@@ -67,6 +67,7 @@ model User {
   analyticsEvents       AnalyticsEvent[]
   friendsOf             FriendConnection[]     @relation("FriendConnectionsAsUser")
   friendedBy            FriendConnection[]     @relation("FriendConnectionsAsFriend")
+  affiliateReferral     AffiliateReferral?
   cheersSent            FriendCheer[]          @relation("CheersSent")
   cheersReceived        FriendCheer[]          @relation("CheersReceived")
   weeklyInsights        WeeklyInsight[]
@@ -587,4 +588,44 @@ model ProductScan {
   updatedAt             DateTime               @updatedAt
 
   @@index([scoringVersion])
+}
+
+// Tracking/attribution/ledger only — no payout execution exists yet.
+// Affiliates are created manually (backend/scripts/create-affiliate.js),
+// not via self-serve signup.
+model Affiliate {
+  id             String              @id @default(cuid())
+  name           String
+  email          String              @unique
+  code           String              @unique
+  commissionRate Float               @default(0.20) // fraction, e.g. 0.20-0.30, set per-affiliate at creation
+  active         Boolean             @default(true)
+  referrals      AffiliateReferral[]
+  createdAt      DateTime            @default(now())
+}
+
+// First-touch, permanent — a user can be attributed to exactly one
+// affiliate, ever (@unique on userId), unlike the symmetric/repeatable
+// FriendConnection mechanic.
+model AffiliateReferral {
+  id                String            @id @default(cuid())
+  affiliateId       String
+  affiliate         Affiliate         @relation(fields: [affiliateId], references: [id])
+  userId            String            @unique
+  user              User              @relation(fields: [userId], references: [id])
+  commissionEntries CommissionEntry[]
+  createdAt         DateTime          @default(now())
+}
+
+model CommissionEntry {
+  id               String            @id @default(cuid())
+  referralId       String
+  referral         AffiliateReferral @relation(fields: [referralId], references: [id])
+  providerEventId  String            @unique // RevenueCat event.id — guards against double-counting on webhook retries
+  eventType        String            // "initial_purchase" | "renewal"
+  grossAmount      Float             // subscriber's payment amount for this event, in `currency`
+  currency         String
+  commissionAmount Float             // grossAmount * affiliate.commissionRate at the time of the event
+  status           String            @default("pending") // always "pending" — no payout path exists yet
+  createdAt        DateTime          @default(now())
 }

@@ -436,7 +436,9 @@
     "diet_not_set": "Není nastavena preference stravy",
     "allergies_label": "Alergeny",
     "app_icon": "Ikona aplikace",
-    "app_icon_sub": "Elite — vyberte si z několika variant"
+    "app_icon_sub": "Elite — vyberte si z několika variant",
+    "affiliate_code": "Referenční kód",
+    "affiliate_code_sub": "Byl jsi někým doporučen? Zadej jeho kód"
   },
   "notifications": {
     "title": "Oznámení",
@@ -1473,5 +1475,15 @@
     "unsupported_title": "Není dostupné na tomto zařízení",
     "unsupported_sub": "Vlastní ikony aplikace nejsou na tomto zařízení nebo platformě podporovány.",
     "error_switch": "Nepodařilo se přepnout ikonu aplikace. Zkuste to znovu."
+  },
+  "affiliate_code": {
+    "title": "Referenční kód",
+    "subtitle": "Pokud tě sem tvůrce poslal s kódem, zadej ho níže.",
+    "placeholder": "KÓD",
+    "submit": "Použít kód",
+    "success": "Kód byl použit — děkujeme, že nám řekl, kdo tě sem poslal!",
+    "error_already_attributed": "Už jsi byl přiřazen k referenčnímu kódu.",
+    "error_not_found": "Tento kód není platný. Ověř si ho u osoby, která ti jej poslala.",
+    "error_generic": "Něco se pokazilo — zkus to za chvíli znovu."
   }
 }

@@ -436,7 +436,9 @@
     "diet_not_set": "Ingen kostpræference indstillet",
     "allergies_label": "Allergi",
     "app_icon": "App-ikon",
-    "app_icon_sub": "Elite — vælg mellem flere designs"
+    "app_icon_sub": "Elite — vælg mellem flere designs",
+    "affiliate_code": "Henvisningskode",
+    "affiliate_code_sub": "Blev du henvist af en creator? Indtast deres kode"
   },
   "notifications": {
     "title": "Notifikationer",
@@ -1473,5 +1475,15 @@
     "unsupported_title": "Ikke tilgængelig på denne enhed",
     "unsupported_sub": "Brugerdefinerede app-ikoner understøttes ikke på denne enhed eller platform.",
     "error_switch": "Kunne ikke skifte app-ikon. Prøv igen."
+  },
+  "affiliate_code": {
+    "title": "Henvisningskode",
+    "subtitle": "Hvis en creator sendte dig her med en kode, skal du indtaste den nedenfor.",
+    "placeholder": "KODE",
+    "submit": "Anvend kode",
+    "success": "Kode anvendt — tak fordi du lod os vide, hvem der sendte dig!",
+    "error_already_attributed": "Du er allerede blevet tilknyttet en henvisningskode.",
+    "error_not_found": "Den kode er ikke gyldig. Tjek med den person, der delte den.",
+    "error_generic": "Noget gik galt — prøv igen om et øjeblik."
   }
 }

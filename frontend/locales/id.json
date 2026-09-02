@@ -436,7 +436,9 @@
     "diet_not_set": "Preferensi diet belum diatur",
     "allergies_label": "Alergi",
     "app_icon": "Ikon Aplikasi",
-    "app_icon_sub": "Elite — pilih dari beberapa tampilan"
+    "app_icon_sub": "Elite — pilih dari beberapa tampilan",
+    "affiliate_code": "Kode Referral",
+    "affiliate_code_sub": "Apakah Anda dirujuk oleh seorang kreator? Masukkan kode mereka"
   },
   "notifications": {
     "title": "Notifikasi",
@@ -1473,5 +1475,15 @@
     "unsupported_title": "Tidak Tersedia di Perangkat Ini",
     "unsupported_sub": "Ikon aplikasi kustom tidak didukung di perangkat atau platform ini.",
     "error_switch": "Tidak dapat mengganti ikon aplikasi. Coba lagi."
+  },
+  "affiliate_code": {
+    "title": "Kode Referral",
+    "subtitle": "Jika seorang kreator mengirimkan Anda ke sini dengan kode, masukkan di bawah.",
+    "placeholder": "KODE",
+    "submit": "Terapkan Kode",
+    "success": "Kode diterapkan — terima kasih telah memberitahu kami siapa yang mengirim Anda!",
+    "error_already_attributed": "Anda sudah dikaitkan dengan kode referral.",
+    "error_not_found": "Kode tersebut tidak valid. Periksa kembali dengan orang yang membagikannya.",
+    "error_generic": "Ada yang tidak beres — coba lagi dalam beberapa saat."
   }
 }

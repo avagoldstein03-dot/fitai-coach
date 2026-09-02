@@ -436,7 +436,9 @@
     "diet_not_set": "Nema postavljene preferencije za dijetu",
     "allergies_label": "Alergije",
     "app_icon": "Ikona aplikacije",
-    "app_icon_sub": "Elite — izaberite iz nekoliko izgleda"
+    "app_icon_sub": "Elite — izaberite iz nekoliko izgleda",
+    "affiliate_code": "Kod Preporuke",
+    "affiliate_code_sub": "Preporučio te je neki kreator? Unesi njegov kod"
   },
   "notifications": {
     "title": "Обавештења",
@@ -1473,5 +1475,15 @@
     "unsupported_title": "Nije dostupno na ovoj uređaju",
     "unsupported_sub": "Prilagođene ikone aplikacija nisu podržane na ovoj uređaju ili platformi.",
     "error_switch": "Nije moguće promeniti ikonu aplikacije. Pokušajte ponovo."
+  },
+  "affiliate_code": {
+    "title": "Kod Preporuke",
+    "subtitle": "Ako te je kreator poslao sa kodom, unesi ga ispod.",
+    "placeholder": "KOD",
+    "submit": "Primeni Kod",
+    "success": "Kod je primenjen — hvala što nam je dao do znanja ko te je poslao!",
+    "error_already_attributed": "Već si povezan sa kodom preporuke.",
+    "error_not_found": "Taj kod nije validan. Proveriti sa onom osobom koja ga je podelila.",
+    "error_generic": "Nešto je pošlo po zlu — pokušaj ponovo za trenutak."
   }
 }

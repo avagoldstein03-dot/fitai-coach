@@ -436,7 +436,9 @@
     "diet_not_set": "Walang itinakdang kagustuhan sa diet",
     "allergies_label": "Allergies",
     "app_icon": "App Icon",
-    "app_icon_sub": "Elite — piliin mula sa ilang disenyo"
+    "app_icon_sub": "Elite — piliin mula sa ilang disenyo",
+    "affiliate_code": "Referral Code",
+    "affiliate_code_sub": "Nag-refer ba sa iyo ng isang creator? Ilagay ang kanilang code"
   },
   "notifications": {
     "title": "Notifications",
@@ -1473,5 +1475,15 @@
     "unsupported_title": "Hindi Available sa Deviceng Ito",
     "unsupported_sub": "Ang custom app icons ay hindi sinusuportahan sa deviceng ito o platform.",
     "error_switch": "Hindi nagawang baguhin ang app icon. Subukan ulit."
+  },
+  "affiliate_code": {
+    "title": "Referral Code",
+    "subtitle": "Kung nagpadala sa iyo ng code ang isang creator, ilagay ito sa ibaba.",
+    "placeholder": "CODE",
+    "submit": "I-apply ang Code",
+    "success": "Code na-apply — salamat sa pagbibigay-alam kung sino ang nagpadala sa iyo!",
+    "error_already_attributed": "Nakaatributo ka na sa isang referral code.",
+    "error_not_found": "Hindi valid ang code na ito. I-double check sa taong nagbahagi nito.",
+    "error_generic": "May problema — subukan ulit sa ilang sandali."
   }
 }

@@ -436,7 +436,9 @@
     "diet_not_set": "Aucune préférence de régime définie",
     "allergies_label": "Allergies",
     "app_icon": "Icône de l'application",
-    "app_icon_sub": "Elite — choisissez parmi plusieurs styles"
+    "app_icon_sub": "Elite — choisissez parmi plusieurs styles",
+    "affiliate_code": "Code de Parrainage",
+    "affiliate_code_sub": "Avez-vous été recommandé par un créateur ? Entrez son code"
   },
   "notifications": {
     "title": "Notifications",
@@ -1473,5 +1475,15 @@
     "unsupported_title": "Non disponible sur cet appareil",
     "unsupported_sub": "Les icônes d'application personnalisées ne sont pas compatibles avec cet appareil ou cette plateforme.",
     "error_switch": "Impossible de changer l'icône de l'application. Réessayez."
+  },
+  "affiliate_code": {
+    "title": "Code de Parrainage",
+    "subtitle": "Si un créateur vous a envoyé ici avec un code, entrez-le ci-dessous.",
+    "placeholder": "CODE",
+    "submit": "Appliquer le Code",
+    "success": "Code appliqué — merci de nous avoir indiqué qui vous a envoyé !",
+    "error_already_attributed": "Vous avez déjà été attribué à un code de parrainage.",
+    "error_not_found": "Ce code n'est pas valide. Vérifiez auprès de la personne qui l'a partagé.",
+    "error_generic": "Une erreur s'est produite — réessayez dans un instant."
   }
 }

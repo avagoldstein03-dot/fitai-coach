@@ -436,7 +436,9 @@
     "diet_not_set": "Ingen diettpreferanse angitt",
     "allergies_label": "Allergi",
     "app_icon": "App-ikon",
-    "app_icon_sub": "Elite — velg fra noen få utseender"
+    "app_icon_sub": "Elite — velg fra noen få utseender",
+    "affiliate_code": "Referral kode",
+    "affiliate_code_sub": "Ble du henvist av en creator? Skriv inn koden deres"
   },
   "notifications": {
     "title": "Varslinger",
@@ -1473,5 +1475,15 @@
     "unsupported_title": "Ikke tilgjengelig på denne enheten",
     "unsupported_sub": "Egendefinerte app-ikoner støttes ikke på denne enheten eller plattformen.",
     "error_switch": "Kunne ikke bytte app-ikon. Prøv igjen."
+  },
+  "affiliate_code": {
+    "title": "Referral kode",
+    "subtitle": "Hvis en creator sendte deg hit med en kode, skriv den inn nedenfor.",
+    "placeholder": "KODE",
+    "submit": "Bruk kode",
+    "success": "Kode aktivert — takk for at du fortalte oss hvem som sendte deg!",
+    "error_already_attributed": "Du er allerede tilknyttet en referral kode.",
+    "error_not_found": "Den koden er ikke gyldig. Sjekk med personen som delte den.",
+    "error_generic": "Noe gikk galt — prøv igjen om en stund."
   }
 }

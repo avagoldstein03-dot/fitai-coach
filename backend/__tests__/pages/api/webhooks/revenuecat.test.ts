@@ -7,6 +7,8 @@ jest.mock("@/lib/prisma", () => ({
   default: {
     user: { findUnique: jest.fn() },
     subscription: { upsert: jest.fn(), update: jest.fn() },
+    affiliateReferral: { findUnique: jest.fn() },
+    commissionEntry: { create: jest.fn() },
   },
 }));
 
@@ -35,6 +37,7 @@ describe("webhooks/revenuecat handler", () => {
   });
   beforeEach(() => {
     jest.clearAllMocks();
+    (prisma.affiliateReferral.findUnique as jest.Mock).mockResolvedValue(null);
   });
 
   it("rejects requests with a missing Authorization header", async () => {
@@ -136,5 +139,144 @@ describe("webhooks/revenuecat handler", () => {
     expect(prisma.user.findUnique).not.toHaveBeenCalled();
     expect(prisma.subscription.upsert).not.toHaveBeenCalled();
     expect(res.status).toHaveBeenCalledWith(200);
+  });
+
+  describe("affiliate commission capture", () => {
+    const REFERRAL = { id: "ref_1", affiliate: { commissionRate: 0.2 } };
+
+    it("creates a commission entry on INITIAL_PURCHASE for a referred user", async () => {
+      (prisma.user.findUnique as jest.Mock).mockResolvedValue({ id: "user_1" });
+      (prisma.affiliateReferral.findUnique as jest.Mock).mockResolvedValue(REFERRAL);
+
+      const { req, res } = mockReqRes(
+        {
+          event: {
+            id: "evt_1",
+            type: "INITIAL_PURCHASE",
+            app_user_id: "clerk_abc",
+            entitlement_ids: ["elite"],
+            purchased_at_ms: 1_700_000_000_000,
+            expiration_at_ms: 1_800_000_000_000,
+            price: 19.99,
+            currency: "USD",
+          },
+        },
+        SECRET
+      );
+
+      await handler(req, res);
+
+      expect(prisma.commissionEntry.create).toHaveBeenCalledWith({
+        data: {
+          referralId: "ref_1",
+          providerEventId: "evt_1",
+          eventType: "initial_purchase",
+          grossAmount: 19.99,
+          currency: "USD",
+          commissionAmount: 19.99 * 0.2,
+        },
+      });
+    });
+
+    it("creates a renewal-typed entry on RENEWAL", async () => {
+      (prisma.user.findUnique as jest.Mock).mockResolvedValue({ id: "user_2" });
+      (prisma.affiliateReferral.findUnique as jest.Mock).mockResolvedValue(REFERRAL);
+
+      const { req, res } = mockReqRes(
+        {
+          event: {
+            id: "evt_2",
+            type: "RENEWAL",
+            app_user_id: "clerk_def",
+            entitlement_ids: ["elite"],
+            purchased_at_ms: 1_700_000_000_000,
+            expiration_at_ms: 1_800_000_000_000,
+            price: 15.99,
+            currency: "USD",
+          },
+        },
+        SECRET
+      );
+
+      await handler(req, res);
+
+      expect(prisma.commissionEntry.create).toHaveBeenCalledWith(
+        expect.objectContaining({ data: expect.objectContaining({ eventType: "renewal" }) })
+      );
+    });
+
+    it("creates no entry for a non-referred user", async () => {
+      (prisma.user.findUnique as jest.Mock).mockResolvedValue({ id: "user_3" });
+      (prisma.affiliateReferral.findUnique as jest.Mock).mockResolvedValue(null);
+
+      const { req, res } = mockReqRes(
+        {
+          event: {
+            id: "evt_3",
+            type: "INITIAL_PURCHASE",
+            app_user_id: "clerk_ghi",
+            entitlement_ids: ["elite"],
+            purchased_at_ms: 1_700_000_000_000,
+            expiration_at_ms: 1_800_000_000_000,
+            price: 19.99,
+            currency: "USD",
+          },
+        },
+        SECRET
+      );
+
+      await handler(req, res);
+
+      expect(prisma.commissionEntry.create).not.toHaveBeenCalled();
+    });
+
+    it("creates no entry when price is missing or zero", async () => {
+      (prisma.user.findUnique as jest.Mock).mockResolvedValue({ id: "user_4" });
+      (prisma.affiliateReferral.findUnique as jest.Mock).mockResolvedValue(REFERRAL);
+
+      const { req, res } = mockReqRes(
+        {
+          event: {
+            id: "evt_4",
+            type: "INITIAL_PURCHASE",
+            app_user_id: "clerk_jkl",
+            entitlement_ids: ["elite"],
+            purchased_at_ms: 1_700_000_000_000,
+            expiration_at_ms: 1_800_000_000_000,
+          },
+        },
+        SECRET
+      );
+
+      await handler(req, res);
+
+      expect(prisma.commissionEntry.create).not.toHaveBeenCalled();
+    });
+
+    it("does not throw when a replayed event hits the unique-constraint guard", async () => {
+      (prisma.user.findUnique as jest.Mock).mockResolvedValue({ id: "user_5" });
+      (prisma.affiliateReferral.findUnique as jest.Mock).mockResolvedValue(REFERRAL);
+      (prisma.commissionEntry.create as jest.Mock).mockRejectedValue({ code: "P2002" });
+
+      const { req, res } = mockReqRes(
+        {
+          event: {
+            id: "evt_5",
+            type: "INITIAL_PURCHASE",
+            app_user_id: "clerk_mno",
+            entitlement_ids: ["elite"],
+            purchased_at_ms: 1_700_000_000_000,
+            expiration_at_ms: 1_800_000_000_000,
+            price: 19.99,
+            currency: "USD",
+          },
+        },
+        SECRET
+      );
+
+      await handler(req, res);
+
+      expect(res.status).toHaveBeenCalledWith(200);
+    });
   });
 });

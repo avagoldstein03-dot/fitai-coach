@@ -436,7 +436,9 @@
     "diet_not_set": "Brak wybranej preferencji dietetycznej",
     "allergies_label": "Alergie",
     "app_icon": "Ikona Aplikacji",
-    "app_icon_sub": "Elite — wybierz spośród kilku wyglądu"
+    "app_icon_sub": "Elite — wybierz spośród kilku wyglądu",
+    "affiliate_code": "Kod Polecenia",
+    "affiliate_code_sub": "Czy ktoś Cię tutaj skierował? Wpisz ich kod"
   },
   "notifications": {
     "title": "Powiadomienia",
@@ -1473,5 +1475,15 @@
     "unsupported_title": "Niedostępne na tym urządzeniu",
     "unsupported_sub": "Niestandardowe ikony aplikacji nie są obsługiwane na tym urządzeniu lub platformie.",
     "error_switch": "Nie udało się zmienić ikony aplikacji. Spróbuj ponownie."
+  },
+  "affiliate_code": {
+    "title": "Kod Polecenia",
+    "subtitle": "Jeśli twórca wysłał Cię tutaj z kodem, wpisz go poniżej.",
+    "placeholder": "KOD",
+    "submit": "Zastosuj Kod",
+    "success": "Kod zastosowany — dziękujemy, że dałeś nam znać, kto Cię do nas wysłał!",
+    "error_already_attributed": "Już zostałeś przypisany do kodu polecenia.",
+    "error_not_found": "Ten kod jest nieważny. Sprawdź jeszcze raz z osobą, która go Ci udostępniła.",
+    "error_generic": "Coś poszło nie tak — spróbuj za chwilę."
   }
 }

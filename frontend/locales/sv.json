@@ -436,7 +436,9 @@
     "diet_not_set": "Ingen kostinställning angiven",
     "allergies_label": "Allergier",
     "app_icon": "App-ikon",
-    "app_icon_sub": "Elite — välj mellan några olika utseenden"
+    "app_icon_sub": "Elite — välj mellan några olika utseenden",
+    "affiliate_code": "Referralkod",
+    "affiliate_code_sub": "Blev du rekommenderad av en content creator? Ange deras kod"
   },
   "notifications": {
     "title": "Meddelanden",
@@ -1473,5 +1475,15 @@
     "unsupported_title": "Inte tillgänglig på den här enheten",
     "unsupported_sub": "Anpassade app-ikoner stöds inte på den här enheten eller plattformen.",
     "error_switch": "Kunde inte byta app-ikon. Försök igen."
+  },
+  "affiliate_code": {
+    "title": "Referralkod",
+    "subtitle": "Om en content creator skickade dig här med en kod, ange den nedan.",
+    "placeholder": "KOD",
+    "submit": "Tillämpa kod",
+    "success": "Koden tillämpades — tack för att du berättade vem som skickade dig!",
+    "error_already_attributed": "Du har redan tilldelats en referralkod.",
+    "error_not_found": "Den koden är inte giltig. Dubbelkolla med den som delade den.",
+    "error_generic": "Något gick fel — försök igen om en stund."
   }
 }

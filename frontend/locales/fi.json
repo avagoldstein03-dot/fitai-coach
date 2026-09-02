@@ -436,7 +436,9 @@
     "diet_not_set": "Ruokavalintaa ei ole asetettu",
     "allergies_label": "Allergiat",
     "app_icon": "Sovelluskuvake",
-    "app_icon_sub": "Elite — valitse muutamasta vaihtoehdosta"
+    "app_icon_sub": "Elite — valitse muutamasta vaihtoehdosta",
+    "affiliate_code": "Kuittikoodi",
+    "affiliate_code_sub": "Oletko saanut suosituksen luojalta? Syötä heidän koodi"
   },
   "notifications": {
     "title": "Ilmoitukset",
@@ -1473,5 +1475,15 @@
     "unsupported_title": "Ei saatavilla tällä laitteella",
     "unsupported_sub": "Mukautettuja sovelluskuvakkeita ei tueta tällä laitteella tai alustalla.",
     "error_switch": "Sovelluskuvakkeen vaihtaminen epäonnistui. Yritä uudelleen."
+  },
+  "affiliate_code": {
+    "title": "Kuittikoodi",
+    "subtitle": "Jos luoja lähetti sinut tänne koodin kanssa, syötä se alle.",
+    "placeholder": "KOODI",
+    "submit": "Käytä koodia",
+    "success": "Koodi käytetty — kiitos että kerroit meille kuka sinut lähetti!",
+    "error_already_attributed": "Sinut on jo yhdistetty kuittikoodiin.",
+    "error_not_found": "Tämä koodi ei ole kelvollinen. Tarkista se, joka jakoi sen kanssasi.",
+    "error_generic": "Jokin meni pieleen — yritä uudelleen hetken päästä."
   }
 }

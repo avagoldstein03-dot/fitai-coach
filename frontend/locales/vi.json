@@ -436,7 +436,9 @@
     "diet_not_set": "Chưa đặt sở thích chế độ ăn",
     "allergies_label": "Dị ứng",
     "app_icon": "Biểu Tượng Ứng Dụng",
-    "app_icon_sub": "Elite — chọn từ một vài kiểu dáng"
+    "app_icon_sub": "Elite — chọn từ một vài kiểu dáng",
+    "affiliate_code": "Mã Giới Thiệu",
+    "affiliate_code_sub": "Bạn được giới thiệu bởi một creator? Nhập mã của họ"
   },
   "notifications": {
     "title": "Thông báo",
@@ -1473,5 +1475,15 @@
     "unsupported_title": "Không Có Sẵn Trên Thiết Bị Này",
     "unsupported_sub": "Biểu tượng ứng dụng tùy chỉnh không được hỗ trợ trên thiết bị hoặc nền tảng này.",
     "error_switch": "Không thể thay đổi biểu tượng ứng dụng. Vui lòng thử lại."
+  },
+  "affiliate_code": {
+    "title": "Mã Giới Thiệu",
+    "subtitle": "Nếu một creator gửi bạn đến đây kèm mã, hãy nhập nó dưới đây.",
+    "placeholder": "MÃ",
+    "submit": "Áp Dụng Mã",
+    "success": "Mã đã được áp dụng — cảm ơn bạn đã cho chúng tôi biết ai đã giới thiệu bạn!",
+    "error_already_attributed": "Bạn đã được gán cho một mã giới thiệu rồi.",
+    "error_not_found": "Mã này không hợp lệ. Kiểm tra lại với người đã chia sẻ nó.",
+    "error_generic": "Có lỗi xảy ra — vui lòng thử lại sau."
   }
 }

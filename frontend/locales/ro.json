@@ -436,7 +436,9 @@
     "diet_not_set": "Nicio preferință alimentară setată",
     "allergies_label": "Alergii",
     "app_icon": "Pictogramă Aplicație",
-    "app_icon_sub": "Elite — alege din mai multe aspecte"
+    "app_icon_sub": "Elite — alege din mai multe aspecte",
+    "affiliate_code": "Cod de Referință",
+    "affiliate_code_sub": "Ai fost recomandat de un creator? Introdu codul lor"
   },
   "notifications": {
     "title": "Notificari",
@@ -1473,5 +1475,15 @@
     "unsupported_title": "Indisponibil pe Acest Dispozitiv",
     "unsupported_sub": "Pictogramele de aplicație personalizate nu sunt suportate pe acest dispozitiv sau platformă.",
     "error_switch": "Nu s-a putut schimba pictograma aplicației. Încearcă din nou."
+  },
+  "affiliate_code": {
+    "title": "Cod de Referință",
+    "subtitle": "Dacă un creator ți-a trimis un cod, introdu-l mai jos.",
+    "placeholder": "COD",
+    "submit": "Aplică Codul",
+    "success": "Cod aplicat — mulțumim că ne-ai spus cine te-a trimis!",
+    "error_already_attributed": "Ai fost deja atribuit unui cod de referință.",
+    "error_not_found": "Acel cod nu este valid. Verifică din nou cu persoana care l-a partajat.",
+    "error_generic": "Ceva nu a funcționat — încearcă din nou în câteva momente."
   }
 }

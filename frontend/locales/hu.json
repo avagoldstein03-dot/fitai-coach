@@ -436,7 +436,9 @@
     "diet_not_set": "Nincs beállított diétapreferencia",
     "allergies_label": "Allergiák",
     "app_icon": "Alkalmazás ikon",
-    "app_icon_sub": "Elite — válassz néhány lehetőség közül"
+    "app_icon_sub": "Elite — válassz néhány lehetőség közül",
+    "affiliate_code": "Ajánlási kód",
+    "affiliate_code_sub": "Egy kreatív ajánlotta neked? Írja be a kódját"
   },
   "notifications": {
     "title": "Értesítések",
@@ -1473,5 +1475,15 @@
     "unsupported_title": "Nem elérhető ezen az eszközön",
     "unsupported_sub": "Az egyéni alkalmazás ikonok nem támogatottak ezen az eszközön vagy platformon.",
     "error_switch": "Nem sikerült átváltani az alkalmazás ikont. Próbáld újra."
+  },
+  "affiliate_code": {
+    "title": "Ajánlási kód",
+    "subtitle": "Ha egy kreatív kóddal küldött téged ide, add meg azt alább.",
+    "placeholder": "KÓD",
+    "submit": "Kód alkalmazása",
+    "success": "Kód alkalmazva — köszönjük, hogy tudatod velünk, ki küldött!",
+    "error_already_attributed": "Már hozzárendeltek egy ajánlási kódhoz.",
+    "error_not_found": "Ez a kód nem érvényes. Ellenőrizd azzal, aki megosztotta veled.",
+    "error_generic": "Valami hiba történt — próbálkozz újra később."
   }
 }

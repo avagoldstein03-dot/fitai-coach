@@ -436,6 +436,15 @@ export default function SettingsScreen() {
           <Text style={s.arrow}>→</Text>
         </TouchableOpacity>
 
+        {/* Affiliate / referral code */}
+        <TouchableOpacity style={[s.card, s.rowCard]} onPress={() => navigation.navigate("AffiliateCode")}>
+          <View>
+            <Text style={s.cardTitle}>{t("settings.affiliate_code")}</Text>
+            <Text style={s.cardSub}>{t("settings.affiliate_code_sub")}</Text>
+          </View>
+          <Text style={s.arrow}>→</Text>
+        </TouchableOpacity>
+
         {/* Privacy & Data */}
         <View style={s.card}>
           <Text style={s.cardTitle}>{t("settings.privacy_data")}</Text>

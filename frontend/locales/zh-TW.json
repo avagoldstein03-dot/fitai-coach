@@ -436,7 +436,9 @@
     "diet_not_set": "未設定飲食偏好",
     "allergies_label": "過敏原",
     "app_icon": "應用程式圖示",
-    "app_icon_sub": "Elite — 選擇您喜歡的風格"
+    "app_icon_sub": "Elite — 選擇您喜歡的風格",
+    "affiliate_code": "推薦代碼",
+    "affiliate_code_sub": "是否由創作者推薦？請輸入他們的代碼"
   },
   "notifications": {
     "title": "通知",
@@ -1473,5 +1475,15 @@
     "unsupported_title": "此裝置不支援",
     "unsupported_sub": "此裝置或平台不支援自訂應用程式圖示。",
     "error_switch": "無法切換應用程式圖示。請重試。"
+  },
+  "affiliate_code": {
+    "title": "推薦代碼",
+    "subtitle": "如果創作者給了你代碼，請在下方輸入。",
+    "placeholder": "代碼",
+    "submit": "套用代碼",
+    "success": "代碼已套用 — 感謝告訴我們是誰推薦你的！",
+    "error_already_attributed": "你已經被分配給一個推薦代碼了。",
+    "error_not_found": "該代碼無效。請向分享者再次確認。",
+    "error_generic": "出現問題 — 請稍後再試。"
   }
 }

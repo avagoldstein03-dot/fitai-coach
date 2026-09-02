@@ -436,7 +436,9 @@
     "diet_not_set": "未设置饮食偏好",
     "allergies_label": "过敏原",
     "app_icon": "应用图标",
-    "app_icon_sub": "精英版 — 选择多种外观"
+    "app_icon_sub": "精英版 — 选择多种外观",
+    "affiliate_code": "推荐代码",
+    "affiliate_code_sub": "是否由创作者推荐？输入他们的代码"
   },
   "notifications": {
     "title": "通知",
@@ -1473,5 +1475,15 @@
     "unsupported_title": "此设备不支持",
     "unsupported_sub": "此设备或平台不支持自定义应用图标。",
     "error_switch": "无法切换应用图标。请重试。"
+  },
+  "affiliate_code": {
+    "title": "推荐代码",
+    "subtitle": "如果创作者用代码将你引导到这里，请在下方输入。",
+    "placeholder": "代码",
+    "submit": "应用代码",
+    "success": "代码已应用——感谢告诉我们是谁推荐你的！",
+    "error_already_attributed": "你已被绑定到一个推荐代码。",
+    "error_not_found": "该代码无效。请与分享者确认。",
+    "error_generic": "出现问题——请稍后重试。"
   }
 }

@@ -436,7 +436,9 @@
     "diet_not_set": "Keine Ernährungspräferenz festgelegt",
     "allergies_label": "Allergien",
     "app_icon": "App-Symbol",
-    "app_icon_sub": "Elite — wähle aus mehreren Designs"
+    "app_icon_sub": "Elite — wähle aus mehreren Designs",
+    "affiliate_code": "Empfehlungscode",
+    "affiliate_code_sub": "Wurde dir ein Code von einem Creator empfohlen? Gib ihn hier ein"
   },
   "notifications": {
     "title": "Benachrichtigungen",
@@ -1473,5 +1475,15 @@
     "unsupported_title": "Auf diesem Gerät nicht verfügbar",
     "unsupported_sub": "Benutzerdefinierte App-Symbole werden auf diesem Gerät oder dieser Plattform nicht unterstützt.",
     "error_switch": "App-Symbol konnte nicht gewechselt werden. Versuche es erneut."
+  },
+  "affiliate_code": {
+    "title": "Empfehlungscode",
+    "subtitle": "Wenn dir ein Creator einen Code geschickt hat, gib ihn unten ein.",
+    "placeholder": "CODE",
+    "submit": "Code anwenden",
+    "success": "Code angewendet — danke, dass du uns sagst, wer dich geschickt hat!",
+    "error_already_attributed": "Dir wurde bereits ein Empfehlungscode zugeordnet.",
+    "error_not_found": "Dieser Code ist ungültig. Überprüfe ihn mit demjenigen, der ihn dir gegeben hat.",
+    "error_generic": "Etwas ist schief gelaufen — versuche es in einem Moment erneut."
   }
 }

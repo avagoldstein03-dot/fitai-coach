@@ -436,7 +436,9 @@
     "diet_not_set": "Hakuna mlo iliyochaguliwa",
     "allergies_label": "Mipango",
     "app_icon": "Aikoni ya Programu",
-    "app_icon_sub": "Elite — chagua kutoka kwa mifumo kadhaa"
+    "app_icon_sub": "Elite — chagua kutoka kwa mifumo kadhaa",
+    "affiliate_code": "Nambari ya Kumbwa",
+    "affiliate_code_sub": "Je, umechukuliwa na mtayarishaji? Ingiza nambari yao"
   },
   "notifications": {
     "title": "Arifa",
@@ -1473,5 +1475,15 @@
     "unsupported_title": "Haipatikani Kwenye Kifaa Hiki",
     "unsupported_sub": "Aikoni za programu maalum hazisaidiwi kwenye kifaa hiki au jukwaa.",
     "error_switch": "Haiwezi kubadilisha aikoni ya programu. Jaribu tena."
+  },
+  "affiliate_code": {
+    "title": "Nambari ya Kumbwa",
+    "subtitle": "Ikiwa mtayarishaji alikusuguza hapa na nambari, ingiza hapa chini.",
+    "placeholder": "NAMBARI",
+    "submit": "Tumia Nambari",
+    "success": "Nambari imetumika — asante kwa kutujumbuisha nani alikusuguza!",
+    "error_already_attributed": "Tayari umechukuliwa na nambari ya kumbwa.",
+    "error_not_found": "Nambari hiyo si sahihi. Jifunze tena na mtu aliyeishiriki.",
+    "error_generic": "Kitu kimefeli — jaribu tena baada ya dakika."
   }
 }

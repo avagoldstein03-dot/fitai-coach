@@ -436,7 +436,9 @@
     "diet_not_set": "Diyet tercihi ayarlanmamış",
     "allergies_label": "Alerjiler",
     "app_icon": "Uygulama İkonu",
-    "app_icon_sub": "Elite — birkaç görünümden seçin"
+    "app_icon_sub": "Elite — birkaç görünümden seçin",
+    "affiliate_code": "Referral Kodu",
+    "affiliate_code_sub": "Bir içerik yaratıcısı tarafından mı davet edildiniz? Onların kodunu girin"
   },
   "notifications": {
     "title": "Bildirimler",
@@ -1473,5 +1475,15 @@
     "unsupported_title": "Bu Cihazda Kullanılamıyor",
     "unsupported_sub": "Özel uygulama ikonları bu cihazda veya platformda desteklenmiyor.",
     "error_switch": "Uygulama ikonu değiştirilemedi. Tekrar deneyin."
+  },
+  "affiliate_code": {
+    "title": "Referral Kodu",
+    "subtitle": "Bir içerik yaratıcısı sizi bir kodla buraya gönderdiyse, aşağıya girin.",
+    "placeholder": "KOD",
+    "submit": "Kodu Uygula",
+    "success": "Kod uygulandı — bizi kimin gönderdiğini bildiğin için teşekkürler!",
+    "error_already_attributed": "Zaten bir referral koduna atanmışsınız.",
+    "error_not_found": "Bu kod geçerli değil. Paylaşan kişiye tekrar sorun.",
+    "error_generic": "Bir sorun oluştu — bir an sonra tekrar deneyin."
   }
 }

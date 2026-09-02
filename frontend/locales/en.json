@@ -430,6 +430,8 @@
     "notifications_sub": "Workout reminders, meal nudges, weekly reviews",
     "app_icon": "App Icon",
     "app_icon_sub": "Elite — choose from a few looks",
+    "affiliate_code": "Referral Code",
+    "affiliate_code_sub": "Were you referred by a creator? Enter their code",
     "privacy_data": "Privacy & Data",
     "export_data": "Export My Data",
     "export_sub": "GDPR data portability",
@@ -468,6 +470,16 @@
     "terms_of_service": "Terms of Service",
     "privacy_policy_sub": "How we handle your data",
     "terms_of_service_sub": "Rules for using Active AI"
+  },
+  "affiliate_code": {
+    "title": "Referral Code",
+    "subtitle": "If a creator sent you here with a code, enter it below.",
+    "placeholder": "CODE",
+    "submit": "Apply Code",
+    "success": "Code applied — thanks for letting us know who sent you!",
+    "error_already_attributed": "You've already been attributed to a referral code.",
+    "error_not_found": "That code isn't valid. Double check with whoever shared it.",
+    "error_generic": "Something went wrong — try again in a moment."
   },
   "app_icon": {
     "title": "App Icon",

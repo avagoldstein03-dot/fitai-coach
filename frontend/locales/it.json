@@ -436,7 +436,9 @@
     "diet_not_set": "Nessuna preferenza dietetica impostata",
     "allergies_label": "Allergie",
     "app_icon": "Icona App",
-    "app_icon_sub": "Elite — scegli tra diversi stili"
+    "app_icon_sub": "Elite — scegli tra diversi stili",
+    "affiliate_code": "Codice di Referenza",
+    "affiliate_code_sub": "Sei stato consigliato da un creator? Inserisci il suo codice"
   },
   "notifications": {
     "title": "Notifiche",
@@ -1473,5 +1475,15 @@
     "unsupported_title": "Non Disponibile su Questo Dispositivo",
     "unsupported_sub": "Le icone app personalizzate non sono supportate su questo dispositivo o piattaforma.",
     "error_switch": "Impossibile cambiare l'icona app. Riprova."
+  },
+  "affiliate_code": {
+    "title": "Codice di Referenza",
+    "subtitle": "Se un creator ti ha inviato qui con un codice, inseriscilo qui sotto.",
+    "placeholder": "CODICE",
+    "submit": "Applica Codice",
+    "success": "Codice applicato — grazie per averci fatto sapere chi ti ha inviato!",
+    "error_already_attributed": "Sei già stato associato a un codice di referenza.",
+    "error_not_found": "Questo codice non è valido. Verifica con chi l'ha condiviso.",
+    "error_generic": "Qualcosa è andato storto — riprova tra un momento."
   }
 }

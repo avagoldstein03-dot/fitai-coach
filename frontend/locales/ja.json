@@ -436,7 +436,9 @@
     "diet_not_set": "食事の好みが設定されていません",
     "allergies_label": "アレルギー",
     "app_icon": "アプリアイコン",
-    "app_icon_sub": "Elite — 複数のデザインから選択可能"
+    "app_icon_sub": "Elite — 複数のデザインから選択可能",
+    "affiliate_code": "紹介コード",
+    "affiliate_code_sub": "クリエイターから紹介されましたか？彼らのコードを入力してください"
   },
   "notifications": {
     "title": "通知",
@@ -1473,5 +1475,15 @@
     "unsupported_title": "このデバイスでは利用できません",
     "unsupported_sub": "カスタムアプリアイコンはこのデバイスまたはプラットフォームではサポートされていません。",
     "error_switch": "アプリアイコンを切り替えられませんでした。もう一度お試しください。"
+  },
+  "affiliate_code": {
+    "title": "紹介コード",
+    "subtitle": "クリエイターがコード付きでここに送ってくれた場合は、下に入力してください。",
+    "placeholder": "コード",
+    "submit": "コードを適用",
+    "success": "コードが適用されました — 誰があなたを紹介してくれたかを教えていただきありがとうございます！",
+    "error_already_attributed": "既に紹介コードに属性付けされています。",
+    "error_not_found": "そのコードは有効ではありません。共有した人に確認してください。",
+    "error_generic": "問題が発生しました — しばらくしてからもう一度お試しください。"
   }
 }
