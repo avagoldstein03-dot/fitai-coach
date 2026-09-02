@@ -845,7 +845,8 @@
     "error_add_exercise": "Не удалось добавить упражнение",
     "error_replace_exercise": "Не удалось заменить упражнение",
     "error_delete_exercise": "Не удалось удалить упражнение",
-    "start_scan": "Начать сканирование"
+    "start_scan": "Начать сканирование",
+    "mobility_badge": "Мобильность"
   },
   "supplements": {
     "title": "Добавки",

@@ -845,7 +845,8 @@
     "error_add_exercise": "Impossibile aggiungere l'esercizio",
     "error_replace_exercise": "Impossibile sostituire l'esercizio",
     "error_delete_exercise": "Impossibile eliminare l'esercizio",
-    "start_scan": "Avvia Scansione"
+    "start_scan": "Avvia Scansione",
+    "mobility_badge": "Mobilità"
   },
   "supplements": {
     "title": "Integratori",

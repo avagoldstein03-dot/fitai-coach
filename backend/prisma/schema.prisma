@@ -379,6 +379,7 @@ model Exercise {
   reps                  String                 // e.g., "8-12" for rep ranges
   restSeconds           Int
   notes                 String?
+  category              String                 @default("strength") // "strength" | "cardio" | "mobility"
   
   // Library reference
   libraryId             String?

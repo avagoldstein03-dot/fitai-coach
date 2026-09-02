@@ -845,7 +845,8 @@
     "error_add_exercise": "Imeshindwa kuongeza zoezi",
     "error_replace_exercise": "Imeshindwa kubadilisha zoezi",
     "error_delete_exercise": "Imeshindwa kufuta zoezi",
-    "start_scan": "Anza Utafutaji"
+    "start_scan": "Anza Utafutaji",
+    "mobility_badge": "Unyogovu"
   },
   "supplements": {
     "title": "Virutubishi",

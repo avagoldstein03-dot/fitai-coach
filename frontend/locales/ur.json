@@ -845,7 +845,8 @@
     "error_add_exercise": "ورزش شامل کرنے میں ناکام",
     "error_replace_exercise": "ورزش کو بدلنے میں ناکام",
     "error_delete_exercise": "ورزش کو حذف کرنے میں ناکام",
-    "start_scan": "اسکین شروع کریں"
+    "start_scan": "اسکین شروع کریں",
+    "mobility_badge": "حرکت پذیری"
   },
   "supplements": {
     "title": "سپلیمنٹس",

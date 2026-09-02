@@ -845,7 +845,8 @@
     "error_add_exercise": "Det gick inte att lägga till övningen",
     "error_replace_exercise": "Det gick inte att byta övningen",
     "error_delete_exercise": "Det gick inte att ta bort övningen",
-    "start_scan": "Starta skanning"
+    "start_scan": "Starta skanning",
+    "mobility_badge": "Rörlighet"
   },
   "supplements": {
     "title": "Kosttillskott",

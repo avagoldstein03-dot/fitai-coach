@@ -845,7 +845,8 @@
     "error_add_exercise": "Neuspešno dodavanje vežbe",
     "error_replace_exercise": "Neuspešna zamena vežbe",
     "error_delete_exercise": "Neuspešno brisanje vežbe",
-    "start_scan": "Počni skeniranje"
+    "start_scan": "Počni skeniranje",
+    "mobility_badge": "Pokretljivost"
   },
   "supplements": {
     "title": "Суплементи",

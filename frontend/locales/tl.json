@@ -845,7 +845,8 @@
     "error_add_exercise": "Nabigong magdagdag ng exercise",
     "error_replace_exercise": "Nabigong palitan ang exercise",
     "error_delete_exercise": "Nabigong tanggalin ang exercise",
-    "start_scan": "Simulan ang Pag-scan"
+    "start_scan": "Simulan ang Pag-scan",
+    "mobility_badge": "Flexibility"
   },
   "supplements": {
     "title": "Supplements",

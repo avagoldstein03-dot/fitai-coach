@@ -845,7 +845,8 @@
     "error_add_exercise": "הוספת התרגיל נכשלה",
     "error_replace_exercise": "החלפת התרגיל נכשלה",
     "error_delete_exercise": "מחיקת התרגיל נכשלה",
-    "start_scan": "התחל סריקה"
+    "start_scan": "התחל סריקה",
+    "mobility_badge": "גמישות"
   },
   "supplements": {
     "title": "תוספים",

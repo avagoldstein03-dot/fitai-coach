@@ -845,7 +845,8 @@
     "error_add_exercise": "فشل إضافة التمرين",
     "error_replace_exercise": "فشل استبدال التمرين",
     "error_delete_exercise": "فشل حذف التمرين",
-    "start_scan": "ابدأ المسح"
+    "start_scan": "ابدأ المسح",
+    "mobility_badge": "المرونة"
   },
   "supplements": {
     "title": "المكملات",

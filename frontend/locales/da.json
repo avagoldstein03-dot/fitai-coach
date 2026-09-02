@@ -845,7 +845,8 @@
     "error_add_exercise": "Kunne ikke tilføje øvelse",
     "error_replace_exercise": "Kunne ikke erstatte øvelse",
     "error_delete_exercise": "Kunne ikke slette øvelse",
-    "start_scan": "Start scanning"
+    "start_scan": "Start scanning",
+    "mobility_badge": "Mobilitet"
   },
   "supplements": {
     "title": "Tilskud",

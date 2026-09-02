@@ -845,7 +845,8 @@
     "error_add_exercise": "Gagal menambah latihan",
     "error_replace_exercise": "Gagal mengganti latihan",
     "error_delete_exercise": "Gagal menghapus latihan",
-    "start_scan": "Mulai Pemindaian"
+    "start_scan": "Mulai Pemindaian",
+    "mobility_badge": "Mobilitas"
   },
   "supplements": {
     "title": "Suplemen",

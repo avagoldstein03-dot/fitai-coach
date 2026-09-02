@@ -845,7 +845,8 @@
     "error_add_exercise": "Неуспешно добавяне на упражнение",
     "error_replace_exercise": "Неуспешна замяна на упражнение",
     "error_delete_exercise": "Неуспешно изтриване на упражнение",
-    "start_scan": "Начало на сканиране"
+    "start_scan": "Начало на сканиране",
+    "mobility_badge": "Мобилност"
   },
   "supplements": {
     "title": "Суплементи",

@@ -845,7 +845,8 @@
     "error_add_exercise": "新增運動失敗",
     "error_replace_exercise": "更換運動失敗",
     "error_delete_exercise": "刪除運動失敗",
-    "start_scan": "開始掃描"
+    "start_scan": "開始掃描",
+    "mobility_badge": "靈活性"
   },
   "supplements": {
     "title": "補充品",

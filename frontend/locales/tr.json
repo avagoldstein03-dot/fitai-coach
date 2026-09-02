@@ -845,7 +845,8 @@
     "error_add_exercise": "Egzersiz eklenemedi",
     "error_replace_exercise": "Egzersiz değiştirilemedi",
     "error_delete_exercise": "Egzersiz silinemedi",
-    "start_scan": "Taramayı Başlat"
+    "start_scan": "Taramayı Başlat",
+    "mobility_badge": "Mobilite"
   },
   "supplements": {
     "title": "Takviyeler",

@@ -799,6 +799,7 @@
   "workouts": {
     "title": "Workouts",
     "subtitle": "Your personalized training plan",
+    "mobility_badge": "Mobility",
     "this_week": "This Week",
     "all_time": "All Time",
     "streak": "Streak",

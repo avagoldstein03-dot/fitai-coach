@@ -845,7 +845,8 @@
     "error_add_exercise": "Kon nie oefening byvoeg nie",
     "error_replace_exercise": "Kon nie oefening vervang nie",
     "error_delete_exercise": "Kon nie oefening verwyder nie",
-    "start_scan": "Begin Skandering"
+    "start_scan": "Begin Skandering",
+    "mobility_badge": "Mobiliteit"
   },
   "supplements": {
     "title": "Byvoegings",

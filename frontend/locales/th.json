@@ -845,7 +845,8 @@
     "error_add_exercise": "ไม่สามารถเพิ่มการออกกำลังได้",
     "error_replace_exercise": "ไม่สามารถแทนที่การออกกำลังได้",
     "error_delete_exercise": "ไม่สามารถลบการออกกำลังได้",
-    "start_scan": "เริ่มสแกน"
+    "start_scan": "เริ่มสแกน",
+    "mobility_badge": "ความยืดหยุ่น"
   },
   "supplements": {
     "title": "สารเสริม",

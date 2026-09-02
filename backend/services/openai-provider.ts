@@ -182,9 +182,10 @@ ${userProfile.sex ? `- Sex: ${userProfile.sex}` : ""}
 ${userProfile.bodyGoalFocus ? `- Stated body goal / aesthetic focus: ${userProfile.bodyGoalFocus}` : ""}
 ${userProfile.specificFocus ? `- Specific thing they want to fix/improve: ${userProfile.specificFocus}` : ""}
 ${userProfile.assessmentSummary ? `- Latest body assessment notes: ${userProfile.assessmentSummary}` : ""}
+${userProfile.injuryHistory ? `- Reported injury/mobility limitation: "${userProfile.injuryHistory}"` : ""}
 
 Use the client's stated goal/focus and body assessment notes (if provided) to decide which muscle groups should get priority volume/frequency and which exercises best fit their body type and aim. For example, someone wanting a leaner/smaller look needs different exercise selection and volume distribution than someone wanting to build size in a specific area. Be specific and personalized rather than generic.
-
+${userProfile.injuryHistory ? `\nIf an injury or mobility limitation is reported, avoid exercises that would aggravate it, substitute safe alternatives, and include general mobility/maintenance work for the affected area(s) — framed as general wellness, not treatment or rehab. This is general guidance, not medical advice.\n` : ""}
 Return ONLY valid JSON with no markdown, structured exactly like this:
 {
   "coachNote": "2-3 sentences, written directly to the client: how this program is tailored to their stated goal and body type, and honest, encouraging guidance on whether their goal is realistic and what to focus on to get there.",
@@ -195,7 +196,7 @@ Return ONLY valid JSON with no markdown, structured exactly like this:
       {
         "dayOfWeek": 0,
         "exercises": [
-          { "exerciseName": "Barbell Back Squat", "sets": 4, "reps": "6-8", "restSeconds": 90, "notes": "optional coaching cue" }
+          { "exerciseName": "Barbell Back Squat", "sets": 4, "reps": "6-8", "restSeconds": 90, "notes": "optional coaching cue", "category": "strength" }
         ]
       }
     ]
@@ -204,7 +205,7 @@ Return ONLY valid JSON with no markdown, structured exactly like this:
 
 The week must have exactly ${userProfile.daysPerWeek} day entries (dayOfWeek values 0-6 for Monday-Sunday, spread sensibly with rest days between sessions).
 
-Each day must have exactly 4-5 exercises, chosen so that together they hit all the major muscle groups intended for that day's focus — prioritize balanced, non-redundant coverage and exercise selection that matches the client's stated goal over cramming in extra exercises.`;
+Each day must have exactly 4-5 exercises, chosen so that together they hit all the major muscle groups intended for that day's focus — prioritize balanced, non-redundant coverage and exercise selection that matches the client's stated goal over cramming in extra exercises. Tag each exercise's "category" as one of "strength", "cardio", or "mobility".`;
 
     // Sized to one week's output instead of the whole program — the main lever
     // that makes this fast, on top of only asking for one week in the first place.

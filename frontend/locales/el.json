@@ -845,7 +845,8 @@
     "error_add_exercise": "Αποτυχία προσθήκης άσκησης",
     "error_replace_exercise": "Αποτυχία αντικατάστασης άσκησης",
     "error_delete_exercise": "Αποτυχία διαγραφής άσκησης",
-    "start_scan": "Έναρξη Σάρωσης"
+    "start_scan": "Έναρξη Σάρωσης",
+    "mobility_badge": "Κινητικότητα"
   },
   "supplements": {
     "title": "Συμπληρώματα",

@@ -845,7 +845,8 @@
     "error_add_exercise": "Nie udało się dodać ćwiczenia",
     "error_replace_exercise": "Nie udało się zamienić ćwiczenia",
     "error_delete_exercise": "Nie udało się usunąć ćwiczenia",
-    "start_scan": "Rozpocznij skanowanie"
+    "start_scan": "Rozpocznij skanowanie",
+    "mobility_badge": "Mobilność"
   },
   "supplements": {
     "title": "Suplementy",

@@ -157,9 +157,10 @@ ${userProfile.sex ? `- Sex: ${userProfile.sex}` : ""}
 ${userProfile.bodyGoalFocus ? `- Stated body goal / aesthetic focus: ${userProfile.bodyGoalFocus}` : ""}
 ${userProfile.specificFocus ? `- Specific thing they want to fix/improve: ${userProfile.specificFocus}` : ""}
 ${userProfile.assessmentSummary ? `- Latest body assessment notes: ${userProfile.assessmentSummary}` : ""}
+${userProfile.injuryHistory ? `- Reported injury/mobility limitation: "${userProfile.injuryHistory}"` : ""}
 
 Use the client's stated goal/focus and body assessment notes (if provided) to decide which muscle groups should get priority volume/frequency and which exercises best fit their body type and aim. Be specific and personalized rather than generic.
-
+${userProfile.injuryHistory ? `\nIf an injury or mobility limitation is reported, avoid exercises that would aggravate it, substitute safe alternatives, and include general mobility/maintenance work for the affected area(s) — framed as general wellness, not treatment or rehab. This is general guidance, not medical advice.\n` : ""}
 Return ONLY valid JSON with no markdown, structured exactly like this:
 {
   "coachNote": "2-3 sentences, written directly to the client: how this program is tailored to their stated goal and body type, and honest, encouraging guidance on whether their goal is realistic and what to focus on to get there.",
@@ -171,7 +172,7 @@ Return ONLY valid JSON with no markdown, structured exactly like this:
         {
           "dayOfWeek": 0,
           "exercises": [
-            { "exerciseName": "Barbell Back Squat", "sets": 4, "reps": "6-8", "restSeconds": 90, "notes": "optional coaching cue" }
+            { "exerciseName": "Barbell Back Squat", "sets": 4, "reps": "6-8", "restSeconds": 90, "notes": "optional coaching cue", "category": "strength" }
           ]
         }
       ]
@@ -179,7 +180,7 @@ Return ONLY valid JSON with no markdown, structured exactly like this:
   ]
 }
 
-Generate exactly ${userProfile.durationWeeks} week entries, each with exactly ${userProfile.daysPerWeek} day entries (dayOfWeek 0-6, spread sensibly with rest days between sessions). Each day must have exactly 4-5 exercises chosen so that together they hit all major muscle groups intended for that day's focus, matching the client's stated goal — balanced coverage over quantity. Apply progressive overload across weeks.`;
+Generate exactly ${userProfile.durationWeeks} week entries, each with exactly ${userProfile.daysPerWeek} day entries (dayOfWeek 0-6, spread sensibly with rest days between sessions). Each day must have exactly 4-5 exercises chosen so that together they hit all major muscle groups intended for that day's focus, matching the client's stated goal — balanced coverage over quantity. Apply progressive overload across weeks. Tag each exercise's "category" as one of "strength", "cardio", or "mobility".`;
 
     const message = await anthropic.messages.create({
       model: "claude-sonnet-4-5",

@@ -845,7 +845,8 @@
     "error_add_exercise": "Nem sikerült a gyakorlatot hozzáadni",
     "error_replace_exercise": "Nem sikerült a gyakorlatot cserélni",
     "error_delete_exercise": "Nem sikerült a gyakorlatot törölni",
-    "start_scan": "Szkenelés indítása"
+    "start_scan": "Szkenelés indítása",
+    "mobility_badge": "Mobilitás"
   },
   "supplements": {
     "title": "Kiegészítők",

@@ -62,6 +62,7 @@ export interface WorkoutPlanExercise {
   reps: string;
   restSeconds: number;
   notes?: string;
+  category?: string; // "strength" | "cardio" | "mobility" — defaults to "strength" if omitted
 }
 
 export interface WorkoutPlanDay {
@@ -106,6 +107,7 @@ export interface WorkoutGenerationInput {
   bodyGoalFocus?: string;
   specificFocus?: string;
   assessmentSummary?: string;
+  injuryHistory?: string;
 }
 
 export interface MealPlanMeal {

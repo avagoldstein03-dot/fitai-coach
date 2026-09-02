@@ -845,7 +845,8 @@
     "error_add_exercise": "Übung konnte nicht hinzugefügt werden",
     "error_replace_exercise": "Übung konnte nicht ersetzt werden",
     "error_delete_exercise": "Übung konnte nicht gelöscht werden",
-    "start_scan": "Scan starten"
+    "start_scan": "Scan starten",
+    "mobility_badge": "Mobilität"
   },
   "supplements": {
     "title": "Supplemente",

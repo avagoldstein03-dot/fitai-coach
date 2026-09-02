@@ -845,7 +845,8 @@
     "error_add_exercise": "Не вдалося додати вправу",
     "error_replace_exercise": "Не вдалося замінити вправу",
     "error_delete_exercise": "Не вдалося видалити вправу",
-    "start_scan": "Почати сканування"
+    "start_scan": "Почати сканування",
+    "mobility_badge": "Мобільність"
   },
   "supplements": {
     "title": "Добавки",

@@ -845,7 +845,8 @@
     "error_add_exercise": "Adăugarea exercițiului a eșuat",
     "error_replace_exercise": "Înlocuirea exercițiului a eșuat",
     "error_delete_exercise": "Ștergerea exercițiului a eșuat",
-    "start_scan": "Începe Scanarea"
+    "start_scan": "Începe Scanarea",
+    "mobility_badge": "Mobilitate"
   },
   "supplements": {
     "title": "Suplimente",

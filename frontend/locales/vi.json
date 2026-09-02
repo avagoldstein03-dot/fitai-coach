@@ -845,7 +845,8 @@
     "error_add_exercise": "Không thể thêm bài tập",
     "error_replace_exercise": "Không thể thay thế bài tập",
     "error_delete_exercise": "Không thể xóa bài tập",
-    "start_scan": "Bắt Đầu Quét"
+    "start_scan": "Bắt Đầu Quét",
+    "mobility_badge": "Tính Linh Động"
   },
   "supplements": {
     "title": "Thực phẩm bổ sung",

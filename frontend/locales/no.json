@@ -845,7 +845,8 @@
     "error_add_exercise": "Kunne ikke legge til øvelse",
     "error_replace_exercise": "Kunne ikke erstatte øvelse",
     "error_delete_exercise": "Kunne ikke slette øvelse",
-    "start_scan": "Start skanning"
+    "start_scan": "Start skanning",
+    "mobility_badge": "Mobilitet"
   },
   "supplements": {
     "title": "Kosttilskudd",

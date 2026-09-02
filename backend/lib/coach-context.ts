@@ -5,7 +5,7 @@ export interface CoachingProfile {
 }
 
 const OLDER_AGE_THRESHOLD = 55;
-const MAX_INJURY_LENGTH = 300;
+export const MAX_INJURY_LENGTH = 300;
 
 // Turns profile signals into explicit behavioral instructions for the AI,
 // rather than hoping the model infers them from raw age/experience numbers.

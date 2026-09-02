@@ -33,6 +33,7 @@ interface Exercise {
   restSeconds: number;
   notes?: string;
   formCues?: string[];
+  category?: string;
 }
 
 interface WorkoutDay {
@@ -497,7 +498,14 @@ export default function WorkoutsScreen() {
                         </View>
                         <View style={styles.exerciseBody}>
                           <View style={styles.exerciseTitleRow}>
-                            <Text style={[styles.exerciseName, done && styles.exerciseNameDone]}>{ex.exerciseName}</Text>
+                            <View style={styles.exerciseNameRow}>
+                              <Text style={[styles.exerciseName, done && styles.exerciseNameDone]}>{ex.exerciseName}</Text>
+                              {ex.category === "mobility" && (
+                                <View style={styles.mobilityBadge}>
+                                  <Text style={styles.mobilityBadgeText}>{t("workouts.mobility_badge")}</Text>
+                                </View>
+                              )}
+                            </View>
                             <TouchableOpacity
                               onPress={() => {
                                 setExerciseForm({
@@ -1029,7 +1037,10 @@ const styles = StyleSheet.create({
   exerciseCheckmark: { color: "#000", fontSize: 13, fontWeight: "900" },
   exerciseBody: { flex: 1 },
   exerciseTitleRow: { flexDirection: "row", justifyContent: "space-between", alignItems: "flex-start", gap: 8 },
-  exerciseName: { fontSize: 16, fontWeight: "700", color: T.textPrimary, marginBottom: 4, flex: 1 },
+  exerciseNameRow: { flexDirection: "row", alignItems: "center", flexWrap: "wrap", gap: 6, flex: 1 },
+  exerciseName: { fontSize: 16, fontWeight: "700", color: T.textPrimary, marginBottom: 4 },
+  mobilityBadge: { backgroundColor: `${T.teal}22`, borderRadius: 8, paddingHorizontal: 7, paddingVertical: 2, marginBottom: 4 },
+  mobilityBadgeText: { fontSize: 10, fontWeight: "700", color: T.teal, textTransform: "uppercase", letterSpacing: 0.4 },
   exerciseNameDone: { color: T.accentMuted },
   replaceBtn: { padding: 4 },
   replaceBtnIcon: { fontSize: 15, color: T.textSecondary },

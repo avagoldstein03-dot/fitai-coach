@@ -845,7 +845,8 @@
     "error_add_exercise": "Nepodarilo sa pridať cvičenie",
     "error_replace_exercise": "Nepodarilo sa nahradiť cvičenie",
     "error_delete_exercise": "Nepodarilo sa vymazať cvičenie",
-    "start_scan": "Spustiť skenovanie"
+    "start_scan": "Spustiť skenovanie",
+    "mobility_badge": "Mobilita"
   },
   "supplements": {
     "title": "Doplnky",

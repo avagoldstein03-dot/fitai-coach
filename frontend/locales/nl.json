@@ -845,7 +845,8 @@
     "error_add_exercise": "Oefening toevoegen mislukt",
     "error_replace_exercise": "Oefening vervangen mislukt",
     "error_delete_exercise": "Oefening verwijderen mislukt",
-    "start_scan": "Scan Starten"
+    "start_scan": "Scan Starten",
+    "mobility_badge": "Mobiliteit"
   },
   "supplements": {
     "title": "Supplementen",

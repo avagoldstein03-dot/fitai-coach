@@ -4,6 +4,7 @@ import prisma from "@/lib/prisma";
 import { sendSuccess, sendError, validateRequest } from "@/lib/api-utils";
 import { AIProviderRegistry } from "@/services/ai-registry";
 import { getUserSubscription } from "@/lib/subscription-middleware";
+import { MAX_INJURY_LENGTH } from "@/lib/coach-context";
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (!validateRequest(req, ["POST"])) {
@@ -79,6 +80,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       bodyGoalFocus: bodyGoalFocus ?? user.goal?.bodyGoalFocus ?? undefined,
       specificFocus: specificFocus ?? user.goal?.specificFocus ?? undefined,
       assessmentSummary: latestAssessment?.summary ?? undefined,
+      injuryHistory: user.injuryHistory?.trim().slice(0, MAX_INJURY_LENGTH) || undefined,
     });
 
     // Deactivate any current active program
@@ -112,6 +114,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
                     reps: ex.reps,
                     restSeconds: ex.restSeconds,
                     notes: ex.notes,
+                    category: ex.category ?? "strength",
                   })),
                 },
               })),

@@ -845,7 +845,8 @@
     "error_add_exercise": "Impossible d'ajouter l'exercice",
     "error_replace_exercise": "Impossible de remplacer l'exercice",
     "error_delete_exercise": "Impossible de supprimer l'exercice",
-    "start_scan": "Commencer l'analyse"
+    "start_scan": "Commencer l'analyse",
+    "mobility_badge": "Mobilité"
   },
   "supplements": {
     "title": "Suppléments",
