@@ -591,18 +591,20 @@ model ProductScan {
   @@index([scoringVersion])
 }
 
-// Tracking/attribution/ledger only — no payout execution exists yet.
-// Affiliates are created manually (backend/scripts/create-affiliate.js),
-// not via self-serve signup.
+// Affiliates are created manually (backend/scripts/create-affiliate.js), not
+// via self-serve signup. Payouts run through Stripe Connect once an affiliate
+// has completed hosted onboarding (backend/scripts/generate-affiliate-onboarding-link.js).
 model Affiliate {
-  id             String              @id @default(cuid())
-  name           String
-  email          String              @unique
-  code           String              @unique
-  commissionRate Float               @default(0.20) // fraction, e.g. 0.20-0.30, set per-affiliate at creation
-  active         Boolean             @default(true)
-  referrals      AffiliateReferral[]
-  createdAt      DateTime            @default(now())
+  id                       String              @id @default(cuid())
+  name                     String
+  email                    String              @unique
+  code                     String              @unique
+  commissionRate           Float               @default(0.20) // fraction, e.g. 0.20-0.30, set per-affiliate at creation
+  active                   Boolean             @default(true)
+  stripeAccountId          String?             @unique
+  stripeOnboardingComplete Boolean             @default(false)
+  referrals                AffiliateReferral[]
+  createdAt                DateTime            @default(now())
 }
 
 // First-touch, permanent — a user can be attributed to exactly one
@@ -627,6 +629,8 @@ model CommissionEntry {
   grossAmount      Float             // subscriber's payment amount for this event, in `currency`
   currency         String
   commissionAmount Float             // grossAmount * affiliate.commissionRate at the time of the event
-  status           String            @default("pending") // always "pending" — no payout path exists yet
+  status           String            @default("pending") // "pending" | "paid"
+  paidAt           DateTime?
+  stripeTransferId String?           // one transfer commonly pays out several pending entries at once — not unique per entry
   createdAt        DateTime          @default(now())
 }
