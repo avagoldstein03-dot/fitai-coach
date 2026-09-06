@@ -19,6 +19,7 @@ import { useUpgradeGate, isPremiumRequiredError } from "@/contexts/UpgradeGateCo
 import { useTranslation } from "react-i18next";
 import { T } from "@/lib/theme";
 import { SwipeToDeleteRow } from "@/components/SwipeToDeleteRow";
+import { buildAmazonSearchUrl } from "@/lib/affiliate-links";
 
 const API_URL = process.env.EXPO_PUBLIC_API_URL;
 
@@ -67,8 +68,7 @@ export default function SupplementsScreen() {
   const [customForm, setCustomForm] = useState(EMPTY_CUSTOM_FORM);
 
   const openAmazon = (supplementName: string) => {
-    const query = encodeURIComponent(`${supplementName} supplement`);
-    Linking.openURL(`https://www.amazon.com/s?k=${query}`).catch(() =>
+    Linking.openURL(buildAmazonSearchUrl(`${supplementName} supplement`)).catch(() =>
       Alert.alert(t("common.error"), t("supplements.error_amazon"))
     );
   };

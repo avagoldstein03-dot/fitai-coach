@@ -21,6 +21,7 @@ import axios from "axios";
 import { useUpgradeGate, isPremiumRequiredError } from "@/contexts/UpgradeGateContext";
 import { SwipeToDeleteRow } from "@/components/SwipeToDeleteRow";
 import { T } from "@/lib/theme";
+import { buildAmazonSearchUrl, buildWalmartSearchUrl } from "@/lib/affiliate-links";
 
 const API_URL = process.env.EXPO_PUBLIC_API_URL;
 
@@ -167,13 +168,13 @@ export default function ShoppingListScreen() {
       name: "Amazon",
       emoji: "📦",
       color: "#ff9900",
-      onPress: () => openSearch((q) => `https://www.amazon.com/s?k=${encodeURIComponent(q)}`),
+      onPress: () => openSearch((q) => buildAmazonSearchUrl(q)),
     },
     {
       name: "Walmart",
       emoji: "🏪",
       color: "#0071ce",
-      onPress: () => openSearch((q) => `https://www.walmart.com/search?q=${encodeURIComponent(q)}`),
+      onPress: () => openSearch((q) => buildWalmartSearchUrl(q)),
     },
   ];
 
