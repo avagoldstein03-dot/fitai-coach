@@ -364,7 +364,8 @@
     "readiness_disclaimer": "चिकित्सा सलाह नहीं — आपके हाल के डेटा के आधार पर एक सामान्य पुनरुद्धार संकेत।",
     "readiness_nudge": "Apple Health से कनेक्ट करें और अपना तैयारी स्कोर अनलॉक करने के लिए कुछ वर्कआउट लॉग करें।",
     "task_connect_friend": "किसी मित्र के साथ कनेक्ट करें",
-    "protein_note": "इसमें मामूली प्रोटीन वृद्धि शामिल है — इस जीवन चरण में मांसपेशियों को समर्थन देने में मदद के लिए सामान्य सलाह।"
+    "protein_note": "इसमें मामूली प्रोटीन वृद्धि शामिल है — इस जीवन चरण में मांसपेशियों को समर्थन देने में मदद के लिए सामान्य सलाह।",
+    "readiness_nudge_android": "Health Connect को कनेक्ट करें और अपनी तैयारी स्कोर को अनलॉक करने के लिए कुछ वर्कआउट लॉग करें।"
   },
   "settings": {
     "title": "सेटिंग्स",
@@ -438,7 +439,13 @@
     "app_icon": "ऐप आइकन",
     "app_icon_sub": "Elite — कुछ लुक्स में से चुनें",
     "affiliate_code": "रेफरल कोड",
-    "affiliate_code_sub": "क्या आपको किसी क्रिएटर के द्वारा रेफर किया गया था? उनका कोड दर्ज करें"
+    "affiliate_code_sub": "क्या आपको किसी क्रिएटर के द्वारा रेफर किया गया था? उनका कोड दर्ज करें",
+    "health_card_title_android": "Health Connect",
+    "health_card_sub_android": "Health Connect (Samsung Health, Fitbit, और अन्य ऐप्स इसमें डेटा लिखते हैं) से कदम, नींद, सक्रिय ऊर्जा, हृदय गति और वजन को सिंक करें ताकि मैनुअल लॉगिंग कम हो।",
+    "health_connect_button_android": "Health Connect को कनेक्ट करें",
+    "health_disconnect_title_android": "Health Connect को डिस्कनेक्ट करें?",
+    "health_disconnect_msg_android": "यह ऐप को नए डेटा को सिंक करने से रोकता है, लेकिन Health Connect एक्सेस को रद्द नहीं करता — आप इसे Health Connect ऐप की अनुमति सेटिंग्स में प्रबंधित कर सकते हैं।",
+    "error_health_connect_android": "Health Connect से कनेक्ट नहीं हो सके। दोबारा कोशिश करें।"
   },
   "notifications": {
     "title": "सूचनाएं",
@@ -1369,7 +1376,8 @@
     "plateau_line": "{{exercise}} पिछले {{count}} सत्रों में {{weight}} पर {{reps}} रेप्स के लिए स्थिर रहा है।",
     "body_composition": "शरीर संरचना परिवर्तन",
     "no_composition_data": "समय के साथ परिवर्तन देखने के लिए कम से कम दो शरीर मूल्यांकन पूरे करें।",
-    "error": "आपका विश्लेषण लोड नहीं हो सका। कृपया पुनः प्रयास करें।"
+    "error": "आपका विश्लेषण लोड नहीं हो सका। कृपया पुनः प्रयास करें।",
+    "no_health_data_android": "कदम, नींद और हृदय गति के रुझानों को देखने के लिए Health Connect को सिंक करें।"
   },
   "product_scan": {
     "permission_title": "कैमरा एक्सेस की आवश्यकता है",

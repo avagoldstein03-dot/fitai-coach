@@ -25,7 +25,7 @@ import { T } from "@/lib/theme";
 import { COUNTRIES, getCountryByName } from "@/lib/currency";
 import { TERMS_URL, PRIVACY_URL } from "@/lib/legal-urls";
 import { LegalWebViewModal } from "@/components/LegalWebViewModal";
-import { isHealthKitAvailable, requestHealthPermissions, syncHealthData } from "@/lib/health";
+import { isHealthDataAvailable, requestHealthPermissions, syncHealthData } from "@/lib/health";
 
 const API_URL = process.env.EXPO_PUBLIC_API_URL;
 
@@ -103,7 +103,7 @@ export default function SettingsScreen() {
       const res = await axios.get(`${API_URL}/api/health/sync`);
       return res.data.data as { lastSyncedAt: string | null };
     },
-    enabled: Platform.OS === "ios",
+    enabled: Platform.OS === "ios" || Platform.OS === "android",
   });
 
   const isHealthConnected = !!healthStatus?.lastSyncedAt;
@@ -116,14 +116,20 @@ export default function SettingsScreen() {
       await AsyncStorage.setItem("health_connected", "1");
       await refetchHealthStatus();
     } catch {
-      Alert.alert(t("common.error"), t("settings.error_health_connect"));
+      Alert.alert(
+        t("common.error"),
+        t(Platform.OS === "android" ? "settings.error_health_connect_android" : "settings.error_health_connect")
+      );
     } finally {
       setIsConnectingHealth(false);
     }
   };
 
   const disconnectHealth = () => {
-    Alert.alert(t("settings.health_disconnect_title"), t("settings.health_disconnect_msg"), [
+    Alert.alert(
+      t(Platform.OS === "android" ? "settings.health_disconnect_title_android" : "settings.health_disconnect_title"),
+      t(Platform.OS === "android" ? "settings.health_disconnect_msg_android" : "settings.health_disconnect_msg"),
+      [
       { text: t("common.cancel"), style: "cancel" },
       {
         text: t("settings.health_disconnect_button"),
@@ -386,11 +392,15 @@ export default function SettingsScreen() {
           </Text>
         </TouchableOpacity>
 
-        {/* Apple Health */}
-        {Platform.OS === "ios" && (
+        {/* Apple Health / Health Connect */}
+        {(Platform.OS === "ios" || Platform.OS === "android") && (
           <View style={s.card}>
-            <Text style={s.cardTitle}>{t("settings.health_card_title")}</Text>
-            <Text style={s.cardSub}>{t("settings.health_card_sub")}</Text>
+            <Text style={s.cardTitle}>
+              {t(Platform.OS === "android" ? "settings.health_card_title_android" : "settings.health_card_title")}
+            </Text>
+            <Text style={s.cardSub}>
+              {t(Platform.OS === "android" ? "settings.health_card_sub_android" : "settings.health_card_sub")}
+            </Text>
             {isHealthConnected ? (
               <>
                 <Text style={s.healthSyncedText}>
@@ -406,12 +416,14 @@ export default function SettingsScreen() {
               <TouchableOpacity
                 style={[s.weightSaveBtn, s.injurySaveBtn, isConnectingHealth && s.weightSaveBtnDisabled]}
                 onPress={connectHealth}
-                disabled={isConnectingHealth || !isHealthKitAvailable()}
+                disabled={isConnectingHealth || !isHealthDataAvailable()}
               >
                 {isConnectingHealth ? (
                   <ActivityIndicator color="#000" size="small" />
                 ) : (
-                  <Text style={s.weightSaveBtnText}>{t("settings.health_connect_button")}</Text>
+                  <Text style={s.weightSaveBtnText}>
+                    {t(Platform.OS === "android" ? "settings.health_connect_button_android" : "settings.health_connect_button")}
+                  </Text>
                 )}
               </TouchableOpacity>
             )}

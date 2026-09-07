@@ -364,7 +364,8 @@
     "readiness_disclaimer": "Non è un consiglio medico — un segnale di recupero generale basato sui tuoi dati recenti.",
     "readiness_nudge": "Connetti Apple Health e registra alcuni allenamenti per sbloccare il tuo punteggio di disponibilità.",
     "task_connect_friend": "Connettiti con un amico",
-    "protein_note": "Include un modesto aumento di proteine — un consiglio comune durante questa fase della vita per aiutare a sostenere la massa muscolare."
+    "protein_note": "Include un modesto aumento di proteine — un consiglio comune durante questa fase della vita per aiutare a sostenere la massa muscolare.",
+    "readiness_nudge_android": "Connetti Health Connect e registra alcuni allenamenti per sbloccare il tuo punteggio di prontezza."
   },
   "settings": {
     "title": "Impostazioni",
@@ -438,7 +439,13 @@
     "app_icon": "Icona App",
     "app_icon_sub": "Elite — scegli tra diversi stili",
     "affiliate_code": "Codice di Referenza",
-    "affiliate_code_sub": "Sei stato consigliato da un creator? Inserisci il suo codice"
+    "affiliate_code_sub": "Sei stato consigliato da un creator? Inserisci il suo codice",
+    "health_card_title_android": "Health Connect",
+    "health_card_sub_android": "Sincronizza passi, sonno, energia attiva, frequenza cardiaca e peso da Health Connect (Samsung Health, Fitbit e altre app vi scrivono) per ridurre la registrazione manuale.",
+    "health_connect_button_android": "Connetti Health Connect",
+    "health_disconnect_title_android": "Disconnettere Health Connect?",
+    "health_disconnect_msg_android": "Questo interrompe la sincronizzazione dei nuovi dati dell'app, ma non revoca l'accesso a Health Connect — puoi gestirlo nelle impostazioni delle autorizzazioni dell'app Health Connect.",
+    "error_health_connect_android": "Impossibile connettersi a Health Connect. Riprova."
   },
   "notifications": {
     "title": "Notifiche",
@@ -1369,7 +1376,8 @@
     "plateau_line": "{{exercise}} si è mantenuto stabile a {{weight}} per {{reps}} ripetizioni negli ultimi {{count}} allenamenti.",
     "body_composition": "Cambiamento della Composizione Corporea",
     "no_composition_data": "Completa almeno due valutazioni corporee per visualizzare i cambiamenti nel tempo.",
-    "error": "Impossibile caricare le tue analitiche. Per favore riprova."
+    "error": "Impossibile caricare le tue analitiche. Per favore riprova.",
+    "no_health_data_android": "Sincronizza Health Connect per visualizzare le tendenze di passi, sonno e frequenza cardiaca."
   },
   "product_scan": {
     "permission_title": "Accesso alla Fotocamera Necessario",

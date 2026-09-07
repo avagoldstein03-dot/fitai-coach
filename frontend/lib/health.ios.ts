@@ -1,12 +1,13 @@
 import { Platform } from "react-native";
 import axios from "axios";
 import {
-  isHealthDataAvailable,
+  isHealthDataAvailable as isHealthKitSdkAvailable,
   requestAuthorization,
   queryStatisticsCollectionForQuantity,
   queryCategorySamples,
   getMostRecentQuantitySample,
 } from "@kingstinct/react-native-healthkit";
+import { toDateKey, sumMinutesByDay } from "./health-aggregation";
 
 const API_URL = process.env.EXPO_PUBLIC_API_URL;
 
@@ -30,19 +31,15 @@ interface DailyMetricPayload {
   restingHeartRate?: number;
 }
 
-function toDateKey(date: Date): string {
-  return date.toISOString().slice(0, 10);
-}
-
-export function isHealthKitAvailable(): boolean {
-  return Platform.OS === "ios" && isHealthDataAvailable();
+export function isHealthDataAvailable(): boolean {
+  return Platform.OS === "ios" && isHealthKitSdkAvailable();
 }
 
 // Resolving does NOT mean permission was granted — HealthKit read-permission
 // grant/deny state is intentionally unobservable by design. Treat this as
 // "the user completed the request flow," not "the user said yes."
 export async function requestHealthPermissions(): Promise<void> {
-  if (!isHealthKitAvailable()) return;
+  if (!isHealthDataAvailable()) return;
   // Cast via the function's own parameter type rather than naming HealthKit's
   // identifier union directly — READ_TYPES are verified-correct Apple HealthKit
   // constants, just typed here as a plain readonly string tuple for simplicity.
@@ -74,14 +71,11 @@ async function collectSleepMinutesByDay(startDate: Date, endDate: Date): Promise
     filter: { date: { startDate, endDate } },
   });
 
-  const byDay = new Map<string, number>();
-  for (const sample of samples) {
-    if (!ASLEEP_VALUES.has(sample.value)) continue;
-    const minutes = (sample.endDate.getTime() - sample.startDate.getTime()) / 60_000;
-    const key = toDateKey(sample.startDate);
-    byDay.set(key, (byDay.get(key) ?? 0) + minutes);
-  }
-  return byDay;
+  const asleepIntervals = samples
+    .filter((sample) => ASLEEP_VALUES.has(sample.value))
+    .map((sample) => ({ start: sample.startDate, end: sample.endDate }));
+
+  return sumMinutesByDay(asleepIntervals);
 }
 
 async function collectRestingHeartRate(): Promise<number | undefined> {
@@ -90,7 +84,7 @@ async function collectRestingHeartRate(): Promise<number | undefined> {
 }
 
 export async function collectDailyMetrics(days = 7): Promise<DailyMetricPayload[]> {
-  if (!isHealthKitAvailable()) return [];
+  if (!isHealthDataAvailable()) return [];
 
   const endDate = new Date();
   const startDate = new Date(endDate.getTime() - days * 24 * 60 * 60 * 1000);
@@ -117,7 +111,7 @@ export async function collectDailyMetrics(days = 7): Promise<DailyMetricPayload[
 }
 
 export async function collectLatestWeightKg(): Promise<{ kg: number; sampleUuid: string; sampleDate: string } | null> {
-  if (!isHealthKitAvailable()) return null;
+  if (!isHealthDataAvailable()) return null;
   const sample = await getMostRecentQuantitySample("HKQuantityTypeIdentifierBodyMass", "kg");
   if (!sample) return null;
   return { kg: sample.quantity, sampleUuid: sample.uuid, sampleDate: sample.startDate.toISOString() };
@@ -125,7 +119,7 @@ export async function collectLatestWeightKg(): Promise<{ kg: number; sampleUuid:
 
 // Best-effort — callers should treat failures as non-fatal and not block on this.
 export async function syncHealthData(): Promise<void> {
-  if (!isHealthKitAvailable()) return;
+  if (!isHealthDataAvailable()) return;
 
   const [metrics, latestWeight] = await Promise.all([collectDailyMetrics(7), collectLatestWeightKg()]);
   if (!metrics.length && !latestWeight) return;

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { View, Text, ScrollView, ActivityIndicator, TouchableOpacity, StyleSheet } from "react-native";
+import { View, Text, ScrollView, ActivityIndicator, TouchableOpacity, StyleSheet, Platform } from "react-native";
 import { useQuery } from "@tanstack/react-query";
 import { useNavigation } from "@react-navigation/native";
 import axios from "axios";
@@ -157,7 +157,9 @@ export default function AdvancedAnalyticsScreen() {
               </View>
             </View>
           ) : (
-            <Text style={s.emptyText}>{t("advanced_analytics.no_health_data")}</Text>
+            <Text style={s.emptyText}>
+              {t(Platform.OS === "android" ? "advanced_analytics.no_health_data_android" : "advanced_analytics.no_health_data")}
+            </Text>
           )}
         </View>
 

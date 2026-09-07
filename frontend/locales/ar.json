@@ -364,7 +364,8 @@
     "readiness_disclaimer": "ليست نصيحة طبية — إشارة تعافي عامة بناءً على بياناتك الأخيرة.",
     "readiness_nudge": "اتصل بـ Apple Health وسجل بعض التمارين لفتح درجة الجاهزية الخاصة بك.",
     "task_connect_friend": "الاتصال بصديق",
-    "protein_note": "يتضمن زيادة متواضعة في البروتين — وهي نصيحة شائعة خلال هذه المرحلة من العمر لدعم العضلات."
+    "protein_note": "يتضمن زيادة متواضعة في البروتين — وهي نصيحة شائعة خلال هذه المرحلة من العمر لدعم العضلات.",
+    "readiness_nudge_android": "قم بربط Health Connect وسجل بعض التمارين لفتح درجة الجاهزية الخاصة بك."
   },
   "settings": {
     "title": "الإعدادات",
@@ -438,7 +439,13 @@
     "app_icon": "أيقونة التطبيق",
     "app_icon_sub": "Elite — اختر من بين عدة تصاميم",
     "affiliate_code": "كود الإحالة",
-    "affiliate_code_sub": "هل تم إحالتك من قبل منشئ محتوى؟ أدخل رمزه"
+    "affiliate_code_sub": "هل تم إحالتك من قبل منشئ محتوى؟ أدخل رمزه",
+    "health_card_title_android": "Health Connect",
+    "health_card_sub_android": "مزامنة الخطوات والنوم والطاقة النشطة ومعدل ضربات القلب والوزن من Health Connect (Samsung Health و Fitbit والتطبيقات الأخرى تكتب فيه) لتقليل التسجيل اليدوي.",
+    "health_connect_button_android": "ربط Health Connect",
+    "health_disconnect_title_android": "قطع اتصال Health Connect؟",
+    "health_disconnect_msg_android": "هذا يوقف التطبيق عن مزامنة البيانات الجديدة، لكنه لا يلغي وصول Health Connect — يمكنك إدارة ذلك في إعدادات الأذونات بتطبيق Health Connect.",
+    "error_health_connect_android": "تعذر الاتصال بـ Health Connect. حاول مرة أخرى."
   },
   "notifications": {
     "title": "الإشعارات",
@@ -1369,7 +1376,8 @@
     "plateau_line": "{{exercise}} ظل ثابتًا عند {{weight}} لمدة {{reps}} عدة تكرارات عبر آخر {{count}} جلسة.",
     "body_composition": "تغيير تكوين الجسم",
     "no_composition_data": "أكمل تقييمين للجسم على الأقل لرؤية التغييرات بمرور الوقت.",
-    "error": "تعذر تحميل التحليلات الخاصة بك. يرجى المحاولة مرة أخرى."
+    "error": "تعذر تحميل التحليلات الخاصة بك. يرجى المحاولة مرة أخرى.",
+    "no_health_data_android": "مزامنة Health Connect لمشاهدة اتجاهات الخطوات والنوم ومعدل ضربات القلب."
   },
   "product_scan": {
     "permission_title": "يلزم الوصول إلى الكاميرا",

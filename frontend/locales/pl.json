@@ -364,7 +364,8 @@
     "readiness_disclaimer": "Nie stanowi porady medycznej — ogólny sygnał regeneracji na podstawie Twoich ostatnich danych.",
     "readiness_nudge": "Połącz Apple Health i zaloguj kilka treningów, aby odblokować swój wynik gotowości.",
     "task_connect_friend": "Połącz się z przyjacielem",
-    "protein_note": "Zawiera nieznaczny wzrost białka — powszechna rekomendacja na tym etapie życia, aby wspierać mięśnie."
+    "protein_note": "Zawiera nieznaczny wzrost białka — powszechna rekomendacja na tym etapie życia, aby wspierać mięśnie.",
+    "readiness_nudge_android": "Połącz Health Connect i zaloguj kilka treningów, aby odblokować wynik gotowości."
   },
   "settings": {
     "title": "Ustawienia",
@@ -438,7 +439,13 @@
     "app_icon": "Ikona Aplikacji",
     "app_icon_sub": "Elite — wybierz spośród kilku wyglądu",
     "affiliate_code": "Kod Polecenia",
-    "affiliate_code_sub": "Czy ktoś Cię tutaj skierował? Wpisz ich kod"
+    "affiliate_code_sub": "Czy ktoś Cię tutaj skierował? Wpisz ich kod",
+    "health_card_title_android": "Health Connect",
+    "health_card_sub_android": "Synchronizuj kroki, sen, aktywną energię, tętno i wagę z Health Connect (Samsung Health, Fitbit i inne aplikacje zapisują do niego) aby zmniejszyć ręczne logowanie.",
+    "health_connect_button_android": "Połącz Health Connect",
+    "health_disconnect_title_android": "Rozłączyć Health Connect?",
+    "health_disconnect_msg_android": "To zatrzyma synchronizację nowych danych przez aplikację, ale nie cofnie dostępu Health Connect — możesz zarządzać tym w ustawieniach uprawnień aplikacji Health Connect.",
+    "error_health_connect_android": "Nie można połączyć się z Health Connect. Spróbuj ponownie."
   },
   "notifications": {
     "title": "Powiadomienia",
@@ -1369,7 +1376,8 @@
     "plateau_line": "{{exercise}} utrzymuje się na stałym poziomie {{weight}} przez {{reps}} powtórzeń w ciągu ostatnich {{count}} sesji.",
     "body_composition": "Zmiana Składu Ciała",
     "no_composition_data": "Ukończ co najmniej dwie oceny ciała, aby zobaczyć zmiany w czasie.",
-    "error": "Nie udało się załadować Twoją analitykę. Spróbuj ponownie."
+    "error": "Nie udało się załadować Twoją analitykę. Spróbuj ponownie.",
+    "no_health_data_android": "Synchronizuj Health Connect, aby zobaczyć trendy kroków, snu i tętna."
   },
   "product_scan": {
     "permission_title": "Wymagany Dostęp do Kamery",

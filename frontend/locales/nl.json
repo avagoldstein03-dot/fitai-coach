@@ -364,7 +364,8 @@
     "readiness_disclaimer": "Geen medisch advies — een algemeen herstelsignaal gebaseerd op je recente gegevens.",
     "readiness_nudge": "Verbind Apple Health en registreer een paar trainingen om je paraatheidscore te ontgrendelen.",
     "task_connect_friend": "Verbind met een vriend",
-    "protein_note": "Inclusief een bescheiden proteïneverhoging — gebruikelijk advies tijdens deze levensfase om spierondersteuning te bevorderen."
+    "protein_note": "Inclusief een bescheiden proteïneverhoging — gebruikelijk advies tijdens deze levensfase om spierondersteuning te bevorderen.",
+    "readiness_nudge_android": "Verbind Health Connect en log een paar workouts om je readiness score te ontgrendelen."
   },
   "settings": {
     "title": "Instellingen",
@@ -438,7 +439,13 @@
     "app_icon": "App-pictogram",
     "app_icon_sub": "Elite — kies uit een aantal ontwerpen",
     "affiliate_code": "Aanbevelingscode",
-    "affiliate_code_sub": "Ben je doorgestuurd door een creator? Voer hun code in"
+    "affiliate_code_sub": "Ben je doorgestuurd door een creator? Voer hun code in",
+    "health_card_title_android": "Health Connect",
+    "health_card_sub_android": "Synchroniseer stappen, slaap, actieve energie, hartslag en gewicht van Health Connect (Samsung Health, Fitbit en andere apps schrijven hier in) om handmatig invoeren te verminderen.",
+    "health_connect_button_android": "Health Connect verbinden",
+    "health_disconnect_title_android": "Health Connect verbreken?",
+    "health_disconnect_msg_android": "Dit stopt met het synchroniseren van nieuwe gegevens, maar intrekt de Health Connect-toegang niet — je kunt dit beheren in de machtigingsinstellingen van de Health Connect-app.",
+    "error_health_connect_android": "Kon niet verbinding maken met Health Connect. Probeer opnieuw."
   },
   "notifications": {
     "title": "Meldingen",
@@ -1369,7 +1376,8 @@
     "plateau_line": "{{exercise}} blijft stabiel op {{weight}} voor {{reps}} herhalingen over de laatste {{count}} sessies.",
     "body_composition": "Verandering Lichaamssamenstelling",
     "no_composition_data": "Voltooi minstens twee lichaamsmetingen om veranderingen in de loop van de tijd te zien.",
-    "error": "Kon je analytics niet laden. Probeer het alstublieft opnieuw."
+    "error": "Kon je analytics niet laden. Probeer het alstublieft opnieuw.",
+    "no_health_data_android": "Synchroniseer Health Connect om trends voor stappen, slaap en hartslag te zien."
   },
   "product_scan": {
     "permission_title": "Cameratoegang Nodig",

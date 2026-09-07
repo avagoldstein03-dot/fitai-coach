@@ -364,7 +364,8 @@
     "readiness_disclaimer": "Sio ushauri wa kimatibabu — ishara ya jumla ya kufanya upya kulingana na data yako ya karibuni.",
     "readiness_nudge": "Unganisha Apple Health na boresha mazoezi machache ili kufungua alama yako ya uhalifu.",
     "task_connect_friend": "Unganisha na rafiki",
-    "protein_note": "Inajumuisha ongezeko dogo la protini — ushauri wa kawaida wakati wa kipindi hiki cha maisha kusaidia kuunga mkono misuli."
+    "protein_note": "Inajumuisha ongezeko dogo la protini — ushauri wa kawaida wakati wa kipindi hiki cha maisha kusaidia kuunga mkono misuli.",
+    "readiness_nudge_android": "Unganisha Health Connect na kuandika mazoezi machache ili kufungua alama yako ya utayari."
   },
   "settings": {
     "title": "Mipangilio",
@@ -438,7 +439,13 @@
     "app_icon": "Aikoni ya Programu",
     "app_icon_sub": "Elite — chagua kutoka kwa mifumo kadhaa",
     "affiliate_code": "Nambari ya Kumbwa",
-    "affiliate_code_sub": "Je, umechukuliwa na mtayarishaji? Ingiza nambari yao"
+    "affiliate_code_sub": "Je, umechukuliwa na mtayarishaji? Ingiza nambari yao",
+    "health_card_title_android": "Health Connect",
+    "health_card_sub_android": "Sambaza hatua, usingizi, nishati ziada, kiwango cha moyo, na uzani kutoka kwa Health Connect (Samsung Health, Fitbit, na programu zingine zinaandika ndani yake) ili kupunguza kuandika kwa mikono.",
+    "health_connect_button_android": "Unganisha Health Connect",
+    "health_disconnect_title_android": "Kukatiza Health Connect?",
+    "health_disconnect_msg_android": "Hii inasimamisha programu isambaze data mpya, lakini haitataji ruhusa ya Health Connect — unaweza kuidhinisha katika mipango ya ruhusa ya programu ya Health Connect.",
+    "error_health_connect_android": "Haiwezi kuunganisha na Health Connect. Jaribu tena."
   },
   "notifications": {
     "title": "Arifa",
@@ -1369,7 +1376,8 @@
     "plateau_line": "{{exercise}} imebaki imara katika {{weight}} kwa {{reps}} marudio katika {{count}} jumui za mwisho.",
     "body_composition": "Mabadiliko ya Muundo wa Mwili",
     "no_composition_data": "Kamata angalau tathmini mbili za mwili ili kuona mabadiliko baada ya muda.",
-    "error": "Haiwezi kupakia uchambuzi wako. Tafadhali jaribu tena."
+    "error": "Haiwezi kupakia uchambuzi wako. Tafadhali jaribu tena.",
+    "no_health_data_android": "Sambaza Health Connect ili kuona mienendo ya hatua, usingizi, na kiwango cha moyo."
   },
   "product_scan": {
     "permission_title": "Inahitajika Ufikiaji wa Kamera",

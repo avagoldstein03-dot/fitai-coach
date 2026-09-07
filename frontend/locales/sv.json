@@ -364,7 +364,8 @@
     "readiness_disclaimer": "Inte medicinsk rådgivning — en allmän återhämtningssignal baserad på dina senaste data.",
     "readiness_nudge": "Anslut Apple Health och logga några träningar för att låsa upp din beredskapsscore.",
     "task_connect_friend": "Anslut med en vän",
-    "protein_note": "Innehåller en blygsam proteinökning — vanlig rekommendation under denna livsfas för att stödja muskeluppbyggnad."
+    "protein_note": "Innehåller en blygsam proteinökning — vanlig rekommendation under denna livsfas för att stödja muskeluppbyggnad.",
+    "readiness_nudge_android": "Anslut Health Connect och logga några träningspass för att låsa upp din readiness-poäng."
   },
   "settings": {
     "title": "Inställningar",
@@ -438,7 +439,13 @@
     "app_icon": "App-ikon",
     "app_icon_sub": "Elite — välj mellan några olika utseenden",
     "affiliate_code": "Referralkod",
-    "affiliate_code_sub": "Blev du rekommenderad av en content creator? Ange deras kod"
+    "affiliate_code_sub": "Blev du rekommenderad av en content creator? Ange deras kod",
+    "health_card_title_android": "Health Connect",
+    "health_card_sub_android": "Synkronisera steg, sömndata, aktivenergi, hjärtfrekvens och vikt från Health Connect (Samsung Health, Fitbit och andra appar skriver till den) för att minska manuell loggning.",
+    "health_connect_button_android": "Anslut Health Connect",
+    "health_disconnect_title_android": "Koppla från Health Connect?",
+    "health_disconnect_msg_android": "Detta stoppar appens synkronisering av nya data, men återkallar inte Health Connect-åtkomsten — du kan hantera det i Health Connect-appens behörighetsinställningar.",
+    "error_health_connect_android": "Kunde inte ansluta till Health Connect. Försök igen."
   },
   "notifications": {
     "title": "Meddelanden",
@@ -1369,7 +1376,8 @@
     "plateau_line": "{{exercise}} har hållit sig stabil på {{weight}} för {{reps}} rep under de senaste {{count}} omgångarna.",
     "body_composition": "Förändring av kroppssammansättning",
     "no_composition_data": "Slutför minst två kroppsanalyser för att se förändringar över tid.",
-    "error": "Kunde inte ladda din analys. Försök igen."
+    "error": "Kunde inte ladda din analys. Försök igen.",
+    "no_health_data_android": "Synkronisera Health Connect för att se trender för steg, sömn och hjärtfrekvens."
   },
   "product_scan": {
     "permission_title": "Kameraåtkomst krävs",

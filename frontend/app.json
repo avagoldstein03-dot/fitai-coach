@@ -37,7 +37,12 @@
         "android.permission.CAMERA",
         "android.permission.READ_MEDIA_IMAGES",
         "android.permission.READ_EXTERNAL_STORAGE",
-        "android.permission.RECORD_AUDIO"
+        "android.permission.RECORD_AUDIO",
+        "android.permission.health.READ_STEPS",
+        "android.permission.health.READ_ACTIVE_CALORIES_BURNED",
+        "android.permission.health.READ_HEART_RATE",
+        "android.permission.health.READ_SLEEP",
+        "android.permission.health.READ_WEIGHT"
       ]
     },
     "web": {
@@ -73,6 +78,7 @@
           "background": false
         }
       ],
+      "react-native-health-connect",
       "expo-video",
       [
         "expo-alternate-app-icons",

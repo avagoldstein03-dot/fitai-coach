@@ -364,7 +364,8 @@
     "readiness_disclaimer": "طبی مشورہ نہیں — آپ کی حالیہ ڈیٹا پر مبنی عام بحالی کا اشارہ۔",
     "readiness_nudge": "Apple Health سے جڑیں اور اپنی تیاری کا سکور حاصل کرنے کے لیے کچھ ورزشیں ریکارڈ کریں۔",
     "task_connect_friend": "کسی دوست سے جڑیں",
-    "protein_note": "اس میں معمولی پروٹین میں اضافہ شامل ہے — زندگی کے اس مرحلے میں عام رہنمائی ماپعض کو سہارا دینے میں مدد کے لیے۔"
+    "protein_note": "اس میں معمولی پروٹین میں اضافہ شامل ہے — زندگی کے اس مرحلے میں عام رہنمائی ماپعض کو سہارا دینے میں مدد کے لیے۔",
+    "readiness_nudge_android": "Health Connect کو منسلک کریں اور اپنی تیاری کا سکور اتار کرنے کے لیے کچھ ورزشیں لاگ کریں۔"
   },
   "settings": {
     "title": "ترتیبات",
@@ -438,7 +439,13 @@
     "app_icon": "ایپ آئیکن",
     "app_icon_sub": "Elite — کچھ نظریات میں سے منتخب کریں",
     "affiliate_code": "ریفرل کوڈ",
-    "affiliate_code_sub": "کیا کوئی کریٹر آپ کو بھیجا ہے؟ ان کا کوڈ درج کریں"
+    "affiliate_code_sub": "کیا کوئی کریٹر آپ کو بھیجا ہے؟ ان کا کوڈ درج کریں",
+    "health_card_title_android": "Health Connect",
+    "health_card_sub_android": "Health Connect سے اقدامات، نیند، فعال توانائی، دل کی شرح، اور وزن کو ہم آہنگ کریں (Samsung Health، Fitbit، اور دوسری ایپس اس میں لکھتی ہیں) دستی لاگنگ کو کم کرنے کے لیے۔",
+    "health_connect_button_android": "Health Connect کو منسلک کریں",
+    "health_disconnect_title_android": "Health Connect کو منقطع کریں؟",
+    "health_disconnect_msg_android": "یہ ایپ کو نیا ڈیٹا ہم آہنگ کرنے سے روکتا ہے، لیکن Health Connect تک رسائی منسوخ نہیں کرتا — آپ Health Connect ایپ کی اجازتوں کی ترتیبات میں اس کا انتظام کر سکتے ہیں۔",
+    "error_health_connect_android": "Health Connect سے منسلک نہیں ہو سکے۔ دوبارہ کوشش کریں۔"
   },
   "notifications": {
     "title": "اطلاعات",
@@ -1369,7 +1376,8 @@
     "plateau_line": "{{exercise}} گزشتہ {{count}} سیشنز میں {{weight}} پر {{reps}} reps کے لیے مستحکم رہا ہے۔",
     "body_composition": "جسم کی ساخت میں تبدیلی",
     "no_composition_data": "وقت کے ساتھ تبدیلیاں دیکھنے کے لیے کم از کم دو جسمانی تشخیصات مکمل کریں۔",
-    "error": "آپ کے تجزیات لوڈ نہیں ہو سکے۔ براہ مہربانی دوبارہ کوشش کریں۔"
+    "error": "آپ کے تجزیات لوڈ نہیں ہو سکے۔ براہ مہربانی دوبارہ کوشش کریں۔",
+    "no_health_data_android": "اقدامات، نیند، اور دل کی شرح کے رجحانات دیکھنے کے لیے Health Connect کو ہم آہنگ کریں۔"
   },
   "product_scan": {
     "permission_title": "کیمرہ رسائی درکار ہے",

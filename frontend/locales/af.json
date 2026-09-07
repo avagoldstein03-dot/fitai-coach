@@ -364,7 +364,8 @@
     "readiness_disclaimer": "Nie mediese raad nie — 'n algemene herstel-sein gebaseer op jou onlangse data.",
     "readiness_nudge": "Koppel Apple Health en teken 'n paar werkouts aan om jou gereedheidstelling te ontgrendel.",
     "task_connect_friend": "Koppel met 'n vriend",
-    "protein_note": "Sluit 'n beskeie proteïenverhoging in — algemene raad tydens hierdie lewensfase om spierondersteuning te bevorder."
+    "protein_note": "Sluit 'n beskeie proteïenverhoging in — algemene raad tydens hierdie lewensfase om spierondersteuning te bevorder.",
+    "readiness_nudge_android": "Koppel Health Connect en log 'n paar oefeninge om jou gereedheidstelling te ontsluit."
   },
   "settings": {
     "title": "Instellings",
@@ -438,7 +439,13 @@
     "app_icon": "App Ikoon",
     "app_icon_sub": "Elite — kies uit 'n paar uitsiene",
     "affiliate_code": "Verwysings kode",
-    "affiliate_code_sub": "Is jy deur 'n skepper na hier verwys? Voer hulle kode in"
+    "affiliate_code_sub": "Is jy deur 'n skepper na hier verwys? Voer hulle kode in",
+    "health_card_title_android": "Health Connect",
+    "health_card_sub_android": "Sinkroniseer stappe, slaap, aktiewe energie, hartslagimpuls en gewig vanaf Health Connect (Samsung Health, Fitbit en ander toepassings skryf daarin) om handmatige invoer te verminder.",
+    "health_connect_button_android": "Koppel Health Connect",
+    "health_disconnect_title_android": "Ontkoppel Health Connect?",
+    "health_disconnect_msg_android": "Dit stop die toepassing van sinkronisering van nuwe data, maar trek nie Health Connect-toegang in nie — jy kan dit in die Health Connect-toepassing se toestemmingsinstellings bestuur.",
+    "error_health_connect_android": "Kon nie aan Health Connect koppel nie. Probeer asseblief weer."
   },
   "notifications": {
     "title": "Kennisgewings",
@@ -1369,7 +1376,8 @@
     "plateau_line": "{{exercise}} het gelyk gebly op {{weight}} vir {{reps}} herhalings oor die laaste {{count}} sessies.",
     "body_composition": "Liggaamssamestelling Verandering",
     "no_composition_data": "Voltooi ten minste twee liggaamsbewerkings om veranderinge oor tyd te sien.",
-    "error": "Kon nie jou analitiek laai nie. Probeer asseblief weer."
+    "error": "Kon nie jou analitiek laai nie. Probeer asseblief weer.",
+    "no_health_data_android": "Sinkroniseer Health Connect om stappe, slaap- en hartslaguitskendings te sien."
   },
   "product_scan": {
     "permission_title": "Kameratoegang Nodig",

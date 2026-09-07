@@ -364,7 +364,8 @@
     "readiness_disclaimer": "Non un conseil médical — un signal de récupération général basé sur vos données récentes.",
     "readiness_nudge": "Connectez Apple Health et enregistrez quelques entraînements pour déverrouiller votre score de préparation.",
     "task_connect_friend": "Se connecter avec un ami",
-    "protein_note": "Comprend une augmentation modeste des protéines — conseil courant durant cette étape de la vie pour aider à soutenir la musculature."
+    "protein_note": "Comprend une augmentation modeste des protéines — conseil courant durant cette étape de la vie pour aider à soutenir la musculature.",
+    "readiness_nudge_android": "Connectez Health Connect et enregistrez quelques entraînements pour déverrouiller votre score de forme."
   },
   "settings": {
     "title": "Paramètres",
@@ -438,7 +439,13 @@
     "app_icon": "Icône de l'application",
     "app_icon_sub": "Elite — choisissez parmi plusieurs styles",
     "affiliate_code": "Code de Parrainage",
-    "affiliate_code_sub": "Avez-vous été recommandé par un créateur ? Entrez son code"
+    "affiliate_code_sub": "Avez-vous été recommandé par un créateur ? Entrez son code",
+    "health_card_title_android": "Health Connect",
+    "health_card_sub_android": "Synchronisez les pas, le sommeil, l'énergie active, la fréquence cardiaque et le poids depuis Health Connect (Samsung Health, Fitbit et autres applications y écrivent) pour réduire la saisie manuelle.",
+    "health_connect_button_android": "Connecter Health Connect",
+    "health_disconnect_title_android": "Déconnecter Health Connect ?",
+    "health_disconnect_msg_android": "Cela arrête la synchronisation des nouvelles données, mais ne révoque pas l'accès à Health Connect — vous pouvez le gérer dans les paramètres de permissions de l'application Health Connect.",
+    "error_health_connect_android": "Impossible de se connecter à Health Connect. Réessayez."
   },
   "notifications": {
     "title": "Notifications",
@@ -1369,7 +1376,8 @@
     "plateau_line": "{{exercise}} est resté stable à {{weight}} pour {{reps}} reps au cours des {{count}} dernières séances.",
     "body_composition": "Changement de Composition Corporelle",
     "no_composition_data": "Complétez au moins deux évaluations corporelles pour voir les changements au fil du temps.",
-    "error": "Impossible de charger vos analyses. Veuillez réessayer."
+    "error": "Impossible de charger vos analyses. Veuillez réessayer.",
+    "no_health_data_android": "Synchronisez Health Connect pour voir les tendances des pas, du sommeil et de la fréquence cardiaque."
   },
   "product_scan": {
     "permission_title": "Accès à la Caméra Requis",

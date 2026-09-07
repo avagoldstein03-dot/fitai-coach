@@ -364,7 +364,8 @@
     "readiness_disclaimer": "非医学建议 — 基于您最近数据的常规恢复信号。",
     "readiness_nudge": "连接 Apple Health 并记录几项训练以解锁您的准备状态评分。",
     "task_connect_friend": "与朋友连接",
-    "protein_note": "包含适度增加的蛋白质——这个人生阶段的常见建议，有助于维持肌肉。"
+    "protein_note": "包含适度增加的蛋白质——这个人生阶段的常见建议，有助于维持肌肉。",
+    "readiness_nudge_android": "连接 Health Connect 并记录几项锻炼以解锁你的准备度评分。"
   },
   "settings": {
     "title": "设置",
@@ -438,7 +439,13 @@
     "app_icon": "应用图标",
     "app_icon_sub": "精英版 — 选择多种外观",
     "affiliate_code": "推荐代码",
-    "affiliate_code_sub": "是否由创作者推荐？输入他们的代码"
+    "affiliate_code_sub": "是否由创作者推荐？输入他们的代码",
+    "health_card_title_android": "Health Connect",
+    "health_card_sub_android": "从 Health Connect（Samsung Health、Fitbit 和其他应用会将数据写入其中）同步步数、睡眠、活动能量、心率和体重，以减少手动记录。",
+    "health_connect_button_android": "连接 Health Connect",
+    "health_disconnect_title_android": "断开 Health Connect 连接？",
+    "health_disconnect_msg_android": "这将停止应用同步新数据，但不会撤销 Health Connect 访问权限 — 你可以在 Health Connect 应用的权限设置中管理。",
+    "error_health_connect_android": "无法连接到 Health Connect。请重试。"
   },
   "notifications": {
     "title": "通知",
@@ -1369,7 +1376,8 @@
     "plateau_line": "{{exercise}} 在过去 {{count}} 次训练中保持在 {{weight}} {{reps}} 次的稳定水平。",
     "body_composition": "身体成分变化",
     "no_composition_data": "完成至少两次身体评估即可查看随时间推移的变化。",
-    "error": "无法加载您的分析。请重试。"
+    "error": "无法加载您的分析。请重试。",
+    "no_health_data_android": "同步 Health Connect 以查看步数、睡眠和心率趋势。"
   },
   "product_scan": {
     "permission_title": "需要相机权限",

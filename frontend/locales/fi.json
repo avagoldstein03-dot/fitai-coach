@@ -364,7 +364,8 @@
     "readiness_disclaimer": "Ei lääketieteellistä neuvontaa — yleinen palautumissignaali viimeaikaisten tietojesi perusteella.",
     "readiness_nudge": "Yhdistä Apple Health ja kirjaa muutama harjoitus avataksesi valmiusindeksisi.",
     "task_connect_friend": "Muodosta yhteys ystävään",
-    "protein_note": "Sisältää vaatimattoman proteiinin lisän — yleisen suosituksen mukainen lisä tässä elämänvaiheessa lihaskudoksen tukemiseksi."
+    "protein_note": "Sisältää vaatimattoman proteiinin lisän — yleisen suosituksen mukainen lisä tässä elämänvaiheessa lihaskudoksen tukemiseksi.",
+    "readiness_nudge_android": "Yhdistä Health Connect ja kirjaa muutama harjoitus vapauttaaksesi valmiuspisteesi."
   },
   "settings": {
     "title": "Asetukset",
@@ -438,7 +439,13 @@
     "app_icon": "Sovelluskuvake",
     "app_icon_sub": "Elite — valitse muutamasta vaihtoehdosta",
     "affiliate_code": "Kuittikoodi",
-    "affiliate_code_sub": "Oletko saanut suosituksen luojalta? Syötä heidän koodi"
+    "affiliate_code_sub": "Oletko saanut suosituksen luojalta? Syötä heidän koodi",
+    "health_card_title_android": "Health Connect",
+    "health_card_sub_android": "Synkronoi askelia, unta, aktiivista energiaa, sydämen sykettä ja painoa Health Connectista (Samsung Health, Fitbit ja muut sovellukset kirjoittavat siihen) manuaalisen kirjaamisen vähentämiseksi.",
+    "health_connect_button_android": "Yhdistä Health Connect",
+    "health_disconnect_title_android": "Katkaise Health Connect -yhteys?",
+    "health_disconnect_msg_android": "Tämä pysäyttää sovelluksen synkronoimisen uusia tietoja, mutta ei peruuta Health Connect -käyttöoikeutta — voit hallita sitä Health Connect -sovelluksen käyttöoikeusasetuksissa.",
+    "error_health_connect_android": "Ei voitu muodostaa yhteyttä Health Connectiin. Yritä uudelleen."
   },
   "notifications": {
     "title": "Ilmoitukset",
@@ -1369,7 +1376,8 @@
     "plateau_line": "{{exercise}} on pysynyt tasaisena {{weight}} -tasolla {{reps}} toiston verran viimeisten {{count}} istunnon aikana.",
     "body_composition": "Kehon koostumuksen muutos",
     "no_composition_data": "Suorita vähintään kaksi kehon arviointia nähdäksesi muutokset ajan kuluessa.",
-    "error": "Analytiikan lataaminen epäonnistui. Yritä uudelleen."
+    "error": "Analytiikan lataaminen epäonnistui. Yritä uudelleen.",
+    "no_health_data_android": "Synkronoi Health Connect nähdäksesi askelia, unta ja sydämen sykkeen trendejä."
   },
   "product_scan": {
     "permission_title": "Kameraluvan salliminen vaaditaan",

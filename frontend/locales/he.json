@@ -364,7 +364,8 @@
     "readiness_disclaimer": "לא עצה רפואית — אות התאוששות כללית המבוססת על הנתונים האחרונים שלך.",
     "readiness_nudge": "חבר את Apple Health ורשום כמה אימונים כדי לבטל את הנעילה של ציון המוכנות שלך.",
     "task_connect_friend": "התחבר עם חבר",
-    "protein_note": "כולל עלייה צנועה בחלבון — הנחיה נפוצה בתקופת חיים זו כדי לתמוך בשריר."
+    "protein_note": "כולל עלייה צנועה בחלבון — הנחיה נפוצה בתקופת חיים זו כדי לתמוך בשריר.",
+    "readiness_nudge_android": "חבר את Health Connect וחייג כמה אימונים כדי לפתוח את ציון הготовkeness שלך."
   },
   "settings": {
     "title": "הגדרות",
@@ -438,7 +439,13 @@
     "app_icon": "סמל האפליקציה",
     "app_icon_sub": "Elite — בחר מכמה עיצובים",
     "affiliate_code": "קוד הפניה",
-    "affiliate_code_sub": "הגעת לפי הפניה של יוצר תוכן? הזן את הקוד שלו"
+    "affiliate_code_sub": "הגעת לפי הפניה של יוצר תוכן? הזן את הקוד שלו",
+    "health_card_title_android": "Health Connect",
+    "health_card_sub_android": "סנכרן צעדים, שינה, אנרגיה פעילה, קצב לב ומשקל מ-Health Connect (Samsung Health, Fitbit ואפליקציות אחרות כותבות אליו) כדי להפחית רישום ידני.",
+    "health_connect_button_android": "חבר את Health Connect",
+    "health_disconnect_title_android": "התנתק מ-Health Connect?",
+    "health_disconnect_msg_android": "זה עוצר את סנכרון הנתונים החדשים של האפליקציה, אך לא מבטל את גישת Health Connect — אתה יכול לנהל זאת בהגדרות ההרשאות של אפליקציית Health Connect.",
+    "error_health_connect_android": "לא הצליח להתחבר ל-Health Connect. נסה שוב."
   },
   "notifications": {
     "title": "התראות",
@@ -1369,7 +1376,8 @@
     "plateau_line": "{{exercise}} נשמר יציב ב-{{weight}} עבור {{reps}} חזרות על פני {{count}} הסשנים האחרונים.",
     "body_composition": "שינוי הרכב הגוף",
     "no_composition_data": "השלם לפחות שתי הערכות גוף כדי לראות שינויים לאורך זמן.",
-    "error": "לא היתה אפשרות לטעון את הניתוחים שלך. אנא נסה שוב."
+    "error": "לא היתה אפשרות לטעון את הניתוחים שלך. אנא נסה שוב.",
+    "no_health_data_android": "סנכרן את Health Connect כדי לראות טרנדים של צעדים, שינה וקצב לב."
   },
   "product_scan": {
     "permission_title": "נדרש גישה למצלמה",

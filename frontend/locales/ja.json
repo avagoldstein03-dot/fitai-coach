@@ -364,7 +364,8 @@
     "readiness_disclaimer": "医学的アドバイスではありません — 最近のデータに基づいた一般的なリカバリーシグナルです。",
     "readiness_nudge": "Apple Healthを接続して、いくつかのワークアウトをログして、レディネススコアをアンロックしてください。",
     "task_connect_friend": "友達と繋がる",
-    "protein_note": "適度なタンパク質の増加を含みます — このライフステージでは筋肉をサポートするために一般的に推奨されています。"
+    "protein_note": "適度なタンパク質の増加を含みます — このライフステージでは筋肉をサポートするために一般的に推奨されています。",
+    "readiness_nudge_android": "Health Connectを接続し、いくつかのワークアウトをログして、レディネススコアをアンロックしましょう。"
   },
   "settings": {
     "title": "設定",
@@ -438,7 +439,13 @@
     "app_icon": "アプリアイコン",
     "app_icon_sub": "Elite — 複数のデザインから選択可能",
     "affiliate_code": "紹介コード",
-    "affiliate_code_sub": "クリエイターから紹介されましたか？彼らのコードを入力してください"
+    "affiliate_code_sub": "クリエイターから紹介されましたか？彼らのコードを入力してください",
+    "health_card_title_android": "Health Connect",
+    "health_card_sub_android": "Health Connect（Samsung Health、Fitbit、その他のアプリが連携）からステップ数、睡眠、アクティブエネルギー、心拍数、体重を同期して、手動ログを減らしましょう。",
+    "health_connect_button_android": "Health Connectを接続",
+    "health_disconnect_title_android": "Health Connectの接続を解除しますか？",
+    "health_disconnect_msg_android": "アプリの新しいデータの同期が停止しますが、Health Connectへのアクセスは取り消されません。Health Connectアプリの権限設定で管理できます。",
+    "error_health_connect_android": "Health Connectに接続できませんでした。もう一度お試しください。"
   },
   "notifications": {
     "title": "通知",
@@ -1369,7 +1376,8 @@
     "plateau_line": "{{exercise}}は過去{{count}}セッションで{{weight}}で{{reps}}レップスに安定しています。",
     "body_composition": "身体組成の変化",
     "no_composition_data": "時間経過による変化を確認するには、少なくとも2つのボディ評価を完了してください。",
-    "error": "分析を読み込めませんでした。もう一度お試しください。"
+    "error": "分析を読み込めませんでした。もう一度お試しください。",
+    "no_health_data_android": "Health Connectを同期して、ステップ数、睡眠、心拍数のトレンドを確認しましょう。"
   },
   "product_scan": {
     "permission_title": "カメラアクセスが必要です",

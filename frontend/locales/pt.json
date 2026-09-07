@@ -364,7 +364,8 @@
     "readiness_disclaimer": "Não é aconselhamento médico — um sinal geral de recuperação baseado em seus dados recentes.",
     "readiness_nudge": "Conecte o Apple Health e registre alguns treinos para desbloquear sua pontuação de prontidão.",
     "task_connect_friend": "Conectar com um amigo",
-    "protein_note": "Inclui um aumento modesto de proteína — orientação comum nesta fase da vida para ajudar a manter a massa muscular."
+    "protein_note": "Inclui um aumento modesto de proteína — orientação comum nesta fase da vida para ajudar a manter a massa muscular.",
+    "readiness_nudge_android": "Conecte o Health Connect e registre alguns treinos para desbloquear sua pontuação de prontidão."
   },
   "settings": {
     "title": "Configurações",
@@ -438,7 +439,13 @@
     "app_icon": "Ícone do Aplicativo",
     "app_icon_sub": "Elite — escolha entre alguns designs",
     "affiliate_code": "Código de Indicação",
-    "affiliate_code_sub": "Foi indicado por um criador? Digite o código dele"
+    "affiliate_code_sub": "Foi indicado por um criador? Digite o código dele",
+    "health_card_title_android": "Health Connect",
+    "health_card_sub_android": "Sincronize passos, sono, energia ativa, frequência cardíaca e peso do Health Connect (Samsung Health, Fitbit e outros aplicativos escrevem nele) para reduzir o registro manual.",
+    "health_connect_button_android": "Conectar Health Connect",
+    "health_disconnect_title_android": "Desconectar Health Connect?",
+    "health_disconnect_msg_android": "Isso interrompe a sincronização de novos dados do aplicativo, mas não revoga o acesso ao Health Connect — você pode gerenciar isso nas configurações de permissões do aplicativo Health Connect.",
+    "error_health_connect_android": "Não foi possível conectar ao Health Connect. Tente novamente."
   },
   "notifications": {
     "title": "Notificações",
@@ -1369,7 +1376,8 @@
     "plateau_line": "{{exercise}} se manteve estável em {{weight}} para {{reps}} repetições nas últimas {{count}} sessões.",
     "body_composition": "Mudança na Composição Corporal",
     "no_composition_data": "Complete pelo menos duas avaliações corporais para ver as mudanças ao longo do tempo.",
-    "error": "Não foi possível carregar sua análise. Tente novamente."
+    "error": "Não foi possível carregar sua análise. Tente novamente.",
+    "no_health_data_android": "Sincronize o Health Connect para ver tendências de passos, sono e frequência cardíaca."
   },
   "product_scan": {
     "permission_title": "Acesso à Câmera Necessário",

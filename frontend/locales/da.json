@@ -364,7 +364,8 @@
     "readiness_disclaimer": "Ikke medicinsk rådgivning — et generelt restitutionssignal baseret på dine seneste data.",
     "readiness_nudge": "Forbind Apple Health og log nogle få træninger for at låse din parathedsscore op.",
     "task_connect_friend": "Forbind med en ven",
-    "protein_note": "Inkluderer en beskeden proteinforøgelse — almindelig vejledning på dette livsstadie for at hjælpe med at understøtte muskler."
+    "protein_note": "Inkluderer en beskeden proteinforøgelse — almindelig vejledning på dette livsstadie for at hjælpe med at understøtte muskler.",
+    "readiness_nudge_android": "Forbind Health Connect og log nogle få træninger for at låse din parathedsscore op."
   },
   "settings": {
     "title": "Indstillinger",
@@ -438,7 +439,13 @@
     "app_icon": "App-ikon",
     "app_icon_sub": "Elite — vælg mellem flere designs",
     "affiliate_code": "Henvisningskode",
-    "affiliate_code_sub": "Blev du henvist af en creator? Indtast deres kode"
+    "affiliate_code_sub": "Blev du henvist af en creator? Indtast deres kode",
+    "health_card_title_android": "Health Connect",
+    "health_card_sub_android": "Synkroniser skridt, søvn, aktiv energi, puls og vægt fra Health Connect (Samsung Health, Fitbit og andre apps skriver til det) for at reducere manuel logging.",
+    "health_connect_button_android": "Forbind Health Connect",
+    "health_disconnect_title_android": "Afbryd Health Connect?",
+    "health_disconnect_msg_android": "Dette stopper appen fra at synkronisere nye data, men tilbagekalder ikke Health Connect-adgang — du kan administrere det i Health Connect-appens tilladelsesindstillinger.",
+    "error_health_connect_android": "Kunne ikke forbinde til Health Connect. Prøv igen."
   },
   "notifications": {
     "title": "Notifikationer",
@@ -1369,7 +1376,8 @@
     "plateau_line": "{{exercise}} har været stabilt på {{weight}} for {{reps}} gentagelser gennem de seneste {{count}} sessioner.",
     "body_composition": "Ændring i Kropsammensætning",
     "no_composition_data": "Gennemfør mindst to kropsvurderinger for at se ændringer over tid.",
-    "error": "Kunne ikke indlæse din analyse. Prøv igen."
+    "error": "Kunne ikke indlæse din analyse. Prøv igen.",
+    "no_health_data_android": "Synkroniser Health Connect for at se tendenser for skridt, søvn og puls."
   },
   "product_scan": {
     "permission_title": "Kameraudgang påkrævet",

@@ -364,7 +364,8 @@
     "readiness_disclaimer": "Nie je lekárska rada — všeobecný signál regenerácie na základe tvojich nedávnych údajov.",
     "readiness_nudge": "Pripoj Apple Health a zaznamenaj si niekoľko tréningov, aby si odomkol svoje skóre připravenosti.",
     "task_connect_friend": "Spoji sa s priateľom",
-    "protein_note": "Zahŕňa mierne zvýšenie bielkovín — bežné odporúčanie v tejto fáze života na podporu svalov."
+    "protein_note": "Zahŕňa mierne zvýšenie bielkovín — bežné odporúčanie v tejto fáze života na podporu svalov.",
+    "readiness_nudge_android": "Pripojte Health Connect a zaznamenajte niekoľko tréningov, aby ste odomkli svoj skóre pripravenosti."
   },
   "settings": {
     "title": "Nastavenia",
@@ -438,7 +439,13 @@
     "app_icon": "Ikona aplikácie",
     "app_icon_sub": "Elite — vyberte si z niekoľkých dizajnov",
     "affiliate_code": "Referenčný kód",
-    "affiliate_code_sub": "Poslal vám sem tvorca svojím kódom? Zadajte ho"
+    "affiliate_code_sub": "Poslal vám sem tvorca svojím kódom? Zadajte ho",
+    "health_card_title_android": "Health Connect",
+    "health_card_sub_android": "Synchronizujte kroky, spánok, aktívnu energiu, srdcovú frekvenciu a hmotnosť z Health Connect (Samsung Health, Fitbit a ďalšie aplikácie do neho zapisujú) na zníženie ručného zaznamenávania.",
+    "health_connect_button_android": "Pripojiť Health Connect",
+    "health_disconnect_title_android": "Odpojiť Health Connect?",
+    "health_disconnect_msg_android": "To zastaví synchronizáciu nových údajov v aplikácii, ale neodvolá prístup k Health Connect — môžete ho spravovať v nastaveniach oprávnení aplikácie Health Connect.",
+    "error_health_connect_android": "Nepodarilo sa pripojiť k Health Connect. Skúste znova."
   },
   "notifications": {
     "title": "Oznámenia",
@@ -1369,7 +1376,8 @@
     "plateau_line": "{{exercise}} zostal stabilný na {{weight}} pri {{reps}} opakovaní počas posledných {{count}} sedení.",
     "body_composition": "Zmena telesného zloženia",
     "no_composition_data": "Absolvujte aspoň dve hodnotenia tela, aby ste videli zmeny v čase.",
-    "error": "Nepodarilo sa načítať vašu analýzu. Skúste znova."
+    "error": "Nepodarilo sa načítať vašu analýzu. Skúste znova.",
+    "no_health_data_android": "Synchronizujte Health Connect, aby ste videli trendy krokov, spánku a srdcovej frekvencie."
   },
   "product_scan": {
     "permission_title": "Vyžaduje sa Prístup ku Kamerе",

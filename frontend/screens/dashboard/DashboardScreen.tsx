@@ -9,6 +9,7 @@ import {
   Dimensions,
   Modal,
   StyleSheet,
+  Platform,
 } from "react-native";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 import AsyncStorage from "@react-native-async-storage/async-storage";
@@ -330,7 +331,9 @@ export default function DashboardScreen() {
       })() : readinessData && readinessData.readiness === null ? (
         <View style={s.readinessCard}>
           <Text style={s.readinessTitle}>{t("dashboard.readiness_title")}</Text>
-          <Text style={s.readinessNudge}>{t("dashboard.readiness_nudge")}</Text>
+          <Text style={s.readinessNudge}>
+            {t(Platform.OS === "android" ? "dashboard.readiness_nudge_android" : "dashboard.readiness_nudge")}
+          </Text>
         </View>
       ) : null}
 

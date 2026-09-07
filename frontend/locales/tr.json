@@ -364,7 +364,8 @@
     "readiness_disclaimer": "Tıbbi tavsiye değildir — son verilerinize dayalı genel bir kurtarma sinyali.",
     "readiness_nudge": "Apple Health'i bağla ve hazırlık puanını açmak için birkaç antrenman kaydı yap.",
     "task_connect_friend": "Bir arkadaşla bağlan",
-    "protein_note": "Uygun protein artışı içerir — kas desteği sağlamaya yardımcı olmak için bu yaşam döneminde yaygın önerilen bir yaklaşım."
+    "protein_note": "Uygun protein artışı içerir — kas desteği sağlamaya yardımcı olmak için bu yaşam döneminde yaygın önerilen bir yaklaşım.",
+    "readiness_nudge_android": "Health Connect'i bağlayın ve hazır olma puanınızı açmak için birkaç antrenman kaydedin."
   },
   "settings": {
     "title": "Ayarlar",
@@ -438,7 +439,13 @@
     "app_icon": "Uygulama İkonu",
     "app_icon_sub": "Elite — birkaç görünümden seçin",
     "affiliate_code": "Referral Kodu",
-    "affiliate_code_sub": "Bir içerik yaratıcısı tarafından mı davet edildiniz? Onların kodunu girin"
+    "affiliate_code_sub": "Bir içerik yaratıcısı tarafından mı davet edildiniz? Onların kodunu girin",
+    "health_card_title_android": "Health Connect",
+    "health_card_sub_android": "Health Connect'ten adımları, uyku, aktif kaloriyi, kalp atış hızını ve kiloyu senkronize edin (Samsung Health, Fitbit ve diğer uygulamalar buraya yazılır) — manuel kayıt işlemini azaltın.",
+    "health_connect_button_android": "Health Connect'i Bağla",
+    "health_disconnect_title_android": "Health Connect bağlantısı kesilsin mi?",
+    "health_disconnect_msg_android": "Bu, uygulamanın yeni verileri senkronize etmesini durdurur, ancak Health Connect erişimini iptal etmez — bunu Health Connect uygulamasının izin ayarlarından yönetebilirsiniz.",
+    "error_health_connect_android": "Health Connect'e bağlanılamadı. Lütfen tekrar deneyin."
   },
   "notifications": {
     "title": "Bildirimler",
@@ -1369,7 +1376,8 @@
     "plateau_line": "{{exercise}} son {{count}} seansda {{weight}} ağırlığında {{reps}} tekrar olarak sabit kaldı.",
     "body_composition": "Vücut Kompozisyonu Değişimi",
     "no_composition_data": "Zaman içinde değişimleri görmek için en az iki vücut değerlendirmesi tamamlayın.",
-    "error": "Analitiğiniz yüklenemedi. Lütfen tekrar deneyin."
+    "error": "Analitiğiniz yüklenemedi. Lütfen tekrar deneyin.",
+    "no_health_data_android": "Adımlar, uyku ve kalp atış hızı trendlerini görmek için Health Connect'i senkronize edin."
   },
   "product_scan": {
     "permission_title": "Kamera Erişimi Gerekli",

@@ -364,7 +364,8 @@
     "readiness_disclaimer": "Nem orvosi tanács — csak egy általános regenerációs jel a legutóbbi adatok alapján.",
     "readiness_nudge": "Csatlakoztasd az Apple Health-ot és naplózz néhány edzést a felkészültségi pontszám feloldásához.",
     "task_connect_friend": "Csatlakozz egy baráthoz",
-    "protein_note": "Tartalmaz egy szerény fehérje-növekedést — ez az életszakaszban gyakori ajánlás az izomtámogatás érdekében."
+    "protein_note": "Tartalmaz egy szerény fehérje-növekedést — ez az életszakaszban gyakori ajánlás az izomtámogatás érdekében.",
+    "readiness_nudge_android": "Csatlakoztass Health Connect-et és naplózz néhány edzést a készenlét pontszám feloldásához."
   },
   "settings": {
     "title": "Beállítások",
@@ -438,7 +439,13 @@
     "app_icon": "Alkalmazás ikon",
     "app_icon_sub": "Elite — válassz néhány lehetőség közül",
     "affiliate_code": "Ajánlási kód",
-    "affiliate_code_sub": "Egy kreatív ajánlotta neked? Írja be a kódját"
+    "affiliate_code_sub": "Egy kreatív ajánlotta neked? Írja be a kódját",
+    "health_card_title_android": "Health Connect",
+    "health_card_sub_android": "Szinkronizáld a lépéseket, alvást, aktív energiát, szívfrekvenciát és súlyt a Health Connect-ből (Samsung Health, Fitbit és egyéb alkalmazások írnak bele) a manuális naplózás csökkentéséhez.",
+    "health_connect_button_android": "Health Connect csatlakoztatása",
+    "health_disconnect_title_android": "Lecsatlakoztass Health Connect-et?",
+    "health_disconnect_msg_android": "Ez leállítja az alkalmazás adatszinkronizálását, de nem vonja vissza a Health Connect hozzáférést — ezt a Health Connect alkalmazás engedélyek beállításaiban kezelheted.",
+    "error_health_connect_android": "Nem sikerült csatlakozni a Health Connect-hez. Próbáld újra."
   },
   "notifications": {
     "title": "Értesítések",
@@ -1369,7 +1376,8 @@
     "plateau_line": "A(z) {{exercise}} stabil maradt {{weight}} értéken {{reps}} ismétlésnél az utolsó {{count}} edzés során.",
     "body_composition": "Testösszetétel Változás",
     "no_composition_data": "Végezz legalább két testösszetétel-felmérést, hogy láthass változásokat az idő múlásával.",
-    "error": "Nem sikerült betölteni az analitikádat. Kérlek, próbáld újra."
+    "error": "Nem sikerült betölteni az analitikádat. Kérlek, próbáld újra.",
+    "no_health_data_android": "Szinkronizáld a Health Connect-et a lépések, alvás és szívfrekvencia trendek megtekintéséhez."
   },
   "product_scan": {
     "permission_title": "Kamerahozzáférés szükséges",

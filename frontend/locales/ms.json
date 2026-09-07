@@ -364,7 +364,8 @@
     "readiness_disclaimer": "Bukan nasihat medis — sinyal pemulihan umum berdasarkan data terbaru Anda.",
     "readiness_nudge": "Hubungkan Apple Health dan catat beberapa latihan untuk membuka skor kesiapan Anda.",
     "task_connect_friend": "Terhubung dengan teman",
-    "protein_note": "Termasuk peningkatan protein yang sederhana — panduan umum semasa peringkat kehidupan ini untuk membantu menyokong otot."
+    "protein_note": "Termasuk peningkatan protein yang sederhana — panduan umum semasa peringkat kehidupan ini untuk membantu menyokong otot.",
+    "readiness_nudge_android": "Sambungkan Health Connect dan log beberapa latihan untuk membuka skor kesiapan anda."
   },
   "settings": {
     "title": "Tetapan",
@@ -438,7 +439,13 @@
     "app_icon": "Ikon Aplikasi",
     "app_icon_sub": "Elite — pilih dari beberapa rupa",
     "affiliate_code": "Kod Rujukan",
-    "affiliate_code_sub": "Adakah anda dirujuk oleh seorang kreator? Masukkan kod mereka"
+    "affiliate_code_sub": "Adakah anda dirujuk oleh seorang kreator? Masukkan kod mereka",
+    "health_card_title_android": "Health Connect",
+    "health_card_sub_android": "Sinkronkan langkah, tidur, tenaga aktif, kadar denyutan jantung, dan berat badan daripada Health Connect (Samsung Health, Fitbit, dan aplikasi lain menulis ke dalamnya) untuk mengurangkan log manual.",
+    "health_connect_button_android": "Sambungkan Health Connect",
+    "health_disconnect_title_android": "Putuskan Sambungan Health Connect?",
+    "health_disconnect_msg_android": "Ini menghentikan aplikasi daripada menyinkronkan data baru, tetapi tidak membatalkan akses Health Connect — anda boleh mengurusnya dalam tetapan kebenaran aplikasi Health Connect.",
+    "error_health_connect_android": "Tidak dapat bersambung ke Health Connect. Cuba lagi."
   },
   "notifications": {
     "title": "Pemberitahuan",
@@ -1369,7 +1376,8 @@
     "plateau_line": "{{exercise}} telah stabil di {{weight}} untuk {{reps}} ulangan merentas {{count}} sesi terakhir.",
     "body_composition": "Perubahan Komposisi Badan",
     "no_composition_data": "Lengkapkan sekurang-kurangnya dua penilaian badan untuk melihat perubahan dari semasa ke semasa.",
-    "error": "Tidak dapat memuatkan analitik anda. Sila cuba lagi."
+    "error": "Tidak dapat memuatkan analitik anda. Sila cuba lagi.",
+    "no_health_data_android": "Sinkronkan Health Connect untuk melihat arah aliran langkah, tidur, dan kadar denyutan jantung."
   },
   "product_scan": {
     "permission_title": "Akses Kamera Diperlukan",

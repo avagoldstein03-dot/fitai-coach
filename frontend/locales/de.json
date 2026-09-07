@@ -364,7 +364,8 @@
     "readiness_disclaimer": "Kein medizinischer Rat — ein allgemeines Regenerationssignal basierend auf Ihren aktuellen Daten.",
     "readiness_nudge": "Verbinden Sie Apple Health und protokollieren Sie ein paar Trainingseinheiten, um Ihren Bereitschaftswert freizuschalten.",
     "task_connect_friend": "Mit einem Freund verbinden",
-    "protein_note": "Enthält eine moderate Erhöhung des Proteingehalts — häufige Empfehlung in dieser Lebensphase zur Unterstützung der Muskulatur."
+    "protein_note": "Enthält eine moderate Erhöhung des Proteingehalts — häufige Empfehlung in dieser Lebensphase zur Unterstützung der Muskulatur.",
+    "readiness_nudge_android": "Verbinden Sie Health Connect und protokollieren Sie einige Trainingseinheiten, um Ihren Bereitschaftswert freizuschalten."
   },
   "settings": {
     "title": "Einstellungen",
@@ -438,7 +439,13 @@
     "app_icon": "App-Symbol",
     "app_icon_sub": "Elite — wähle aus mehreren Designs",
     "affiliate_code": "Empfehlungscode",
-    "affiliate_code_sub": "Wurde dir ein Code von einem Creator empfohlen? Gib ihn hier ein"
+    "affiliate_code_sub": "Wurde dir ein Code von einem Creator empfohlen? Gib ihn hier ein",
+    "health_card_title_android": "Health Connect",
+    "health_card_sub_android": "Synchronisieren Sie Schritte, Schlaf, aktive Energie, Herzfrequenz und Gewicht von Health Connect (Samsung Health, Fitbit und andere Apps schreiben darin) um manuelle Einträge zu reduzieren.",
+    "health_connect_button_android": "Health Connect verbinden",
+    "health_disconnect_title_android": "Health Connect trennen?",
+    "health_disconnect_msg_android": "Dies stoppt die Synchronisierung neuer Daten durch die App, widerruft aber den Health Connect-Zugriff nicht — Sie können dies in den Berechtigungseinstellungen der Health Connect-App verwalten.",
+    "error_health_connect_android": "Konnte sich nicht mit Health Connect verbinden. Versuchen Sie es erneut."
   },
   "notifications": {
     "title": "Benachrichtigungen",
@@ -1369,7 +1376,8 @@
     "plateau_line": "{{exercise}} ist in den letzten {{count}} Trainingseinheiten stabil bei {{weight}} für {{reps}} Wiederholungen geblieben.",
     "body_composition": "Körperzusammensetzungsveränderung",
     "no_composition_data": "Führe mindestens zwei Körperbewertungen durch, um Veränderungen im Zeitverlauf zu sehen.",
-    "error": "Deine Analytik konnte nicht geladen werden. Bitte versuche es erneut."
+    "error": "Deine Analytik konnte nicht geladen werden. Bitte versuche es erneut.",
+    "no_health_data_android": "Synchronisieren Sie Health Connect, um Trends bei Schritten, Schlaf und Herzfrequenz anzuzeigen."
   },
   "product_scan": {
     "permission_title": "Kamerazugriff erforderlich",
