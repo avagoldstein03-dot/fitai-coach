@@ -3,7 +3,43 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Active AI — Legal</title>
+  <title>Active AI — AI Fitness & Nutrition Coaching App</title>
+  <meta name="description" content="Active AI is a fitness and nutrition coaching app with a daily Readiness Score, AI coach chat, body scan analysis, and accurate nutrition tracking — no wearable required, no ads, built for any age or fitness level." />
+  <link rel="canonical" href="https://fitaicoach.com/" />
+  <link rel="icon" type="image/png" href="/assets/icon.png" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Active AI — AI Fitness & Nutrition Coaching App" />
+  <meta property="og:description" content="A daily Readiness Score, AI coach chat, body scan analysis, and accurate nutrition tracking — no wearable required, no ads." />
+  <meta property="og:url" content="https://fitaicoach.com/" />
+  <meta property="og:image" content="https://fitaicoach.com/assets/icon.png" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Active AI — AI Fitness & Nutrition Coaching App" />
+  <meta name="twitter:description" content="A daily Readiness Score, AI coach chat, body scan analysis, and accurate nutrition tracking — no wearable required, no ads." />
+  <meta name="twitter:image" content="https://fitaicoach.com/assets/icon.png" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Active AI",
+    "url": "https://fitaicoach.com/",
+    "logo": "https://fitaicoach.com/assets/icon.png",
+    "email": "avagoldstein03@gmail.com"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Active AI",
+    "applicationCategory": "HealthApplication",
+    "operatingSystem": "iOS, Android",
+    "description": "A fitness and nutrition coaching app with a daily Readiness Score, AI coach chat, body scan analysis, and accurate nutrition tracking — no wearable required, no ads, built for any age or fitness level.",
+    "url": "https://fitaicoach.com/"
+  }
+  </script>
+
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
@@ -11,33 +47,87 @@
       background: #0f172a;
       color: #cbd5e1;
       line-height: 1.7;
-      padding: 40px 20px;
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
     }
-    .container { max-width: 480px; text-align: center; }
-    h1 { color: #f8fafc; font-size: 1.75rem; margin-bottom: 24px; }
-    .links { display: flex; flex-direction: column; gap: 12px; }
-    a {
+    .wrap { max-width: 760px; margin: 0 auto; padding: 60px 20px 80px; }
+    header.hero { text-align: center; margin-bottom: 56px; }
+    .icon { width: 72px; height: 72px; border-radius: 18px; margin-bottom: 20px; }
+    h1 { color: #f8fafc; font-size: 2.1rem; margin-bottom: 12px; }
+    .tagline { color: #94a3b8; font-size: 1.05rem; max-width: 520px; margin: 0 auto; }
+    h2 { color: #f8fafc; font-size: 1.3rem; margin: 0 0 8px; }
+    section.feature { margin-bottom: 36px; }
+    section.feature p { color: #94a3b8; }
+    .badge { display: inline-block; color: #38bdf8; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 6px; }
+    .links { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 56px; }
+    a.link-card {
       color: #38bdf8;
       text-decoration: none;
       font-weight: 600;
       padding: 14px 20px;
       border: 1px solid #1e293b;
       border-radius: 10px;
+      flex: 1 1 200px;
+      text-align: center;
     }
-    a:hover { background: #1e293b; }
+    a.link-card:hover { background: #1e293b; }
+    footer { margin-top: 56px; color: #475569; font-size: 0.85rem; text-align: center; }
+    footer a { color: #64748b; }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>Active AI</h1>
+  <div class="wrap">
+    <header class="hero">
+      <img class="icon" src="/assets/icon.png" alt="Active AI app icon" />
+      <h1>Active AI</h1>
+      <p class="tagline">The fitness and nutrition coach that tells you whether today's a push day or a rest day — and actually explains why.</p>
+    </header>
+
+    <section class="feature">
+      <span class="badge">Readiness Score</span>
+      <h2>Know whether to push or rest, before you start your workout</h2>
+      <p>Active AI looks at your recovery — synced from Apple Health or Samsung Health / Health Connect if you use a wearable, or self-reported if you don't — and gives you a daily Readiness Score instead of leaving you to guess. No wearable purchase required.</p>
+    </section>
+
+    <section class="feature">
+      <span class="badge">AI Coach Chat</span>
+      <h2>Ask it anything, get a specific answer</h2>
+      <p>A conversational AI coach for real fitness and nutrition questions — not a generic blog result, an answer based on your own goals, history, and current plan.</p>
+    </section>
+
+    <section class="feature">
+      <span class="badge">Body Scan</span>
+      <h2>AI-powered body composition and form analysis</h2>
+      <p>Submit a photo or a workout clip and get real feedback — body composition tracking over time, and form cues on specific exercises like squat depth or knee tracking.</p>
+    </section>
+
+    <section class="feature">
+      <span class="badge">Nutrition Accuracy</span>
+      <h2>A real food database, not crowd-sourced guesses</h2>
+      <p>Food and ingredient data comes from an actual verified database instead of entries other users typed in — the single biggest accuracy complaint about older calorie-tracking apps.</p>
+    </section>
+
+    <section class="feature">
+      <span class="badge">Built for any age or life stage</span>
+      <h2>Not just for people who are already fit</h2>
+      <p>Active AI adjusts for where you actually are — including support for people managing menopause-related changes, and higher protein targets for people on GLP-1 medications who need to preserve muscle while losing fat.</p>
+    </section>
+
+    <section class="feature">
+      <span class="badge">Zero ads</span>
+      <h2>No ads, ever</h2>
+      <p>Active AI doesn't sell your data or show you ads. See the <a href="/privacy.html" style="color:#38bdf8;">Privacy Policy</a> for the full breakdown of what's collected and who it's shared with.</p>
+    </section>
+
     <div class="links">
-      <a href="/terms.html">Terms of Service</a>
-      <a href="/privacy.html">Privacy Policy</a>
+      <a class="link-card" href="/faq.html">FAQ</a>
+      <a class="link-card" href="/vs-whoop.html">Active AI vs. Whoop</a>
+      <a class="link-card" href="/vs-myfitnesspal.html">Active AI vs. MyFitnessPal</a>
+      <a class="link-card" href="/terms.html">Terms of Service</a>
+      <a class="link-card" href="/privacy.html">Privacy Policy</a>
     </div>
+
+    <footer>
+      <p>Questions? <a href="mailto:avagoldstein03@gmail.com">avagoldstein03@gmail.com</a></p>
+    </footer>
   </div>
 </body>
 </html>

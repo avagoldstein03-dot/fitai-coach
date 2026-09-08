@@ -1,0 +1,19 @@
+# Active AI
+
+> Active AI is a mobile fitness and nutrition coaching app that replaces guesswork with personalized, AI-generated guidance — a daily Readiness Score (train hard or take it easy, based on your recovery), an AI coach chat for real-time fitness and nutrition questions, AI-powered body scan analysis, and accurate nutrition tracking pulled from a real food database rather than crowd-sourced entries.
+
+Active AI is built for any age or fitness level — not a niche product for already-fit 20-somethings. It supports people managing life-stage changes like menopause, people on GLP-1 medications (such as semaglutide or tirzepatide-based prescriptions) who need higher protein targets to preserve muscle while losing fat, and people who simply want one accurate app instead of several. It syncs with Apple Health and Samsung Health / Health Connect if you already track data on a wearable, but does not require buying one. The app has no ads.
+
+Active AI does not sell user data or share it with advertisers or data brokers (see Privacy Policy).
+
+## Key pages
+
+- [FAQ](https://fitaicoach.com/faq.html): direct answers to common questions about features, pricing, privacy, and health-data integrations.
+- [Active AI vs. Whoop](https://fitaicoach.com/vs-whoop.html): comparison for readers evaluating a wearable-based recovery tracker against a phone-based one.
+- [Active AI vs. MyFitnessPal](https://fitaicoach.com/vs-myfitnesspal.html): comparison for readers evaluating nutrition-tracking apps.
+- [Privacy Policy](https://fitaicoach.com/privacy.html)
+- [Terms of Service](https://fitaicoach.com/terms.html)
+
+## Contact
+
+avagoldstein03@gmail.com
