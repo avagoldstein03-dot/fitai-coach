@@ -373,7 +373,7 @@ export default function DashboardScreen() {
               const isOver = remaining < 0;
               return (
                 <View style={s.macroDeficitRow}>
-                  <Text style={[s.macroDeficitText, { color: isOver ? T.red : T.accentMuted }]}>
+                  <Text style={[s.macroDeficitText, { color: isOver ? T.red : T.accent }]}>
                     {isOver
                       ? t("dashboard.kcal_over", { n: Math.round(Math.abs(remaining)) })
                       : t("dashboard.kcal_remaining", { n: Math.round(remaining) })}
@@ -1006,7 +1006,7 @@ const s = StyleSheet.create({
     padding: 20,
     marginBottom: 14,
   },
-  quoteIcon: { fontSize: 32, color: T.accentMuted, lineHeight: 30, marginBottom: 4 },
+  quoteIcon: { fontSize: 32, color: T.accent, lineHeight: 30, marginBottom: 4 },
   quoteText: { fontSize: 14, color: T.textSecondary, lineHeight: 22, fontStyle: "italic" },
   quoteAuthor: { fontSize: 12, color: T.textMuted, marginTop: 10, fontWeight: "600" },
 

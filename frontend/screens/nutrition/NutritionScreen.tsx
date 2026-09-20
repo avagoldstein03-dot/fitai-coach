@@ -98,7 +98,7 @@ function CalorieRing({ consumed, target }: { consumed: number; target: number })
         </View>
         <View style={s.ringStatDivider} />
         <View style={s.ringStat}>
-          <Text style={[s.ringStatValue, { color: isOver ? T.red : T.accentMuted }]}>{Math.abs(remaining)}</Text>
+          <Text style={[s.ringStatValue, { color: isOver ? T.red : T.accent }]}>{Math.abs(remaining)}</Text>
           <Text style={s.ringStatLabel}>{isOver ? t("nutrition.ring_over") : t("nutrition.ring_remaining")}</Text>
         </View>
       </View>

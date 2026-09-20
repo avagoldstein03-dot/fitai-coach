@@ -565,7 +565,7 @@ const cs = StyleSheet.create({
   headerTitle: { fontSize: 17, fontWeight: "800", color: T.textPrimary },
   onlineRow: { flexDirection: "row", alignItems: "center", gap: 5, marginTop: 2 },
   onlineDot: { width: 6, height: 6, borderRadius: 3, backgroundColor: T.accent },
-  onlineText: { fontSize: 11, color: T.accentMuted, fontWeight: "600" },
+  onlineText: { fontSize: 11, color: T.accent, fontWeight: "600" },
   clearBtn: { color: T.textSecondary, fontSize: 13 },
 
   // Messages

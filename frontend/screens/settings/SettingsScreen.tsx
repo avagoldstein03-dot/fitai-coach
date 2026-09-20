@@ -673,7 +673,7 @@ const s = StyleSheet.create({
     marginTop: 10,
   },
   injurySaveBtn: { marginTop: 10, paddingVertical: 12 },
-  healthSyncedText: { fontSize: 13, color: T.accentMuted, marginTop: 10 },
+  healthSyncedText: { fontSize: 13, color: T.accent, marginTop: 10 },
   healthDisconnectBtn: { marginTop: 10, alignItems: "center", paddingVertical: 4 },
   healthDisconnectBtnText: { color: T.red, fontWeight: "600", fontSize: 14 },
 

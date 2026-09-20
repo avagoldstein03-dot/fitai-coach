@@ -1041,7 +1041,7 @@ const styles = StyleSheet.create({
   exerciseName: { fontSize: 16, fontWeight: "700", color: T.textPrimary, marginBottom: 4 },
   mobilityBadge: { backgroundColor: `${T.teal}22`, borderRadius: 8, paddingHorizontal: 7, paddingVertical: 2, marginBottom: 4 },
   mobilityBadgeText: { fontSize: 10, fontWeight: "700", color: T.teal, textTransform: "uppercase", letterSpacing: 0.4 },
-  exerciseNameDone: { color: T.accentMuted },
+  exerciseNameDone: { color: T.accent },
   replaceBtn: { padding: 4 },
   replaceBtnIcon: { fontSize: 15, color: T.textSecondary },
   exerciseMeta: { fontSize: 13, color: T.textSecondary, marginBottom: 4 },
@@ -1082,7 +1082,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 12,
     paddingVertical: 7,
   },
-  doneTagText: { color: T.accentMuted, fontSize: 12, fontWeight: "700" },
+  doneTagText: { color: T.accent, fontSize: 12, fontWeight: "700" },
   logBtn: {
     backgroundColor: T.surface2,
     borderRadius: 10,
