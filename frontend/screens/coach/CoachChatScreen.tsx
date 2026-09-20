@@ -65,7 +65,12 @@ function parseBlocks(content: string): ParsedBlock[] {
       const n = t.match(/^(\d+)/)?.[1] ?? "?";
       return { type: "numbered", n, text: t.replace(/^\d+[.)]\s/, "") };
     }
-    if (!headlineUsed) {
+    // A headline is only meaningful when it's introducing lines that follow
+    // it -- a single-paragraph response with no line breaks has nothing to
+    // introduce, and bolding the entire thing reads as shouting rather than
+    // emphasis. Only the first line of a genuinely multi-line response gets
+    // the headline treatment.
+    if (!headlineUsed && lines.length > 1) {
       headlineUsed = true;
       return { type: "headline", text: t };
     }
