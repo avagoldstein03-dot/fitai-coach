@@ -337,7 +337,7 @@ const s = StyleSheet.create({
   },
   bodyScanIcon: { fontSize: 24 },
   bodyScanTitle: { color: T.textPrimary, fontWeight: "600", fontSize: 14 },
-  bodyScanSub: { color: T.accentMuted, fontSize: 12, marginTop: 2 },
+  bodyScanSub: { color: T.textPrimary, fontSize: 12, marginTop: 2 },
   photosBtn: {
     backgroundColor: T.surface,
     borderWidth: 1,

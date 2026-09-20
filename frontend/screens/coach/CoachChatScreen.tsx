@@ -265,7 +265,23 @@ export default function CoachChatScreen() {
     if (historyData?.messages) {
       // Hydrates local chat state once history finishes loading — not derived state.
       // eslint-disable-next-line react-hooks/set-state-in-effect
-      setLocalMessages(historyData.messages);
+      setLocalMessages((prev) => {
+        const prevById = new Map(prev.map((m) => [m.id, m]));
+        // requiresUpgrade/upgradeTo are computed per-request in the POST /coach/chat
+        // response and never persisted on the ChatMessage row, so GET /coach/history
+        // can never return them. ANY refetch of this query (default React Query
+        // behavior, react-navigation focus, or a future invalidateQueries call
+        // added elsewhere) would otherwise silently erase an already-showing
+        // upgrade card the instant it lands. Carry the flag forward from local
+        // state instead of trusting the fetched row to have it.
+        return historyData.messages.map((incoming) => {
+          const existing = prevById.get(incoming.id);
+          if (existing?.requiresUpgrade && !incoming.requiresUpgrade) {
+            return { ...incoming, requiresUpgrade: existing.requiresUpgrade, upgradeTo: existing.upgradeTo };
+          }
+          return incoming;
+        });
+      });
     }
   }, [historyData]);
 

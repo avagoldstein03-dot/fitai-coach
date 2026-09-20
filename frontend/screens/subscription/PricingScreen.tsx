@@ -517,7 +517,7 @@ const s = StyleSheet.create({
   billingBtnText: { fontSize: 12, fontWeight: "600", color: T.textSecondary },
   billingBtnTextActive: { color: T.accent },
   billingBtnSub: { fontSize: 10, color: T.accent, fontWeight: "700", marginTop: 1 },
-  billingBtnSubActive: { color: T.accentMuted },
+  billingBtnSubActive: { color: T.textPrimary },
 
   // Free card
   freeCard: {

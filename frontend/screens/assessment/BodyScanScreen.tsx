@@ -398,11 +398,11 @@ const styles = StyleSheet.create({
   },
   lastAssessmentTouchable: { flex: 1, flexDirection: "row", alignItems: "center" },
   lastAssessmentLeft: { flex: 1 },
-  lastAssessmentTitle: { fontSize: 14, fontWeight: "700", color: T.accentMuted, marginBottom: 2 },
+  lastAssessmentTitle: { fontSize: 14, fontWeight: "700", color: T.textPrimary, marginBottom: 2 },
   lastAssessmentDate: { fontSize: 12, color: T.accent },
   lastAssessmentArrow: { color: T.accent, fontSize: 14, fontWeight: "700" },
   deleteScanBtn: { padding: 4, marginLeft: 10 },
-  deleteScanIcon: { fontSize: 15, color: T.accentMuted },
+  deleteScanIcon: { fontSize: 15, color: T.accent },
 
   // Live Scan
   liveScanCard: {

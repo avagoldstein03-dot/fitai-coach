@@ -985,7 +985,7 @@ const styles = StyleSheet.create({
     marginBottom: 16,
   },
   coachNoteLabel: { fontSize: 10, fontWeight: "800", color: T.accent, letterSpacing: 1, textTransform: "uppercase", marginBottom: 6 },
-  coachNoteText: { fontSize: 14, color: T.accentMuted, lineHeight: 21 },
+  coachNoteText: { fontSize: 14, color: T.textPrimary, lineHeight: 21 },
 
   // Pickers
   pickerLabel: { fontSize: 13, color: T.textSecondary, fontWeight: "600", marginBottom: 8, marginTop: 8 },

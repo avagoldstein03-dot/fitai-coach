@@ -166,7 +166,7 @@ const s = StyleSheet.create({
   cardTitle: { fontSize: 14, fontWeight: "700", color: T.textPrimary, textAlign: "center" },
   cardTitleActive: { color: T.accent },
   cardDesc: { fontSize: 11, color: T.textMuted, textAlign: "center", lineHeight: 15 },
-  cardDescActive: { color: T.accentMuted },
+  cardDescActive: { color: T.textPrimary },
   checkBadge: {
     position: "absolute",
     top: 8,

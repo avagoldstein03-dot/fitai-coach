@@ -330,7 +330,7 @@ const styles = StyleSheet.create({
     marginBottom: 16,
   },
   summaryLabel: { fontSize: 11, fontWeight: "800", color: T.accent, letterSpacing: 1, textTransform: "uppercase", marginBottom: 8 },
-  summaryText: { fontSize: 15, color: T.accentMuted, lineHeight: 24 },
+  summaryText: { fontSize: 15, color: T.textPrimary, lineHeight: 24 },
 
   // Cards
   card: {

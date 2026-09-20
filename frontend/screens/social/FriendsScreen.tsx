@@ -236,7 +236,7 @@ const s = StyleSheet.create({
     alignItems: "center",
     marginBottom: 16,
   },
-  codeLabel: { fontSize: 12, color: T.accentMuted, marginBottom: 6 },
+  codeLabel: { fontSize: 12, color: T.textPrimary, marginBottom: 6 },
   codeValue: { fontSize: 28, fontWeight: "800", color: T.accent, letterSpacing: 4, marginBottom: 14 },
   shareBtn: { backgroundColor: T.accent, borderRadius: 10, paddingVertical: 10, paddingHorizontal: 20 },
   shareBtnText: { color: "#000", fontWeight: "700", fontSize: 13 },

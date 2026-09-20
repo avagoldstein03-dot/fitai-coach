@@ -805,12 +805,12 @@ const s = StyleSheet.create({
   },
   streakLeft: { alignItems: "center", minWidth: 56 },
   streakNumber: { fontSize: 42, fontWeight: "900", color: T.accent, letterSpacing: -2, lineHeight: 46 },
-  streakDayLabel: { fontSize: 9, fontWeight: "800", color: T.accentMuted, letterSpacing: 1.5, marginTop: 2 },
+  streakDayLabel: { fontSize: 9, fontWeight: "800", color: T.textPrimary, letterSpacing: 1.5, marginTop: 2 },
   streakDivider: { width: 1, height: 44, backgroundColor: T.accentBorder },
   streakRight: { flex: 1, gap: 10 },
   streakRow: { flexDirection: "row", alignItems: "center", gap: 8 },
   streakDot: { fontSize: 14 },
-  streakStat: { flex: 1, fontSize: 13, color: T.accentMuted, fontWeight: "600" },
+  streakStat: { flex: 1, fontSize: 13, color: T.textPrimary, fontWeight: "600" },
   streakVal: { fontSize: 13, fontWeight: "800" },
   streakValActive: { color: T.accent },
   streakValZero: { color: T.textMuted },
@@ -1022,7 +1022,7 @@ const s = StyleSheet.create({
   },
   upgradeLeft: { flex: 1 },
   upgradeTitle: { fontSize: 16, fontWeight: "800", color: T.accent, marginBottom: 4 },
-  upgradeSub: { fontSize: 12, color: T.accentMuted, lineHeight: 17 },
+  upgradeSub: { fontSize: 12, color: T.textPrimary, lineHeight: 17 },
   upgradeArrow: { fontSize: 24, color: T.accent, fontWeight: "300" },
 
   // Today's macros

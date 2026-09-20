@@ -468,7 +468,7 @@ const s = StyleSheet.create({
     paddingHorizontal: 12,
     paddingVertical: 4,
   },
-  goalChipText: { color: T.accentMuted, fontSize: 12, fontWeight: "700", textTransform: "capitalize" },
+  goalChipText: { color: T.textPrimary, fontSize: 12, fontWeight: "700", textTransform: "capitalize" },
 
   // Generic Card
   card: {

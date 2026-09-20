@@ -293,7 +293,7 @@ const s = StyleSheet.create({
     paddingHorizontal: 8,
     paddingVertical: 3,
   },
-  goalChipText: { fontSize: 11, fontWeight: "700", color: T.accentMuted },
+  goalChipText: { fontSize: 11, fontWeight: "700", color: T.textPrimary },
   joinedText: { fontSize: 11, color: T.textMuted, fontWeight: "600" },
 
   // Stats row
@@ -337,12 +337,12 @@ const s = StyleSheet.create({
   subCardFree:    { backgroundColor: T.surface,    borderColor: T.border },
   subCardTop:     { flexDirection: "row", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 12 },
   subPlanLabel:   { fontSize: 11, fontWeight: "700", textTransform: "uppercase", letterSpacing: 0.6, marginBottom: 4 },
-  subPlanLabelPremium: { color: T.accentMuted },
+  subPlanLabelPremium: { color: T.textPrimary },
   subPlanLabelFree:    { color: T.textMuted },
   subPlanName:    { fontSize: 22, fontWeight: "800", color: T.textPrimary },
   activeBadge:    { backgroundColor: T.accent, borderRadius: 20, paddingHorizontal: 10, paddingVertical: 4 },
   activeBadgeText:{ color: T.black, fontSize: 10, fontWeight: "800", letterSpacing: 0.5 },
-  renewsText:     { fontSize: 12, color: T.accentMuted, marginBottom: 14 },
+  renewsText:     { fontSize: 12, color: T.textPrimary, marginBottom: 14 },
   upgradeTeaser:  { fontSize: 13, color: T.textSecondary, marginBottom: 14, lineHeight: 19 },
   subBtn: {
     borderRadius: 14,
