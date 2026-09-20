@@ -512,7 +512,7 @@ export default function CoachChatScreen() {
         <TextInput
           style={cs.input}
           placeholder={t("coach.input_placeholder")}
-          placeholderTextColor={T.textMuted}
+          placeholderTextColor={T.textSecondary}
           value={message}
           onChangeText={setMessage}
           multiline
@@ -566,7 +566,7 @@ const cs = StyleSheet.create({
   onlineRow: { flexDirection: "row", alignItems: "center", gap: 5, marginTop: 2 },
   onlineDot: { width: 6, height: 6, borderRadius: 3, backgroundColor: T.accent },
   onlineText: { fontSize: 11, color: T.accent, fontWeight: "600" },
-  clearBtn: { color: T.textSecondary, fontSize: 13 },
+  clearBtn: { color: T.red, fontSize: 13 },
 
   // Messages
   messages: { flex: 1 },
@@ -655,7 +655,7 @@ const cs = StyleSheet.create({
   },
   numBadgeText: { fontSize: 11, fontWeight: "800", color: T.accent },
   numberedText: { fontSize: 14, color: T.textPrimary, lineHeight: 22 },
-  bodyText: { fontSize: 14, color: T.textSecondary, lineHeight: 22 },
+  bodyText: { fontSize: 14, color: T.textPrimary, lineHeight: 22 },
   inlineBold: { color: T.accent, fontWeight: "700" },
   inlineNum: { color: T.teal, fontWeight: "800", fontSize: 15 },
   upgradeCard: {
