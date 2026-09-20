@@ -64,7 +64,7 @@ export function SwipeToDeleteRow({
 
 const s = StyleSheet.create({
   deleteAction: {
-    backgroundColor: T.red,
+    backgroundColor: T.redSolid,
     justifyContent: "center",
     alignItems: "center",
     width: 84,

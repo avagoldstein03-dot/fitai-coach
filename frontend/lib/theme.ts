@@ -30,14 +30,24 @@ export const T = {
   red:          "#ef4444",
   redDark:      "#1a0000",
   redBorder:    "#3d0c0c",
+  // Solid destructive-button fill only — NOT a swap-in for T.red generally.
+  // T.red itself is tuned to work as text/icon color on dark backgrounds;
+  // darkening it there would fix white-on-red buttons but break every
+  // red-text-on-dark-background usage elsewhere. This is verified at 4.75:1
+  // with white (#fff) text specifically, for solid button backgrounds only.
+  redSolid:     "#d63535",
   blue:         "#3b82f6",
   blueDark:     "#06102a",
   blueBorder:   "#0f2a5e",
 
   // Typography
+  // textSecondary and textMuted are both verified at >=4.5:1 contrast (WCAG AA)
+  // against every background tier above, including surface2 (the lightest one,
+  // and the worst case for light-text-on-dark contrast). Don't darken either of
+  // these without re-checking against surface2 specifically.
   textPrimary:   "#f0f2f6",
-  textSecondary: "#6b7a94",
-  textMuted:     "#3a4459",
+  textSecondary: "#8291ab",
+  textMuted:     "#7a88a4",
 
   // Utility
   white: "#ffffff",

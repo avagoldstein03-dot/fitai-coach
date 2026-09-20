@@ -414,6 +414,6 @@ const s = StyleSheet.create({
   },
   progressFill: { height: "100%", backgroundColor: T.accent },
   processingRow: { alignItems: "center", paddingVertical: 16 },
-  cancelBtn: { backgroundColor: T.red, borderRadius: 12, paddingVertical: 16, alignItems: "center" },
+  cancelBtn: { backgroundColor: T.redSolid, borderRadius: 12, paddingVertical: 16, alignItems: "center" },
   cancelBtnText: { color: "#fff", fontWeight: "600", fontSize: 15 },
 });

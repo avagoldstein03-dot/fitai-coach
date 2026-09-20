@@ -380,7 +380,7 @@ const s = StyleSheet.create({
   recordingDot: { width: 10, height: 10, borderRadius: 5, backgroundColor: T.red },
   startBtn: { backgroundColor: T.accent, borderRadius: 12, paddingVertical: 16, alignItems: "center" },
   startBtnText: { color: "#000", fontWeight: "700", fontSize: 15 },
-  stopBtn: { backgroundColor: T.red, borderRadius: 12, paddingVertical: 16, alignItems: "center" },
+  stopBtn: { backgroundColor: T.redSolid, borderRadius: 12, paddingVertical: 16, alignItems: "center" },
   stopBtnText: { color: "#fff", fontWeight: "700", fontSize: 15 },
 
   resultsScreen: { flex: 1, backgroundColor: T.bg },

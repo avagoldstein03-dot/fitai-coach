@@ -453,7 +453,7 @@ const s = StyleSheet.create({
   viewerTypeLabel: { color: "#fff", fontWeight: "600", fontSize: 17 },
   viewerDate: { color: T.textSecondary, fontSize: 13, marginTop: 4 },
   viewerNotes: { color: T.textPrimary, marginTop: 8, fontSize: 14 },
-  deleteBtn: { backgroundColor: T.red, borderRadius: 12, paddingVertical: 14, alignItems: "center" },
+  deleteBtn: { backgroundColor: T.redSolid, borderRadius: 12, paddingVertical: 14, alignItems: "center" },
   deleteBtnText: { color: "#fff", fontWeight: "700", fontSize: 15 },
   shareBtn: { backgroundColor: T.surface, borderRadius: 12, paddingVertical: 14, alignItems: "center", borderWidth: 1, borderColor: T.accent },
   shareBtnText: { color: T.accent, fontWeight: "700", fontSize: 15 },

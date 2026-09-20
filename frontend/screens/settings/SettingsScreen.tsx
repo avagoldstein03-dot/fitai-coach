@@ -688,7 +688,7 @@ const s = StyleSheet.create({
 
   dangerCard: { backgroundColor: T.redDark, borderColor: T.redBorder },
   dangerLabel: { fontSize: 11, fontWeight: "800", color: T.red, textTransform: "uppercase", letterSpacing: 1, marginBottom: 12 },
-  deleteBtn: { backgroundColor: T.red, borderRadius: 10, padding: 14, alignItems: "center" },
+  deleteBtn: { backgroundColor: T.redSolid, borderRadius: 10, padding: 14, alignItems: "center" },
   deleteBtnText: { color: "#fff", fontWeight: "700", fontSize: 15 },
   deleteNote: { fontSize: 12, color: T.red, textAlign: "center", marginTop: 8 },
 

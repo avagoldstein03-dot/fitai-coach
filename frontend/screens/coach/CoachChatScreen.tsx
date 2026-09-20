@@ -300,7 +300,12 @@ export default function CoachChatScreen() {
           (m, i, arr) => arr.findIndex((x) => x.id === m.id) === i
         );
       });
-      queryClient.invalidateQueries({ queryKey: ["chatHistory"] });
+      // Deliberately not invalidating the chatHistory query here: local state above is
+      // already the authoritative, fully-merged result of this send, including the
+      // ephemeral requiresUpgrade/upgradeTo flags. Those flags are computed per-request
+      // and never persisted to the ChatMessage row, so a refetch from /api/coach/history
+      // would silently strip them back off and make the upgrade card disappear right
+      // after it renders.
       setTimeout(() => scrollRef.current?.scrollToEnd({ animated: true }), 100);
     },
     onError: (err: any) => {
@@ -655,8 +660,11 @@ const cs = StyleSheet.create({
   upgradeCardBadge: { color: T.accent, fontWeight: "800", fontSize: 14 },
   upgradeCardArrow: { color: T.accent, fontSize: 16, fontWeight: "700" },
   upgradeCardRow: { flexDirection: "row", alignItems: "center", gap: 8 },
-  upgradeCardCheck: { color: T.accentMuted, fontSize: 12, fontWeight: "700" },
-  upgradeCardPerk: { color: T.accentMuted, fontSize: 13, flex: 1 },
+  // Deliberately NOT accentMuted here — same-hue green-on-green text on this card's
+  // accentDark background reads as blending even though it technically clears WCAG
+  // contrast math. textPrimary/accent break the hue-family match instead.
+  upgradeCardCheck: { color: T.accent, fontSize: 12, fontWeight: "700" },
+  upgradeCardPerk: { color: T.textPrimary, fontSize: 13, flex: 1 },
   upgradeCardBtn: {
     marginTop: 10,
     backgroundColor: T.accent,
