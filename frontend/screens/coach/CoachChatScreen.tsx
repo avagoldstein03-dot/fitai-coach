@@ -50,32 +50,47 @@ const QUICK_PROMPT_META = [
 function parseBlocks(content: string): ParsedBlock[] {
   const lines = content.split("\n").filter((l) => l.trim());
   let headlineUsed = false;
-  return lines.map((line) => {
+  const blocks: ParsedBlock[] = [];
+  for (const line of lines) {
     const t = line.trim();
     if (/^#{1,3}\s/.test(t)) {
-      return { type: "section", text: t.replace(/^#{1,3}\s/, "") };
+      blocks.push({ type: "section", text: t.replace(/^#{1,3}\s/, "") });
+      continue;
     }
     if (/^\*\*[^*]+\*\*[:\s]*$/.test(t) && t.length < 70) {
-      return { type: "section", text: t.replace(/^\*\*|\*\*[:\s]*$/g, "") };
+      blocks.push({ type: "section", text: t.replace(/^\*\*|\*\*[:\s]*$/g, "") });
+      continue;
     }
     if (/^[-•*]\s/.test(t)) {
-      return { type: "bullet", text: t.replace(/^[-•*]\s/, "") };
+      blocks.push({ type: "bullet", text: t.replace(/^[-•*]\s/, "") });
+      continue;
     }
     if (/^\d+[.)]\s/.test(t)) {
       const n = t.match(/^(\d+)/)?.[1] ?? "?";
-      return { type: "numbered", n, text: t.replace(/^\d+[.)]\s/, "") };
+      blocks.push({ type: "numbered", n, text: t.replace(/^\d+[.)]\s/, "") });
+      continue;
     }
-    // A headline is only meaningful when it's introducing lines that follow
-    // it -- a single-paragraph response with no line breaks has nothing to
-    // introduce, and bolding the entire thing reads as shouting rather than
-    // emphasis. Only the first line of a genuinely multi-line response gets
-    // the headline treatment.
-    if (!headlineUsed && lines.length > 1) {
+    if (!headlineUsed) {
       headlineUsed = true;
-      return { type: "headline", text: t };
+      // A conversational reply is usually one continuous paragraph with no
+      // line breaks at all between the opening thought and the supporting
+      // detail -- operating on whole lines either bolds the entire
+      // multi-sentence paragraph or (if gated on there being a second line)
+      // bolds nothing. Splitting at the first sentence boundary instead
+      // gives a real, short headline either way, with the rest of that same
+      // paragraph rendered as normal body text right after it.
+      const sentenceMatch = t.match(/^(.+?[.!?])\s+([A-Z].*)$/);
+      if (sentenceMatch) {
+        blocks.push({ type: "headline", text: sentenceMatch[1] });
+        blocks.push({ type: "body", text: sentenceMatch[2] });
+      } else {
+        blocks.push({ type: "headline", text: t });
+      }
+      continue;
     }
-    return { type: "body", text: t };
-  });
+    blocks.push({ type: "body", text: t });
+  }
+  return blocks;
 }
 
 // Matches **bold** markdown OR numbers optionally followed by a unit
