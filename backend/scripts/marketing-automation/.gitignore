@@ -1,0 +1,8 @@
+# Rendered media and voice samples are large binaries; keep them out of git.
+videos/
+voice-samples/
+# Local backups and per-run logs
+prompts.backup-*.json
+output/*.json
+.tmp-*
+.DS_Store

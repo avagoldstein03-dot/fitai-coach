@@ -1,0 +1,12 @@
+{
+  "dashboard": "https://fitai-coach-storage.s3.us-east-1.amazonaws.com/marketing-automation/screenshots/dashboard.jpeg",
+  "friends": "https://fitai-coach-storage.s3.us-east-1.amazonaws.com/marketing-automation/screenshots/friends.jpeg",
+  "achievements": "https://fitai-coach-storage.s3.us-east-1.amazonaws.com/marketing-automation/screenshots/achievements.jpeg",
+  "foodscanner": "https://fitai-coach-storage.s3.us-east-1.amazonaws.com/marketing-automation/screenshots/foodscanner.jpeg",
+  "coach": "https://fitai-coach-storage.s3.us-east-1.amazonaws.com/marketing-automation/screenshots/coach.jpeg",
+  "bodyscan": "https://fitai-coach-storage.s3.us-east-1.amazonaws.com/marketing-automation/screenshots/bodyscan.jpeg",
+  "onboarding": "https://fitai-coach-storage.s3.us-east-1.amazonaws.com/marketing-automation/screenshots/onboarding.jpeg",
+  "weekly": "https://fitai-coach-storage.s3.us-east-1.amazonaws.com/marketing-automation/screenshots/weekly.jpg",
+  "workouts": "https://fitai-coach-storage.s3.us-east-1.amazonaws.com/marketing-automation/screenshots/workouts.jpg",
+  "pricing": "https://fitai-coach-storage.s3.us-east-1.amazonaws.com/marketing-automation/screenshots/pricing.jpg"
+}
