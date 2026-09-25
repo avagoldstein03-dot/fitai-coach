@@ -21,7 +21,7 @@ Export layouts change. The skills map whatever columns they're given onto the on
 | `prompt_no` | prompts.json number, if it came from the UGC pipeline |
 | `segment` | `genz` / `y2030` / `parent` / `plus45` / `glp1` / `lifestage` |
 | `feature` | Feature shown |
-| `format` | `talking-head` / `vlog` / `carousel` / `prompts-carousel` / `reply-to-comment` |
+| `format` | `talking-head` / `vlog` / `carousel` / `reply-to-comment` |
 | `hook_trigger` | `fear` / `status` / `curiosity` / `identity` |
 | `hook` | First line, verbatim |
 | `length_s` | Video length in seconds (blank for carousels) |
