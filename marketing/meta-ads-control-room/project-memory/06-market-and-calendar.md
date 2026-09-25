@@ -27,4 +27,12 @@
 | CPI | | | |
 
 ## Competitors in the same auctions
-`{{COMPETITORS: from setup interview Q14}}`. For each: what they're running (Meta Ad Library, facebook.com/ads/library), their main hook, their price, what we have that they don't.
+Full files in `marketing/competitors/` (checked 2026-09-25). Active ad hooks are still to be collected manually from the Meta Ad Library.
+
+| Competitor | One line | Our angle |
+|---|---|---|
+| Vora | Closest overlap: free tier, per-muscle readiness, nutrition, cycle tracking; Pro $12.99/mo | Menopause/perimenopause (not "cycle"), injury-aware, ingredient check, simpler for non-lifters |
+| Fitbod | Category leader, workouts only, $15.99/mo, no free tier | $9.99 Starter = workouts + nutrition + readiness; free tier |
+| uFit AI | Fitbod's subtitle, hard paywall, $14.99–17.99/mo; body scan criticized as inaccurate | Real free tier; honest "estimate" body scan |
+| Oura | Owns "readiness"; $349+ ring + $5.99/mo | "You already own the sensor" (watch data), score + plan; never claim parity |
+| Trainera | Trainer software, not really consumer; runs "best AI fitness app" SEO pages | Low threat; copy the SEO play |
