@@ -20,7 +20,7 @@ What Meta actually sees versus what it claims.
 - **B. Meta SDK in the app.** Adds install and app-open events; needs an EAS build (native module). On iOS, full install attribution needs the ATT prompt.
 - **C. An attribution tool.** The most complete option, but paid and more setup. Probably overkill at launch budget.
 
-Decide, then record it here.
+Decide, then record it here. Plan: A + B. Step-by-step order is in `marketing/LAUNCH-CHECKLIST.md` (blocked until the business entity and bank account exist, which Meta's business verification needs).
 
 ## Events Meta should get (once wired)
 | Event | Source | Use |
