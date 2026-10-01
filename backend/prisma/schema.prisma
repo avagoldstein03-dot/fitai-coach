@@ -462,6 +462,11 @@ model ChatMessage {
   role                  String                 // "user" | "assistant"
   content               String
 
+  // Validated CoachAction[] parsed out of the reply's [ACTION:{...}] markers.
+  // Persisted so the buttons under a reply still work after the app is reopened,
+  // unlike requiresUpgrade, which is recomputed per request and never stored.
+  actions               Json?
+
   // AI Provider
   aiProvider            String?                // "openai" | "anthropic"
   

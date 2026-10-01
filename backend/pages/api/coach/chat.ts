@@ -9,6 +9,7 @@ import { sanitizeConversationHistory } from "@/services/ai-provider";
 import { detectWorkoutPlateaus, diffBodyComposition, buildTrendsSummary } from "@/lib/trends";
 import { buildCoachingDirective } from "@/lib/coach-context";
 import { buildHealthSummary } from "@/lib/health-summary";
+import { extractActions } from "@/lib/coach-actions";
 
 // Tier-aware keyword detection — reliable fallback that doesn't depend on the AI emitting a marker
 function detectUpgradeNeeded(message: string, tier: SubscriptionTier): { needed: boolean; upgradeTo: string | null } {
@@ -177,7 +178,10 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
     // Strip any [UPGRADE:tier] marker the AI may have emitted
     const upgradeMatch = rawResponse.match(/\[UPGRADE:(\w+)\]\s*$/m);
-    const response = rawResponse.replace(/\[UPGRADE:\w+\]\s*$/m, "").trimEnd();
+    const withoutUpgrade = rawResponse.replace(/\[UPGRADE:\w+\]\s*$/m, "").trimEnd();
+
+    // Pull out any [ACTION:{...}] markers; the client renders these as buttons.
+    const { text: response, actions } = extractActions(withoutUpgrade);
 
     // Reliable fallback: keyword-detect the user's question against their tier
     const keywordDetection = detectUpgradeNeeded(message, subscription.tier);
@@ -190,6 +194,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         user: { connect: { clerkId: userId } },
         role: "assistant",
         content: response,
+        actions: actions.length ? actions : undefined,
         aiProvider: "openai",
       },
     });
@@ -205,6 +210,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     sendSuccess(res, {
       message: assistantMessage,
       response,
+      actions,
       requiresUpgrade,
       upgradeTo,
       conversationHistory: recentMessages,

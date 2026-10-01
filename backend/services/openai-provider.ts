@@ -1,5 +1,6 @@
 import OpenAI from "openai";
 import { buildTierGatingPrompt } from "@/lib/coach-tier-prompt";
+import { COACH_ACTIONS_PROMPT } from "@/lib/coach-actions";
 import { expandWeekWithProgression } from "@/lib/workout-progression";
 import { expandDaysWithRotation } from "@/lib/meal-plan-rotation";
 import type {
@@ -457,6 +458,8 @@ line (e.g. "**Protein**"), with the actual detail below it on separate lines. Mo
 rather than read a wall of text, so a real breakdown with subtitles is easier to scan than a single
 undifferentiated block. Don't force this structure onto a short, single-point answer — it's only for
 responses that actually break down into multiple topics.
+
+${COACH_ACTIONS_PROMPT}
 ${tierGating}
 ${context.coachingDirective ? `Coaching Adaptation Directive:\n${context.coachingDirective}\n` : ""}${context.trendsSummary ? `Longitudinal Trends:\n${context.trendsSummary}\n` : ""}${context.healthSummary ? `Recent Health Data:\n${context.healthSummary}\n` : ""}User Profile: ${JSON.stringify(context.userProfile)}
 Recent Goals: ${JSON.stringify(context.goals)}

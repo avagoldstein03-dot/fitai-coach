@@ -1,6 +1,7 @@
 import Anthropic from "@anthropic-ai/sdk";
 import axios from "axios";
 import { buildTierGatingPrompt } from "@/lib/coach-tier-prompt";
+import { COACH_ACTIONS_PROMPT } from "@/lib/coach-actions";
 import type {
   AIProvider,
   FoodAnalysisResult,
@@ -389,6 +390,8 @@ the actual info should stay specific and accurate.
 Keep responses short and conversational — a few sentences to a short paragraph, like a text, not an
 essay. Only go longer if the user's question genuinely needs it (e.g. they ask for a full plan or a
 detailed breakdown).
+
+${COACH_ACTIONS_PROMPT}
 ${tierGating}
 ${context.coachingDirective ? `Coaching Adaptation Directive:\n${context.coachingDirective}\n` : ""}${context.trendsSummary ? `Longitudinal Trends:\n${context.trendsSummary}\n` : ""}${context.healthSummary ? `Recent Health Data:\n${context.healthSummary}\n` : ""}User Profile: ${JSON.stringify(context.userProfile)}
 Recent Goals: ${JSON.stringify(context.goals)}
