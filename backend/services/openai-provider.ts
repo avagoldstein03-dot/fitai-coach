@@ -24,6 +24,45 @@ const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
 });
 
+/**
+ * Pulls the JSON object out of a completion, failing loudly when the model ran
+ * out of tokens mid-object.
+ *
+ * response_format: json_object only guarantees well-formed JSON when the model
+ * is allowed to finish. Hit max_tokens and the output is cut off mid-array, and
+ * the only symptom users saw was a raw parser message ("Expected ',' or ']'
+ * after array element in JSON at position 4658"), which says nothing about the
+ * real cause. finish_reason distinguishes the two.
+ */
+function parseJsonCompletion<T>(
+  response: { choices: Array<{ message: { content: string | null }; finish_reason?: string | null }> },
+  label: string
+): T {
+  const choice = response.choices[0];
+  const content = choice?.message?.content;
+  if (!content) throw new Error(`No response from OpenAI while generating ${label}`);
+
+  if (choice.finish_reason === "length") {
+    throw new Error(
+      `The ${label} response was cut off before it finished (hit the token limit). ` +
+        `Try again, or reduce how much is being asked for in one call.`
+    );
+  }
+
+  const jsonMatch = content.match(/\{[\s\S]*\}/);
+  if (!jsonMatch) {
+    console.error(`Raw OpenAI ${label} response:`, content);
+    throw new Error(`AI did not return JSON for ${label}: "${content.slice(0, 200)}"`);
+  }
+
+  try {
+    return JSON.parse(jsonMatch[0]) as T;
+  } catch (e) {
+    console.error(`Unparseable OpenAI ${label} response:`, content);
+    throw new Error(`AI returned malformed JSON for ${label}: ${(e as Error).message}`);
+  }
+}
+
 export class OpenAIProvider implements AIProvider {
   async analyzeFood(imageUrl: string): Promise<FoodAnalysisResult> {
     const response = await openai.chat.completions.create({
@@ -210,7 +249,14 @@ Each day must have exactly 4-5 exercises, chosen so that together they hit all t
 
     // Sized to one week's output instead of the whole program — the main lever
     // that makes this fast, on top of only asking for one week in the first place.
-    const workoutMaxTokens = Math.min(4000, Math.ceil(userProfile.daysPerWeek * 5 * 45 + 300));
+    //
+    // The per-exercise figure was 45, which was measured against the bare example
+    // object. A real one carries a "notes" coaching cue and a long exerciseName and
+    // costs 55-70, so a 5-day week (25 exercises) overran its 1425-token budget and
+    // was truncated mid-array. 70 plus a larger fixed allowance for coachNote and
+    // the surrounding JSON leaves headroom at every day count; the 4000 ceiling is
+    // unchanged.
+    const workoutMaxTokens = Math.min(4000, Math.ceil(userProfile.daysPerWeek * 5 * 70 + 600));
 
     const response = await openai.chat.completions.create({
       model: "gpt-4o",
@@ -219,15 +265,10 @@ Each day must have exactly 4-5 exercises, chosen so that together they hit all t
       messages: [{ role: "user", content: prompt }],
     });
 
-    const content = response.choices[0].message.content;
-    if (!content) throw new Error("No response from OpenAI");
-
-    const jsonMatch = content.match(/\{[\s\S]*\}/);
-    if (!jsonMatch) {
-      console.error("Raw OpenAI workout generation response:", content);
-      throw new Error(`AI did not return JSON: "${content.slice(0, 200)}"`);
-    }
-    const parsed = JSON.parse(jsonMatch[0]) as { coachNote: string; week: WorkoutPlanResult["weeks"][0] };
+    const parsed = parseJsonCompletion<{ coachNote: string; week: WorkoutPlanResult["weeks"][0] }>(
+      response,
+      "workout program"
+    );
     return {
       coachNote: parsed.coachNote,
       weeks: expandWeekWithProgression(parsed.week, userProfile.durationWeeks),
@@ -285,15 +326,7 @@ Generate exactly ${TEMPLATE_DAY_COUNT} day entries, labeled "Day 1", "Day 2", "D
       messages: [{ role: "user", content: prompt }],
     });
 
-    const content = response.choices[0].message.content;
-    if (!content) throw new Error("No response from OpenAI");
-
-    const jsonMatch = content.match(/\{[\s\S]*\}/);
-    if (!jsonMatch) {
-      console.error("Raw OpenAI meal plan response:", content);
-      throw new Error(`AI did not return JSON: "${content.slice(0, 200)}"`);
-    }
-    const parsed = JSON.parse(jsonMatch[0]) as MealPlanResult;
+    const parsed = parseJsonCompletion<MealPlanResult>(response, "meal plan");
     return { days: expandDaysWithRotation(parsed.days, 7) };
   }
 
