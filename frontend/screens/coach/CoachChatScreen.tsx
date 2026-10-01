@@ -787,26 +787,33 @@ export default function CoachChatScreen() {
                       <Text style={cs.userText}>{msg.content}</Text>
                     </View>
                   ) : (
-                    <View style={cs.coachMsgRow}>
-                      <View style={cs.coachMiniAvatar}>
-                        <Text style={cs.coachMiniAvatarText}>AI</Text>
-                      </View>
-                      <View style={{ flex: 1 }}>
-                        <CoachMessage
-                          content={msg.content}
-                          requiresUpgrade={msg.requiresUpgrade}
-                          upgradeTo={msg.upgradeTo}
-                          onUpgrade={goToPricing}
-                        />
-                        {!!msg.actions?.length && (
-                          <ActionBar
-                            actions={msg.actions}
-                            busy={busyAction}
-                            idPrefix={msg.id}
-                            onPress={runAction}
+                    // The action bar sits outside coachMsgRow on purpose. That row
+                    // bottom-aligns the avatar, so with the buttons inside it the
+                    // avatar slid down beside them instead of resting against the
+                    // bubble. Indented by the avatar's width plus the row gap so it
+                    // still lines up under the bubble's left edge.
+                    <View style={{ width: "100%" }}>
+                      <View style={cs.coachMsgRow}>
+                        <View style={cs.coachMiniAvatar}>
+                          <Text style={cs.coachMiniAvatarText}>AI</Text>
+                        </View>
+                        <View style={{ flex: 1 }}>
+                          <CoachMessage
+                            content={msg.content}
+                            requiresUpgrade={msg.requiresUpgrade}
+                            upgradeTo={msg.upgradeTo}
+                            onUpgrade={goToPricing}
                           />
-                        )}
+                        </View>
                       </View>
+                      {!!msg.actions?.length && (
+                        <ActionBar
+                          actions={msg.actions}
+                          busy={busyAction}
+                          idPrefix={msg.id}
+                          onPress={runAction}
+                        />
+                      )}
                     </View>
                   )}
                 </View>
@@ -1054,7 +1061,9 @@ const cs = StyleSheet.create({
   upgradeCardBtnText: { color: T.black, fontWeight: "800", fontSize: 13 },
 
   // Coach action buttons
-  actionBar: { flexDirection: "row", flexWrap: "wrap", gap: 8, marginTop: 10 },
+  // marginLeft = coachMiniAvatar width (28) + coachMsgRow gap (8), so the buttons
+  // line up with the bubble above them rather than the avatar.
+  actionBar: { flexDirection: "row", flexWrap: "wrap", gap: 8, marginTop: 10, marginLeft: 36 },
   actionBtn: {
     flexDirection: "row",
     alignItems: "center",
