@@ -521,9 +521,14 @@ export default function CoachChatScreen() {
       };
       setLocalMessages((prev) => {
         const withoutTemp = prev.filter((m) => !m.id.startsWith("temp-"));
-        return [...withoutTemp, ...data.conversationHistory, assistantMsg].filter(
-          (m, i, arr) => arr.findIndex((x) => x.id === m.id) === i
-        );
+        // data.userMessage is the saved row for what was just sent.
+        // conversationHistory is read concurrently with that write server-side,
+        // so it never contains it — without this the message the user typed
+        // disappears the moment the reply lands.
+        return [...withoutTemp, ...data.conversationHistory, data.userMessage, assistantMsg]
+          .filter(Boolean)
+          .filter((m, i, arr) => arr.findIndex((x) => x.id === m.id) === i)
+          .sort((a, b) => new Date(a.createdAt).getTime() - new Date(b.createdAt).getTime());
       });
       // Deliberately not invalidating the chatHistory query here: local state above is
       // already the authoritative, fully-merged result of this send, including the

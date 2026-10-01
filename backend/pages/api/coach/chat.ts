@@ -82,7 +82,11 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     // These five queries are all independent of each other's results, so they run
     // concurrently instead of as five sequential round trips — that was the main
     // source of latency before the AI call even started.
-    const [user, recentMessages, workoutSessionsForTrends, healthMetrics] = await Promise.all([
+    // userMessage is the 5th promise below. It used to be discarded, but
+    // recentMessages is read concurrently with that write and so never contains
+    // the message just sent — leaving the client, which rebuilds its list from
+    // conversationHistory, with no record of what the user typed.
+    const [user, recentMessages, workoutSessionsForTrends, healthMetrics, userMessage] = await Promise.all([
       prisma.user.findUnique({
         where: { clerkId: userId },
         include: {
@@ -211,6 +215,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       message: assistantMessage,
       response,
       actions,
+      userMessage,
       requiresUpgrade,
       upgradeTo,
       conversationHistory: recentMessages,
