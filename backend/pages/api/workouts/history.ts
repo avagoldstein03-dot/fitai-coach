@@ -18,8 +18,12 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       include: {
         weeks: {
           include: {
+            // Rows have no inherent order in Postgres. Without these the days of
+            // a week and the exercises within a session came back in whatever
+            // order the planner chose, so the training order was lost on read.
             days: {
-              include: { exercises: true },
+              orderBy: { dayOfWeek: "asc" },
+              include: { exercises: { orderBy: { position: "asc" } } },
             },
           },
           orderBy: { weekNumber: "asc" },

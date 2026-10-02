@@ -380,6 +380,11 @@ model Exercise {
   restSeconds           Int
   notes                 String?
   category              String                 @default("strength") // "strength" | "cardio" | "mobility"
+
+  // Order within the day. Rows have no inherent order in Postgres, so without
+  // this a generated session came back from the database in arbitrary order and
+  // the training order built in lib/workout-ordering was lost on read.
+  position              Int                    @default(0)
   
   // Library reference
   libraryId             String?

@@ -2,6 +2,7 @@ import OpenAI from "openai";
 import { buildTierGatingPrompt } from "@/lib/coach-tier-prompt";
 import { COACH_ACTIONS_PROMPT } from "@/lib/coach-actions";
 import { expandWeekWithProgression } from "@/lib/workout-progression";
+import { orderWeek } from "@/lib/workout-ordering";
 import { expandDaysWithRotation } from "@/lib/meal-plan-rotation";
 import type {
   AIProvider,
@@ -236,7 +237,7 @@ Return ONLY valid JSON with no markdown, structured exactly like this:
       {
         "dayOfWeek": 0,
         "exercises": [
-          { "exerciseName": "Barbell Back Squat", "sets": 4, "reps": "6-8", "restSeconds": 90, "notes": "optional coaching cue", "category": "strength" }
+          { "exerciseName": "Barbell Back Squat", "sets": 4, "reps": "6-8", "restSeconds": 90, "notes": "optional coaching cue", "category": "strength", "movementType": "compound", "isPriority": true }
         ]
       }
     ]
@@ -245,7 +246,13 @@ Return ONLY valid JSON with no markdown, structured exactly like this:
 
 The week must have exactly ${userProfile.daysPerWeek} day entries (dayOfWeek values 0-6 for Monday-Sunday, spread sensibly with rest days between sessions).
 
-Each day must have exactly 4-5 exercises, chosen so that together they hit all the major muscle groups intended for that day's focus — prioritize balanced, non-redundant coverage and exercise selection that matches the client's stated goal over cramming in extra exercises. Tag each exercise's "category" as one of "strength", "cardio", or "mobility".`;
+Each day must have exactly 4-5 exercises, chosen so that together they hit all the major muscle groups intended for that day's focus — prioritize balanced, non-redundant coverage and exercise selection that matches the client's stated goal over cramming in extra exercises. Tag each exercise's "category" as one of "strength", "cardio", or "mobility".
+
+Label every exercise with two more fields, which decide the order it is performed in:
+- "movementType": "compound" for multi-joint lifts (squat, deadlift, hip thrust, press, row, pull-up, lunge, leg press), "isolation" for single-joint work (curl, extension, lateral raise, kickback, calf raise).
+- "isPriority": true only for the exercises that directly train the muscle group the client's stated goal or focus is about, false otherwise.
+
+Order each day so the client does the heaviest work for their stated goal while they are freshest: priority compound lifts first, then remaining compounds, then isolation work, then any cardio or mobility. A client whose goal is glutes should start on hip thrusts or squats, not reach them third after their legs are already fatigued.`;
 
     // Sized to one week's output instead of the whole program — the main lever
     // that makes this fast, on top of only asking for one week in the first place.
@@ -269,9 +276,11 @@ Each day must have exactly 4-5 exercises, chosen so that together they hit all t
       response,
       "workout program"
     );
+    // The prompt asks for training order, but asking is not the same as getting
+    // it, so the order is enforced here before the week is expanded.
     return {
       coachNote: parsed.coachNote,
-      weeks: expandWeekWithProgression(parsed.week, userProfile.durationWeeks),
+      weeks: expandWeekWithProgression(orderWeek(parsed.week), userProfile.durationWeeks),
     };
   }
 

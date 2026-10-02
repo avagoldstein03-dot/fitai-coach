@@ -63,6 +63,11 @@ export interface WorkoutPlanExercise {
   restSeconds: number;
   notes?: string;
   category?: string; // "strength" | "cardio" | "mobility" — defaults to "strength" if omitted
+  // Used by lib/workout-ordering to put a session in training order. Both are
+  // optional: movementType falls back to inference from the exercise name, and
+  // a missing isPriority simply means the exercise does not lead the session.
+  movementType?: "compound" | "isolation";
+  isPriority?: boolean; // directly serves the client's stated body-goal focus
 }
 
 export interface WorkoutPlanDay {

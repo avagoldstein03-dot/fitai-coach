@@ -108,13 +108,16 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
               create: week.days.map((day) => ({
                 dayOfWeek: day.dayOfWeek,
                 exercises: {
-                  create: day.exercises.map((ex) => ({
+                  create: day.exercises.map((ex, position) => ({
                     exerciseName: ex.exerciseName,
                     sets: ex.sets,
                     reps: ex.reps,
                     restSeconds: ex.restSeconds,
                     notes: ex.notes,
                     category: ex.category ?? "strength",
+                    // Array order here is the training order from
+                    // lib/workout-ordering; persist it so reads can restore it.
+                    position,
                   })),
                 },
               })),
@@ -122,7 +125,17 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
           })),
         },
       },
-      include: { weeks: { include: { days: { include: { exercises: true } } } } },
+      include: {
+        weeks: {
+          orderBy: { weekNumber: "asc" },
+          include: {
+            days: {
+              orderBy: { dayOfWeek: "asc" },
+              include: { exercises: { orderBy: { position: "asc" } } },
+            },
+          },
+        },
+      },
     });
 
     // Log analytics event
