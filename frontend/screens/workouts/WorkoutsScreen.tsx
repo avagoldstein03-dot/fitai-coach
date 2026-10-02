@@ -485,9 +485,18 @@ export default function WorkoutsScreen() {
                 )}
                 {currentDay.exercises.map((ex, i) => {
                   const done = loggedExIds.includes(ex.id);
+                  // Ordering keeps core work contiguous at the end of the day, so
+                  // the circuit header goes above the first one rather than needing
+                  // the list split into two passes.
+                  const startsCircuit =
+                    ex.category === "core" &&
+                    (i === 0 || currentDay.exercises[i - 1].category !== "core");
                   return (
+                    <React.Fragment key={ex.id ?? i}>
+                    {startsCircuit && (
+                      <Text style={styles.circuitHeader}>{t("workouts.ab_circuit")}</Text>
+                    )}
                     <SwipeToDeleteRow
-                      key={ex.id ?? i}
                       onDelete={() => deleteExercise(ex.id)}
                       deleteLabel={t("common.delete")}
                       borderRadius={16}
@@ -556,6 +565,7 @@ export default function WorkoutsScreen() {
                         </View>
                       </View>
                     </SwipeToDeleteRow>
+                    </React.Fragment>
                   );
                 })}
                 <TouchableOpacity
@@ -1043,6 +1053,17 @@ const styles = StyleSheet.create({
   exerciseNameRow: { flexDirection: "row", alignItems: "center", flexWrap: "wrap", gap: 6, flex: 1 },
   exerciseName: { fontSize: 16, fontWeight: "700", color: T.textPrimary, marginBottom: 4 },
   mobilityBadge: { backgroundColor: `${T.teal}22`, borderRadius: 8, paddingHorizontal: 7, paddingVertical: 2, marginBottom: 4 },
+  // Separates the ab circuit from the main work, so a session reads as five
+  // exercises plus a finisher rather than one undifferentiated list.
+  circuitHeader: {
+    fontSize: 11,
+    fontWeight: "800",
+    color: T.textSecondary,
+    textTransform: "uppercase",
+    letterSpacing: 0.8,
+    marginTop: 18,
+    marginBottom: 8,
+  },
   mobilityBadgeText: { fontSize: 10, fontWeight: "700", color: T.teal, textTransform: "uppercase", letterSpacing: 0.4 },
   exerciseNameDone: { color: T.accent },
   replaceBtn: { padding: 4 },

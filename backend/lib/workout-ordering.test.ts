@@ -1,4 +1,4 @@
-import { orderExercises, orderWeek, inferMovementType } from "./workout-ordering";
+import { orderExercises, orderWeek, ensureCoreCircuit, inferMovementType } from "./workout-ordering";
 import type { WorkoutPlanExercise } from "@/services/ai-provider";
 
 const ex = (
@@ -89,6 +89,40 @@ describe("orderExercises", () => {
     expect(names(orderExercises(day))).toEqual(["Leg Extension", "Barbell Back Squat"]);
   });
 
+  it("keeps the ab circuit together after the main work", () => {
+    const day = [
+      ex("Hanging Leg Raise", { category: "core" }),
+      ex("Barbell Hip Thrust", { isPriority: true }),
+      ex("Pallof Press", { category: "core" }),
+      ex("Leg Extension"),
+      ex("Plank", { category: "core" }),
+      ex("Barbell Back Squat"),
+    ];
+    expect(names(orderExercises(day))).toEqual([
+      "Barbell Hip Thrust",
+      "Barbell Back Squat",
+      "Leg Extension",
+      "Hanging Leg Raise",
+      "Pallof Press",
+      "Plank",
+    ]);
+  });
+
+  it("puts the core circuit after cardio but before mobility", () => {
+    const day = [
+      ex("Hip Flexor Stretch", { category: "mobility" }),
+      ex("Plank", { category: "core" }),
+      ex("Treadmill Intervals", { category: "cardio" }),
+      ex("Barbell Back Squat"),
+    ];
+    expect(names(orderExercises(day))).toEqual([
+      "Barbell Back Squat",
+      "Treadmill Intervals",
+      "Plank",
+      "Hip Flexor Stretch",
+    ]);
+  });
+
   it("sends cardio and mobility to the end, mobility last", () => {
     const day = [
       ex("Treadmill Intervals", { category: "cardio" }),
@@ -121,20 +155,84 @@ describe("orderExercises", () => {
   });
 });
 
+describe("ensureCoreCircuit", () => {
+  it("appends a circuit when the model returned no core work at all", () => {
+    const day = { dayOfWeek: 0, exercises: [ex("Barbell Back Squat"), ex("Leg Press")] };
+    const out = ensureCoreCircuit(day, 0);
+    const core = out.exercises.filter((e) => e.category === "core");
+    expect(core).toHaveLength(3);
+    expect(out.exercises).toHaveLength(5);
+  });
+
+  it("leaves a day alone when the model already produced core work", () => {
+    const day = {
+      dayOfWeek: 0,
+      exercises: [ex("Barbell Back Squat"), ex("Hanging Leg Raise", { category: "core" })],
+    };
+    expect(ensureCoreCircuit(day, 0)).toEqual(day);
+  });
+
+  it("rotates circuits so every day is not identical", () => {
+    const blank = () => ({ dayOfWeek: 0, exercises: [ex("Barbell Back Squat")] });
+    const a = names(ensureCoreCircuit(blank(), 0).exercises);
+    const b = names(ensureCoreCircuit(blank(), 1).exercises);
+    expect(a).not.toEqual(b);
+  });
+
+  it("builds a circuit that is a brace, a flexion and a rotation", () => {
+    const out = ensureCoreCircuit({ dayOfWeek: 0, exercises: [ex("Squat")] }, 0);
+    expect(names(out.exercises.filter((e) => e.category === "core"))).toEqual([
+      "Forearm Plank",
+      "Hanging Leg Raise",
+      "Pallof Press",
+    ]);
+  });
+});
+
 describe("orderWeek", () => {
   it("orders every day in the week", () => {
     const week = {
       weekNumber: 1,
       progressionStrategy: "base",
       days: [
-        { dayOfWeek: 0, exercises: [ex("Leg Extension"), ex("Barbell Back Squat")] },
-        { dayOfWeek: 2, exercises: [ex("Lateral Raise"), ex("Bench Press")] },
+        { dayOfWeek: 0, exercises: [ex("Leg Extension"), ex("Barbell Back Squat"), ex("Plank", { category: "core" })] },
+        { dayOfWeek: 2, exercises: [ex("Lateral Raise"), ex("Bench Press"), ex("Plank", { category: "core" })] },
       ],
     };
     const out = orderWeek(week);
-    expect(names(out.days[0].exercises)).toEqual(["Barbell Back Squat", "Leg Extension"]);
-    expect(names(out.days[1].exercises)).toEqual(["Bench Press", "Lateral Raise"]);
+    expect(names(out.days[0].exercises)).toEqual(["Barbell Back Squat", "Leg Extension", "Plank"]);
+    expect(names(out.days[1].exercises)).toEqual(["Bench Press", "Lateral Raise", "Plank"]);
     // original untouched
-    expect(names(week.days[0].exercises)).toEqual(["Leg Extension", "Barbell Back Squat"]);
+    expect(names(week.days[0].exercises)[0]).toBe("Leg Extension");
+  });
+
+  it("drops an empty rest day the model slipped in", () => {
+    const week = {
+      weekNumber: 1,
+      progressionStrategy: "base",
+      days: [
+        { dayOfWeek: 0, focus: "Legs", exercises: [ex("Barbell Back Squat")] },
+        { dayOfWeek: 3, focus: "Active Rest & Recovery", exercises: [] },
+        { dayOfWeek: 4, focus: "Push", exercises: [ex("Bench Press")] },
+      ],
+    };
+    const out = orderWeek(week);
+    expect(out.days).toHaveLength(2);
+    expect(out.days.map((d) => d.focus)).toEqual(["Legs", "Push"]);
+  });
+
+  it("gives every day a circuit even when the model supplied none", () => {
+    const week = {
+      weekNumber: 1,
+      progressionStrategy: "base",
+      days: [
+        { dayOfWeek: 0, exercises: [ex("Barbell Back Squat")] },
+        { dayOfWeek: 2, exercises: [ex("Bench Press")] },
+      ],
+    };
+    const out = orderWeek(week);
+    out.days.forEach((d) => {
+      expect(d.exercises.filter((e) => e.category === "core")).toHaveLength(3);
+    });
   });
 });

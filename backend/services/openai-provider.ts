@@ -238,21 +238,28 @@ Return ONLY valid JSON with no markdown, structured exactly like this:
         "dayOfWeek": 0,
         "focus": "Glutes & Hamstrings",
         "exercises": [
-          { "exerciseName": "Barbell Back Squat", "sets": 4, "reps": "6-8", "restSeconds": 90, "notes": "optional coaching cue", "category": "strength", "movementType": "compound", "isPriority": true }
+          { "exerciseName": "Barbell Back Squat", "sets": 4, "reps": "6-8", "restSeconds": 90, "notes": "optional coaching cue", "category": "strength", "movementType": "compound", "isPriority": true },
+          { "exerciseName": "Hanging Leg Raise", "sets": 3, "reps": "10-12", "restSeconds": 30, "notes": "part of the ab circuit", "category": "core", "movementType": "isolation", "isPriority": false }
         ]
       }
     ]
   }
 }
 
-The week must have exactly ${userProfile.daysPerWeek} day entries (dayOfWeek values 0-6 for Monday-Sunday, spread sensibly with rest days between sessions).
+The week must have exactly ${userProfile.daysPerWeek} day entries (dayOfWeek values 0-6 for Monday-Sunday, spread sensibly so rest falls between sessions). Only include days the client actually trains — do not add a rest or recovery entry, and never return a day with an empty exercise list.
 
 SPLIT — decide this first, before choosing any exercise.
 Give every day a "focus" naming the muscle groups it trains, e.g. "Glutes & Hamstrings", "Back & Biceps", "Chest & Triceps", "Upper Body", "Legs & Core". Choose a coherent split for ${userProfile.daysPerWeek} days a week — commonly full-body for 3, upper/lower for 4, push/pull/legs plus an upper/lower for 5, push/pull/legs twice for 6 — and give the muscle group the client's goal is about 2-3 of those sessions rather than one.
 
 Every exercise on a day must train that day's stated focus. A squat belongs on a leg or glute day, never on a back day; a chest press belongs on a push or upper day, never on a leg day. One core or mobility finisher at the end of a session is fine on any day. Do not assemble a day from unrelated body parts — four exercises hitting legs, chest, hamstrings and rear delts in one session is wrong, however good each exercise is on its own.
 
-Each day must have exactly 4-5 exercises, chosen so that together they cover that day's focus well — prioritize balanced, non-redundant coverage and exercise selection that matches the client's stated goal over cramming in extra exercises. Tag each exercise's "category" as one of "strength", "cardio", or "mobility".
+SESSION LENGTH — each day has two parts.
+
+Main work: exactly 5 exercises that train the day's stated focus, tagged "category": "strength" (or "cardio" where a conditioning piece genuinely fits the focus). All 5 must be real training for that focus. Do not count an ab or core movement toward these 5 — a day of three lifts and a plank is not a full session.
+
+Ab circuit: then 2-3 core exercises, each tagged "category": "core", with short rest (30-45 seconds) so they read as a circuit rather than straight sets. Vary them — a brace, a flexion movement and a rotation or anti-rotation, not three variations of the same crunch. Every day gets a core circuit.
+
+So a normal day is 7-8 exercises in total: 5 main plus a 2-3 exercise ab circuit. Use "mobility" only for genuine warm-up or cooldown work, and only where an injury or limitation makes it worthwhile.
 
 Label every exercise with two more fields, which decide the order it is performed in:
 - "movementType": "compound" for multi-joint lifts (squat, deadlift, hip thrust, press, row, pull-up, lunge, leg press), "isolation" for single-joint work (curl, extension, lateral raise, kickback, calf raise).
@@ -265,11 +272,17 @@ Order each day so the client does the heaviest work for their stated goal while 
     //
     // The per-exercise figure was 45, which was measured against the bare example
     // object. A real one carries a "notes" coaching cue and a long exerciseName and
-    // costs 55-70, so a 5-day week (25 exercises) overran its 1425-token budget and
-    // was truncated mid-array. 70 plus a larger fixed allowance for coachNote and
-    // the surrounding JSON leaves headroom at every day count; the 4000 ceiling is
-    // unchanged.
-    const workoutMaxTokens = Math.min(4000, Math.ceil(userProfile.daysPerWeek * 5 * 70 + 600));
+    // costs 55-70, so a 5-day week overran its budget and was truncated mid-array.
+    //
+    // A day is now 5 main exercises plus a 2-3 move ab circuit, so budget for 8
+    // per day rather than 5. At 6 days that is 48 exercises, which is why the
+    // ceiling is 5000 rather than 4000.
+    const EXERCISES_PER_DAY = 8;
+    const TOKENS_PER_EXERCISE = 70;
+    const workoutMaxTokens = Math.min(
+      5000,
+      Math.ceil(userProfile.daysPerWeek * EXERCISES_PER_DAY * TOKENS_PER_EXERCISE + 600)
+    );
 
     const response = await openai.chat.completions.create({
       model: "gpt-4o",

@@ -928,7 +928,10 @@
     "goal_overall_strength": "Build overall strength & muscle",
     "goal_specific_area": "Build muscle in a specific area",
     "progress_done": "{{done}}/{{total}} done",
-    "exercise_meta": "{{sets}} sets × {{reps}} reps · {{rest}}s rest"
+    "exercise_meta": "{{sets}} sets × {{reps}} reps · {{rest}}s rest",
+    "ab_circuit": "Ab Circuit",
+    "core_badge": "Core",
+    "main_work": "{{count}} Exercises"
   },
   "supplements": {
     "title": "Supplements",
