@@ -83,7 +83,11 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       assessmentSummary: latestAssessment?.summary ?? undefined,
       injuryHistory: user.injuryHistory?.trim().slice(0, MAX_INJURY_LENGTH) || undefined,
       // Only accept the three known values; anything else falls back to normal training.
-      dayStructure: dayStructure === "separate" ? "separate" : "mixed",
+      // Program customization is a paid feature, enforced here rather than in the
+      // UI so a crafted request cannot claim it. Free users always get "mixed".
+      dayStructure: subscription.isPremium && ["separate", "compound", "isolation"].includes(dayStructure)
+        ? dayStructure
+        : "mixed",
     });
 
     // Deactivate any current active program

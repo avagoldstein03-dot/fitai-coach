@@ -262,15 +262,21 @@ SESSION LENGTH — each day has two parts.
 
 Main work: exactly 5 exercises that train the day's stated focus, tagged "category": "strength" (or "cardio" where a conditioning piece genuinely fits the focus). All 5 must be real training for that focus. Do not count an ab or core movement toward these 5 — a day of three lifts and a plank is not a full session.
 ${
-  userProfile.dayStructure === "separate"
-    ? `Build each day as EITHER a heavy day or a pump day, alternating through the week so consecutive sessions are not the same shape.
+  {
+    separate: `Build each day as EITHER a heavy day or a pump day, alternating through the week so consecutive sessions are not the same shape.
 
 A heavy day: all 5 main exercises are compound, multi-joint lifts — squats, hinges, presses, rows, pull-ups, lunges, hip thrusts — with heavier loading and lower reps (4-8) and longer rest (90-150s). No isolation work in the main block.
 
 A pump day: all 5 main exercises are single-joint isolation work — curls, extensions, raises, flyes, kickbacks, leg curls — with higher reps (12-20) and shorter rest (30-60s). No compound lifts in the main block.
 
-Say which a day is in its "focus", e.g. "Glutes & Hamstrings - Heavy" or "Arms & Shoulders - Pump". Give the client's priority muscle group at least one of each.`
-    : `Lead with compound lifts and finish with isolation work — roughly 2-3 compounds then 2-3 isolation exercises.`
+Say which a day is in its "focus", e.g. "Glutes & Hamstrings - Heavy" or "Arms & Shoulders - Pump". Give the client's priority muscle group at least one of each.`,
+
+    compound: `EVERY day is a compound day. All 5 main exercises on every single day must be compound, multi-joint lifts — squats, hinges, presses, rows, pull-ups, lunges, hip thrusts, carries. No isolation work anywhere in the main block, on any day. Use heavier loading, lower reps (4-8) and longer rest (90-150s) throughout. The ab circuit is unaffected.`,
+
+    isolation: `EVERY day is an isolation day. All 5 main exercises on every single day must be single-joint isolation work — curls, extensions, raises, flyes, kickbacks, leg curls, calf raises, pushdowns. No compound lifts anywhere in the main block, on any day. Use higher reps (12-20) and shorter rest (30-60s) throughout. Make up for the lack of compounds with careful coverage, so each day still trains its whole focus. The ab circuit is unaffected.`,
+
+    mixed: `Lead with compound lifts and finish with isolation work — roughly 2-3 compounds then 2-3 isolation exercises.`,
+  }[userProfile.dayStructure ?? "mixed"]
 }
 
 Ab circuit: then 2-3 core exercises, each tagged "category": "core", with short rest (30-45 seconds) so they read as a circuit rather than straight sets. Vary them — a brace, a flexion movement and a rotation or anti-rotation, not three variations of the same crunch. Every day gets a core circuit.

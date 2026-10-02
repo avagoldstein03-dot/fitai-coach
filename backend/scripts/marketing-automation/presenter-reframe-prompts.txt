@@ -1,0 +1,158 @@
+ACTIVE AI — BASE IMAGE SHOOT LIST
+Named by SETTING, not version number — your files use V1/V2 for generation
+attempts, so version numbers here would be confusing. Source files in ~/Downloads.
+
+======================================================================
+LOTUS · kitchen   ✓ DONE   (3 scripts)
+======================================================================
+SOURCE: lotus V2.png
+
+USED BY:
+  • 4. GLP-1 Protein Tracking — ORGANIC ONLY
+  • 8. Readiness Score — 45+
+  • 20. Life-Stage Nutrition
+
+PROMPT:
+Already generated — lotus V2.png IS this image. No prompt needed.
+
+======================================================================
+HART · kitchen   ✓ DONE   (2 scripts)
+======================================================================
+SOURCE: hart v2.png
+
+USED BY:
+  • 10. Weekly Insights
+  • 14. Nutrition Data Accuracy
+
+PROMPT:
+Already generated — hart v2.png IS this image. No prompt needed.
+
+======================================================================
+FOX · bedroom   (3 scripts)
+======================================================================
+SOURCE: Fox V1.png
+
+USED BY:
+  • 1. Readiness Score
+  • 3. Body Scan
+  • 18. Onboarding
+
+PROMPT:
+Same person, same face, identity unchanged — do not alter the facial structure, skin tone, or features. Chest-up portrait: top of frame just above the head, bottom of frame at the sternum. Looking directly into the camera lens, straight on, head level, no tilt — not a mirror shot. Handheld phone-selfie perspective, roughly 18 inches from the face, at eye level. Photorealistic, real skin texture — no filter smoothing, no beauty retouching. Natural light only, no studio lighting. Vertical 9:16. Hair worn down, unstyled and slightly imperfect. No makeup. Remove all jewellery. Plain oversized grey hoodie. Background: an ordinary lived-in bedroom, daylight through blinds, unmade bed visible, not tidied for camera.
+
+======================================================================
+FOX · kitchen   (1 script)
+======================================================================
+SOURCE: Fox V1.png
+
+USED BY:
+  • 11. Food Scanner
+
+PROMPT:
+Same person, same face, identity unchanged — do not alter the facial structure, skin tone, or features. Chest-up portrait: top of frame just above the head, bottom of frame at the sternum. Looking directly into the camera lens, straight on, head level, no tilt — not a mirror shot. Handheld phone-selfie perspective, roughly 18 inches from the face, at eye level. Photorealistic, real skin texture — no filter smoothing, no beauty retouching. Natural light only, no studio lighting. Vertical 9:16. Hair in a loose claw clip with pieces falling out. No makeup. Remove all jewellery. Plain unbranded white t-shirt. Background: a small apartment kitchen in daylight, some dishes and clutter on the counter.
+
+======================================================================
+FOX · couch, evening   (2 scripts)
+======================================================================
+SOURCE: Fox V1.png
+
+USED BY:
+  • 13. Referral / Friends
+  • 22. No Wearable Needed
+
+PROMPT:
+Same person, same face, identity unchanged — do not alter the facial structure, skin tone, or features. Chest-up portrait: top of frame just above the head, bottom of frame at the sternum. Looking directly into the camera lens, straight on, head level, no tilt — not a mirror shot. Handheld phone-selfie perspective, roughly 18 inches from the face, at eye level. Photorealistic, real skin texture — no filter smoothing, no beauty retouching. Natural light only, no studio lighting. Vertical 9:16. Hair down and slightly messy. No makeup. Remove all jewellery. Black zip-up hoodie over a plain tank top. Background: sitting on a couch in the evening, warm lamp light, a TV glowing out of focus behind.
+
+======================================================================
+FOX · bedroom, ponytail   (2 scripts)
+======================================================================
+SOURCE: Fox V1.png
+
+USED BY:
+  • 17. Streaks & Badges
+  • 24. Any-Age Positioning
+
+PROMPT:
+Same person, same face, identity unchanged — do not alter the facial structure, skin tone, or features. Chest-up portrait: top of frame just above the head, bottom of frame at the sternum. Looking directly into the camera lens, straight on, head level, no tilt — not a mirror shot. Handheld phone-selfie perspective, roughly 18 inches from the face, at eye level. Photorealistic, real skin texture — no filter smoothing, no beauty retouching. Natural light only, no studio lighting. Vertical 9:16. Hair in a high ponytail with a few loose strands. No makeup. Remove all jewellery. Plain athletic tank top, slightly worn. Background: an ordinary bedroom in daylight.
+
+======================================================================
+PAGET · gym floor   (2 scripts)
+======================================================================
+SOURCE: paget V1.png
+
+USED BY:
+  • 12. Form Check
+  • 16. Workouts / AI Plan
+
+PROMPT:
+Same person, same face, identity unchanged — do not alter the facial structure, skin tone, or features. Chest-up portrait: top of frame just above the head, bottom of frame at the sternum. Looking directly into the camera lens, straight on, head level, no tilt — not a mirror shot. Handheld phone-selfie perspective, roughly 18 inches from the face, at eye level. Photorealistic, real skin texture — no filter smoothing, no beauty retouching. Natural light only, no studio lighting. Vertical 9:16. Hair natural and slightly imperfect, not set. Remove all jewellery. Plain grey gym t-shirt, no logos, slightly worn. Background: an ordinary gym floor, standard gym lighting, equipment out of focus behind.
+
+======================================================================
+PAGET · gym car park   (1 script)
+======================================================================
+SOURCE: paget V1.png
+
+USED BY:
+  • 5. Injury-Aware Programming
+
+PROMPT:
+Same person, same face, identity unchanged — do not alter the facial structure, skin tone, or features. Chest-up portrait: top of frame just above the head, bottom of frame at the sternum. Looking directly into the camera lens, straight on, head level, no tilt — not a mirror shot. Handheld phone-selfie perspective, roughly 18 inches from the face, at eye level. Photorealistic, real skin texture — no filter smoothing, no beauty retouching. Natural light only, no studio lighting. Vertical 9:16. Hair slightly damp and pushed back off the forehead. Remove all jewellery. Plain black hoodie. Background: a gym car park in daylight, a car out of focus behind.
+
+======================================================================
+PAGET · kitchen   (3 scripts)
+======================================================================
+SOURCE: paget V1.png
+
+USED BY:
+  • 6. Ingredient Safety
+  • 9. Coach Chat
+  • 15. Precision Macros
+
+PROMPT:
+Same person, same face, identity unchanged — do not alter the facial structure, skin tone, or features. Chest-up portrait: top of frame just above the head, bottom of frame at the sternum. Looking directly into the camera lens, straight on, head level, no tilt — not a mirror shot. Handheld phone-selfie perspective, roughly 18 inches from the face, at eye level. Photorealistic, real skin texture — no filter smoothing, no beauty retouching. Natural light only, no studio lighting. Vertical 9:16. Hair natural. Remove all jewellery. Plain navy t-shirt. Background: a plain kitchen in daylight, ordinary and lived-in.
+
+======================================================================
+PAGET · desk, evening   (1 script)
+======================================================================
+SOURCE: paget V1.png
+
+USED BY:
+  • 21. App Comparison
+
+PROMPT:
+Same person, same face, identity unchanged — do not alter the facial structure, skin tone, or features. Chest-up portrait: top of frame just above the head, bottom of frame at the sternum. Looking directly into the camera lens, straight on, head level, no tilt — not a mirror shot. Handheld phone-selfie perspective, roughly 18 inches from the face, at eye level. Photorealistic, real skin texture — no filter smoothing, no beauty retouching. Natural light only, no studio lighting. Vertical 9:16. Hair natural. Remove all jewellery. Plain long-sleeve top, no logos. Background: a home desk or living room in the evening, warm lamp light, unstyled.
+
+======================================================================
+HART · living room   (2 scripts)
+======================================================================
+SOURCE: hart v2.png
+
+USED BY:
+  • 2. Value / Price Framing
+  • 23. Progress Review — Elite
+
+PROMPT:
+Same woman, same face, identity unchanged — keep her exactly as she appears in hart v2.png: mid-to-late 30s, bare face, real skin texture, mid-brown hair. Do not de-age her. Do not smooth or retouch. Chest-up portrait: top of frame just above the head, bottom of frame at the sternum. Looking directly into the camera lens, straight on, head level, no tilt — not a mirror shot. Handheld phone-selfie perspective, roughly 18 inches from the face, at eye level. Photorealistic, real skin texture — no filter smoothing, no beauty retouching. Natural light only, no studio lighting. Vertical 9:16. Soft everyday top, slightly worn. No jewellery. Background: an ordinary living room in late-morning daylight, a throw blanket rumpled on the couch.
+
+======================================================================
+HART · kitchen, evening   (1 script)
+======================================================================
+SOURCE: hart v2.png
+
+USED BY:
+  • 19. Cost vs Trainer
+
+PROMPT:
+Same woman, same face, identity unchanged — keep her exactly as she appears in hart v2.png: mid-to-late 30s, bare face, real skin texture, mid-brown hair. Do not de-age her. Do not smooth or retouch. Chest-up portrait: top of frame just above the head, bottom of frame at the sternum. Looking directly into the camera lens, straight on, head level, no tilt — not a mirror shot. Handheld phone-selfie perspective, roughly 18 inches from the face, at eye level. Photorealistic, real skin texture — no filter smoothing, no beauty retouching. Natural light only, no studio lighting. Vertical 9:16. Plain hoodie. No jewellery. Background: a kitchen table in the evening, warm overhead light, unstyled.
+
+======================================================================
+HART · parked car   (1 script)
+======================================================================
+SOURCE: hart v2.png
+
+USED BY:
+  • 7. Zero Ads
+
+PROMPT:
+Same woman, same face, identity unchanged — keep her exactly as she appears in hart v2.png: mid-to-late 30s, bare face, real skin texture, mid-brown hair. Do not de-age her. Do not smooth or retouch. Chest-up portrait: top of frame just above the head, bottom of frame at the sternum. Looking directly into the camera lens, straight on, head level, no tilt — not a mirror shot. Handheld phone-selfie perspective, roughly 18 inches from the face, at eye level. Photorealistic, real skin texture — no filter smoothing, no beauty retouching. Natural light only, no studio lighting. Vertical 9:16. Plain t-shirt. No jewellery. Background: sitting in the driver seat of a parked car, daylight through the windscreen, ordinary car interior.
+

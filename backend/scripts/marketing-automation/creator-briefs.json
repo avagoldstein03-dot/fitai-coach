@@ -1,0 +1,191 @@
+{
+  "_how_to_use": "Briefs for REAL creators — people who actually use Active AI. Everything here is optional direction, not a script. Creators know their own audience and format better than we do; the job of a brief is to make sure the facts are right and the legal line isn't crossed, then get out of the way. Send a creator one brief, not the whole file.",
+
+  "_never_send_to": "The AI presenter cast (presenters.json). These are testimonial angles built on personal experience. A synthetic persona claiming to have used the app is prohibited outright, disclosure or not. AI presenters use the demo prompts in prompts.json instead.",
+
+  "_non_negotiables": [
+    "The creator must genuinely use the app before posting about it. No exceptions — this is what makes the testimonial legal in the first place.",
+    "Paid or gifted relationships must be disclosed clearly and up front — a visible #ad or the platform's paid-partnership label, not buried at the end of a hashtag block.",
+    "Only their own real experience. They can't describe results they didn't get.",
+    "No specific-outcome promises, especially with timelines ('lose 15lbs in 30 days'). This is the single fastest route to both an ad rejection and a one-star review.",
+    "No medical claims. The readiness score and body scan are not diagnostics and must never be framed as medical advice.",
+    "Competitors can be referenced generically ('a $300 recovery ring') but not named disparagingly.",
+    "No claims about accuracy we can't substantiate — 'it's right every time' is a claim, 'it's matched how I felt' is an opinion."
+  ],
+
+  "_facts_creators_get_wrong": [
+    "The readiness score is free on every tier, including free. It is not a paid feature.",
+    "There is no wearable requirement — it reads from Apple Health, whatever is feeding it.",
+    "Paid tiers are Starter $9.99, Pro $15.99, Elite $19.99 per month. Weekly and annual options exist; annual is cheaper per month.",
+    "Billing runs through the App Store / Play Store, so cancellation happens in phone settings, not in the app."
+  ],
+
+  "briefs": [
+    {
+      "id": "readiness",
+      "angle": "Readiness Score — one number for how hard to train today",
+      "cover": ["Reads sleep and resting heart rate from Apple Health plus recent training", "Compares you to your own baseline, not a population average", "Gives a plain-language reason, not just a number", "Free on every tier"],
+      "hooks_if_wanted": ["the part I check before deciding whether to train", "I stopped guessing whether today was a hard day"],
+      "avoid": ["Framing it as medical or recovery-diagnostic", "Claiming accuracy rates"]
+    },
+    {
+      "id": "weekly-insights",
+      "angle": "Weekly Insights — a written summary of your week instead of graphs",
+      "cover": ["Pulls meals, workouts and weight into one plain-English review", "Written in sentences, not dashboards", "Points at patterns you'd miss day to day"],
+      "hooks_if_wanted": ["the thing that told me something about myself I hadn't noticed"],
+      "avoid": ["Implying it predicts anything"]
+    },
+    {
+      "id": "coach-chat",
+      "angle": "Coach Chat — asking questions and getting answers based on your own logged data",
+      "cover": ["Knows what you logged — meals, workouts, goal", "Five messages a day on free, unlimited on paid", "Answers pull your actual numbers rather than generic advice"],
+      "hooks_if_wanted": ["I asked it a question at midnight and got an actual answer"],
+      "avoid": ["Positioning it as a replacement for a doctor, dietitian or physio"]
+    },
+    {
+      "id": "food-scanning",
+      "angle": "Food scanning — barcode and photo logging",
+      "cover": ["Barcode or photo, logs calories and macros into the day", "Nutrition data comes from Open Food Facts, an open product database", "Missing or wrong products can be corrected manually once"],
+      "hooks_if_wanted": ["I'm not weighing chicken by hand, sorry"],
+      "avoid": ["Claiming the database is complete or always correct — it's crowd-sourced and has gaps"]
+    },
+    {
+      "id": "ingredient-safety",
+      "angle": "Ingredient safety — additive scoring alongside the macros",
+      "cover": ["Scores ingredients and additives, not just calories", "Happens in the same scan that logs the food", "Replaces needing a separate scanner app"],
+      "hooks_if_wanted": ["found out my fitness app quietly does the ingredient thing too"],
+      "avoid": ["Calling any specific additive dangerous or unsafe", "Naming Yuka disparagingly — generic reference only"]
+    },
+    {
+      "id": "form-check",
+      "angle": "Form Check — filming a set and getting specific cues back",
+      "cover": ["Record a lift on your phone, it flags specific movement issues", "Names the cue rather than a generic score", "Pro and Elite plans"],
+      "hooks_if_wanted": ["an app caught something my gym buddy never mentioned"],
+      "avoid": ["Injury-prevention claims", "Implying it replaces a coach for heavy or technical lifting"]
+    },
+    {
+      "id": "precision-macros",
+      "angle": "Precision Macros — exact gram targets rather than rounded estimates",
+      "cover": ["Exact targets rather than eyeballed portions", "Pro and Elite"],
+      "avoid": ["Implying precision guarantees a result"]
+    },
+    {
+      "id": "body-scan",
+      "angle": "Body Scan — photo-based assessment with posture and focus areas",
+      "cover": ["Photo-based; returns composition notes, posture observations, strengths and focus areas", "Generates a workout plan off the result"],
+      "hooks_if_wanted": ["my scale wasn't telling me the whole picture"],
+      "avoid": ["Medical or diagnostic framing", "Body-shaming framing, or anything implying knowledge of the viewer's body"]
+    },
+    {
+      "id": "injury-aware",
+      "angle": "Injury-Aware Programming — an old injury actually changing the workouts",
+      "cover": ["Injury history captured at onboarding", "Generated workouts substitute around it and add mobility work", "Most apps collect this field and ignore it"],
+      "hooks_if_wanted": ["I mentioned a shoulder thing at signup out of habit and it actually used it"],
+      "avoid": ["Rehab or treatment claims — this is programming, not physio"]
+    },
+    {
+      "id": "workouts",
+      "angle": "Workouts / AI-personalized plan",
+      "cover": ["Generated program that progresses week to week", "Equipment-aware", "Regenerates if it isn't fitting"],
+      "hooks_if_wanted": ["I have 25 minutes and a toddler who could wake up any second"]
+    },
+    {
+      "id": "life-stage",
+      "angle": "Life-stage nutrition — perimenopause and menopause accounted for",
+      "cover": ["Asked at signup, optional to answer", "Adjusts protein targets with a written explanation of why", "Self-reported, not a diagnosis"],
+      "hooks_if_wanted": ["first fitness app that didn't treat me like I'm 25"],
+      "avoid": ["Any suggestion it diagnoses, treats or manages menopause"]
+    },
+    {
+      "id": "glp1-peptides",
+      "angle": "GLP-1 / peptides — protein tracking while losing weight",
+      "cover": ["Set your own protein target and track it to the gram", "Relevant to retaining muscle during rapid weight loss", "Tracking only — the app takes no position on medication"],
+      "hooks_if_wanted": ["nobody talks about the protein part of being on a GLP-1"],
+      "avoid": ["ANY medical advice framing — the creator must say their protein target came from their doctor, not the app", "Dosing, side effects, or which medication to take", "Suggesting the app is designed for or endorsed for GLP-1 use"],
+      "note": "Highest-risk brief in this set. Organic only — do not run as paid. Consider having legal review any creator's cut before it posts."
+    },
+    {
+      "id": "zero-ads",
+      "angle": "Zero ads, on every tier including free",
+      "cover": ["No ads anywhere — not after logging, not before viewing macros", "True on the free plan too"],
+      "hooks_if_wanted": ["I forgot apps could look like this"],
+      "avoid": ["Naming which competitor's ads were annoying"]
+    },
+    {
+      "id": "one-app-not-three",
+      "angle": "Consolidation — one subscription instead of several",
+      "cover": ["Workouts, nutrition, coaching, readiness and scanning in one place", "Starter $9.99 / Pro $15.99 / Elite $19.99 per month"],
+      "hooks_if_wanted": ["before you pay for three separate apps"],
+      "avoid": ["Stating competitor prices as current fact — they change"]
+    },
+    {
+      "id": "vs-trainer-cost",
+      "angle": "Cost compared to a personal trainer",
+      "cover": ["A single trainer session typically costs more than a month of any tier", "Different products — this is about price of entry, not superiority"],
+      "avoid": ["Claiming it replaces a trainer", "Quoting a specific trainer rate as universal"]
+    },
+    {
+      "id": "no-wearable",
+      "angle": "No wearable or ring required",
+      "cover": ["Reads from Apple Health — whatever is already feeding it", "No hardware purchase, no separate subscription"],
+      "hooks_if_wanted": ["before you preorder a $300 ring"],
+      "avoid": ["Naming WHOOP or Oura disparagingly — generic reference only"]
+    },
+    {
+      "id": "friends-referral",
+      "angle": "Friends and referral — both sides get a week of Pro",
+      "cover": ["Share a friend code; both people get 7 days of Pro", "No card required for it", "You see each other's streaks and can send a cheer"],
+      "hooks_if_wanted": ["me and my roommate got weirdly competitive about this"]
+    },
+    {
+      "id": "streaks-habit",
+      "angle": "Streaks, badges and actually showing up",
+      "cover": ["Streak tracking and achievement badges", "The behavioural hook, not a feature claim"],
+      "hooks_if_wanted": ["a digital badge guilt-tripped me into the gym, genuinely"],
+      "avoid": ["Suggesting streaks guarantee consistency"]
+    },
+    {
+      "id": "onboarding",
+      "angle": "Setup — what the first five minutes look like",
+      "cover": ["Walks through goals, equipment, injuries, preferences", "The answers actually change what's generated"],
+      "avoid": ["Claiming setup time that isn't typical"]
+    },
+    {
+      "id": "progress-review",
+      "angle": "Progress Review — the deeper periodic look (Elite)",
+      "cover": ["Elite tier", "Goes further than the weekly summary"],
+      "avoid": ["Over-promising what the review predicts"]
+    },
+    {
+      "id": "any-age",
+      "angle": "Works across age ranges, not built for 25-year-olds",
+      "cover": ["Targets adapt to the person, not a default profile", "Life-stage and age-appropriate adjustments exist"],
+      "hooks_if_wanted": ["most fitness apps quietly assume you're 25"]
+    },
+    {
+      "id": "nutrition-accuracy",
+      "angle": "Where the nutrition numbers come from",
+      "cover": ["Open Food Facts label data rather than typed-in averages", "Corrections persist once you make them"],
+      "avoid": ["Claiming total accuracy — the database is crowd-sourced"]
+    },
+    {
+      "id": "format-skeptic",
+      "angle": "FORMAT — the skeptic's account",
+      "cover": ["Creator has tried and abandoned other apps and says so honestly", "Works only if the skepticism is genuine"],
+      "note": "A format, not a feature. Pair it with whichever feature brief actually won them over."
+    },
+    {
+      "id": "format-months-later",
+      "angle": "FORMAT — the three-months-later check-in",
+      "cover": ["Requires the creator to genuinely have used it that long", "Honest and unremarkable beats dramatic"],
+      "avoid": ["Before/after transformation framing", "Any specific weight or measurement result presented as typical"],
+      "note": "A format, not a feature. Only commission this from creators already several months in."
+    },
+    {
+      "id": "format-day-in-life",
+      "angle": "FORMAT — where the app sits in a normal day",
+      "cover": ["Morning check, a scan at some point, a workout", "Ambient rather than a pitch"],
+      "note": "A format, not a feature. Lets a creator show several features without a sales structure."
+    }
+  ]
+}

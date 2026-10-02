@@ -1,0 +1,125 @@
+{
+  "_note": "Recurring AI presenter cast for Active AI. One account, three faces. Appearance fields are placeholders until the real Higgsfield avatars are generated and described. Every prompt with usage='ai-presenter' names one of these ids, so camera/behaviour/disclosure stay identical across appearances -- which is what makes a face recognizable rather than just consistent.",
+  "_familiarity_math": "At ~5 posts/week across 3 presenters, each face appears ~1.7x/week. That is the minimum cadence where viewers start recognizing someone. Adding a 4th or 5th presenter before posting volume rises would drop each below once a week and defeat the purpose.",
+  "presenters": [
+    {
+      "id": "P1",
+      "slot": "early-20s female",
+      "serves_tiers": [
+        "genz"
+      ],
+      "appearance": "Early-to-mid 20s woman, South Asian / Middle Eastern presenting. Long straight dark-brown hair worn down, centre-parted, past the shoulders. Light freckling across the nose and upper cheeks, strong defined brows, dark brown eyes, full lips. Slim build. Warm mid-brown skin tone.",
+      "wardrobe": "Black scoop-neck sleeveless bodysuit, dark indigo jeans with a worn brown leather belt, thick gold chain bracelet.",
+      "default_setting": "Bedroom or small apartment, lamp-lit or daylight through blinds, genuinely lived-in — not styled.",
+      "voice_id_env": "ELEVENLABS_VOICE_ID_P1",
+      "name": "Fox",
+      "source_file": "~/Downloads/Fox V1.png",
+      "reframe_prompt": "Same person, same face, identity unchanged — do not alter the facial structure, skin tone, or features. Reframe as a chest-up portrait: top of frame just above the head, bottom of frame at the sternum. Looking directly into the camera lens, straight on, head level, no tilt. Handheld phone-selfie perspective, roughly 18 inches from the face, at eye level. Photorealistic. Real skin texture — no filter smoothing, no beauty retouching. Natural light only, no studio lighting. Vertical 9:16. Hair worn down and unstyled, slightly imperfect. No makeup. Remove all jewellery. Wearing a plain oversized hoodie or a simple unbranded t-shirt. Background: an ordinary lived-in bedroom, daylight through blinds, not styled or tidied for camera.",
+      "voice_status": "NOT SET — needs a cloned or chosen voice"
+    },
+    {
+      "id": "P2",
+      "slot": "late-20s male",
+      "serves_tiers": [
+        "y2030"
+      ],
+      "appearance": "Late 20s man, East Asian presenting. Short black hair swept back off the forehead, clean-shaven, strong jaw, brown eyes. Lean-muscular build — visibly trains, not bodybuilder-large.",
+      "wardrobe": "Fitted cream short-sleeve tee, taupe pleated wide-leg trousers, dark brown leather belt, oxblood leather loafers, thin silver bracelet and ring.",
+      "default_setting": "Gym floor, gym car park, or a plain kitchen. Daylight, unstyled.",
+      "voice_id_env": "ELEVENLABS_VOICE_ID_P2",
+      "name": "Paget",
+      "source_file": "~/Downloads/paget V1.png",
+      "reframe_prompt": "Same person, same face, identity unchanged — do not alter the facial structure, skin tone, or features. Reframe as a chest-up portrait: top of frame just above the head, bottom of frame at the sternum. Looking directly into the camera lens, straight on, head level, no tilt. Handheld phone-selfie perspective, roughly 18 inches from the face, at eye level. Photorealistic. Real skin texture — no filter smoothing, no beauty retouching. Natural light only, no studio lighting. Vertical 9:16. Hair natural and slightly imperfect, not set. Remove all jewellery. Wearing a plain, slightly worn gym t-shirt, no logos. Background: an ordinary gym floor or a plain kitchen, daylight, unstyled.",
+      "voice_status": "NOT SET — needs a cloned or chosen voice"
+    },
+    {
+      "id": "P3",
+      "slot": "30s–40s female",
+      "serves_tiers": [
+        "parent",
+        "glp1"
+      ],
+      "appearance": "European woman, mid-to-late 30s. Shoulder-length mid-brown hair, centre-parted, worn down and unstyled — not glossy. Hazel-green eyes. Fair skin with real texture: visible pores, slight unevenness, faint marks, under-eye shadow and mild hollowing, fine lines at the eyes, softening jawline. Bare face, no makeup. Slim-to-athletic build.",
+      "wardrobe": "Plain grey marl t-shirt, no jewellery.",
+      "default_setting": "Her own lived-in kitchen — air fryer and paper towel on the counter, dish rack, chopping board, daylight through the window.",
+      "voice_id_env": "ELEVENLABS_VOICE_ID_P3",
+      "name": "Hart",
+      "generate_prompt": "Generate a chest-up portrait: top of frame just above the head, bottom of frame at the sternum. Looking directly into the camera lens, straight on, head level, no tilt. Handheld phone-selfie perspective, roughly 18 inches from the face, at eye level. Photorealistic. Real skin texture — no filter smoothing, no beauty retouching. Natural light only, no studio lighting. Vertical 9:16. Woman in her mid-30s, everyday-real rather than model-polished — genuine skin texture, light under-eye shadow, hair pulled back simply or worn down unstyled. No makeup beyond traces. No jewellery. Wearing a plain t-shirt or a soft everyday top. Background: an ordinary kitchen or living room, weekday daylight, normal and a little cluttered.",
+      "canonical_base_image": "~/Downloads/hart v2.png",
+      "base_image_id": "P3-1",
+      "status": "APPROVED — aged correctly, destyled, correct lipsync framing",
+      "identity_note": "Generated from Hart.png but is now a visually distinct person from that original (blonde -> mid-brown, face materially changed). Treat hart v2 as the sole reference. Do not use Hart.png for this character again.",
+      "expression_note": "Expression is flat, near-passport. Workable since lipsync animates it. If output reads cold, regenerate with: neutral but warm expression, slight ease around the eyes.",
+      "voice_status": "NOT SET — needs a cloned or chosen voice"
+    },
+    {
+      "id": "P4",
+      "slot": "45+ female",
+      "name": "Lotus",
+      "serves_tiers": [
+        "plus45",
+        "lifestage"
+      ],
+      "source_file": "~/Downloads/lotus .png",
+      "appearance": "Black woman, late 40s to 50s. Deep brown skin, warm undertones. Full natural afro with prominent grey through the front and temples. Genuine age markers — forehead and under-eye lines, neck lines, visible skin texture, freckling and hyperpigmentation across the cheeks. Slim through the shoulders and neck. Calm, direct expression.",
+      "wardrobe_as_shot": "Cream and blue striped ruffle-trim top with matching shorts, black leather shoulder bag. Outside an old wooden door on a cobblestone street.",
+      "body_shape": "slim (generated) — specced curvy; see note",
+      "hair_picker": "afro",
+      "voice_id_env": "ELEVENLABS_VOICE_ID_P4",
+      "canonical_base_image": "~/Downloads/lotus V2.png",
+      "base_image_id": "LOTUS-1",
+      "status": "APPROVED — reframed, grey corrected, age markers intact, correct lipsync framing",
+      "wardrobe": "Plain dark charcoal-grey t-shirt, no jewellery.",
+      "default_setting": "Her own lived-in kitchen — wooden cabinets, toaster and utensil pot on the counter, dishes in the rack, daylight through the window.",
+      "voice_status": "NOT SET — needs a cloned or chosen voice"
+    }
+  ],
+  "not_yet_cast": [],
+  "shared_direction": {
+    "camera": "Handheld, phone at arm's length — 18–20 inches from the face, at eye level, never angled up or down. Framed chest-up: top of frame ~2 inches above the head, bottom at sternum. No zoom, no push-in, no deliberate movement — only natural handheld micro-shake, not a gimbal glide. Direct eye contact with the lens by default.",
+    "behaviour": "Eyebrows relaxed and neutral — not the raised 'presenting to camera' default that generation tools produce. Mouth soft between sentences, never held in a static smile. No hand gestures for emphasis beyond what a specific prompt calls for.",
+    "pacing": "Target ~140 wpm, conversational. Maximum gap between sentences 0.4 seconds — added silence is what makes generated output run long and feel unnatural.",
+    "disclosure": "Every video carries on-screen text identifying the presenter as AI-generated, legible, within the first 3 seconds, held 2 seconds. This is not optional and not a stylistic choice."
+  },
+  "compliance_rule": "AI presenters perform demonstration scripts only — second person, present tense, about what the app does. They may never make a first-person claim of having used the app, gotten a result from it, or formed an opinion of it. Those are testimonials, and a testimonial from someone who does not exist is prohibited outright, with or without disclosure. Prompts tagged usage='real-creator-only' are for real people who actually use the app, with an #ad disclosure — never for this cast.",
+  "_source_image_issues": [
+    "Both base images are FULL-BODY or mid-torso. Speak lipsync wants a clear front-facing head-and-shoulders frame. Regenerate each as a chest-up portrait, eyes to lens, before using them as input_image.",
+    "Fox V1 is a mirror selfie with a phone held up covering part of the face, and her gaze is off-lens. Unusable as a lipsync base as-is.",
+    "Fox V1 and Fox V2 are byte-identical duplicates — there is no second variant.",
+    "Neither fills the P3 slot (30s-40s female), which carries 8 of the 24 prompts."
+  ],
+  "_styling_conflict": "Both avatars are styled as fashion/lifestyle influencers — designer-look accessories, gold jewellery, considered outfits, polished settings. The prompt library specifies the opposite throughout: \"unstyled\", \"no makeup\", \"genuinely just-woke-up\", \"gym-casual\", \"normal at-home clothes\", \"not styled for camera\". These two directions contradict each other and one of them has to give. See the note in the hub before generating at volume.",
+  "_identity_rule": "Generate a SET of 3-5 canonical chest-up portraits per presenter — identical face and framing, varied outfit and setting — and reuse those approved files as input_image, rotating between them. Same outfit every video reads as fake; regenerating fresh every video lets the face drift until recognition breaks. A small approved set is the middle ground. Eyeball every render against the others before adding it to the set, and discard any where the face has shifted.",
+  "_wardrobe_variety": {
+    "P1": [
+      "plain oversized hoodie, bedroom",
+      "simple unbranded tee, kitchen",
+      "zip-up over a tank, couch in evening lamp light",
+      "workout top, hallway mirror-free, daylight"
+    ],
+    "P2": [
+      "plain worn gym tee, gym floor",
+      "hoodie, gym car park",
+      "plain tee, kitchen",
+      "long-sleeve, living room evening"
+    ],
+    "P3": [
+      "plain tee, kitchen morning",
+      "soft everyday top, living room",
+      "hoodie, kitchen table evening",
+      "workout top, hallway daylight",
+      "plain tee or hoodie, sitting in the driver seat of a parked car, daylight through the windscreen"
+    ]
+  },
+  "_base_image_map": "Each prompt carries a base_image id naming which approved portrait to use. FOX-n / PAGET-n / P3-n correspond to the numbered variations in _wardrobe_variety. Keep one saved file per id.",
+  "_lotus_notes": [
+    "V2 is the approved canonical base. V1 (full-body, street, minimal grey) is superseded — keep it only as a reference for her overall look.",
+    "Body shape barely reads at chest-up framing. Do not spend generations tuning it for these videos."
+  ],
+  "_reference_standard": "LOTUS-1 (lotus V2.png) is the quality bar for the other three: correct chest-up framing, eyes to lens, unstyled wardrobe, genuinely ordinary setting, real skin texture, properly exposed. Match it.",
+  "_voice_rule": "One voice per presenter, permanently. Set ELEVENLABS_VOICE_ID_P1 through _P4 in backend/.env. Never assign voices per prompt -- the same face with different voices across videos breaks recognition exactly as badly as changing the face. There is deliberately no shared fallback: a missing voice throws rather than silently using the wrong one.",
+  "_voice_constraints": [
+    "DO NOT use the Bella voice (ElevenLabs hpp4J3VqNfWAUOO0d1Us) for any presenter."
+  ],
+  "_stale_config_note": "The old ELEVENLABS_VOICE_ID_PROMPT_1/11/17/18/24/33/42/54 vars in backend/.env.local are dead. They were mapped against the 46-prompt library; positions 33, 42 and 54 no longer exist and the rest point at different scripts. Safe to delete."
+}

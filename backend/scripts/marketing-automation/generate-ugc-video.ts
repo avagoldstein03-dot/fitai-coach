@@ -110,27 +110,27 @@ async function generateAvatarImage(promptObj: any): Promise<string> {
   return imageUrl;
 }
 
-// Voice-per-flagship-prompt: only the specific prompt numbers worth cloning a
-// dedicated voice for get one (ELEVENLABS_VOICE_ID_PROMPT_<n>). Everything
-// else falls back to the single generic ELEVENLABS_VOICE_ID.
-function voiceIdForPrompt(promptNumber: number): string {
-  const promptVar = `ELEVENLABS_VOICE_ID_PROMPT_${promptNumber}`;
-  const promptVoiceId = process.env[promptVar];
-  if (promptVoiceId) return promptVoiceId;
-  if (process.env.ELEVENLABS_VOICE_ID) {
-    console.log(`[elevenlabs] no ${promptVar} set, falling back to generic ELEVENLABS_VOICE_ID`);
-    return process.env.ELEVENLABS_VOICE_ID;
-  }
-  throw new Error(`No voice ID for prompt ${promptNumber} -- set ${promptVar} or a fallback ELEVENLABS_VOICE_ID in backend/.env`);
+// One voice per PRESENTER, never per prompt. Fox appears in 8 videos; a different
+// voice in each would break recognition as badly as changing her face. The voice is
+// part of the character, so it is looked up from the presenter, not the script.
+function voiceIdForPresenter(presenter: string): string {
+  const envVar = `ELEVENLABS_VOICE_ID_${presenter}`;
+  const id = process.env[envVar];
+  if (id) return id;
+  throw new Error(
+    `No voice set for presenter ${presenter}. Add ${envVar} to backend/.env.` +
+    ` Each presenter keeps one voice permanently -- do not fall back to a shared default,` +
+    ` which would give the same face different voices across videos.`
+  );
 }
 
 // Step 2: turn the prompt's `script` field into WAV speech via ElevenLabs,
 // using whichever cloned voice is assigned to this specific prompt number.
 // Speak's input_audio only accepts WAV, so request wav_16000 directly rather
 // than converting from mp3 ourselves.
-async function generateVoiceAudio(promptObj: any, promptNumber: number): Promise<Buffer> {
+async function generateVoiceAudio(promptObj: any): Promise<Buffer> {
   requireEnv(["ELEVENLABS_API_KEY"]);
-  const voiceId = voiceIdForPrompt(promptNumber);
+  const voiceId = voiceIdForPresenter(promptObj.presenter);
 
   const pacing = (promptObj.pacing || "").toLowerCase();
   const fastPaced = /fast|quick|energetic|excited|rapid/.test(pacing);
@@ -255,7 +255,7 @@ async function main() {
     console.log("Avatar image:", imageUrl);
 
     console.log("\n--- Step 2/4: voice audio (ElevenLabs) ---");
-    const audioBuffer = await generateVoiceAudio(promptObj, Number(arg));
+    const audioBuffer = await generateVoiceAudio(promptObj);
 
     console.log("\n--- Step 3/4: hosting audio (S3) ---");
     audioUrl = await uploadBufferToS3(audioBuffer, "marketing-automation/audio", "voice", "audio/wav", "wav");

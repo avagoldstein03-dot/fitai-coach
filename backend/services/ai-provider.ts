@@ -126,13 +126,15 @@ export interface WorkoutGenerationInput {
   specificFocus?: string;
   assessmentSummary?: string;
   injuryHistory?: string;
-  // How the main work of each session is built. "mixed" means every session is
-  // compounds then isolation; "separate" alternates whole heavy days and whole
-  // pump days through the week.
+  // How the main work of each session is built.
+  //   mixed     — every session: compounds then isolation (the default)
+  //   separate  — the week alternates whole heavy days and whole pump days
+  //   compound  — every session is compound lifts only
+  //   isolation — every session is isolation work only
   dayStructure?: DayStructure;
 }
 
-export type DayStructure = "mixed" | "separate";
+export type DayStructure = "mixed" | "separate" | "compound" | "isolation";
 
 export interface MealPlanMeal {
   name: string; // "Breakfast" | "Lunch" | "Dinner" | "Snack"

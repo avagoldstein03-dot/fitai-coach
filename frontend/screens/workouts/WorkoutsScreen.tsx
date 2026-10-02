@@ -160,9 +160,10 @@ export default function WorkoutsScreen() {
     equipment: ["Barbell", "Dumbbells"],
     bodyGoalFocus: "",
     specificFocus: "",
-    // "mixed": every session is compounds then isolation. "separate": the week
-    // alternates whole heavy days and whole pump days.
-    dayStructure: "mixed" as "mixed" | "separate",
+    // mixed: compounds then isolation each session. separate: the week alternates
+    // whole heavy and whole pump days. compound/isolation: every session is one or
+    // the other. Everything but mixed is a paid feature, enforced server-side.
+    dayStructure: "mixed" as "mixed" | "separate" | "compound" | "isolation",
   });
   const { data, isLoading, refetch, isRefetching } = useQuery<HistoryData>({
     queryKey: ["workouts"],
@@ -182,6 +183,18 @@ export default function WorkoutsScreen() {
   });
 
   const goalOptions = BODY_GOAL_OPTIONS[profile?.sex] ?? BODY_GOAL_OPTIONS.default;
+
+  // Session Style beyond "Mixed" is a paid feature. The server enforces that too,
+  // so this only decides whether tapping a locked option opens the upgrade sheet.
+  const { data: subscriptionData } = useQuery({
+    queryKey: ["subscription"],
+    queryFn: async () => {
+      const res = await axios.get(`${API_URL}/api/subscriptions/status`);
+      return res.data.data;
+    },
+    staleTime: 300_000,
+  });
+  const canCustomize = ["starter", "pro", "elite"].includes(subscriptionData?.tier);
 
   useEffect(() => {
     const program = data?.activeProgram;
@@ -852,20 +865,31 @@ export default function WorkoutsScreen() {
               </View>
 
               <Text style={styles.inputLabel}>{t("workouts.session_style")}</Text>
-              <View style={styles.chipRow}>
-                {(["mixed", "separate"] as const).map((s) => (
-                  <TouchableOpacity
-                    key={s}
-                    onPress={() => { Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light); setGenForm((f) => ({ ...f, dayStructure: s })); }}
-                    style={[styles.selectChip, { flex: 1 }, genForm.dayStructure === s && styles.selectChipActive]}
-                    accessibilityRole="button"
-                    accessibilityState={{ selected: genForm.dayStructure === s }}
-                  >
-                    <Text style={[styles.selectChipText, genForm.dayStructure === s && styles.selectChipTextActive]}>
-                      {t(`workouts.style_${s}`)}
-                    </Text>
-                  </TouchableOpacity>
-                ))}
+              <View style={styles.chipWrap}>
+                {(["mixed", "separate", "compound", "isolation"] as const).map((s) => {
+                  const locked = s !== "mixed" && !canCustomize;
+                  const selected = genForm.dayStructure === s;
+                  return (
+                    <TouchableOpacity
+                      key={s}
+                      onPress={() => {
+                        Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
+                        // Free users see what they would get rather than a
+                        // disabled control with no explanation.
+                        if (locked) { presentUpgrade(); return; }
+                        setGenForm((f) => ({ ...f, dayStructure: s }));
+                      }}
+                      style={[styles.selectChip, selected && styles.selectChipActive, locked && styles.selectChipLocked]}
+                      accessibilityRole="button"
+                      accessibilityState={{ selected, disabled: locked }}
+                    >
+                      <Text style={[styles.selectChipText, selected && styles.selectChipTextActive, locked && styles.selectChipTextLocked]}>
+                        {t(`workouts.style_${s}`)}
+                      </Text>
+                      {locked && <Text style={styles.lockedBadge}>{t("workouts.style_locked_badge")}</Text>}
+                    </TouchableOpacity>
+                  );
+                })}
               </View>
               <Text style={styles.inputHint}>{t(`workouts.style_hint_${genForm.dayStructure}`)}</Text>
 
@@ -1217,6 +1241,17 @@ const styles = StyleSheet.create({
   selectChipActive: { backgroundColor: T.accentDark, borderColor: T.accent },
   selectChipText: { color: T.textSecondary, fontSize: 13, fontWeight: "600" },
   selectChipTextActive: { color: T.accent },
+  // A locked option still reads as a real choice — dimming it to the point of
+  // looking broken would hide what upgrading actually buys.
+  selectChipLocked: { borderStyle: "dashed", borderColor: T.border2 },
+  selectChipTextLocked: { color: T.textMuted },
+  lockedBadge: {
+    fontSize: 8,
+    fontWeight: "800",
+    color: T.accent,
+    letterSpacing: 0.5,
+    marginTop: 2,
+  },
   goalList: { gap: 8, marginBottom: 20 },
   goalOption: {
     backgroundColor: T.surface,

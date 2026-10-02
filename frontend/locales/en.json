@@ -933,10 +933,15 @@
     "core_badge": "Core",
     "main_work": "{{count}} Exercises",
     "session_style": "Session Style",
-    "style_mixed": "Every session",
-    "style_hint_mixed": "Each session starts with compound lifts and finishes with isolation work.",
-    "style_separate": "Heavy / pump days",
-    "style_hint_separate": "Alternates whole days — some all compound lifts (heavy, low reps), some all isolation (high reps, short rest)."
+    "style_locked_badge": "PRO",
+    "style_mixed": "Mixed",
+    "style_separate": "Heavy / pump",
+    "style_compound": "All compound",
+    "style_isolation": "All isolation",
+    "style_hint_mixed": "Every workout starts with heavy compound lifts, then finishes with isolation work.",
+    "style_hint_separate": "Whole days of each — some workouts are all heavy lifts, others all isolation, alternating through the week.",
+    "style_hint_compound": "Every workout is compound lifts only. Heavier, lower reps, longer rest.",
+    "style_hint_isolation": "Every workout is isolation work only. Higher reps, shorter rest."
   },
   "supplements": {
     "title": "Supplements",
