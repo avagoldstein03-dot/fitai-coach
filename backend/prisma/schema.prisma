@@ -363,7 +363,12 @@ model WorkoutDay {
   week                  WorkoutWeek            @relation(fields: [weekId], references: [id], onDelete: Cascade)
   
   dayOfWeek             Int                    // 0-6 (Monday-Sunday)
-  
+
+  // Muscle groups this session trains, e.g. "Glutes & Hamstrings". Gives the
+  // generator a split to select exercises against, and the UI something to label
+  // the day with beyond its weekday name.
+  focus                 String?
+
   exercises             Exercise[]
   
   createdAt             DateTime               @default(now())

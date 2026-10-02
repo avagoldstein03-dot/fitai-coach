@@ -107,6 +107,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
             days: {
               create: week.days.map((day) => ({
                 dayOfWeek: day.dayOfWeek,
+                focus: day.focus,
                 exercises: {
                   create: day.exercises.map((ex, position) => ({
                     exerciseName: ex.exerciseName,

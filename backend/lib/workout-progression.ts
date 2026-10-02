@@ -15,8 +15,10 @@ export function expandWeekWithProgression(week1: WorkoutPlanWeek, durationWeeks:
       weekNumber,
       progressionStrategy:
         "Progressive overload — increase working weight roughly 2.5-5% from last week (or add a rep or two per set if a weight increase isn't available), keeping the same exercises and rep ranges.",
+      // Spread the day rather than naming its fields: listing them explicitly
+      // silently dropped `focus` from every week after the first.
       days: week1.days.map((day) => ({
-        dayOfWeek: day.dayOfWeek,
+        ...day,
         exercises: day.exercises.map((exercise) => ({
           ...exercise,
           notes: exercise.notes

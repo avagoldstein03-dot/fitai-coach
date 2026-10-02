@@ -72,6 +72,10 @@ export interface WorkoutPlanExercise {
 
 export interface WorkoutPlanDay {
   dayOfWeek: number; // 0-6
+  // The muscle groups this session trains, e.g. "Glutes & Hamstrings" or
+  // "Back & Biceps". Without it the model had no split to anchor selection to
+  // and produced days mixing four unrelated body parts.
+  focus?: string;
   exercises: WorkoutPlanExercise[];
 }
 

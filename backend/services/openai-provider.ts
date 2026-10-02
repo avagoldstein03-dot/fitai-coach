@@ -236,6 +236,7 @@ Return ONLY valid JSON with no markdown, structured exactly like this:
     "days": [
       {
         "dayOfWeek": 0,
+        "focus": "Glutes & Hamstrings",
         "exercises": [
           { "exerciseName": "Barbell Back Squat", "sets": 4, "reps": "6-8", "restSeconds": 90, "notes": "optional coaching cue", "category": "strength", "movementType": "compound", "isPriority": true }
         ]
@@ -246,7 +247,12 @@ Return ONLY valid JSON with no markdown, structured exactly like this:
 
 The week must have exactly ${userProfile.daysPerWeek} day entries (dayOfWeek values 0-6 for Monday-Sunday, spread sensibly with rest days between sessions).
 
-Each day must have exactly 4-5 exercises, chosen so that together they hit all the major muscle groups intended for that day's focus — prioritize balanced, non-redundant coverage and exercise selection that matches the client's stated goal over cramming in extra exercises. Tag each exercise's "category" as one of "strength", "cardio", or "mobility".
+SPLIT — decide this first, before choosing any exercise.
+Give every day a "focus" naming the muscle groups it trains, e.g. "Glutes & Hamstrings", "Back & Biceps", "Chest & Triceps", "Upper Body", "Legs & Core". Choose a coherent split for ${userProfile.daysPerWeek} days a week — commonly full-body for 3, upper/lower for 4, push/pull/legs plus an upper/lower for 5, push/pull/legs twice for 6 — and give the muscle group the client's goal is about 2-3 of those sessions rather than one.
+
+Every exercise on a day must train that day's stated focus. A squat belongs on a leg or glute day, never on a back day; a chest press belongs on a push or upper day, never on a leg day. One core or mobility finisher at the end of a session is fine on any day. Do not assemble a day from unrelated body parts — four exercises hitting legs, chest, hamstrings and rear delts in one session is wrong, however good each exercise is on its own.
+
+Each day must have exactly 4-5 exercises, chosen so that together they cover that day's focus well — prioritize balanced, non-redundant coverage and exercise selection that matches the client's stated goal over cramming in extra exercises. Tag each exercise's "category" as one of "strength", "cardio", or "mobility".
 
 Label every exercise with two more fields, which decide the order it is performed in:
 - "movementType": "compound" for multi-joint lifts (squat, deadlift, hip thrust, press, row, pull-up, lunge, leg press), "isolation" for single-joint work (curl, extension, lateral raise, kickback, calf raise).

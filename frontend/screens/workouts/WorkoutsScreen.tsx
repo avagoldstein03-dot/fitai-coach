@@ -39,6 +39,7 @@ interface Exercise {
 interface WorkoutDay {
   id: string;
   dayOfWeek: number;
+  focus?: string | null; // muscle groups this session trains, e.g. "Glutes & Hamstrings"
   exercises: Exercise[];
 }
 
@@ -467,7 +468,9 @@ export default function WorkoutsScreen() {
               <View style={styles.exerciseList}>
                 <View style={styles.exercisesHeaderRow}>
                   <Text style={styles.exercisesHeader}>
-                    {t("workouts.exercises_header", { count: currentDay.exercises.length })}
+                    {currentDay.focus
+                      ? currentDay.focus.toUpperCase()
+                      : t("workouts.exercises_header", { count: currentDay.exercises.length })}
                   </Text>
                   {loggedExIds.length > 0 && (
                     <Text style={styles.exercisesProgress}>
