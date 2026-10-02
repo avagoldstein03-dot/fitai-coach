@@ -160,9 +160,9 @@ export default function WorkoutsScreen() {
     equipment: ["Barbell", "Dumbbells"],
     bodyGoalFocus: "",
     specificFocus: "",
-    // "mixed" is normal training. The other two are for people who want heavy
-    // days and pump days kept separate rather than every session the same shape.
-    dayStructure: "mixed" as "mixed" | "compound" | "isolation",
+    // "mixed": every session is compounds then isolation. "separate": the week
+    // alternates whole heavy days and whole pump days.
+    dayStructure: "mixed" as "mixed" | "separate",
   });
   const { data, isLoading, refetch, isRefetching } = useQuery<HistoryData>({
     queryKey: ["workouts"],
@@ -853,7 +853,7 @@ export default function WorkoutsScreen() {
 
               <Text style={styles.inputLabel}>{t("workouts.session_style")}</Text>
               <View style={styles.chipRow}>
-                {(["mixed", "compound", "isolation"] as const).map((s) => (
+                {(["mixed", "separate"] as const).map((s) => (
                   <TouchableOpacity
                     key={s}
                     onPress={() => { Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light); setGenForm((f) => ({ ...f, dayStructure: s })); }}

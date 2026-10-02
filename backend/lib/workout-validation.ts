@@ -1,5 +1,5 @@
 import type { WorkoutPlanDay, WorkoutPlanWeek, WorkoutPlanExercise } from "@/services/ai-provider";
-import { musclesFor, musclesForFocus } from "@/lib/exercise-muscles";
+import { musclesFor, musclesForFocus, normalizeMuscles, type MuscleGroup } from "@/lib/exercise-muscles";
 
 /**
  * Checks a generated week against the rules the prompt asks for.
@@ -28,18 +28,55 @@ const isMobility = (ex: WorkoutPlanExercise) => (ex.category ?? "").toLowerCase(
 export const isMainWork = (ex: WorkoutPlanExercise) => !isCore(ex) && !isMobility(ex);
 
 /**
- * Whether an exercise trains anything the day's focus covers.
+ * Muscle groups an exercise trains.
  *
- * Unrecognised names pass: the mapping is keyword-based and will not know every
- * exercise, and rejecting an unknown name would throw away good training over a
- * gap in a lookup table.
+ * The generator declares these, which is what makes validation work for
+ * exercises no keyword table happens to list. The keyword map is kept as a
+ * cross-check rather than the source of truth: where it recognises the name it
+ * wins, so a squat declared as training "back" is still caught. Where it does
+ * not, the declared list is used.
  */
-export function exerciseFitsFocus(ex: WorkoutPlanExercise, focus: string | undefined | null): boolean {
-  const focusMuscles = musclesForFocus(focus);
-  if (!focusMuscles.length) return true; // no usable focus to check against
-  const exerciseMuscles = musclesFor(ex.exerciseName);
-  if (!exerciseMuscles.length) return true; // unrecognised exercise
+export function effectiveMuscles(ex: WorkoutPlanExercise): MuscleGroup[] {
+  const known = musclesFor(ex.exerciseName);
+  if (known.length) return known;
+  return normalizeMuscles(ex.muscles);
+}
+
+/** Muscle groups a day covers — the declared list, or the prose label parsed. */
+export function effectiveFocusMuscles(day: Pick<WorkoutPlanDay, "focus" | "focusMuscles">): MuscleGroup[] {
+  const declared = normalizeMuscles(day.focusMuscles);
+  if (declared.length) return declared;
+  return musclesForFocus(day.focus);
+}
+
+/**
+ * Whether an exercise trains anything the day covers.
+ *
+ * Still permissive in one case only: when neither the generator nor the keyword
+ * map can say what an exercise trains, it passes rather than being rejected on
+ * no evidence.
+ */
+export function exerciseFitsFocus(
+  ex: WorkoutPlanExercise,
+  day: Pick<WorkoutPlanDay, "focus" | "focusMuscles"> | string | undefined | null
+): boolean {
+  const dayRef = typeof day === "string" || day == null ? { focus: day ?? undefined } : day;
+  const focusMuscles = effectiveFocusMuscles(dayRef);
+  if (!focusMuscles.length) return true; // nothing to check against
+  const exerciseMuscles = effectiveMuscles(ex);
+  if (!exerciseMuscles.length) return true; // no evidence either way
   return exerciseMuscles.some((m) => focusMuscles.includes(m));
+}
+
+/**
+ * Whether the generator's declared muscles contradict what the exercise
+ * actually trains. Catches a mislabel used to slip past the focus check.
+ */
+export function declaredMusclesAreWrong(ex: WorkoutPlanExercise): boolean {
+  const known = musclesFor(ex.exerciseName);
+  const declared = normalizeMuscles(ex.muscles);
+  if (!known.length || !declared.length) return false;
+  return !declared.some((m) => known.includes(m));
 }
 
 export function validateDay(day: WorkoutPlanDay): ValidationProblem[] {
@@ -63,9 +100,15 @@ export function validateDay(day: WorkoutPlanDay): ValidationProblem[] {
   }
 
   for (const ex of main) {
-    if (!exerciseFitsFocus(ex, day.focus)) {
+    if (declaredMusclesAreWrong(ex)) {
       at(
-        `"${ex.exerciseName}" does not train ${day.focus} — it works ${musclesFor(ex.exerciseName).join(", ")}. Replace it with an exercise for that day's focus, or move it to the day it belongs on.`
+        `"${ex.exerciseName}" is labelled as training ${normalizeMuscles(ex.muscles).join(", ")}, but it trains ${musclesFor(ex.exerciseName).join(", ")}. Label exercises accurately.`
+      );
+      continue; // the focus check below would be meaningless on a bad label
+    }
+    if (!exerciseFitsFocus(ex, day)) {
+      at(
+        `"${ex.exerciseName}" does not train ${day.focus} — it works ${effectiveMuscles(ex).join(", ")}. Replace it with an exercise for that day's focus, or move it to the day it belongs on.`
       );
     }
   }

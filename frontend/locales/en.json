@@ -933,12 +933,10 @@
     "core_badge": "Core",
     "main_work": "{{count}} Exercises",
     "session_style": "Session Style",
-    "style_mixed": "Mixed",
-    "style_compound": "Compound only",
-    "style_isolation": "Isolation only",
-    "style_hint_mixed": "Heavy lifts first, isolation work after — normal training.",
-    "style_hint_compound": "Only multi-joint lifts. Heavier, lower reps.",
-    "style_hint_isolation": "Only single-joint work. Higher reps, shorter rest."
+    "style_mixed": "Every session",
+    "style_hint_mixed": "Each session starts with compound lifts and finishes with isolation work.",
+    "style_separate": "Heavy / pump days",
+    "style_hint_separate": "Alternates whole days — some all compound lifts (heavy, low reps), some all isolation (high reps, short rest)."
   },
   "supplements": {
     "title": "Supplements",

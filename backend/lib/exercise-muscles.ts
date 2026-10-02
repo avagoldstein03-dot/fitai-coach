@@ -12,11 +12,29 @@
  * contain ("curl") would otherwise catch.
  */
 
-export type MuscleGroup =
-  | "chest" | "shoulders" | "triceps" | "biceps" | "forearms"
-  | "back" | "lats" | "traps" | "lower back"
-  | "quads" | "hamstrings" | "glutes" | "calves" | "adductors" | "abductors"
-  | "abs" | "obliques" | "cardio";
+export const MUSCLE_GROUPS = [
+  "chest", "shoulders", "triceps", "biceps", "forearms",
+  "back", "lats", "traps", "lower back",
+  "quads", "hamstrings", "glutes", "calves", "adductors", "abductors",
+  "abs", "obliques", "cardio",
+] as const;
+
+export type MuscleGroup = (typeof MUSCLE_GROUPS)[number];
+
+const MUSCLE_SET = new Set<string>(MUSCLE_GROUPS);
+
+/** Keeps only values from the canonical vocabulary, so a model-invented group
+ *  ("posterior chain", "core stability") cannot quietly satisfy validation. */
+export function normalizeMuscles(input: unknown): MuscleGroup[] {
+  if (!Array.isArray(input)) return [];
+  const out = new Set<MuscleGroup>();
+  for (const raw of input) {
+    if (typeof raw !== "string") continue;
+    const m = raw.trim().toLowerCase();
+    if (MUSCLE_SET.has(m)) out.add(m as MuscleGroup);
+  }
+  return [...out];
+}
 
 interface Rule { keywords: string[]; muscles: MuscleGroup[] }
 
@@ -24,6 +42,9 @@ const RULES: Rule[] = [
   // Specific phrases first — "leg curl" must not be read as a biceps curl, and
   // "face pull" must not be read as a pull-up.
   { keywords: ["leg curl", "hamstring curl", "lying curl", "nordic"], muscles: ["hamstrings"] },
+  // Named before the general "curl" rule: a Jefferson curl is spinal flexion,
+  // not a biceps exercise, and the generic rule gets it exactly wrong.
+  { keywords: ["jefferson curl"], muscles: ["lower back", "hamstrings"] },
   { keywords: ["leg extension", "knee extension"], muscles: ["quads"] },
   { keywords: ["calf raise", "calf press", "heel raise"], muscles: ["calves"] },
   { keywords: ["face pull"], muscles: ["shoulders", "back"] },

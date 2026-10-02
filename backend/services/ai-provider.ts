@@ -68,6 +68,11 @@ export interface WorkoutPlanExercise {
   // a missing isPriority simply means the exercise does not lead the session.
   movementType?: "compound" | "isolation";
   isPriority?: boolean; // directly serves the client's stated body-goal focus
+  // Muscle groups this exercise trains, declared by the generator from the
+  // canonical vocabulary in lib/exercise-muscles. Validation uses these so an
+  // exercise no keyword table happens to know can still be checked against the
+  // day it was put on.
+  muscles?: string[];
 }
 
 export interface WorkoutPlanDay {
@@ -76,6 +81,10 @@ export interface WorkoutPlanDay {
   // "Back & Biceps". Without it the model had no split to anchor selection to
   // and produced days mixing four unrelated body parts.
   focus?: string;
+  // The same thing as machine-readable muscle groups. The label is prose and
+  // has to be parsed; this does not, so validation never has to guess what
+  // "Upper Body - Push" covers.
+  focusMuscles?: string[];
   exercises: WorkoutPlanExercise[];
 }
 
@@ -117,13 +126,13 @@ export interface WorkoutGenerationInput {
   specificFocus?: string;
   assessmentSummary?: string;
   injuryHistory?: string;
-  // How the main work of each session is built. "mixed" is normal training;
-  // the other two are for people who deliberately want heavy days and pump days
-  // separated rather than every session following the same shape.
+  // How the main work of each session is built. "mixed" means every session is
+  // compounds then isolation; "separate" alternates whole heavy days and whole
+  // pump days through the week.
   dayStructure?: DayStructure;
 }
 
-export type DayStructure = "mixed" | "compound" | "isolation";
+export type DayStructure = "mixed" | "separate";
 
 export interface MealPlanMeal {
   name: string; // "Breakfast" | "Lunch" | "Dinner" | "Snack"

@@ -3,6 +3,7 @@ import { buildTierGatingPrompt } from "@/lib/coach-tier-prompt";
 import { COACH_ACTIONS_PROMPT } from "@/lib/coach-actions";
 import { expandWeekWithProgression } from "@/lib/workout-progression";
 import { orderWeek } from "@/lib/workout-ordering";
+import { MUSCLE_GROUPS } from "@/lib/exercise-muscles";
 import { validateWeek, describeProblems } from "@/lib/workout-validation";
 import { expandDaysWithRotation } from "@/lib/meal-plan-rotation";
 import type {
@@ -238,9 +239,10 @@ Return ONLY valid JSON with no markdown, structured exactly like this:
       {
         "dayOfWeek": 0,
         "focus": "Glutes & Hamstrings",
+        "focusMuscles": ["glutes", "hamstrings"],
         "exercises": [
-          { "exerciseName": "Barbell Back Squat", "sets": 4, "reps": "6-8", "restSeconds": 90, "notes": "optional coaching cue", "category": "strength", "movementType": "compound", "isPriority": true },
-          { "exerciseName": "Hanging Leg Raise", "sets": 3, "reps": "10-12", "restSeconds": 30, "notes": "part of the ab circuit", "category": "core", "movementType": "isolation", "isPriority": false }
+          { "exerciseName": "Barbell Back Squat", "sets": 4, "reps": "6-8", "restSeconds": 90, "notes": "optional coaching cue", "category": "strength", "movementType": "compound", "isPriority": true, "muscles": ["quads", "glutes", "hamstrings"] },
+          { "exerciseName": "Hanging Leg Raise", "sets": 3, "reps": "10-12", "restSeconds": 30, "notes": "part of the ab circuit", "category": "core", "movementType": "isolation", "isPriority": false, "muscles": ["abs"] }
         ]
       }
     ]
@@ -249,8 +251,10 @@ Return ONLY valid JSON with no markdown, structured exactly like this:
 
 The week must have exactly ${userProfile.daysPerWeek} day entries (dayOfWeek values 0-6 for Monday-Sunday, spread sensibly so rest falls between sessions). Only include days the client actually trains — do not add a rest or recovery entry, and never return a day with an empty exercise list.
 
+MUSCLE GROUPS — use only these exact words, in "muscles" on every exercise and "focusMuscles" on every day: ${MUSCLE_GROUPS.join(", ")}. Do not invent others ("posterior chain", "core stability" and the like are not valid). "muscles" lists what that exercise actually trains, and must be accurate — a squat is quads/glutes/hamstrings even on a day focused elsewhere.
+
 SPLIT — decide this first, before choosing any exercise.
-Give every day a "focus" naming the muscle groups it trains, e.g. "Glutes & Hamstrings", "Back & Biceps", "Chest & Triceps", "Upper Body", "Legs & Core". Choose a coherent split for ${userProfile.daysPerWeek} days a week — commonly full-body for 3, upper/lower for 4, push/pull/legs plus an upper/lower for 5, push/pull/legs twice for 6 — and give the muscle group the client's goal is about 2-3 of those sessions rather than one.
+Give every day a "focus" naming the muscle groups it trains, e.g. "Glutes & Hamstrings", "Back & Biceps", "Chest & Triceps", "Upper Body", "Legs & Core", and a "focusMuscles" list saying the same thing in the vocabulary above. Choose a coherent split for ${userProfile.daysPerWeek} days a week — commonly full-body for 3, upper/lower for 4, push/pull/legs plus an upper/lower for 5, push/pull/legs twice for 6 — and give the muscle group the client's goal is about 2-3 of those sessions rather than one.
 
 Every exercise on a day must train that day's stated focus. A squat belongs on a leg or glute day, never on a back day; a chest press belongs on a push or upper day, never on a leg day. One core or mobility finisher at the end of a session is fine on any day. Do not assemble a day from unrelated body parts — four exercises hitting legs, chest, hamstrings and rear delts in one session is wrong, however good each exercise is on its own.
 
@@ -258,11 +262,15 @@ SESSION LENGTH — each day has two parts.
 
 Main work: exactly 5 exercises that train the day's stated focus, tagged "category": "strength" (or "cardio" where a conditioning piece genuinely fits the focus). All 5 must be real training for that focus. Do not count an ab or core movement toward these 5 — a day of three lifts and a plank is not a full session.
 ${
-  userProfile.dayStructure === "compound"
-    ? `All 5 must be compound, multi-joint lifts — squats, hinges, presses, rows, pull-ups, lunges, hip thrusts. No isolation work in the main block at all. Use heavier loading and lower rep ranges to match.`
-    : userProfile.dayStructure === "isolation"
-      ? `All 5 must be single-joint isolation exercises — curls, extensions, raises, flyes, kickbacks, leg curls. No compound lifts in the main block at all. Use higher rep ranges and shorter rest to match.`
-      : `Lead with compound lifts and finish with isolation work — roughly 2-3 compounds then 2-3 isolation exercises.`
+  userProfile.dayStructure === "separate"
+    ? `Build each day as EITHER a heavy day or a pump day, alternating through the week so consecutive sessions are not the same shape.
+
+A heavy day: all 5 main exercises are compound, multi-joint lifts — squats, hinges, presses, rows, pull-ups, lunges, hip thrusts — with heavier loading and lower reps (4-8) and longer rest (90-150s). No isolation work in the main block.
+
+A pump day: all 5 main exercises are single-joint isolation work — curls, extensions, raises, flyes, kickbacks, leg curls — with higher reps (12-20) and shorter rest (30-60s). No compound lifts in the main block.
+
+Say which a day is in its "focus", e.g. "Glutes & Hamstrings - Heavy" or "Arms & Shoulders - Pump". Give the client's priority muscle group at least one of each.`
+    : `Lead with compound lifts and finish with isolation work — roughly 2-3 compounds then 2-3 isolation exercises.`
 }
 
 Ab circuit: then 2-3 core exercises, each tagged "category": "core", with short rest (30-45 seconds) so they read as a circuit rather than straight sets. Vary them — a brace, a flexion movement and a rotation or anti-rotation, not three variations of the same crunch. Every day gets a core circuit.

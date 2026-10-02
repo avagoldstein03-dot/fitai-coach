@@ -1,4 +1,4 @@
-import { validateDay, validateWeek, exerciseFitsFocus, describeProblems } from "./workout-validation";
+import { validateDay, validateWeek, exerciseFitsFocus, effectiveMuscles, declaredMusclesAreWrong, describeProblems } from "./workout-validation";
 import { musclesFor, musclesForFocus } from "./exercise-muscles";
 import type { WorkoutPlanExercise, WorkoutPlanDay } from "@/services/ai-provider";
 
@@ -70,10 +70,58 @@ describe("exerciseFitsFocus", () => {
     expect(exerciseFitsFocus(ex("Chest Press Machine"), "Glutes & Quads")).toBe(false);
   });
   it("lets an unrecognised exercise through rather than guessing", () => {
-    expect(exerciseFitsFocus(ex("Jefferson Curl Variation Thing"), "Back & Biceps")).toBe(true);
+    expect(exerciseFitsFocus(ex("Zercher Hold Variation"), "Back & Biceps")).toBe(true);
   });
   it("lets anything through when the focus is unusable", () => {
     expect(exerciseFitsFocus(ex("Barbell Back Squat"), "Day One")).toBe(true);
+  });
+
+  it("validates an unknown exercise from its declared muscles", () => {
+    const unknown = ex("Zercher Hold Variation", { muscles: ["quads", "glutes"] });
+    // The keyword map has never heard of it, but the declared muscles are enough.
+    expect(exerciseFitsFocus(unknown, { focus: "Back & Biceps" })).toBe(false);
+    expect(exerciseFitsFocus(unknown, { focus: "Glutes & Quads" })).toBe(true);
+  });
+
+  it("prefers declared focusMuscles over parsing the prose label", () => {
+    const day = { focus: "Day One", focusMuscles: ["back", "lats"] };
+    expect(exerciseFitsFocus(ex("Barbell Back Squat"), day)).toBe(false);
+    expect(exerciseFitsFocus(ex("Seated Cable Row"), day)).toBe(true);
+  });
+
+  it("ignores an invented muscle group", () => {
+    const bogus = ex("Some New Lift", { muscles: ["posterior chain", "core stability"] });
+    // Nothing usable survives normalisation, so it passes on no evidence rather
+    // than being validated against a made-up vocabulary.
+    expect(exerciseFitsFocus(bogus, { focus: "Back & Biceps" })).toBe(true);
+    expect(effectiveMuscles(bogus)).toEqual([]);
+  });
+});
+
+describe("effectiveMuscles", () => {
+  it("trusts the keyword map over a declared label", () => {
+    const lying = ex("Barbell Back Squat", { muscles: ["back", "lats"] });
+    expect(effectiveMuscles(lying)).toEqual(expect.arrayContaining(["quads", "glutes"]));
+    expect(effectiveMuscles(lying)).not.toContain("lats");
+  });
+
+  it("falls back to the declared list for an unknown exercise", () => {
+    expect(effectiveMuscles(ex("Zercher Something", { muscles: ["quads"] }))).toEqual(["quads"]);
+  });
+});
+
+describe("declaredMusclesAreWrong", () => {
+  it("catches a squat labelled as a back exercise", () => {
+    expect(declaredMusclesAreWrong(ex("Barbell Back Squat", { muscles: ["back", "lats"] }))).toBe(true);
+  });
+
+  it("accepts a correct label", () => {
+    expect(declaredMusclesAreWrong(ex("Barbell Back Squat", { muscles: ["quads"] }))).toBe(false);
+  });
+
+  it("says nothing when there is no label or no known mapping", () => {
+    expect(declaredMusclesAreWrong(ex("Barbell Back Squat"))).toBe(false);
+    expect(declaredMusclesAreWrong(ex("Zercher Something", { muscles: ["quads"] }))).toBe(false);
   });
 });
 
@@ -95,6 +143,34 @@ describe("validateDay", () => {
     expect(problems).toHaveLength(1);
     expect(problems[0].message).toContain("Barbell Back Squat");
     expect(problems[0].message).toContain("does not train Back & Biceps");
+  });
+
+  it("flags a mislabelled exercise rather than letting the label excuse it", () => {
+    const day = goodDay({
+      focus: "Back & Biceps",
+      exercises: [
+        ex("Pull-Up"), ex("Bent-Over Row"), ex("Seated Cable Row"), ex("Dumbbell Curl"),
+        // Declaring "back" would otherwise make a squat pass the focus check.
+        ex("Barbell Back Squat", { muscles: ["back", "lats"] }),
+        core("Plank"), core("Russian Twist"),
+      ],
+    });
+    const problems = validateDay(day);
+    expect(problems).toHaveLength(1);
+    expect(problems[0].message).toContain("is labelled as training");
+  });
+
+  it("accepts an unfamiliar exercise whose declared muscles fit the day", () => {
+    const day = goodDay({
+      focus: "Glutes & Hamstrings",
+      exercises: [
+        ex("Barbell Hip Thrust"), ex("Romanian Deadlift"), ex("Cable Pull-Through"),
+        ex("Seated Leg Curl"),
+        ex("Reverse Hyper Machine", { muscles: ["glutes", "hamstrings"] }),
+        core("Plank"), core("Russian Twist"),
+      ],
+    });
+    expect(validateDay(day)).toEqual([]);
   });
 
   it("flags a day with only four main exercises — the reported complaint", () => {
