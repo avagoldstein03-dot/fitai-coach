@@ -117,7 +117,13 @@ export interface WorkoutGenerationInput {
   specificFocus?: string;
   assessmentSummary?: string;
   injuryHistory?: string;
+  // How the main work of each session is built. "mixed" is normal training;
+  // the other two are for people who deliberately want heavy days and pump days
+  // separated rather than every session following the same shape.
+  dayStructure?: DayStructure;
 }
+
+export type DayStructure = "mixed" | "compound" | "isolation";
 
 export interface MealPlanMeal {
   name: string; // "Breakfast" | "Lunch" | "Dinner" | "Snack"

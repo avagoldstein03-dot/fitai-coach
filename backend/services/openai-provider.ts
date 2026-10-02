@@ -3,6 +3,7 @@ import { buildTierGatingPrompt } from "@/lib/coach-tier-prompt";
 import { COACH_ACTIONS_PROMPT } from "@/lib/coach-actions";
 import { expandWeekWithProgression } from "@/lib/workout-progression";
 import { orderWeek } from "@/lib/workout-ordering";
+import { validateWeek, describeProblems } from "@/lib/workout-validation";
 import { expandDaysWithRotation } from "@/lib/meal-plan-rotation";
 import type {
   AIProvider,
@@ -256,6 +257,13 @@ Every exercise on a day must train that day's stated focus. A squat belongs on a
 SESSION LENGTH — each day has two parts.
 
 Main work: exactly 5 exercises that train the day's stated focus, tagged "category": "strength" (or "cardio" where a conditioning piece genuinely fits the focus). All 5 must be real training for that focus. Do not count an ab or core movement toward these 5 — a day of three lifts and a plank is not a full session.
+${
+  userProfile.dayStructure === "compound"
+    ? `All 5 must be compound, multi-joint lifts — squats, hinges, presses, rows, pull-ups, lunges, hip thrusts. No isolation work in the main block at all. Use heavier loading and lower rep ranges to match.`
+    : userProfile.dayStructure === "isolation"
+      ? `All 5 must be single-joint isolation exercises — curls, extensions, raises, flyes, kickbacks, leg curls. No compound lifts in the main block at all. Use higher rep ranges and shorter rest to match.`
+      : `Lead with compound lifts and finish with isolation work — roughly 2-3 compounds then 2-3 isolation exercises.`
+}
 
 Ab circuit: then 2-3 core exercises, each tagged "category": "core", with short rest (30-45 seconds) so they read as a circuit rather than straight sets. Vary them — a brace, a flexion movement and a rotation or anti-rotation, not three variations of the same crunch. Every day gets a core circuit.
 
@@ -291,15 +299,58 @@ Order each day so the client does the heaviest work for their stated goal while 
       messages: [{ role: "user", content: prompt }],
     });
 
-    const parsed = parseJsonCompletion<{ coachNote: string; week: WorkoutPlanResult["weeks"][0] }>(
+    let parsed = parseJsonCompletion<{ coachNote: string; week: WorkoutPlanResult["weeks"][0] }>(
       response,
       "workout program"
     );
     // The prompt asks for training order, but asking is not the same as getting
-    // it, so the order is enforced here before the week is expanded.
+    // it, so the order is enforced here, along with the ab circuit, before the
+    // week is checked.
+    let week = orderWeek(parsed.week);
+    let problems = validateWeek(week, userProfile.daysPerWeek);
+
+    // One retry, with the specific failures handed back. The model is good at
+    // fixing a named mistake and poor at avoiding it unprompted — a squat on a
+    // back day, four main exercises instead of five, a stray empty rest day.
+    if (problems.length) {
+      console.warn(
+        "Workout generation failed validation, retrying:",
+        problems.map((p) => p.message)
+      );
+      const retry = await openai.chat.completions.create({
+        model: "gpt-4o",
+        response_format: { type: "json_object" },
+        max_tokens: workoutMaxTokens,
+        messages: [
+          { role: "user", content: prompt },
+          { role: "assistant", content: response.choices[0].message.content ?? "" },
+          { role: "user", content: describeProblems(problems) },
+        ],
+      });
+      const reparsed = parseJsonCompletion<{ coachNote: string; week: WorkoutPlanResult["weeks"][0] }>(
+        retry,
+        "workout program"
+      );
+      const retryWeek = orderWeek(reparsed.week);
+      const retryProblems = validateWeek(retryWeek, userProfile.daysPerWeek);
+      // Keep whichever attempt is closer to correct rather than assuming the
+      // second is better — occasionally the retry fixes one thing and breaks another.
+      if (retryProblems.length <= problems.length) {
+        parsed = reparsed;
+        week = retryWeek;
+        problems = retryProblems;
+      }
+      if (problems.length) {
+        console.warn(
+          "Workout generation still imperfect after retry:",
+          problems.map((p) => p.message)
+        );
+      }
+    }
+
     return {
       coachNote: parsed.coachNote,
-      weeks: expandWeekWithProgression(orderWeek(parsed.week), userProfile.durationWeeks),
+      weeks: expandWeekWithProgression(week, userProfile.durationWeeks),
     };
   }
 

@@ -931,7 +931,14 @@
     "exercise_meta": "{{sets}} sets × {{reps}} reps · {{rest}}s rest",
     "ab_circuit": "Ab Circuit",
     "core_badge": "Core",
-    "main_work": "{{count}} Exercises"
+    "main_work": "{{count}} Exercises",
+    "session_style": "Session Style",
+    "style_mixed": "Mixed",
+    "style_compound": "Compound only",
+    "style_isolation": "Isolation only",
+    "style_hint_mixed": "Heavy lifts first, isolation work after — normal training.",
+    "style_hint_compound": "Only multi-joint lifts. Heavier, lower reps.",
+    "style_hint_isolation": "Only single-joint work. Higher reps, shorter rest."
   },
   "supplements": {
     "title": "Supplements",

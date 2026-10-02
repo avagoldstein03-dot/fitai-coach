@@ -43,6 +43,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       durationWeeks = 4,
       bodyGoalFocus,
       specificFocus,
+      dayStructure,
     } = req.body;
 
     // Persist the goal-focus answers so they don't need to be re-asked next time
@@ -81,6 +82,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       specificFocus: specificFocus ?? user.goal?.specificFocus ?? undefined,
       assessmentSummary: latestAssessment?.summary ?? undefined,
       injuryHistory: user.injuryHistory?.trim().slice(0, MAX_INJURY_LENGTH) || undefined,
+      // Only accept the three known values; anything else falls back to normal training.
+      dayStructure: ["compound", "isolation"].includes(dayStructure) ? dayStructure : "mixed",
     });
 
     // Deactivate any current active program

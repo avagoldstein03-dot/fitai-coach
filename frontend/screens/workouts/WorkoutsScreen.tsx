@@ -160,6 +160,9 @@ export default function WorkoutsScreen() {
     equipment: ["Barbell", "Dumbbells"],
     bodyGoalFocus: "",
     specificFocus: "",
+    // "mixed" is normal training. The other two are for people who want heavy
+    // days and pump days kept separate rather than every session the same shape.
+    dayStructure: "mixed" as "mixed" | "compound" | "isolation",
   });
   const { data, isLoading, refetch, isRefetching } = useQuery<HistoryData>({
     queryKey: ["workouts"],
@@ -209,6 +212,7 @@ export default function WorkoutsScreen() {
         durationWeeks: 4,
         bodyGoalFocus: genForm.bodyGoalFocus || undefined,
         specificFocus: genForm.specificFocus.trim() || undefined,
+        dayStructure: genForm.dayStructure,
       });
       return res.data;
     },
@@ -847,6 +851,24 @@ export default function WorkoutsScreen() {
                 ))}
               </View>
 
+              <Text style={styles.inputLabel}>{t("workouts.session_style")}</Text>
+              <View style={styles.chipRow}>
+                {(["mixed", "compound", "isolation"] as const).map((s) => (
+                  <TouchableOpacity
+                    key={s}
+                    onPress={() => { Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light); setGenForm((f) => ({ ...f, dayStructure: s })); }}
+                    style={[styles.selectChip, { flex: 1 }, genForm.dayStructure === s && styles.selectChipActive]}
+                    accessibilityRole="button"
+                    accessibilityState={{ selected: genForm.dayStructure === s }}
+                  >
+                    <Text style={[styles.selectChipText, genForm.dayStructure === s && styles.selectChipTextActive]}>
+                      {t(`workouts.style_${s}`)}
+                    </Text>
+                  </TouchableOpacity>
+                ))}
+              </View>
+              <Text style={styles.inputHint}>{t(`workouts.style_hint_${genForm.dayStructure}`)}</Text>
+
               <Text style={styles.inputLabel}>{t("workouts.equipment")}</Text>
               <View style={styles.chipWrap}>
                 {EQUIPMENT_OPTIONS.map((eq) => {
@@ -1146,6 +1168,9 @@ const styles = StyleSheet.create({
 
   inputGroup: { marginBottom: 14 },
   inputLabel: { fontSize: 12, color: T.textSecondary, fontWeight: "600", marginBottom: 6, textTransform: "uppercase", letterSpacing: 0.4 },
+  // Explains what the selected session style actually does, so the choice is not
+  // three words with no consequence attached.
+  inputHint: { fontSize: 12, color: T.textMuted, marginTop: 8, marginBottom: 4, lineHeight: 17 },
   input: {
     backgroundColor: T.surface,
     borderWidth: 1,
