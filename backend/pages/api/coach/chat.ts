@@ -149,6 +149,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       age: user.age,
       fitnessExperience: user.fitnessExperience,
       injuryHistory: user.injuryHistory,
+      medicalConditions: user.medicalConditions,
+      medicalNotes: user.medicalNotes,
     });
 
     const healthSummary = buildHealthSummary(healthMetrics);

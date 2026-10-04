@@ -41,6 +41,11 @@ model User {
   activityLevel         String?                // "sedentary" | "lightly_active" | "moderately_active" | "very_active"
   fitnessExperience     String?                // "beginner" | "intermediate" | "advanced"
   injuryHistory         String?                // free-text: past/current injuries, mobility limitations, pain points
+  // Self-reported health context, used to make training and nutrition advice
+  // more conservative. Never treated as a diagnosis and never acted on as
+  // medical guidance — see buildCoachingDirective in lib/coach-context.
+  medicalConditions     String[]               @default([])  // from a fixed list; "prefer_not_to_say" is a valid answer
+  medicalNotes          String?                // free-text: anything the list does not cover
   dietPreferences       String[]               @default([])  // ["omnivore", "vegetarian", etc.]
   foodAllergies         String[]               @default([])
   supplementHistory     String[]               @default([])

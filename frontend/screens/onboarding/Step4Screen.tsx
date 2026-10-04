@@ -10,6 +10,14 @@ import OnboardingHeader from "@/components/OnboardingHeader";
 
 const API_URL = process.env.EXPO_PUBLIC_API_URL;
 
+// Mirrors MEDICAL_CONDITIONS in backend/lib/medical-conditions.ts. The backend
+// rejects anything not on that list, so these ids must stay in step with it.
+const CONDITIONS = [
+  "high_blood_pressure", "heart_condition", "diabetes_type_1", "diabetes_type_2",
+  "asthma", "pcos", "thyroid", "joint_condition", "pregnant_or_postpartum",
+  "disordered_eating_history", "prefer_not_to_say",
+] as const;
+
 const LEVELS: { id: string; icon: string; color: string; bg: string; border: string }[] = [
   { id: "beginner",     icon: "🌱", color: T.teal,   bg: T.tealDark,   border: T.tealBorder   },
   { id: "intermediate", icon: "🏋️", color: T.blue,   bg: T.blueDark,   border: T.blueBorder   },
@@ -21,12 +29,16 @@ export default function OnboardingStep4() {
   const { t } = useTranslation();
   const [selected, setSelected] = useState<string>("");
   const [injuryHistory, setInjuryHistory] = useState<string>("");
+  const [conditions, setConditions] = useState<string[]>([]);
+  const [medicalNotes, setMedicalNotes] = useState<string>("");
 
   const { mutate: submit, isPending } = useMutation({
     mutationFn: async () => {
       await axios.post(`${API_URL}/api/onboarding/step4`, {
         fitnessExperience: selected,
         injuryHistory: injuryHistory.trim() || undefined,
+        medicalConditions: conditions.length ? conditions : undefined,
+        medicalNotes: medicalNotes.trim() || undefined,
       });
     },
     onSuccess: () => navigation.navigate("Step5"),
@@ -77,6 +89,51 @@ export default function OnboardingStep4() {
           onChangeText={setInjuryHistory}
         />
         <Text style={s.injuryHelper}>{t("onboarding.step4.injury_helper")}</Text>
+
+        <Text style={s.injuryLabel}>{t("onboarding.step4.medical_label")}</Text>
+        <View style={s.conditionWrap}>
+          {CONDITIONS.map((id) => {
+            const on = conditions.includes(id);
+            return (
+              <TouchableOpacity
+                key={id}
+                onPress={() => {
+                  Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
+                  setConditions((prev) =>
+                    // "Prefer not to say" is an answer, not an addition — picking it
+                    // clears the rest, and picking anything else clears it.
+                    id === "prefer_not_to_say"
+                      ? (prev.includes(id) ? [] : [id])
+                      : prev.includes(id)
+                        ? prev.filter((x) => x !== id)
+                        : [...prev.filter((x) => x !== "prefer_not_to_say"), id]
+                  );
+                }}
+                style={[s.conditionChip, on && s.conditionChipOn]}
+                accessibilityRole="button"
+                accessibilityState={{ selected: on }}
+              >
+                <Text style={[s.conditionChipText, on && s.conditionChipTextOn]}>
+                  {t(`onboarding.step4.condition_${id}`)}
+                </Text>
+              </TouchableOpacity>
+            );
+          })}
+        </View>
+
+        {conditions.length > 0 && !conditions.includes("prefer_not_to_say") && (
+          <TextInput
+            placeholder={t("onboarding.step4.medical_notes_placeholder")}
+            placeholderTextColor={T.textMuted}
+            style={s.textArea}
+            multiline
+            numberOfLines={2}
+            maxLength={300}
+            value={medicalNotes}
+            onChangeText={setMedicalNotes}
+          />
+        )}
+        <Text style={s.injuryHelper}>{t("onboarding.step4.medical_helper")}</Text>
 
         <TouchableOpacity
           onPress={() => submit()}
@@ -150,6 +207,18 @@ const s = StyleSheet.create({
     textAlignVertical: "top",
   },
   injuryHelper: { fontSize: 12, color: T.textMuted, marginTop: 6, marginBottom: 32 },
+  conditionWrap: { flexDirection: "row", flexWrap: "wrap", gap: 8, marginBottom: 12 },
+  conditionChip: {
+    backgroundColor: T.surface,
+    borderWidth: 1,
+    borderColor: T.border,
+    borderRadius: 20,
+    paddingHorizontal: 14,
+    paddingVertical: 9,
+  },
+  conditionChipOn: { backgroundColor: T.accentDark, borderColor: T.accent },
+  conditionChipText: { fontSize: 13, color: T.textSecondary, fontWeight: "600" },
+  conditionChipTextOn: { color: T.accent },
   primaryBtn: { backgroundColor: T.accent, borderRadius: 14, paddingVertical: 16, alignItems: "center" },
   primaryBtnDisabled: { backgroundColor: T.surface },
   primaryBtnText: { color: "#000", fontSize: 16, fontWeight: "700" },

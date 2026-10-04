@@ -4,6 +4,7 @@ import { COACH_ACTIONS_PROMPT } from "@/lib/coach-actions";
 import { expandWeekWithProgression } from "@/lib/workout-progression";
 import { orderWeek } from "@/lib/workout-ordering";
 import { MUSCLE_GROUPS } from "@/lib/exercise-muscles";
+import { medicalDirectives } from "@/lib/medical-conditions";
 import { validateWeek, describeProblems } from "@/lib/workout-validation";
 import { expandDaysWithRotation } from "@/lib/meal-plan-rotation";
 import type {
@@ -228,7 +229,11 @@ ${userProfile.assessmentSummary ? `- Latest body assessment notes: ${userProfile
 ${userProfile.injuryHistory ? `- Reported injury/mobility limitation: "${userProfile.injuryHistory}"` : ""}
 
 Use the client's stated goal/focus and body assessment notes (if provided) to decide which muscle groups should get priority volume/frequency and which exercises best fit their body type and aim. For example, someone wanting a leaner/smaller look needs different exercise selection and volume distribution than someone wanting to build size in a specific area. Be specific and personalized rather than generic.
-${userProfile.injuryHistory ? `\nIf an injury or mobility limitation is reported, avoid exercises that would aggravate it, substitute safe alternatives, and include general mobility/maintenance work for the affected area(s) — framed as general wellness, not treatment or rehab. This is general guidance, not medical advice.\n` : ""}
+${userProfile.injuryHistory ? `\nIf an injury or mobility limitation is reported, avoid exercises that would aggravate it, substitute safe alternatives, and include general mobility/maintenance work for the affected area(s) — framed as general wellness, not treatment or rehab. This is general guidance, not medical advice.\n` : ""}${
+  medicalDirectives(userProfile.medicalConditions, userProfile.medicalNotes).length
+    ? `\nHEALTH CONTEXT — the client reported the following. Build the program around it; none of it is a diagnosis and you are not treating any of it.\n${medicalDirectives(userProfile.medicalConditions, userProfile.medicalNotes).map((d) => `- ${d}`).join("\n")}\n`
+    : ""
+}
 Return ONLY valid JSON with no markdown, structured exactly like this:
 {
   "coachNote": "2-3 sentences, written directly to the client: how this program is tailored to their stated goal and body type, and honest, encouraging guidance on whether their goal is realistic and what to focus on to get there.",

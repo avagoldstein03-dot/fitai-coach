@@ -126,6 +126,10 @@ export interface WorkoutGenerationInput {
   specificFocus?: string;
   assessmentSummary?: string;
   injuryHistory?: string;
+  // Self-reported health context. Used to make the program more conservative,
+  // never to treat or diagnose — see lib/medical-conditions.
+  medicalConditions?: string[];
+  medicalNotes?: string;
   // How the main work of each session is built.
   //   mixed     — every session: compounds then isolation (the default)
   //   separate  — the week alternates whole heavy days and whole pump days

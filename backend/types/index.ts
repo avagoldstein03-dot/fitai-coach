@@ -30,6 +30,8 @@ export interface OnboardingStep3Request {
 export interface OnboardingStep4Request {
   fitnessExperience: "beginner" | "intermediate" | "advanced";
   injuryHistory?: string;
+  medicalConditions?: string[];
+  medicalNotes?: string;
 }
 
 export interface OnboardingStep5Request {

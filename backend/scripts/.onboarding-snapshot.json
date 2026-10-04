@@ -1,0 +1,19 @@
+{
+  "onboardingCompleted": true,
+  "onboardingStep": 7,
+  "name": "Lola Cherry",
+  "age": 22,
+  "sex": "female",
+  "height": 170.2,
+  "weight": 67.1,
+  "activityLevel": "moderately_active",
+  "fitnessExperience": "intermediate",
+  "dietPreferences": [
+    "pescatarian"
+  ],
+  "foodAllergies": [
+    "None"
+  ],
+  "injuryHistory": "None",
+  "lifeStage": null
+}

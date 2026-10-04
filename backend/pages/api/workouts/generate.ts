@@ -82,6 +82,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       specificFocus: specificFocus ?? user.goal?.specificFocus ?? undefined,
       assessmentSummary: latestAssessment?.summary ?? undefined,
       injuryHistory: user.injuryHistory?.trim().slice(0, MAX_INJURY_LENGTH) || undefined,
+      medicalConditions: user.medicalConditions,
+      medicalNotes: user.medicalNotes ?? undefined,
       // Only accept the three known values; anything else falls back to normal training.
       // Program customization is a paid feature, enforced here rather than in the
       // UI so a crafted request cannot claim it. Free users always get "mixed".

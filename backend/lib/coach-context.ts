@@ -1,7 +1,11 @@
+import { medicalDirectives } from "@/lib/medical-conditions";
+
 export interface CoachingProfile {
   age?: number | null;
   fitnessExperience?: string | null;
   injuryHistory?: string | null;
+  medicalConditions?: string[] | null;
+  medicalNotes?: string | null;
 }
 
 const OLDER_AGE_THRESHOLD = 55;
@@ -34,6 +38,9 @@ export function buildCoachingDirective(profile: CoachingProfile): string {
       `This user has reported the following injury or mobility limitation: "${truncated}". Avoid recommending exercises that would aggravate this, suggest safe modifications or alternatives, and remind them this is general guidance, not medical advice — they should consult a doctor or physical therapist for anything related to this condition.`
     );
   }
+
+  // Last, so the safety framing that medicalDirectives appends closes the block.
+  directives.push(...medicalDirectives(profile.medicalConditions, profile.medicalNotes));
 
   if (!directives.length) {
     return "No special coaching adaptations needed based on the profile provided — coach normally, evidence-based and encouraging.";

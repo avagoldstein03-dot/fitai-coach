@@ -202,7 +202,21 @@
       "prompt": "Select your experience level",
       "injury_label": "Any injuries or mobility limitations?",
       "injury_placeholder": "e.g. bad left knee, lower back pain — optional",
-      "injury_helper": "Optional — helps your AI coach avoid or modify exercises that could aggravate this."
+      "injury_helper": "Optional — helps your AI coach avoid or modify exercises that could aggravate this.",
+      "medical_label": "Anything we should know about your health?",
+      "medical_helper": "Optional, and private to your account. We use it to keep your training and nutrition advice appropriate — it is never a diagnosis, and Active AI does not give medical advice.",
+      "medical_notes_placeholder": "Anything else we should know — optional",
+      "condition_high_blood_pressure": "High blood pressure",
+      "condition_heart_condition": "Heart condition",
+      "condition_diabetes_type_1": "Type 1 diabetes",
+      "condition_diabetes_type_2": "Type 2 diabetes",
+      "condition_asthma": "Asthma",
+      "condition_pcos": "PCOS",
+      "condition_thyroid": "Thyroid condition",
+      "condition_joint_condition": "Arthritis or joint condition",
+      "condition_pregnant_or_postpartum": "Pregnant or postpartum",
+      "condition_disordered_eating_history": "History of disordered eating",
+      "condition_prefer_not_to_say": "Prefer not to say"
     },
     "step5": {
       "title": "Diet Preferences",
