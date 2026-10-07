@@ -397,7 +397,6 @@ export default function DashboardScreen() {
               ? `${data.thisWeek.avgDailyCalories}`
               : "—",
             unit: t("dashboard.kcal_day"),
-            color: T.accent,
           },
           {
             label: t("dashboard.protein"),
@@ -405,23 +404,20 @@ export default function DashboardScreen() {
               ? `${data.thisWeek.avgDailyProtein}`
               : "—",
             unit: t("dashboard.g_day"),
-            color: T.teal,
           },
           {
             label: t("dashboard.workouts"),
             value: String(data?.thisWeek.workoutsCompleted ?? 0),
             unit: t("dashboard.this_week"),
-            color: T.blue,
           },
           {
             label: t("dashboard.meals"),
             value: String(data?.thisWeek.mealsLogged ?? 0),
             unit: t("dashboard.logged"),
-            color: T.green,
           },
         ].map((stat) => (
           <View key={stat.label} style={s.statCard}>
-            <Text style={[s.statValue, { color: stat.color }]}>{stat.value}</Text>
+            <Text style={s.statValue}>{stat.value}</Text>
             <Text style={s.statUnit}>{stat.unit}</Text>
             <Text style={s.statLabel}>{stat.label}</Text>
           </View>
@@ -841,7 +837,10 @@ const s = StyleSheet.create({
     padding: 16,
     width: (W - 50) / 2,
   },
-  statValue: { fontSize: 32, fontWeight: "800", letterSpacing: -1, marginBottom: 2 },
+  // One weight for every stat. The tiles used to be four different colours,
+  // which read as decoration and clashed with the readiness scale, where colour
+  // genuinely means something. The label under each number says which is which.
+  statValue: { fontSize: 32, fontWeight: "800", letterSpacing: -1, marginBottom: 2, color: T.textPrimary },
   statUnit: { fontSize: 11, color: T.textSecondary, marginBottom: 2 },
   statLabel: {
     fontSize: 10,

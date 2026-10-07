@@ -40,13 +40,21 @@ export const T = {
   blueDark:     "#06102a",
   blueBorder:   "#0f2a5e",
 
-  // Typography
-  // textSecondary and textMuted are both verified at >=4.5:1 contrast (WCAG AA)
-  // against every background tier above, including surface2 (the lightest one,
-  // and the worst case for light-text-on-dark contrast). Don't darken either of
-  // these without re-checking against surface2 specifically.
+  // Typography — three tiers with real separation between them.
+  //
+  // textSecondary used to be #8291ab, which sat 1.12x from textMuted: close
+  // enough that they rendered as the same colour. Every label, caption and
+  // helper therefore carried identical visual weight, and screens read as flat
+  // walls of equally-important text. The scale now steps 1.83x then 1.74x.
+  //
+  // Contrast against the worst-case background (surface2, the lightest tier):
+  //   textPrimary   14.68:1    body copy, numbers, anything being read
+  //   textSecondary  8.03:1    labels and supporting copy
+  //   textMuted      4.61:1    captions and hints — at the WCAG AA floor
+  // textMuted cannot go dimmer without failing AA. Don't darken either of these
+  // without re-checking against surface2 specifically.
   textPrimary:   "#f0f2f6",
-  textSecondary: "#8291ab",
+  textSecondary: "#a9b6cc",
   textMuted:     "#7a88a4",
 
   // Utility
