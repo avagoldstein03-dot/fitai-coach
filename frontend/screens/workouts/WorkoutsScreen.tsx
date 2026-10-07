@@ -531,14 +531,29 @@ export default function WorkoutsScreen() {
                         </View>
                         <View style={styles.exerciseBody}>
                           <View style={styles.exerciseTitleRow}>
-                            <View style={styles.exerciseNameRow}>
+                            <TouchableOpacity
+                              style={styles.exerciseNameRow}
+                              activeOpacity={0.7}
+                              onPress={() => {
+                                setExerciseForm({
+                                  exerciseName: ex.exerciseName,
+                                  sets: String(ex.sets),
+                                  reps: ex.reps,
+                                  restSeconds: String(ex.restSeconds),
+                                  notes: ex.notes ?? "",
+                                });
+                                setExerciseModal({ mode: "replace", exercise: ex });
+                              }}
+                              accessibilityRole="button"
+                              accessibilityLabel={t("workouts.replace_exercise")}
+                            >
                               <Text style={[styles.exerciseName, done && styles.exerciseNameDone]}>{ex.exerciseName}</Text>
                               {ex.category === "mobility" && (
                                 <View style={styles.mobilityBadge}>
                                   <Text style={styles.mobilityBadgeText}>{t("workouts.mobility_badge")}</Text>
                                 </View>
                               )}
-                            </View>
+                            </TouchableOpacity>
                             <TouchableOpacity
                               onPress={() => {
                                 setExerciseForm({

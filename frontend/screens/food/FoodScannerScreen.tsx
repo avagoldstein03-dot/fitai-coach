@@ -102,6 +102,7 @@ export default function FoodScannerScreen() {
   const [manualItems, setManualItems] = useState<ManualFoodItem[]>([]);
   const [currentItem, setCurrentItem] = useState<ManualFoodItem>(EMPTY_ITEM);
   const [showFullDetail, setShowFullDetail] = useState(false);
+  const [expandedMealId, setExpandedMealId] = useState<string | null>(null);
   const [showReLogModal, setShowReLogModal] = useState(false);
   const [reLogMealType, setReLogMealType] = useState<typeof MEAL_TYPES[number]>("snack");
   const [pendingReLog, setPendingReLog] = useState<{ name: string; calories: number; protein: number; carbs: number; fat: number } | null>(null);
@@ -128,6 +129,24 @@ export default function FoodScannerScreen() {
       queryClient.invalidateQueries({ queryKey: ["mealHistory"] });
       queryClient.invalidateQueries({ queryKey: ["saved-meals"] });
       Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success);
+    } catch {
+      Alert.alert(t("common.error"), t("food_scanner.log_failed"));
+    }
+  };
+
+  const saveMeal = async (meal: { notes?: string | null; mealType?: string; foods: { name: string; calories: number; protein: number; carbs: number; fat: number }[] }) => {
+    try {
+      await axios.post(`${API_URL}/api/food/saved`, {
+        name: meal.notes || meal.foods.map((f) => f.name).join(", "),
+        mealType: meal.mealType ?? "snack",
+        items: meal.foods.map((f) => ({
+          foodName: f.name, quantity: 1, unit: "serving",
+          calories: f.calories, protein: f.protein, carbs: f.carbs, fat: f.fat, fiber: 0,
+        })),
+      });
+      queryClient.invalidateQueries({ queryKey: ["saved-meals"] });
+      Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success);
+      Alert.alert(t("food_scanner.saved_title"), t("food_scanner.saved_body"));
     } catch {
       Alert.alert(t("common.error"), t("food_scanner.log_failed"));
     }
@@ -474,27 +493,59 @@ export default function FoodScannerScreen() {
                     to be four stacked lines — a timestamp, a bulleted food list
                     and a separate macro row — which gave a timestamp the same
                     weight as the food. */}
-                <View style={[styles.mealCard, styles.mealCardWrapper]}>
+                {/* Collapsed it is the food and the calories. Tapping opens the
+                    per-ingredient breakdown and the actions, so the common case
+                    stays two lines and the detail is a tap away rather than
+                    absent. */}
+                <TouchableOpacity
+                  style={[styles.mealCard, styles.mealCardWrapper]}
+                  activeOpacity={0.85}
+                  onPress={() => setExpandedMealId((id) => (id === meal.id ? null : meal.id))}
+                  accessibilityRole="button"
+                  accessibilityState={{ expanded: expandedMealId === meal.id }}
+                >
                   <View style={styles.mealCardHeader}>
                     <Text style={styles.mealFood} numberOfLines={2}>
                       {meal.foods.map((f) => f.name).join(", ")}
                     </Text>
                     <View style={styles.mealHeaderRight}>
                       <Text style={styles.mealCalories}>{meal.calories}</Text>
-                      <TouchableOpacity
-                        onPress={() => handleEditMeal(meal)}
-                        style={styles.mealDeleteBtn}
-                        accessibilityLabel={t("common.edit")}
-                        accessibilityRole="button"
-                      >
-                        <Text style={styles.mealDeleteIcon}>✎</Text>
-                      </TouchableOpacity>
+                      <Text style={styles.mealChevron}>
+                        {expandedMealId === meal.id ? "▲" : "▼"}
+                      </Text>
                     </View>
                   </View>
                   <Text style={styles.mealMeta}>
                     {meal.time} · {meal.protein}p · {meal.carbs}c · {meal.fat}f
                   </Text>
-                </View>
+
+                  {expandedMealId === meal.id && (
+                    <View style={styles.mealExpanded}>
+                      {meal.foods.map((food, j) => (
+                        <View key={j} style={styles.mealFoodRow}>
+                          <Text style={styles.mealFoodName} numberOfLines={1}>{food.name}</Text>
+                          <Text style={styles.mealFoodKcal}>{Math.round(food.calories)}</Text>
+                        </View>
+                      ))}
+                      <View style={styles.mealActions}>
+                        <TouchableOpacity
+                          onPress={() => handleEditMeal(meal)}
+                          style={styles.mealActionBtn}
+                          accessibilityRole="button"
+                        >
+                          <Text style={styles.mealActionText}>{t("common.edit")}</Text>
+                        </TouchableOpacity>
+                        <TouchableOpacity
+                          onPress={() => saveMeal(meal)}
+                          style={styles.mealActionBtn}
+                          accessibilityRole="button"
+                        >
+                          <Text style={styles.mealActionText}>{t("food_scanner.save_meal")}</Text>
+                        </TouchableOpacity>
+                      </View>
+                    </View>
+                  )}
+                </TouchableOpacity>
               </SwipeToDeleteRow>
             ))}
           </View>
@@ -893,6 +944,17 @@ const styles = StyleSheet.create({
   mealDeleteIcon: { fontSize: 14, color: T.textMuted },
   // Time and macros on one quiet line: available when wanted, not competing.
   mealMeta: { fontSize: 12, color: T.textMuted, marginTop: 4 },
+  mealChevron: { fontSize: 10, color: T.textMuted },
+  mealExpanded: { marginTop: 12, paddingTop: 12, borderTopWidth: 1, borderTopColor: T.border, gap: 6 },
+  mealFoodRow: { flexDirection: "row", justifyContent: "space-between", gap: 12 },
+  mealFoodName: { flex: 1, fontSize: 13, color: T.textSecondary },
+  mealFoodKcal: { fontSize: 13, color: T.textMuted, fontVariant: ["tabular-nums"] },
+  mealActions: { flexDirection: "row", gap: 8, marginTop: 10 },
+  mealActionBtn: {
+    flex: 1, alignItems: "center", paddingVertical: 9,
+    backgroundColor: T.surface2, borderWidth: 1, borderColor: T.border, borderRadius: 10,
+  },
+  mealActionText: { fontSize: 13, fontWeight: "600", color: T.textSecondary },
 
   // Week Card
   weekCard: {

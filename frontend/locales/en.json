@@ -827,7 +827,8 @@
     "recent_meals_sub": "Swipe right to add, from what you have eaten before",
     "saved_label": "Saved",
     "saved_title": "Meal saved",
-    "saved_body": "You can log it again from the Log again list."
+    "saved_body": "You can log it again from the Log again list.",
+    "save_meal": "Save meal"
   },
   "food_diary": {
     "title": "Food Diary",
