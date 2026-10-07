@@ -71,9 +71,17 @@ export const CoachActionSchema = z.discriminatedUnion("type", [
 
 export type CoachAction = z.infer<typeof CoachActionSchema>;
 
-// More than a few buttons stops reading as a next step and starts reading as a
-// menu, so the tail is dropped rather than rendered.
-const MAX_ACTIONS = 4;
+// Enough for a button per item in a three-item recommendation, plus a link.
+// Beyond that it stops reading as a next step and starts reading as a menu.
+const MAX_ACTIONS = 6;
+
+/** What an action is about, so two actions on the same food can be recognised. */
+function subjectOf(a: CoachAction): string {
+  if (a.type === "log_food") return a.foodName.trim().toLowerCase();
+  if (a.type === "add_to_list") return a.name.trim().toLowerCase();
+  if (a.type === "open") return `screen:${a.screen}`;
+  return "program";
+}
 
 const MARKER = "[ACTION:";
 
@@ -151,7 +159,20 @@ export function extractActions(raw: string): { text: string; actions: CoachActio
     return true;
   });
 
-  return { text, actions: unique.slice(0, MAX_ACTIONS) };
+  // Give every distinct thing a button before giving anything a second one.
+  // Taking the first N instead meant a reply naming three foods could spend both
+  // its slots on log + shopping-list for the first food, leaving the other two
+  // with no button at all — which is exactly what users saw.
+  const firstPass: CoachAction[] = [];
+  const overflow: CoachAction[] = [];
+  const covered = new Set<string>();
+  for (const a of unique) {
+    const subject = subjectOf(a);
+    if (covered.has(subject)) overflow.push(a);
+    else { covered.add(subject); firstPass.push(a); }
+  }
+
+  return { text, actions: [...firstPass, ...overflow].slice(0, MAX_ACTIONS) };
 }
 
 /** Teaches the coach when and how to emit the markers above. */
@@ -164,12 +185,20 @@ and append the markers at the end.
 
 Available markers (emit at most 4, most useful first):
 
-- A specific food you recommended eating. Emit one per food, max 3, with your best estimate of the
-  macros for the serving you suggested:
+- A specific food you recommended eating, with your best estimate of the macros for the serving you
+  suggested:
   [ACTION:{"type":"log_food","foodName":"Greek yogurt","quantity":1,"unit":"cup","calories":120,"protein":20,"carbs":9,"fat":0}]
+
+  EVERY food you name in the answer gets its own marker. If you suggest three foods, emit three
+  log_food markers — one for each, in the order you mentioned them. Emitting a marker for only the
+  first one is wrong; the others become unclickable and the answer feels broken. Max 3 foods.
 
 - A specific ingredient or product worth buying. Emit one per item, max 3:
   [ACTION:{"type":"add_to_list","name":"Greek yogurt","quantity":2,"unit":"tubs"}]
+
+  Use this when they are asking what to buy, shop for, or pick up. Do not pair it with log_food for
+  the same food in the same answer — one button each for three foods is far more useful than two
+  buttons for one food.
 
 - The part of the app your answer is about, so they can go straight there. Emit at most one.
   Valid screens: ${NAVIGABLE_SCREENS.join(", ")}

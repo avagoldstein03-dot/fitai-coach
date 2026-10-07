@@ -59,10 +59,40 @@ describe("extractActions", () => {
     expect(actions).toEqual([]);
   });
 
-  it("clamps to four actions", () => {
+  it("clamps to six actions", () => {
     const one = (n: number) => `[ACTION:{"type":"add_to_list","name":"item ${n}"}]`;
-    const { actions } = extractActions("Shop:\n" + [1, 2, 3, 4, 5, 6].map(one).join("\n"));
-    expect(actions).toHaveLength(4);
+    const { actions } = extractActions("Shop:\n" + [1, 2, 3, 4, 5, 6, 7, 8].map(one).join("\n"));
+    expect(actions).toHaveLength(6);
+  });
+
+  it("gives every food a button before giving any food a second one", () => {
+    // The reported bug: three foods named, but log + shopping-list for the first
+    // consumed the slots and the other two rendered no button at all.
+    const raw = [
+      "Three options:",
+      '[ACTION:{"type":"log_food","foodName":"Greek yogurt","calories":120,"protein":20}]',
+      '[ACTION:{"type":"add_to_list","name":"Greek yogurt"}]',
+      '[ACTION:{"type":"log_food","foodName":"Egg whites","calories":104,"protein":22}]',
+      '[ACTION:{"type":"log_food","foodName":"Quinoa","calories":222,"protein":8}]',
+    ].join("\n");
+    const { actions } = extractActions(raw);
+    const foods = actions.filter((a) => a.type === "log_food").map((a: any) => a.foodName);
+    expect(foods).toEqual(["Greek yogurt", "Egg whites", "Quinoa"]);
+  });
+
+  it("keeps a second action for the same food only once everything else has one", () => {
+    const raw = [
+      '[ACTION:{"type":"log_food","foodName":"Greek yogurt","calories":120,"protein":20}]',
+      '[ACTION:{"type":"add_to_list","name":"Greek yogurt"}]',
+      '[ACTION:{"type":"log_food","foodName":"Eggs","calories":140,"protein":12}]',
+    ].join("\n");
+    const { actions } = extractActions(raw);
+    // Both foods first, then the duplicate subject.
+    expect(actions.map((a: any) => `${a.type}:${a.foodName ?? a.name}`)).toEqual([
+      "log_food:Greek yogurt",
+      "log_food:Eggs",
+      "add_to_list:Greek yogurt",
+    ]);
   });
 
   it("de-duplicates identical actions", () => {
