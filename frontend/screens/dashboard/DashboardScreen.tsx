@@ -39,7 +39,7 @@ interface DashboardData {
   };
   streaks: { workouts: number; meals: number };
   friendsConnected: number;
-  charts: { daily: Array<{ date: string; calories: number; protein: number }> };
+  charts: { daily: Array<{ date: string; calories: number; protein: number; carbs: number; fat: number }> };
   subscription: { plan: "free" | "premium"; status: string };
 }
 
@@ -217,7 +217,7 @@ export default function DashboardScreen() {
     return !last || Date.now() - new Date(last).getTime() > 7 * 24 * 60 * 60 * 1000;
   }, [data?.lastAssessmentDate]);
 
-  const { data: targets } = useQuery<{ dailyCaloricTarget: number; proteinTarget: number; proteinAdjusted?: boolean }>({
+  const { data: targets } = useQuery<{ dailyCaloricTarget: number; proteinTarget: number; carbsTarget: number; fatsTarget: number; proteinAdjusted?: boolean }>({
     queryKey: ["nutritionTargets"],
     queryFn: async () => {
       const res = await axios.get(`${API_URL}/api/nutrition/targets`);
@@ -341,27 +341,28 @@ export default function DashboardScreen() {
       {targets && (() => {
         const todayData = data?.charts?.daily?.slice(-1)[0];
         const cal = todayData?.calories ?? 0;
-        const pro = todayData?.protein ?? 0;
         const calTarget = targets.dailyCaloricTarget;
-        const proTarget = targets.proteinTarget;
         const calPct = Math.min((cal / calTarget) * 100, 100);
-        const proPct = Math.min((pro / proTarget) * 100, 100);
+        const pct = (current: number, target: number) =>
+          target > 0 ? Math.min((current / target) * 100, 100) : 0;
         return (
           <View style={s.macroCard}>
             <Text style={s.macroCardTitle}>{t("dashboard.today")}</Text>
             {[
-              { label: t("dashboard.calories"), current: cal, target: calTarget, pct: calPct, color: T.accent, unit: t("nutrition.kcal_suffix") },
-              { label: t("dashboard.protein"), current: pro, target: proTarget, pct: proPct, color: T.teal, unit: "g" },
+              { label: t("dashboard.calories"), current: cal, target: calTarget, unit: t("nutrition.kcal_suffix") },
+              { label: t("dashboard.protein"), current: todayData?.protein ?? 0, target: targets.proteinTarget, unit: "g" },
+              { label: t("dashboard.carbs"), current: todayData?.carbs ?? 0, target: targets.carbsTarget, unit: "g" },
+              { label: t("dashboard.fat"), current: todayData?.fat ?? 0, target: targets.fatsTarget, unit: "g" },
             ].map((m) => (
               <View key={m.label} style={s.macroRow}>
                 <View style={s.macroRowHeader}>
                   <Text style={s.macroRowLabel}>{m.label}</Text>
-                  <Text style={[s.macroRowValue, { color: m.color }]}>
+                  <Text style={s.macroRowValue}>
                     {Math.round(m.current)}<Text style={s.macroRowTarget}> / {m.target}{m.unit}</Text>
                   </Text>
                 </View>
                 <View style={s.macroTrack}>
-                  <View style={[s.macroFill, { width: `${m.pct}%` as any, backgroundColor: m.color }]} />
+                  <View style={[s.macroFill, { width: `${pct(m.current, m.target)}%` as any }]} />
                 </View>
               </View>
             ))}
@@ -837,10 +838,12 @@ const s = StyleSheet.create({
     padding: 16,
     width: (W - 50) / 2,
   },
-  // One weight for every stat. The tiles used to be four different colours,
-  // which read as decoration and clashed with the readiness scale, where colour
-  // genuinely means something. The label under each number says which is which.
-  statValue: { fontSize: 32, fontWeight: "800", letterSpacing: -1, marginBottom: 2, color: T.textPrimary },
+  // One colour for every stat, in the brand accent. These were four different
+  // colours, which read as decoration and clashed with the readiness scale where
+  // colour genuinely means something — the label under each number is what says
+  // which is which. Accent rather than plain white so the row still feels part of
+  // the app rather than raw text.
+  statValue: { fontSize: 32, fontWeight: "800", letterSpacing: -1, marginBottom: 2, color: T.accent },
   statUnit: { fontSize: 11, color: T.textSecondary, marginBottom: 2 },
   statLabel: {
     fontSize: 10,
@@ -1030,10 +1033,10 @@ const s = StyleSheet.create({
   macroRow: { marginBottom: 12 },
   macroRowHeader: { flexDirection: "row", justifyContent: "space-between", marginBottom: 6 },
   macroRowLabel: { fontSize: 12, color: T.textSecondary, fontWeight: "600" },
-  macroRowValue: { fontSize: 12, fontWeight: "700" },
+  macroRowValue: { fontSize: 12, fontWeight: "700", color: T.textPrimary },
   macroRowTarget: { fontWeight: "400", color: T.textMuted },
   macroTrack: { height: 6, backgroundColor: T.surface2, borderRadius: 3, overflow: "hidden" },
-  macroFill: { height: "100%", borderRadius: 3 },
+  macroFill: { height: "100%", borderRadius: 3, backgroundColor: T.accentMuted },
   macroDeficitRow: { flexDirection: "row", justifyContent: "space-between", alignItems: "center", marginTop: 10 },
   macroDeficitText: { fontSize: 12, fontWeight: "700" },
   macroDeficitPct: { fontSize: 12, color: T.textMuted },

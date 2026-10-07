@@ -410,7 +410,9 @@
     "pct_of_goal": "{{pct}}% of goal",
     "nudge_scan_update": "Update your body scan",
     "nudge_scan_update_sub": "It's been 7+ days — see how you've changed",
-    "nudge_scan_first_sub": "Upload 3 photos for an AI body composition read"
+    "nudge_scan_first_sub": "Upload 3 photos for an AI body composition read",
+    "carbs": "Carbs",
+    "fat": "Fat"
   },
   "settings": {
     "title": "Settings",

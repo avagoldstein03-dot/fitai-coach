@@ -25,10 +25,9 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     const streakLookback = new Date(now.getTime() - 90 * 24 * 60 * 60 * 1000);
 
     const [
-      mealsThisWeek,
+      mealsLoggedThisWeek,
       workoutsThisWeek,
-      caloriesData,
-      proteinData,
+      mealsThisWeek,
       latestAssessment,
       currentSubscription,
       recentWorkoutSessions,
@@ -41,13 +40,14 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       prisma.workoutSession.count({
         where: { userId: user.id, createdAt: { gte: weekAgo } },
       }),
+      // One pass over the week's meals. This used to be two identical queries
+      // differing only in the selected column, and neither fetched carbs or fat.
       prisma.meal.findMany({
         where: { userId: user.id, createdAt: { gte: weekAgo } },
-        select: { totalCalories: true, createdAt: true },
-      }),
-      prisma.meal.findMany({
-        where: { userId: user.id, createdAt: { gte: weekAgo } },
-        select: { totalProtein: true, createdAt: true },
+        select: {
+          totalCalories: true, totalProtein: true, totalCarbs: true, totalFat: true,
+          createdAt: true,
+        },
       }),
       prisma.bodyAssessment.findFirst({
         where: { userId: user.id },
@@ -74,19 +74,19 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       prisma.friendConnection.count({ where: { userId: user.id } }),
     ]);
 
-    const totalCaloriesThisWeek = caloriesData.reduce(
+    const totalCaloriesThisWeek = mealsThisWeek.reduce(
       (sum, m) => sum + (m.totalCalories || 0),
       0
     );
-    const avgDailyCalories = mealsThisWeek
+    const avgDailyCalories = mealsThisWeek.length
       ? Math.round(totalCaloriesThisWeek / 7)
       : 0;
 
-    const totalProteinThisWeek = proteinData.reduce(
+    const totalProteinThisWeek = mealsThisWeek.reduce(
       (sum, m) => sum + (m.totalProtein || 0),
       0
     );
-    const avgDailyProtein = mealsThisWeek
+    const avgDailyProtein = mealsThisWeek.length
       ? Math.round(totalProteinThisWeek / 7)
       : 0;
 
@@ -94,13 +94,18 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     const dailyStats = Array.from({ length: 7 }, (_, i) => {
       const date = new Date(now.getTime() - i * 24 * 60 * 60 * 1000);
       const dateStr = date.toISOString().split("T")[0];
-      const dayCalories = caloriesData
-        .filter((m) => m.createdAt.toISOString().split("T")[0] === dateStr)
-        .reduce((sum, m) => sum + (m.totalCalories || 0), 0);
-      const dayProtein = proteinData
-        .filter((m) => m.createdAt.toISOString().split("T")[0] === dateStr)
-        .reduce((sum, m) => sum + (m.totalProtein || 0), 0);
-      return { date: dateStr, calories: dayCalories, protein: Math.round(dayProtein) };
+      const onThisDay = mealsThisWeek.filter(
+        (m) => m.createdAt.toISOString().split("T")[0] === dateStr
+      );
+      const total = (key: "totalCalories" | "totalProtein" | "totalCarbs" | "totalFat") =>
+        onThisDay.reduce((sum, m) => sum + (m[key] || 0), 0);
+      return {
+        date: dateStr,
+        calories: total("totalCalories"),
+        protein: Math.round(total("totalProtein")),
+        carbs: Math.round(total("totalCarbs")),
+        fat: Math.round(total("totalFat")),
+      };
     }).reverse();
 
     const workoutStreak = calculateStreak(recentWorkoutSessions);
@@ -111,7 +116,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       physiqueNote: (latestAssessment?.bodyComposition as any)?.build ?? null,
       lastAssessmentDate: latestAssessment?.createdAt || null,
       thisWeek: {
-        mealsLogged: mealsThisWeek,
+        mealsLogged: mealsLoggedThisWeek,
         workoutsCompleted: workoutsThisWeek,
         avgDailyCalories,
         avgDailyProtein,
