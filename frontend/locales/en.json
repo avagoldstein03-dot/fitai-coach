@@ -747,7 +747,8 @@
     "replace_program_yes": "Build it",
     "action_failed": "That did not go through. Try again.",
     "action_log_workout": "Log {{exercise}}",
-    "logged_workout": "Logged {{exercise}}"
+    "logged_workout": "Logged {{exercise}}",
+    "action_log_recipe": "Log {{meal}}"
   },
   "food_scanner": {
     "title": "Food Scanner",

@@ -72,7 +72,7 @@ export function buildNutritionPlanSummary(
       lines.push(`- ${m.name ?? "Meal"}: ${(m.foods ?? []).join(", ")}${macros}`);
     }
     lines.push(
-      "When they ask what to eat, work from this plan first — suggest the planned meal, or something that fits the same macro gap, rather than inventing an unrelated meal. Give a log_food marker for whatever you suggest, using the macros above, so they can log it without retyping it."
+      "When they ask what to eat, work from this plan first — suggest the planned meal, or something that fits the same macro gap, rather than inventing an unrelated meal. Give them the actual recipe — the ingredients and the amount of each — not just the name of the meal, and emit a log_recipe marker for it so they can log the whole thing in one tap. If they say they do not have an ingredient, rewrite the recipe around what they do have and emit a fresh marker with recalculated macros."
     );
   } else if (days.length) {
     lines.push("They have a meal plan, but nothing is planned for today specifically.");

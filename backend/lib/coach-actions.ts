@@ -48,6 +48,28 @@ export const CoachActionSchema = z.discriminatedUnion("type", [
     fat: z.number().min(0).max(1000).default(0),
     fiber: z.number().min(0).max(1000).default(0),
   }),
+  // A full recipe: one meal made of several ingredients, each with its own
+  // macros. Maps onto /api/food/manual, which already takes an items array, so
+  // logging the whole thing is one request rather than one per ingredient.
+  // Paid tiers only — stripped server-side for free users, not just discouraged
+  // in the prompt.
+  z.object({
+    type: z.literal("log_recipe"),
+    mealName: z.string().trim().min(1).max(80),
+    mealType: z.enum(["breakfast", "lunch", "dinner", "snack"]).default("snack"),
+    items: z.array(
+      z.object({
+        foodName: z.string().trim().min(1).max(80),
+        quantity: z.number().positive().max(10000).default(1),
+        unit: z.string().trim().min(1).max(20).default("serving"),
+        calories: z.number().min(0).max(5000),
+        protein: z.number().min(0).max(500).default(0),
+        carbs: z.number().min(0).max(500).default(0),
+        fat: z.number().min(0).max(500).default(0),
+        fiber: z.number().min(0).max(500).default(0),
+      })
+    ).min(1).max(12),
+  }),
   // Add an ingredient to the shopping list. No macros, trivially undone.
   z.object({
     type: z.literal("add_to_list"),
@@ -88,6 +110,7 @@ const MAX_ACTIONS = 6;
 /** What an action is about, so two actions on the same food can be recognised. */
 function subjectOf(a: CoachAction): string {
   if (a.type === "log_food") return a.foodName.trim().toLowerCase();
+  if (a.type === "log_recipe") return a.mealName.trim().toLowerCase();
   if (a.type === "add_to_list") return a.name.trim().toLowerCase();
   if (a.type === "log_workout") return a.exerciseName.trim().toLowerCase();
   if (a.type === "open") return `screen:${a.screen}`;
@@ -186,6 +209,20 @@ export function extractActions(raw: string): { text: string; actions: CoachActio
   return { text, actions: [...firstPass, ...overflow].slice(0, MAX_ACTIONS) };
 }
 
+/**
+ * Actions a given tier is allowed to receive.
+ *
+ * Recipes are a paid feature, so a free user's actions are filtered here rather
+ * than merely discouraged in the prompt — the model will emit one eventually
+ * whatever the prompt says, and a button that cannot be honoured is worse than
+ * no button. The prose stays: a free user still gets the suggestion, just not
+ * the costed-out recipe with a one-tap log.
+ */
+export function actionsForTier(actions: CoachAction[], isPremium: boolean): CoachAction[] {
+  if (isPremium) return actions;
+  return actions.filter((a) => a.type !== "log_recipe");
+}
+
 /** Teaches the coach when and how to emit the markers above. */
 export const COACH_ACTIONS_PROMPT = `
 ACTION BUTTONS
@@ -203,6 +240,21 @@ Available markers (emit at most 6, most useful first):
   EVERY food you name in the answer gets its own marker. If you suggest three foods, emit three
   log_food markers — one for each, in the order you mentioned them. Emitting a marker for only the
   first one is wrong; the others become unclickable and the answer feels broken. Max 3 foods.
+
+- A complete recipe you are telling them to make, broken into ingredients with per-ingredient
+  macros. Use this instead of log_food whenever you give an actual recipe rather than naming a
+  single food:
+  [ACTION:{"type":"log_recipe","mealName":"Chicken and rice bowl","mealType":"lunch","items":[{"foodName":"Chicken breast","quantity":170,"unit":"g","calories":280,"protein":52,"carbs":0,"fat":6},{"foodName":"Jasmine rice, cooked","quantity":180,"unit":"g","calories":234,"protein":5,"carbs":51,"fat":1}]}]
+
+  Give real quantities, in grams or standard measures, and macros per ingredient that add up to
+  something sensible for the meal. If they say they do not have one of the ingredients, rewrite the
+  whole recipe around what they do have and emit a fresh marker — do not tell them to just leave it
+  out and keep the old macros, because the numbers would then be wrong.
+
+  When substituting, match the macro the original was there for, not just the food group. Swapping
+  chicken for tofu halves the protein; swapping it for Greek yogurt, fish or a larger serving of
+  something else protein-dense does not. If the macros still end up meaningfully different, say so
+  in one short sentence rather than letting them discover it in their log.
 
 - An exercise you just recommended or that is in today's session. Emit one per exercise, max 3,
   with the sets and reps you suggested:

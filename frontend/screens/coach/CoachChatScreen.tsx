@@ -31,10 +31,16 @@ const API_URL = process.env.EXPO_PUBLIC_API_URL;
 // and clamps these before they get here, so the UI can render them directly.
 type CoachAction =
   | { type: "log_food"; foodName: string; quantity: number; unit: string; calories: number; protein: number; carbs: number; fat: number; fiber: number }
+  | { type: "log_recipe"; mealName: string; mealType: MealType; items: RecipeItem[] }
   | { type: "add_to_list"; name: string; quantity?: number; unit?: string }
   | { type: "open"; screen: string; label?: string }
   | { type: "log_workout"; exerciseName: string; sets: number; reps: string; weight?: number }
   | { type: "set_program"; label?: string };
+
+interface RecipeItem {
+  foodName: string; quantity: number; unit: string;
+  calories: number; protein: number; carbs: number; fat: number; fiber: number;
+}
 
 type MealType = "breakfast" | "lunch" | "dinner" | "snack";
 const MEAL_TYPES: MealType[] = ["breakfast", "lunch", "dinner", "snack"];
@@ -186,12 +192,13 @@ function ActionBar({ actions, onPress, busy, idPrefix }: {
   const labelFor = (a: CoachAction) => {
     if (a.type === "log_food") return t("coach.action_log_food", { food: a.foodName });
     if (a.type === "add_to_list") return t("coach.action_add_to_list", { item: a.name });
+    if (a.type === "log_recipe") return t("coach.action_log_recipe", { meal: a.mealName });
     if (a.type === "log_workout") return t("coach.action_log_workout", { exercise: a.exerciseName });
     if (a.type === "set_program") return a.label || t("coach.action_set_program");
     return a.label || t("coach.action_open", { screen: a.screen });
   };
   const iconFor = (a: CoachAction) =>
-    a.type === "log_food" ? "＋" : a.type === "add_to_list" ? "🛒"
+    a.type === "log_food" || a.type === "log_recipe" ? "＋" : a.type === "add_to_list" ? "🛒"
       : a.type === "log_workout" ? "🏋" : a.type === "set_program" ? "⚡" : "→";
 
   return (
@@ -234,8 +241,8 @@ function ActionBar({ actions, onPress, busy, idPrefix }: {
 
 // Macros here are the coach's estimate, not a scanned or looked-up value, so
 // nothing reaches the diary until the user has seen the numbers and picked a meal.
-function LogFoodSheet({ action, onCancel, onConfirm, saving }: {
-  action: Extract<CoachAction, { type: "log_food" }> | null;
+function LogFoodSheet({ pending, onCancel, onConfirm, saving }: {
+  pending: { title: string; mealType: MealType; items: RecipeItem[] } | null;
   onCancel: () => void;
   onConfirm: (meal: MealType) => void;
   saving: boolean;
@@ -243,9 +250,23 @@ function LogFoodSheet({ action, onCancel, onConfirm, saving }: {
   const { t } = useTranslation();
   const [meal, setMeal] = useState<MealType>("snack");
 
+  // The coach picks the meal slot for a recipe ("lunch"), so start there rather
+  // than making them re-choose something already decided.
+  useEffect(() => {
+    if (pending) setMeal(pending.mealType);
+  }, [pending]);
+
+  const totals = (pending?.items ?? []).reduce(
+    (a, i) => ({
+      calories: a.calories + i.calories, protein: a.protein + i.protein,
+      carbs: a.carbs + i.carbs, fat: a.fat + i.fat,
+    }),
+    { calories: 0, protein: 0, carbs: 0, fat: 0 }
+  );
+
   return (
     <Modal
-      visible={action !== null}
+      visible={pending !== null}
       transparent
       animationType="slide"
       onRequestClose={onCancel}
@@ -254,20 +275,30 @@ function LogFoodSheet({ action, onCancel, onConfirm, saving }: {
         <View style={cs.sheet}>
           <Text style={cs.sheetTitle}>{t("coach.log_sheet_title")}</Text>
 
-          <Text style={cs.sheetFood}>
-            {action?.foodName}
-            {action ? ` · ${action.quantity} ${action.unit}` : ""}
-          </Text>
+          <Text style={cs.sheetFood}>{pending?.title}</Text>
           <Text style={cs.sheetMacros}>
-            {action
-              ? t("coach.macros_line", {
-                  calories: Math.round(action.calories),
-                  protein: Math.round(action.protein),
-                  carbs: Math.round(action.carbs),
-                  fat: Math.round(action.fat),
-                })
-              : ""}
+            {t("coach.macros_line", {
+              calories: Math.round(totals.calories),
+              protein: Math.round(totals.protein),
+              carbs: Math.round(totals.carbs),
+              fat: Math.round(totals.fat),
+            })}
           </Text>
+
+          {/* A recipe shows what it is made of; a single food has nothing to break
+              down, so the list is skipped rather than shown as one row. */}
+          {(pending?.items.length ?? 0) > 1 && (
+            <View style={cs.ingredients}>
+              {pending!.items.map((item, i) => (
+                <View key={i} style={cs.ingredientRow}>
+                  <Text style={cs.ingredientName} numberOfLines={1}>
+                    {item.foodName} · {item.quantity}{item.unit === "serving" ? "" : item.unit}
+                  </Text>
+                  <Text style={cs.ingredientKcal}>{Math.round(item.calories)}</Text>
+                </View>
+              ))}
+            </View>
+          )}
           <Text style={cs.sheetNote}>{t("coach.estimate_note")}</Text>
 
           <Text style={cs.sheetLabel}>{t("coach.log_sheet_meal")}</Text>
@@ -568,7 +599,9 @@ export default function CoachChatScreen() {
   });
 
   // --- Coach action buttons -------------------------------------------------
-  const [pendingLog, setPendingLog] = useState<Extract<CoachAction, { type: "log_food" }> | null>(null);
+  const [pendingLog, setPendingLog] = useState<
+    { title: string; mealType: MealType; items: RecipeItem[] } | null
+  >(null);
   const [busyAction, setBusyAction] = useState<string | null>(null);
   const [savingLog, setSavingLog] = useState(false);
   const [toast, setToast] = useState<string | null>(null);
@@ -582,25 +615,18 @@ export default function CoachChatScreen() {
     if (!pendingLog) return;
     setSavingLog(true);
     try {
+      // /api/food/manual takes an items array, so a recipe and a single food
+      // are the same request — the recipe just has more rows.
       await axios.post(`${API_URL}/api/food/manual`, {
         mealType: meal,
-        items: [{
-          foodName: pendingLog.foodName,
-          quantity: pendingLog.quantity,
-          unit: pendingLog.unit,
-          calories: pendingLog.calories,
-          protein: pendingLog.protein,
-          carbs: pendingLog.carbs,
-          fat: pendingLog.fat,
-          fiber: pendingLog.fiber,
-        }],
+        items: pendingLog.items,
       });
       // "food-history" backs the diary, nutrition and dashboard screens;
       // "mealHistory" is this screen's own copy behind the context chips.
       queryClient.invalidateQueries({ queryKey: ["food-history"] });
       queryClient.invalidateQueries({ queryKey: ["mealHistory"] });
       Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success);
-      showToast(t("coach.added_to_diary", { food: pendingLog.foodName }));
+      showToast(t("coach.added_to_diary", { food: pendingLog.title }));
       setPendingLog(null);
     } catch {
       Alert.alert(t("common.error"), t("coach.action_failed"));
@@ -611,7 +637,20 @@ export default function CoachChatScreen() {
 
   const runAction = async (action: CoachAction, key: string) => {
     if (action.type === "log_food") {
-      setPendingLog(action);
+      setPendingLog({
+        title: action.foodName,
+        mealType: "snack",
+        items: [{
+          foodName: action.foodName, quantity: action.quantity, unit: action.unit,
+          calories: action.calories, protein: action.protein,
+          carbs: action.carbs, fat: action.fat, fiber: action.fiber,
+        }],
+      });
+      return;
+    }
+
+    if (action.type === "log_recipe") {
+      setPendingLog({ title: action.mealName, mealType: action.mealType, items: action.items });
       return;
     }
 
@@ -908,7 +947,7 @@ export default function CoachChatScreen() {
       </View>
 
       <LogFoodSheet
-        action={pendingLog}
+        pending={pendingLog}
         saving={savingLog}
         onCancel={() => setPendingLog(null)}
         onConfirm={logFood}
@@ -1123,6 +1162,10 @@ const cs = StyleSheet.create({
   sheetFood: { fontSize: 19, fontWeight: "800", color: T.textPrimary },
   sheetMacros: { fontSize: 14, color: T.teal, fontWeight: "700", marginTop: 4 },
   sheetNote: { fontSize: 12, color: T.textSecondary, marginTop: 6, lineHeight: 18 },
+  ingredients: { marginTop: 14, borderTopWidth: 1, borderTopColor: T.border, paddingTop: 10, gap: 6 },
+  ingredientRow: { flexDirection: "row", justifyContent: "space-between", gap: 12 },
+  ingredientName: { flex: 1, fontSize: 13, color: T.textSecondary },
+  ingredientKcal: { fontSize: 13, color: T.textMuted, fontVariant: ["tabular-nums"] },
   sheetLabel: { fontSize: 11, fontWeight: "800", color: T.textMuted, textTransform: "uppercase", letterSpacing: 0.8, marginTop: 18, marginBottom: 8 },
   mealRow: { flexDirection: "row", flexWrap: "wrap", gap: 8 },
   mealChip: {

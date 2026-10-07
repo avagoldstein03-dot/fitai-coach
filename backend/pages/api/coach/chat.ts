@@ -10,7 +10,7 @@ import { detectWorkoutPlateaus, diffBodyComposition, buildTrendsSummary } from "
 import { buildCoachingDirective } from "@/lib/coach-context";
 import { buildHealthSummary } from "@/lib/health-summary";
 import { buildNutritionPlanSummary, buildWorkoutPlanSummary } from "@/lib/plan-summary";
-import { extractActions } from "@/lib/coach-actions";
+import { extractActions, actionsForTier } from "@/lib/coach-actions";
 
 // Tier-aware keyword detection — reliable fallback that doesn't depend on the AI emitting a marker
 function detectUpgradeNeeded(message: string, tier: SubscriptionTier): { needed: boolean; upgradeTo: string | null } {
@@ -216,7 +216,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     const withoutUpgrade = rawResponse.replace(/\[UPGRADE:\w+\]\s*$/m, "").trimEnd();
 
     // Pull out any [ACTION:{...}] markers; the client renders these as buttons.
-    const { text: response, actions } = extractActions(withoutUpgrade);
+    const { text: response, actions: allActions } = extractActions(withoutUpgrade);
+    const actions = actionsForTier(allActions, subscription.isPremium);
 
     // Reliable fallback: keyword-detect the user's question against their tier
     const keywordDetection = detectUpgradeNeeded(message, subscription.tier);
