@@ -430,32 +430,29 @@ export default function SettingsScreen() {
           </View>
         )}
 
-        {/* Notifications */}
-        <TouchableOpacity style={[s.card, s.rowCard]} onPress={() => navigation.navigate("Notifications")}>
-          <View>
-            <Text style={s.cardTitle}>{t("settings.notifications")}</Text>
-            <Text style={s.cardSub}>{t("settings.notifications_sub")}</Text>
-          </View>
-          <Text style={s.arrow}>→</Text>
-        </TouchableOpacity>
-
-        {/* App Icon */}
-        <TouchableOpacity style={[s.card, s.rowCard]} onPress={() => navigation.navigate("AppIcon")}>
-          <View>
-            <Text style={s.cardTitle}>{t("settings.app_icon")}</Text>
-            <Text style={s.cardSub}>{t("settings.app_icon_sub")}</Text>
-          </View>
-          <Text style={s.arrow}>→</Text>
-        </TouchableOpacity>
-
-        {/* Affiliate / referral code */}
-        <TouchableOpacity style={[s.card, s.rowCard]} onPress={() => navigation.navigate("AffiliateCode")}>
-          <View>
-            <Text style={s.cardTitle}>{t("settings.affiliate_code")}</Text>
-            <Text style={s.cardSub}>{t("settings.affiliate_code_sub")}</Text>
-          </View>
-          <Text style={s.arrow}>→</Text>
-        </TouchableOpacity>
+        {/* These three are the same thing — a label that opens another screen.
+            They were three separately bordered cards, which gave each one the
+            visual weight of a section. One container, hairline-separated. */}
+        <View style={s.navGroup}>
+          {[
+            { key: "notifications", screen: "Notifications" },
+            { key: "app_icon", screen: "AppIcon" },
+            { key: "affiliate_code", screen: "AffiliateCode" },
+          ].map((item, i, all) => (
+            <TouchableOpacity
+              key={item.key}
+              style={[s.navRow, i < all.length - 1 && s.navRowDivider]}
+              onPress={() => navigation.navigate(item.screen)}
+              accessibilityRole="button"
+            >
+              <View style={s.navRowBody}>
+                <Text style={s.navRowTitle}>{t(`settings.${item.key}`)}</Text>
+                <Text style={s.navRowSub}>{t(`settings.${item.key}_sub`)}</Text>
+              </View>
+              <Text style={s.arrow}>→</Text>
+            </TouchableOpacity>
+          ))}
+        </View>
 
         {/* Privacy & Data */}
         <View style={s.card}>
@@ -616,6 +613,22 @@ const s = StyleSheet.create({
     marginBottom: 14,
   },
   cardTitle: { fontSize: 14, fontWeight: "700", color: T.textPrimary, marginBottom: 12 },
+
+  // One bordered container for the whole navigation list, rather than a border
+  // around each row. Rows are separated by a hairline, which is enough.
+  navGroup: {
+    backgroundColor: T.surface,
+    borderRadius: 16,
+    borderWidth: 1,
+    borderColor: T.border,
+    marginBottom: 14,
+    overflow: "hidden",
+  },
+  navRow: { flexDirection: "row", alignItems: "center", gap: 12, paddingHorizontal: 18, paddingVertical: 16 },
+  navRowDivider: { borderBottomWidth: 1, borderBottomColor: T.border },
+  navRowBody: { flex: 1 },
+  navRowTitle: { fontSize: 14, fontWeight: "700", color: T.textPrimary },
+  navRowSub: { fontSize: 12, color: T.textMuted, marginTop: 2 },
   cardSub: { fontSize: 12, color: T.textMuted, marginBottom: 10 },
   rowCard: { flexDirection: "row", justifyContent: "space-between", alignItems: "center" },
 

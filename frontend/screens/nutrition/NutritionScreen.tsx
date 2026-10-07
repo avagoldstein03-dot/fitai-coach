@@ -16,7 +16,7 @@ import axios from "axios";
 import { useUpgradeGate, isPremiumRequiredError } from "@/contexts/UpgradeGateContext";
 import { useTranslation } from "react-i18next";
 import * as Haptics from "expo-haptics";
-import { T } from "@/lib/theme";
+import { T, metric } from "@/lib/theme";
 import { posthog, Events } from "@/lib/analytics";
 
 const API_URL = process.env.EXPO_PUBLIC_API_URL;
@@ -239,9 +239,9 @@ export default function NutritionScreen() {
                 const fCals = todayMacros.totalFat * 9;
                 const sum = pCals + cCals + fCals || 1;
                 const splits = [
-                  { label: t("nutrition.protein"), pct: Math.round((pCals / sum) * 100), color: T.blue },
-                  { label: t("nutrition.carbs"),   pct: Math.round((cCals / sum) * 100), color: T.amber },
-                  { label: t("nutrition.fats"),    pct: Math.round((fCals / sum) * 100), color: T.red },
+                  { label: t("nutrition.protein"), pct: Math.round((pCals / sum) * 100), color: metric.protein },
+                  { label: t("nutrition.carbs"),   pct: Math.round((cCals / sum) * 100), color: metric.carbs },
+                  { label: t("nutrition.fats"),    pct: Math.round((fCals / sum) * 100), color: metric.fat },
                 ];
                 return (
                   <View style={s.macroSplitCard}>
@@ -267,9 +267,13 @@ export default function NutritionScreen() {
             {/* Macro targets */}
             <View style={s.card}>
               <Text style={s.cardTitle}>{t("nutrition.macros")}</Text>
-              <MacroBar label={t("nutrition.protein")} current={todayMacros?.totalProtein ?? 0} target={targets.proteinTarget} color={T.blue} />
-              <MacroBar label={t("nutrition.carbs")}   current={todayMacros?.totalCarbs ?? 0}   target={targets.carbsTarget}   color={T.amber} />
-              <MacroBar label={t("nutrition.fats")}    current={todayMacros?.totalFat ?? 0}     target={targets.fatsTarget}    color={T.red} />
+              {/* Macro colours come from the shared map so protein is the same
+                  colour here as on the Dashboard and Food screen. Fats used to be
+                  red, which on this screen also means "over your calorie target" —
+                  the same colour saying two different things. */}
+              <MacroBar label={t("nutrition.protein")} current={todayMacros?.totalProtein ?? 0} target={targets.proteinTarget} color={metric.protein} />
+              <MacroBar label={t("nutrition.carbs")}   current={todayMacros?.totalCarbs ?? 0}   target={targets.carbsTarget}   color={metric.carbs} />
+              <MacroBar label={t("nutrition.fats")}    current={todayMacros?.totalFat ?? 0}     target={targets.fatsTarget}    color={metric.fat} />
               <View style={s.waterRow}>
                 <Text style={s.waterLabel}>💧 {t("nutrition.water")}</Text>
                 <Text style={s.waterValue}>{t("nutrition.water_value", { amount: (targets.waterTarget / 1000).toFixed(1) })}</Text>
@@ -345,9 +349,9 @@ export default function NutritionScreen() {
                 <View style={s.planMacroRow}>
                   {[
                     { label: t("nutrition.calories"), value: `${planData.plan.dailyCaloricTarget}`, color: T.accent },
-                    { label: t("nutrition.protein"),  value: `${planData.plan.proteinTarget}g`,     color: T.blue },
-                    { label: t("nutrition.carbs"),    value: `${planData.plan.carbsTarget}g`,       color: T.amber },
-                    { label: t("nutrition.fats"),     value: `${planData.plan.fatsTarget}g`,        color: T.red },
+                    { label: t("nutrition.protein"),  value: `${planData.plan.proteinTarget}g`,     color: metric.protein },
+                    { label: t("nutrition.carbs"),    value: `${planData.plan.carbsTarget}g`,       color: metric.carbs },
+                    { label: t("nutrition.fats"),     value: `${planData.plan.fatsTarget}g`,        color: metric.fat },
                   ].map((m) => (
                     <View key={m.label} style={s.planMacroItem}>
                       <Text style={[s.planMacroValue, { color: m.color }]}>{m.value}</Text>
@@ -386,9 +390,9 @@ export default function NutritionScreen() {
                             <Text key={j} style={s.mealItemFood}>· {food}</Text>
                           ))}
                           <View style={s.mealItemMacros}>
-                            <Text style={[s.mealMacroText, { color: T.blue }]}>{t("food_diary.abbr_protein")} {Math.round(meal.protein)}g</Text>
-                            <Text style={[s.mealMacroText, { color: T.amber }]}>{t("food_diary.abbr_carbs")} {Math.round(meal.carbs)}g</Text>
-                            <Text style={[s.mealMacroText, { color: T.red }]}>{t("food_diary.abbr_fat")} {Math.round(meal.fat)}g</Text>
+                            <Text style={[s.mealMacroText, { color: metric.protein }]}>{t("food_diary.abbr_protein")} {Math.round(meal.protein)}g</Text>
+                            <Text style={[s.mealMacroText, { color: metric.carbs }]}>{t("food_diary.abbr_carbs")} {Math.round(meal.carbs)}g</Text>
+                            <Text style={[s.mealMacroText, { color: metric.fat }]}>{t("food_diary.abbr_fat")} {Math.round(meal.fat)}g</Text>
                           </View>
                         </View>
                       ))}

@@ -18,7 +18,7 @@ import { useUpgradeGate, isPremiumRequiredError } from "@/contexts/UpgradeGateCo
 import { useTranslation } from "react-i18next";
 import * as Haptics from "expo-haptics";
 import { requestReviewOnce } from "@/lib/store-review";
-import { T } from "@/lib/theme";
+import { T, metric } from "@/lib/theme";
 import { posthog, Events } from "@/lib/analytics";
 import { SwipeToDeleteRow } from "@/components/SwipeToDeleteRow";
 import MuscleDiagramSVG from "@/components/MuscleDiagramSVG";
@@ -379,9 +379,13 @@ export default function WorkoutsScreen() {
         {/* Stats */}
         <View style={styles.statsRow}>
           {[
-            { label: t("workouts.this_week"), value: String(stats?.completedThisWeek ?? 0), color: T.accent },
-            { label: t("workouts.all_time"), value: String(stats?.totalSessions ?? 0), color: T.blue },
-            { label: t("workouts.streak"), value: `${stats?.currentStreak ?? 0}d`, color: T.teal },
+            // All three were different colours, but the first two are the same
+            // metric at two scales — workouts, counted — so they share its colour.
+            // The streak is a different idea: a habit, not a count, and it is the
+            // one people care about keeping, so it takes the accent.
+            { label: t("workouts.this_week"), value: String(stats?.completedThisWeek ?? 0), color: metric.workouts },
+            { label: t("workouts.all_time"), value: String(stats?.totalSessions ?? 0), color: metric.workouts },
+            { label: t("workouts.streak"), value: `${stats?.currentStreak ?? 0}d`, color: T.accent },
           ].map((s) => (
             <View key={s.label} style={styles.statCard}>
               <Text style={[styles.statValue, { color: s.color }]}>{s.value}</Text>
