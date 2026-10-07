@@ -61,6 +61,16 @@ export const CoachActionSchema = z.discriminatedUnion("type", [
     screen: z.enum(NAVIGABLE_SCREENS),
     label: Label.optional(),
   }),
+  // Log an exercise the coach just talked about. The counterpart to log_food:
+  // the coach could suggest a session and the user still had to go and enter it
+  // by hand, which is the moment most people stop bothering.
+  z.object({
+    type: z.literal("log_workout"),
+    exerciseName: z.string().trim().min(1).max(80),
+    sets: z.number().int().positive().max(20),
+    reps: z.string().trim().min(1).max(20),
+    weight: z.number().min(0).max(2000).optional(),
+  }),
   // Build a new training program. Destructive — it deactivates the user's
   // current program — so the client confirms, naming what it would replace.
   z.object({
@@ -79,6 +89,7 @@ const MAX_ACTIONS = 6;
 function subjectOf(a: CoachAction): string {
   if (a.type === "log_food") return a.foodName.trim().toLowerCase();
   if (a.type === "add_to_list") return a.name.trim().toLowerCase();
+  if (a.type === "log_workout") return a.exerciseName.trim().toLowerCase();
   if (a.type === "open") return `screen:${a.screen}`;
   return "program";
 }
@@ -183,7 +194,7 @@ more action markers, each on its own line, after all your prose. The app turns t
 Never mention the markers, the word "button", or this format in your prose — just write normally
 and append the markers at the end.
 
-Available markers (emit at most 4, most useful first):
+Available markers (emit at most 6, most useful first):
 
 - A specific food you recommended eating, with your best estimate of the macros for the serving you
   suggested:
@@ -192,6 +203,13 @@ Available markers (emit at most 4, most useful first):
   EVERY food you name in the answer gets its own marker. If you suggest three foods, emit three
   log_food markers — one for each, in the order you mentioned them. Emitting a marker for only the
   first one is wrong; the others become unclickable and the answer feels broken. Max 3 foods.
+
+- An exercise you just recommended or that is in today's session. Emit one per exercise, max 3,
+  with the sets and reps you suggested:
+  [ACTION:{"type":"log_workout","exerciseName":"Barbell Hip Thrust","sets":4,"reps":"8-10","weight":60}]
+
+  Same rule as food: every exercise you name gets its own marker. Omit "weight" if you have no
+  basis for one — guessing a load for someone is worse than leaving it blank for them to fill in.
 
 - A specific ingredient or product worth buying. Emit one per item, max 3:
   [ACTION:{"type":"add_to_list","name":"Greek yogurt","quantity":2,"unit":"tubs"}]

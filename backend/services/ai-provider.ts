@@ -201,6 +201,9 @@ export interface ChatContext {
   trendsSummary?: string;
   coachingDirective?: string;
   healthSummary?: string;
+  // Today's planned meals and today's session, so the coach answers from the
+  // plans the app already built rather than inventing an unrelated suggestion.
+  planSummary?: string;
 }
 
 // Caps history to a token-safe window and enforces the strict user/assistant

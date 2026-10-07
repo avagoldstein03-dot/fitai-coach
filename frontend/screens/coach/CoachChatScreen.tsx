@@ -33,6 +33,7 @@ type CoachAction =
   | { type: "log_food"; foodName: string; quantity: number; unit: string; calories: number; protein: number; carbs: number; fat: number; fiber: number }
   | { type: "add_to_list"; name: string; quantity?: number; unit?: string }
   | { type: "open"; screen: string; label?: string }
+  | { type: "log_workout"; exerciseName: string; sets: number; reps: string; weight?: number }
   | { type: "set_program"; label?: string };
 
 type MealType = "breakfast" | "lunch" | "dinner" | "snack";
@@ -185,11 +186,13 @@ function ActionBar({ actions, onPress, busy, idPrefix }: {
   const labelFor = (a: CoachAction) => {
     if (a.type === "log_food") return t("coach.action_log_food", { food: a.foodName });
     if (a.type === "add_to_list") return t("coach.action_add_to_list", { item: a.name });
+    if (a.type === "log_workout") return t("coach.action_log_workout", { exercise: a.exerciseName });
     if (a.type === "set_program") return a.label || t("coach.action_set_program");
     return a.label || t("coach.action_open", { screen: a.screen });
   };
   const iconFor = (a: CoachAction) =>
-    a.type === "log_food" ? "＋" : a.type === "add_to_list" ? "🛒" : a.type === "set_program" ? "⚡" : "→";
+    a.type === "log_food" ? "＋" : a.type === "add_to_list" ? "🛒"
+      : a.type === "log_workout" ? "🏋" : a.type === "set_program" ? "⚡" : "→";
 
   return (
     <View style={cs.actionBar}>
@@ -609,6 +612,28 @@ export default function CoachChatScreen() {
   const runAction = async (action: CoachAction, key: string) => {
     if (action.type === "log_food") {
       setPendingLog(action);
+      return;
+    }
+
+    if (action.type === "log_workout") {
+      setBusyAction(key);
+      try {
+        await axios.post(`${API_URL}/api/workouts/log-session`, {
+          exerciseName: action.exerciseName,
+          plannedSets: action.sets,
+          plannedReps: action.reps,
+          completedSets: action.sets,
+          completedReps: action.reps,
+          ...(action.weight ? { weight: action.weight } : {}),
+        });
+        queryClient.invalidateQueries({ queryKey: ["workouts"] });
+        Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success);
+        showToast(t("coach.logged_workout", { exercise: action.exerciseName }));
+      } catch {
+        Alert.alert(t("common.error"), t("coach.action_failed"));
+      } finally {
+        setBusyAction(null);
+      }
       return;
     }
 

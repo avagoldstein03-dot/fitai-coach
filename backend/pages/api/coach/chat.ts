@@ -9,6 +9,7 @@ import { sanitizeConversationHistory } from "@/services/ai-provider";
 import { detectWorkoutPlateaus, diffBodyComposition, buildTrendsSummary } from "@/lib/trends";
 import { buildCoachingDirective } from "@/lib/coach-context";
 import { buildHealthSummary } from "@/lib/health-summary";
+import { buildNutritionPlanSummary, buildWorkoutPlanSummary } from "@/lib/plan-summary";
 import { extractActions } from "@/lib/coach-actions";
 
 // Tier-aware keyword detection — reliable fallback that doesn't depend on the AI emitting a marker
@@ -104,6 +105,25 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
             orderBy: { createdAt: "desc" },
             take: 2,
           },
+          // So the coach can answer "what am I training today" with the actual
+          // session rather than something generic.
+          workoutPrograms: {
+            where: { isActive: true },
+            orderBy: { createdAt: "desc" },
+            take: 1,
+            include: {
+              weeks: {
+                orderBy: { weekNumber: "asc" },
+                take: 1,
+                include: {
+                  days: {
+                    orderBy: { dayOfWeek: "asc" },
+                    include: { exercises: { orderBy: { position: "asc" } } },
+                  },
+                },
+              },
+            },
+          },
         },
       }),
       // Load last 20 messages for conversation history
@@ -155,6 +175,14 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
     const healthSummary = buildHealthSummary(healthMetrics);
 
+    // NutritionPlan carries a userId but no relation, so it cannot be included
+    // in the query above and needs user.id, which that query resolves.
+    const nutritionPlan = await prisma.nutritionPlan.findUnique({ where: { userId: user.id } });
+    const planSummary = [
+      buildNutritionPlanSummary(nutritionPlan),
+      buildWorkoutPlanSummary(user.workoutPrograms?.[0] ?? null),
+    ].filter(Boolean).join("\n\n");
+
     const aiProvider = AIProviderRegistry.getProviderForTask("chat");
 
     const rawResponse = await aiProvider.chat(message, {
@@ -180,6 +208,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       trendsSummary,
       coachingDirective,
       healthSummary,
+      planSummary,
     });
 
     // Strip any [UPGRADE:tier] marker the AI may have emitted

@@ -16,6 +16,7 @@ jest.mock("@/lib/prisma", () => ({
     chatMessage: { count: jest.fn(), findMany: jest.fn(), create: jest.fn() },
     workoutSession: { findMany: jest.fn() },
     healthMetric: { findMany: jest.fn() },
+    nutritionPlan: { findUnique: jest.fn() },
     user: { findUnique: jest.fn() },
     analyticsEvent: { create: jest.fn() },
   },

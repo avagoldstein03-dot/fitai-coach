@@ -393,7 +393,7 @@ detailed breakdown).
 
 ${COACH_ACTIONS_PROMPT}
 ${tierGating}
-${context.coachingDirective ? `Coaching Adaptation Directive:\n${context.coachingDirective}\n` : ""}${context.trendsSummary ? `Longitudinal Trends:\n${context.trendsSummary}\n` : ""}${context.healthSummary ? `Recent Health Data:\n${context.healthSummary}\n` : ""}User Profile: ${JSON.stringify(context.userProfile)}
+${context.coachingDirective ? `Coaching Adaptation Directive:\n${context.coachingDirective}\n` : ""}${context.trendsSummary ? `Longitudinal Trends:\n${context.trendsSummary}\n` : ""}${context.healthSummary ? `Recent Health Data:\n${context.healthSummary}\n` : ""}${context.planSummary ? `Their Plans:\n${context.planSummary}\n` : ""}User Profile: ${JSON.stringify(context.userProfile)}
 Recent Goals: ${JSON.stringify(context.goals)}
 Recent Meals: ${JSON.stringify(context.recentMeals?.slice(0, 5))}
 Recent Workouts: ${JSON.stringify(context.recentWorkouts?.slice(0, 5))}`;

@@ -745,7 +745,9 @@
     "replace_program_msg": "This replaces {{program}} with a new one. Your current program will be deactivated.",
     "replace_program_none": "This builds a new training program for you.",
     "replace_program_yes": "Build it",
-    "action_failed": "That did not go through. Try again."
+    "action_failed": "That did not go through. Try again.",
+    "action_log_workout": "Log {{exercise}}",
+    "logged_workout": "Logged {{exercise}}"
   },
   "food_scanner": {
     "title": "Food Scanner",
