@@ -626,7 +626,10 @@
     "restore": "Restore Purchase",
     "restore_none": "No previous purchases found for this Apple ID.",
     "terms_link": "Terms of Service",
-    "privacy_link": "Privacy Policy"
+    "privacy_link": "Privacy Policy",
+    "referral_discount": "{{pct}}% off your first month",
+    "referral_from": "Applied from {{name}}'s code",
+    "referral_applied": "Your referral code is applied"
   },
   "subscription": {
     "title": "Subscription",

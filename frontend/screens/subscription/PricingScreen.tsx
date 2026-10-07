@@ -138,6 +138,22 @@ export default function PricingScreen({ onClose }: { onClose?: () => void } = {}
     },
   });
 
+  // Whether this user came in on an influencer's code. Without this the Pricing
+  // screen shows full price after someone enters a code, which reads as the code
+  // having silently failed.
+  const { data: referral } = useQuery<{
+    referred: boolean;
+    referredBy: string | null;
+    offer: { discountPercent: number; identifier: string } | null;
+  }>({
+    queryKey: ["affiliate-status"],
+    queryFn: async () => {
+      const res = await axios.get(`${API_URL}/api/affiliate/status`);
+      return res.data.data;
+    },
+    staleTime: 300_000,
+  });
+
   const { data: profile, refetch: refetchProfile } = useQuery({
     queryKey: ["profile"],
     queryFn: async () => {
@@ -271,6 +287,19 @@ export default function PricingScreen({ onClose }: { onClose?: () => void } = {}
           <Text style={s.heroEmoji}>⚡</Text>
           <Text style={s.heroTitle}>{t("pricing.title")}</Text>
           <Text style={s.heroSub}>{t("pricing.subtitle")}</Text>
+
+          {referral?.offer && (
+            <View style={s.referralBanner}>
+              <Text style={s.referralBannerPct}>
+                {t("pricing.referral_discount", { pct: referral.offer.discountPercent })}
+              </Text>
+              <Text style={s.referralBannerSub}>
+                {referral.referredBy
+                  ? t("pricing.referral_from", { name: referral.referredBy })
+                  : t("pricing.referral_applied")}
+              </Text>
+            </View>
+          )}
         </View>
 
         {isPremium && periodEnd && (
@@ -489,6 +518,20 @@ const s = StyleSheet.create({
   heroEmoji: { fontSize: 40, marginBottom: 12 },
   heroTitle: { fontSize: 28, fontWeight: "800", color: T.textPrimary, textAlign: "center", letterSpacing: -0.5, marginBottom: 8 },
   heroSub: { fontSize: 14, color: T.textSecondary, textAlign: "center", lineHeight: 22, marginBottom: 14 },
+  // The one place on this screen where the accent earns a solid fill: it is the
+  // reason the price below is lower than advertised, and it has to be noticed.
+  referralBanner: {
+    backgroundColor: T.accentDark,
+    borderWidth: 1,
+    borderColor: T.accent,
+    borderRadius: 14,
+    paddingVertical: 12,
+    paddingHorizontal: 16,
+    marginTop: 18,
+    alignItems: "center",
+  },
+  referralBannerPct: { fontSize: 16, fontWeight: "800", color: T.accent, marginBottom: 2 },
+  referralBannerSub: { fontSize: 12, color: T.textSecondary, textAlign: "center" },
 
   // Active banner
   activeBanner: {
