@@ -18,7 +18,7 @@ import { useNavigation } from "@react-navigation/native";
 import { formatWeight } from "@/lib/units";
 import { useTranslation } from "react-i18next";
 import * as Haptics from "expo-haptics";
-import { T } from "@/lib/theme";
+import { T, metric } from "@/lib/theme";
 import { syncHealthData } from "@/lib/health";
 import { useUpgradeGate } from "@/contexts/UpgradeGateContext";
 import { posthog, Events } from "@/lib/analytics";
@@ -349,20 +349,20 @@ export default function DashboardScreen() {
           <View style={s.macroCard}>
             <Text style={s.macroCardTitle}>{t("dashboard.today")}</Text>
             {[
-              { label: t("dashboard.calories"), current: cal, target: calTarget, unit: t("nutrition.kcal_suffix") },
-              { label: t("dashboard.protein"), current: todayData?.protein ?? 0, target: targets.proteinTarget, unit: "g" },
-              { label: t("dashboard.carbs"), current: todayData?.carbs ?? 0, target: targets.carbsTarget, unit: "g" },
-              { label: t("dashboard.fat"), current: todayData?.fat ?? 0, target: targets.fatsTarget, unit: "g" },
+              { label: t("dashboard.calories"), current: cal, target: calTarget, unit: t("nutrition.kcal_suffix"), color: metric.calories },
+              { label: t("dashboard.protein"), current: todayData?.protein ?? 0, target: targets.proteinTarget, unit: "g", color: metric.protein },
+              { label: t("dashboard.carbs"), current: todayData?.carbs ?? 0, target: targets.carbsTarget, unit: "g", color: metric.carbs },
+              { label: t("dashboard.fat"), current: todayData?.fat ?? 0, target: targets.fatsTarget, unit: "g", color: metric.fat },
             ].map((m) => (
               <View key={m.label} style={s.macroRow}>
                 <View style={s.macroRowHeader}>
                   <Text style={s.macroRowLabel}>{m.label}</Text>
-                  <Text style={s.macroRowValue}>
+                  <Text style={[s.macroRowValue, { color: m.color }]}>
                     {Math.round(m.current)}<Text style={s.macroRowTarget}> / {m.target}{m.unit}</Text>
                   </Text>
                 </View>
                 <View style={s.macroTrack}>
-                  <View style={[s.macroFill, { width: `${pct(m.current, m.target)}%` as any }]} />
+                  <View style={[s.macroFill, { width: `${pct(m.current, m.target)}%` as any, backgroundColor: m.color }]} />
                 </View>
               </View>
             ))}
@@ -398,6 +398,7 @@ export default function DashboardScreen() {
               ? `${data.thisWeek.avgDailyCalories}`
               : "—",
             unit: t("dashboard.kcal_day"),
+            color: metric.calories,
           },
           {
             label: t("dashboard.protein"),
@@ -405,20 +406,23 @@ export default function DashboardScreen() {
               ? `${data.thisWeek.avgDailyProtein}`
               : "—",
             unit: t("dashboard.g_day"),
+            color: metric.protein,
           },
           {
             label: t("dashboard.workouts"),
             value: String(data?.thisWeek.workoutsCompleted ?? 0),
             unit: t("dashboard.this_week"),
+            color: metric.workouts,
           },
           {
             label: t("dashboard.meals"),
             value: String(data?.thisWeek.mealsLogged ?? 0),
             unit: t("dashboard.logged"),
+            color: metric.meals,
           },
         ].map((stat) => (
           <View key={stat.label} style={s.statCard}>
-            <Text style={s.statValue}>{stat.value}</Text>
+            <Text style={[s.statValue, { color: stat.color }]}>{stat.value}</Text>
             <Text style={s.statUnit}>{stat.unit}</Text>
             <Text style={s.statLabel}>{stat.label}</Text>
           </View>

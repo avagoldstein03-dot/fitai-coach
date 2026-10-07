@@ -16,7 +16,7 @@ import { useNavigation } from "@react-navigation/native";
 import * as Haptics from "expo-haptics";
 import axios from "axios";
 import { useTranslation } from "react-i18next";
-import { T } from "@/lib/theme";
+import { T, metric } from "@/lib/theme";
 import { SwipeToDeleteRow } from "@/components/SwipeToDeleteRow";
 
 const API_URL = process.env.EXPO_PUBLIC_API_URL;
@@ -315,19 +315,19 @@ export default function FoodScannerScreen() {
               </View>
               <View style={styles.macroRow}>
                 <View style={styles.macroItem}>
-                  <Text style={styles.macroValue}>{Math.round(todaysData.totalProtein)}g</Text>
+                  <Text style={[styles.macroValue, { color: metric.protein }]}>{Math.round(todaysData.totalProtein)}g</Text>
                   <Text style={styles.macroLabel}>{t("food_scanner.protein")}</Text>
                 </View>
                 <View style={styles.macroDivider} />
                 <View style={styles.macroItem}>
-                  <Text style={styles.macroValue}>
+                  <Text style={[styles.macroValue, { color: metric.carbs }]}>
                     {Math.round(todaysData.meals.reduce((s, m) => s + (m.carbs ?? 0), 0))}g
                   </Text>
                   <Text style={styles.macroLabel}>{t("food_scanner.carbs")}</Text>
                 </View>
                 <View style={styles.macroDivider} />
                 <View style={styles.macroItem}>
-                  <Text style={styles.macroValue}>
+                  <Text style={[styles.macroValue, { color: metric.fat }]}>
                     {Math.round(todaysData.meals.reduce((s, m) => s + (m.fat ?? 0), 0))}g
                   </Text>
                   <Text style={styles.macroLabel}>{t("food_scanner.fat")}</Text>
@@ -461,16 +461,16 @@ export default function FoodScannerScreen() {
               </View>
               <View style={styles.nextMealBars}>
                 {[
-                  { label: "P", left: protLeft, target: nutritionTargets.proteinTarget },
-                  { label: "C", left: carbLeft, target: nutritionTargets.carbsTarget },
-                  { label: "F", left: fatLeft, target: nutritionTargets.fatsTarget },
+                  { label: "P", left: protLeft, target: nutritionTargets.proteinTarget, color: metric.protein },
+                  { label: "C", left: carbLeft, target: nutritionTargets.carbsTarget, color: metric.carbs },
+                  { label: "F", left: fatLeft, target: nutritionTargets.fatsTarget, color: metric.fat },
                 ].map((m) => {
                   const pct = Math.min(Math.max(0, 1 - m.left / m.target), 1);
                   return (
                     <View key={m.label} style={styles.nextMealBarRow}>
                       <Text style={styles.nextMealBarLabel}>{m.label}</Text>
                       <View style={styles.nextMealBarTrack}>
-                        <View style={[styles.nextMealBarFill, { width: `${pct * 100}%` as any }]} />
+                        <View style={[styles.nextMealBarFill, { width: `${pct * 100}%` as any, backgroundColor: m.color }]} />
                       </View>
                       <Text style={styles.nextMealBarVal}>{Math.max(0, m.left)}g</Text>
                     </View>

@@ -62,6 +62,27 @@ export const T = {
   black: "#000000",
 } as const;
 
+/**
+ * A colour per metric, used everywhere that metric appears.
+ *
+ * The screens previously picked colours ad hoc — protein was teal on the
+ * Dashboard and blue on the Food screen, and the same blue meant "ready" in the
+ * readiness scale. Pinning each metric to one colour keeps the variety while
+ * making it mean something: if it's teal, it's protein, on every screen.
+ *
+ * These are deliberately drawn from the data end of the palette. Status colours
+ * (amber, red) stay reserved for readiness and over-target, so a warning never
+ * reads as a macro and a macro never reads as a warning.
+ */
+export const metric = {
+  calories: T.accent,
+  protein:  T.teal,
+  carbs:    T.blue,
+  fat:      T.green,
+  workouts: T.blue,
+  meals:    T.green,
+} as const;
+
 // Common reusable style fragments
 export const card = {
   backgroundColor: T.surface,
