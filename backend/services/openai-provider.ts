@@ -284,9 +284,9 @@ Say which a day is in its "focus", e.g. "Glutes & Hamstrings - Heavy" or "Arms &
   }[userProfile.dayStructure ?? "mixed"]
 }
 
-Ab circuit: then 2-3 core exercises, each tagged "category": "core", with short rest (30-45 seconds) so they read as a circuit rather than straight sets. Vary them — a brace, a flexion movement and a rotation or anti-rotation, not three variations of the same crunch. Every day gets a core circuit.
+Ab circuit: then 3-4 core exercises, each tagged "category": "core", with short rest (30-45 seconds) so they read as a circuit rather than straight sets. Vary them — a brace, a flexion movement, a rotation or anti-rotation, and a lower-ab or lateral movement. Not four variations of the same crunch. Every day gets a core circuit.
 
-So a normal day is 7-8 exercises in total: 5 main plus a 2-3 exercise ab circuit. Use "mobility" only for genuine warm-up or cooldown work, and only where an injury or limitation makes it worthwhile.
+So a normal day is 8-9 exercises in total: 5 main plus a 3-4 exercise ab circuit. Use "mobility" only for genuine warm-up or cooldown work, and only where an injury or limitation makes it worthwhile.
 
 Label every exercise with two more fields, which decide the order it is performed in:
 - "movementType": "compound" for multi-joint lifts (squat, deadlift, hip thrust, press, row, pull-up, lunge, leg press), "isolation" for single-joint work (curl, extension, lateral raise, kickback, calf raise).

@@ -160,8 +160,8 @@ describe("ensureCoreCircuit", () => {
     const day = { dayOfWeek: 0, exercises: [ex("Barbell Back Squat"), ex("Leg Press")] };
     const out = ensureCoreCircuit(day, 0);
     const core = out.exercises.filter((e) => e.category === "core");
-    expect(core).toHaveLength(3);
-    expect(out.exercises).toHaveLength(5);
+    expect(core).toHaveLength(4);
+    expect(out.exercises).toHaveLength(6);
   });
 
   it("leaves a day alone when the model already produced core work", () => {
@@ -185,6 +185,7 @@ describe("ensureCoreCircuit", () => {
       "Forearm Plank",
       "Hanging Leg Raise",
       "Pallof Press",
+      "Reverse Crunch",
     ]);
   });
 });
@@ -232,7 +233,7 @@ describe("orderWeek", () => {
     };
     const out = orderWeek(week);
     out.days.forEach((d) => {
-      expect(d.exercises.filter((e) => e.category === "core")).toHaveLength(3);
+      expect(d.exercises.filter((e) => e.category === "core")).toHaveLength(4);
     });
   });
 });

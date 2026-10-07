@@ -21,6 +21,7 @@ const goodDay = (overrides: Partial<WorkoutPlanDay> = {}): WorkoutPlanDay => ({
     ex("Cable Pull-Through"),
     core("Plank"),
     core("Russian Twist"),
+    core("Dead Bug"),
   ],
   ...overrides,
 });
@@ -136,7 +137,7 @@ describe("validateDay", () => {
       exercises: [
         ex("Pull-Up"), ex("Bent-Over Row"), ex("Seated Cable Row"),
         ex("Barbell Back Squat"), ex("Dumbbell Curl"),
-        core("Plank"), core("Russian Twist"),
+        core("Plank"), core("Russian Twist"), core("Dead Bug"),
       ],
     });
     const problems = validateDay(day);
@@ -152,7 +153,7 @@ describe("validateDay", () => {
         ex("Pull-Up"), ex("Bent-Over Row"), ex("Seated Cable Row"), ex("Dumbbell Curl"),
         // Declaring "back" would otherwise make a squat pass the focus check.
         ex("Barbell Back Squat", { muscles: ["back", "lats"] }),
-        core("Plank"), core("Russian Twist"),
+        core("Plank"), core("Russian Twist"), core("Dead Bug"),
       ],
     });
     const problems = validateDay(day);
@@ -167,7 +168,7 @@ describe("validateDay", () => {
         ex("Barbell Hip Thrust"), ex("Romanian Deadlift"), ex("Cable Pull-Through"),
         ex("Seated Leg Curl"),
         ex("Reverse Hyper Machine", { muscles: ["glutes", "hamstrings"] }),
-        core("Plank"), core("Russian Twist"),
+        core("Plank"), core("Russian Twist"), core("Dead Bug"),
       ],
     });
     expect(validateDay(day)).toEqual([]);
@@ -177,7 +178,7 @@ describe("validateDay", () => {
     const day = goodDay({
       exercises: [
         ex("Barbell Hip Thrust"), ex("Romanian Deadlift"), ex("Bulgarian Split Squat"),
-        core("Plank"), core("Russian Twist"),
+        core("Plank"), core("Russian Twist"), core("Dead Bug"),
       ],
     });
     expect(validateDay(day)[0].message).toContain("has 3 main exercises");

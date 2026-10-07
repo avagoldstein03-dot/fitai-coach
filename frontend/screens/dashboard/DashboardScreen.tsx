@@ -43,41 +43,6 @@ interface DashboardData {
   subscription: { plan: "free" | "premium"; status: string };
 }
 
-function MiniBarChart({
-  data,
-  valueKey,
-  color,
-}: {
-  data: Array<Record<string, any>>;
-  valueKey: string;
-  color: string;
-}) {
-  const max = Math.max(...data.map((d) => d[valueKey] || 0), 1);
-  const barW = (W - 80) / data.length - 5;
-  return (
-    <View style={s.chartRow}>
-      {data.map((d, i) => {
-        const pct = d[valueKey] / max;
-        return (
-          <View key={i} style={s.barWrapper}>
-            <View
-              style={[
-                s.bar,
-                {
-                  width: barW,
-                  height: Math.max(4, pct * 48),
-                  backgroundColor: color,
-                  opacity: 0.3 + pct * 0.7,
-                },
-              ]}
-            />
-          </View>
-        );
-      })}
-    </View>
-  );
-}
-
 const ACTION_KEYS = [
   { labelKey: "dashboard.action_log_meal",      subKey: "dashboard.action_log_meal_sub",      emoji: "🍽", screen: "FoodScanner"  },
   { labelKey: "dashboard.action_workout",       subKey: "dashboard.action_workout_sub",       emoji: "💪", screen: "Workouts"     },
@@ -112,6 +77,8 @@ export default function DashboardScreen() {
   const [waterGlasses, setWaterGlasses] = useState(0);
   const [celebrationMilestone, setCelebrationMilestone] = useState<number | null>(null);
   const [onboardingDismissed, setOnboardingDismissed] = useState(false);
+  const [noteExpanded, setNoteExpanded] = useState(false);
+  const [actionsOpen, setActionsOpen] = useState(false);
 
   useEffect(() => {
     AsyncStorage.getItem(WATER_KEY).then((v) => {
@@ -566,10 +533,20 @@ export default function DashboardScreen() {
             </View>
           ) : null}
           {data?.physiqueNote ? (
-            <View style={[s.bodyCard, { flex: 2 }]}>
+            // Tappable: the note regularly runs past two lines, and clipping it
+            // with no way to read the rest made the card look broken.
+            <TouchableOpacity
+              style={[s.bodyCard, { flex: 2 }]}
+              activeOpacity={0.8}
+              onPress={() => setNoteExpanded((v) => !v)}
+              accessibilityRole="button"
+            >
               <Text style={s.bodyCardLabel}>{t("dashboard.physique_note")}</Text>
-              <Text style={s.bodyCardValue} numberOfLines={2}>
+              <Text style={s.bodyCardValue} numberOfLines={noteExpanded ? undefined : 2}>
                 {data.physiqueNote}
+              </Text>
+              <Text style={s.bodyCardMore}>
+                {noteExpanded ? t("dashboard.show_less") : t("dashboard.read_more")}
               </Text>
               {data.lastAssessmentDate && (
                 <Text style={s.bodyCardSub}>
@@ -579,7 +556,7 @@ export default function DashboardScreen() {
                   })}
                 </Text>
               )}
-            </View>
+            </TouchableOpacity>
           ) : null}
         </View>
       )}
@@ -620,41 +597,6 @@ export default function DashboardScreen() {
         );
       })()}
 
-      {/* ── Charts ── */}
-      {daily.some((d) => d.calories > 0) && (
-        <View style={s.chartCard}>
-          <View style={s.chartHeader}>
-            <Text style={s.chartTitle}>{t("dashboard.calories")}</Text>
-            <Text style={s.chartSub}>{t("dashboard.last_7_days")}</Text>
-          </View>
-          <MiniBarChart data={daily} valueKey="calories" color={T.accent} />
-          <View style={s.chartLabels}>
-            {daily.map((d, i) => (
-              <Text key={i} style={s.chartLabel}>
-                {new Date(d.date).toLocaleDateString(i18n.language, { weekday: "narrow" })}
-              </Text>
-            ))}
-          </View>
-        </View>
-      )}
-
-      {daily.some((d) => d.protein > 0) && (
-        <View style={s.chartCard}>
-          <View style={s.chartHeader}>
-            <Text style={s.chartTitle}>{t("dashboard.protein")}</Text>
-            <Text style={s.chartSub}>{t("dashboard.last_7_days_g")}</Text>
-          </View>
-          <MiniBarChart data={daily} valueKey="protein" color={T.teal} />
-          <View style={s.chartLabels}>
-            {daily.map((d, i) => (
-              <Text key={i} style={s.chartLabel}>
-                {new Date(d.date).toLocaleDateString(i18n.language, { weekday: "narrow" })}
-              </Text>
-            ))}
-          </View>
-        </View>
-      )}
-
       {/* ── Weekly Insights ── */}
       {weeklyInsightsGated ? (
         <View style={s.insightCard}>
@@ -686,9 +628,20 @@ export default function DashboardScreen() {
         </View>
       ) : null}
 
-      {/* ── Quick Actions ── */}
-      <Text style={s.sectionLabel}>{t("dashboard.quick_actions")}</Text>
-      <View style={s.actionList}>
+      {/* ── Quick Actions ──
+          Eight stacked rows was most of the screen's height for a menu people
+          open occasionally. One button now, expanding to the same eight. */}
+      <TouchableOpacity
+        style={s.actionsToggle}
+        onPress={() => setActionsOpen((v) => !v)}
+        activeOpacity={0.8}
+        accessibilityRole="button"
+        accessibilityState={{ expanded: actionsOpen }}
+      >
+        <Text style={s.actionsToggleText}>{t("dashboard.quick_actions")}</Text>
+        <Text style={s.actionsToggleChevron}>{actionsOpen ? "▲" : "▼"}</Text>
+      </TouchableOpacity>
+      <View style={[s.actionList, !actionsOpen && s.hidden]}>
         {ACTION_KEYS.map((a) => (
           <TouchableOpacity
             key={a.labelKey}
@@ -895,36 +848,6 @@ const s = StyleSheet.create({
   nudgeArrow: { fontSize: 22, color: T.textMuted },
 
   // Charts
-  chartCard: {
-    backgroundColor: T.surface,
-    borderRadius: 18,
-    borderWidth: 1,
-    borderColor: T.border,
-    padding: 18,
-    marginBottom: 10,
-  },
-  chartHeader: {
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "baseline",
-    marginBottom: 16,
-  },
-  chartTitle: { fontSize: 15, fontWeight: "700", color: T.textPrimary },
-  chartSub: { fontSize: 11, color: T.textSecondary },
-  chartRow: {
-    flexDirection: "row",
-    alignItems: "flex-end",
-    height: 56,
-    gap: 4,
-  },
-  barWrapper: { flex: 1, alignItems: "center", justifyContent: "flex-end", height: 56 },
-  bar: { borderRadius: 4 },
-  chartLabels: {
-    flexDirection: "row",
-    justifyContent: "space-between",
-    marginTop: 8,
-  },
-  chartLabel: { fontSize: 10, color: T.textMuted, flex: 1, textAlign: "center" },
 
   // Weekly Insights
   insightCard: {
@@ -969,6 +892,16 @@ const s = StyleSheet.create({
   readinessNudge: { fontSize: 13, color: T.textSecondary, lineHeight: 19, marginTop: 4 },
 
   // Quick Actions
+  // One row that opens the eight actions, instead of eight rows always open.
+  actionsToggle: {
+    flexDirection: "row", alignItems: "center", justifyContent: "space-between",
+    backgroundColor: T.surface, borderWidth: 1, borderColor: T.border,
+    borderRadius: 14, paddingHorizontal: 18, paddingVertical: 15, marginBottom: 10,
+  },
+  actionsToggleText: { fontSize: 14, fontWeight: "700", color: T.textPrimary },
+  actionsToggleChevron: { fontSize: 11, color: T.textMuted },
+  hidden: { display: "none" },
+  bodyCardMore: { fontSize: 11, color: T.accent, fontWeight: "600", marginTop: 6 },
   sectionLabel: {
     fontSize: 10,
     color: T.textMuted,

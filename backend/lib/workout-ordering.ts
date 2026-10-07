@@ -103,33 +103,37 @@ export function orderExercises(exercises: WorkoutPlanExercise[]): WorkoutPlanExe
 /**
  * Ab circuits to fall back on when the model does not produce one.
  *
- * Each is a brace, a flexion movement and a rotation or anti-rotation, so a
- * circuit trains the midsection through its actual functions rather than three
- * variations of a crunch. They rotate by day so the same three do not appear in
- * every session, and they need no equipment beyond what any gym has.
+ * Each is a brace, a flexion movement, a rotation or anti-rotation, and a
+ * lower-ab or lateral movement, so a circuit trains the midsection through its
+ * actual functions rather than four variations of a crunch. They rotate by day
+ * so the same four do not appear in every session, and they need no equipment
+ * beyond what any gym has.
  */
 const CORE_CIRCUITS: ReadonlyArray<ReadonlyArray<Omit<WorkoutPlanExercise, "category">>> = [
   [
     { exerciseName: "Forearm Plank", sets: 3, reps: "30-45 sec", restSeconds: 30, notes: "Squeeze glutes and brace — no sagging through the hips.", movementType: "isolation" },
     { exerciseName: "Hanging Leg Raise", sets: 3, reps: "10-12", restSeconds: 45, notes: "Control the way down; no swinging.", movementType: "isolation" },
     { exerciseName: "Pallof Press", sets: 3, reps: "10-12 each side", restSeconds: 30, notes: "Resist the rotation rather than creating it.", movementType: "isolation" },
+    { exerciseName: "Reverse Crunch", sets: 3, reps: "12-15", restSeconds: 30, notes: "Lift from the lower abs; don't swing the legs.", movementType: "isolation" },
   ],
   [
     { exerciseName: "Dead Bug", sets: 3, reps: "10-12 each side", restSeconds: 30, notes: "Keep the lower back flat to the floor throughout.", movementType: "isolation" },
     { exerciseName: "Cable Crunch", sets: 3, reps: "12-15", restSeconds: 45, notes: "Round through the spine, not the hips.", movementType: "isolation" },
     { exerciseName: "Russian Twist", sets: 3, reps: "15 each side", restSeconds: 30, notes: "Rotate from the ribs, not the arms.", movementType: "isolation" },
+    { exerciseName: "Hollow Body Hold", sets: 3, reps: "20-30 sec", restSeconds: 30, notes: "Press the lower back flat into the floor.", movementType: "isolation" },
   ],
   [
     { exerciseName: "Side Plank", sets: 3, reps: "30 sec each side", restSeconds: 30, notes: "Stack the hips and keep a straight line from head to heels.", movementType: "isolation" },
     { exerciseName: "Bicycle Crunch", sets: 3, reps: "15 each side", restSeconds: 30, notes: "Slow and deliberate beats fast and sloppy.", movementType: "isolation" },
     { exerciseName: "Ab Wheel Rollout", sets: 3, reps: "8-10", restSeconds: 45, notes: "Only roll out as far as you can keep the back flat.", movementType: "isolation" },
+    { exerciseName: "Cable Woodchop", sets: 3, reps: "12 each side", restSeconds: 30, notes: "Drive the rotation from the hips and ribs.", movementType: "isolation" },
   ],
 ];
 
 /**
  * Guarantees every day finishes with an ab circuit.
  *
- * The prompt asks for 2-3 core exercises per day, and the model regularly
+ * The prompt asks for 3-4 core exercises per day, and the model regularly
  * returns none at all — the reported complaint was sessions of three real lifts
  * plus a single plank. Appending a circuit here makes it a property of the
  * output rather than something the model has to remember.

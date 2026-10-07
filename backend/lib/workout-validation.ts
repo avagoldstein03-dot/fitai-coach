@@ -19,8 +19,8 @@ export interface ValidationProblem {
 }
 
 export const MAIN_EXERCISES_PER_DAY = 5;
-export const MIN_CORE_EXERCISES = 2;
-export const MAX_CORE_EXERCISES = 3;
+export const MIN_CORE_EXERCISES = 3;
+export const MAX_CORE_EXERCISES = 4;
 
 const isCore = (ex: WorkoutPlanExercise) => (ex.category ?? "").toLowerCase() === "core";
 const isMobility = (ex: WorkoutPlanExercise) => (ex.category ?? "").toLowerCase() === "mobility";

@@ -412,7 +412,9 @@
     "nudge_scan_update_sub": "It's been 7+ days — see how you've changed",
     "nudge_scan_first_sub": "Upload 3 photos for an AI body composition read",
     "carbs": "Carbs",
-    "fat": "Fat"
+    "fat": "Fat",
+    "read_more": "Read more",
+    "show_less": "Show less"
   },
   "settings": {
     "title": "Settings",
