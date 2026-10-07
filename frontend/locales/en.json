@@ -738,7 +738,7 @@
     "meal_dinner": "Dinner",
     "meal_snack": "Snack",
     "macros_line": "{{calories}} kcal · {{protein}}g protein · {{carbs}}g carbs · {{fat}}g fat",
-    "estimate_note": "Estimated by your coach — edit it in the diary if it is off.",
+    "estimate_note": "Estimated — edit in your diary if you need to.",
     "added_to_diary": "Added {{food}} to today",
     "added_to_list": "Added {{item}} to your shopping list",
     "replace_program_title": "Replace your program?",
