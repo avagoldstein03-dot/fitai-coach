@@ -315,19 +315,19 @@ export default function FoodScannerScreen() {
               </View>
               <View style={styles.macroRow}>
                 <View style={styles.macroItem}>
-                  <Text style={styles.macroValueBlue}>{Math.round(todaysData.totalProtein)}g</Text>
+                  <Text style={styles.macroValue}>{Math.round(todaysData.totalProtein)}g</Text>
                   <Text style={styles.macroLabel}>{t("food_scanner.protein")}</Text>
                 </View>
                 <View style={styles.macroDivider} />
                 <View style={styles.macroItem}>
-                  <Text style={styles.macroValueOrange}>
+                  <Text style={styles.macroValue}>
                     {Math.round(todaysData.meals.reduce((s, m) => s + (m.carbs ?? 0), 0))}g
                   </Text>
                   <Text style={styles.macroLabel}>{t("food_scanner.carbs")}</Text>
                 </View>
                 <View style={styles.macroDivider} />
                 <View style={styles.macroItem}>
-                  <Text style={styles.macroValueYellow}>
+                  <Text style={styles.macroValue}>
                     {Math.round(todaysData.meals.reduce((s, m) => s + (m.fat ?? 0), 0))}g
                   </Text>
                   <Text style={styles.macroLabel}>{t("food_scanner.fat")}</Text>
@@ -401,11 +401,17 @@ export default function FoodScannerScreen() {
                 disabled={isDeleting}
                 borderRadius={16}
               >
+                {/* What was eaten and what it cost, on one line each. This used
+                    to be four stacked lines — a timestamp, a bulleted food list
+                    and a separate macro row — which gave a timestamp the same
+                    weight as the food. */}
                 <View style={[styles.mealCard, styles.mealCardWrapper]}>
                   <View style={styles.mealCardHeader}>
-                    <Text style={styles.mealTime}>{meal.time}</Text>
+                    <Text style={styles.mealFood} numberOfLines={2}>
+                      {meal.foods.map((f) => f.name).join(", ")}
+                    </Text>
                     <View style={styles.mealHeaderRight}>
-                      <Text style={styles.mealCalories}>{meal.calories} kcal</Text>
+                      <Text style={styles.mealCalories}>{meal.calories}</Text>
                       <TouchableOpacity
                         onPress={() => handleEditMeal(meal)}
                         style={styles.mealDeleteBtn}
@@ -416,14 +422,9 @@ export default function FoodScannerScreen() {
                       </TouchableOpacity>
                     </View>
                   </View>
-                  {meal.foods.map((food, j) => (
-                    <Text key={j} style={styles.mealFood}>· {food.name}</Text>
-                  ))}
-                  <View style={styles.mealMacros}>
-                    <Text style={styles.mealMacroText}>P {meal.protein}g</Text>
-                    <Text style={styles.mealMacroText}>C {meal.carbs}g</Text>
-                    <Text style={styles.mealMacroText}>F {meal.fat}g</Text>
-                  </View>
+                  <Text style={styles.mealMeta}>
+                    {meal.time} · {meal.protein}p · {meal.carbs}c · {meal.fat}f
+                  </Text>
                 </View>
               </SwipeToDeleteRow>
             ))}
@@ -439,10 +440,10 @@ export default function FoodScannerScreen() {
           if (calLeft <= 0) return null;
 
           const focus = protLeft > carbLeft && protLeft > fatLeft
-            ? { label: t("food_scanner.protein"), value: protLeft, unit: "g", color: T.blue }
+            ? { label: t("food_scanner.protein"), value: protLeft, unit: "g" }
             : carbLeft > fatLeft
-              ? { label: t("food_scanner.carbs"), value: carbLeft, unit: "g", color: T.amber }
-              : { label: t("food_scanner.fat"), value: fatLeft, unit: "g", color: T.red };
+              ? { label: t("food_scanner.carbs"), value: carbLeft, unit: "g" }
+              : { label: t("food_scanner.fat"), value: fatLeft, unit: "g" };
 
           return (
             <View style={styles.nextMealCard}>
@@ -452,24 +453,24 @@ export default function FoodScannerScreen() {
                   <Text style={styles.nextMealCalBadgeText}>{t("food_scanner.kcal_left", { n: calLeft })}</Text>
                 </View>
               </View>
-              <View style={[styles.nextMealFocus, { borderColor: focus.color + "60" }]}>
+              <View style={styles.nextMealFocus}>
                 <Text style={styles.nextMealFocusLabel}>{t("food_scanner.prioritise")}</Text>
-                <Text style={[styles.nextMealFocusMacro, { color: focus.color }]}>
+                <Text style={styles.nextMealFocusMacro}>
                   {focus.label} — {Math.max(0, focus.value)}{focus.unit} remaining
                 </Text>
               </View>
               <View style={styles.nextMealBars}>
                 {[
-                  { label: "P", left: protLeft, target: nutritionTargets.proteinTarget, color: T.blue },
-                  { label: "C", left: carbLeft, target: nutritionTargets.carbsTarget, color: T.amber },
-                  { label: "F", left: fatLeft, target: nutritionTargets.fatsTarget, color: T.red },
+                  { label: "P", left: protLeft, target: nutritionTargets.proteinTarget },
+                  { label: "C", left: carbLeft, target: nutritionTargets.carbsTarget },
+                  { label: "F", left: fatLeft, target: nutritionTargets.fatsTarget },
                 ].map((m) => {
                   const pct = Math.min(Math.max(0, 1 - m.left / m.target), 1);
                   return (
                     <View key={m.label} style={styles.nextMealBarRow}>
                       <Text style={styles.nextMealBarLabel}>{m.label}</Text>
                       <View style={styles.nextMealBarTrack}>
-                        <View style={[styles.nextMealBarFill, { width: `${pct * 100}%` as any, backgroundColor: m.color }]} />
+                        <View style={[styles.nextMealBarFill, { width: `${pct * 100}%` as any }]} />
                       </View>
                       <Text style={styles.nextMealBarVal}>{Math.max(0, m.left)}g</Text>
                     </View>
@@ -765,9 +766,10 @@ const styles = StyleSheet.create({
   calorieLabel: { fontSize: 13, color: T.textSecondary, marginTop: 2 },
   macroRow: { flexDirection: "row", alignItems: "center", gap: 16 },
   macroItem: { alignItems: "center" },
-  macroValueBlue: { fontSize: 18, fontWeight: "700", color: T.blue },
-  macroValueOrange: { fontSize: 18, fontWeight: "700", color: T.amber },
-  macroValueYellow: { fontSize: 18, fontWeight: "700", color: T.accent },
+  // One weight for all three macros. The label under each already names it, so
+  // colouring them blue/orange/green was decoration that competed with the
+  // calorie number this card exists to show.
+  macroValue: { fontSize: 18, fontWeight: "700", color: T.textPrimary },
   macroLabel: { fontSize: 11, color: T.textSecondary, marginTop: 2 },
   macroDivider: { width: 1, height: 28, backgroundColor: T.border },
 
@@ -801,15 +803,17 @@ const styles = StyleSheet.create({
     padding: 16,
   },
   mealCardWrapper: { marginBottom: 8 },
-  mealCardHeader: { flexDirection: "row", justifyContent: "space-between", marginBottom: 8 },
-  mealTime: { fontSize: 13, color: T.textSecondary, fontWeight: "600" },
-  mealHeaderRight: { flexDirection: "row", alignItems: "center", gap: 10 },
-  mealCalories: { fontSize: 14, color: T.accent, fontWeight: "700" },
+  mealCardHeader: { flexDirection: "row", justifyContent: "space-between", alignItems: "flex-start", gap: 12 },
+  mealHeaderRight: { flexDirection: "row", alignItems: "center", gap: 8 },
+  // The food is what you are scanning for, so it carries the weight. The calorie
+  // number sits opposite it without a unit — "kcal" on every row was 400 repeated
+  // characters saying nothing, and the column position already identifies it.
+  mealFood: { flex: 1, fontSize: 15, color: T.textPrimary, fontWeight: "600", lineHeight: 20 },
+  mealCalories: { fontSize: 15, color: T.textPrimary, fontWeight: "700", fontVariant: ["tabular-nums"] },
   mealDeleteBtn: { padding: 4 },
-  mealDeleteIcon: { fontSize: 15 },
-  mealFood: { fontSize: 13, color: T.textPrimary, marginBottom: 2 },
-  mealMacros: { flexDirection: "row", gap: 12, marginTop: 8 },
-  mealMacroText: { fontSize: 12, color: T.textMuted },
+  mealDeleteIcon: { fontSize: 14, color: T.textMuted },
+  // Time and macros on one quiet line: available when wanted, not competing.
+  mealMeta: { fontSize: 12, color: T.textMuted, marginTop: 4 },
 
   // Week Card
   weekCard: {
@@ -1001,14 +1005,18 @@ const styles = StyleSheet.create({
   nextMealTitle: { fontSize: 15, fontWeight: "800", color: T.textPrimary },
   nextMealCalBadge: { backgroundColor: T.accentDark, borderRadius: 10, paddingHorizontal: 10, paddingVertical: 4, borderWidth: 1, borderColor: T.accentBorder },
   nextMealCalBadgeText: { color: T.accent, fontSize: 12, fontWeight: "700" },
-  nextMealFocus: { backgroundColor: T.bg, borderRadius: 12, borderWidth: 1, padding: 12, marginBottom: 14 },
+  // No border and no fill: this sits inside a card that already has both, and
+  // nesting them made the section read as busy. Spacing does the separating.
+  nextMealFocus: { marginBottom: 16 },
   nextMealFocusLabel: { fontSize: 10, color: T.textMuted, fontWeight: "700", textTransform: "uppercase", letterSpacing: 0.6, marginBottom: 3 },
-  nextMealFocusMacro: { fontSize: 15, fontWeight: "800" },
+  nextMealFocusMacro: { fontSize: 17, fontWeight: "800", color: T.textPrimary },
   nextMealBars: { gap: 8, marginBottom: 16 },
   nextMealBarRow: { flexDirection: "row", alignItems: "center", gap: 10 },
   nextMealBarLabel: { fontSize: 12, fontWeight: "700", color: T.textMuted, width: 14 },
   nextMealBarTrack: { flex: 1, height: 6, backgroundColor: T.surface2, borderRadius: 3, overflow: "hidden" },
-  nextMealBarFill: { height: 6, borderRadius: 3 },
+  // One colour for all three macros — the P/C/F label identifies them, and
+  // red for dietary fat collided with red meaning "over target" elsewhere.
+  nextMealBarFill: { height: 6, borderRadius: 3, backgroundColor: T.accentMuted },
   nextMealBarVal: { fontSize: 11, color: T.textSecondary, width: 34, textAlign: "right" },
   nextMealBtn: {
     backgroundColor: T.accentDark,
