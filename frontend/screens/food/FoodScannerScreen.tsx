@@ -106,6 +106,33 @@ export default function FoodScannerScreen() {
   const [reLogMealType, setReLogMealType] = useState<typeof MEAL_TYPES[number]>("snack");
   const [pendingReLog, setPendingReLog] = useState<{ name: string; calories: number; protein: number; carbs: number; fat: number } | null>(null);
 
+  // Meals they kept, plus ones they log often enough to be worth offering back.
+  // Most people never think to press "save", so the recent list does that work
+  // without being asked.
+  const { data: savedData } = useQuery<{
+    saved: { id: string; name: string; mealType: string; items: any[]; totalCalories: number; totalProtein: number }[];
+    suggestions: { name: string; mealType: string; items: any[]; totalCalories: number; totalProtein: number }[];
+  }>({
+    queryKey: ["saved-meals"],
+    queryFn: async () => {
+      const res = await axios.get(`${API_URL}/api/food/saved`);
+      return res.data.data;
+    },
+    staleTime: 120_000,
+  });
+
+  const logAgain = async (meal: { name: string; mealType: string; items: any[] }) => {
+    try {
+      await axios.post(`${API_URL}/api/food/manual`, { mealType: meal.mealType, items: meal.items });
+      queryClient.invalidateQueries({ queryKey: ["food-history"] });
+      queryClient.invalidateQueries({ queryKey: ["mealHistory"] });
+      queryClient.invalidateQueries({ queryKey: ["saved-meals"] });
+      Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success);
+    } catch {
+      Alert.alert(t("common.error"), t("food_scanner.log_failed"));
+    }
+  };
+
   const { data: historyData, refetch: refetchHistory, isRefetching: isRefetchingHistory } = useQuery({
     queryKey: ["mealHistory"],
     queryFn: async () => {
@@ -388,6 +415,48 @@ export default function FoodScannerScreen() {
             ))}
           </View>
         )}
+
+        {/* Log again — saved meals first, then things eaten recently but not
+            today. Swipe right to add the whole meal without rebuilding it. */}
+        {(() => {
+          const rows = [
+            ...(savedData?.saved ?? []).map((m) => ({ ...m, saved: true })),
+            ...(savedData?.suggestions ?? []).map((m) => ({ ...m, saved: false })),
+          ].slice(0, 6);
+          if (!rows.length) return null;
+          return (
+            <View style={styles.againSection}>
+              <Text style={styles.sectionTitle}>{t("food_scanner.recent_meals")}</Text>
+              <Text style={styles.againSub}>{t("food_scanner.recent_meals_sub")}</Text>
+              {rows.map((meal, i) => (
+                <SwipeToDeleteRow
+                  key={`again-${i}`}
+                  onAdd={() => logAgain(meal)}
+                  addLabel={t("food_scanner.swipe_add")}
+                  onDelete={() => {}}
+                  deleteLabel=""
+                  borderRadius={14}
+                >
+                  <TouchableOpacity
+                    style={styles.againCard}
+                    onPress={() => logAgain(meal)}
+                    activeOpacity={0.8}
+                    accessibilityRole="button"
+                  >
+                    <View style={{ flex: 1 }}>
+                      <Text style={styles.againName} numberOfLines={1}>{meal.name}</Text>
+                      <Text style={styles.againMeta}>
+                        {Math.round(meal.totalCalories)} kcal · {Math.round(meal.totalProtein)}p
+                        {meal.saved ? ` · ${t("food_scanner.saved_label")}` : ""}
+                      </Text>
+                    </View>
+                    <Text style={styles.againPlus}>＋</Text>
+                  </TouchableOpacity>
+                </SwipeToDeleteRow>
+              ))}
+            </View>
+          );
+        })()}
 
         {/* Today's Meals */}
         {todaysData && todaysData.meals.length > 0 && (
@@ -793,6 +862,16 @@ const styles = StyleSheet.create({
   // Sections
   section: { marginBottom: 16 },
   sectionTitle: { fontSize: 16, fontWeight: "700", color: T.textPrimary, marginBottom: 12 },
+  againSection: { marginBottom: 24 },
+  againSub: { fontSize: 12, color: T.textMuted, marginTop: -8, marginBottom: 12 },
+  againCard: {
+    flexDirection: "row", alignItems: "center", gap: 12,
+    backgroundColor: T.surface, borderWidth: 1, borderColor: T.border,
+    borderRadius: 14, paddingHorizontal: 16, paddingVertical: 13, marginBottom: 8,
+  },
+  againName: { fontSize: 14, fontWeight: "600", color: T.textPrimary },
+  againMeta: { fontSize: 12, color: T.textMuted, marginTop: 2 },
+  againPlus: { fontSize: 18, color: T.accent, fontWeight: "800" },
 
   // Meal Card
   mealCard: {

@@ -813,14 +813,21 @@
     "permission_required": "Permission required",
     "camera_permission": "Please allow camera access in Settings.",
     "library_permission": "Please allow photo library access in Settings.",
-    "log_again": "Log Again",
+    "log_again": "Log again",
     "next_meal": "What to eat next",
     "prioritise": "Prioritise",
     "log_as": "Log as",
     "add_item": "Add Item",
     "add_recent": "+ Add",
     "log_next_meal": "Log next meal →",
-    "cal_protein": "{{cal}} kcal · {{p}}g protein"
+    "cal_protein": "{{cal}} kcal · {{p}}g protein",
+    "log_failed": "Could not log that. Try again.",
+    "swipe_add": "Add",
+    "recent_meals": "Log again",
+    "recent_meals_sub": "Swipe right to add, from what you have eaten before",
+    "saved_label": "Saved",
+    "saved_title": "Meal saved",
+    "saved_body": "You can log it again from the Log again list."
   },
   "food_diary": {
     "title": "Food Diary",

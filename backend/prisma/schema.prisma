@@ -62,6 +62,7 @@ model User {
   manualMeasurements    ManualMeasurement?
   meals                 Meal[]
   workoutPrograms       WorkoutProgram[]
+  savedMeals            SavedMeal[]
   workoutSessions       WorkoutSession[]
   supplements           UserSupplement[]
   progressPhotos        ProgressPhoto[]
@@ -298,6 +299,28 @@ model FoodItem {
   
   createdAt             DateTime               @default(now())
   updatedAt             DateTime               @updatedAt
+}
+
+// A meal the user chose to keep, so it can be logged again without rebuilding
+// it. Stores a snapshot of the foods and macros rather than pointing at the
+// original Meal, which they may later delete.
+model SavedMeal {
+  id                    String                 @id @default(cuid())
+  userId                String
+  user                  User                   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  name                  String
+  mealType              String                 @default("snack")
+  items                 Json                   // [{ foodName, quantity, unit, calories, protein, carbs, fat, fiber }]
+  totalCalories         Float
+  totalProtein          Float
+  totalCarbs            Float
+  totalFat              Float
+
+  lastUsedAt            DateTime?              // most recently logged, for ordering
+  createdAt             DateTime               @default(now())
+
+  @@index([userId, lastUsedAt])
 }
 
 model NutritionPlan {

@@ -10,6 +10,9 @@ interface SwipeToDeleteRowProps {
   disabled?: boolean;
   /** match the wrapped card's borderRadius so the red action sits flush */
   borderRadius?: number;
+  /** optional constructive action on the opposite swipe, e.g. add this meal */
+  onAdd?: () => void;
+  addLabel?: string;
 }
 
 export function SwipeToDeleteRow({
@@ -18,6 +21,8 @@ export function SwipeToDeleteRow({
   deleteLabel,
   disabled,
   borderRadius = 16,
+  onAdd,
+  addLabel,
 }: SwipeToDeleteRowProps) {
   const swipeRef = useRef<Swipeable>(null);
 
@@ -49,9 +54,42 @@ export function SwipeToDeleteRow({
     );
   };
 
+  // Swiping the other way is the constructive counterpart: the same gesture
+  // vocabulary, in the accent rather than the destructive red.
+  const renderLeftActions = (
+    _progress: Animated.AnimatedInterpolation<number>,
+    dragX: Animated.AnimatedInterpolation<number>
+  ) => {
+    const scale = dragX.interpolate({
+      inputRange: [0, 80],
+      outputRange: [0.5, 1],
+      extrapolate: "clamp",
+    });
+    return (
+      <TouchableOpacity
+        style={[s.addAction, { borderRadius }]}
+        activeOpacity={0.8}
+        disabled={disabled}
+        onPress={() => {
+          swipeRef.current?.close();
+          onAdd?.();
+        }}
+        accessibilityLabel={addLabel}
+        accessibilityRole="button"
+      >
+        <Animated.Text style={[s.addActionText, { transform: [{ scale }] }]}>
+          {addLabel}
+        </Animated.Text>
+      </TouchableOpacity>
+    );
+  };
+
   return (
     <Swipeable
       ref={swipeRef}
+      renderLeftActions={onAdd ? renderLeftActions : undefined}
+      leftThreshold={40}
+      overshootLeft={false}
       renderRightActions={renderRightActions}
       overshootRight={false}
       friction={2}
@@ -71,4 +109,12 @@ const s = StyleSheet.create({
     marginLeft: 8,
   },
   deleteActionText: { color: T.white, fontSize: 13, fontWeight: "700" },
+  addAction: {
+    backgroundColor: T.accent,
+    justifyContent: "center",
+    alignItems: "center",
+    paddingHorizontal: 22,
+    marginBottom: 8,
+  },
+  addActionText: { color: T.black, fontWeight: "800", fontSize: 13 },
 });

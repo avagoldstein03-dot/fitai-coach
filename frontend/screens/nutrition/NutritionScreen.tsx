@@ -319,23 +319,29 @@ export default function NutritionScreen() {
 
             {planData?.plan && (
               <>
-                <TouchableOpacity onPress={() => navigation.navigate("ShoppingList")} style={s.shoppingBtn} activeOpacity={0.8}>
-                  <Text style={s.shoppingEmoji}>🛒</Text>
-                  <View style={{ flex: 1 }}>
-                    <Text style={s.shoppingTitle}>{t("nutrition.shopping_list")}</Text>
-                    <Text style={s.shoppingSub}>{t("nutrition.shopping_sub")}</Text>
-                  </View>
-                  <Text style={s.shoppingArrow}>›</Text>
-                </TouchableOpacity>
-
-                <TouchableOpacity onPress={() => navigation.navigate("ProductScan")} style={s.shoppingBtn} activeOpacity={0.8}>
-                  <Text style={s.shoppingEmoji}>🔍</Text>
-                  <View style={{ flex: 1 }}>
-                    <Text style={s.shoppingTitle}>{t("nutrition.scan_product")}</Text>
-                    <Text style={s.shoppingSub}>{t("nutrition.scan_product_sub")}</Text>
-                  </View>
-                  <Text style={s.shoppingArrow}>›</Text>
-                </TouchableOpacity>
+                {/* Two shortcuts, not two sections. These were full-width rows
+                    with a subtitle each, taking more height than the plan they
+                    sit above. */}
+                <View style={s.shortcutRow}>
+                  <TouchableOpacity
+                    onPress={() => navigation.navigate("ShoppingList")}
+                    style={s.shortcut}
+                    activeOpacity={0.8}
+                    accessibilityRole="button"
+                  >
+                    <Text style={s.shortcutEmoji}>🛒</Text>
+                    <Text style={s.shortcutLabel}>{t("nutrition.shopping_list")}</Text>
+                  </TouchableOpacity>
+                  <TouchableOpacity
+                    onPress={() => navigation.navigate("ProductScan")}
+                    style={s.shortcut}
+                    activeOpacity={0.8}
+                    accessibilityRole="button"
+                  >
+                    <Text style={s.shortcutEmoji}>🔍</Text>
+                    <Text style={s.shortcutLabel}>{t("nutrition.scan_product")}</Text>
+                  </TouchableOpacity>
+                </View>
               </>
             )}
 
@@ -533,22 +539,21 @@ const s = StyleSheet.create({
   },
   generateBtnText: { color: T.accent, fontSize: 16, fontWeight: "800" },
 
-  // Shopping
-  shoppingBtn: {
-    flexDirection: "row",
+  // Two compact squares side by side, rather than two full-width rows.
+  shortcutRow: { flexDirection: "row", gap: 10, marginBottom: 14 },
+  shortcut: {
+    flex: 1,
     alignItems: "center",
+    justifyContent: "center",
+    gap: 6,
     backgroundColor: T.surface,
     borderWidth: 1,
     borderColor: T.border,
-    borderRadius: 16,
-    padding: 16,
-    gap: 12,
-    marginBottom: 14,
+    borderRadius: 14,
+    paddingVertical: 14,
   },
-  shoppingEmoji: { fontSize: 24 },
-  shoppingTitle: { fontSize: 15, fontWeight: "700", color: T.textPrimary, marginBottom: 2 },
-  shoppingSub: { fontSize: 12, color: T.textSecondary },
-  shoppingArrow: { fontSize: 22, color: T.textMuted },
+  shortcutEmoji: { fontSize: 20 },
+  shortcutLabel: { fontSize: 12, fontWeight: "600", color: T.textSecondary, textAlign: "center" },
 
   // Plan macros summary
   planMacroRow: { flexDirection: "row", marginBottom: 16, paddingBottom: 16, borderBottomWidth: 1, borderColor: T.border },
