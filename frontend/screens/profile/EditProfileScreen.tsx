@@ -17,6 +17,18 @@ import axios from "axios";
 import { useTranslation } from "react-i18next";
 import { T } from "@/lib/theme";
 import { cmToFtIn, ftInToCm, kgToLbs, lbsToKg } from "@/lib/units";
+import {
+  SEXES,
+  LIFE_STAGES,
+  ACTIVITY_LEVELS,
+  FITNESS_EXPERIENCE_LEVELS,
+  sexKey,
+  lifeStageKey,
+  activityKey,
+  activityDescKey,
+  experienceKey,
+  showsLifeStage,
+} from "@/lib/profile-options";
 
 const API_URL = process.env.EXPO_PUBLIC_API_URL;
 
@@ -26,6 +38,14 @@ interface ProfileData {
   weight: number | null; // kg
   age: number | null;
   unitSystem: "imperial" | "metric";
+  // Collected at onboarding and, until now, frozen there. Each one feeds a
+  // calculation: sex branches the BMR formula, activityLevel multiplies it,
+  // lifeStage adds the menopause protein bump, and fitnessExperience decides
+  // how the coach talks and how the program is built.
+  sex: string | null;
+  lifeStage: string | null;
+  activityLevel: string | null;
+  fitnessExperience: string | null;
 }
 
 export default function EditProfileScreen() {
@@ -49,9 +69,20 @@ export default function EditProfileScreen() {
   const [heightCm, setHeightCm] = useState("");
   const [weight, setWeight] = useState("");
   const [age, setAge] = useState("");
+  const [sex, setSex] = useState<string | null>(null);
+  const [lifeStage, setLifeStage] = useState<string | null>(null);
+  const [activityLevel, setActivityLevel] = useState<string | null>(null);
+  const [fitnessExperience, setFitnessExperience] = useState<string | null>(null);
 
   useEffect(() => {
     if (!profile) return;
+    // Guarded like the fields below rather than assigned unconditionally: the
+    // state already starts empty, so seeding only what the server actually has
+    // says the same thing without overwriting a selection mid-edit.
+    if (profile.sex) setSex(profile.sex);
+    if (profile.lifeStage) setLifeStage(profile.lifeStage);
+    if (profile.activityLevel) setActivityLevel(profile.activityLevel);
+    if (profile.fitnessExperience) setFitnessExperience(profile.fitnessExperience);
     if (profile.name) setName(profile.name);
     if (profile.height != null) {
       if (isImperial) {
@@ -81,11 +112,27 @@ export default function EditProfileScreen() {
         height: Math.round(heightCmValue * 10) / 10,
         weight: Math.round(weightKgValue * 10) / 10,
         age: parseInt(age || "0", 10),
+        // Only sent when set, so opening this screen and saving cannot blank
+        // an answer the user never touched.
+        ...(sex ? { sex } : {}),
+        ...(lifeStage && showsLifeStage(sex) ? { lifeStage } : {}),
+        ...(activityLevel ? { activityLevel } : {}),
+        ...(fitnessExperience ? { fitnessExperience } : {}),
       });
     },
     onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ["profile"] });
-      queryClient.invalidateQueries({ queryKey: ["dashboard"] });
+      // Every one of these feeds the calorie maths, so the cached targets are
+      // stale the moment they change. Both spellings of the key are in use
+      // across screens.
+      for (const key of [
+        ["profile"],
+        ["dashboard"],
+        ["nutrition-targets"],
+        ["nutritionTargets"],
+        ["goal"],
+      ]) {
+        queryClient.invalidateQueries({ queryKey: key });
+      }
       navigation.goBack();
     },
     onError: () => {
@@ -191,6 +238,89 @@ export default function EditProfileScreen() {
             />
           </View>
 
+          <View style={s.card}>
+            <Text style={s.label}>{t("onboarding.step1.sex")}</Text>
+            <View style={s.chipWrap}>
+              {SEXES.map((id) => (
+                <TouchableOpacity
+                  key={id}
+                  onPress={() => setSex(id)}
+                  style={[s.chip, sex === id && s.chipOn]}
+                  accessibilityRole="button"
+                  accessibilityState={{ selected: sex === id }}
+                >
+                  <Text style={[s.chipText, sex === id && s.chipTextOn]}>{t(sexKey(id))}</Text>
+                </TouchableOpacity>
+              ))}
+            </View>
+          </View>
+
+          {/* Same rule as onboarding step 1: only asked when sex is not male. */}
+          {showsLifeStage(sex) && (
+            <View style={s.card}>
+              <Text style={s.label}>{t("onboarding.step1.life_stage_label")}</Text>
+              <View style={s.chipWrap}>
+                {LIFE_STAGES.map((id) => (
+                  <TouchableOpacity
+                    key={id}
+                    onPress={() => setLifeStage(id)}
+                    style={[s.chip, lifeStage === id && s.chipOn]}
+                    accessibilityRole="button"
+                    accessibilityState={{ selected: lifeStage === id }}
+                  >
+                    <Text style={[s.chipText, lifeStage === id && s.chipTextOn]}>
+                      {t(lifeStageKey(id))}
+                    </Text>
+                  </TouchableOpacity>
+                ))}
+              </View>
+            </View>
+          )}
+
+          {/* The single biggest lever on the calorie target — the TDEE
+              multiplier runs 1.2 to 1.725 across these four. Someone whose
+              activity changed had no way to correct it. */}
+          <View style={s.card}>
+            <Text style={s.label}>{t("onboarding.step3.title")}</Text>
+            <View style={s.optionList}>
+              {ACTIVITY_LEVELS.map((id) => (
+                <TouchableOpacity
+                  key={id}
+                  onPress={() => setActivityLevel(id)}
+                  style={[s.optionRow, activityLevel === id && s.optionRowOn]}
+                  accessibilityRole="button"
+                  accessibilityState={{ selected: activityLevel === id }}
+                >
+                  <View style={{ flex: 1 }}>
+                    <Text style={[s.optionTitle, activityLevel === id && s.chipTextOn]}>
+                      {t(activityKey(id))}
+                    </Text>
+                    <Text style={s.optionDesc}>{t(activityDescKey(id))}</Text>
+                  </View>
+                </TouchableOpacity>
+              ))}
+            </View>
+          </View>
+
+          <View style={s.card}>
+            <Text style={s.label}>{t("onboarding.step4.title")}</Text>
+            <View style={s.chipWrap}>
+              {FITNESS_EXPERIENCE_LEVELS.map((id) => (
+                <TouchableOpacity
+                  key={id}
+                  onPress={() => setFitnessExperience(id)}
+                  style={[s.chip, fitnessExperience === id && s.chipOn]}
+                  accessibilityRole="button"
+                  accessibilityState={{ selected: fitnessExperience === id }}
+                >
+                  <Text style={[s.chipText, fitnessExperience === id && s.chipTextOn]}>
+                    {t(experienceKey(id))}
+                  </Text>
+                </TouchableOpacity>
+              ))}
+            </View>
+          </View>
+
           <TouchableOpacity
             style={[s.saveBtn, !canSave && s.saveBtnDisabled]}
             onPress={() => save()}
@@ -234,6 +364,33 @@ const s = StyleSheet.create({
     color: T.textPrimary,
   },
   unitLabel: { fontSize: 12, color: T.textMuted, marginTop: 6, textAlign: "center" },
+  chipWrap: { flexDirection: "row", flexWrap: "wrap", gap: 8 },
+  chip: {
+    backgroundColor: T.surface2,
+    borderWidth: 1,
+    borderColor: T.border,
+    borderRadius: 18,
+    paddingHorizontal: 14,
+    paddingVertical: 9,
+  },
+  chipOn: { backgroundColor: T.accentDark, borderColor: T.accent },
+  chipText: { fontSize: 13, color: T.textSecondary, fontWeight: "600" },
+  chipTextOn: { color: T.accent },
+  // Activity level gets rows rather than chips: the descriptions are the part
+  // that makes the four distinguishable, and they do not fit in a chip.
+  optionList: { gap: 8 },
+  optionRow: {
+    flexDirection: "row",
+    alignItems: "center",
+    padding: 13,
+    borderRadius: 12,
+    borderWidth: 1,
+    borderColor: T.border,
+    backgroundColor: T.surface2,
+  },
+  optionRowOn: { backgroundColor: T.accentDark, borderColor: T.accent },
+  optionTitle: { fontSize: 14, fontWeight: "700", color: T.textPrimary, marginBottom: 2 },
+  optionDesc: { fontSize: 11.5, color: T.textMuted, lineHeight: 16 },
   saveBtn: { marginHorizontal: 20, backgroundColor: T.accent, borderRadius: 14, paddingVertical: 16, alignItems: "center", marginTop: 8 },
   saveBtnDisabled: { backgroundColor: T.surface },
   saveBtnText: { color: "#000", fontWeight: "700", fontSize: 16 },

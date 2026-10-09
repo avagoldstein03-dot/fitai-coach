@@ -4,11 +4,25 @@ import prisma from "@/lib/prisma";
 import { sendSuccess, sendError, validateRequest } from "@/lib/api-utils";
 import { z } from "zod";
 
-const PRIMARY_GOALS = ["fat_loss", "muscle_gain", "recomposition", "athletic_performance", "general_health"] as const;
+import { PRIMARY_GOALS } from "@/lib/profile-options";
 
-const patchSchema = z.object({
-  primaryGoal: z.enum(PRIMARY_GOALS),
-});
+// Onboarding step 2 collects a target weight and a timeline alongside the goal,
+// and neither could ever be changed again — this editor only accepted
+// primaryGoal, so a target set on day one was permanent.
+//
+// Both are nullable rather than merely optional, so a target someone has passed
+// or no longer wants can be cleared instead of sitting there forever.
+const patchSchema = z
+  .object({
+    primaryGoal: z.enum(PRIMARY_GOALS).optional(),
+    targetWeight: z.number().min(20).max(500).nullable().optional(), // kg
+    timeline: z.number().int().min(1).max(260).nullable().optional(), // weeks
+  })
+  // An empty body would otherwise upsert a row with every field undefined,
+  // which on create means a goal with no primaryGoal at all.
+  .refine((d) => Object.values(d).some((v) => v !== undefined), {
+    message: "At least one field is required",
+  });
 
 // Dedicated post-onboarding goal editor. Deliberately doesn't reuse
 // /api/onboarding/step2 — that endpoint also resets onboardingStep, which is
@@ -31,10 +45,24 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         return sendError(res, "validation_error", "Invalid request body", 400);
       }
 
+      const { primaryGoal, targetWeight, timeline } = validation.data;
+
       const goal = await prisma.goal.upsert({
         where: { userId: user.id },
-        update: { primaryGoal: validation.data.primaryGoal },
-        create: { userId: user.id, primaryGoal: validation.data.primaryGoal },
+        // Prisma leaves `undefined` fields alone and writes `null` as null, so
+        // a partial patch touches only what was sent and an explicit null
+        // clears a target.
+        update: { primaryGoal, targetWeight, timeline },
+        // primaryGoal is required on the row, so a create that only carries a
+        // target weight still needs one. Anyone reaching this without a goal
+        // row has none set, and general_health is what the rest of the app
+        // already falls back to for exactly that case.
+        create: {
+          userId: user.id,
+          primaryGoal: primaryGoal ?? "general_health",
+          targetWeight: targetWeight ?? null,
+          timeline: timeline ?? null,
+        },
       });
 
       return sendSuccess(res, { goal }, "Goal updated successfully");

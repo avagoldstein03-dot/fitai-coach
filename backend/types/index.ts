@@ -58,6 +58,9 @@ export interface UserProfile {
   avatar?: string;
   age?: number;
   sex?: string;
+  lifeStage?: string;
+  activityLevel?: string;
+  fitnessExperience?: string;
   height?: number;
   weight?: number;
   unitSystem?: "imperial" | "metric";

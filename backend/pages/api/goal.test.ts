@@ -59,12 +59,12 @@ describe("goal handler", () => {
     await handler(req, res);
 
     expect(res.status).toHaveBeenCalledWith(200);
-    expect(prisma.goal.upsert).toHaveBeenCalledWith(
-      expect.objectContaining({
-        update: { primaryGoal: "muscle_gain" },
-        create: { userId: "user_1", primaryGoal: "muscle_gain" },
-      })
-    );
+    const call = (prisma.goal.upsert as jest.Mock).mock.calls[0][0];
+    expect(call.update.primaryGoal).toBe("muscle_gain");
+    expect(call.create).toMatchObject({ userId: "user_1", primaryGoal: "muscle_gain" });
+    // Fields that were not sent stay untouched rather than being overwritten.
+    expect(call.update.targetWeight).toBeUndefined();
+    expect(call.update.timeline).toBeUndefined();
   });
 
   it("rejects an invalid primaryGoal value", async () => {
@@ -72,5 +72,76 @@ describe("goal handler", () => {
     await handler(req, res);
     expect(res.status).toHaveBeenCalledWith(400);
     expect(prisma.goal.upsert).not.toHaveBeenCalled();
+  });
+});
+
+describe("goal handler — target weight and timeline", () => {
+  // Onboarding collected both and then froze them: the editor only accepted
+  // primaryGoal, so a target set on day one was permanent.
+  beforeEach(() => {
+    jest.resetAllMocks();
+    (getAuth as jest.Mock).mockReturnValue({ userId: "clerk_1" });
+    (prisma.user.findUnique as jest.Mock).mockResolvedValue({ id: "user_1" });
+    (prisma.goal.upsert as jest.Mock).mockResolvedValue({ id: "goal_1" });
+  });
+
+  it("accepts a new target weight and timeline", async () => {
+    const { req, res } = mockReqRes("PATCH", { targetWeight: 68.5, timeline: 16 });
+    await handler(req, res);
+
+    expect(res.status).toHaveBeenCalledWith(200);
+    const call = (prisma.goal.upsert as jest.Mock).mock.calls[0][0];
+    expect(call.update).toMatchObject({ targetWeight: 68.5, timeline: 16 });
+  });
+
+  it("updates the goal and its target together", async () => {
+    const { req, res } = mockReqRes("PATCH", {
+      primaryGoal: "fat_loss",
+      targetWeight: 70,
+      timeline: 12,
+    });
+    await handler(req, res);
+    const call = (prisma.goal.upsert as jest.Mock).mock.calls[0][0];
+    expect(call.update).toEqual({ primaryGoal: "fat_loss", targetWeight: 70, timeline: 12 });
+  });
+
+  it("lets an explicit null clear a target someone has passed", async () => {
+    const { req, res } = mockReqRes("PATCH", { targetWeight: null, timeline: null });
+    await handler(req, res);
+    const call = (prisma.goal.upsert as jest.Mock).mock.calls[0][0];
+    expect(call.update.targetWeight).toBeNull();
+    expect(call.update.timeline).toBeNull();
+  });
+
+  it("still creates a valid row when only a target is sent", async () => {
+    // primaryGoal is required on the row, so a create carrying only a target
+    // weight would otherwise write a goal with no goal in it.
+    const { req, res } = mockReqRes("PATCH", { targetWeight: 70 });
+    await handler(req, res);
+    const call = (prisma.goal.upsert as jest.Mock).mock.calls[0][0];
+    expect(call.create.primaryGoal).toBe("general_health");
+  });
+
+  it("rejects an empty body rather than upserting an empty goal", async () => {
+    const { req, res } = mockReqRes("PATCH", {});
+    await handler(req, res);
+    expect(res.status).toHaveBeenCalledWith(400);
+    expect(prisma.goal.upsert).not.toHaveBeenCalled();
+  });
+
+  it("rejects implausible targets", async () => {
+    for (const body of [
+      { targetWeight: 5 },
+      { targetWeight: 900 },
+      { timeline: 0 },
+      { timeline: 500 },
+      { timeline: 4.5 },
+    ]) {
+      jest.clearAllMocks();
+      const { req, res } = mockReqRes("PATCH", body);
+      await handler(req, res);
+      expect(res.status).toHaveBeenCalledWith(400);
+      expect(prisma.goal.upsert).not.toHaveBeenCalled();
+    }
   });
 });

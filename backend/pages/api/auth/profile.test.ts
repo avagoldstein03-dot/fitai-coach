@@ -193,3 +193,79 @@ describe("auth/profile — editing health answers after onboarding", () => {
     expect(body.data.medicalNotes).toBe("flare-ups in winter");
   });
 });
+
+describe("auth/profile — editing the rest of the onboarding answers", () => {
+  // All four were collected once and then frozen, though each changes real
+  // output. activityLevel is the TDEE multiplier, so being stuck with a stale
+  // one meant a calorie target up to 40% off with no way to correct it.
+  beforeEach(() => {
+    jest.clearAllMocks();
+    (getAuth as jest.Mock).mockReturnValue({ userId: "user_1" });
+    (prisma.user.update as jest.Mock).mockResolvedValue({ id: "user_1" });
+  });
+
+  async function patched(body: Record<string, unknown>) {
+    const { req, res } = mockReqRes("PATCH", body);
+    await handler(req, res);
+    const call = (prisma.user.update as jest.Mock).mock.calls[0];
+    return { data: call?.[0]?.data, res };
+  }
+
+  it("accepts a new activity level", async () => {
+    const { data } = await patched({ activityLevel: "very_active" });
+    expect(data.activityLevel).toBe("very_active");
+  });
+
+  it("accepts sex, life stage and fitness experience", async () => {
+    const { data } = await patched({
+      sex: "female",
+      lifeStage: "perimenopause",
+      fitnessExperience: "advanced",
+    });
+    expect(data).toMatchObject({
+      sex: "female",
+      lifeStage: "perimenopause",
+      fitnessExperience: "advanced",
+    });
+  });
+
+  it("ignores an unrecognised activity level rather than storing it", async () => {
+    // Storing it would fall through to the TDEE multiplier's default and be
+    // silently wrong for as long as it sat there.
+    const { res } = await patched({ activityLevel: "extremely_active" });
+    expect(res.status).toHaveBeenCalledWith(400); // nothing valid left to update
+    expect(prisma.user.update).not.toHaveBeenCalled();
+  });
+
+  it("keeps the valid fields when one value in the same request is junk", async () => {
+    const { data } = await patched({ activityLevel: "nonsense", fitnessExperience: "beginner" });
+    expect(data.fitnessExperience).toBe("beginner");
+    expect(data.activityLevel).toBeUndefined();
+  });
+
+  it("returns them on a GET so the editor can show what is set", async () => {
+    (prisma.user.findUnique as jest.Mock).mockResolvedValue({
+      id: "user_1",
+      email: "a@b.c",
+      name: "A",
+      sex: "female",
+      lifeStage: "menopause",
+      activityLevel: "lightly_active",
+      fitnessExperience: "intermediate",
+      injuryAreas: [],
+      medicalConditions: [],
+      dietPreferences: [],
+      foodAllergies: [],
+      onboardingCompleted: true,
+      onboardingStep: 9,
+    });
+    const { req, res } = mockReqRes("GET");
+    await handler(req, res);
+    expect(res.json.mock.calls[0][0].data).toMatchObject({
+      sex: "female",
+      lifeStage: "menopause",
+      activityLevel: "lightly_active",
+      fitnessExperience: "intermediate",
+    });
+  });
+});

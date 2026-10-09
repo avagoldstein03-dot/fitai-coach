@@ -32,6 +32,7 @@ import {
   injuryAreaKey,
   conditionKey,
 } from "@/lib/health-options";
+import { activityKey, experienceKey, goalKey } from "@/lib/profile-options";
 
 const API_URL = process.env.EXPO_PUBLIC_API_URL;
 
@@ -64,6 +65,17 @@ export default function SettingsScreen() {
     queryKey: ["profile"],
     queryFn: async () => {
       const res = await axios.get(`${API_URL}/api/auth/profile`);
+      return res.data.data;
+    },
+    staleTime: 300_000,
+  });
+
+  // Read so the Goal card can show what is currently set rather than just
+  // being a door with no label on it.
+  const { data: goalData } = useQuery<{ goal: { primaryGoal: string } | null }>({
+    queryKey: ["goal"],
+    queryFn: async () => {
+      const res = await axios.get(`${API_URL}/api/goal`);
       return res.data.data;
     },
     staleTime: 300_000,
@@ -287,6 +299,20 @@ export default function SettingsScreen() {
             { label: t("settings.name"),  value: profile?.name ?? "—", editable: true },
             { label: t("settings.email"), value: profile?.email ?? "—", editable: false },
             { label: t("settings.age"),   value: profile?.age ? `${profile.age} ${t("settings.age_unit")}` : "—", editable: true },
+            // Surfaced here because nothing showed them and nothing could
+            // change them, yet both feed real calculations — activity level is
+            // the TDEE multiplier. Seeing the current value is half the point:
+            // a stale "Sedentary" is invisible until it is written down.
+            {
+              label: t("settings.activity_level"),
+              value: profile?.activityLevel ? t(activityKey(profile.activityLevel)) : "—",
+              editable: true,
+            },
+            {
+              label: t("settings.experience"),
+              value: profile?.fitnessExperience ? t(experienceKey(profile.fitnessExperience)) : "—",
+              editable: true,
+            },
           ].map(({ label, value, editable }, i, arr) => {
             const Row = editable ? TouchableOpacity : View;
             return (
@@ -475,6 +501,23 @@ export default function SettingsScreen() {
             )}
           </TouchableOpacity>
         </View>
+
+        {/* Goal. The editor already existed but was only reachable from a chip
+            on the Profile screen — Settings is where people go looking to
+            change something, and the goal drives the calorie target and every
+            generated program. */}
+        <TouchableOpacity
+          style={s.card}
+          activeOpacity={0.7}
+          onPress={() => navigation.navigate("EditGoal")}
+        >
+          <Text style={s.cardTitle}>{t("settings.goal")}</Text>
+          <Text style={s.cardSub}>
+            {goalData?.goal?.primaryGoal
+              ? t(goalKey(goalData.goal.primaryGoal))
+              : t("settings.goal_not_set")}
+          </Text>
+        </TouchableOpacity>
 
         {/* Diet & Allergies */}
         <TouchableOpacity

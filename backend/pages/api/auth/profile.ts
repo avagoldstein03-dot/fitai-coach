@@ -5,6 +5,13 @@ import { sendSuccess, sendError, validateRequest } from "@/lib/api-utils";
 import type { UserProfile } from "@/types/index";
 import { normalizeConditions, MAX_MEDICAL_NOTES_LENGTH } from "@/lib/medical-conditions";
 import { normalizeInjuryAreas } from "@/lib/health-safety";
+import {
+  SEXES,
+  LIFE_STAGES,
+  ACTIVITY_LEVELS,
+  FITNESS_EXPERIENCE_LEVELS,
+  onlyKnown,
+} from "@/lib/profile-options";
 
 export default async function handler(
   req: NextApiRequest,
@@ -20,7 +27,7 @@ export default async function handler(
 
     // PATCH — update weight, height, age, name, injury/mobility history, or diet/allergies
     if (req.method === "PATCH") {
-      const { weight, height, age, name, unitSystem, language, country, currency, injuryHistory, injuryAreas, medicalConditions, medicalNotes, dietPreferences, foodAllergies } = req.body;
+      const { weight, height, age, name, unitSystem, language, country, currency, sex, lifeStage, activityLevel, fitnessExperience, injuryHistory, injuryAreas, medicalConditions, medicalNotes, dietPreferences, foodAllergies } = req.body;
       const updateData: Record<string, any> = {};
       if (weight !== undefined) updateData.weight = Number(weight);
       if (height !== undefined) updateData.height = Number(height);
@@ -30,6 +37,30 @@ export default async function handler(
       if (language !== undefined) updateData.language = String(language);
       if (country !== undefined) updateData.country = String(country);
       if (currency !== undefined) updateData.currency = String(currency);
+      // Each of these was collected once at onboarding and then frozen, though
+      // every one changes real output. activityLevel is the worst of them: it is
+      // the TDEE multiplier, so someone whose activity changed was stuck with a
+      // calorie target up to 40% off with no way to correct it.
+      //
+      // Validated against the fixed lists rather than stored as given — an
+      // unrecognised activityLevel would fall through to the multiplier's `||
+      // 1.375` default and be wrong silently, which is worse than being refused.
+      if (sex !== undefined) {
+        const v = onlyKnown(SEXES, sex);
+        if (v) updateData.sex = v;
+      }
+      if (lifeStage !== undefined) {
+        const v = onlyKnown(LIFE_STAGES, lifeStage);
+        if (v) updateData.lifeStage = v;
+      }
+      if (activityLevel !== undefined) {
+        const v = onlyKnown(ACTIVITY_LEVELS, activityLevel);
+        if (v) updateData.activityLevel = v;
+      }
+      if (fitnessExperience !== undefined) {
+        const v = onlyKnown(FITNESS_EXPERIENCE_LEVELS, fitnessExperience);
+        if (v) updateData.fitnessExperience = v;
+      }
       if (injuryHistory !== undefined) updateData.injuryHistory = String(injuryHistory).trim().slice(0, 500);
       // Health answers are editable after onboarding, which they previously were
       // not. The condition most likely to begin after someone signs up —
@@ -57,7 +88,7 @@ export default async function handler(
       const updated = await prisma.user.update({
         where: { clerkId: userId },
         data: updateData,
-        select: { id: true, name: true, weight: true, height: true, age: true, unitSystem: true, language: true, country: true, currency: true, injuryHistory: true, injuryAreas: true, medicalConditions: true, medicalNotes: true, dietPreferences: true, foodAllergies: true },
+        select: { id: true, name: true, weight: true, height: true, age: true, sex: true, lifeStage: true, activityLevel: true, fitnessExperience: true, unitSystem: true, language: true, country: true, currency: true, injuryHistory: true, injuryAreas: true, medicalConditions: true, medicalNotes: true, dietPreferences: true, foodAllergies: true },
       });
 
       return sendSuccess(res, updated, "Profile updated successfully");
@@ -73,6 +104,9 @@ export default async function handler(
         avatar: true,
         age: true,
         sex: true,
+        lifeStage: true,
+        activityLevel: true,
+        fitnessExperience: true,
         height: true,
         weight: true,
         unitSystem: true,
@@ -99,6 +133,9 @@ export default async function handler(
       avatar: user.avatar || undefined,
       age: user.age || undefined,
       sex: user.sex || undefined,
+      lifeStage: user.lifeStage || undefined,
+      activityLevel: user.activityLevel || undefined,
+      fitnessExperience: user.fitnessExperience || undefined,
       height: user.height || undefined,
       weight: user.weight || undefined,
       unitSystem: (user.unitSystem as "imperial" | "metric") || "imperial",
