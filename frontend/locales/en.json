@@ -201,7 +201,7 @@
       "advanced_desc": "4+ years of structured training",
       "prompt": "Select your experience level",
       "injury_label": "Any injuries or mobility limitations?",
-      "injury_placeholder": "e.g. bad left knee, lower back pain — optional",
+      "injury_placeholder": "Anything else about it — optional",
       "injury_helper": "Optional — helps your AI coach avoid or modify exercises that could aggravate this.",
       "medical_label": "Anything we should know about your health?",
       "medical_helper": "Optional, and private to your account. We use it to keep your training and nutrition advice appropriate — it is never a diagnosis, and Active AI does not give medical advice.",
@@ -216,7 +216,17 @@
       "condition_joint_condition": "Arthritis or joint condition",
       "condition_pregnant_or_postpartum": "Pregnant or postpartum",
       "condition_disordered_eating_history": "History of disordered eating",
-      "condition_prefer_not_to_say": "Prefer not to say"
+      "condition_prefer_not_to_say": "Prefer not to say",
+      "injury_q": "Do you have any injuries or areas that give you trouble?",
+      "medical_q": "Anything health-wise we should know about?",
+      "injury_lower_back": "Lower back",
+      "injury_knee": "Knee",
+      "injury_shoulder": "Shoulder",
+      "injury_hip": "Hip",
+      "injury_neck": "Neck",
+      "injury_ankle": "Ankle",
+      "injury_wrist": "Wrist",
+      "injury_elbow": "Elbow"
     },
     "step5": {
       "title": "Diet Preferences",
