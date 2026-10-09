@@ -409,10 +409,19 @@ export function computeReadinessScore(input: {
   if (!sleep && !rhr && !load) return null;
 
   const factors: ReadinessFactor[] = [];
-  let score = 100;
+  // Starts at a neutral baseline, not at perfect.
+  //
+  // Beginning at 100 meant the score could only ever fall, so it took a
+  // catastrophic week to leave the top band: five and a half hours' sleep with
+  // an elevated resting heart rate scored 89 ("primed"), and three bad nights
+  // in a row still scored 81. Two of the four bands were unreachable in
+  // practice, which made the number decorative. From a neutral start a good
+  // week earns its way up and a bad one falls, and all four bands are reachable.
+  const BASELINE_SCORE = 75;
+  let score = BASELINE_SCORE;
 
   if (sleep) {
-    const delta = clamp(sleep.changePct * 0.4, -20, 20);
+    const delta = clamp(sleep.changePct * 0.7, -25, 25);
     score += delta;
     const hrs = (mins: number) => (mins / 60).toFixed(1);
     factors.push({
@@ -423,7 +432,7 @@ export function computeReadinessScore(input: {
   }
 
   if (rhr) {
-    const delta = clamp(-rhr.changePct * 0.5, -15, 15);
+    const delta = clamp(-rhr.changePct * 0.7, -15, 15);
     score += delta;
     factors.push({
       name: "Resting heart rate",
@@ -433,7 +442,7 @@ export function computeReadinessScore(input: {
   }
 
   if (load) {
-    const delta = clamp(-load.changePct * 0.2, -15, 15);
+    const delta = clamp(-load.changePct * 0.25, -12, 12);
     score += delta;
     factors.push({
       name: "Training load",

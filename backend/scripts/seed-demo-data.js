@@ -5,6 +5,8 @@
 //   node scripts/seed-demo-data.js            # dry run — prints what it would do
 //   node scripts/seed-demo-data.js --apply    # writes
 //   node scripts/seed-demo-data.js --undo     # removes exactly what it wrote
+//   node scripts/seed-demo-data.js --apply --tired   # poor recent recovery, so
+//                                                      today's session adapts
 //
 // Additive only. Every row it creates is recorded in scripts/.seed-manifest.json
 // so --undo deletes precisely those and nothing else — it never touches data
@@ -20,6 +22,11 @@ const MANIFEST = path.join(__dirname, ".seed-manifest.json");
 
 const APPLY = process.argv.includes("--apply");
 const UNDO = process.argv.includes("--undo");
+// Seeds a run of poor recovery instead of good, so the readiness score drops and
+// today's session actually gets adapted. The default data gives 8h sleep and a
+// resting heart rate below baseline, which is a perfect week and demonstrates
+// nothing. Use this to see the adaptation, or to film it.
+const TIRED = process.argv.includes("--tired");
 
 const midnight = (daysAgo) => {
   const d = new Date();
@@ -163,12 +170,17 @@ async function buildPlan(user) {
 
   const health = [];
   for (let d = 0; d < 14; d++) {
+    // The baseline is the older stretch; the last few days are what readiness
+    // compares against it. In tired mode only those recent days are degraded,
+    // which is what a real bad patch looks like and what the score is built to
+    // notice.
+    const recent = TIRED && d <= 2;
     health.push({
       date: midnight(d),
-      steps: vary(8600, 2600, d + 1),
-      activeEnergyKcal: vary(430, 140, d + 7),
-      sleepMinutes: vary(437, 52, d + 3),      // ~7h15m, ±52min
-      restingHeartRate: vary(60, 4, d + 11),
+      steps: vary(recent ? 4200 : 8600, 1200, d + 1),
+      activeEnergyKcal: vary(recent ? 210 : 430, 80, d + 7),
+      sleepMinutes: recent ? vary(306, 25, d + 3) : vary(437, 52, d + 3), // ~5h06m vs ~7h15m
+      restingHeartRate: recent ? vary(67, 2, d + 11) : vary(60, 4, d + 11),
     });
   }
 
@@ -257,7 +269,7 @@ async function main() {
   console.log(`  TOTAL      ${todays.reduce((a, m) => a + sum(m.items, 3), 0)} kcal, ${todays.reduce((a, m) => a + sum(m.items, 4), 0)}g protein`);
   const yday = plan.meals.filter((m) => m.daysAgo === 1);
   console.log(`  (yesterday, complete: ${yday.reduce((a, m) => a + sum(m.items, 3), 0)} kcal, ${yday.reduce((a, m) => a + sum(m.items, 4), 0)}g protein)`);
-  console.log(`\nLast night's sleep: ${Math.floor(plan.health[0].sleepMinutes / 60)}h ${plan.health[0].sleepMinutes % 60}m` +
+  console.log(`\n${TIRED ? "TIRED MODE — " : ""}Last night's sleep: ${Math.floor(plan.health[0].sleepMinutes / 60)}h ${plan.health[0].sleepMinutes % 60}m` +
     `, resting HR ${plan.health[0].restingHeartRate}, steps ${plan.health[0].steps}`);
 
   if (!APPLY) {

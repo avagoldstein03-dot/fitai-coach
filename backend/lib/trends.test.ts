@@ -391,3 +391,37 @@ describe("computeReadinessScore", () => {
     expect(loadFactor?.impact).toBe("negative"); // a big recent spike should read as less recovered
   });
 });
+
+describe("readiness bands are all reachable", () => {
+  const row = (date: string, sleepMinutes: number, restingHeartRate: number) => ({
+    date, sleepMinutes, restingHeartRate,
+  });
+  // Twelve stable days, then the most recent day is what gets compared.
+  const baseline = Array.from({ length: 12 }, (_, i) =>
+    row(`2026-09-${String(10 + i).padStart(2, "0")}`, 420, 60)
+  );
+  const withLatest = (sleepMinutes: number, rhr: number) =>
+    computeReadinessScore({ healthRows: [...baseline, row("2026-09-24", sleepMinutes, rhr)], workoutSessions: [] });
+
+  it("rates a good night highly", () => {
+    const r = withLatest(480, 56);
+    expect(r!.label).toBe("primed");
+  });
+
+  it("no longer calls five and a half hours' sleep 'primed'", () => {
+    // The reported bug: this scored 89 before the baseline moved off 100.
+    const r = withLatest(330, 64);
+    expect(r!.score).toBeLessThan(60);
+    expect(["take_it_easy", "prioritize_recovery"]).toContain(r!.label);
+  });
+
+  it("reaches the bottom band on a genuinely bad night", () => {
+    const r = withLatest(240, 72);
+    expect(r!.label).toBe("prioritize_recovery");
+  });
+
+  it("sits mid-range on an ordinary day", () => {
+    const r = withLatest(425, 60);
+    expect(r!.label).toBe("ready");
+  });
+});
