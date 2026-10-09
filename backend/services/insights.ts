@@ -42,8 +42,21 @@ export async function generateWeeklyInsightsForUser(userId: string): Promise<voi
   });
   if (!signals.length) return;
 
+  // Only read after the early return. The signals include weight trends, so the
+  // sentences written from them can be about weight — which puts this on the
+  // list of places a reported disordered-eating history has to reach. But an
+  // empty signal set is the normal case, and this runs over every eligible user
+  // on a weekly cron, so the query is not worth paying for when nothing follows.
+  const user = await prisma.user.findUnique({
+    where: { id: userId },
+    select: { medicalConditions: true, medicalNotes: true },
+  });
+
   const provider = AIProviderRegistry.getProviderForTask("cross_domain_insights");
-  const insights = await provider.generateCrossDomainInsights(signals);
+  const insights = await provider.generateCrossDomainInsights(signals, {
+    medicalConditions: user?.medicalConditions,
+    medicalNotes: user?.medicalNotes ?? undefined,
+  });
   if (!insights.length) return;
 
   const weekOf = startOfWeek();

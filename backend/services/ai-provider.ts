@@ -108,11 +108,24 @@ export interface AIProvider {
   generateProgressReview(userProfile: ProgressReviewInput): Promise<ProgressReviewResult>;
   analyzeForm(input: FormCheckInput): Promise<FormCheckResult>;
   chat(userMessage: string, context: ChatContext): Promise<string>;
-  generateCrossDomainInsights(signals: CrossDomainSignal[]): Promise<string[]>;
+  generateCrossDomainInsights(
+    signals: CrossDomainSignal[],
+    health?: CrossDomainHealthContext
+  ): Promise<string[]>;
 }
 
 export interface CrossDomainSignal {
   description: string;
+}
+
+/**
+ * The signals fed to this include weight logs, so the sentences it writes can
+ * be about weight — which makes it one more place a reported disordered-eating
+ * history has to reach. Optional so the shape stays additive.
+ */
+export interface CrossDomainHealthContext {
+  medicalConditions?: string[];
+  medicalNotes?: string;
 }
 
 export interface WorkoutGenerationInput {

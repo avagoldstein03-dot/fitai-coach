@@ -5,7 +5,7 @@ import { generateWeeklyInsightsForUser, generateWeeklyInsightsForAllEligibleUser
 jest.mock("@/lib/prisma", () => ({
   __esModule: true,
   default: {
-    user: { findMany: jest.fn() },
+    user: { findMany: jest.fn(), findUnique: jest.fn() },
     weightLog: { findMany: jest.fn() },
     healthMetric: { findMany: jest.fn() },
     workoutSession: { findMany: jest.fn() },
@@ -28,6 +28,10 @@ describe("generateWeeklyInsightsForUser", () => {
   beforeEach(() => {
     jest.resetAllMocks();
     (prisma.weightLog.findMany as jest.Mock).mockResolvedValue([]);
+    (prisma.user.findUnique as jest.Mock).mockResolvedValue({
+      medicalConditions: [],
+      medicalNotes: null,
+    });
   });
 
   it("skips (no DB write, no AI call) when there are no notable signals", async () => {
@@ -46,6 +50,9 @@ describe("generateWeeklyInsightsForUser", () => {
 
     expect(generateCrossDomainInsights).not.toHaveBeenCalled();
     expect(prisma.weeklyInsight.upsert).not.toHaveBeenCalled();
+    // Nor is the health context read — a quiet week is the normal case, and
+    // this runs over every eligible user on a cron.
+    expect(prisma.user.findUnique).not.toHaveBeenCalled();
   });
 
   it("calls the AI provider and upserts a row when signals exist", async () => {
@@ -63,6 +70,12 @@ describe("generateWeeklyInsightsForUser", () => {
     await generateWeeklyInsightsForUser("user_1");
 
     expect(generateCrossDomainInsights).toHaveBeenCalledTimes(1);
+    // The insights are written from weight trends among other things, so the
+    // reported health context has to travel with them.
+    expect(generateCrossDomainInsights).toHaveBeenCalledWith(
+      expect.any(Array),
+      { medicalConditions: [], medicalNotes: undefined }
+    );
     expect(prisma.weeklyInsight.upsert).toHaveBeenCalledTimes(1);
     const call = (prisma.weeklyInsight.upsert as jest.Mock).mock.calls[0][0];
     expect(call.create.userId).toBe("user_1");

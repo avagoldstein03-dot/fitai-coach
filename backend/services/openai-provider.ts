@@ -28,6 +28,7 @@ import type {
   FormCheckResult,
   ChatContext,
   CrossDomainSignal,
+  CrossDomainHealthContext,
 } from "./ai-provider";
 
 const openai = new OpenAI({
@@ -514,10 +515,13 @@ People want to see what they're doing well before anything else. Return ONLY val
     }
   }
 
-  async generateCrossDomainInsights(signals: CrossDomainSignal[]): Promise<string[]> {
+  async generateCrossDomainInsights(
+    signals: CrossDomainSignal[],
+    health?: CrossDomainHealthContext
+  ): Promise<string[]> {
     const prompt = `You are a fitness coach. Here are some notable co-occurring changes in a user's data this week, already computed:
 ${signals.map((s) => `- ${s.description}`).join("\n")}
-
+${healthContextBlock(health?.medicalConditions, health?.medicalNotes)}
 Turn these into 2-4 short, specific, encouraging insight sentences a user would actually want to read on their dashboard. Don't just restate the numbers — connect them to something the user can act on. Don't claim certainty about causation, phrase them as observations worth paying attention to.
 
 Return ONLY a valid JSON array of strings, no markdown, no other text. Example: ["Your sleep dropped this week, and so did your workout volume — prioritizing rest might help your numbers bounce back.", "..."]`;
