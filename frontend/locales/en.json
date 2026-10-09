@@ -973,7 +973,8 @@
     "style_hint_mixed": "Every workout starts with heavy compound lifts, then finishes with isolation work.",
     "style_hint_separate": "Whole days of each — some workouts are all heavy lifts, others all isolation, alternating through the week.",
     "style_hint_compound": "Every workout is compound lifts only. Heavier, lower reps, longer rest.",
-    "style_hint_isolation": "Every workout is isolation work only. Higher reps, shorter rest."
+    "style_hint_isolation": "Every workout is isolation work only. Higher reps, shorter rest.",
+    "readiness_label": "Readiness {{score}}"
   },
   "supplements": {
     "title": "Supplements",

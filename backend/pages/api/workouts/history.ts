@@ -2,6 +2,8 @@ import type { NextApiRequest, NextApiResponse } from "next";
 import { getAuth } from "@clerk/nextjs/server";
 import prisma from "@/lib/prisma";
 import { sendSuccess, sendError, validateRequest } from "@/lib/api-utils";
+import { loadReadinessForUser } from "@/lib/readiness";
+import { adaptSessionToReadiness } from "@/lib/readiness-adaptation";
 import { calculateStreak } from "@/lib/trends";
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
@@ -41,6 +43,24 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       take: 30,
     });
 
+    // Adapt today's session to how recovered they actually are. The readiness
+    // score already existed and nothing acted on it — the app would say 44 and
+    // then serve the session it planned three weeks ago. Only today's day is
+    // touched, and only its set counts; see lib/readiness-adaptation.
+    const readiness = await loadReadinessForUser(userId);
+    let todayAdaptation = null;
+    if (activeProgram) {
+      const todayIdx = (new Date().getDay() + 6) % 7; // Monday = 0
+      for (const week of activeProgram.weeks) {
+        const day = week.days.find((d) => d.dayOfWeek === todayIdx);
+        if (!day) continue;
+        const { exercises, adaptation } = adaptSessionToReadiness(day.exercises, readiness);
+        day.exercises = exercises;
+        todayAdaptation = adaptation;
+        break; // week 1 holds the canonical session; later weeks mirror it
+      }
+    }
+
     const completedThisWeek = sessions.filter((s) => {
       const weekAgo = new Date();
       weekAgo.setDate(weekAgo.getDate() - 7);
@@ -49,6 +69,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
     sendSuccess(res, {
       activeProgram,
+      todayAdaptation,
+      readiness,
       programs,
       recentSessions: sessions,
       stats: {

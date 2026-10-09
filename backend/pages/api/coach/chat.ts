@@ -10,6 +10,8 @@ import { detectWorkoutPlateaus, diffBodyComposition, buildTrendsSummary } from "
 import { buildCoachingDirective } from "@/lib/coach-context";
 import { buildHealthSummary } from "@/lib/health-summary";
 import { buildNutritionPlanSummary, buildWorkoutPlanSummary } from "@/lib/plan-summary";
+import { loadReadinessForUser } from "@/lib/readiness";
+import { adaptSessionToReadiness } from "@/lib/readiness-adaptation";
 import { extractActions, actionsForTier } from "@/lib/coach-actions";
 
 // Tier-aware keyword detection — reliable fallback that doesn't depend on the AI emitting a marker
@@ -178,9 +180,24 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     // NutritionPlan carries a userId but no relation, so it cannot be included
     // in the query above and needs user.id, which that query resolves.
     const nutritionPlan = await prisma.nutritionPlan.findUnique({ where: { userId: user.id } });
+
+    // Same adaptation the Workouts screen applies, so the coach describes the
+    // session the user is actually looking at rather than the unadjusted plan.
+    const program = user.workoutPrograms?.[0] ?? null;
+    let adaptationNote: string | null = null;
+    if (program) {
+      const readiness = await loadReadinessForUser(userId);
+      const todayIdx = (new Date().getDay() + 6) % 7;
+      const day = program.weeks[0]?.days.find((d) => d.dayOfWeek === todayIdx);
+      if (day) {
+        const { exercises, adaptation } = adaptSessionToReadiness(day.exercises, readiness);
+        day.exercises = exercises;
+        adaptationNote = adaptation?.applied ? adaptation.note : null;
+      }
+    }
     const planSummary = [
       buildNutritionPlanSummary(nutritionPlan),
-      buildWorkoutPlanSummary(user.workoutPrograms?.[0] ?? null),
+      buildWorkoutPlanSummary(program, new Date(), adaptationNote),
     ].filter(Boolean).join("\n\n");
 
     const aiProvider = AIProviderRegistry.getProviderForTask("chat");

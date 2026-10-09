@@ -102,7 +102,8 @@ interface ProgramDay {
  */
 export function buildWorkoutPlanSummary(
   program: { name: string; weeks: Array<{ days: ProgramDay[] }> } | null | undefined,
-  now = new Date()
+  now = new Date(),
+  adaptationNote?: string | null
 ): string {
   if (!program?.weeks?.length) return "";
 
@@ -126,6 +127,11 @@ export function buildWorkoutPlanSummary(
   ];
   if (core.length) {
     lines.push(`Ab circuit: ${core.map((e) => `${e.exerciseName} ${e.sets} x ${e.reps}`).join(", ")}`);
+  }
+  if (adaptationNote) {
+    // The session above already has the adjusted set counts, so the coach must
+    // know why — otherwise it describes the change as if it were the plan.
+    lines.push(`Today's sets were adjusted for recovery: ${adaptationNote} Mention this if they ask about today's training or why it looks lighter.`);
   }
   lines.push(
     "When they ask about today's training, answer from this session rather than suggesting something generic."

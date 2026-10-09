@@ -65,8 +65,17 @@ interface SessionRecord {
   weight: number | null;
 }
 
+interface SessionAdaptation {
+  applied: boolean;
+  score: number;
+  label: "primed" | "ready" | "take_it_easy" | "prioritize_recovery";
+  note: string;
+  adjustments: { exerciseName: string; fromSets: number; toSets: number }[];
+}
+
 interface HistoryData {
   activeProgram: WorkoutProgram | null;
+  todayAdaptation: SessionAdaptation | null;
   recentSessions: SessionRecord[];
   stats: { completedThisWeek: number; totalSessions: number; currentStreak: number };
 }
@@ -360,6 +369,9 @@ export default function WorkoutsScreen() {
   const stats = data?.stats;
   const currentWeek = program?.weeks?.[selectedWeek];
   const currentDay = currentWeek?.days?.[selectedDay];
+  // The readiness note describes today only, so it is hidden when browsing
+  // another day of the week — the adaptation does not apply to those.
+  const isToday = currentDay?.dayOfWeek === (new Date().getDay() + 6) % 7;
 
   return (
     <ScrollView
@@ -487,6 +499,15 @@ export default function WorkoutsScreen() {
             {/* Exercises */}
             {currentDay?.exercises.length ? (
               <View style={styles.exerciseList}>
+                {data?.todayAdaptation?.note && isToday ? (
+                  <View style={[styles.readinessNote, data.todayAdaptation.applied && styles.readinessNoteApplied]}>
+                    <Text style={styles.readinessScore}>
+                      {t("workouts.readiness_label", { score: data.todayAdaptation.score })}
+                    </Text>
+                    <Text style={styles.readinessText}>{data.todayAdaptation.note}</Text>
+                  </View>
+                ) : null}
+
                 <View style={styles.exercisesHeaderRow}>
                   <Text style={styles.exercisesHeader}>
                     {currentDay.focus
@@ -1120,6 +1141,22 @@ const styles = StyleSheet.create({
   mobilityBadge: { backgroundColor: `${T.teal}22`, borderRadius: 8, paddingHorizontal: 7, paddingVertical: 2, marginBottom: 4 },
   // Separates the ab circuit from the main work, so a session reads as five
   // exercises plus a finisher rather than one undifferentiated list.
+  // Sits above the exercises it changed, so the reason and the result are read
+  // together rather than the numbers appearing to have changed on their own.
+  readinessNote: {
+    backgroundColor: T.surface2,
+    borderWidth: 1,
+    borderColor: T.border,
+    borderRadius: 12,
+    padding: 14,
+    marginBottom: 16,
+  },
+  readinessNoteApplied: { borderColor: T.accentBorder, backgroundColor: T.accentDark },
+  readinessScore: {
+    fontSize: 10, fontWeight: "800", color: T.accent,
+    textTransform: "uppercase", letterSpacing: 0.8, marginBottom: 5,
+  },
+  readinessText: { fontSize: 13, color: T.textSecondary, lineHeight: 19 },
   circuitHeader: {
     fontSize: 11,
     fontWeight: "800",
