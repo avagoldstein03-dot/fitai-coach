@@ -50,7 +50,15 @@ export function calculateMacros(
    * loss. The coach would decline to help with that cut; this screen served it.
    */
   guard?: CalorieGuard | null
-): { calories: number; protein: number; carbs: number; fat: number; water: number } {
+): {
+  calories: number;
+  protein: number;
+  carbs: number;
+  fat: number;
+  water: number;
+  /** True only when the guard actually moved a number, so the UI explains a real change. */
+  guardApplied: boolean;
+} {
   let calories: number;
   let proteinPerKg: number;
 
@@ -83,21 +91,27 @@ export function calculateMacros(
   // Applied after the goal has had its say and before anything is derived from
   // the figure, so protein, fat and carbs are all computed from the guarded
   // number rather than the one the goal alone would have produced.
+  const unguarded = calories;
   calories = guardCalories(calories, tdee, guard ?? null);
 
   const protein = Math.round(weight * proteinPerKg);
   const fat = Math.round((calories * 0.25) / 9);
-  const carbs = Math.round((calories - protein * 4 - fat * 9) / 4);
+  // The 50g floor is a sanity bound, not a recommendation. Where a condition
+  // makes cutting carbohydrate the specific risk, its own floor applies.
+  const rawCarbs = Math.round((calories - protein * 4 - fat * 9) / 4);
+  const carbs = Math.max(rawCarbs, guard?.minCarbGrams ?? 50);
   const water = Math.round(weight * 35); // ml
 
   return {
     calories: Math.round(calories),
     protein,
-    // The 50g floor is a sanity bound, not a recommendation. Where a condition
-    // makes cutting carbohydrate the specific risk, its own floor applies.
-    carbs: Math.max(carbs, guard?.minCarbGrams ?? 50),
+    carbs,
     fat,
     water,
+    // Only true when something actually moved. Someone on a maintenance goal
+    // who reports PCOS has no deficit to cap, and telling them their deficit
+    // was kept moderate would describe a change that never happened.
+    guardApplied: !!guard && (calories !== unguarded || carbs !== rawCarbs),
   };
 }
 
@@ -162,7 +176,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       proteinAdjusted: isMenopauseAdjacent(user.lifeStage),
       // Surfaced so the app can say why the number is what it is. A target that
       // silently refuses to go where the user's goal points reads as a bug.
-      calorieNote: calorieGuard?.reason ?? null,
+      calorieNote: macros.guardApplied ? calorieGuard!.reason : null,
     });
   } catch (error) {
     console.error("Nutrition targets error:", error);

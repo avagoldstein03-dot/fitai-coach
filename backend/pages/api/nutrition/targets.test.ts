@@ -155,3 +155,39 @@ describe("nutrition/targets handler — health guards on the calorie target", ()
     expect(body.dailyCaloricTarget).toBe(body.tdee - 500);
   });
 });
+
+describe("nutrition/targets handler — the note describes a real change only", () => {
+  beforeEach(() => {
+    jest.clearAllMocks();
+    (getAuth as jest.Mock).mockReturnValue({ userId: "clerk_1" });
+  });
+
+  async function noteFor(user: Record<string, unknown>) {
+    (prisma.user.findUnique as jest.Mock).mockResolvedValue(user);
+    const { req, res } = mockReqRes();
+    await handler(req, res);
+    return res.json.mock.calls[0][0].data.calorieNote;
+  }
+
+  it("stays silent when the condition caps a deficit the user does not have", async () => {
+    // Maintenance goal plus PCOS: there is no deficit to keep moderate, so
+    // saying it was kept moderate would describe something that never happened.
+    expect(
+      await noteFor({
+        ...BASE_USER,
+        goal: { primaryGoal: "general_health" },
+        medicalConditions: ["pcos"],
+      })
+    ).toBeNull();
+  });
+
+  it("speaks up when the same condition does change the number", async () => {
+    expect(
+      await noteFor({
+        ...BASE_USER,
+        goal: { primaryGoal: "fat_loss" },
+        medicalConditions: ["pcos"],
+      })
+    ).toContain("PCOS");
+  });
+});
