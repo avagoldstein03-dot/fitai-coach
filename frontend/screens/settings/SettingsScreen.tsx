@@ -26,6 +26,12 @@ import { COUNTRIES, getCountryByName } from "@/lib/currency";
 import { TERMS_URL, PRIVACY_URL } from "@/lib/legal-urls";
 import { LegalWebViewModal } from "@/components/LegalWebViewModal";
 import { isHealthDataAvailable, requestHealthPermissions, syncHealthData } from "@/lib/health";
+import {
+  INJURY_AREAS,
+  SELECTABLE_CONDITIONS,
+  injuryAreaKey,
+  conditionKey,
+} from "@/lib/health-options";
 
 const API_URL = process.env.EXPO_PUBLIC_API_URL;
 
@@ -46,7 +52,10 @@ export default function SettingsScreen() {
   const queryClient = useQueryClient();
   const [newWeight, setNewWeight] = useState("");
   const [injuryHistory, setInjuryHistory] = useState("");
-  const [syncedInjuryHistory, setSyncedInjuryHistory] = useState<string | undefined>(undefined);
+  const [injuryAreas, setInjuryAreas] = useState<string[]>([]);
+  const [conditions, setConditions] = useState<string[]>([]);
+  const [medicalNotes, setMedicalNotes] = useState("");
+  const [syncedHealth, setSyncedHealth] = useState<string | undefined>(undefined);
   const [langModalVisible, setLangModalVisible] = useState(false);
   const [countryModalVisible, setCountryModalVisible] = useState(false);
   const [legalModal, setLegalModal] = useState<"terms" | "privacy" | null>(null);
@@ -63,12 +72,28 @@ export default function SettingsScreen() {
   const unitSystem = profile?.unitSystem ?? "imperial";
   const currentLanguage = profile?.language ?? "English";
 
-  // Seed the editable field once the profile loads, without fighting the user's
-  // in-progress edits on later re-renders (adjusting state during render, not in an effect).
-  if (profile?.injuryHistory !== undefined && profile.injuryHistory !== syncedInjuryHistory) {
-    setSyncedInjuryHistory(profile.injuryHistory);
+  // Seed the editable health fields once the profile loads, without fighting
+  // the user's in-progress edits on later re-renders (adjusting state during
+  // render, not in an effect). One marker covers all four so a refetch re-seeds
+  // them as a set rather than leaving half the card stale.
+  const serverHealth = profile
+    ? JSON.stringify({
+        injuryHistory: profile.injuryHistory ?? "",
+        injuryAreas: profile.injuryAreas ?? [],
+        medicalConditions: profile.medicalConditions ?? [],
+        medicalNotes: profile.medicalNotes ?? "",
+      })
+    : undefined;
+  if (serverHealth !== undefined && serverHealth !== syncedHealth) {
+    setSyncedHealth(serverHealth);
     setInjuryHistory(profile.injuryHistory ?? "");
+    setInjuryAreas(profile.injuryAreas ?? []);
+    setConditions(profile.medicalConditions ?? []);
+    setMedicalNotes(profile.medicalNotes ?? "");
   }
+
+  const toggle = (list: string[], id: string) =>
+    list.includes(id) ? list.filter((x) => x !== id) : [...list, id];
 
   const { mutate: updateWeight, isPending: isUpdating } = useMutation({
     mutationFn: async (weightInDisplayUnit: number) => {
@@ -84,13 +109,31 @@ export default function SettingsScreen() {
     onError: () => Alert.alert(t("common.error"), t("settings.error_weight")),
   });
 
-  const { mutate: updateInjuryHistory, isPending: isSavingInjury } = useMutation({
-    mutationFn: async (text: string) => {
-      await axios.patch(`${API_URL}/api/auth/profile`, { injuryHistory: text.trim() });
+  const { mutate: updateHealth, isPending: isSavingInjury } = useMutation({
+    mutationFn: async () => {
+      await axios.patch(`${API_URL}/api/auth/profile`, {
+        injuryHistory: injuryHistory.trim(),
+        injuryAreas,
+        medicalConditions: conditions,
+        medicalNotes: medicalNotes.trim(),
+      });
     },
     onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ["profile"] });
-      Alert.alert(t("settings.updated"), t("settings.injury_updated"));
+      // Everything downstream reads these: the calorie target, the meal plan,
+      // the progress review. None of it would pick up a change until its own
+      // cache expired. Two spellings of the targets key are in use across
+      // screens, so both are invalidated rather than guessing which one matters.
+      for (const key of [
+        ["profile"],
+        ["nutrition-targets"],
+        ["nutritionTargets"],
+        ["nutritionPlan"],
+        ["progress-review"],
+        ["dashboard"],
+      ]) {
+        queryClient.invalidateQueries({ queryKey: key });
+      }
+      Alert.alert(t("settings.updated"), t("settings.health_updated"));
     },
     onError: () => Alert.alert(t("common.error"), t("settings.error_injury")),
   });
@@ -351,22 +394,78 @@ export default function SettingsScreen() {
           </View>
         </View>
 
-        {/* Injuries & Mobility */}
+        {/* Injuries & health.
+            These were collected once at onboarding and then unreachable, which
+            left no way to record something that began afterwards — pregnancy
+            above all, the condition that changes the most about what the app
+            should say. Everything the coach, the calorie target, the program
+            generator and the form check read about someone's body is editable
+            here. */}
         <View style={s.card}>
-          <Text style={s.cardTitle}>{t("settings.injury_history")}</Text>
-          <Text style={s.cardSub}>{t("settings.injury_history_sub")}</Text>
+          <Text style={s.cardTitle}>{t("settings.health_title")}</Text>
+          <Text style={s.cardSub}>{t("settings.health_sub")}</Text>
+
+          <Text style={s.healthLabel}>{t("settings.health_areas_label")}</Text>
+          <View style={s.chipWrap}>
+            {INJURY_AREAS.map((id) => {
+              const on = injuryAreas.includes(id);
+              return (
+                <TouchableOpacity
+                  key={id}
+                  onPress={() => setInjuryAreas((prev) => toggle(prev, id))}
+                  style={[s.chip, on && s.chipOn]}
+                  accessibilityRole="button"
+                  accessibilityState={{ selected: on }}
+                >
+                  <Text style={[s.chipText, on && s.chipTextOn]}>{t(injuryAreaKey(id))}</Text>
+                </TouchableOpacity>
+              );
+            })}
+          </View>
           <TextInput
             style={s.injuryInput}
             placeholder={t("settings.injury_placeholder")}
             placeholderTextColor={T.textMuted}
             multiline
             numberOfLines={3}
+            maxLength={300}
             value={injuryHistory}
             onChangeText={setInjuryHistory}
           />
+
+          <Text style={s.healthLabel}>{t("settings.health_conditions_label")}</Text>
+          <View style={s.chipWrap}>
+            {SELECTABLE_CONDITIONS.map((id) => {
+              const on = conditions.includes(id);
+              return (
+                <TouchableOpacity
+                  key={id}
+                  onPress={() => setConditions((prev) => toggle(prev, id))}
+                  style={[s.chip, on && s.chipOn]}
+                  accessibilityRole="button"
+                  accessibilityState={{ selected: on }}
+                >
+                  <Text style={[s.chipText, on && s.chipTextOn]}>{t(conditionKey(id))}</Text>
+                </TouchableOpacity>
+              );
+            })}
+          </View>
+          <TextInput
+            style={s.injuryInput}
+            placeholder={t("settings.health_notes_placeholder")}
+            placeholderTextColor={T.textMuted}
+            multiline
+            numberOfLines={2}
+            maxLength={300}
+            value={medicalNotes}
+            onChangeText={setMedicalNotes}
+          />
+
+          <Text style={s.healthDisclaimer}>{t("settings.health_disclaimer")}</Text>
+
           <TouchableOpacity
             style={[s.weightSaveBtn, s.injurySaveBtn, isSavingInjury && s.weightSaveBtnDisabled]}
-            onPress={() => updateInjuryHistory(injuryHistory)}
+            onPress={() => updateHealth()}
             disabled={isSavingInjury}
           >
             {isSavingInjury ? (
@@ -686,6 +785,20 @@ const s = StyleSheet.create({
     marginTop: 10,
   },
   injurySaveBtn: { marginTop: 10, paddingVertical: 12 },
+  healthLabel: { fontSize: 13, fontWeight: "700", color: T.textSecondary, marginTop: 14, marginBottom: 8 },
+  healthDisclaimer: { fontSize: 11, color: T.textMuted, marginTop: 12, lineHeight: 16 },
+  chipWrap: { flexDirection: "row", flexWrap: "wrap", gap: 8 },
+  chip: {
+    backgroundColor: T.surface2,
+    borderWidth: 1,
+    borderColor: T.border,
+    borderRadius: 18,
+    paddingHorizontal: 12,
+    paddingVertical: 8,
+  },
+  chipOn: { backgroundColor: T.accentDark, borderColor: T.accent },
+  chipText: { fontSize: 12.5, color: T.textSecondary, fontWeight: "600" },
+  chipTextOn: { color: T.accent },
   healthSyncedText: { fontSize: 13, color: T.accent, marginTop: 10 },
   healthDisconnectBtn: { marginTop: 10, alignItems: "center", paddingVertical: 4 },
   healthDisconnectBtnText: { color: T.red, fontWeight: "600", fontSize: 14 },

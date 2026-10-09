@@ -41,6 +41,11 @@ model User {
   activityLevel         String?                // "sedentary" | "lightly_active" | "moderately_active" | "very_active"
   fitnessExperience     String?                // "beginner" | "intermediate" | "advanced"
   injuryHistory         String?                // free-text: past/current injuries, mobility limitations, pain points
+  // The same answer as a fixed list of body parts, kept alongside the free text
+  // rather than instead of it. A known key can drive a reviewed exercise
+  // substitution in code (see lib/health-safety) where prose cannot, and it
+  // survives being written in any language.
+  injuryAreas           String[]               @default([])  // from INJURY_AREAS in lib/health-safety
   // Self-reported health context, used to make training and nutrition advice
   // more conservative. Never treated as a diagnosis and never acted on as
   // medical guidance — see buildCoachingDirective in lib/coach-context.

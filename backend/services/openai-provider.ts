@@ -4,8 +4,14 @@ import { COACH_ACTIONS_PROMPT } from "@/lib/coach-actions";
 import { expandWeekWithProgression } from "@/lib/workout-progression";
 import { orderWeek } from "@/lib/workout-ordering";
 import { MUSCLE_GROUPS } from "@/lib/exercise-muscles";
-import { medicalDirectives } from "@/lib/medical-conditions";
-import { validateWeek, describeProblems } from "@/lib/workout-validation";
+import { healthContextBlock } from "@/lib/medical-conditions";
+import {
+  normalizeInjuryAreas,
+  describeInjuryAreas,
+  buildFormCheckHealthContext,
+  INJURY_PROMPT_HINTS,
+} from "@/lib/health-safety";
+import { validateWeek, describeProblems, scrubContraindicated } from "@/lib/workout-validation";
 import { expandDaysWithRotation } from "@/lib/meal-plan-rotation";
 import type {
   AIProvider,
@@ -211,6 +217,7 @@ This is informal coaching feedback only — never present results as a medical, 
   }
 
   async generateWorkout(userProfile: WorkoutGenerationInput): Promise<WorkoutPlanResult> {
+    const injuryAreas = normalizeInjuryAreas(userProfile.injuryAreas);
     // Only week 1 is AI-authored — weeks 2+ apply progressive overload to that same
     // week programmatically (see expandWeekWithProgression). Asking the model to
     // hand-write every week of a multi-week program was the single biggest driver
@@ -226,14 +233,15 @@ ${userProfile.sex ? `- Sex: ${userProfile.sex}` : ""}
 ${userProfile.bodyGoalFocus ? `- Stated body goal / aesthetic focus: ${userProfile.bodyGoalFocus}` : ""}
 ${userProfile.specificFocus ? `- Specific thing they want to fix/improve: ${userProfile.specificFocus}` : ""}
 ${userProfile.assessmentSummary ? `- Latest body assessment notes: ${userProfile.assessmentSummary}` : ""}
+${injuryAreas.length ? `- Reported problem areas: ${describeInjuryAreas(injuryAreas)}` : ""}
 ${userProfile.injuryHistory ? `- Reported injury/mobility limitation: "${userProfile.injuryHistory}"` : ""}
 
 Use the client's stated goal/focus and body assessment notes (if provided) to decide which muscle groups should get priority volume/frequency and which exercises best fit their body type and aim. For example, someone wanting a leaner/smaller look needs different exercise selection and volume distribution than someone wanting to build size in a specific area. Be specific and personalized rather than generic.
-${userProfile.injuryHistory ? `\nIf an injury or mobility limitation is reported, avoid exercises that would aggravate it, substitute safe alternatives, and include general mobility/maintenance work for the affected area(s) — framed as general wellness, not treatment or rehab. This is general guidance, not medical advice.\n` : ""}${
-  medicalDirectives(userProfile.medicalConditions, userProfile.medicalNotes).length
-    ? `\nHEALTH CONTEXT — the client reported the following. Build the program around it; none of it is a diagnosis and you are not treating any of it.\n${medicalDirectives(userProfile.medicalConditions, userProfile.medicalNotes).map((d) => `- ${d}`).join("\n")}\n`
+${userProfile.injuryHistory || injuryAreas.length ? `\nIf an injury or mobility limitation is reported, avoid exercises that would aggravate it, substitute safe alternatives, and include general mobility/maintenance work for the affected area(s) — framed as general wellness, not treatment or rehab. This is general guidance, not medical advice.\n` : ""}${
+  injuryAreas.length
+    ? `\nFor the problem areas listed above, specifically avoid: ${INJURY_PROMPT_HINTS.filter((h) => injuryAreas.includes(h.area)).map((h) => `${h.areaLabel} — ${h.avoid}`).join("; ")}. These are checked after you answer and anything that slips through is substituted automatically, so choosing well here keeps the program coherent.\n`
     : ""
-}
+}${healthContextBlock(userProfile.medicalConditions, userProfile.medicalNotes)}
 Return ONLY valid JSON with no markdown, structured exactly like this:
 {
   "coachNote": "2-3 sentences, written directly to the client: how this program is tailored to their stated goal and body type, and honest, encouraging guidance on whether their goal is realistic and what to focus on to get there.",
@@ -326,7 +334,7 @@ Order each day so the client does the heaviest work for their stated goal while 
     // it, so the order is enforced here, along with the ab circuit, before the
     // week is checked.
     let week = orderWeek(parsed.week);
-    let problems = validateWeek(week, userProfile.daysPerWeek);
+    let problems = validateWeek(week, userProfile.daysPerWeek, injuryAreas);
 
     // One retry, with the specific failures handed back. The model is good at
     // fixing a named mistake and poor at avoiding it unprompted — a squat on a
@@ -351,7 +359,7 @@ Order each day so the client does the heaviest work for their stated goal while 
         "workout program"
       );
       const retryWeek = orderWeek(reparsed.week);
-      const retryProblems = validateWeek(retryWeek, userProfile.daysPerWeek);
+      const retryProblems = validateWeek(retryWeek, userProfile.daysPerWeek, injuryAreas);
       // Keep whichever attempt is closer to correct rather than assuming the
       // second is better — occasionally the retry fixes one thing and breaks another.
       if (retryProblems.length <= problems.length) {
@@ -367,9 +375,20 @@ Order each day so the client does the heaviest work for their stated goal while 
       }
     }
 
+    // Everything above is advisory — a day that ends up with four main lifts
+    // instead of five ships. A contraindicated exercise does not: this pass
+    // enforces the injury rules in code, after the model has had its retry.
+    const { week: safeWeek, scrubbed } = scrubContraindicated(week, injuryAreas);
+    if (scrubbed.length) {
+      console.warn(
+        "Substituted exercises for reported injuries:",
+        scrubbed.map((s) => `${s.from} -> ${s.to ?? "(removed)"} (${s.areaLabel})`)
+      );
+    }
+
     return {
       coachNote: parsed.coachNote,
-      weeks: expandWeekWithProgression(week, userProfile.durationWeeks),
+      weeks: expandWeekWithProgression(safeWeek, userProfile.durationWeeks),
     };
   }
 
@@ -391,7 +410,8 @@ Order each day so the client does the heaviest work for their stated goal while 
 - Activity Level: ${userProfile.activityLevel}
 - Diet Preferences: ${userProfile.dietPreferences.join(", ")}
 - Allergies: ${userProfile.foodAllergies.join(", ")}
-
+${userProfile.calorieNote ? `- Calorie target note: ${userProfile.calorieNote}` : ""}
+${healthContextBlock(userProfile.medicalConditions, userProfile.medicalNotes)}
 Return ONLY valid JSON with no markdown, structured exactly like this:
 {
   "days": [
@@ -440,6 +460,7 @@ Generate exactly ${TEMPLATE_DAY_COUNT} day entries, labeled "Day 1", "Day 2", "D
 - Weight change: ${userProfile.weightChange} kg
 - Body metrics: ${JSON.stringify(userProfile.bodyMetrics)}
 
+${healthContextBlock(userProfile.medicalConditions, userProfile.medicalNotes)}
 This user is on the top subscription tier — give them real depth on top of the wins, not just a longer generic review. Return ONLY valid JSON with no markdown, structured exactly like this:
 {
   "wins": ["short, specific, genuine positive callout", "a second one if real", "a third if genuinely warranted, otherwise omit"],
@@ -455,6 +476,7 @@ This user is on the top subscription tier — give them real depth on top of the
 - Weight change: ${userProfile.weightChange} kg
 - Body metrics: ${JSON.stringify(userProfile.bodyMetrics)}
 
+${healthContextBlock(userProfile.medicalConditions, userProfile.medicalNotes)}
 People want to see what they're doing well before anything else. Return ONLY valid JSON with no markdown, structured exactly like this:
 {
   "wins": ["short, specific, genuine positive callout", "a second one if there's a real second win, otherwise omit"],
@@ -533,7 +555,7 @@ Return ONLY a valid JSON array of strings, no markdown, no other text. Example: 
             {
               type: "text",
               text: `You are an expert personal trainer and movement coach. Analyze the exercise form shown in ${input.images.length > 1 ? "these photos" : "this photo"} of a ${input.exerciseName}.${input.userNotes ? ` User notes: ${input.userNotes}` : ""}
-
+${buildFormCheckHealthContext(input)}
 IMPORTANT: Before doing anything else, check whether a person is clearly visible actually performing the movement. If ANY of the following are true — no person is visible, the images show an empty room/wall/floor/object, the images are too dark, blurry, or low-quality to assess movement, or the person is not visibly performing the exercise — respond with ONLY this JSON and nothing else: {"error":"no_person_detected"}
 
 Only if a person clearly performing the exercise is visible, return ONLY valid JSON with no markdown:

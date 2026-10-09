@@ -126,6 +126,8 @@ export interface WorkoutGenerationInput {
   specificFocus?: string;
   assessmentSummary?: string;
   injuryHistory?: string;
+  /** Known body-part keys from lib/health-safety, which drive substitutions in code. */
+  injuryAreas?: string[];
   // Self-reported health context. Used to make the program more conservative,
   // never to treat or diagnose — see lib/medical-conditions.
   medicalConditions?: string[];
@@ -165,6 +167,15 @@ export interface NutritionGenerationInput {
   dietPreferences: string[];
   foodAllergies: string[];
   tier: string; // "starter" | "pro" | "elite" — pro/elite get exact gram measurements per food
+  // The planner used to know nothing about reported health conditions, which
+  // meant the directives that are specifically about food — no deficit while
+  // pregnant, no hard carb restriction with diabetes, nothing aggressive with a
+  // disordered-eating history — reached the coach but not the meal plan. The
+  // coach would decline an aggressive cut and the Nutrition tab would serve one.
+  medicalConditions?: string[];
+  medicalNotes?: string;
+  /** Set when a condition caps the deficit, so the plan says why, not just what. */
+  calorieNote?: string;
 }
 
 export interface ProgressReviewInput {
@@ -175,6 +186,11 @@ export interface ProgressReviewInput {
   bodyMetrics: Record<string, number>;
   period: string; // "weekly" | "monthly"
   tier: string; // "pro" | "elite" — elite gets a deeper review with more specific fixes
+  // The review is the screen most likely to lead with scale weight, which makes
+  // it the screen where a reported disordered-eating history matters most. It
+  // was the one AI surface the health context never reached.
+  medicalConditions?: string[];
+  medicalNotes?: string;
 }
 
 export interface ProgressReviewResult {
@@ -234,6 +250,13 @@ export interface FormCheckInput {
   exerciseName: string;
   images: Array<{ base64: string; mimeType: string }>;
   userNotes?: string;
+  // Someone filming a deadlift with a reported lower back was getting the same
+  // generic corrections as everyone else. The cues should be the ones that
+  // protect the area they told us about.
+  injuryHistory?: string;
+  injuryAreas?: string[];
+  medicalConditions?: string[];
+  medicalNotes?: string;
 }
 
 export interface FormCheckResult {

@@ -7,24 +7,16 @@ import { useTranslation } from "react-i18next";
 import * as Haptics from "expo-haptics";
 import { T } from "@/lib/theme";
 import OnboardingHeader from "@/components/OnboardingHeader";
+// Both lists, and the translation keys for their labels, are shared with the
+// Settings health editor — see frontend/lib/health-options.
+import {
+  INJURY_AREAS,
+  SELECTABLE_CONDITIONS,
+  injuryAreaKey,
+  conditionKey,
+} from "@/lib/health-options";
 
 const API_URL = process.env.EXPO_PUBLIC_API_URL;
-
-// Mirrors MEDICAL_CONDITIONS in backend/lib/medical-conditions.ts. The backend
-// rejects anything not on that list, so these ids must stay in step with it.
-// Common injury sites, as a starting point. The free-text box below stays for
-// anything this does not cover — a list can never be complete, and a body part
-// is easier to tap than to describe.
-const INJURY_AREAS = [
-  "lower_back", "knee", "shoulder", "hip", "neck",
-  "ankle", "wrist", "elbow",
-] as const;
-
-const CONDITIONS = [
-  "high_blood_pressure", "heart_condition", "diabetes_type_1", "diabetes_type_2",
-  "asthma", "pcos", "thyroid", "joint_condition", "pregnant_or_postpartum",
-  "disordered_eating_history", "prefer_not_to_say",
-] as const;
 
 const LEVELS: { id: string; icon: string; color: string; bg: string; border: string }[] = [
   { id: "beginner",     icon: "🌱", color: T.teal,   bg: T.tealDark,   border: T.tealBorder   },
@@ -52,9 +44,14 @@ export default function OnboardingStep4() {
         // accepts — the areas plus a full-length note can exceed it, and the
         // whole step would fail validation rather than just this field.
         injuryHistory: [
-          injuryAreas.map((a) => t(`onboarding.step4.injury_${a}`)).join(", "),
+          injuryAreas.map((a) => t(injuryAreaKey(a))).join(", "),
           injuryHistory.trim(),
         ].filter(Boolean).join(" — ").slice(0, 500) || undefined,
+        // The same answer as ids, which is what lets the backend substitute
+        // exercises in code rather than hoping a prompt reads the prose above —
+        // and which survives being written in a language the server cannot
+        // parse. Sent alongside the text, not instead of it.
+        injuryAreas: injuryAreas.length ? injuryAreas : undefined,
         medicalConditions: conditions.length ? conditions : undefined,
         medicalNotes: medicalNotes.trim() || undefined,
       });
@@ -108,7 +105,9 @@ export default function OnboardingStep4() {
               onPress={() => {
                 Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
                 setHasInjuries(yes);
-                if (!yes) setInjuryHistory("");
+                // Clear both, not just the text: tapping Yes, picking "knee",
+                // then changing to No would otherwise still submit the knee.
+                if (!yes) { setInjuryHistory(""); setInjuryAreas([]); }
               }}
               style={[s.yesNoBtn, hasInjuries === yes && s.yesNoBtnOn]}
               accessibilityRole="button"
@@ -140,7 +139,7 @@ export default function OnboardingStep4() {
                     accessibilityState={{ selected: on }}
                   >
                     <Text style={[s.conditionChipText, on && s.conditionChipTextOn]}>
-                      {t(`onboarding.step4.injury_${id}`)}
+                      {t(injuryAreaKey(id))}
                     </Text>
                   </TouchableOpacity>
                 );
@@ -184,7 +183,7 @@ export default function OnboardingStep4() {
         {hasConditions === true && (
           <>
             <View style={s.conditionWrap}>
-              {CONDITIONS.filter((c) => c !== "prefer_not_to_say").map((id) => {
+              {SELECTABLE_CONDITIONS.map((id) => {
                 const on = conditions.includes(id);
                 return (
                   <TouchableOpacity
@@ -200,7 +199,7 @@ export default function OnboardingStep4() {
                     accessibilityState={{ selected: on }}
                   >
                     <Text style={[s.conditionChipText, on && s.conditionChipTextOn]}>
-                      {t(`onboarding.step4.condition_${id}`)}
+                      {t(conditionKey(id))}
                     </Text>
                   </TouchableOpacity>
                 );

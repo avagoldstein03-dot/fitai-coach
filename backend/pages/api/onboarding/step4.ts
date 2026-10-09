@@ -1,5 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import { MEDICAL_CONDITIONS, MAX_MEDICAL_NOTES_LENGTH } from "@/lib/medical-conditions";
+import { INJURY_AREAS } from "@/lib/health-safety";
 import { getAuth } from "@clerk/nextjs/server";
 import prisma from "@/lib/prisma";
 import { sendSuccess, sendError, validateRequest } from "@/lib/api-utils";
@@ -9,6 +10,7 @@ import { z } from "zod";
 const step4Schema = z.object({
   fitnessExperience: z.enum(["beginner", "intermediate", "advanced"]),
   injuryHistory: z.string().trim().max(500).optional(),
+  injuryAreas: z.array(z.enum(INJURY_AREAS)).max(INJURY_AREAS.length).optional(),
   // Only keys from the fixed list; anything else is rejected rather than
   // silently reaching the coaching directives as free text.
   medicalConditions: z.array(z.enum(MEDICAL_CONDITIONS)).max(MEDICAL_CONDITIONS.length).optional(),
@@ -50,6 +52,7 @@ export default async function handler(
       data: {
         fitnessExperience: data.fitnessExperience,
         injuryHistory: data.injuryHistory || undefined,
+        injuryAreas: data.injuryAreas ?? undefined,
         medicalConditions: data.medicalConditions ?? undefined,
         medicalNotes: data.medicalNotes || undefined,
         onboardingStep: 4,

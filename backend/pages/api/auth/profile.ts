@@ -3,6 +3,8 @@ import { getAuth } from "@clerk/nextjs/server";
 import prisma from "@/lib/prisma";
 import { sendSuccess, sendError, validateRequest } from "@/lib/api-utils";
 import type { UserProfile } from "@/types/index";
+import { normalizeConditions, MAX_MEDICAL_NOTES_LENGTH } from "@/lib/medical-conditions";
+import { normalizeInjuryAreas } from "@/lib/health-safety";
 
 export default async function handler(
   req: NextApiRequest,
@@ -18,7 +20,7 @@ export default async function handler(
 
     // PATCH — update weight, height, age, name, injury/mobility history, or diet/allergies
     if (req.method === "PATCH") {
-      const { weight, height, age, name, unitSystem, language, country, currency, injuryHistory, dietPreferences, foodAllergies } = req.body;
+      const { weight, height, age, name, unitSystem, language, country, currency, injuryHistory, injuryAreas, medicalConditions, medicalNotes, dietPreferences, foodAllergies } = req.body;
       const updateData: Record<string, any> = {};
       if (weight !== undefined) updateData.weight = Number(weight);
       if (height !== undefined) updateData.height = Number(height);
@@ -29,6 +31,18 @@ export default async function handler(
       if (country !== undefined) updateData.country = String(country);
       if (currency !== undefined) updateData.currency = String(currency);
       if (injuryHistory !== undefined) updateData.injuryHistory = String(injuryHistory).trim().slice(0, 500);
+      // Health answers are editable after onboarding, which they previously were
+      // not. The condition most likely to begin after someone signs up —
+      // pregnancy — is also the one that changes the most about what the app
+      // should say, and there was no way to enter it.
+      //
+      // Both lists go through their normalizers rather than being trusted: these
+      // values end up inside a prompt, and only known keys may get there.
+      if (injuryAreas !== undefined) updateData.injuryAreas = normalizeInjuryAreas(injuryAreas);
+      if (medicalConditions !== undefined) updateData.medicalConditions = normalizeConditions(medicalConditions);
+      if (medicalNotes !== undefined) {
+        updateData.medicalNotes = String(medicalNotes).trim().slice(0, MAX_MEDICAL_NOTES_LENGTH);
+      }
       if (dietPreferences !== undefined) {
         updateData.dietPreferences = Array.isArray(dietPreferences) ? dietPreferences.map((d) => String(d).toLowerCase()) : [];
       }
@@ -43,7 +57,7 @@ export default async function handler(
       const updated = await prisma.user.update({
         where: { clerkId: userId },
         data: updateData,
-        select: { id: true, name: true, weight: true, height: true, age: true, unitSystem: true, language: true, country: true, currency: true, injuryHistory: true, dietPreferences: true, foodAllergies: true },
+        select: { id: true, name: true, weight: true, height: true, age: true, unitSystem: true, language: true, country: true, currency: true, injuryHistory: true, injuryAreas: true, medicalConditions: true, medicalNotes: true, dietPreferences: true, foodAllergies: true },
       });
 
       return sendSuccess(res, updated, "Profile updated successfully");
@@ -66,6 +80,9 @@ export default async function handler(
         country: true,
         currency: true,
         injuryHistory: true,
+        injuryAreas: true,
+        medicalConditions: true,
+        medicalNotes: true,
         dietPreferences: true,
         foodAllergies: true,
         onboardingCompleted: true,
@@ -89,6 +106,9 @@ export default async function handler(
       country: user.country || "United States",
       currency: user.currency || "usd",
       injuryHistory: user.injuryHistory || undefined,
+      injuryAreas: user.injuryAreas,
+      medicalConditions: user.medicalConditions,
+      medicalNotes: user.medicalNotes || undefined,
       dietPreferences: user.dietPreferences,
       foodAllergies: user.foodAllergies,
       onboardingCompleted: user.onboardingCompleted,

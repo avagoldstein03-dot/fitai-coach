@@ -2,6 +2,7 @@ import type { NextApiRequest, NextApiResponse } from "next";
 import { getAuth } from "@clerk/nextjs/server";
 import prisma from "@/lib/prisma";
 import { sendSuccess, sendError, validateRequest } from "@/lib/api-utils";
+import { calorieGuardFor, guardCalories, type CalorieGuard } from "@/lib/health-safety";
 
 // Harris-Benedict equation for TDEE
 function calculateTDEE(
@@ -37,11 +38,18 @@ export function isMenopauseAdjacent(stage?: string | null): boolean {
   return stage === "perimenopause" || stage === "menopause" || stage === "postmenopause";
 }
 
-function calculateMacros(
+export function calculateMacros(
   tdee: number,
   goal: string,
   weight: number,
-  lifeStage?: string | null
+  lifeStage?: string | null,
+  /**
+   * Reported health conditions. These cap how aggressive the target may be —
+   * the formula below is otherwise purely mechanical, which meant a user who
+   * had told the app she was pregnant still got tdee-500 if her goal said fat
+   * loss. The coach would decline to help with that cut; this screen served it.
+   */
+  guard?: CalorieGuard | null
 ): { calories: number; protein: number; carbs: number; fat: number; water: number } {
   let calories: number;
   let proteinPerKg: number;
@@ -72,6 +80,11 @@ function calculateMacros(
     proteinPerKg += LIFE_STAGE_PROTEIN_BUMP_G_PER_KG;
   }
 
+  // Applied after the goal has had its say and before anything is derived from
+  // the figure, so protein, fat and carbs are all computed from the guarded
+  // number rather than the one the goal alone would have produced.
+  calories = guardCalories(calories, tdee, guard ?? null);
+
   const protein = Math.round(weight * proteinPerKg);
   const fat = Math.round((calories * 0.25) / 9);
   const carbs = Math.round((calories - protein * 4 - fat * 9) / 4);
@@ -80,7 +93,9 @@ function calculateMacros(
   return {
     calories: Math.round(calories),
     protein,
-    carbs: Math.max(carbs, 50),
+    // The 50g floor is a sanity bound, not a recommendation. Where a condition
+    // makes cutting carbohydrate the specific risk, its own floor applies.
+    carbs: Math.max(carbs, guard?.minCarbGrams ?? 50),
     fat,
     water,
   };
@@ -119,7 +134,14 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       user.activityLevel
     );
 
-    const macros = calculateMacros(tdee, user.goal?.primaryGoal || "general_health", user.weight, user.lifeStage);
+    const calorieGuard = calorieGuardFor(user.medicalConditions);
+    const macros = calculateMacros(
+      tdee,
+      user.goal?.primaryGoal || "general_health",
+      user.weight,
+      user.lifeStage,
+      calorieGuard
+    );
 
     const mealTimings = [
       { meal: "Breakfast", time: "07:00", caloriePercent: 25 },
@@ -138,6 +160,9 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       mealTimings,
       goal: user.goal?.primaryGoal || "general_health",
       proteinAdjusted: isMenopauseAdjacent(user.lifeStage),
+      // Surfaced so the app can say why the number is what it is. A target that
+      // silently refuses to go where the user's goal points reads as a bug.
+      calorieNote: calorieGuard?.reason ?? null,
     });
   } catch (error) {
     console.error("Nutrition targets error:", error);

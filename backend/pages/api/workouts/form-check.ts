@@ -67,6 +67,14 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       exerciseName,
       images,
       userNotes: formCues && formCues.length > 0 ? formCues.join(", ") : undefined,
+      // A form check with no idea what the person has told us about their body
+      // was giving someone with a reported lower back the same generic
+      // corrections as everyone else, on the screen where a specific cue is
+      // worth the most.
+      injuryHistory: user.injuryHistory ?? undefined,
+      injuryAreas: user.injuryAreas,
+      medicalConditions: user.medicalConditions,
+      medicalNotes: user.medicalNotes ?? undefined,
     });
 
     return sendSuccess(res, { formCheck });

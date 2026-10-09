@@ -91,3 +91,22 @@ export function medicalDirectives(
   }
   return out;
 }
+
+/**
+ * The directives as a block ready to drop into a prompt, or "" when none apply.
+ *
+ * One helper rather than the same template string written out at each call site:
+ * six prompts need this now (workout, meal plan, progress review and form check,
+ * on both providers), and the earlier copy-paste version is exactly how the meal
+ * planner ended up being the one that never got it.
+ */
+export function healthContextBlock(
+  conditions: string[] | null | undefined,
+  notes?: string | null
+): string {
+  const directives = medicalDirectives(conditions, notes);
+  if (!directives.length) return "";
+  return `\nHEALTH CONTEXT — the client reported the following. Work within it; none of it is a diagnosis and you are not treating any of it.\n${directives
+    .map((d) => `- ${d}`)
+    .join("\n")}\n`;
+}

@@ -30,6 +30,7 @@ export interface OnboardingStep3Request {
 export interface OnboardingStep4Request {
   fitnessExperience: "beginner" | "intermediate" | "advanced";
   injuryHistory?: string;
+  injuryAreas?: string[];
   medicalConditions?: string[];
   medicalNotes?: string;
 }
@@ -64,6 +65,9 @@ export interface UserProfile {
   country?: string;
   currency?: string;
   injuryHistory?: string;
+  injuryAreas?: string[];
+  medicalConditions?: string[];
+  medicalNotes?: string;
   dietPreferences?: string[];
   foodAllergies?: string[];
   onboardingCompleted: boolean;

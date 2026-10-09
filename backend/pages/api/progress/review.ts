@@ -22,7 +22,10 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     // two sequential round trips.
     const [subscription, user] = await Promise.all([
       getUserSubscription(req),
-      prisma.user.findUnique({ where: { clerkId: userId }, select: { id: true, weight: true } }),
+      prisma.user.findUnique({
+        where: { clerkId: userId },
+        select: { id: true, weight: true, medicalConditions: true, medicalNotes: true },
+      }),
     ]);
 
     if (!subscription.limits.progressReviews) {
@@ -62,6 +65,10 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       bodyMetrics,
       period: period as string,
       tier: subscription.tier,
+      // The review leads with weight and consistency, which makes a reported
+      // disordered-eating history matter here more than almost anywhere else.
+      medicalConditions: user.medicalConditions,
+      medicalNotes: user.medicalNotes ?? undefined,
     });
 
     await prisma.analyticsEvent.create({

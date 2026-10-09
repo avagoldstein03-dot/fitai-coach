@@ -7,6 +7,7 @@ import { AIProviderRegistry } from "@/services/ai-registry";
 import { getUserSubscription } from "@/lib/subscription-middleware";
 import { generateShoppingList, ShoppingListItem } from "@/lib/shopping-list";
 import { isMenopauseAdjacent, LIFE_STAGE_PROTEIN_BUMP_G_PER_KG } from "./targets";
+import { calorieGuardFor, guardCalories, goalForPlanner } from "@/lib/health-safety";
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (!validateRequest(req, ["POST", "GET"])) {
@@ -56,23 +57,45 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
     const aiProvider = AIProviderRegistry.getProviderForTask("nutrition_planning");
 
+    // The planner knew nothing about reported conditions, so the directives
+    // that are specifically about food never reached the thing that generates
+    // food. Two layers, because a prompt alone is not enough here: the goal
+    // string is neutralised before it is asked for a deficit it must not build,
+    // and the health context tells it why.
+    const calorieGuard = calorieGuardFor(user.medicalConditions);
+    const primaryGoal = user.goal?.primaryGoal || "general_health";
+
     const mealPlanResult = await aiProvider.generateMealPlan({
-      goal: user.goal?.primaryGoal || "general_health",
+      goal: goalForPlanner(primaryGoal, calorieGuard),
       weight: user.weight || 70,
       activityLevel: user.activityLevel || "moderately_active",
       dietPreferences: user.dietPreferences || [],
       foodAllergies: user.foodAllergies || [],
       tier: subscription.tier,
+      medicalConditions: user.medicalConditions,
+      medicalNotes: user.medicalNotes ?? undefined,
+      calorieNote: calorieGuard?.reason,
     });
 
     const shoppingListItems = [...generateShoppingList(mealPlanResult.days), ...preservedCustomItems];
 
-    // Calculate targets inline
+    // Calculate targets inline.
+    //
+    // Note this is a different formula from the one in ./targets (a flat
+    // 30 kcal/kg rather than Harris-Benedict), which predates this change and
+    // is left alone here. It applies no deficit, so the guard below is a no-op
+    // on today's numbers — it is applied anyway so that the invariant lives
+    // with the arithmetic, and a later change to this formula cannot
+    // reintroduce a deficit for someone whose conditions rule one out.
     const weight = user.weight || 70;
-    const dailyCaloricTarget = Math.round(weight * 30);
+    const baseTarget = Math.round(weight * 30);
+    const dailyCaloricTarget = guardCalories(baseTarget, baseTarget, calorieGuard);
     const proteinPerKg = 2 + (isMenopauseAdjacent(user.lifeStage) ? LIFE_STAGE_PROTEIN_BUMP_G_PER_KG : 0);
     const proteinTarget = Math.round(weight * proteinPerKg);
-    const carbsTarget = Math.round((dailyCaloricTarget * 0.4) / 4);
+    const carbsTarget = Math.max(
+      Math.round((dailyCaloricTarget * 0.4) / 4),
+      calorieGuard?.minCarbGrams ?? 0
+    );
     const fatsTarget = Math.round((dailyCaloricTarget * 0.25) / 9);
     const waterTarget = Math.round(weight * 35);
 

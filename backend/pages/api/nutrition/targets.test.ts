@@ -71,3 +71,87 @@ describe("nutrition/targets handler — life-stage protein bump", () => {
     }
   });
 });
+
+describe("nutrition/targets handler — health guards on the calorie target", () => {
+  // The formula is otherwise purely mechanical: fat_loss means tdee - 500
+  // whatever the person has told the app about themselves. These are the cases
+  // where that was the wrong answer.
+  const FAT_LOSS = { ...BASE_USER, goal: { primaryGoal: "fat_loss" } };
+
+  beforeEach(() => {
+    jest.clearAllMocks();
+    (getAuth as jest.Mock).mockReturnValue({ userId: "clerk_1" });
+  });
+
+  async function targetsFor(user: Record<string, unknown>) {
+    (prisma.user.findUnique as jest.Mock).mockResolvedValue(user);
+    const { req, res } = mockReqRes();
+    await handler(req, res);
+    return res.json.mock.calls[0][0].data;
+  }
+
+  it("still applies the full deficit when nothing is reported", async () => {
+    const body = await targetsFor({ ...FAT_LOSS, medicalConditions: [] });
+    expect(body.dailyCaloricTarget).toBe(body.tdee - 500);
+    expect(body.calorieNote).toBeNull();
+  });
+
+  it("holds a pregnant user at maintenance instead of a deficit", async () => {
+    const body = await targetsFor({
+      ...FAT_LOSS,
+      medicalConditions: ["pregnant_or_postpartum"],
+    });
+    expect(body.dailyCaloricTarget).toBe(body.tdee);
+    expect(body.calorieNote).toContain("maintenance");
+  });
+
+  it("caps rather than removes the deficit for a disordered-eating history", async () => {
+    const body = await targetsFor({
+      ...FAT_LOSS,
+      medicalConditions: ["disordered_eating_history"],
+    });
+    expect(body.dailyCaloricTarget).toBe(body.tdee - 250);
+    expect(body.calorieNote).toContain("250");
+  });
+
+  it("derives protein, carbs and fat from the guarded figure, not the raw one", async () => {
+    const guarded = await targetsFor({
+      ...FAT_LOSS,
+      medicalConditions: ["pregnant_or_postpartum"],
+    });
+    const unguarded = await targetsFor({ ...FAT_LOSS, medicalConditions: [] });
+    // Fat is a straight percentage of calories, so it has to move with them.
+    expect(guarded.fatsTarget).toBeGreaterThan(unguarded.fatsTarget);
+  });
+
+  it("holds carbs above the floor for a condition where cutting them is the risk", async () => {
+    const body = await targetsFor({
+      ...FAT_LOSS,
+      medicalConditions: ["diabetes_type_2"],
+    });
+    expect(body.carbsTarget).toBeGreaterThanOrEqual(130);
+  });
+
+  it("leaves a muscle-gain target alone — the guards only ever pull a deficit back", async () => {
+    const body = await targetsFor({
+      ...BASE_USER,
+      goal: { primaryGoal: "muscle_gain" },
+      medicalConditions: ["pregnant_or_postpartum"],
+    });
+    expect(body.dailyCaloricTarget).toBe(body.tdee + 300);
+  });
+
+  it("infers nothing from 'prefer not to say'", async () => {
+    const body = await targetsFor({
+      ...FAT_LOSS,
+      medicalConditions: ["prefer_not_to_say"],
+    });
+    expect(body.dailyCaloricTarget).toBe(body.tdee - 500);
+    expect(body.calorieNote).toBeNull();
+  });
+
+  it("does not break for a user whose conditions were never recorded", async () => {
+    const body = await targetsFor(FAT_LOSS);
+    expect(body.dailyCaloricTarget).toBe(body.tdee - 500);
+  });
+});

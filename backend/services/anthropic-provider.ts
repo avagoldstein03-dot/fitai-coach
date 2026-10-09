@@ -2,6 +2,14 @@ import Anthropic from "@anthropic-ai/sdk";
 import axios from "axios";
 import { buildTierGatingPrompt } from "@/lib/coach-tier-prompt";
 import { COACH_ACTIONS_PROMPT } from "@/lib/coach-actions";
+import { healthContextBlock } from "@/lib/medical-conditions";
+import {
+  normalizeInjuryAreas,
+  describeInjuryAreas,
+  buildFormCheckHealthContext,
+  INJURY_PROMPT_HINTS,
+} from "@/lib/health-safety";
+import { scrubContraindicated } from "@/lib/workout-validation";
 import type {
   AIProvider,
   FoodAnalysisResult,
@@ -147,6 +155,7 @@ IMPORTANT: Never present results as medical diagnoses.`,
   }
 
   async generateWorkout(userProfile: WorkoutGenerationInput): Promise<WorkoutPlanResult> {
+    const injuryAreas = normalizeInjuryAreas(userProfile.injuryAreas);
     const prompt = `You are an experienced personal trainer designing a personalized ${userProfile.durationWeeks}-week workout program.
 
 Client profile:
@@ -158,10 +167,15 @@ ${userProfile.sex ? `- Sex: ${userProfile.sex}` : ""}
 ${userProfile.bodyGoalFocus ? `- Stated body goal / aesthetic focus: ${userProfile.bodyGoalFocus}` : ""}
 ${userProfile.specificFocus ? `- Specific thing they want to fix/improve: ${userProfile.specificFocus}` : ""}
 ${userProfile.assessmentSummary ? `- Latest body assessment notes: ${userProfile.assessmentSummary}` : ""}
+${injuryAreas.length ? `- Reported problem areas: ${describeInjuryAreas(injuryAreas)}` : ""}
 ${userProfile.injuryHistory ? `- Reported injury/mobility limitation: "${userProfile.injuryHistory}"` : ""}
 
 Use the client's stated goal/focus and body assessment notes (if provided) to decide which muscle groups should get priority volume/frequency and which exercises best fit their body type and aim. Be specific and personalized rather than generic.
-${userProfile.injuryHistory ? `\nIf an injury or mobility limitation is reported, avoid exercises that would aggravate it, substitute safe alternatives, and include general mobility/maintenance work for the affected area(s) — framed as general wellness, not treatment or rehab. This is general guidance, not medical advice.\n` : ""}
+${userProfile.injuryHistory || injuryAreas.length ? `\nIf an injury or mobility limitation is reported, avoid exercises that would aggravate it, substitute safe alternatives, and include general mobility/maintenance work for the affected area(s) — framed as general wellness, not treatment or rehab. This is general guidance, not medical advice.\n` : ""}${
+      injuryAreas.length
+        ? `\nFor the problem areas listed above, specifically avoid: ${INJURY_PROMPT_HINTS.filter((h) => injuryAreas.includes(h.area)).map((h) => `${h.areaLabel} — ${h.avoid}`).join("; ")}.\n`
+        : ""
+    }${healthContextBlock(userProfile.medicalConditions, userProfile.medicalNotes)}
 Return ONLY valid JSON with no markdown, structured exactly like this:
 {
   "coachNote": "2-3 sentences, written directly to the client: how this program is tailored to their stated goal and body type, and honest, encouraging guidance on whether their goal is realistic and what to focus on to get there.",
@@ -193,7 +207,16 @@ Generate exactly ${userProfile.durationWeeks} week entries, each with exactly ${
     if (content.type !== "text") throw new Error("Invalid response type");
     const jsonMatch = content.text.match(/\{[\s\S]*\}/);
     if (!jsonMatch) throw new Error(`AI did not return JSON: "${content.text.slice(0, 200)}"`);
-    return JSON.parse(jsonMatch[0]);
+    const plan = JSON.parse(jsonMatch[0]) as WorkoutPlanResult;
+
+    // Same enforcement the OpenAI path gets: asking is not the same as getting,
+    // and an injury is the one case where shipping the model's answer unchecked
+    // is not acceptable. This provider is not currently routed any workout
+    // generation, but it must not be the weaker path if that ever changes.
+    if (injuryAreas.length && Array.isArray(plan.weeks)) {
+      plan.weeks = plan.weeks.map((w) => scrubContraindicated(w, injuryAreas).week);
+    }
+    return plan;
   }
 
   async generateMealPlan(userProfile: NutritionGenerationInput): Promise<MealPlanResult> {
@@ -203,7 +226,8 @@ Weight: ${userProfile.weight} kg
 Activity: ${userProfile.activityLevel}
 Preferences: ${userProfile.dietPreferences.join(", ")}
 Allergies: ${userProfile.foodAllergies.join(", ")}
-
+${userProfile.calorieNote ? `Calorie target note: ${userProfile.calorieNote}` : ""}
+${healthContextBlock(userProfile.medicalConditions, userProfile.medicalNotes)}
 Return ONLY valid JSON with no markdown, structured exactly like this:
 {
   "days": [
@@ -240,7 +264,7 @@ Meals logged: ${userProfile.mealsLogged}
 Workouts completed: ${userProfile.workoutsCompleted}
 Weight change: ${userProfile.weightChange} kg
 Body metrics: ${JSON.stringify(userProfile.bodyMetrics)}
-
+${healthContextBlock(userProfile.medicalConditions, userProfile.medicalNotes)}
 This user is on the top subscription tier — give them real depth on top of the wins, not just a longer version of a generic review. People still want to see what they're doing well first. Return ONLY valid JSON with no markdown, structured exactly like this:
 {
   "wins": ["short, specific, genuine positive callout", "a second one if there's a real second win", "a third if there's genuinely one, otherwise omit"],
@@ -255,7 +279,7 @@ Meals logged: ${userProfile.mealsLogged}
 Workouts completed: ${userProfile.workoutsCompleted}
 Weight change: ${userProfile.weightChange} kg
 Body metrics: ${JSON.stringify(userProfile.bodyMetrics)}
-
+${healthContextBlock(userProfile.medicalConditions, userProfile.medicalNotes)}
 People want to see what they're doing well before anything else. Return ONLY valid JSON with no markdown, structured exactly like this:
 {
   "wins": ["short, specific, genuine positive callout", "a second one if there's a real second win, otherwise omit"],
@@ -342,7 +366,7 @@ Return ONLY a valid JSON array of strings, no markdown, no other text. Example: 
             {
               type: "text",
               text: `You are an expert personal trainer analyzing ${input.exerciseName} form.${input.userNotes ? ` User notes: ${input.userNotes}` : ""}
-
+${buildFormCheckHealthContext(input)}
 IMPORTANT: Before doing anything else, check whether a person is clearly visible actually performing the movement. If ANY of the following are true — no person is visible, the images show an empty room/wall/floor/object, the images are too dark, blurry, or low-quality to assess movement, or the person is not visibly performing the exercise — respond with ONLY this JSON and nothing else: {"error":"no_person_detected"}
 
 Only if a person clearly performing the exercise is visible, return ONLY valid JSON with no markdown:

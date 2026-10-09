@@ -1,6 +1,6 @@
-import { validateDay, validateWeek, exerciseFitsFocus, effectiveMuscles, declaredMusclesAreWrong, describeProblems } from "./workout-validation";
+import { validateDay, validateWeek, exerciseFitsFocus, effectiveMuscles, declaredMusclesAreWrong, describeProblems, scrubContraindicated } from "./workout-validation";
 import { musclesFor, musclesForFocus } from "./exercise-muscles";
-import type { WorkoutPlanExercise, WorkoutPlanDay } from "@/services/ai-provider";
+import type { WorkoutPlanExercise, WorkoutPlanDay, WorkoutPlanWeek } from "@/services/ai-provider";
 
 const ex = (
   exerciseName: string,
@@ -246,5 +246,134 @@ describe("describeProblems", () => {
     const out = describeProblems([{ message: "Day 0 has 3 main exercises" }]);
     expect(out).toContain("previous attempt");
     expect(out).toContain("- Day 0 has 3 main exercises");
+  });
+});
+
+/** Module-scoped twin of the helper inside the validateWeek block above. */
+const aWeek = (days: WorkoutPlanDay[]): WorkoutPlanWeek => ({
+  weekNumber: 1,
+  progressionStrategy: "base",
+  days,
+});
+
+describe("validateDay — reported injuries", () => {
+  it("says nothing when no injury is reported", () => {
+    expect(validateDay(goodDay())).toEqual([]);
+    expect(validateDay(goodDay(), [])).toEqual([]);
+  });
+
+  it("flags an exercise that loads a reported area", () => {
+    // The default good day leads with a Romanian deadlift, which is exactly the
+    // kind of thing a reported lower back should not be handed.
+    const problems = validateDay(goodDay(), ["lower_back"]);
+    expect(problems).toHaveLength(1);
+    expect(problems[0].message).toContain("Romanian Deadlift");
+    expect(problems[0].message).toContain("lower back");
+    expect(problems[0].message).toContain("Seated Leg Curl");
+  });
+
+  it("checks the ab circuit too, not just the main work", () => {
+    const day = goodDay({
+      exercises: [
+        ex("Barbell Hip Thrust"), ex("Leg Press"), ex("Bulgarian Split Squat"),
+        ex("Seated Leg Curl"), ex("Cable Pull-Through"),
+        core("Plank"), core("Box Jump"), core("Dead Bug"),
+      ],
+    });
+    const problems = validateDay(day, ["knee"]);
+    expect(problems.some((p) => p.message.includes("Box Jump"))).toBe(true);
+  });
+
+  it("leaves a day alone when the injury is somewhere else", () => {
+    expect(validateDay(goodDay(), ["wrist"])).toEqual([]);
+  });
+
+  it("threads through validateWeek", () => {
+    const problems = validateWeek(aWeek([goodDay(), goodDay({ dayOfWeek: 2 })]), 2, ["lower_back"]);
+    expect(problems.filter((p) => p.message.includes("Romanian Deadlift"))).toHaveLength(2);
+  });
+});
+
+describe("scrubContraindicated", () => {
+  const oneWeek = (day: WorkoutPlanDay): WorkoutPlanWeek => aWeek([day]);
+
+  it("is a no-op with no reported areas", () => {
+    const w = oneWeek(goodDay());
+    const { week: out, scrubbed } = scrubContraindicated(w, []);
+    expect(scrubbed).toEqual([]);
+    expect(out).toBe(w);
+  });
+
+  it("substitutes the exercise rather than leaving a hole in the session", () => {
+    const { week: out, scrubbed } = scrubContraindicated(oneWeek(goodDay()), ["lower_back"]);
+    const names = out.days[0].exercises.map((e) => e.exerciseName);
+    expect(names).not.toContain("Romanian Deadlift");
+    expect(names).toContain("Seated Leg Curl");
+    // Count is preserved — a session with a gap reads as the app being broken.
+    expect(out.days[0].exercises).toHaveLength(goodDay().exercises.length);
+    expect(scrubbed).toEqual([
+      { dayOfWeek: 0, from: "Romanian Deadlift", to: "Seated Leg Curl", areaLabel: "lower back" },
+    ]);
+  });
+
+  it("keeps the sets, reps and rest of the exercise it replaced", () => {
+    const day = goodDay({ exercises: [ex("Barbell Deadlift", { sets: 5, reps: "3-5", restSeconds: 180 })] });
+    const { week: out } = scrubContraindicated(oneWeek(day), ["lower_back"]);
+    expect(out.days[0].exercises[0]).toMatchObject({
+      exerciseName: "Hip Thrust",
+      sets: 5,
+      reps: "3-5",
+      restSeconds: 180,
+    });
+  });
+
+  it("re-derives the muscles so they describe the substitute, not what left", () => {
+    const day = goodDay({
+      exercises: [ex("Barbell Back Squat", { muscles: ["quads", "glutes"] })],
+    });
+    const { week: out } = scrubContraindicated(oneWeek(day), ["lower_back"]);
+    expect(out.days[0].exercises[0].exerciseName).toBe("Leg Press");
+    expect(out.days[0].exercises[0].muscles).toEqual(musclesFor("Leg Press"));
+  });
+
+  it("tells the user why the exercise they see is the one they see", () => {
+    const { week: out } = scrubContraindicated(oneWeek(goodDay()), ["lower_back"]);
+    const swapped = out.days[0].exercises.find((e) => e.exerciseName === "Seated Leg Curl");
+    expect(swapped?.notes).toContain("lower back");
+  });
+
+  it("removes an exercise outright when nothing safe does the same job", () => {
+    const day = goodDay({ exercises: [ex("Jefferson Curl"), ex("Leg Press")] });
+    const { week: out, scrubbed } = scrubContraindicated(oneWeek(day), ["lower_back"]);
+    expect(out.days[0].exercises.map((e) => e.exerciseName)).toEqual(["Leg Press"]);
+    expect(scrubbed[0]).toMatchObject({ from: "Jefferson Curl", to: null });
+  });
+
+  it("does not mutate the week it was given", () => {
+    const w = oneWeek(goodDay());
+    scrubContraindicated(w, ["lower_back"]);
+    expect(w.days[0].exercises.map((e) => e.exerciseName)).toContain("Romanian Deadlift");
+  });
+
+  it("leaves a week with nothing contraindicated untouched", () => {
+    const { scrubbed } = scrubContraindicated(oneWeek(goodDay()), ["wrist"]);
+    expect(scrubbed).toEqual([]);
+  });
+
+  it("produces a week that then passes its own injury validation", () => {
+    // The property that makes this the safety net: whatever it hands back must
+    // have nothing left in it to flag.
+    const areas = ["lower_back", "knee", "shoulder"] as const;
+    const day = goodDay({
+      exercises: [
+        ex("Barbell Deadlift"), ex("Barbell Back Squat"), ex("Barbell Overhead Press"),
+        ex("Bent-Over Barbell Row"), ex("Box Jump"),
+        core("Plank"), core("Russian Twist"), core("Dead Bug"),
+      ],
+    });
+    const { week: out } = scrubContraindicated(oneWeek(day), [...areas]);
+    for (const d of out.days) {
+      expect(validateDay(d, [...areas]).filter((p) => p.message.includes("keep away"))).toEqual([]);
+    }
   });
 });

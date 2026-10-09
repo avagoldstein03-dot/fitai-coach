@@ -1,5 +1,6 @@
 import type { WorkoutPlanDay, WorkoutPlanWeek, WorkoutPlanExercise } from "@/services/ai-provider";
 import { musclesFor, musclesForFocus, normalizeMuscles, type MuscleGroup } from "@/lib/exercise-muscles";
+import { injuryConflict, saferSubstitute, type InjuryArea } from "@/lib/health-safety";
 
 /**
  * Checks a generated week against the rules the prompt asks for.
@@ -79,9 +80,24 @@ export function declaredMusclesAreWrong(ex: WorkoutPlanExercise): boolean {
   return !declared.some((m) => known.includes(m));
 }
 
-export function validateDay(day: WorkoutPlanDay): ValidationProblem[] {
+export function validateDay(day: WorkoutPlanDay, injuryAreas: InjuryArea[] = []): ValidationProblem[] {
   const problems: ValidationProblem[] = [];
   const at = (message: string) => problems.push({ dayOfWeek: day.dayOfWeek, message });
+
+  // Checked across every exercise, the ab circuit included — a sit-up is still
+  // loaded spinal flexion on a reported lower back.
+  for (const ex of day.exercises) {
+    const conflict = injuryConflict(ex.exerciseName, injuryAreas);
+    if (conflict) {
+      const swap = saferSubstitute(conflict, injuryAreas);
+      at(
+        `"${ex.exerciseName}" is one to keep away from a reported ${conflict.areaLabel} — ${conflict.because}. ` +
+          (swap
+            ? `Replace it with ${swap}, or another exercise for the same muscles that avoids that position.`
+            : `Replace it with another exercise for the same muscles that avoids that position.`)
+      );
+    }
+  }
 
   if (!day.focus?.trim()) at(`Day ${day.dayOfWeek} has no "focus".`);
 
@@ -116,7 +132,11 @@ export function validateDay(day: WorkoutPlanDay): ValidationProblem[] {
   return problems;
 }
 
-export function validateWeek(week: WorkoutPlanWeek, expectedDays: number): ValidationProblem[] {
+export function validateWeek(
+  week: WorkoutPlanWeek,
+  expectedDays: number,
+  injuryAreas: InjuryArea[] = []
+): ValidationProblem[] {
   const problems: ValidationProblem[] = [];
 
   if (week.days.length !== expectedDays) {
@@ -136,8 +156,67 @@ export function validateWeek(week: WorkoutPlanWeek, expectedDays: number): Valid
     seen.add(d.dayOfWeek);
   }
 
-  week.days.forEach((d) => problems.push(...validateDay(d)));
+  week.days.forEach((d) => problems.push(...validateDay(d, injuryAreas)));
   return problems;
+}
+
+export interface ScrubbedExercise {
+  dayOfWeek: number;
+  from: string;
+  /** The replacement, or null where the exercise was removed outright. */
+  to: string | null;
+  areaLabel: string;
+}
+
+/**
+ * Last-resort pass that takes contraindicated exercises out of a finished week.
+ *
+ * Every other rule in this file is advisory: a problem is handed back to the
+ * model, and if the retry does not fix it the program ships slightly wrong — a
+ * day with four main lifts instead of five is a worse session, not a hazard.
+ * A reported injury is the one case where that trade is unacceptable, so this
+ * runs after the retries and enforces it in code.
+ *
+ * Deliberately a substitution and not a deletion wherever a substitute exists:
+ * handing someone a session with a hole in it reads as the app being broken,
+ * and they will fill the hole with the exercise we just removed.
+ */
+export function scrubContraindicated(
+  week: WorkoutPlanWeek,
+  injuryAreas: InjuryArea[]
+): { week: WorkoutPlanWeek; scrubbed: ScrubbedExercise[] } {
+  if (!injuryAreas.length) return { week, scrubbed: [] };
+
+  const scrubbed: ScrubbedExercise[] = [];
+  const days = week.days.map((day) => {
+    const exercises: WorkoutPlanExercise[] = [];
+    for (const ex of day.exercises) {
+      const conflict = injuryConflict(ex.exerciseName, injuryAreas);
+      if (!conflict) {
+        exercises.push(ex);
+        continue;
+      }
+      const swap = saferSubstitute(conflict, injuryAreas);
+      scrubbed.push({
+        dayOfWeek: day.dayOfWeek,
+        from: ex.exerciseName,
+        to: swap,
+        areaLabel: conflict.areaLabel,
+      });
+      if (!swap) continue; // nothing safe trains this the same way; drop it
+      exercises.push({
+        ...ex,
+        exerciseName: swap,
+        // The declared muscles described the exercise that just left, so they
+        // are re-derived where the substitute is one the keyword map knows.
+        muscles: musclesFor(swap).length ? musclesFor(swap) : ex.muscles,
+        notes: `Swapped in to work around your reported ${conflict.areaLabel}.`,
+      });
+    }
+    return { ...day, exercises };
+  });
+
+  return { week: { ...week, days }, scrubbed };
 }
 
 /** Renders problems as a correction the model can act on directly. */
