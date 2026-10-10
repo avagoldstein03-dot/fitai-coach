@@ -40,7 +40,7 @@ export default function ProfileScreen() {
     staleTime: 60_000,
   });
 
-  const { data: badgesData } = useQuery<{ badges: Array<{ key: string; emoji: string; title: string; description: string; earned: boolean; earnedAt: string | null }> }>({
+  const { data: badgesData } = useQuery<{ badges: { key: string; emoji: string; title: string; description: string; earned: boolean; earnedAt: string | null }[] }>({
     queryKey: ["badges"],
     queryFn: async () => {
       const res = await axios.get(`${API_URL}/api/analytics/badges`);

@@ -251,10 +251,15 @@ function LogFoodSheet({ pending, onCancel, onConfirm, saving }: {
   const [meal, setMeal] = useState<MealType>("snack");
 
   // The coach picks the meal slot for a recipe ("lunch"), so start there rather
-  // than making them re-choose something already decided.
-  useEffect(() => {
+  // than making them re-choose something already decided. Synced during render
+  // against the pending recipe's identity instead of from an effect, so the
+  // modal opens on the right slot in one pass rather than rendering "snack"
+  // first and correcting itself.
+  const [syncedPending, setSyncedPending] = useState(pending);
+  if (pending !== syncedPending) {
+    setSyncedPending(pending);
     if (pending) setMeal(pending.mealType);
-  }, [pending]);
+  }
 
   const totals = (pending?.items ?? []).reduce(
     (a, i) => ({
@@ -375,7 +380,7 @@ function TypingIndicator() {
     );
     anim.start();
     return () => anim.stop();
-  }, []);
+  }, [dots]);
 
   return (
     <View style={cs.coachMsgRow}>
@@ -474,7 +479,7 @@ export default function CoachChatScreen() {
     },
   });
 
-  const { data: mealHistory } = useQuery<{ dailyData: Array<{ date: string; totalCalories: number; totalProtein: number; meals: Array<{ foods: Array<{ name: string }> }> }> }>({
+  const { data: mealHistory } = useQuery<{ dailyData: { date: string; totalCalories: number; totalProtein: number; meals: { foods: { name: string }[] }[] }[] }>({
     queryKey: ["mealHistory"],
     queryFn: async () => {
       const res = await axios.get(`${API_URL}/api/food/history?days=7`);

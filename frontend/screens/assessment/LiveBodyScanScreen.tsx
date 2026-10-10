@@ -75,7 +75,7 @@ export default function LiveBodyScanScreen() {
     );
     loop.start();
     return () => loop.stop();
-  }, [scanning]);
+  }, [scanning, laserAnim]);
 
   const captureFrame = async (position: "front" | "side" | "back") => {
     try {

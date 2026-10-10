@@ -216,6 +216,10 @@ export default function WorkoutsScreen() {
     const todayIdx = (new Date().getDay() + 6) % 7;
     const dayIdx = program.weeks[weekIdx]?.days?.findIndex((d) => d.dayOfWeek === todayIdx) ?? -1;
     if (dayIdx >= 0) setSelectedDay(dayIdx);
+    // Keyed on the program id, not the program object: react-query hands back a
+    // new object on every refetch, and depending on it would snap the user's
+    // chosen week and day back to today mid-browse.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [data?.activeProgram?.id]);
 
   useEffect(() => {

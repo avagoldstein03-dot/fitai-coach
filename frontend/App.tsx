@@ -27,7 +27,7 @@ import { identifyUser, resetAnalytics } from "@/lib/analytics";
 
 const API_URL = process.env.EXPO_PUBLIC_API_URL;
 
-try { SplashScreen.preventAutoHideAsync(); } catch (_) {}
+try { SplashScreen.preventAutoHideAsync(); } catch {}
 
 const queryClient = new QueryClient();
 
@@ -79,7 +79,7 @@ function AppShell() {
 
   useEffect(() => {
     setupNotificationHandler();
-    try { SplashScreen.hideAsync(); } catch (_) {}
+    try { SplashScreen.hideAsync(); } catch {}
   }, []);
 
   useEffect(() => {

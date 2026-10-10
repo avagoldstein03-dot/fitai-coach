@@ -4,7 +4,7 @@ import Svg, { Rect } from "react-native-svg";
 import { T } from "@/lib/theme";
 
 interface BarTrendChartProps {
-  bars: Array<{ x: string; y: number }>;
+  bars: { x: string; y: number }[];
   color?: string;
   height?: number;
   width?: number;

@@ -6,8 +6,8 @@ import { sendSuccess, sendError, validateRequest } from "@/lib/api-utils";
 import { AIProviderRegistry } from "@/services/ai-registry";
 import { getUserSubscription } from "@/lib/subscription-middleware";
 import { generateShoppingList, ShoppingListItem } from "@/lib/shopping-list";
-import { isMenopauseAdjacent, LIFE_STAGE_PROTEIN_BUMP_G_PER_KG } from "./targets";
-import { calorieGuardFor, guardCalories, goalForPlanner } from "@/lib/health-safety";
+import { targetsForProfile } from "@/lib/nutrition-targets";
+import { calorieGuardFor, goalForPlanner } from "@/lib/health-safety";
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (!validateRequest(req, ["POST", "GET"])) {
@@ -79,25 +79,23 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
     const shoppingListItems = [...generateShoppingList(mealPlanResult.days), ...preservedCustomItems];
 
-    // Calculate targets inline.
+    // The same calculation /api/nutrition/targets uses. This endpoint had its
+    // own flat 30 kcal/kg formula, and the Nutrition screen shows both figures
+    // at once — the computed target at the top of the page and this stored one
+    // in the meal-plan card below — so a fat-loss user was shown two daily
+    // targets about 450 kcal apart with no way to tell which was real.
     //
-    // Note this is a different formula from the one in ./targets (a flat
-    // 30 kcal/kg rather than Harris-Benedict), which predates this change and
-    // is left alone here. It applies no deficit, so the guard below is a no-op
-    // on today's numbers — it is applied anyway so that the invariant lives
-    // with the arithmetic, and a later change to this formula cannot
-    // reintroduce a deficit for someone whose conditions rule one out.
-    const weight = user.weight || 70;
-    const baseTarget = Math.round(weight * 30);
-    const dailyCaloricTarget = guardCalories(baseTarget, baseTarget, calorieGuard);
-    const proteinPerKg = 2 + (isMenopauseAdjacent(user.lifeStage) ? LIFE_STAGE_PROTEIN_BUMP_G_PER_KG : 0);
-    const proteinTarget = Math.round(weight * proteinPerKg);
-    const carbsTarget = Math.max(
-      Math.round((dailyCaloricTarget * 0.4) / 4),
-      calorieGuard?.minCarbGrams ?? 0
-    );
-    const fatsTarget = Math.round((dailyCaloricTarget * 0.25) / 9);
-    const waterTarget = Math.round(weight * 35);
+    // targetsForProfile falls back to the old rough figure only when the
+    // profile is too incomplete for Harris-Benedict, since a missing height
+    // must not stop a meal plan from generating.
+    const targets = targetsForProfile(user, primaryGoal, calorieGuard);
+    const {
+      calories: dailyCaloricTarget,
+      protein: proteinTarget,
+      carbs: carbsTarget,
+      fat: fatsTarget,
+      water: waterTarget,
+    } = targets;
 
     const mealPlanData = { days: mealPlanResult.days } as unknown as Prisma.InputJsonValue;
     const shoppingListData = {

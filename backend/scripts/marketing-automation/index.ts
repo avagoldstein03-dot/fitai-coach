@@ -58,7 +58,12 @@ async function main() {
     process.exit(1);
   }
 
-  if (result.status === "canceled") {
+  // subscribe()'s status union does not include "canceled", though the SDK's
+  // JobStatus enum defines it for other job types. Kept as a defensive branch
+  // with a widened comparison rather than deleted: the API can still return a
+  // status these local types do not list, and dropping it would lose the
+  // specific message to the generic failure case below.
+  if ((result.status as string) === "canceled") {
     console.error("Request was canceled before completion. No video was generated.");
     process.exit(1);
   }

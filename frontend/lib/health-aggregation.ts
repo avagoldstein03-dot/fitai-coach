@@ -8,7 +8,7 @@ export function toDateKey(date: Date): string {
 
 // Sums a value (e.g. step count, active-energy kcal) per calendar day, keyed
 // by the day the interval started on.
-export function sumValueByDay(entries: Array<{ start: Date; value: number }>): Map<string, number> {
+export function sumValueByDay(entries: { start: Date; value: number }[]): Map<string, number> {
   const byDay = new Map<string, number>();
   for (const entry of entries) {
     const key = toDateKey(entry.start);
@@ -21,7 +21,7 @@ export function sumValueByDay(entries: Array<{ start: Date; value: number }>): M
 // callers are responsible for filtering out awake/in-bed-but-not-asleep
 // stages first, since HealthKit and Health Connect use different numeric
 // stage enums.
-export function sumMinutesByDay(intervals: Array<{ start: Date; end: Date }>): Map<string, number> {
+export function sumMinutesByDay(intervals: { start: Date; end: Date }[]): Map<string, number> {
   const byDay = new Map<string, number>();
   for (const { start, end } of intervals) {
     const key = toDateKey(start);

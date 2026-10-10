@@ -20,7 +20,7 @@ import { T } from "@/lib/theme";
 
 const API_URL = process.env.EXPO_PUBLIC_API_URL;
 
-function HabitHeatmap({ dailyData }: { dailyData: Array<{ date: string; mealCount: number }> }) {
+function HabitHeatmap({ dailyData }: { dailyData: { date: string; mealCount: number }[] }) {
   const { t } = useTranslation();
   const DAYS = 28;
   const cells = Array.from({ length: DAYS }, (_, i) => {
@@ -121,7 +121,7 @@ export default function ProgressScreen() {
     queryKey: ["food-history", "diary"],
     queryFn: async () => {
       const res = await axios.get(`${API_URL}/api/food/history?days=30&limit=200`);
-      return res.data?.data as { dailyData: Array<{ date: string; mealCount: number }> };
+      return res.data?.data as { dailyData: { date: string; mealCount: number }[] };
     },
     staleTime: 30_000,
   });

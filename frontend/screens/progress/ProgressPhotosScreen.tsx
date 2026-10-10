@@ -137,7 +137,7 @@ export default function ProgressPhotosScreen() {
     if (!result.canceled && result.assets[0]?.base64) {
       upload({ base64: result.assets[0].base64, photoType: uploadType });
     }
-  }, [uploadType, upload]);
+  }, [uploadType, upload, t]);
 
   const sharePhoto = useCallback(async (photo: ProgressPhoto) => {
     setIsSharing(true);
@@ -151,7 +151,7 @@ export default function ProgressPhotosScreen() {
     } finally {
       setIsSharing(false);
     }
-  }, []);
+  }, [t]);
 
   const toggleCompareSelect = useCallback((photo: ProgressPhoto) => {
     setComparePhotos((prev) => {

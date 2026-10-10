@@ -5,7 +5,7 @@ import { T } from "@/lib/theme";
 import { scaleToPoints } from "./scale";
 
 interface LineTrendChartProps {
-  points: Array<{ x: string; y: number }>;
+  points: { x: string; y: number }[];
   color?: string;
   height?: number;
   width?: number;

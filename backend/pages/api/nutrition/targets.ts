@@ -2,118 +2,19 @@ import type { NextApiRequest, NextApiResponse } from "next";
 import { getAuth } from "@clerk/nextjs/server";
 import prisma from "@/lib/prisma";
 import { sendSuccess, sendError, validateRequest } from "@/lib/api-utils";
-import { calorieGuardFor, guardCalories, type CalorieGuard } from "@/lib/health-safety";
+import { calorieGuardFor } from "@/lib/health-safety";
+import {
+  calculateTDEE,
+  calculateMacros,
+  isMenopauseAdjacent,
+  LIFE_STAGE_PROTEIN_BUMP_G_PER_KG,
+} from "@/lib/nutrition-targets";
 
-// Harris-Benedict equation for TDEE
-function calculateTDEE(
-  weight: number,
-  height: number,
-  age: number,
-  sex: string,
-  activityLevel: string
-): number {
-  let bmr: number;
-  if (sex === "female") {
-    bmr = 447.593 + 9.247 * weight + 3.098 * height - 4.33 * age;
-  } else {
-    bmr = 88.362 + 13.397 * weight + 4.799 * height - 5.677 * age;
-  }
-
-  const activityMultipliers: Record<string, number> = {
-    sedentary: 1.2,
-    lightly_active: 1.375,
-    moderately_active: 1.55,
-    very_active: 1.725,
-  };
-
-  return bmr * (activityMultipliers[activityLevel] || 1.375);
-}
-
-// Anabolic resistance (reduced muscle-protein-synthesis efficiency) increases as estrogen
-// declines, so a modest protein increase alongside resistance training is standard
-// sports-nutrition guidance during this life stage.
-export const LIFE_STAGE_PROTEIN_BUMP_G_PER_KG = 0.2;
-
-export function isMenopauseAdjacent(stage?: string | null): boolean {
-  return stage === "perimenopause" || stage === "menopause" || stage === "postmenopause";
-}
-
-export function calculateMacros(
-  tdee: number,
-  goal: string,
-  weight: number,
-  lifeStage?: string | null,
-  /**
-   * Reported health conditions. These cap how aggressive the target may be —
-   * the formula below is otherwise purely mechanical, which meant a user who
-   * had told the app she was pregnant still got tdee-500 if her goal said fat
-   * loss. The coach would decline to help with that cut; this screen served it.
-   */
-  guard?: CalorieGuard | null
-): {
-  calories: number;
-  protein: number;
-  carbs: number;
-  fat: number;
-  water: number;
-  /** True only when the guard actually moved a number, so the UI explains a real change. */
-  guardApplied: boolean;
-} {
-  let calories: number;
-  let proteinPerKg: number;
-
-  switch (goal) {
-    case "fat_loss":
-      calories = tdee - 500;
-      proteinPerKg = 2.2;
-      break;
-    case "muscle_gain":
-      calories = tdee + 300;
-      proteinPerKg = 2.0;
-      break;
-    case "recomposition":
-      calories = tdee;
-      proteinPerKg = 2.2;
-      break;
-    case "athletic_performance":
-      calories = tdee + 200;
-      proteinPerKg = 1.8;
-      break;
-    default:
-      calories = tdee;
-      proteinPerKg = 1.6;
-  }
-
-  if (isMenopauseAdjacent(lifeStage)) {
-    proteinPerKg += LIFE_STAGE_PROTEIN_BUMP_G_PER_KG;
-  }
-
-  // Applied after the goal has had its say and before anything is derived from
-  // the figure, so protein, fat and carbs are all computed from the guarded
-  // number rather than the one the goal alone would have produced.
-  const unguarded = calories;
-  calories = guardCalories(calories, tdee, guard ?? null);
-
-  const protein = Math.round(weight * proteinPerKg);
-  const fat = Math.round((calories * 0.25) / 9);
-  // The 50g floor is a sanity bound, not a recommendation. Where a condition
-  // makes cutting carbohydrate the specific risk, its own floor applies.
-  const rawCarbs = Math.round((calories - protein * 4 - fat * 9) / 4);
-  const carbs = Math.max(rawCarbs, guard?.minCarbGrams ?? 50);
-  const water = Math.round(weight * 35); // ml
-
-  return {
-    calories: Math.round(calories),
-    protein,
-    carbs,
-    fat,
-    water,
-    // Only true when something actually moved. Someone on a maintenance goal
-    // who reports PCOS has no deficit to cap, and telling them their deficit
-    // was kept moderate would describe a change that never happened.
-    guardApplied: !!guard && (calories !== unguarded || carbs !== rawCarbs),
-  };
-}
+// The maths moved to lib/nutrition-targets so the meal-plan endpoint can use
+// the same function — it had its own flat 30 kcal/kg formula, and the Nutrition
+// screen shows both figures at once. Re-exported here because other modules
+// already import them from this path.
+export { isMenopauseAdjacent, LIFE_STAGE_PROTEIN_BUMP_G_PER_KG, calculateMacros };
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (!validateRequest(req, ["GET"])) {

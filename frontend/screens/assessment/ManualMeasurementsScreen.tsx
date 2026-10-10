@@ -209,7 +209,7 @@ export default function ManualMeasurementsScreen() {
 
           <View style={s.guideCard}>
             <Text style={s.guideTitle}>{t("manual_measurements.guide_title")}</Text>
-            {(t("manual_measurements.guide_items", { returnObjects: true }) as Array<{ label: string; tip: string }>).map((item) => (
+            {(t("manual_measurements.guide_items", { returnObjects: true }) as { label: string; tip: string }[]).map((item) => (
               <View key={item.label} style={s.guideItem}>
                 <Text style={s.guideItemLabel}>{item.label}</Text>
                 <Text style={s.guideItemTip}>{item.tip}</Text>

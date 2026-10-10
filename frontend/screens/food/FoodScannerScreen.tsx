@@ -32,13 +32,13 @@ interface MealHistoryResponse {
     totalFat: number;
     averageProteinPerMeal: number;
   };
-  dailyData: Array<{
+  dailyData: {
     date: string;
-    meals: Array<{
+    meals: {
       id: string;
       mealType: string;
       time: string;
-      foods: Array<{
+      foods: {
         id: string;
         name: string;
         quantity: number;
@@ -52,16 +52,16 @@ interface MealHistoryResponse {
         saturatedFat?: number;
         sodium?: number;
         cholesterol?: number;
-      }>;
+      }[];
       calories: number;
       protein: number;
       carbs: number;
       fat: number;
-    }>;
+    }[];
     totalCalories: number;
     totalProtein: number;
     mealCount: number;
-  }>;
+  }[];
 }
 
 const MEAL_TYPES = ["breakfast", "lunch", "dinner", "snack"] as const;
@@ -244,7 +244,7 @@ export default function FoodScannerScreen() {
   const handleEditMeal = (meal: {
     id: string;
     mealType: string;
-    foods: Array<{
+    foods: {
       name: string;
       calories: number;
       protein: number;
@@ -255,7 +255,7 @@ export default function FoodScannerScreen() {
       saturatedFat?: number;
       sodium?: number;
       cholesterol?: number;
-    }>;
+    }[];
   }) => {
     setEditingMealId(meal.id);
     setManualMealType(
@@ -284,7 +284,7 @@ export default function FoodScannerScreen() {
 
   const recentFoods = useMemo(() => {
     const seen = new Set<string>();
-    const items: Array<{ name: string; calories: number; protein: number; carbs: number; fat: number }> = [];
+    const items: { name: string; calories: number; protein: number; carbs: number; fat: number }[] = [];
     for (const day of historyData?.dailyData?.slice(1) ?? []) {
       for (const meal of day.meals) {
         const key = meal.foods.map((f) => f.name).join("+");

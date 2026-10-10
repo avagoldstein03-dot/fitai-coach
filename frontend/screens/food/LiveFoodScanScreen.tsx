@@ -67,7 +67,7 @@ export default function LiveFoodScanScreen() {
         setImageUri(photo.uri);
         scanFood(photo.base64);
       }
-    } catch (error) {
+    } catch {
       Alert.alert(t("common.error"), t("live_food_scan.capture_failed"));
     }
   };
@@ -90,7 +90,7 @@ export default function LiveFoodScanScreen() {
         setImageUri(pickResult.assets[0].uri);
         scanFood(pickResult.assets[0].base64);
       }
-    } catch (error) {
+    } catch {
       Alert.alert(t("common.error"), t("food_scanner.error_pick_image"));
     }
   };

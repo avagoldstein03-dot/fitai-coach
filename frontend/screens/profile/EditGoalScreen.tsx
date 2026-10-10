@@ -117,7 +117,7 @@ export default function EditGoalScreen() {
     onSuccess: () => {
       // The goal drives the calorie target and every generated program, so the
       // cached numbers are stale the moment it changes.
-      for (const key of [["goal"], ["dashboard"], ["nutrition-targets"], ["nutritionTargets"], ["nutritionPlan"]]) {
+      for (const key of [["goal"], ["dashboard"], ["nutritionTargets"], ["nutritionPlan"]]) {
         queryClient.invalidateQueries({ queryKey: key });
       }
       navigation.goBack();

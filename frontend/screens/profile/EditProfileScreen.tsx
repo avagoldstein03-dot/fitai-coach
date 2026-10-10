@@ -132,12 +132,10 @@ export default function EditProfileScreen() {
     },
     onSuccess: () => {
       // Every one of these feeds the calorie maths, so the cached targets are
-      // stale the moment they change. Both spellings of the key are in use
-      // across screens.
+      // stale the moment they change.
       for (const key of [
         ["profile"],
         ["dashboard"],
-        ["nutrition-targets"],
         ["nutritionTargets"],
         ["goal"],
       ]) {

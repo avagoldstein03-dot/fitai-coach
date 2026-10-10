@@ -29,7 +29,7 @@ interface NutritionTargets {
   waterTarget: number;
   tdee: number;
   goal: string;
-  mealTimings: Array<{ meal: string; time: string; caloriePercent: number }>;
+  mealTimings: { meal: string; time: string; caloriePercent: number }[];
 }
 
 interface MealPlanMeal {
@@ -151,7 +151,7 @@ export default function NutritionScreen() {
     });
 
   const todayStr = new Date().toISOString().split("T")[0];
-  const { data: todayFoodData } = useQuery<{ dailyData: Array<{ date: string; totalCalories: number; totalProtein: number; totalCarbs: number; totalFat: number }> }>({
+  const { data: todayFoodData } = useQuery<{ dailyData: { date: string; totalCalories: number; totalProtein: number; totalCarbs: number; totalFat: number }[] }>({
     queryKey: ["food-history", "nutrition-today"],
     queryFn: async () => {
       const res = await axios.get(`${API_URL}/api/food/history?days=1&limit=10`);

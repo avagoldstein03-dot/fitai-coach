@@ -3,7 +3,7 @@
 // the Workouts screen, before an actual Form Check scan exists. This is
 // deliberately approximate; the real, exercise-specific muscle list comes
 // back from an actual scan and is rendered the same way via MuscleDiagramSVG.
-const EXERCISE_MUSCLE_MAP: Array<{ keywords: string[]; muscles: string[] }> = [
+const EXERCISE_MUSCLE_MAP: { keywords: string[]; muscles: string[] }[] = [
   { keywords: ["bench press", "chest press", "push up", "push-up", "pushup", "incline press", "decline press", "fly", "flye"], muscles: ["chest", "triceps", "shoulders"] },
   { keywords: ["dip"], muscles: ["chest", "triceps"] },
   { keywords: ["squat", "leg press", "lunge", "step up", "step-up", "goblet"], muscles: ["quads", "glutes", "hamstrings"] },

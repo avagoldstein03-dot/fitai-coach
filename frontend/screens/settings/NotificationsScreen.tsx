@@ -24,7 +24,7 @@ import { T } from "@/lib/theme";
 
 const API_URL = process.env.EXPO_PUBLIC_API_URL;
 
-const PREF_ROW_KEYS: Array<{ key: keyof NotifPrefs; labelKey: string; descKey: string; icon: string }> = [
+const PREF_ROW_KEYS: { key: keyof NotifPrefs; labelKey: string; descKey: string; icon: string }[] = [
   { key: "workout_reminders", labelKey: "notifications.workout_reminders", descKey: "notifications.workout_reminders_desc", icon: "💪" },
   { key: "meal_nudges",       labelKey: "notifications.meal_nudges",       descKey: "notifications.meal_nudges_desc",       icon: "🍽️" },
   { key: "progress_updates",  labelKey: "notifications.progress_updates",  descKey: "notifications.progress_updates_desc",  icon: "📈" },
@@ -85,7 +85,7 @@ export default function NotificationsScreen() {
       }
       await registerTokenWithBackend(token);
       queryClient.invalidateQueries({ queryKey: ["notification-prefs"] });
-    } catch (err) {
+    } catch {
       Alert.alert(t("common.error"), t("notifications.error_enable"));
     } finally {
       setIsEnabling(false);

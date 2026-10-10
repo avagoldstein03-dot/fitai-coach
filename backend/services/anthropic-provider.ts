@@ -438,4 +438,7 @@ Recent Workouts: ${JSON.stringify(context.recentWorkouts?.slice(0, 5))}`;
   }
 }
 
-export default new AnthropicProvider();
+// Named before export so the singleton is identifiable in a stack trace
+// rather than appearing as an anonymous default.
+const anthropicProvider = new AnthropicProvider();
+export default anthropicProvider;

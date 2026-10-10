@@ -30,6 +30,13 @@
     "sourceMap": true,
     "baseUrl": ".",
     "paths": {
+      // The package ships its v2 entry point behind an "exports" subpath, which
+      // moduleResolution "node" cannot follow. Mapped explicitly rather than
+      // moving the whole project to "bundler" resolution, which would change
+      // how every other import resolves for the sake of one marketing script.
+      "@higgsfield/client/v2": [
+        "../node_modules/@higgsfield/client/dist/v2/index.d.ts"
+      ],
       "@/*": [
         "./*"
       ],

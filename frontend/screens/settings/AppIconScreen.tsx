@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { View, Text, TouchableOpacity, Image, ScrollView, ActivityIndicator, Alert, StyleSheet } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { useTranslation } from "react-i18next";
@@ -27,7 +27,18 @@ export default function AppIconScreen() {
   const navigation = useNavigation() as any;
   const { t } = useTranslation();
   const { presentUpgrade } = useUpgradeGate();
-  const [activeIcon, setActiveIcon] = useState<string | null>(null);
+  // Read in a lazy initialiser rather than a mount effect. getAppIconName is a
+  // synchronous native getter, so the effect version rendered null once and then
+  // immediately re-rendered with the real value — a visible flicker on a screen
+  // whose whole job is showing which icon is active. The try/catch also makes
+  // this safer than the effect, which had nothing to catch a throw.
+  const [activeIcon, setActiveIcon] = useState<string | null>(() => {
+    try {
+      return getAppIconName();
+    } catch {
+      return null;
+    }
+  });
   const [isSwitching, setIsSwitching] = useState(false);
 
   const { data: tier, isLoading } = useQuery({
@@ -37,10 +48,6 @@ export default function AppIconScreen() {
       return res.data?.data?.tier as string;
     },
   });
-
-  useEffect(() => {
-    setActiveIcon(getAppIconName());
-  }, []);
 
   const selectIcon = async (name: string | null) => {
     if (isSwitching || name === activeIcon) return;

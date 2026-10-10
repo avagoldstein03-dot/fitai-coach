@@ -14,22 +14,22 @@ const API_URL = process.env.EXPO_PUBLIC_API_URL;
 
 interface AdvancedAnalyticsData {
   range: number;
-  weight: { series: Array<{ date: string; weight: number }>; changeAbs: number; changePct: number } | null;
+  weight: { series: { date: string; weight: number }[]; changeAbs: number; changePct: number } | null;
   health: {
-    series: Array<{
+    series: {
       date: string;
       steps: number | null;
       activeEnergyKcal: number | null;
       sleepMinutes: number | null;
       restingHeartRate: number | null;
-    }>;
+    }[];
   } | null;
   macros: {
-    series: Array<{ date: string; carbs: number; fat: number; fiber: number; sugar: number; sodium: number; cholesterol: number }>;
+    series: { date: string; carbs: number; fat: number; fiber: number; sugar: number; sodium: number; cholesterol: number }[];
   } | null;
   workouts: {
-    volume: Array<{ date: string; volume: number }>;
-    plateaus: Array<{ exerciseName: string; weight: number | null; completedReps: string; sessionCount: number }>;
+    volume: { date: string; volume: number }[];
+    plateaus: { exerciseName: string; weight: number | null; completedReps: string; sessionCount: number }[];
   };
   bodyComposition: { diffs: string[] };
 }
@@ -67,7 +67,7 @@ export default function AdvancedAnalyticsScreen() {
       presentUpgrade();
       navigation.goBack();
     }
-  }, [isError, error]);
+  }, [isError, error, navigation, presentUpgrade]);
 
   if (isLoading || (isError && isPremiumRequiredError(error))) {
     return (

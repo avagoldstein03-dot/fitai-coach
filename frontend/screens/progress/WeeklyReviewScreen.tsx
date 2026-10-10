@@ -147,7 +147,7 @@ export default function WeeklyReviewScreen() {
     if (!isLoading && !isFetching) { setLoadingMsgIdx(0); return; }
     const id = setInterval(() => setLoadingMsgIdx((i) => (i + 1) % LOADING_MSGS.length), 2200);
     return () => clearInterval(id);
-  }, [isLoading, isFetching]);
+  }, [isLoading, isFetching, LOADING_MSGS.length]);
 
   const isPremiumRequired = (error as any)?.response?.status === 403;
 

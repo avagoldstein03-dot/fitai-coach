@@ -133,11 +133,9 @@ export default function SettingsScreen() {
     onSuccess: () => {
       // Everything downstream reads these: the calorie target, the meal plan,
       // the progress review. None of it would pick up a change until its own
-      // cache expired. Two spellings of the targets key are in use across
-      // screens, so both are invalidated rather than guessing which one matters.
+      // cache expired.
       for (const key of [
         ["profile"],
-        ["nutrition-targets"],
         ["nutritionTargets"],
         ["nutritionPlan"],
         ["progress-review"],

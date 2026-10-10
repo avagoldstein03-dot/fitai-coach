@@ -11,7 +11,7 @@ jest.mock("@clerk/clerk-expo", () => ({
 // TS types) — reaching into it directly is the standard way to invoke an attached
 // interceptor in a test without making a real HTTP request.
 const requestInterceptors = axios.interceptors.request as unknown as {
-  handlers: Array<{ fulfilled: (config: any) => any } | null>;
+  handlers: ({ fulfilled: (config: any) => any } | null)[];
 };
 
 describe("useAxiosAuth", () => {

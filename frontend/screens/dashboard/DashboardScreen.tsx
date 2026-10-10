@@ -39,7 +39,7 @@ interface DashboardData {
   };
   streaks: { workouts: number; meals: number };
   friendsConnected: number;
-  charts: { daily: Array<{ date: string; calories: number; protein: number; carbs: number; fat: number }> };
+  charts: { daily: { date: string; calories: number; protein: number; carbs: number; fat: number }[] };
   subscription: { plan: "free" | "premium"; status: string };
 }
 
@@ -123,7 +123,7 @@ export default function DashboardScreen() {
   });
 
   const { data: readinessData } = useQuery<{
-    readiness: { score: number; label: "primed" | "ready" | "take_it_easy" | "prioritize_recovery"; factors: Array<{ name: string; impact: string; detail: string }> } | null;
+    readiness: { score: number; label: "primed" | "ready" | "take_it_easy" | "prioritize_recovery"; factors: { name: string; impact: string; detail: string }[] } | null;
   }>({
     queryKey: ["readiness"],
     queryFn: async () => {
@@ -151,7 +151,7 @@ export default function DashboardScreen() {
     activeProgram: {
       name: string;
       startDate: string;
-      weeks: Array<{ days: Array<{ dayOfWeek: number; exercises: Array<{ exerciseName: string; sets: number; reps: string }> }> }>;
+      weeks: { days: { dayOfWeek: number; exercises: { exerciseName: string; sets: number; reps: string }[] }[] }[];
     } | null;
   }>({
     queryKey: ["workouts"],
@@ -223,6 +223,10 @@ export default function DashboardScreen() {
         requestReviewOnce();
       }
     });
+    // The two counts rather than the streaks object, which react-query
+    // replaces on every refetch — this fires a celebration, so it should run
+    // when a number changes and not when a poll returns the same numbers.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [data?.streaks?.workouts, data?.streaks?.meals]);
 
   if (isLoading) {
@@ -243,8 +247,6 @@ export default function DashboardScreen() {
       </View>
     );
   }
-
-  const daily = data?.charts?.daily ?? [];
 
   return (
     <>
