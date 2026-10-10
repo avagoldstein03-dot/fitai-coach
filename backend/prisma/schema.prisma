@@ -100,6 +100,11 @@ model Goal {
   primaryGoal           String                 // "fat_loss" | "muscle_gain" | "recomposition" | "athletic_performance" | "general_health"
   targetWeight          Float?
   timeline              Int?                   // in weeks
+  // Snapshot of the user's weight when the target was set, so progress toward
+  // it is measurable. Weight history only exists for people who connected
+  // Apple Health, so there is otherwise no "started from" to measure against.
+  startWeight           Float?
+  targetSetAt           DateTime?              // when the current target was set, for pace
   bodyGoalFocus         String?                // e.g. "Lean & toned", "Build a bigger upper body"
   specificFocus         String?                // free-text: specific thing they want to fix/improve
   

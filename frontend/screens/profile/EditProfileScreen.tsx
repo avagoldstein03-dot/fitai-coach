@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import {
   View,
   Text,
@@ -74,31 +74,41 @@ export default function EditProfileScreen() {
   const [activityLevel, setActivityLevel] = useState<string | null>(null);
   const [fitnessExperience, setFitnessExperience] = useState<string | null>(null);
 
-  useEffect(() => {
-    if (!profile) return;
-    // Guarded like the fields below rather than assigned unconditionally: the
-    // state already starts empty, so seeding only what the server actually has
-    // says the same thing without overwriting a selection mid-edit.
-    if (profile.sex) setSex(profile.sex);
-    if (profile.lifeStage) setLifeStage(profile.lifeStage);
-    if (profile.activityLevel) setActivityLevel(profile.activityLevel);
-    if (profile.fitnessExperience) setFitnessExperience(profile.fitnessExperience);
-    if (profile.name) setName(profile.name);
-    if (profile.height != null) {
+  // Seeded during render rather than from an effect, guarded by a marker of the
+  // server values the fields were last filled from. The effect version wrote
+  // state as a side effect of rendering anyway — this does it in one pass
+  // instead of a render, an effect and a second render, and it is the pattern
+  // the Settings screen already uses for the same job.
+  const [syncedFrom, setSyncedFrom] = useState<string | undefined>(undefined);
+  const serverValues = profile
+    ? JSON.stringify([
+        profile.name, profile.height, profile.weight, profile.age,
+        profile.sex, profile.lifeStage, profile.activityLevel, profile.fitnessExperience,
+        isImperial,
+      ])
+    : undefined;
+
+  if (serverValues !== undefined && serverValues !== syncedFrom) {
+    setSyncedFrom(serverValues);
+    if (profile!.name) setName(profile!.name);
+    if (profile!.sex) setSex(profile!.sex);
+    if (profile!.lifeStage) setLifeStage(profile!.lifeStage);
+    if (profile!.activityLevel) setActivityLevel(profile!.activityLevel);
+    if (profile!.fitnessExperience) setFitnessExperience(profile!.fitnessExperience);
+    if (profile!.height != null) {
       if (isImperial) {
-        const { ft, in: inch } = cmToFtIn(profile.height);
+        const { ft, in: inch } = cmToFtIn(profile!.height);
         setHeightFt(String(ft));
         setHeightIn(String(inch));
       } else {
-        setHeightCm(String(Math.round(profile.height)));
+        setHeightCm(String(Math.round(profile!.height)));
       }
     }
-    if (profile.weight != null) {
-      setWeight(isImperial ? String(Math.round(kgToLbs(profile.weight))) : String(Math.round(profile.weight * 10) / 10));
+    if (profile!.weight != null) {
+      setWeight(isImperial ? String(Math.round(kgToLbs(profile!.weight))) : String(Math.round(profile!.weight * 10) / 10));
     }
-    if (profile.age != null) setAge(String(profile.age));
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [profile]);
+    if (profile!.age != null) setAge(String(profile!.age));
+  }
 
   const { mutate: save, isPending } = useMutation({
     mutationFn: async () => {

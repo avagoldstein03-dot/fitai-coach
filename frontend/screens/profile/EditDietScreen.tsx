@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import {
   View,
   Text,
@@ -32,6 +32,7 @@ const DIETS: { id: string; icon: string }[] = [
 
 interface ProfileData {
   dietPreferences?: string[];
+  supplementHistory?: string[];
   foodAllergies?: string[];
 }
 
@@ -41,6 +42,10 @@ export default function EditDietScreen() {
   const { t } = useTranslation();
   const [selected, setSelected] = useState<string[]>([]);
   const [allergies, setAllergies] = useState("");
+  // Collected at onboarding step 7 and then read by nothing and editable
+  // nowhere. The supplement recommendations now take it into account, so it
+  // has to be changeable when someone starts or stops taking something.
+  const [supplements, setSupplements] = useState("");
 
   const { data: profile, isLoading } = useQuery<ProfileData>({
     queryKey: ["profile"],
@@ -50,11 +55,20 @@ export default function EditDietScreen() {
     },
   });
 
-  useEffect(() => {
-    if (!profile) return;
-    if (profile.dietPreferences) setSelected(profile.dietPreferences);
-    if (profile.foodAllergies) setAllergies(profile.foodAllergies.join(", "));
-  }, [profile]);
+  // Seeded during render, guarded by a marker of the server values the fields
+  // were last filled from — one pass instead of a render, an effect and a
+  // second render, and it matches the other editors.
+  const [syncedFrom, setSyncedFrom] = useState<string | undefined>(undefined);
+  const serverValues = profile
+    ? JSON.stringify([profile.dietPreferences, profile.foodAllergies, profile.supplementHistory])
+    : undefined;
+
+  if (serverValues !== undefined && serverValues !== syncedFrom) {
+    setSyncedFrom(serverValues);
+    if (profile!.dietPreferences) setSelected(profile!.dietPreferences);
+    if (profile!.foodAllergies) setAllergies(profile!.foodAllergies.join(", "));
+    if (profile!.supplementHistory) setSupplements(profile!.supplementHistory.join(", "));
+  }
 
   const toggle = (id: string) => {
     setSelected((prev) => (prev.includes(id) ? prev.filter((p) => p !== id) : [...prev, id]));
@@ -65,10 +79,15 @@ export default function EditDietScreen() {
       await axios.patch(`${API_URL}/api/auth/profile`, {
         dietPreferences: selected,
         foodAllergies: allergies ? allergies.split(",").map((a) => a.trim()).filter(Boolean) : [],
+        supplementHistory: supplements ? supplements.split(",").map((x) => x.trim()).filter(Boolean) : [],
       });
     },
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["profile"] });
+      // The meal plan is built from diet preferences and allergies, and the
+      // supplement list now shapes what gets recommended.
+      queryClient.invalidateQueries({ queryKey: ["nutritionPlan"] });
+      queryClient.invalidateQueries({ queryKey: ["supplements"] });
       navigation.goBack();
     },
     onError: () => Alert.alert(t("common.error"), t("edit_diet.error_save")),
@@ -128,6 +147,21 @@ export default function EditDietScreen() {
             onChangeText={setAllergies}
           />
 
+          {/* Supplements. Reuses the onboarding step 7 wording, since it is the
+              same question — asked again because the answer changes and there
+              was nowhere to change it. */}
+          <Text style={s.sectionLabel}>{t("onboarding.step7.title")}</Text>
+          <TextInput
+            placeholder={t("onboarding.step7.placeholder")}
+            placeholderTextColor={T.textMuted}
+            style={s.textArea}
+            multiline
+            numberOfLines={3}
+            value={supplements}
+            onChangeText={setSupplements}
+          />
+          <Text style={s.supplementHint}>{t("edit_diet.supplements_hint")}</Text>
+
           <TouchableOpacity
             onPress={() => save()}
             disabled={selected.length === 0 || isPending}
@@ -149,6 +183,7 @@ const s = StyleSheet.create({
   backText: { color: T.accent, fontWeight: "600", fontSize: 15 },
   headerTitle: { fontSize: 20, fontWeight: "800", color: T.textPrimary },
   sectionLabel: { fontSize: 13, fontWeight: "700", color: T.textSecondary, marginTop: 8, marginBottom: 12, textTransform: "uppercase", letterSpacing: 0.5 },
+  supplementHint: { fontSize: 11.5, color: T.textMuted, marginTop: 8, lineHeight: 16 },
   grid: { flexDirection: "row", flexWrap: "wrap", gap: 10, marginBottom: 8 },
   card: {
     width: "47%",

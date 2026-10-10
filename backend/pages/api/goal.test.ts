@@ -27,7 +27,7 @@ describe("goal handler", () => {
   beforeEach(() => {
     jest.resetAllMocks();
     (getAuth as jest.Mock).mockReturnValue({ userId: "clerk_1" });
-    (prisma.user.findUnique as jest.Mock).mockResolvedValue({ id: "user_1" });
+    (prisma.user.findUnique as jest.Mock).mockResolvedValue({ id: "user_1", weight: 82, medicalConditions: [] });
   });
 
   it("rejects unsupported methods", async () => {
@@ -81,7 +81,7 @@ describe("goal handler — target weight and timeline", () => {
   beforeEach(() => {
     jest.resetAllMocks();
     (getAuth as jest.Mock).mockReturnValue({ userId: "clerk_1" });
-    (prisma.user.findUnique as jest.Mock).mockResolvedValue({ id: "user_1" });
+    (prisma.user.findUnique as jest.Mock).mockResolvedValue({ id: "user_1", weight: 82, medicalConditions: [] });
     (prisma.goal.upsert as jest.Mock).mockResolvedValue({ id: "goal_1" });
   });
 
@@ -102,7 +102,35 @@ describe("goal handler — target weight and timeline", () => {
     });
     await handler(req, res);
     const call = (prisma.goal.upsert as jest.Mock).mock.calls[0][0];
-    expect(call.update).toEqual({ primaryGoal: "fat_loss", targetWeight: 70, timeline: 12 });
+    expect(call.update).toMatchObject({ primaryGoal: "fat_loss", targetWeight: 70, timeline: 12 });
+  });
+
+  it("snapshots the current weight when a target is set", async () => {
+    // Progress needs a start point and weight history only exists for people
+    // who connected Apple Health, so the snapshot is the only thing that makes
+    // progress measurable for everyone else.
+    const { req, res } = mockReqRes("PATCH", { targetWeight: 70 });
+    await handler(req, res);
+    const call = (prisma.goal.upsert as jest.Mock).mock.calls[0][0];
+    expect(call.update.startWeight).toBe(82); // the mocked user's current weight
+    expect(call.update.targetSetAt).toBeInstanceOf(Date);
+  });
+
+  it("clears the snapshot when the target is cleared", async () => {
+    // Otherwise a target set next year would measure from a weight recorded now.
+    const { req, res } = mockReqRes("PATCH", { targetWeight: null });
+    await handler(req, res);
+    const call = (prisma.goal.upsert as jest.Mock).mock.calls[0][0];
+    expect(call.update.startWeight).toBeNull();
+    expect(call.update.targetSetAt).toBeNull();
+  });
+
+  it("leaves the snapshot alone when only the goal type changes", async () => {
+    const { req, res } = mockReqRes("PATCH", { primaryGoal: "muscle_gain" });
+    await handler(req, res);
+    const call = (prisma.goal.upsert as jest.Mock).mock.calls[0][0];
+    expect(call.update.startWeight).toBeUndefined();
+    expect(call.update.targetSetAt).toBeUndefined();
   });
 
   it("lets an explicit null clear a target someone has passed", async () => {
@@ -143,5 +171,67 @@ describe("goal handler — target weight and timeline", () => {
       expect(res.status).toHaveBeenCalledWith(400);
       expect(prisma.goal.upsert).not.toHaveBeenCalled();
     }
+  });
+});
+
+describe("goal handler — progress, and when not to show it", () => {
+  beforeEach(() => {
+    jest.resetAllMocks();
+    (getAuth as jest.Mock).mockReturnValue({ userId: "clerk_1" });
+    (prisma.goal.findUnique as jest.Mock).mockResolvedValue({
+      id: "goal_1",
+      primaryGoal: "fat_loss",
+      targetWeight: 70,
+      timeline: 20,
+      startWeight: 80,
+      targetSetAt: new Date(Date.now() - 10 * 7 * 24 * 60 * 60 * 1000),
+    });
+  });
+
+  async function getGoal(medicalConditions: string[]) {
+    (prisma.user.findUnique as jest.Mock).mockResolvedValue({
+      id: "user_1",
+      weight: 75,
+      medicalConditions,
+    });
+    const { req, res } = mockReqRes("GET");
+    await handler(req, res);
+    return res.json.mock.calls[0][0].data;
+  }
+
+  it("returns progress toward the target", async () => {
+    const data = await getGoal([]);
+    expect(data.showWeightTarget).toBe(true);
+    expect(data.progress.percentComplete).toBe(50);
+    expect(data.progress.remainingKg).toBe(5);
+    expect(data.progress.pace).toBe("on_track");
+  });
+
+  it("withholds it entirely for a disordered-eating history", async () => {
+    // Decided server-side so the client cannot show it by forgetting to check.
+    const data = await getGoal(["disordered_eating_history"]);
+    expect(data.showWeightTarget).toBe(false);
+    expect(data.progress).toBeNull();
+  });
+
+  it("withholds it during pregnancy, where the calorie target refuses a deficit", async () => {
+    const data = await getGoal(["pregnant_or_postpartum"]);
+    expect(data.showWeightTarget).toBe(false);
+    expect(data.progress).toBeNull();
+  });
+
+  it("still returns the goal itself when the weight target is withheld", async () => {
+    // The goal type is not the problem; only the scale countdown is.
+    const data = await getGoal(["disordered_eating_history"]);
+    expect(data.goal.primaryGoal).toBe("fat_loss");
+  });
+
+  it("returns null progress rather than zeroes when no target is set", async () => {
+    (prisma.goal.findUnique as jest.Mock).mockResolvedValue({
+      id: "goal_1", primaryGoal: "general_health",
+      targetWeight: null, timeline: null, startWeight: null, targetSetAt: null,
+    });
+    const data = await getGoal([]);
+    expect(data.progress).toBeNull();
   });
 });

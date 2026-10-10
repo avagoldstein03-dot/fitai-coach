@@ -73,6 +73,7 @@ export interface UserProfile {
   medicalNotes?: string;
   dietPreferences?: string[];
   foodAllergies?: string[];
+  supplementHistory?: string[];
   onboardingCompleted: boolean;
   onboardingStep: number;
 }

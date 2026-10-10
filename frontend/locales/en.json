@@ -1513,11 +1513,19 @@
   },
   "edit_goal": {
     "title": "Edit Goal",
-    "error_save": "Couldn't save your goal. Please try again."
+    "error_save": "Couldn't save your goal. Please try again.",
+    "target_weight": "Goal weight",
+    "target_hint": "Optional. Leave it blank if you'd rather not track a number.",
+    "timeline": "By when?",
+    "weeks": "{{n}} weeks",
+    "progress_line": "{{pct}}% there — {{remaining}}{{unit}} to go",
+    "target_met": "You've reached your goal weight.",
+    "rate_warning": "That would mean about {{rate}}{{unit}} a week, which is faster than is sustainable. Giving yourself more time is the easier fix than eating less."
   },
   "edit_diet": {
     "title": "Diet & Allergies",
-    "error_save": "Couldn't save your changes. Please try again."
+    "error_save": "Couldn't save your changes. Please try again.",
+    "supplements_hint": "We use this so we don't recommend something you're already taking."
   },
   "friends": {
     "title": "Friends",

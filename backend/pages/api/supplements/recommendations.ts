@@ -35,6 +35,19 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     const isDietVegan = user.dietPreferences?.includes("vegan");
     const isDietVegetarian = user.dietPreferences?.includes("vegetarian");
 
+    // What they told us at onboarding that they already take. This had been
+    // collected and then read by nothing at all, so the app would cheerfully
+    // recommend creatine to someone who had just written "creatine" into the
+    // box — which reads as not having listened.
+    const alreadyTaking = (user.supplementHistory ?? []).map((s) => s.toLowerCase().trim()).filter(Boolean);
+    const isAlreadyTaking = (supp: { name: string; category: string }) =>
+      alreadyTaking.some(
+        (entry) =>
+          entry.includes(supp.name.toLowerCase()) ||
+          supp.name.toLowerCase().includes(entry) ||
+          entry.replace(/[\s_-]+/g, "") === supp.category.replace(/[\s_-]+/g, "")
+      );
+
     const recommendations = SUPPLEMENT_DATABASE.filter((supp) => {
       // Skip fish oil for vegans/vegetarians
       if ((isDietVegan || isDietVegetarian) && supp.category === "fish_oil") return false;
@@ -50,6 +63,10 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       frequency: supp.frequency,
       benefits: supp.benefits,
       dosageRange: `${supp.dosageMin}-${supp.dosageMax}${supp.unit}`,
+      // Marked rather than filtered out: knowing the thing you already take is
+      // the right call for your goal is useful, and silently dropping it would
+      // look like the app had nothing to say about it.
+      alreadyTaking: isAlreadyTaking(supp),
       disclaimer: "This is a general recommendation. Consult a healthcare provider before starting any supplement.",
     }));
 

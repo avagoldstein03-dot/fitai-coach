@@ -27,7 +27,7 @@ export default async function handler(
 
     // PATCH — update weight, height, age, name, injury/mobility history, or diet/allergies
     if (req.method === "PATCH") {
-      const { weight, height, age, name, unitSystem, language, country, currency, sex, lifeStage, activityLevel, fitnessExperience, injuryHistory, injuryAreas, medicalConditions, medicalNotes, dietPreferences, foodAllergies } = req.body;
+      const { weight, height, age, name, unitSystem, language, country, currency, sex, lifeStage, activityLevel, fitnessExperience, injuryHistory, injuryAreas, medicalConditions, medicalNotes, dietPreferences, foodAllergies, supplementHistory } = req.body;
       const updateData: Record<string, any> = {};
       if (weight !== undefined) updateData.weight = Number(weight);
       if (height !== undefined) updateData.height = Number(height);
@@ -77,6 +77,14 @@ export default async function handler(
       if (dietPreferences !== undefined) {
         updateData.dietPreferences = Array.isArray(dietPreferences) ? dietPreferences.map((d) => String(d).toLowerCase()) : [];
       }
+      // Collected at onboarding and, until now, read by nothing and editable
+      // nowhere. The supplement recommendations now take it into account, so it
+      // needs to be changeable when someone starts or stops taking something.
+      if (supplementHistory !== undefined) {
+        updateData.supplementHistory = Array.isArray(supplementHistory)
+          ? supplementHistory.map((s) => String(s).trim()).filter(Boolean).slice(0, 25)
+          : [];
+      }
       if (foodAllergies !== undefined) {
         updateData.foodAllergies = Array.isArray(foodAllergies) ? foodAllergies.map((a) => String(a).trim()).filter(Boolean) : [];
       }
@@ -88,7 +96,7 @@ export default async function handler(
       const updated = await prisma.user.update({
         where: { clerkId: userId },
         data: updateData,
-        select: { id: true, name: true, weight: true, height: true, age: true, sex: true, lifeStage: true, activityLevel: true, fitnessExperience: true, unitSystem: true, language: true, country: true, currency: true, injuryHistory: true, injuryAreas: true, medicalConditions: true, medicalNotes: true, dietPreferences: true, foodAllergies: true },
+        select: { id: true, name: true, weight: true, height: true, age: true, sex: true, lifeStage: true, activityLevel: true, fitnessExperience: true, unitSystem: true, language: true, country: true, currency: true, injuryHistory: true, injuryAreas: true, medicalConditions: true, medicalNotes: true, dietPreferences: true, foodAllergies: true, supplementHistory: true },
       });
 
       return sendSuccess(res, updated, "Profile updated successfully");
@@ -119,6 +127,7 @@ export default async function handler(
         medicalNotes: true,
         dietPreferences: true,
         foodAllergies: true,
+        supplementHistory: true,
         onboardingCompleted: true,
         onboardingStep: true,
       },
@@ -148,6 +157,7 @@ export default async function handler(
       medicalNotes: user.medicalNotes || undefined,
       dietPreferences: user.dietPreferences,
       foodAllergies: user.foodAllergies,
+      supplementHistory: user.supplementHistory,
       onboardingCompleted: user.onboardingCompleted,
       onboardingStep: user.onboardingStep,
     };

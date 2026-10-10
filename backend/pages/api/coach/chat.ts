@@ -8,6 +8,11 @@ import { checkRateLimit } from "@/lib/rate-limit";
 import { sanitizeConversationHistory } from "@/services/ai-provider";
 import { detectWorkoutPlateaus, diffBodyComposition, buildTrendsSummary } from "@/lib/trends";
 import { buildCoachingDirective } from "@/lib/coach-context";
+import {
+  computeGoalProgress,
+  describeGoalForCoach,
+  shouldShowWeightTarget,
+} from "@/lib/goal-progress";
 import { buildHealthSummary } from "@/lib/health-summary";
 import { buildNutritionPlanSummary, buildWorkoutPlanSummary } from "@/lib/plan-summary";
 import { loadReadinessForUser } from "@/lib/readiness";
@@ -167,13 +172,32 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       ),
     });
 
-    const coachingDirective = buildCoachingDirective({
-      age: user.age,
-      fitnessExperience: user.fitnessExperience,
-      injuryHistory: user.injuryHistory,
-      medicalConditions: user.medicalConditions,
-      medicalNotes: user.medicalNotes,
-    });
+    // The target the user set, so the coach speaks to it instead of around it —
+    // and so it says plainly when their own timeline implies a pace nobody
+    // should coach them into. Withheld under the same conditions that withhold
+    // the target from the UI.
+    const goalProgress = shouldShowWeightTarget(user.medicalConditions)
+      ? computeGoalProgress({
+          startWeight: user.goal?.startWeight,
+          currentWeight: user.weight,
+          targetWeight: user.goal?.targetWeight,
+          timelineWeeks: user.goal?.timeline,
+          targetSetAt: user.goal?.targetSetAt,
+        })
+      : null;
+
+    const coachingDirective = [
+      buildCoachingDirective({
+        age: user.age,
+        fitnessExperience: user.fitnessExperience,
+        injuryHistory: user.injuryHistory,
+        medicalConditions: user.medicalConditions,
+        medicalNotes: user.medicalNotes,
+      }),
+      describeGoalForCoach(goalProgress, user.goal?.targetWeight),
+    ]
+      .filter(Boolean)
+      .join("\n");
 
     const healthSummary = buildHealthSummary(healthMetrics);
 
